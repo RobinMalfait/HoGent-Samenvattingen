@@ -10,7 +10,7 @@
 
 ---
 
-```pseudocode
+```pascal
 opdracht 1
 opdracht 2
 opdracht n
@@ -18,7 +18,7 @@ opdracht n
 
 Voorbeeld: **Algoritme** Bereken BMI
 
-```pseudocode
+```pascal
 VOERUIT(scherm, "geef lengte in meter: ")
 VOERIN(klavier, lengte)
 VOERUIT(scherm, "geef gewicht in kilo: ")
@@ -31,7 +31,7 @@ RETOUR bodyMassIndex
 
 ---
 
-```pseudocode
+```pascal
 ALS voorwaarde DAN
 	component1
 ANDERS
@@ -41,7 +41,7 @@ EINDE ALS
 
 **De eenzijdige Selectie:**
 
-```pseudocode
+```pascal
 ALS voorwaarde DAN
 	component1
 EINDE ALS
@@ -49,7 +49,7 @@ EINDE ALS
 
 Voorbeeld: **Algoritme** Evalueer BMI.
 
-```pseudocode
+```pascal
 VOERUIT(scherm, "Geef BMI:")
 VOERIN(klavier, bodyMassIndex)
 ALS ((18,5 ≤ bodyMassIndex) EN (bodyMassIndex ≤ 25)) DAN
@@ -61,7 +61,7 @@ EINDE ALS
 
 **De Geneste selectiestructuur:**
 
-```pseudocode
+```pascal
 VOERUIT(scherm, "Geef BMI:")
 VOERIN(klavier, bodyMassIndex)
 ALS bodyMassIndex < 18,5 DAN
@@ -79,7 +79,7 @@ EINDE ALS
 
 ---
 
-```pseudocode
+```pascal
 ZOLANG iteratievoorwaarde DOE
 	iteratiecomponent
 EINDE ZOLANG
@@ -91,7 +91,7 @@ Voorbeeld: **Algoritme** Som van de eerste 10 strikt positieve gehele getallen.
 
 Via `while` lus.
 
-```pseudocode
+```pascal
 i <- 1
 som <- 0
 ZOLANG i ≤ 10 DOE
@@ -104,7 +104,7 @@ Alternatief (for-loop):
 
 > `i` moet niet verhoogd worden in deze lus.
 
-```pseudocode
+```pascal
 som <- 0
 VOOR i = 1 TOT 10 DOE
 	som <- som + i
@@ -114,7 +114,7 @@ VOERUIT(scherm, "som = " som)
 
 Met Stappen:
 
-```pseudocode
+```pascal
 som <- 0
 VOOR i = 1 TOT 10 STAP 2 DOE
 	som <- som + i
@@ -126,7 +126,7 @@ VOERUIT(scherm, "som = " som)
 
 **Sjabloon**
 
-```pseudoCode
+```pascal
 naamAlgoritme (I: ...): ...
 	* Preconditie: ...
 	* Postconditie: ...
@@ -138,7 +138,7 @@ EINDE
 
 Voorbeeld: Wat is het grootste getal?
 
-```pseudocode
+```pascal
 bepaalMaximum (I: a, b, c: gehele getallen): x: geheel getal
 	* Preconditie: a, b en c zijn drie gehele getallen.
 	* Postconditie: het maximum van drie getallen werd bepaald.
@@ -157,7 +157,7 @@ EIND
 
 Voorbeeld: Bepaal het aantal priemgetallen kleiner dan n.
 
-```pseudocode
+```pascal
 telPriemgetallen (I: n: geheel getal) : aantal: geheel getal
 	* Preconditie: n is een natuurlijk getal.
 	* Postconditie: het aantal priemgetallen kleiner dan n werd geretourneerd.
@@ -180,24 +180,24 @@ EINDE
 ```
 
 > Waarom tot vierkantswortel van n lopen:
-> 
+>
 > Stel n = n1 x n2
-> 
+>
 > dan n1 ≤ √n of n2 ≤ √n
-> 
+>
 > Bewijs
-> 
+>
 > Stel n1 > √n en n2 > √n
-> 
+>
 > n = n1 x n2 > √n x √n = n
-> 
+>
 > Dus, n > n, kan niet = contradictie
 
 ### Methode 2: De zeef van Eratosthenes
 
 ***2*** ***3*** 4 ***5*** 6 ***7*** 8 9 10 ***11*** 12 ***13*** 14 15 16 ***17*** 18 ***19*** 20 21 22 ***23*** 24 25 26 27 28 ***29***
 
-```pseudocode
+```pascal
 telPriemgetallenEratosthenes (I: n: geheel getal) : aantal: geheel getal
 	* Preconditie: n is een natuurlijk getal.
 	* Postconditie: het aantal priemgetallen kleiner dan n werd geretourneerd.
