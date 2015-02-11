@@ -12,7 +12,7 @@
 Subklasse (**this**)  _extends_ Superklasse (**super**)
 
 ```java
-class BMW extends Car { 
+class BMW extends Car {
     // Code
 }
 ```
