@@ -19,7 +19,7 @@
 
 **effectief & efficiënt**: Vliegen doden met een kanon: Effectief, Ja; Efficiënt, Neen.
 
--> De juiste methode voor het juiste probleem.
+> De juiste methode voor het juiste probleem.
 
 #### Strategisch Management (= Processen, waarde creatie, ...)
 
