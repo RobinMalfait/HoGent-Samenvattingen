@@ -1,6 +1,6 @@
-## OO Programmeren II
+# OO Programmeren II
 
-### OO Paradigm - (Les 11/02/2015)
+## OO Paradigm - (Les 11/02/2015)
 
 * Abstractie - “klas”: “domein”klasse / ui-klassen
 * Inkapseling => Private

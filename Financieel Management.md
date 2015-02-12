@@ -1,6 +1,6 @@
-## Financieel Management
+# Financieel Management
 
-### De Balans
+## De Balans
 
 | Activa | Passiva |
 | -------| ------- |
@@ -13,5 +13,5 @@
 **Liquide middelen:** Geld dat op rekeningen staat. Cash geld (kas)
 
 > Meer al 500.000 euro jaaromzet => Dubbele Boekhouding.
- 
+
 **De Jaarrekening:** 7 Jaar bijhouden

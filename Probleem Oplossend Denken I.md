@@ -1,4 +1,4 @@
-## Probleem Oplossend Denken I
+# Probleem Oplossend Denken I
 
 ## Hoofdstuk 1
 
