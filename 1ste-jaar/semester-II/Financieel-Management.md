@@ -12,6 +12,6 @@
 
 **Liquide middelen:** Geld dat op rekeningen staat. Cash geld (kas)
 
-> Meer al 500.000 euro jaaromzet => Dubbele Boekhouding.
+> Meer dan 500.000 euro jaaromzet => Dubbele Boekhouding.
 
 **De Jaarrekening:** 7 Jaar bijhouden
