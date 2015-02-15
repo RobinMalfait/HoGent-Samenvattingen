@@ -1,8 +1,10 @@
 # OO Programmeren II
 
-## OO Paradigm - (Les 11/02/2015)
+## OO Paradigm
 
-* Abstractie - “klas”: “domein”klasse / ui-klassen
+* Abstractie - "klas":
+    - "domein"-klasse
+    - "ui"-klassen
 * Inkapseling => Private
 * Overerving => "her"gebruik van code. Via `extends`
 * Polymorfisme
