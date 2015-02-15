@@ -1,6 +1,8 @@
 # HoGent Samenvattingen
 
-> Dit is een repository waar ik al mijn HoGent Samenvattingen bij hou. Als je het visueler wil zien ga dan naar [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
+> Al mijn HoGent Samenvattingen.
+>
+> Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 
 ## 1ste jaar
 
