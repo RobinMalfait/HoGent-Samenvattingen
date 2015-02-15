@@ -4,7 +4,7 @@ Volgende samenvattingen zijn beschikbaar:
 
 ## 1ste jaar
 
-### Semester 2
+### Semester II
 
 * [OO Programmeren II](https://github.com/RobinMalfait/HoGent-Samenvattingen/blob/master/1ste_jaar/semester_2/OO%20Progammeren%20II.md)
 * [Financieel Management](https://github.com/RobinMalfait/HoGent-Samenvattingen/blob/master/1ste_jaar/semester_2/Financieel%20Management.md)
