@@ -6,8 +6,8 @@ Volgende samenvattingen zijn beschikbaar:
 
 ### Semester II
 
-* [OO Programmeren II](1ste%20jaar/semester%20II/OO%20Progammeren%20II.md)
-* [Financieel Management](1ste%20jaar/semester%20II/Financieel%20Management.md)
-* [Strategisch Management](1ste%20jaar/semester%20II/Strategisch%20Management.md)
-* [Probleem Oplossend Denken I](1ste%20jaar/semester%20II/Probleem%20Oplossend%20Denken%20I.md)
-    * [Oefeningen 1.4 &middot; Slide 15 - 17](1ste%20jaar/semester%20II/Oefeningen%20Probleem%20Oplossend%20Denken%20I/1.4.oefeningen.md)
+* [OO Programmeren II](1ste-jaar/semester-II/OO-Progammeren-II.md)
+* [Financieel Management](1ste-jaar/semester-II/Financieel-Management.md)
+* [Strategisch Management](1ste-jaar/semester-II/Strategisch-Management.md)
+* [Probleem Oplossend Denken I](1ste-jaar/semester-II/Probleem-Oplossend-Denken-I.md)
+    * [Oefeningen 1.4 &middot; Slide 15 - 17](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md)
