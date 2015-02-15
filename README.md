@@ -4,6 +4,10 @@ Volgende samenvattingen zijn beschikbaar:
 
 ## 1ste jaar
 
+### Semester I
+
+> Coming some day...
+
 ### Semester II
 
 * [OO Programmeren II](1ste-jaar/semester-II/OO-Progammeren-II.md)
