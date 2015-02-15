@@ -1,12 +1,12 @@
 # HoGent Samenvattingen
 
-Volgende samenvattingen zijn beschikbaar:
+> Dit is een repository waar ik al mijn HoGent Samenvattingen bij hou. Als je het visueler wil zien ga dan naar [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 
 ## 1ste jaar
 
 ### Semester I
 
-> Coming some day...
+*Coming some day...*
 
 ### Semester II
 
@@ -15,3 +15,16 @@ Volgende samenvattingen zijn beschikbaar:
 * [Strategisch Management](1ste-jaar/semester-II/Strategisch-Management.md)
 * [Probleem Oplossend Denken I](1ste-jaar/semester-II/Probleem-Oplossend-Denken-I.md)
     * [Oefeningen 1.4 &middot; Slide 15 - 17](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md)
+
+
+## 2e jaar
+
+### Semester I
+
+### Semester II
+
+## 3e jaar
+
+### Semester I
+
+### Semester II
