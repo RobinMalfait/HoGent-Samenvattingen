@@ -32,7 +32,7 @@ Subklasse = specialisatie
 | private   | **-**      | ✓        | ✗         | ✗           | ✗        |
 | public    | **+**      | ✓        | ✓         | ✓           | ✓        |
 | protected | **#**      | ✓        | ✓         | ✓           | ✗        |
-| -         |            | ✓        | ✓         | ✗           | ✗        |
+| -         | &nbsp;     | ✓        | ✓         | ✗           | ✗        |
 
 > `final` hiermee kan je constanten definiëren.
 
@@ -79,14 +79,14 @@ public abstract class Vorm {
 
 public class Vierkant extends Vorm {
     private int zijde;
-    
+
     public void teken() { ... }
 }
 
 public class Driehoek extends Vorm {
     private int hoogte;
     private int breedte;
-    
+
     public void teken() { ... }
 }
 
@@ -94,10 +94,10 @@ public class Cirkel extends Vorm {
     private int straal;
     private int x;
     private int y;
-    
+
     public void teken() { ... }
-    
-    public int getStraal() { ... } 
+
+    public int getStraal() { ... }
 }
 ```
 
@@ -113,10 +113,10 @@ vormen[2] = new Cirkel(10, 50, 50);
 
 ...
 
-for (Vorm vorm : vormen) 
+for (Vorm vorm : vormen)
 {
     vorm.teken();
-} 
+}
 ```
 
 > Door middel van `vormen[i] instanceof Cirkel` kan je perfect weten welke Subklasse je object is.
@@ -129,7 +129,7 @@ Vorm v = new Cirkel(); // (Automatic) Upcasting
 Cirkel c = (Cirkel) v; // Downcasting
 ```
 
-> Abstracten dienen om van te erven. Wil je niet meer erven, die klasse kan je `final` declareren. 
-> 
+> Abstracten dienen om van te erven. Wil je niet meer erven, die klasse kan je `final` declareren.
+>
 > Algemeen kan je **attributen**, **klassen** en **methodes** `final` declareren.
 
