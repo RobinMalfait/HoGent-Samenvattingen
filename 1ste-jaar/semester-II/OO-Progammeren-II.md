@@ -70,6 +70,36 @@ final Student s = new Student(...);  // Adres
 | +teken()                        |
 
 ```java
+public abstract class Vorm {
+    public abstract void teken();
+}
+
+public class Vierkant extends Vorm {
+    private int zijde;
+    
+    public void teken() { ... }
+}
+
+public class Driehoek extends Vorm {
+    private int hoogte;
+    private int breedte;
+    
+    public void teken() { ... }
+}
+
+public class Cirkel extends Vorm {
+    private int straa;
+    private int x;
+    private int y;
+    
+    public void teken() { ... }
+}
+```
+
+> Als je een abstracte methode niet overschrijft in je sub-klasse. Dan blijft deze sub-klasse ook abstract.
+
+
+```java
 Vorm vormen[] = new Vormen[10];
 
 vormen[0] = new Vierkant(5);
