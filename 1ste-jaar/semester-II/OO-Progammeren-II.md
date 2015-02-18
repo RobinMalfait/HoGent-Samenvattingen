@@ -69,9 +69,8 @@ final Student s = new Student(...);  // Adres
 | -int straal<br>-int x<br>-int y |
 | +teken()                        |
 
-![](http://g.gravizo.com/g?
-%2F**%20%40opt%20all%20*%2F%0Apublic%20abstract%20class%20Vorm%20%7B%0A%20%20%20%20public%20abstract%20void%20teken()%3B%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Vierkant%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20zijde%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Driehoek%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20hoogte%3B%0A%20%20%20%20private%20int%20breedte%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Cirkel%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20straal%3B%0A%20%20%20%20private%20int%20x%3B%0A%20%20%20%20private%20int%20y%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20int%20getStraal()%20%7B%20%20%7D%20%0A%7D
-)
+<img src="http://g.gravizo.com/g?
+%2F**%20%40opt%20all%20*%2F%0Apublic%20abstract%20class%20Vorm%20%7B%0A%20%20%20%20public%20abstract%20void%20teken()%3B%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Vierkant%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20zijde%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Driehoek%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20hoogte%3B%0A%20%20%20%20private%20int%20breedte%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Cirkel%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20straal%3B%0A%20%20%20%20private%20int%20x%3B%0A%20%20%20%20private%20int%20y%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20int%20getStraal()%20%7B%20%20%7D%20%0A%7D" />
 
 ```java
 public abstract class Vorm {
