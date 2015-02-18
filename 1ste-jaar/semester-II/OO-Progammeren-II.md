@@ -70,40 +70,7 @@ final Student s = new Student(...);  // Adres
 | +teken()                        |
 
 ![](http://g.gravizo.com/g?
-/**
- *@opt all
- */
-public abstract class Vorm {
-    public abstract void teken%28%29;
-}
-/**
- *@opt all
- */
-public class Vierkant extends Vorm {
-    private int zijde;
-    
-    public void teken%28%29 { }
-}
-/**
- *@opt all
- */
-public class Driehoek extends Vorm {
-    private int hoogte;
-    private int breedte;
-    
-    public void teken%28%29 { }
-}
-/**
- *@opt all
- */
-public class Cirkel extends Vorm {
-    private int straal;
-    private int x;
-    private int y;
-    
-    public void teken%28%29 { }
-    public int getStraal%28%29 { } 
-}
+%2F**%20%40opt%20all%20*%2F%0Apublic%20abstract%20class%20Vorm%20%7B%0A%20%20%20%20public%20abstract%20void%20teken()%3B%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Vierkant%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20zijde%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Driehoek%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20hoogte%3B%0A%20%20%20%20private%20int%20breedte%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%7D%0A%0A%2F**%20%40opt%20all%20*%2F%0Apublic%20class%20Cirkel%20extends%20Vorm%20%7B%0A%20%20%20%20private%20int%20straal%3B%0A%20%20%20%20private%20int%20x%3B%0A%20%20%20%20private%20int%20y%3B%0A%20%20%20%20%0A%20%20%20%20public%20void%20teken()%20%7B%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20int%20getStraal()%20%7B%20%20%7D%20%0A%7D
 )
 
 ```java
@@ -163,4 +130,8 @@ c.getStraal();
 
 Vorm v = (Vorm) vormen[i];
 ```
+
+> Abstracten dienen om van te erven. Wil je niet meer erven, die klasse kan je `final` declareren. 
+> 
+> Algemeen kan je **attributen**, **klassen** en **methodes** `final` declareren.
 
