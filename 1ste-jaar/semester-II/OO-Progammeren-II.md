@@ -124,10 +124,9 @@ for (Vorm vorm : vormen)
 ### Casting
 
 ```java
-Cirkel c = (Cirkel) vormen[i];
-c.getStraal();
+Vorm v = new Cirkel(); // (Automatic) Upcasting
 
-Vorm v = (Vorm) vormen[i];
+Cirkel c = (Cirkel) v; // Downcasting
 ```
 
 > Abstracten dienen om van te erven. Wil je niet meer erven, die klasse kan je `final` declareren. 
