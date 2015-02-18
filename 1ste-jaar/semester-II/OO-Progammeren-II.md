@@ -42,3 +42,31 @@ final Student s = new Student(...);  // Adres
 ```
 
 `finalize()` methode, deze methode wordt aangeroepen door de garbage collector bij het verwijderen van een object.
+
+
+### Polymorfisme
+
+**Voorbeelden:**
+
+| Vorm     |
+| -------- |
+| +teken() |
+
+| Driehoek                    |
+| --------------------------- |
+| -int hoogte<br>-int breedte |
+| +teken()                    |
+
+| Vierkant                    |
+| --------------------------- |
+| -int zijde                  |
+| +teken()                    |
+
+| Cirkel                          |
+| ------------------------------- |
+| -int straal<br>-int x<br>-int y |
+| +teken()                        |
+
+```java
+Vorm vormen[] = new Vormen[10];
+```
