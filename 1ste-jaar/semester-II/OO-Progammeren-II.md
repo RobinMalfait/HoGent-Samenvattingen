@@ -44,13 +44,15 @@ final Student s = new Student(...);  // Adres
 `finalize()` methode, deze methode wordt aangeroepen door de garbage collector bij het verwijderen van een object.
 
 
-### Overerving
+### Overerving / Polymorfisme
 
 **Voorbeelden:**
 
 | Vorm     |
 | -------- |
 | +teken() |
+
+<br>
 
 | Driehoek                    |
 | --------------------------- |
@@ -69,4 +71,15 @@ final Student s = new Student(...);  // Adres
 
 ```java
 Vorm vormen[] = new Vormen[10];
+
+vormen[0] = new Vierkant(5);
+vormen[1] = new Driehoek(2, 3);
+vormen[2] = new Cirkel(10, 50, 50);
+
+...
+
+for (Vorm vorm : vormen) 
+{
+    vorm.teken();
+} 
 ```
