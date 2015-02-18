@@ -38,7 +38,7 @@ Subklasse = specialisatie
 
 ```java
 final int X = 6;                     // Waarde
-final Student s = new Student(...);  // Adres
+final Student S = new Student(...);  // Adres
 ```
 
 `finalize()` methode, deze methode wordt aangeroepen door de garbage collector bij het verwijderen van een object.
