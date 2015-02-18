@@ -44,7 +44,7 @@ final Student s = new Student(...);  // Adres
 `finalize()` methode, deze methode wordt aangeroepen door de garbage collector bij het verwijderen van een object.
 
 
-### Polymorfisme
+### Overerving
 
 **Voorbeelden:**
 
