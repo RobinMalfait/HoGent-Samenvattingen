@@ -48,7 +48,7 @@ final Student S = new Student(...);  // Adres
 
 **Voorbeelden:**
 
-![](afbeeldingen/1ste-jaar/semester-II/OO-programmeren-II/overerving_polymorfisme.png)
+![](/afbeeldingen/1ste-jaar/semester-II/OO-programmeren-II/overerving_polymorfisme.png)
 
 ```java
 public abstract class Vorm {
