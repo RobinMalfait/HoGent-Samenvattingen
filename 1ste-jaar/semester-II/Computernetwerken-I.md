@@ -97,3 +97,56 @@ Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen o
 | IETF  | Internet Engineering Task Force                     | Laag 3 tot 5      |
 | ICANN | Interent Corporation for Assigned Names and numbers | &nbsp;            |
 | IAB   | Internet Architecture Board                         | &nbsp;            |
+
+En vele anderen ...
+
+## Intranet en Extranet
+
+Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
+
+## Verbinden met het internet
+
+| Abbr. | Description             | Provider |
+| ----- | ----------------------- | -------- |
+| DSl   | Digital Subscriber Line | Proximus |
+| Cable | COAX Cable              | Telenet  |
+
+**Asymmetrisch dienst:** Download is hoger dan Upload.
+
+**Symmetrisch dienst:** Download even hoog dan Upload.
+
+## Het convergerend netwerk
+
+**Vroeger:**
+
+1. Telefoon Netwerk
+2. Computer Netwerk
+
+**Nu:**
+
+Willen we 1 netwerk om met alle devices op te kunnen.
+
+### Ondersteunende Netwerkarchitecture
+
+1. Fouttolerantie
+2. Kwalitiet van de dienst (QoS)
+3. Schaalbaarheid
+4. Veiligheid
+
+
+## Circuit Switched Network
+
+> Er wordth een `path` vastgelegd en gereserveerd. Communicatie kan in bijde richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
+
+## Packet-Switched Network
+
+> Welke verbinding is optimaal om jouw informatie te versturen. Bijvoorbeeld: werken via het internet.
+> 
+> Fouttolerantie: foutje? Andere weg kiezen. 
+
+## Schaalbaarheid
+
+> **Tier**: Lagen (Telenet, Proximus, ...)
+
+Het internet heeft een hiërarchische gelaagde structuur.
+
