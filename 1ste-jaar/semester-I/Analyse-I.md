@@ -135,24 +135,18 @@ Wat is een Use Case
 ## Voorbeeld van een use case:
 (hoe het er uit moet zien)
 
-**Use Case:** Naam van de use case
-
-**Situering:** Korte beschrijving
-
-**Primaire Actor:** de entiteit (belangrijke partij!) die de use case instantieert
-
+**Use Case:** Naam van de use case<br>
+**Situering:** Korte beschrijving<br>
+**Primaire Actor:** de entiteit (belangrijke partij!) die de use case instantieert<br>
 **Pre Conditie:**
-
 - Voorwaarden voldaan voor een succes (Voor de use case)
 - nodige voorwaarden 
 
-**Post Conditie:** Voorwaarden voldaan na een succes
-
+**Post Conditie:** Voorwaarden voldaan na een succes<br>
 **Normaal verloop:** (Main Succes Scenario)
 
 - Lijst van acties die het systeem moet doen om tot een succes te geraken
 - Wie / Wat
 
-**Alternatieve Verlopen:** uitbreidingen/uitzonderingen + referentie naar de stap in het main succes scenario
-
+**Alternatieve Verlopen:** uitbreidingen/uitzonderingen + referentie naar de stap in het main succes scenario<br>
 **Domeinregels:** Beperkingen/voorwaarden die geldig moeten zijn in het systeem (VB.: Wachtwoord moet min 6 tekens zijn)
