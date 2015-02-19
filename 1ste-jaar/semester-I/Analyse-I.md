@@ -95,3 +95,64 @@ Object:
 ## UML
 
 Unified Modelling Language (Notatie wijze)
+
+**Voordelen:**
+
+- Visualisatie
+- Communicatie (klant <—> programmeurs)
+- Transformatie
+
+**Sequentiediagram:**
+
+Dynamische levenslijnen
+
+## Use Case vs Verhaal
+
+verhaal:
+
+- geen structuur
+- irrelevante informatie
+- warrig verteld
+
+Use Case Diagram:
+
+- UML Diagram
+- Alle taken die het systeem uitvoert
+- Actor (Persoon **OF** Extern Systeem)
+    - De ‘starter’ is de Primaire Actor
+
+    
+Wat is een Use Case
+
+- tekstuele beschrijving van een taak
+- beschrijft gebruik (doel)
+- Begrijpbaar voor alle partijen
+- Contract
+- **Functionele vereisten**
+
+**Wat het doet** en niet hoe hij het doet
+
+## Voorbeeld van een use case:
+(hoe het er uit moet zien)
+
+**Use Case:** Naam van de use case
+
+**Situering:** Korte beschrijving
+
+**Primaire Actor:** de entiteit (belangrijke partij!) die de use case instantieert
+
+**Pre Conditie:**
+
+- Voorwaarden voldaan voor een succes (Voor de use case)
+- nodige voorwaarden 
+
+**Post Conditie:** Voorwaarden voldaan na een succes
+
+**Normaal verloop:** (Main Succes Scenario)
+
+- Lijst van acties die het systeem moet doen om tot een succes te geraken
+- Wie / Wat
+
+**Alternatieve Verlopen:** uitbreidingen/uitzonderingen + referentie naar de stap in het main succes scenario
+
+**Domeinregels:** Beperkingen/voorwaarden die geldig moeten zijn in het systeem (VB.: Wachtwoord moet min 6 tekens zijn)
