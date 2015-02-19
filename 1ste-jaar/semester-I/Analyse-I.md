@@ -6,7 +6,7 @@
 - Communicatie: Team-verband
 - Geld
 
-Meer mensen betekent niet betere software. Communicatie neemt ook toe waardoor communicatie moeilijker wordt. Neemt polynomiaal toe.
+> Meer mensen betekent niet betere software. Communicatie neemt ook toe waardoor communicatie moeilijker wordt. Neemt polynomiaal toe.
 
 | Tamme Problemen                            | Wicked Problemen        |
 | ------------------------------------------ | ----------------------- |
@@ -70,12 +70,12 @@ Simpel process (Voor kleinere software projecten)
 
 **Agile Manifesto:**
 
-| &nbsp;                       | over   | &nbsp;                      |
-| ---------------------------: | ------ | --------------------------- |
-| Individualsand interactions  | &nbsp; | processes and tools         |
-| working software             | &nbsp; | comprehensive documentation |
-| customer collaboration       | &nbsp; | contract negotiation        |
-| responding to change         | &nbsp; | following a plan            |
+| &nbsp;                       | over     | &nbsp;                      |
+| ---------------------------: | :------: | --------------------------- |
+| Individualsand interactions  | &nbsp;   | processes and tools         |
+| working software             | &nbsp;   | comprehensive documentation |
+| customer collaboration       | &nbsp;   | contract negotiation        |
+| responding to change         | &nbsp;   | following a plan            |
 
 ## OOA/D
 
