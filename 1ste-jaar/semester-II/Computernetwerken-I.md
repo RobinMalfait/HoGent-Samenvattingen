@@ -3,12 +3,13 @@
 | Term | Description           |
 | ---- | --------------------- |
 | BYOD | Bring your own device |
+| QoS  | Quality of Service    |
 
-## Evolutie
+# Evolutie
 
 Vroeger papier, dan vaste pc's, nu byod.
 
-### Communicatie
+## Communicatie
 
 **Vroeger**: wachten tot je een persoon tegen kwam.
 
@@ -16,14 +17,14 @@ Vroeger papier, dan vaste pc's, nu byod.
 
 > Besparingen mogelijk voor bedrijven. *Bijvoorbeeld: Skype ipv hotel & vliegtuigtickets.*
 
-## Maten van netwerken
+# Maten van netwerken
 
 1. Small Home Networks (*thuisnetwerk*)
 2. Small Office/Home Office Networks (*SOHO*)
 3. Medium to Large Networks (*bedrijfsnetwerken*)
 4. World Wide Web (*Virtuele Netwerk*, het volledige 'internet')
 
-### Netwerk modellen
+## Netwerk modellen
 
 **Clients and Server**
 
@@ -45,3 +46,54 @@ Ieder toestel is een client en een server tegelijkertijd. (**Denk aan:** *torren
 - Beveiliging: elke pc gaan beveiligen.
 - Niet schaalbaar.
 - Performantie: tragere pc's omdat iedereen op jou pc kan.
+
+
+# Componenten van een netwerk
+
+1. Apparaten (*Switch, Router, ...*)
+2. Media (*Kabels, transmissiekanalen, ...*)
+3. Diensten (*Software, ...*)
+
+## 2 soorten apparaten
+
+**Eind Apparaten:** bijvoorbeeld een koffiezet, printer, ...
+
+**Tussenschakelstations:** een switch, router, ...
+
+### Tussenschakelstations
+
+Berichten/Packetjes worden gesegmenteerd, ze krijgen ook een header met informatie zoals van adres, naar adres, ... 
+
+> Bij een video primeerd de snelheid, en niet de kwaliteit. Kwaliteit van beeld/geluid moet niet 100% perfect zijn, want de mens hoort/ziet toch niet alles.
+
+Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen of via een bepaalde applicatie (*Via Firewall*).
+
+![](http://d.pr/i/GX6H+)
+
+
+## Toplogie diagrammen.
+
+> Topologie is geen technologie!
+
+**Technologie:** Techniek om iets te versturen, binaire logica op fysiek kanaal zetten.
+
+**Topologie:** De manier waarop apparaten met elkaar verbonden zijn.
+
+| Abbr. | Description               |
+| ----- | ------------------------- |
+| LAN   | Local Area Network        |
+| WAN   | Wide Area Network         |
+| PAN   | Personal Area Network     |
+| MAN   | Metropolitan Area Network |
+| WLAN  | Wireless LAN              |
+| SAN   | Storage Area Network      |
+| BAN   | Body Area Network         |
+
+
+## Het Internet
+
+| Abbr. | Descrption.                                         | Welke standaarden |
+| ----- | --------------------------------------------------- | ----------------- |
+| IETF  | Internet Engineering Task Force                     | Laag 3 tot 5      |
+| ICANN | Interent Corporation for Assigned Names and numbers | &nbsp;            |
+| IAB   | Internet Architecture Board                         | &nbsp;            |
