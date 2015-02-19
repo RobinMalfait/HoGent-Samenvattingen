@@ -149,4 +149,3 @@ Willen we 1 netwerk om met alle devices op te kunnen.
 > **Tier**: Lagen (Telenet, Proximus, ...)
 
 Het internet heeft een hiërarchische gelaagde structuur.
-
