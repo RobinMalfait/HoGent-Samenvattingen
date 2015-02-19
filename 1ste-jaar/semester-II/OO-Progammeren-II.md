@@ -129,7 +129,7 @@ Vorm v = new Cirkel(); // (Automatic) Upcasting
 Cirkel c = (Cirkel) v; // Downcasting
 ```
 
-> Abstracten dienen om van te erven. Wil je niet meer erven, die klasse kan je `final` declareren.
+> Abstracte klassen dienen om van te erven. Wil je niet meer erven van een klasse dan kan je die klasse `final` declareren.
 >
 > Algemeen kan je **attributen**, **klassen** en **methodes** `final` declareren.
 
