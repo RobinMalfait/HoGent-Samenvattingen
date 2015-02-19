@@ -6,8 +6,8 @@
 | ---- | ------------------------------------------------ | --------------------------------------------------- |
 | KSF  | Kritische succes factor                          | locatie, kwaliteit, deskundig, vriendelijkheid, ... |
 | SBU  | Strategisch bedrijfs onderderl (Business Unites) | Philips: TV's, Lightning en HealthCare              |
-| PMC  | Product - Markt Combinaties                      |                                                     |
-| R&D  | Research & Development                           |                                                     |
+| PMC  | Product - Markt Combinaties                      | &nbsp;                                              |
+| R&D  | Research & Development                           | &nbsp;                                              |
 
 #### Management:
 
