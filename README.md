@@ -17,3 +17,4 @@
 * [Strategisch Management](1ste-jaar/semester-II/Strategisch-Management.md)
 * [Probleem Oplossend Denken I](1ste-jaar/semester-II/Probleem-Oplossend-Denken-I.md)
     * [Oefeningen 1.4 &middot; Slide 15 - 17](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md)
+* [Computernetwerken I](1ste-jaar/semester-II/Computernetwerken-I.md)
