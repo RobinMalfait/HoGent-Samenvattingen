@@ -181,15 +181,15 @@ EINDE
 
 > Waarom tot vierkantswortel van n lopen:
 >
-> Stel n = n1 x n2
+> Stel n = n<sub>1</sub> x n<sub>2</sub>
 >
-> dan n1 ≤ √n of n2 ≤ √n
+> dan n<sub>1</sub> ≤ √n of n<sub>2</sub> ≤ √n
 >
 > Bewijs
 >
-> Stel n1 > √n en n2 > √n
+> Stel n<sub>1</sub> > √n en n<sub>2</sub> > √n
 >
-> n = n1 x n2 > √n x √n = n
+> n = n<sub>1</sub> x n<sub>2</sub> > √n x √n = n
 >
 > Dus, n > n, kan niet = contradictie
 
@@ -218,3 +218,118 @@ BEGIN
 	RETOUR aantal
 EINDE
 ```
+
+## Hoofdstuk 2
+
+> De tijd is rechtevenredig met het aantal instructies die uitgevoerd worden.
+>
+> We nemen aan dat alle basis instructies even lang duren, bijvoorbeeld: optelling, aftrekken, deling, vermenigvuldiging, ...
+
+### Het aantal instructies exact gaan tellen.
+
+#### Voorbeeld 1:
+
+```pascal
+BEGIN
+    kwadraat <- n . n
+    RETOUR (kwadraat)
+EINDE
+```
+
+| &nbsp;            | # instructies | # keer | totaal |
+| ----------------- | :-----------: | :----: | :----: |
+| kwadraat <- n x n | 2             | 1      | 2      |
+| RETOUR(kwadraat)  | 1             | 1      | 1      |
+| &nbsp;            | &nbsp;        | &nbsp; | 3      |
+
+`T(n)` = 3
+
+#### Voorbeeld 2:
+
+```pascal
+BEGIN
+    som <- 0
+    VOOR i = 1 TOT n DOE
+        som <- som + i . i
+    EINDE VOOR
+    RETOUR (som)
+EINDE
+```
+
+| &nbsp;                                     | # instructies | # keer | totaal |
+| ------------------------------------------ | :-----------: | :----: | :----: |
+| som <- 0                                   | 1             | 1      | 1      |
+| VOOR i = 1 TOT n DOE                       | 2             | n + 1  | 2n + 2 |
+| &emsp;som <- som + i . i | 3             | n      | 3n     |
+| EINDE VOOR                                 | &nbsp;        | &nbsp; | &nbsp; |
+| RETOUR (som)                               | 1             | 1      | 1      |
+| &nbsp;                                     | &nbsp;        | &nbsp; | 5n + 4 |
+
+`T(n) = 5n + 4`
+
+> Een `VOOR` lus heeft altijd 2 instructies.
+
+
+#### Voorbeeld 3:
+
+```pascal
+BEGIN
+    grootste <- 0
+    VOOR i = 0 TOT n - 1 DOE
+        ALS a[i] < grootste DAN
+            grootste <- a[i]
+        EINDE ALS
+    EINDE VOOR
+    RETOUR (grootste)
+EINDE
+```
+
+| &nbsp;                          | # instructies | # keer | totaal       |
+| ------------------------------- | :-----------: | :----: | :----------: |
+| grootste <- 0                   | 1             | 1      | 1            |
+| VOOR i = 0 TOT n - 1 DOE        | 2             | n + 1  | 2n + 2       |
+| &emsp;ALS a[i] < grootste DAN   | **1** c       | &nbsp; | &nbsp;       |
+| &emsp;&emsp;grootste <- a[i]    | **1** c       | n      | cn           |
+| &emsp;EINDE ALS                 | &nbsp;        | &nbsp; | &nbsp;       |
+| EINDE VOOR                      | &nbsp;        | &nbsp; | &nbsp;       |
+| RETOUR (grootste)               | 1             | 1      | 1            |
+| &nbsp;                          | &nbsp;        | &nbsp; | (2 + c)n + 4 |
+
+`T(n) = (2 + c)n + 4`
+
+
+#### Voorbeeld 4:
+
+```pascal
+BEGIN
+    som <- 0
+    VOOR i = 0 TOT n DOE
+        VOOR j = 1 TOT n DOE
+            som <- som + i . j
+        EINDE VOOR
+    EINDE VOOR
+    RETOUR (som)
+EINDE
+```
+
+| &nbsp;                          | # instructies | # keer        | totaal                  |
+| ------------------------------- | :-----------: | :-----------: | :---------------------: |
+| som <- 0                        | 1             | 1             | 1                       |
+| VOOR i = 0 TOT n DOE            | 2             | n + 1         | 2n + 2                  |
+| &emsp;VOOR j = 1 TOT n DOE      | 2             | (n + 1)n      | 2n<sup>2</sup> + 2n     |
+| &emsp;&emsp;som <- som + i . j  | 3             | n<sup>2</sup> | 3n<sup>2</sup>          |
+| &emsp;EINDE VOOR                | &nbsp;        | &nbsp;        | &nbsp;                  |
+| EINDE VOOR                      | &nbsp;        | &nbsp;        | &nbsp;                  |
+| RETOUR (grootste)               | 1             | 1             | 1                       |
+| &nbsp;                          | &nbsp;        | &nbsp;        | 5n<sup>2</sup> + 4n + 4 |
+
+`T(n) = 5n<sup>2</sup> + 4n + 4`
+
+
+### &Theta; notatie
+
+> **EXAMEN:** bepaal theta notatie. (Big &Theta; Notation).
+
+![](http://d.pr/i/12eU6+)
+
+![](http://d.pr/i/up9m+)
