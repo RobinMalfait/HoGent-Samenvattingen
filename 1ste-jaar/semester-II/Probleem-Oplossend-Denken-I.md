@@ -242,7 +242,7 @@ EINDE
 | RETOUR(kwadraat)  | 1             | 1      | 1      |
 | &nbsp;            | &nbsp;        | &nbsp; | 3      |
 
-`T(n)` = 3
+T(n) = 3
 
 #### Voorbeeld 2:
 
@@ -265,7 +265,7 @@ EINDE
 | RETOUR (som)                               | 1             | 1      | 1      |
 | &nbsp;                                     | &nbsp;        | &nbsp; | 5n + 4 |
 
-`T(n) = 5n + 4`
+T(n) = 5n + 4
 
 > Een `VOOR` lus heeft altijd 2 instructies.
 
@@ -295,7 +295,7 @@ EINDE
 | RETOUR (grootste)               | 1             | 1      | 1            |
 | &nbsp;                          | &nbsp;        | &nbsp; | (2 + c)n + 4 |
 
-`T(n) = (2 + c)n + 4`
+T(n) = (2 + c)n + 4
 
 
 #### Voorbeeld 4:
@@ -323,7 +323,11 @@ EINDE
 | RETOUR (grootste)               | 1             | 1             | 1                       |
 | &nbsp;                          | &nbsp;        | &nbsp;        | 5n<sup>2</sup> + 4n + 4 |
 
-`T(n) = 5n<sup>2</sup> + 4n + 4`
+T(n) = 5n<sup>2</sup> + 4n + 4
+
+T(n) = &Theta;(n<sup>2</sup>)
+
+> **Examen:** zorg dat je er de &Theta; bij zet!
 
 
 ### &Theta; notatie
