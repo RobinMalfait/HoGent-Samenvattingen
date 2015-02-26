@@ -334,9 +334,9 @@ T(n) = &Theta;(n<sup>2</sup>)
 
 > **EXAMEN:** bepaal theta notatie. (Big &Theta; Notation).
 
-![](http://d.pr/i/12eU6+)
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/n_is_5.png)
 
-![](http://d.pr/i/up9m+)
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/n_is_50.png)
 
 **Voorbeeld 1:**
 
