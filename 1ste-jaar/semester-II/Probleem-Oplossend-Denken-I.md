@@ -337,3 +337,134 @@ T(n) = &Theta;(n<sup>2</sup>)
 ![](http://d.pr/i/12eU6+)
 
 ![](http://d.pr/i/up9m+)
+
+**Voorbeeld 1:**
+
+```pascal
+som <- o
+VOOR i = 1 TOT n DOE
+    som <- som + i
+EINDE VOOR
+```
+
+T(n) = c<sub>1</sub> + c<sub>2</sub>n
+
+= &Theta;(n)
+
+**Voorbeeld 2:**
+
+```pascal
+som <- 0
+VOOR i = 1 TOT n DOE
+    VOOR j = 1 TOT i DOE
+        som <- som + j
+    EINDE VOOR
+EINDE VOOR
+```
+
+| i    | # keer lijn 4 |
+| :--: | :-----------: |
+| 1    | 1             |
+| 2    | 2             |
+| 3    | 3             |
+| n    | n             |
+
+1 + 2 + 3 + ... + n
+
+= ((n + 1) n) / 2
+
+> `((n + 1) n) / 2` is een geslote formule.
+
+T(n) = &Theta;(n<sup>2</sup>)
+
+**Voorbeeld 3:**
+
+```pascal
+som <- 0
+VOOR i = 1 TOT n DOE
+    VOOR j = 1 TOT n DOE
+        som <- som + j
+    EINDE VOOR
+EINDE VOOR
+```
+
+T(n) = &Theta;(n<sup>2</sup>)
+
+**Voorbeeld 4:**
+
+Stel: n = 2<sup>k</sup>
+
+```pascal
+som <- 0
+i <- i
+ZOLANG i ≤ n DOE
+    VOOR j = 1 TOT n DOE
+        som <- som + j
+    EINDE VOOR
+    i <- i . 2
+EINDE ZOLANG
+```
+
+bv.: n = 8 = 2<sup>3</sup>
+
+| i      | # keer lijn 6 |
+| :----: | :-----------: |
+| 1      | 8 (n keer)    |
+| 2      | 8 (n keer)    |
+| 4      | 8 (n keer)    |
+| 8      | 8 (n keer)    |
+| 16     | /             |
+| &nbsp; | (k + 1)n      |
+
+T(n) = ((lg(n)) + 1 ) n
+
+T(n) = n . lg(n) + n
+
+T(n) = &Theta;(ng lg(n))
+
+> In &Theta; notatie zijn alle `log`, `lg`, `ln` gelijk. Ze verschillen van een factor die geen rol speelt bij deze notatie.
+
+
+**Voorbeeld 5:**
+
+Stel: n = 2<sup>k</sup>
+
+```pascal
+som <- 0
+i <- i
+ZOLANG i ≤ n DOE
+    VOOR j = 1 TOT i DOE
+        som <- som + j
+    EINDE VOOR
+    i <- i . 2
+EINDE ZOLANG
+```
+
+| i      | # keer lijn 5 |
+| :----: | :-----------: |
+| 1      | 1             |
+| 2      | 2             |
+| 4      | 4             |
+| 8      | 8             |
+| 16     | /             |
+| &nbsp; | (k + 1)n      |
+
+T(n) = 1 + 2 + 4 + 8 + ... + 2<sup>k</sup>
+
+a = 2
+
+= 2<sup>k + 1</sup> - 1 / 2 - 1 = 2<sup>k + 1</sup> - 1 = 2 . 2<sup>k</sup> - 1 = 2n - 1
+
+T(n) = &Theta;(n)
+
+**Formule:**
+
+S<sub>k</sub> = 1 + a + a<sup>2</sup> + a<sup>3</sup> + ... + a<sup>k</sup>
+
+a . S<sub>k</sub> = a + a<sup>2</sup> + a<sup>3</sup> + ... + a<sup>k</sup> + a<sup>k + 1</sup>
+
+---
+
+S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
+
+(1 - a)S<sub>k</sub> = 1 - a<sup>k + 1</sup> / 1 - a = a<sup>k + 1</sup> - 1 / a - 1 = S<sub>k</sub>
