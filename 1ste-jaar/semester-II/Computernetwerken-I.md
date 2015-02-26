@@ -62,13 +62,13 @@ Ieder toestel is een client en een server tegelijkertijd. (**Denk aan:** *torren
 
 ### Tussenschakelstations
 
-Berichten/Packetjes worden gesegmenteerd, ze krijgen ook een header met informatie zoals van adres, naar adres, ... 
+Berichten/Packetjes worden gesegmenteerd, ze krijgen ook een header met informatie zoals van adres, naar adres, ...
 
 > Bij een video primeerd de snelheid, en niet de kwaliteit. Kwaliteit van beeld/geluid moet niet 100% perfect zijn, want de mens hoort/ziet toch niet alles.
 
 Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen of via een bepaalde applicatie (*Via Firewall*).
 
-![](http://d.pr/i/GX6H+)
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/devices.png)
 
 
 ## Toplogie diagrammen.
@@ -141,8 +141,8 @@ Willen we 1 netwerk om met alle devices op te kunnen.
 ## Packet-Switched Network
 
 > Welke verbinding is optimaal om jouw informatie te versturen. Bijvoorbeeld: werken via het internet.
-> 
-> Fouttolerantie: foutje? Andere weg kiezen. 
+>
+> Fouttolerantie: foutje? Andere weg kiezen.
 
 ## Schaalbaarheid
 
