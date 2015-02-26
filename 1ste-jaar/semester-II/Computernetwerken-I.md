@@ -136,13 +136,13 @@ Willen we 1 netwerk om met alle devices op te kunnen.
 
 ## Circuit Switched Network
 
-> Er wordth een `path` vastgelegd en gereserveerd. Communicatie kan in bijde richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
+Er wordt een `path` vastgelegd en gereserveerd. Communicatie kan in bijde richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
 
 ## Packet-Switched Network
 
-> Welke verbinding is optimaal om jouw informatie te versturen. Bijvoorbeeld: werken via het internet.
->
-> Fouttolerantie: foutje? Andere weg kiezen.
+Welke verbinding is optimaal om jouw informatie te versturen. Bijvoorbeeld: werken via het internet.
+
+Fouttolerantie: foutje? Andere weg kiezen.
 
 ## Schaalbaarheid
 
