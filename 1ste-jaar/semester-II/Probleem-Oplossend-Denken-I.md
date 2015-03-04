@@ -472,7 +472,7 @@ S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 ## Hoofdstuk 3
 
 
-```
+```pascal
 0! = 1
 n! = n x (n - 1)!       als n ≥ 1
 ```
@@ -536,7 +536,7 @@ Wie weet het geheim? Iedereen want het wordt doorgegeven.
 
 ---
 
-```
+```pascal
 Gegeven:        T(0) = 1
                 T(n) = T(n - 1) + 1             als n ≥ 1
 Te bewijzen:    T(n) = n + 1
@@ -546,7 +546,7 @@ Te bewijzen:    T(n) = n + 1
 > Kan op een examen komen!
 
 
-```
+```pascal
 1. Basisstap: verifieer dat het te bewijzen waar is voor n = 0
     Linker Lid:     T(0)                        = 1 (gegeven)
     Rechter Lid:    n + 1 = 0 + 1               = 1
@@ -560,3 +560,23 @@ Te bewijzen:    T(n) = n + 1
 ```
 
 > T(n) = &Theta;(n)
+
+
+### Torens van Hanoi
+
+| n | # Bewegingen | 
+| - | ------------ |
+| 1 | 1            |
+| 2 | 3            |
+| 3 | 7            |
+| 4 | 15           |
+| 5 | 31           |
+
+**Recursiebetrekking:**
+
+```pascal
+T(1) = 1
+T(n) = 2 T(n - 1) + 1       als n ≥ 2
+```
+
+Gok: (n) = 2<sup>n</sup>-1
