@@ -468,3 +468,95 @@ a . S<sub>k</sub> = a + a<sup>2</sup> + a<sup>3</sup> + ... + a<sup>k</sup> + a<
 S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 
 (1 - a)S<sub>k</sub> = 1 - a<sup>k + 1</sup> / 1 - a = a<sup>k + 1</sup> - 1 / a - 1 = S<sub>k</sub>
+
+## Hoofdstuk 3
+
+
+```
+0! = 1
+n! = n x (n - 1)!       als n ≥ 1
+```
+Voorbeeld:
+
+```
+4! = 4 x 3!
+   = 4 x (3 x 2!)
+   = 4 x (3 x (2 x 1!))
+   = 4 x (3 x (2 x (1 x 0!)))
+   = 4 x (3 x (2 x (1 x 1)))
+   = 4 x (3 x (2 x 1))
+   = 4 x (3 x 2)
+   = 4 x 6
+   = 24
+```
+```pascal
+berekenFaculteit(I: n: geheel getal): fac: geheel getal
+    * preconditie: n is een natuurlijk getal
+    * postcondotie: n! werd berekend
+    * gebruikt: berekenFaculteit
+BEGIN
+    ALS n = 0 DAN
+        faculteit <- 1
+    ANDERS
+        faculteit <- n . berekenFaculteit(n - 1)
+    EINDE ALS
+    RETOUR (faculteit)
+EINDE
+```
+**Hoe lang duurt dit?**
+
+T(0) = &Theta;(1)<br>
+T(n) = T(n - 1) + &Theta;(1)    als n ≥ 1
+
+**Na vereenvoudiging:**
+
+T(0) = 1<br>
+T(n) = T(n - 1) + 1             als n ≥ 1
+
+**Uitwerking:**
+
+T(0) = 1<br>
+T(1) = T(0) + 1 = 1 + 1 = 2<br>
+T(2) = T(1) + 1 = 2 + 1 = 3<br>
+T(3) = T(2) + 1 = 3 + 1 = 4<br>
+T(4) = T(3) + 1 = 4 + 1 = 5<br>
+
+Gok:<br>
+T(n) = n + 1
+
+
+### Bewijs (Door inductie):
+
+> Stel je hebt een oneindige rij van personen P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub>, P<sub>5</sub>, ...
+
+1. De eerste persoon in de rij weet een geheim
+2. Als een persoon een geheim weet dan vertelt die het door aan de volgende persoon in de rij.
+
+Wie weet het geheim? Iedereen want het wordt doorgegeven.
+
+---
+
+```
+Gegeven:        T(0) = 1
+                T(n) = T(n - 1) + 1             als n ≥ 1
+Te bewijzen:    T(n) = n + 1
+```
+**Bewijs:**
+
+> Kan op een examen komen!
+
+
+```
+1. Basisstap: verifieer dat het te bewijzen waar is voor n = 0
+    Linker Lid:     T(0)                        = 1 (gegeven)
+    Rechter Lid:    n + 1 = 0 + 1               = 1
+
+2. Inductiestap: 
+    Veronderstel dat T(m) = m + 1               als m ≤ n
+                     (Inductiehypothese)
+    T(n + 1) = T(n) + 1                         (gegeven)
+             = (n + 1) + 1
+             = n + 2                            QED
+```
+
+> T(n) = &Theta;(n)
