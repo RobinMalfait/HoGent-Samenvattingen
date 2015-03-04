@@ -539,8 +539,10 @@ Wie weet het geheim? Iedereen want het wordt doorgegeven.
 ```pascal
 Gegeven:        T(0) = 1
                 T(n) = T(n - 1) + 1             als n ≥ 1
-Te bewijzen:    T(n) = n + 1
 ```
+
+Te bewijzen:    T(n) = n + 1
+
 **Bewijs:**
 
 > Kan op een examen komen!
@@ -580,3 +582,52 @@ T(n) = 2 T(n - 1) + 1       als n ≥ 2
 ```
 
 Gok: (n) = 2<sup>n</sup>-1
+
+---
+
+```pascal
+Gegeven:        T(1) = 1
+                T(n) = 2T(n - 1) + 1             als n ≥ 2
+```
+
+Te bewijzen: T(n) = 2<sup>n</sup>-1 als ≥ 1
+
+**Bewijs:**
+
+
+1. Basisstap: verifieer dat het te bewijzen waar is voor n = 1
+
+    Linker Lid:     T(1) = 1                    (gegeven)<br>
+    Rechter Lid:    2<sup>n</sup>-1 = 2<sup>1</sup> - 1 = 2 - 1 = 1
+
+2. Inductiestap: 
+    Veronderstel dat T(m) = 2<sup>m</sup> - 1   als m ≤ n
+                     (Inductiehypothese)
+                     
+    T(n + 1) = 2T(n) + 1 (gegeven)<br>
+    (inductiefase)<br>
+    = 2 . (2<sup>n</sup> - 1) + 1<br>
+    = 2<sup>n + 1</sup> - 2 + 1<br>
+    = 2<sup>n + 1</sup> - 1<br>
+    
+T(n) = &Theta;(2<sup>n</sup>)
+
+\# Zetten = 2<sup>64</sup>-1 = 1,84467441 x 10<sup>19</sup>
+
+1 Schijf per dag
+
+\# jaar = 5,05 x 10<sup>16</sup> jaar
+
+leeftijd aarde = 4,5 x 10<sup>19</sup> jaar
+
+1 schijf per seconde
+
+\# jaar = 5,85 x 10<sup>11</sup> jaar
+
+leeftijd universum = 13,8 x 10<sup>9</sup> jaar
+
+### De rij van Fibonacci
+
+F<sub>0</sub> = 1<br>
+F<sub>1</sub> = 1<br>
+F<sub>n</sub> = F<sub>n - 1</sub> + F<sub>n - 2</sub> als n ≥ 2
