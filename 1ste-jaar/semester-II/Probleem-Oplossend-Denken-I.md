@@ -632,6 +632,8 @@ F<sub>0</sub> = 1<br>
 F<sub>1</sub> = 1<br>
 F<sub>n</sub> = F<sub>n - 1</sub> + F<sub>n - 2</sub> als n ≥ 2
 
+> Het volgende algoritme werkt maar is zeer traag.
+
 ```pascal
 berekenFibRec(I: n: geheel getal): getal: geheel getal
     * Preconditie: n is een natuurlijk getal.
@@ -643,6 +645,28 @@ BEGIN
     ANDERS
         getal <- berekenFibRec(n - 1) + berekenFibRec(n - 2)
     EINDE ALS
+    RETOUR (getal)
+EINDE
+```
+T(n) = T(n - 1) + T(n - 2) + &Theta;(1)<br>
+T(n) ≥ (3/2)<sup>n-2</sup> voor n ≥ 1
+
+> Het volgende algoritme is veel sneller.
+
+```pascal
+berekenFibRec(I: n: geheel getal): getal: geheel getal
+    * Preconditie: n is een natuurlijk getal.
+    * Postconditie: het n-de Fibonacci-getal werd geretourneerd.
+    * Gebruikt: /
+BEGIN
+    voorvorig <- 1
+    vorig <- 1
+    getal <- 1
+    VOOR i = 2 TOT n
+        getal <- voorvorig + vorig
+        voorvorig <- vorig
+        vorig <- getal
+    EINDE VOOR
     RETOUR (getal)
 EINDE
 ```
