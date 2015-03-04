@@ -631,3 +631,18 @@ leeftijd universum = 13,8 x 10<sup>9</sup> jaar
 F<sub>0</sub> = 1<br>
 F<sub>1</sub> = 1<br>
 F<sub>n</sub> = F<sub>n - 1</sub> + F<sub>n - 2</sub> als n ≥ 2
+
+```pascal
+berekenFibRec(I: n: geheel getal): getal: geheel getal
+    * Preconditie: n is een natuurlijk getal.
+    * Postconditie: het n-de Fibonacci-getal werd geretourneerd.
+    * Gebruikt: berekenFibRec
+BEGIN
+    ALS (n = 0 of n = 1) DAN
+        getal <- 1
+    ANDERS
+        getal <- berekenFibRec(n - 1) + berekenFibRec(n - 2)
+    EINDE ALS
+    RETOUR (getal)
+EINDE
+```
