@@ -654,7 +654,7 @@ T(n) ≥ (3/2)<sup>n-2</sup> voor n ≥ 1
 > Het volgende algoritme is veel sneller.
 
 ```pascal
-berekenFibRec(I: n: geheel getal): getal: geheel getal
+berekenFibIter(I: n: geheel getal): getal: geheel getal
     * Preconditie: n is een natuurlijk getal.
     * Postconditie: het n-de Fibonacci-getal werd geretourneerd.
     * Gebruikt: /
@@ -670,3 +670,5 @@ BEGIN
     RETOUR (getal)
 EINDE
 ```
+
+T(n) = &Theta;(n)
