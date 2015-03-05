@@ -224,3 +224,30 @@ Packet gemaakt met TCP: IP Packet
 Packet gemaakt met UDP: Datagram
 
 > arp: address resolution protocol
+
+### Waarom de switch
+
+1. Naam instellen
+    1. beginnen met een letter
+    2. geen spaties
+    3. eindigen met een letter of cijfer
+    4. gebruik alleen letters, cijfers en streepjes
+    5. minder dan 64 tekens lang
+2. beperkingen instellen
+3. Banner berichten configureren
+4. Configuratie bewaren
+
+
+`enable` in de command line typen om van `Switch>` naar `Switch#` te gaan, dit is een user met alle priveleges!
+
+### Banner berichten
+
+`Welcome bob` als je aanmeldt.
+
+`banner motd #This is a secure system. Authorized Access ONLY!!!#`
+
+### IP Adressering van apparaten
+
+Default gateway: IP van router in ander netwerk
+
+DNS: Omzetten van hostname naar ip
