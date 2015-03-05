@@ -177,3 +177,43 @@ NVRAM: Non-volatile random-access memory
 -> Om je configuratie file op te slaat, moest je je machine uitschakelen en opnieuw starten.
 
 POST: Power On Self Test
+
+-> Wordt uitgevoerd bij het opstarten van een router, switch of computer.
+
+| Commando               |
+| ---------------------- |
+| show version           |
+| show flash             |
+| show interface         |
+| show processes         |
+| show cdp neighbors     |
+| show arp               |
+| show mac-address-table |
+| show vlan              |
+| show running-config    |
+| show startup-config    |
+
+| TCP/IP          | uitleg                                                               |
+| --------------- | -------------------------------------------------------------------- |
+| Applicatie Laag | Je stuurt een mailtje                                                |
+| Transport Laag  | Header toevoegen (protocol udp/tcp) (Ingepakt packetje: **segment**) |
+| Netwerk Laag    | Segment wordt ingepakt (inkapseling) + IP wordt toegevoegd           |
+| Data-link Laag  | &nbsp;                              |
+| Fysieke Laag    | &nbsp;                              |
+
+> Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16byte
+
+| Abbr. | Voluit | Info |
+| ----- | ------ | ---- |
+| TCP | Transmission Control Protocol | Packetje komt 100% perfect aan, in de juiste volgorde: Dit packet is veel groter; 3-way handshake methode; controle via acknowledgment; id toevoegen om duplicaten te voorkomen; Correcte informatie aan de hand van een checksum; 20Byte groot aan headers max 60byte groot; lengte van header standaard = 0101 max 1111 |
+| UDP | User Datagram Protocol | Zal niet altijd 100% perfect zijn, het wordt niet gegarandeerd; header is 2 regels groot; grootte van udp header is 8byte groot |
+| IP | Internet Protocol | &nbsp; |
+| ICMP | Internet Control Message Protocol | &nbsp; |
+
+IP & ICMP werken altijd samen.
+
+Packet gemaakt met TCP: IP Packet
+
+Packet gemaakt met UDP: Datagram
+
+> arp: address resolution protocol
