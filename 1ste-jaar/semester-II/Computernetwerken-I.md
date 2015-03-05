@@ -195,20 +195,27 @@ POST: Power On Self Test
 
 | TCP/IP          | uitleg                                                               |
 | --------------- | -------------------------------------------------------------------- |
-| Applicatie Laag | Je stuurt een mailtje                                                |
+| Applicatie Laag | Je stuurt een mailtje **Data of packet**                             |
 | Transport Laag  | Header toevoegen (protocol udp/tcp) (Ingepakt packetje: **segment**) |
-| Netwerk Laag    | Segment wordt ingepakt (inkapseling) + IP wordt toegevoegd           |
-| Data-link Laag  | &nbsp;                              |
-| Fysieke Laag    | &nbsp;                              |
+| Netwerk Laag    | Segment wordt ingepakt (inkapseling) + IP wordt toegevoegd **IP-packet/Data gram** |
+| Data-link Laag  | Ingepakt + header + trailer worden toegevoegd **Frame**              |
+| Fysieke Laag    | &nbsp; |
 
-> Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16byte
+> (Applicatie laag) Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16byte
+> 
+> (Netwerk Laag) Belangrijkste informatie van een header is het IP adres van ontvanger & verzender
+> 
+> (Data-link Laag) Belangrijkste informatie van een header is het MAC Adres
+> 
+> (Fysieke Laag)
 
-| Abbr. | Voluit | Info |
-| ----- | ------ | ---- |
-| TCP | Transmission Control Protocol | Packetje komt 100% perfect aan, in de juiste volgorde: Dit packet is veel groter; 3-way handshake methode; controle via acknowledgment; id toevoegen om duplicaten te voorkomen; Correcte informatie aan de hand van een checksum; 20Byte groot aan headers max 60byte groot; lengte van header standaard = 0101 max 1111 |
-| UDP | User Datagram Protocol | Zal niet altijd 100% perfect zijn, het wordt niet gegarandeerd; header is 2 regels groot; grootte van udp header is 8byte groot |
+| Abbr. | Voluit                | Info |
+| ----- | --------------------- | ---- |
+| TCP | Transmission Control Protocol | Packetje komt 100% perfect aan, in de juiste volgorde: Dit packet is veel groter<br> 3-way handshake methode<br> controle via acknowledgment<br>id toevoegen om duplicaten te voorkomen<br> Correcte informatie aan de hand van een checksum<br> 20Byte groot aan headers max 60byte groot<br> lengte van header standaard = 0101 max 1111 |
+| UDP | User Datagram Protocol | Zal niet altijd 100% perfect zijn, het wordt niet gegarandeerd<br> header is 2 regels groot; grootte van udp header is 8byte groot |
 | IP | Internet Protocol | &nbsp; |
 | ICMP | Internet Control Message Protocol | &nbsp; |
+| CRC | Cyclic Rendundancy Check | &nbsp; |
 
 IP & ICMP werken altijd samen.
 
