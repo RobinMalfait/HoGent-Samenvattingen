@@ -149,3 +149,31 @@ Fouttolerantie: foutje? Andere weg kiezen.
 > **Tier**: Lagen (Telenet, Proximus, ...)
 
 Het internet heeft een hiërarchische gelaagde structuur.
+
+
+# Commando's
+
+prompt command space argument.
+
+BV.: `ping 192.168.1.1`
+
+> Je hoeft niet het volledige commando te typen; Met een ? kan je meer info krijgen; Staat er een ^ onder dan is dat de plaats waar er iets fout staat.
+
+| Sneltoetsen | Beschrijving |
+| ----------- | ------------ |
+| Tab | Vult de rest van een gedeeltelijk getypt commando of sleutelwoord |
+| Ctrl-R | geeft opnieuw een lijn |
+| Ctrl-A | Gaat naar het begin van de regel |
+| Ctrl-Z | Sluit de configuratie mode en keert terug naar de gebruiker EXEC. |
+| Pijl omloog | Hiermee kan de gebruiker voorwaarts bladeren doorheen coormalige commando's |
+| Pijl omhoog | Hiermee kan de gebruiker achteruit bladeren doorheen voormalige commando's |
+| Ctrl-shift-6 | Hiermee kan een IOS proces onderbroken zoals ping of traceroute worden. |
+| Ctrl-C | Verlaat de huidige configuratie of het huidig commando. |
+
+> **Belangrijk: Slide 27!**
+
+NVRAM: Non-volatile random-access memory
+
+-> Om je configuratie file op te slaat, moest je je machine uitschakelen en opnieuw starten.
+
+POST: Power On Self Test
