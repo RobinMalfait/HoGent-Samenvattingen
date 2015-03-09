@@ -247,3 +247,11 @@ De managementstijl
 **Staff (staf of personeel)**
 
 Wat voor managers en medewerkers heeft de organisatie nu en wat voor managers en medewerkers denkt de organisatie in de toekomst nodig te hebben.
+
+**Skills**
+
+De skills
+
+**Systems**
+
+De systemen
