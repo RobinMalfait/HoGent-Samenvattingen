@@ -213,3 +213,9 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
     | ------- | ---------------------------------------------------------------------- |
     | Apple   | Gebruiksvriendleijk en futuristisch design van elektronisch apparatuur |
     | Intel   | Ontwerp & snelheid                                                     |
+    
+    
+### 7s-model
+
+![](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/McKinsey_7S_framework.svg/250px-McKinsey_7S_framework.svg.png)
+
