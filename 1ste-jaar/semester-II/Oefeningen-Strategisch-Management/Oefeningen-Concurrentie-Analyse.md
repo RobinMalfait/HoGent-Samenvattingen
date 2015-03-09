@@ -10,7 +10,7 @@
 
 **Belangrijkste kenmerken:** innovatief, design, ...
 
-**Belangrijkste strategieschema's:** zoveel mogelijk kennis opkomen van andere bedrijven.
+**Belangrijkste strategiethema's:** zoveel mogelijk kennis opkomen van andere bedrijven.
 
 **Belangrijkste allianties:** IBM, ...
 
@@ -24,8 +24,23 @@
 
 **Missie:** De wereld inspireren met innovatieve technieken, producten en ontwerpen die het leven van mensen verrijken en bijdragen aan een sociaal veraantwoorde, duurzame toekomst.
 
+**Belangrijkste strategithema's:** Creativiteit, partnership, geweldige mensen
+
+
+## Nokia
+
+**Belangrijkste elementen van de missie:** Lumnia
+
+**Belangrijkste markten:** Jong en Oud
+
+**Waarom Nokia en geen Apple:** gebruiksgemak, batterij gaat lang mee voor de prijs.
+
+**Missie:** Technologieën voor een verbonden wereld.
+
+**Belangrijkste strategiethema's:**
+
 ## LG
 
-**Vision:** LG's visie is om innovatieve digitale producten en diensten die het leven van onze klanten beter te maken te leveren, gemakkelijker en gelukkiger door meer functionaliteit en plezier.
+**Vision:** LG’s vision is to deliver innovative digital products and services that make our customers’ lives better, easier and happier through increased functionality and fun.
 
 **Mission:** /
