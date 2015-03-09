@@ -255,3 +255,7 @@ De skills
 **Systems**
 
 De systemen
+
+### De waardeketen
+
+![](http://www.gertjanschop.com/sitebuildercontent/sitebuilderfiles/model_waardeketen_porter.jpg)
