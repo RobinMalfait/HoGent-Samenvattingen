@@ -217,7 +217,7 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
     
 ### 7s-model
 
-![](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/McKinsey_7S_framework.svg/250px-McKinsey_7S_framework.svg.png)
+![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/7s-model.png)
 
 **Shared Values** 
 
