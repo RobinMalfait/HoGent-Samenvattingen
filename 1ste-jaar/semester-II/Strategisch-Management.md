@@ -295,3 +295,14 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
 # Hoofdstuk 3: SWOT - analyse
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/swot_voorbeeld.png) 
+
+Strategische Opties:
+
+-> Criteria
+
+- Wordt het kernporbleem hiermee opgelost?
+- Maakt de optie gebruik van de geformuleerde kansen en sterkten en houdt de optie rekening met zwakten en bedreigingen?
+- Is de optie financieel haalbaar?
+- Is de optie uitvoerbaar?
+- Past de optie bij het bedrijf?
+- Is de optie aanvaardbaar voor alle stakeholders?
