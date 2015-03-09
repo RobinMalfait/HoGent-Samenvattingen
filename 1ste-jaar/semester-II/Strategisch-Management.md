@@ -258,7 +258,11 @@ De systemen
 
 ### De waardeketen
 
-![](http://www.gertjanschop.com/sitebuildercontent/sitebuilderfiles/model_waardeketen_porter.jpg)
+![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/model_waardeketen_porter.jpg)
 
 > Marketing: Doen wat je klanten willen
+
+### De Marge
+
+Het verschil tussen de totale kosten van alle primaire en ondersteunende activiteiten en de totale opbrengsten van de organisatie.
 
