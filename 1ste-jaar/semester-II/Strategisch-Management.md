@@ -228,7 +228,22 @@ Zorgt voor de samenhang van de overige factoren = de visie
 
 De voorgenomen acties van de organisatie
 
-**Structure (structuur)**
+**Structure (Structuur)**
 
 De formele inrichting van de organisatie
 
+> Matrix-organisatie: (Vooral in de ICT)
+
+| &nbsp;    | Project1 | Project2 | Project3 |
+| --------- | :------: | :------: | :------: |
+| Inkoop    | X        | &nbsp;   | X        |
+| Productie | &nbsp;   | X        | &nbsp;   |
+| Verkoop   | X        | &nbsp;   | &nbsp;   |
+
+**Style (Stijl)**
+
+De managementstijl
+
+**Staff (staf of personeel)**
+
+Wat voor managers en medewerkers heeft de organisatie nu en wat voor managers en medewerkers denkt de organisatie in de toekomst nodig te hebben.
