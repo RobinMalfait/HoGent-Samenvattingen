@@ -306,3 +306,15 @@ Strategische Opties:
 - Is de optie uitvoerbaar?
 - Past de optie bij het bedrijf?
 - Is de optie aanvaardbaar voor alle stakeholders?
+
+## SWOT-analyse in de praktijk
+
+**Te gebruiken voor:**
+
+Een effectieve manier om de sterkten en de zwakten van een organisatie in kaart te brengen en / of de kansen en bedrigingen voor de organisatie te onderzoeken.
+
+**Kritiek:**
+
+- De bestaande organisatie en trends
+- Gevestigde organisaties kunnen gemakkelijk het initiatief verlizen aan startende organisaties
+- Nooit volledige informatie
