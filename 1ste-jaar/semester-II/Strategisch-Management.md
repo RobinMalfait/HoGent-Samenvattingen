@@ -219,3 +219,16 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
 
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/McKinsey_7S_framework.svg/250px-McKinsey_7S_framework.svg.png)
 
+**Shared Values** 
+
+Zorgt voor de samenhang van de overige factoren = de visie
+-> Innovatie
+
+**Strategy (Strategie)**
+
+De voorgenomen acties van de organisatie
+
+**Structure (structuur)**
+
+De formele inrichting van de organisatie
+
