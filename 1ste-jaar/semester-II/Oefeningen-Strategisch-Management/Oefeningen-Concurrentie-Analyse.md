@@ -56,4 +56,4 @@
 **Belangrijkste strategithema's:** Strategische samenwerking tussen bedrijfsonderdelen — bedrijven met een verschillende infrastructuur die samen hun gemeenschappelijke belangen willen verdedigen in de snel veranderende wereldmarkt — kan voor een bestaande industrie een belangrijk groei-instrument zijn en kan zelfs tot compleet nieuwe activiteiten leiden.
 
 
-> Samnsung is de meest directe concurrent. Als je gaat kijken in het algemeen en niet naar smartphone's dan is Sony de meest directe concurrent.
+> Samnsung is de meest directe concurrent in de IT sector (telefonie). Als je gaat kijken in het algemeen en niet naar smartphone's dan is Sony de meest directe concurrent.
