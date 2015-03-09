@@ -268,7 +268,7 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
 
 
 
-Primaire activiteiten:
+**Primaire activiteiten:**
 
 - De ingaande logistiek
     - transport van de auto's + opslag van de voorraadauto's
@@ -280,3 +280,15 @@ Primaire activiteiten:
     - de verkopen van de auto's en de marketingactiviteiten
 - Service
     - service bij de verkopen + service bij onderhoude
+
+**Ondersteunende activiteiten:**
+
+- De infrastructuur van de organisatie
+    - De planning van de werkplaats, de administratie, onze regelgeving en de arbeidsovereenkomsten + de vergunningen
+- Human resource management
+    - De werving van het personeel + opleiden van de monteurs en ander personeel + beloningen van het personeel 
+- De technologische ontwikkelingen
+    - de media + verschillende technische ontwikkelingen
+- De verwerving
+    - De relatie met de importeur + de inrichting van het gebouw
+ 
