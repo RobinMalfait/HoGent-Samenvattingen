@@ -266,3 +266,17 @@ De systemen
 
 Het verschil tussen de totale kosten van alle primaire en ondersteunende activiteiten en de totale opbrengsten van de organisatie.
 
+
+
+Primaire activiteiten:
+
+- De ingaande logistiek
+    - transport van de auto's + opslag van de voorraadauto's
+- operaties met betrekking tot de proudctie van het eindproduct
+    -  nul-beurt + folie verwijderen + onderhoud van de machines
+- De uitgaande logistiek
+    - fysieke distributie van de auto (tot bij de klant brengen eventueel)
+- Marketing en verkoop
+    - de verkopen van de auto's en de marketingactiviteiten
+- Service
+    - service bij de verkopen + service bij onderhoude
