@@ -291,4 +291,7 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
     - de media + verschillende technische ontwikkelingen
 - De verwerving
     - De relatie met de importeur + de inrichting van het gebouw
- 
+
+# Hoofdstuk 3: SWOT - analyse
+
+![](https://www.werkplanet.nl/media/41346/swot_voorbeeld.png) 
