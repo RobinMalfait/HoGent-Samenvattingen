@@ -201,7 +201,7 @@ POST: Power On Self Test
 | Data-link Laag  | Ingepakt + header + trailer worden toegevoegd **Frame**              |
 | Fysieke Laag    | &nbsp; |
 
-> (Applicatie laag) Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16byte
+> (Applicatie laag) Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16bits
 > 
 > (Netwerk Laag) Belangrijkste informatie van een header is het IP adres van ontvanger & verzender
 > 
@@ -223,7 +223,7 @@ Packet gemaakt met TCP: IP Packet
 
 Packet gemaakt met UDP: Datagram
 
-> arp: address resolution protocol
+> **arp**: address resolution protocol
 
 ### Waarom de switch
 
@@ -251,3 +251,50 @@ Packet gemaakt met UDP: Datagram
 Default gateway: IP van router in ander netwerk
 
 DNS: Omzetten van hostname naar ip
+
+## Hoofdstuk 3
+
+Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver (oor) > Message Destination (Hersenen)
+
+1. Geïdentificeerde afzender en ontvanger
+2. Een overeenkomst van de communicatie methode (face-to-face, telefonisch, per brief, ...)
+3. Gemeenschappelijke taal en grammatica
+4. Snelheid en timing van levering
+5. Bevestiging of aanvaarding van de eisen
+
+### Protocollen:
+
+* Bericht *coderen*
+* Bericht *opmaak* en *inkapseling*
+* Bericht*grootte*
+* Bericht *timing*
+* *Leveringsopties* van het bericht
+
+**Opmaak & Inkapseling**
+
+Het plaatsen van een bericht in een ander bericht
+
+Elk computerbericht wordt ingekapseld in een bepaald formaat, een frame genoemd, voordat deze over het netwerk wordt verzonden.
+
+> De vorm en inhoud van een frame worden bepaald door het type bericht en het kanaal waarop het bericht verzonden wordt.
+
+**Berichtgrootte**
+
+* De grootte beperkingen van frames vereisen dat de bron host een lang bericht splitst in individuele stukken die voldoen aan zowel de minimum als de maximale grootte.
+* Elk pakketje is ingekapseld in een afzonderlijke frame met de adresinformatie en wordt vervolgens over het netwerk verzonden.
+* Aan de kant van ontvangende host worden de ingekapselde pakketjes terug uitgepakt en weer samengevoegd, verwerkt en geïnterpreteerd.
+
+**Bericht Timing**
+
+1. Togangsmethode
+2. Flow Control
+3. Response Timeout
+
+**Leveringsopties van het bericht**
+
+Unicast: naar 1 eindapparaat
+
+Multicast: naar meerdere eindapparaten
+
+Broadcast: naar alle eindapparaten in het netwerk (behalve naar de verzender)
+
