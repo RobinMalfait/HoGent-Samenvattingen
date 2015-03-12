@@ -298,3 +298,14 @@ Multicast: naar meerdere eindapparaten
 
 Broadcast: naar alle eindapparaten in het netwerk (behalve naar de verzender)
 
+> Een groep van onderling gerelateerde protocollen die nodig zijn om een communicatie-functie 
+uit te voeren wordt een **protocol suite** genoemd.
+>
+> Een **protocol stack is een gelaagd model** dat laat zien hoe de afzonderlijke protocollen binnen een suite worden uitgevoerd.
+
+Voorbeeld protocol stack:
+
+1. Hypertext Transfer Protocol (HTTP)
+2. Transmission Control Protocol (TCP)
+3. Internet Protocol (IP)
+4. Ethernet
