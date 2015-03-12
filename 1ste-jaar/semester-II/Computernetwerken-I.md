@@ -310,3 +310,12 @@ Voorbeeld protocol stack:
 3. **(Internetprotocol)** Internet Protocol (IP/ICMP)
 4. **(Netwerk Toegangsprotocol)** Ethernet
 
+**Netwerkprotocollen**
+
+1. Bepalen hoe het bericht wordt geformatteerd of gestructureerd
+2. Bepalen het proces waarbij netwerkapparaten informatie over padsbepaling uitwisselen met andere netwerken
+3. Bepalen hoe en wanneer fout- en systeem
+4. boodschappen worden doorgegeven tussen apparaten
+4. Bepalen de setup en de beëindiging van de data-overdracht sessies
+
+> Protocol Suite: verzameling protocollen die samenwerken.
