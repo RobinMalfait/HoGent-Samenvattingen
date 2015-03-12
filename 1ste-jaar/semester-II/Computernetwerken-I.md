@@ -338,8 +338,9 @@ Voorbeeld protocol stack:
 
 > IEEE 802.3 standaard voor bekabelde netwerken
 > IEEE 802.11 standaard voor draadloze netwerken
+> IEEE 802.15 bluetooth
 
-**Referentiemodel (7 lagen)**
+**Referentiemodel (OSI: 7 lagen)**
 
 OSI: Open System Interconenction
 
@@ -350,3 +351,68 @@ OSI: Open System Interconenction
 * Network
 * Data Link
 * Physical
+
+### Andere Standaarden Organisaties
+
+* The Electronic Industries Alliance (EIA)
+* The Telecommunications Industry Association (TIA)
+* The International Telecommunications Union – Telecommunications Standardization Sector (ITU-T)
+* The Internet Corporation for Assigned Names and Numbers (ICANN)
+* The Internet Assigned Numbers Authority (IANA)
+
+### Communiceren van de berichten
+
+**Voordelen** van het segmenteren van een bericht:
+
+* Verschillende gesprekken kunnen worden verweven
+* Verhoogd de betrouwbaarheid van netwerkcommunicatie
+
+**Nadeel** van het segmenteren van een bericht:
+
+* verhoogd het niveau van complexiteit
+
+> TDN: Time Division Multiplexing
+> 
+> FDN: Frequency Division Multiplexing
+
+### Protocol Data Units (PDUs)
+
+De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (PDU) genoemd.
+
+* Data
+* Segment
+* IP-Packat / Data-gram
+* Frame
+* Bits
+
+## Hoofdstuk 4
+
+De fysieke laag.
+
+`Home Router` Om de draadloze mogelijkheid te bieden, moet een netwerk over een draadloos toegangspunt (WAP) beschikken zodat apparaten verbinding kunnen maken.
+
+- Embedded Wireles Antenna
+- Ethernet Switch
+- Internet Connection (router)
+
+### Netwerk Interface Cards (NICs)
+
+Netwerkkaarten
+
+### Het fysieke medium
+
+- TP kabels (Twisted Pair)
+- Coax kabels
+- Draadloos: Microwaves
+
+![](http://d.pr/i/1isaQ+)
+
+PM: Fase
+
+### Kabels
+
+* UTP: Unshielded Twisted Pair
+* STP: Shielded Twisted Pair
+* FTP: Foiled Twisted Pair
+
+> Examen: plaats encoding bij media (Slide 13)
