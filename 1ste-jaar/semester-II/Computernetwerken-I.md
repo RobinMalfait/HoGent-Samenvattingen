@@ -305,7 +305,8 @@ uit te voeren wordt een **protocol suite** genoemd.
 
 Voorbeeld protocol stack:
 
-1. Hypertext Transfer Protocol (HTTP)
-2. Transmission Control Protocol (TCP)
-3. Internet Protocol (IP)
-4. Ethernet
+1. **(Applicatieprotocol)** Hypertext Transfer Protocol (HTTP)
+2. **(Transportprotocol)** Transmission Control Protocol (TCP)
+3. **(Internetprotocol)** Internet Protocol (IP/ICMP)
+4. **(Netwerk Toegangsprotocol)** Ethernet
+
