@@ -320,4 +320,6 @@ Voorbeeld protocol stack:
 
 > Protocol Suite: verzameling protocollen die samenwerken.
 
-![](http://d.pr/i/17GeU+)
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/protocol_suite.png)
+
+> Examen: plaats protocol op juiste laag
