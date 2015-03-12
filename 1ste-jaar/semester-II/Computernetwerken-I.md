@@ -319,3 +319,5 @@ Voorbeeld protocol stack:
 4. Bepalen de setup en de beëindiging van de data-overdracht sessies
 
 > Protocol Suite: verzameling protocollen die samenwerken.
+
+![](http://d.pr/i/17GeU+)
