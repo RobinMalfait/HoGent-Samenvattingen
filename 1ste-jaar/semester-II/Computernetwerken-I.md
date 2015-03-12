@@ -262,7 +262,7 @@ Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver 
 4. Snelheid en timing van levering
 5. Bevestiging of aanvaarding van de eisen
 
-### Protocollen:
+### Protocollen
 
 * Bericht *coderen*
 * Bericht *opmaak* en *inkapseling*
@@ -323,3 +323,30 @@ Voorbeeld protocol stack:
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/protocol_suite.png)
 
 > Examen: plaats protocol op juiste laag
+
+**Inkapseling**: inpakken van informatie
+
+**Dekapseling**: uitpakken van informatie
+
+### Open Standaarden
+
+* The Internet Society (ISOC)
+* The Internet Architecture Board (IAB)
+* The Internet Engineering Task Force (IETF) (Netwerk, transport, applicatie)
+* Institute of Electrical and Electronics * Engineers (IEEE) (Data-link, fysieke laag)
+* The International Organization for Standards (ISO)
+
+> IEEE 802.3 standaard voor bekabelde netwerken
+> IEEE 802.11 standaard voor draadloze netwerken
+
+**Referentiemodel (7 lagen)**
+
+OSI: Open System Interconenction
+
+7. Application
+6. Presentation
+5. Session
+4. Transport
+3. Network
+2. Data Link
+1. Physical
