@@ -318,3 +318,30 @@ Een effectieve manier om de sterkten en de zwakten van een organisatie in kaart 
 - De bestaande organisatie en trends
 - Gevestigde organisaties kunnen gemakkelijk het initiatief verlizen aan startende organisaties
 - Nooit volledige informatie
+
+# Strategieën op concernniveau
+
+1. Samenwerkingsverbanden
+    
+    > Als de kosten, het risico en het tempo waarmee men de strategie invoert.
+
+    **Fusie:** twee gelijkwaardige organisateis gaan samen<br>
+    Voordelen: Snelheid + geringe financiële gevolgen<br>
+    Nadelen: Luisteren naar elkaar
+    
+    **Overnames:** de ene organisatie neemt door middel van een vriendliejk of vijandig bod een andere over<br>
+    Voordelen: Volledige zeggenschap.
+    
+    **Joint venture:** twee organisaties richten samen een derde op
+    Voordelen: de toegang tot de kennis van een andere organisatie + minder financiële middelen nodig + het risico delen<br>
+    Nadeel: gedeelde zeggenschap.
+    
+    **Franchising:** een organisatie krijgt het recht om een voor een bepaalde branche ontwikkeld verkoopsysteem tegen betaling ten eigen bate toe te passen<br>
+    --> Afspraken houden + jaarlijks bedrag betalen
+    
+    **Strategische alliantie:** als twee min of meer gelijkwaardige organisaties op basis van overeenkomsten samenwerken<br>
+    VB.: 
+    
+    1. Philips + Jupiler = tapmachine
+    2. Philips + Douwe Egberts = Senseo Apparaat
+    
