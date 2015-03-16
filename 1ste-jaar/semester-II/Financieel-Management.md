@@ -49,6 +49,9 @@ Van China naar België = **Invoer / Import**
 
 ### NELUX-Verlegging
 
-Nederland > België (Btw in het land van bestemming, dus in dit geval België)
+Vroeger: BTW bij grens 6% btw betalen. (Betalen aan douane)
 
-Vroeger BTW bij grens 6% btw betalen. (Betalen aan douane)
+Nu: Nederland > België (Btw in het land van bestemming, dus in dit geval België)
+
+* Aftrekbare BTW
+* Verschuldigde BTW
