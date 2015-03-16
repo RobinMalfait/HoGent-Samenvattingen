@@ -345,7 +345,9 @@ VB.:
 1. Philips + Jupiler = tapmachine
 2. Philips + Douwe Egberts = Senseo Apparaat
 
-## Martkpenetratie
+## Ansoff-Matrix (Slide 97)
+
+### Martkpenetratie
 
 Verkopen van bestaande producten op bestaande markten.
 
@@ -356,19 +358,42 @@ Doel = Het vergroten van het huidige marktaandeel
 1. Klanten winnen van de concurrent
 2. Aan de huidige klanten meer dezelfde producten verkopen (Up Sell: Wil je nog een drankje)
 
-## Productontwikkeling
+### Productontwikkeling
 
 Verkopen van nieuwe producten aan bestaande klanten.
 
 1. Nieuwe producten introduceren ter vervanging van de oude huidige producten 
 2. Cross-selling
 
-## Marktontwikkeling
+### Marktontwikkeling
 
 Verkopen van bestaande producten op nieuwe markten.
 
 **Doel:** via nieuwe markten het huidige product extra te gaan verkopen
 
-## Diversificatie
+### Diversificatie
 
 Nieuw product in een nieuwe markt
+
+### Stabiliteit
+
+Wordt gekenmerkt door de afwezigheid van ingrijpende veranderingen
+
+Wanneer?
+ 
+ * De sector verkeert in een periode van snelle verstoringen, met externe factoren die ingrijpend veranderen en de toekomst onzeker maken
+ * De branche kent langzame of geen groeikansen
+ * Bewust keizen voor stabiliteit
+ 
+**Waarom niet uitbreiden?**
+
+VB.: West-vleteren
+
+Uitbreiding = Paters meer werken, meer stress
+
+## Vernieuwing
+
+### De inkrimpingsstrategie
+
+= Korte termijn + prestatieproblemen zijn niet zo ernstig
+
