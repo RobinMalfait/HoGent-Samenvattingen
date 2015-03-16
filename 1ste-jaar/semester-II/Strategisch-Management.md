@@ -356,3 +356,19 @@ Doel = Het vergroten van het huidige marktaandeel
 1. Klanten winnen van de concurrent
 2. Aan de huidige klanten meer dezelfde producten verkopen (Up Sell: Wil je nog een drankje)
 
+## Productontwikkeling
+
+Verkopen van nieuwe producten aan bestaande klanten.
+
+1. Nieuwe producten introduceren ter vervanging van de oude huidige producten 
+2. Cross-selling
+
+## Marktontwikkeling
+
+Verkopen van bestaande producten op nieuwe markten.
+
+**Doel:** via nieuwe markten het huidige product extra te gaan verkopen
+
+## Diversificatie
+
+Nieuw product in een nieuwe markt
