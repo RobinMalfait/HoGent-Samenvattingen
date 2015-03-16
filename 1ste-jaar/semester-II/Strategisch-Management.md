@@ -102,7 +102,7 @@ Gaat hij ons aanvallen of niet aanvallen?
 **Informatiebronnen**
 
 * **Interne bronnen:** (Financiën, R&D, Marketing, Verkoop, ...) (Informatie moeilijk te raadplegen)
-* **Externe bronnen:** 
+* **Externe bronnen:**
     * **Primaire Bronnen** (zelf onderzoek)
     * **Externe Secundaire Bronnen** (Informatie die al bestaat, BV.: kranten, jaarverslagen, ...)
 
@@ -141,7 +141,7 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
 
     **Variabele kost:** Hangt af van de hoeveelheid die je produceert (Grondstoffen)
     **Vaste kost:** Varieert niet naar de hoeveelheed die je produceert (Huur gebouw)
-    
+
     <table>
         <thead>
             <tr>
@@ -170,7 +170,7 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
                 <td>Een team</td>
                 <td>Het bedrijf</td>
             </tr>
-            
+
             <tr>
                 <td>Kenmerken</td>
                 <td colspan="2">Het zijn bezittingen</td>
@@ -204,22 +204,22 @@ Wat zijn de middelen en capaciteiten van mijn organisatie?
         4. De substitueerbaarheid
 
 5. Kerncompetenties
-    
+
     een bundel van competenties en technolgieën die een organisatie toelaten een bepaald voordeel te bezorgen aan de consument.
-    
+
     VB.:
-    
+
     | Merk    | Sterkten                                                               |
     | ------- | ---------------------------------------------------------------------- |
     | Apple   | Gebruiksvriendleijk en futuristisch design van elektronisch apparatuur |
     | Intel   | Ontwerp & snelheid                                                     |
-    
-    
+
+
 ### 7s-model
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/7s-model.png)
 
-**Shared Values** 
+**Shared Values**
 
 Zorgt voor de samenhang van de overige factoren = de visie
 -> Innovatie
@@ -286,7 +286,7 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
 - De infrastructuur van de organisatie
     - De planning van de werkplaats, de administratie, onze regelgeving en de arbeidsovereenkomsten + de vergunningen
 - Human resource management
-    - De werving van het personeel + opleiden van de monteurs en ander personeel + beloningen van het personeel 
+    - De werving van het personeel + opleiden van de monteurs en ander personeel + beloningen van het personeel
 - De technologische ontwikkelingen
     - de media + verschillende technische ontwikkelingen
 - De verwerving
@@ -294,7 +294,7 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
 
 # Hoofdstuk 3: SWOT - analyse
 
-![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/swot_voorbeeld.png) 
+![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/swot_voorbeeld.png)
 
 Strategische Opties:
 
@@ -321,27 +321,38 @@ Een effectieve manier om de sterkten en de zwakten van een organisatie in kaart 
 
 # Strategieën op concernniveau
 
-1. Samenwerkingsverbanden
-    
-    > Als de kosten, het risico en het tempo waarmee men de strategie invoert.
+## Samenwerkingsverbanden
 
-    **Fusie:** twee gelijkwaardige organisateis gaan samen<br>
-    Voordelen: Snelheid + geringe financiële gevolgen<br>
-    Nadelen: Luisteren naar elkaar
-    
-    **Overnames:** de ene organisatie neemt door middel van een vriendliejk of vijandig bod een andere over<br>
-    Voordelen: Volledige zeggenschap.
-    
-    **Joint venture:** twee organisaties richten samen een derde op
-    Voordelen: de toegang tot de kennis van een andere organisatie + minder financiële middelen nodig + het risico delen<br>
-    Nadeel: gedeelde zeggenschap.
-    
-    **Franchising:** een organisatie krijgt het recht om een voor een bepaalde branche ontwikkeld verkoopsysteem tegen betaling ten eigen bate toe te passen<br>
-    --> Afspraken houden + jaarlijks bedrag betalen
-    
-    **Strategische alliantie:** als twee min of meer gelijkwaardige organisaties op basis van overeenkomsten samenwerken<br>
-    VB.: 
-    
-    1. Philips + Jupiler = tapmachine
-    2. Philips + Douwe Egberts = Senseo Apparaat
-    
+> Als de kosten, het risico en het tempo waarmee men de strategie invoert.
+
+**Fusie:** twee gelijkwaardige organisateis gaan samen<br>
+Voordelen: Snelheid + geringe financiële gevolgen<br>
+Nadelen: Luisteren naar elkaar
+
+**Overnames:** de ene organisatie neemt door middel van een vriendliejk of vijandig bod een andere over<br>
+Voordelen: Volledige zeggenschap.
+
+**Joint venture:** twee organisaties richten samen een derde op
+Voordelen: de toegang tot de kennis van een andere organisatie + minder financiële middelen nodig + het risico delen<br>
+Nadeel: gedeelde zeggenschap.
+
+**Franchising:** een organisatie krijgt het recht om een voor een bepaalde branche ontwikkeld verkoopsysteem tegen betaling ten eigen bate toe te passen<br>
+--> Afspraken houden + jaarlijks bedrag betalen
+
+**Strategische alliantie:** als twee min of meer gelijkwaardige organisaties op basis van overeenkomsten samenwerken<br>
+VB.:
+
+1. Philips + Jupiler = tapmachine
+2. Philips + Douwe Egberts = Senseo Apparaat
+
+## Martkpenetratie
+
+Verkopen van bestaande producten op bestaande markten.
+
+Doel = Het vergroten van het huidige marktaandeel
+
+2 Manieren:
+
+1. Klanten winnen van de concurrent
+2. Aan de huidige klanten meer dezelfde producten verkopen (Up Sell: Wil je nog een drankje)
+
