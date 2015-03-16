@@ -45,4 +45,10 @@
 Wereld > EU > België
 
 Van EU naar België = ~~geen invoer~~ maar **Intracommunautaire Verwerving**
-Van China naar België = **Invoer / Import** 
+Van China naar België = **Invoer / Import**
+
+### NELUX-Verlegging
+
+Nederland > België (Btw in het land van bestemming, dus in dit geval België)
+
+Vroeger BTW bij grens 6% btw betalen. (Betalen aan douane)
