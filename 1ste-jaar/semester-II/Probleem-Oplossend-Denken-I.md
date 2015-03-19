@@ -672,3 +672,30 @@ EINDE
 ```
 
 T(n) = &Theta;(n)
+
+
+## Hoofdstuk 4
+
+> Zoek- en sorteeralgoritmen
+
+```pascal
+zoekSequentieel(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
+    * Preconditie: rijs ie een array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
+    * Postconditie: index geeft e waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
+    * Gebruikt: /
+BEGIN
+    i <- 0
+    // Volgorde is cruciaal (vals en iets anders is altijd vals bij een AND) => Short Circuit Evaluation
+    ZOLANG (i < n) EN (rij[i] ≠ zoekGetal) DOE
+        i <- i + 1 
+    EINDE ZOLANG
+
+    ALS (i = n) DAN
+        index <- -1
+    ANDERS
+        index <- i
+    EINDE ALS
+    
+    RETOUR (index)
+EINDE
+```
