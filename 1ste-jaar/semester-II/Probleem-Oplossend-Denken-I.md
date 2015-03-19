@@ -797,7 +797,7 @@ zoekSequentieelGesorteerd(I: zoekGetal: geheel getal, rij: array[] van gehele ge
     * Gebruikt: /
 BEGIN
     i <- 0
-    ZOLANG (i < n) EN (rij[i] ≠ zoekGetal) DOE
+    ZOLANG (i < n) EN (rij[i] < zoekGetal) DOE
         i <- i + 1 
     EINDE ZOLANG
 
