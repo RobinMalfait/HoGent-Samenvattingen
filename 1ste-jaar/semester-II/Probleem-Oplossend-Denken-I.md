@@ -700,10 +700,7 @@ BEGIN
 EINDE
 ```
 
-Oefeing a)
-
-| 1 | 2 | 3 | 4 | 6 |
-| - | - | - | - | - |
+### Oefeing a)
 
 ```pascal
 rij = [1, 2, 3, 4, 6]
@@ -728,4 +725,43 @@ zoekGetal = 6
 
 > &Theta;(n)
 
-Oefening b)
+### Oefening b)
+
+```pascal
+rij = [6, 4, 3, 2, 1]
+zoekGetal = 6
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 6      | Vals               |
+
+
+```pascal
+? i = n
+<=> 0 = 5 -> Vals
+    index <- i
+    index <- 0
+```
+
+> Als je getal voorraan staat, maakt het niet uit hoe lang de rij is, je uitvoeringsstij is constant
+
+### Oefening C)
+
+```pascal
+rij = [1, 3, 6, 4, 2]
+zoekGetal = 6
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 1      | Waar               |
+| 1   | 3      | Waar               |
+| 2   | 6      | Vals               |
+
+```pascal
+? i = n
+<=> 2 = 5 -> Vals
+    index <- i
+    index <- 2
+```
