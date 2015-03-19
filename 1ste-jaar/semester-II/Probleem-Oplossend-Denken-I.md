@@ -924,4 +924,69 @@ zoekGetal = 3
     index <- 2
 ```
 
-> **Op Examen!**
+**Oefening b)**
+
+```pascal
+rij = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+n = 9
+zoekGetal = 5
+```
+
+| l       | r       | m       | rij[m]    |
+| :-----: | :-----: | :-----: | :-------: |
+| 0       | &nbsp;  | &nbsp;  | &nbsp;    |
+| &nbsp;  | 8       | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 4       | 6         |
+| &nbsp;  | ***4*** | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 2       | 3         |
+| 3       | &nbsp;  | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 3       | 4         |
+| ***4*** | &nbsp;  | &nbsp;  | &nbsp;    | 
+
+> l = r
+
+```pascal
+? rij[l] = zoekGetal
+<=> rij[4] = 5
+    6 = 5 -> Vals
+    index <- -1
+```
+
+> ^ **Op Examen!**
+
+
+```pascal
+zoekRecursief(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
+    * Preconditie: rij is een gesorteere array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
+    * Postconditie: index geeft de waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
+    * Gebruikt: zoek
+BEGIN
+    index <- zoek(zoekGetal, rij, 0, n - 1)
+    RETOUR (index)
+EINDE
+
+zoek(I: zoekGetal: geheel getal, rij: array[] van gehele getallen, l, r: geheel getal): index: geheel getal
+    * Preconditie: rij is een gesorteerde array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array; l en r geven respectievelijk de posities weer waartussen zoekGetal wordt gezocht.
+    * Postconditie: index geeft de waarde -1 als zoekGetal niet voorkomt in rij tussen l en r en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij tussen l en r
+    * Gebruikt: zoek
+BEGIN
+    // Basiscase
+    ALS (l = r) DAN
+        ALS (rij[l] = zoekGetal) DAN
+            index <- l
+        ANDERS
+            index <- -1
+        EINDE ALS
+        
+    // Anders
+    ANDERS
+        m <- |_ ((l + r) / 2) _|
+        ALS (rij[m] < zoekGetal) DAN
+            index <- zoek(zoekGetal, rij, m + 1, r)
+        ANDERS
+            index <- zoek(zoekGetal, rij, l, m)
+        EINDE ALS
+    EINDE ALS
+    RETOUR (index)
+EINDE
+```
