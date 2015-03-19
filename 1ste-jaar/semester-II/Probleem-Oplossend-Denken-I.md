@@ -832,7 +832,6 @@ zoekGetal = 1
 
 **Oefening b)**
 
-
 ```pascal
 rij = [1, 3, 5, 7, 9]
 zoekGetal = 6
@@ -898,3 +897,31 @@ m = |_ ((2 + 3) / 2) _| = 2
 ```
 
 > l ≤ m < r
+
+**Oefening a)**
+
+```pascal
+rij = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+n = 9
+zoekGetal = 3
+```
+
+| l       | r       | m       | rij[m]    |
+| :-----: | :-----: | :-----: | :-------: |
+| 0       | &nbsp;  | &nbsp;  | &nbsp;    |
+| &nbsp;  | 8       | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 4       | 6         |
+| &nbsp;  | 4       | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 2       | 3         |
+| &nbsp;  | 2       | &nbsp;  | &nbsp;    |
+| &nbsp;  | &nbsp;  | 1       | 2         |  
+| 2       | &nbsp;  | &nbsp;  | &nbsp;    |
+
+```pascal
+? rij[l] = zoekGetal
+<=> 3 = 3 -> Waar
+    index <- l
+    index <- 2
+```
+
+> **Op Examen!**
