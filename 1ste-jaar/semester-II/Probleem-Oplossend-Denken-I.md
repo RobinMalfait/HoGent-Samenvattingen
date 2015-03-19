@@ -702,6 +702,9 @@ EINDE
 
 Oefeing a)
 
+| 1 | 2 | 3 | 4 | 6 |
+| - | - | - | - | - |
+
 ```pascal
 rij = [1, 2, 3, 4, 6]
 zoekGetal = 6
@@ -722,3 +725,7 @@ zoekGetal = 6
     index <- i
     index <- 4
 ```
+
+> &Theta;(n)
+
+Oefening b)
