@@ -858,27 +858,43 @@ zoekGetal = 6
 > In het gemiddeld geval: T(n) = &Theta;(n).
 
 ```pascal
+zoekBinair(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
+    * Preconditie: rij is een gesorteere array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
+    * Postconditie: index geeft de waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
+    * Gebruikt: /
 BEGIN
     l <- 0
     r <- n - 1
     
     ZOLANG (l ≠ r) DOE
-        m <- &#192; (l + r) / 2 &#217;
+        m <- |_ (l + r) / 2 _|
         ALS rij[m] < zoekGetal  DAN
             l <- m + 1
+        ANDERS
+            r <- m
         EINDE ALS
     EINDE ZOLANG
+    
+    ALS rij[l] = zoekGetal DAN
+        index <- l
+    ANDERS
+        index <- -1
+    EINDE ALS
+    RETOUR (index)
 EINDE
 ```
 
+> |_ getal _| = afronden naar beneden
+
+
 ```pascal
 l = 2, r = 6
-m = ((2 + 6) / 2) = 4
+m = |_ ((2 + 6) / 2) _| = 4
 ```
 
 ```pascal
 l = 2, r = 3
-m = ((2 + 3) / 2) = 2
+m = |_ ((2 + 3) / 2) _| = 2
 ```
 
 > l ≤ m < r
