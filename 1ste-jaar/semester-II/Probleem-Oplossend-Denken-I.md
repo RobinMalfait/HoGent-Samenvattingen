@@ -990,3 +990,13 @@ BEGIN
     RETOUR (index)
 EINDE
 ```
+
+**Oefening a)**
+
+```pascal
+rij = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+n = 9
+zoekGetal = 5
+```
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/zoekRecursief.png)
