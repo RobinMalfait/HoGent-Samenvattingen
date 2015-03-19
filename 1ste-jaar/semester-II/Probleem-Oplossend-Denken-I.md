@@ -699,3 +699,26 @@ BEGIN
     RETOUR (index)
 EINDE
 ```
+
+Oefeing a)
+
+```pascal
+rij = [1, 2, 3, 4, 6]
+zoekGetal = 6
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 1      | Waar               |
+| 1   | 2      | Waar               |
+| 2   | 3      | Waar               | 
+| 3   | 4      | Waar               |
+| 4   | 6      | Vals               |
+
+
+```pascal
+? i = n
+<=> 4 = 5 -> Vals
+    index <- i
+    index <- 4
+```
