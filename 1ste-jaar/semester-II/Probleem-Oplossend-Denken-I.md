@@ -680,8 +680,8 @@ T(n) = &Theta;(n)
 
 ```pascal
 zoekSequentieel(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
-    * Preconditie: rijs ie een array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
-    * Postconditie: index geeft e waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
+    * Preconditie: rij is een array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
+    * Postconditie: index geeft de waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
     * Gebruikt: /
 BEGIN
     i <- 0
@@ -700,7 +700,7 @@ BEGIN
 EINDE
 ```
 
-### Oefeing a)
+**Oefeing a)**
 
 ```pascal
 rij = [1, 2, 3, 4, 6]
@@ -725,7 +725,7 @@ zoekGetal = 6
 
 > &Theta;(n)
 
-### Oefening b)
+**Oefening b)**
 
 ```pascal
 rij = [6, 4, 3, 2, 1]
@@ -746,7 +746,7 @@ zoekGetal = 6
 
 > Als je getal voorraan staat, maakt het niet uit hoe lang de rij is, je uitvoeringsstij is constant
 
-### Oefening C)
+**Oefening C)**
 
 ```pascal
 rij = [1, 3, 6, 4, 2]
@@ -764,4 +764,49 @@ zoekGetal = 6
 <=> 2 = 5 -> Vals
     index <- i
     index <- 2
+```
+
+**Oefening D)**
+
+```pascal
+rij = [0, 2, 4, 6, 8]
+zoekGetal = 5
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 0      | Waar               |
+| 1   | 2      | Waar               |
+| 2   | 4      | Waar               |
+| 3   | 6      | Waar               |
+| 4   | 8      | Waar               |
+| 5   | &nbsp; | Vals               |
+
+```pascal
+? i = n
+<=> 5 = 5 -> Waar
+    index <- -1
+```
+
+### Gesorteerde rij
+
+```pascal
+zoekSequentieelGesorteerd(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
+    * Preconditie: rij is een gesorteere array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
+    * Postconditie: index geeft de waarde -1 als zoekGetal niet voorkomt in rij en de waarde van de index van zoekGetal in rij als zoekGetal wel voorkomt in de rij.
+    * Gebruikt: /
+BEGIN
+    i <- 0
+    ZOLANG (i < n) EN (rij[i] ≠ zoekGetal) DOE
+        i <- i + 1 
+    EINDE ZOLANG
+
+    ALS (i = n) DAN
+        index <- -1
+    ANDERS
+        index <- i
+    EINDE ALS
+    
+    RETOUR (index)
+EINDE
 ```
