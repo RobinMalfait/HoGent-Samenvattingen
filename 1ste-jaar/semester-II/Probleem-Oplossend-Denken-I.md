@@ -811,7 +811,7 @@ BEGIN
 EINDE
 ```
 
-**Oefening**
+**Oefening a)**
 
 
 ```pascal
@@ -828,4 +828,25 @@ zoekGetal = 1
 <=> (0 = 5) OF (1 > 1 ) -> Vals
     index <- i
     index <- 0
+```
+
+**Oefening b)**
+
+
+```pascal
+rij = [1, 3, 5, 7, 9]
+zoekGetal = 6
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 1      | Waar               |
+| 1   | 3      | Waar               |
+| 2   | 5      | Waar               |
+| 3   | 7      | Vals               |
+
+```pascal
+? (i = n) OF (rij[i] > zoekGetal)
+<=> (3 = 5) OF (7 > 6 ) -> Waar
+    index <- -1
 ```
