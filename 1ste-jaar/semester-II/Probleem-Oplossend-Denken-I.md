@@ -850,3 +850,9 @@ zoekGetal = 6
 <=> (3 = 5) OF (7 > 6 ) -> Waar
     index <- -1
 ```
+
+> Beste geval: T(n) = &Theta; (1).
+> 
+> Selchtste geval: T(n) = &Theta;(n).
+> 
+> Gemiddeld geval: T(n) = &Theta;(n).
