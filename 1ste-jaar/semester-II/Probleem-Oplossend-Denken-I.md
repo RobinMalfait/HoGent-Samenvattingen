@@ -851,8 +851,34 @@ zoekGetal = 6
     index <- -1
 ```
 
-> Beste geval: T(n) = &Theta; (1).
+> In het beste geval: T(n) = &Theta; (1).
 > 
-> Selchtste geval: T(n) = &Theta;(n).
+> In het slechtste geval: T(n) = &Theta;(n).
 > 
-> Gemiddeld geval: T(n) = &Theta;(n).
+> In het gemiddeld geval: T(n) = &Theta;(n).
+
+```pascal
+BEGIN
+    l <- 0
+    r <- n - 1
+    
+    ZOLANG (l ≠ r) DOE
+        m <- &#192; (l + r) / 2 &#217;
+        ALS rij[m] < zoekGetal  DAN
+            l <- m + 1
+        EINDE ALS
+    EINDE ZOLANG
+EINDE
+```
+
+```pascal
+l = 2, r = 6
+m = ((2 + 6) / 2) = 4
+```
+
+```pascal
+l = 2, r = 3
+m = ((2 + 3) / 2) = 2
+```
+
+> l ≤ m < r
