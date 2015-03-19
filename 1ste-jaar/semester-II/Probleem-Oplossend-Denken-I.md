@@ -801,7 +801,7 @@ BEGIN
         i <- i + 1 
     EINDE ZOLANG
 
-    ALS (i = n) DAN
+    ALS (i = n) OF (rij[i] > zoekGetal) DAN
         index <- -1
     ANDERS
         index <- i
@@ -809,4 +809,23 @@ BEGIN
     
     RETOUR (index)
 EINDE
+```
+
+**Oefening**
+
+
+```pascal
+rij = [1, 3, 5, 7, 9]
+zoekGetal = 1
+```
+
+| i   | rij[i] | iteratievoorwaarde | 
+| :-: | :----: | :----------------: |
+| 0   | 1      | Vals               |
+
+```pascal
+? (i = n) OF (rij[i] > zoekGetal)
+<=> (0 = 5) OF (1 > 1 ) -> Vals
+    index <- i
+    index <- 0
 ```
