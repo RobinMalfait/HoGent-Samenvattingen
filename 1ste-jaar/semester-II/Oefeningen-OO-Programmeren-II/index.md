@@ -9,7 +9,7 @@
 
 * [Oefening 1](H10/Hoofdstuk10_Oef1.zip)
 * [Oefening 2](H10/Hoofdstuk10_Oef2.zip)
-* [Oefening 4](H10/Hoofdstuk10_Oef3.zip)
+* [Oefening 3](H10/Hoofdstuk10_Oef3.zip)
 
 ### Hoofdstuk 11
 
