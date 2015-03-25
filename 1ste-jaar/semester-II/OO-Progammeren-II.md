@@ -172,3 +172,29 @@ String s2 = new String("hello");
 s2 == "hello"; // False, vergelijkt de waarde "hello" met het adres van s2
 ```
 
+**Voorbeeld:**
+
+```java
+// Middelste Letter Bepalen
+
+String woord = "hottentottentententoonstelling";
+String middeln = "";
+
+midden = woord.substring(woord.length() / 2, woord.length() / 2 + 1);
+// OF
+midden = String.valueOf(woord.charAt(woord.length() / 2));
+
+System.out.printf("Middelste letter = %s%n", midden);
+
+
+// Initialen
+String voornaam, achternaam, initialen = "";
+voornaam = "Jan";
+achternaam= "Peeters";
+
+initialen = voornaam.charAt(0) + "." + achternaam.charAt(0) + ".";
+// OF
+initialen = voornaam.substring(0, 1).concat(".").concat(achternaam.substring(0, 1).concat("."));
+
+System.out.printf("%s", initialen);
+```
