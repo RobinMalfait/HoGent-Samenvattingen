@@ -129,5 +129,18 @@ z = adres, referentie naar String-Object
 ```
 
 > String is een object!
+> 
+> String is niet overerfbaar
+> 
+> Strings zijn constanten
 
+```java
+public final class String { ... }
+```
+
+> **final** classes zijn niet erfbaar
+
+```java
+public class MijnString extends String { ... } // DIT GAAT NIET
+```
 
