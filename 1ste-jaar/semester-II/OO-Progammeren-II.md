@@ -176,7 +176,6 @@ s2 == "hello"; // False, vergelijkt de waarde "hello" met het adres van s2
 
 ```java
 // Middelste Letter Bepalen
-
 String woord = "hottentottentententoonstelling";
 String middeln = "";
 
