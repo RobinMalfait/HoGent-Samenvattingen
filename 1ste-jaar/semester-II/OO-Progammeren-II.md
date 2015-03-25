@@ -144,3 +144,31 @@ public final class String { ... }
 public class MijnString extends String { ... } // DIT GAAT NIET
 ```
 
+| Methode                | Uitleg |
+| :--------------------: | ------ |
+| .length()              | Geeft de lengte van de String terug |
+| .equals(var)           | Controleer of de huidige String gelijk is aan de meegegeven variabele |
+| .equalsIgnoreCase(var) | Doet het zelfde als .equals() maar negeert hoofdlettergevoeligheid |
+| .trim()                | Verwijdert de spaties voor en na de String |
+| .charAt(pos)           | Geeft het character op een bepaalde positie |
+| .substring(begin[, length]) | Geeft een deel van de String beginnend bij index `begin`; length is optioneel maar dat is de lengte van het deel. |
+| .indexOf(string) | Geeft de positie waar de meegegeven String overeenkomt |
+| .indexOf(string, x) | Geeft de positie waar het x'de element staat |
+| .lastIndexOf(string) | Geeft de positie van het laatst voorkomende |
+| .compareTo(string) | Vergelijkt de strings op basis van ascii code |
+| .regionMatches(x, entry, y, z) | Vergelijkt de string met entry, beginnend bij x, entry beginnend bij y, en hij vergelijkt z elementen |
+| .startsWith(string) | Controlleert of een bepaalde string begint met de meegegeven parameter |
+| .concat(x) | Voegt huidige string met x samen) |
+| String.valueOf(param) | Geeft de String representatie van meegegeven parameter (bool, int, ...) |
+
+```java
+String s1 = "Hello";
+
+s1 == "Hello"; // True, vergelijkt de waarde
+
+
+String s2 = new String("hello");
+
+s2 == "hello"; // False, vergelijkt de waarde "hello" met het adres van s2
+```
+
