@@ -13,6 +13,7 @@
 ### Semester II
 
 * [OO Programmeren II](1ste-jaar/semester-II/OO-Progammeren-II.md)
+    * [Oefeningen](1ste-jaar/semester-II/Oefeningen-OO-Programmeren-II/index.md)
 * [Financieel Management](1ste-jaar/semester-II/Financieel-Management.md)
 * [Strategisch Management](1ste-jaar/semester-II/Strategisch-Management.md)
     * [Oefeningen DESTEP](1ste-jaar/semester-II/Oefeningen-Strategisch-Management/Oefeningen-DESTEP.md)
