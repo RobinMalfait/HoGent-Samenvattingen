@@ -111,3 +111,23 @@ Cirkel c = (Cirkel) v; // Downcasting
 >
 > Algemeen kan je **attributen**, **klassen** en **methodes** `final` declareren.
 
+## String / String Builder
+
+### Character
+
+```java
+char kar = 'z'; // Enkele quotes ', 2 bytes
+z = 122 (opgeslagen als unicode)
+```
+
+### String
+
+```java
+String z = "Eddy Wally"; // Dubbele quotes ", anoniem String-obj
+
+z = adres, referentie naar String-Object
+```
+
+> String is een object!
+
+
