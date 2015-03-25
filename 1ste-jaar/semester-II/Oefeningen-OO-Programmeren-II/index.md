@@ -1,17 +1,17 @@
-# OO Programmeren II
+## OO Programmeren II
 
-## Hoofdstuk 9
+### Hoofdstuk 9
 
 * [Oefening 1](H9/Hoofdstuk9_Oef1.zip)
 * [Oefening 2](H9/Hoofdstuk9_Oef2.zip)
 
-## Hoofdstuk 10
+### Hoofdstuk 10
 
 * [Oefening 1](H10/Hoofdstuk10_Oef1.zip)
 * [Oefening 2](H10/Hoofdstuk10_Oef2.zip)
 * [Oefening 4](H10/Hoofdstuk10_Oef3.zip)
 
-## Hoofdstuk 11
+### Hoofdstuk 11
 
 * [Oefening 1](H11/Hoofdstuk11_Oef1.zip)
 * [Oefening 1 Theorie](H11/Hoofdstuk11_Oef1_theorie.zip)
