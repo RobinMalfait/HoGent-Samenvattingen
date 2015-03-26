@@ -866,7 +866,7 @@ BEGIN
     r <- n - 1
     
     ZOLANG (l ≠ r) DOE
-        m <- |_ (l + r) / 2 _|
+        m <- floor((l + r) / 2)
         ALS rij[m] < zoekGetal  DAN
             l <- m + 1
         ANDERS
@@ -883,17 +883,17 @@ BEGIN
 EINDE
 ```
 
-> |_ getal _| = afronden naar beneden
+> |_ getal _| = afronden naar beneden = floor
 
 
 ```pascal
 l = 2, r = 6
-m = |_ ((2 + 6) / 2) _| = 4
+m = floor((2 + 6) / 2)) = 4
 ```
 
 ```pascal
 l = 2, r = 3
-m = |_ ((2 + 3) / 2) _| = 2
+m = floor(((2 + 3) / 2)) = 2
 ```
 
 > l ≤ m < r
@@ -980,7 +980,7 @@ BEGIN
         
     // Anders
     ANDERS
-        m <- |_ ((l + r) / 2) _|
+        m <- floor(((l + r) / 2))
         ALS (rij[m] < zoekGetal) DAN
             index <- zoek(zoekGetal, rij, m + 1, r)
         ANDERS
@@ -1019,4 +1019,13 @@ rij = [12, 42, 44, 55 | 6, 18, 67, 94]
 
 // Volledige rij gesorteerd (samengevoegd)
 rij = [6, 12, 18, 42, 44, 55, 67, 94]
+```
+
+```pascal
+mergeSort (I : a: array[] van getallen) : a: array[] van getallen    * Preconditie: de array a is gevuld met n elementen.    * Postconditie: de array a werd gesorteerd.    * Gebruikt: mergeSorteer.BEGIN    a <- mergeSorteer(a, 0, n - 1)    RETOUR (a)EINDE
+
+
+
+mergeSorteer (I : a: array[ ] van getallen; begin, einde: geheel getal) : a: array[ ] vangetallen    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.    * Gebruikt: mergeSorteer, merge.BEGIN    ALS (begin < einde) DAN        midden <- floor((begin + einde)/2)        a <- mergeSorteer(a, begin, midden)        a <- mergeSorteer(a, midden + 1, einde)        a <- merge(a, begin, midden, einde)    EINDE ALS    RETOUR (a)EINDE
 ```
