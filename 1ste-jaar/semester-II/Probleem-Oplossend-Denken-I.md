@@ -1000,3 +1000,23 @@ zoekGetal = 5
 ```
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/zoekRecursief.png)
+
+## Soorteeralgoritmen
+
+### Mergesort
+
+```pascal
+rij = [44, 55, 12, 42, 94, 18, 6, 67]
+```
+> Rij in 2 splitsen
+
+```pascal
+// Opsplitsen in 2 delen
+rij = [44, 55, 12, 42 | 94, 18, 6, 67]
+
+// Sorteren (beide rijen recursief sorteren)
+rij = [12, 42, 44, 55 | 6, 18, 67, 94]
+
+// Volledige rij gesorteerd (samengevoegd)
+rij = [6, 12, 18, 42, 44, 55, 67, 94]
+```
