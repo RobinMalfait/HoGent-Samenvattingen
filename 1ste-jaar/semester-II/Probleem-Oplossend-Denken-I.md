@@ -1081,3 +1081,36 @@ EINDE
 > T(n) = &Theta;(n x lg(n))
 > 
 > VB.: 1000 = (1000 x 10) = 10.000
+
+
+```pascal
+// Grootste element achteraan plaatsen
+VOOR i = n - 1 TOT 1 (STAP - 1) DOE
+    positie <- i
+    max <- a[i]
+
+    VOOR j = i - 1 TOT 0 (STAP - 1) DOE
+        ALS (a[j] > max) DAN
+            positie <- j
+            max <- a[j]
+        EINDE ALS
+    EINDE VOOR
+    a[positie] <- a[i]
+    a[i] <- max
+EINDE VOOR
+
+// Kleinste element vooraan plaatsen
+VOOR i = 0 TOT n DOE
+    positie <- i
+    min <- a[i]
+
+    VOOR j = i TOT n DOE
+        ALS (a[j] < min) DAN
+            positie <- j
+            min <- a[j]
+        EINDE ALS
+    EINDE VOOR
+    a[positie] <- a[i]
+    a[i] <- min
+EINDE VOOR
+```
