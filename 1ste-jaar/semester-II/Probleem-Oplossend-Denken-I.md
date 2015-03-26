@@ -1027,5 +1027,46 @@ mergeSort (I : a: array[] van getallen) : a: array[] van getallen    * Precond
 
 
 mergeSorteer (I : a: array[ ] van getallen; begin, einde: geheel getal) : a: array[ ] vangetallen    * Preconditie: de array a is gevuld met n elementen.
-    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.    * Gebruikt: mergeSorteer, merge.BEGIN    ALS (begin < einde) DAN        midden <- floor((begin + einde)/2)        a <- mergeSorteer(a, begin, midden)        a <- mergeSorteer(a, midden + 1, einde)        a <- merge(a, begin, midden, einde)    EINDE ALS    RETOUR (a)EINDE
+    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.    * Gebruikt: mergeSorteer, merge.BEGIN    ALS (begin < einde) DAN        midden <- floor((begin + einde)/2)      // begin ≤ m < einde        a <- mergeSorteer(a, begin, midden)     // Eerste helft sorteren        a <- mergeSorteer(a, midden + 1, einde) // Tweede helft sorteren        a <- merge(a, begin, midden, einde)     // Helften samenvoegen    EINDE ALS    RETOUR (a)EINDE
+
+
+merge(I: a: array[] van getallen; begin, midden, einde: geheel getal): a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen; de elementen van de deelrij gaande van de begin-positie tot en met de midden positie zijn gesorteerd; de elementen van de deelrij gaande van de (midden+1)-positie tot en met de eind-positie zijn gesorteerd.
+    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd
+    * Gebruikt: /
+BEGIN
+    i <- begin              // De teller i doorloopt de linkse deelrij
+    j <- midden + 1         // De teller j doorloopt de rechtse deelrij
+    hulp <- nieuwe array[n] // De hulp array
+    k <- i                  // De teller k doorloopt de hulparray hulp
+    
+    ZOLANG ((i ≤ midden) EN (j ≤ einde)) DOE
+        ALS a[i] ≤ a[j] DAN
+            hulp[k] <- a[i]
+            i <- i + 1
+        ANDERS
+            hulp[k] <- a[j]
+            j <- j + 1
+        EINDE ALS
+        k <- k + 1
+    EINDE ZOLANG
+    
+    ZOLANG (i ≤ midden) DOE
+        hulp[k] <- a[i]
+        i <- i + 1
+        k <- k + 1
+    EINDE ZOLANG
+    
+    ZOLANG (j ≤ einde) DOE
+        hulp[k] <- a[j]
+        j <- j + 1
+        k <- k + 1
+    EINDE ZOLANG
+    
+    VOOR k = begin TOT einde DOE
+        a[k] <- hulp[k]
+    EINDE VOOR
+    
+    RETOUR (a)
+EINDE
 ```
