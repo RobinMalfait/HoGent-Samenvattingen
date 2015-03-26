@@ -1070,3 +1070,12 @@ BEGIN
     RETOUR (a)
 EINDE
 ```
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/mergeSort.png)
+
+> Mege T(n) = &Theta;(n)
+> 
+> T(1) = 1
+> 
+> T(n) = T(n / 2) = 2T(n/2) + n    // als n > 1
+> 
+> 
