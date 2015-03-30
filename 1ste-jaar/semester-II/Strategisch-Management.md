@@ -434,20 +434,43 @@ Uitbreiding = Paters meer werken, meer stress
 
 ![](http://www.verduin.nl/Portals/159488/images/treacy-wiersema.jpg)
 
-## Operational Excellence
+## 1. Operational Excellence
 
 Kostenleiderschap
 
 > Het gemak van de klant
 
-## Product leadership
+## 2. Product leadership
 
 Productleiderschap
 
 > het ontwikkelen van innovatieve diensten of producten
 
-## Customer Intimacy
+## 3. Customer Intimacy
 
 Klantenpartnerschap
 
 > De klant
+
+## 4. regels om marktleider te worden
+
+* Regel 1: Blink uit in één waardendiscipline en wees daarmee de beste in de markt
+* Regel 2: Presteer voor de overige waardendiscipline zodanig op het niveau van de minimale drempelwaarde (treshold) die daarvoor geldt in de markt
+* Regel 3: Versterk de positie door elk jaar de drempel te verhogen
+* Regel 4: Ondersteun de gekozen waardendiscipline door deze te vertalen in een bijpassend werkmodel dat volledig in dienst staat van het creëren van de gekozen waarde en pas dat dogmatisch toe.
+
+> **Verschil met porter:**
+> 
+> Porter: Kijk naar de concurrentie: of wel ben je goedkoper ofwel duurder
+> 
+> Treacy & Wiersema: Kijk naar de klant en doe er iets mee
+
+# De blauwe oceaan strategie
+
+| Rode Oceaanstrategie | Blauwe Oceaanstrategie |
+| -------------------- | ---------------------- |
+| Concurreren in bestaande markten | Concurreren in onbetwiste markt |
+| De concurrentie verslaan | De concurrentie buitenspel zetten |
+| Bestaande vraag uitbuiten | Nieuwe vraag creëren en veroveren |
+| Waarde-kostenafweging maken | Waarde-kostenafweging doorbreken |
+| Differentiatie of lage kosten | Differentiatie en lage kosten |
