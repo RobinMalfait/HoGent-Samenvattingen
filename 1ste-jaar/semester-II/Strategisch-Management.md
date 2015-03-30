@@ -399,7 +399,25 @@ Uitbreiding = Paters meer werken, meer stress
 
 # Typologie van Porter
 
-## Kostenleiderschapstrategie:
+## 1.1. Kostenleiderschapstrategie
 
 * Het optimaliseren van bedrijfsprocessen
 * O.a. door het verwijderen van overbodige extra's van een product, het vereenvoudigen van design, productie in lageloonlanden, het verminderen van de vaste kosten, het nastreven van het experience-curve-effect, schaaleffecten, ...
+
+## 1.2. Differentiatiestrategie
+
+* een uniek en superieur beeld creëren van het product
+* o.a. door hoge kwaliteit, uitzonderlijk goede service, innovatieve vormgeving, technologische knowhow, een buitengewoon positief merkimago, ...
+
+## 1.3. Focusstrategie
+
+> Het concurreren op één of een beperkt aantal marktsegmenten
+
+## 1.4. Stuck-in-the-middle
+
+> een positie waarin een organisatie:
+
+* te duur is voor een goedkope uitstraling
+* te weinig onderscheidend is ten opzichte van de concurrentie
+* te algemeen in de bedrijfsformule is om [niche](http://nl.wikipedia.org/wiki/Niche)markten te kunnen bereiken
+
