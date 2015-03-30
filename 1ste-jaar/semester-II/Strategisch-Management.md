@@ -474,3 +474,28 @@ Klantenpartnerschap
 | Bestaande vraag uitbuiten | Nieuwe vraag creëren en veroveren |
 | Waarde-kostenafweging maken | Waarde-kostenafweging doorbreken |
 | Differentiatie of lage kosten | Differentiatie en lage kosten |
+
+
+VB.: van een blauwe oceaan:
+
+### Cirque du soleil:
+
+**Geschrapt:**
+
+- temmers en dieren
+- dierenshows
+
+**Versterkt:**
+
+- prijs
+- unieke locatieshows
+
+**Gelijk of afgezwakt:**
+
+- fun & humor
+- spanning en gevaar
+
+**Gecreëerd:**
+
+- meer ambiance toeschouwers
+- meerdere producties
