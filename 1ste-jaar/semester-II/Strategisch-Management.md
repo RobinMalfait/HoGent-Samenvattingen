@@ -421,3 +421,12 @@ Uitbreiding = Paters meer werken, meer stress
 * te weinig onderscheidend is ten opzichte van de concurrentie
 * te algemeen in de bedrijfsformule is om [niche](http://nl.wikipedia.org/wiki/Niche)markten te kunnen bereiken
 
+| &nbsp; | Kostenleiderschap | Differentiatie |
+| ------ | ----------------- | -------------- |
+| Productassortiment. | Smal & gestandaardiseerd | Breed, aangepsta aan verschillende segmenten |
+| Product. | Vaak merkloos | Vaak merken |
+| Productieprocess | Sterke automatisatie. Enorme efficiëntie productie-infrastructuur | Op maat gemaakte productie. Semi-automatisatie. |
+| Organisatiestructuur | Strakke, hiërarchische, functionele structuur | Flexibele, vaak divisionele structuren. |
+| Dominante afdelingen | Aankoop, productie & beheerscontrole | R&D, marketing & sales |
+| R&D | Voornamelijk procesengineering | Product-engineering |
+
