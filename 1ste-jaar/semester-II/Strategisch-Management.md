@@ -499,3 +499,13 @@ VB.: van een blauwe oceaan:
 
 - meer ambiance toeschouwers
 - meerdere producties
+
+
+## 6 padne om 'blauwe oceanen' te creëren
+
+* **Pad 1**: kijk naar andere sectoren
+* **Pad 2**: kijk naar andere strategische groepen binnen sectoren
+* **Pad 3**: kijk naar de rol van de kopers
+* **Pad 4**: kijk naar andere complementaire product-en serviceaanbiedingen (aanvullende producten)
+* **Pad 5**: kijk naar andere functionele of emotionele aantrekkingskracht voor gebruikers
+* **Pad 6**: kijken naar een andere tijd
