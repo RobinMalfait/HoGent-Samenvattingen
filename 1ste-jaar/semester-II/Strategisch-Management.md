@@ -430,3 +430,24 @@ Uitbreiding = Paters meer werken, meer stress
 | Dominante afdelingen | Aankoop, productie & beheerscontrole | R&D, marketing & sales |
 | R&D | Voornamelijk procesengineering | Product-engineering |
 
+# De waardestrategieën van Treacy & Wiersema
+
+![](http://www.verduin.nl/Portals/159488/images/treacy-wiersema.jpg)
+
+## Operational Excellence
+
+Kostenleiderschap
+
+> Het gemak van de klant
+
+## Product leadership
+
+Productleiderschap
+
+> het ontwikkelen van innovatieve diensten of producten
+
+## Customer Intimacy
+
+Klantenpartnerschap
+
+> De klant
