@@ -58,13 +58,4 @@ Nu: Nederland > BelgiÃ« (Btw in het land van bestemming, dus in dit geval BelgiÃ
 
 ## Facturen
 
-### Aankoopfacturen (Klant)
-
-> = Ingaandefactuur
-
-### Verkoopfacturen (leverancier
-
-> = Uitgaande factuur
-
-
-### Fiscus
+![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/facturen.png)

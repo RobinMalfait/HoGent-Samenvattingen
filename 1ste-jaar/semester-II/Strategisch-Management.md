@@ -397,3 +397,9 @@ Uitbreiding = Paters meer werken, meer stress
 
 = Korte termijn + prestatieproblemen zijn niet zo ernstig
 
+# Typologie van Porter
+
+## Kostenleiderschapstrategie:
+
+* Het optimaliseren van bedrijfsprocessen
+* O.a. door het verwijderen van overbodige extra's van een product, het vereenvoudigen van design, productie in lageloonlanden, het verminderen van de vaste kosten, het nastreven van het experience-curve-effect, schaaleffecten, ...
