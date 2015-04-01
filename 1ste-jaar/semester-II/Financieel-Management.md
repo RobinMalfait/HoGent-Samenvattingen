@@ -59,3 +59,23 @@ Nu: Nederland > BelgiÃ« (Btw in het land van bestemming, dus in dit geval BelgiÃ
 ## Facturen
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/facturen.png)
+
+### Aankoop Factuur (AF)
+
+1. H.G. K+D 604
+2. D & D.G. K+D 61
+3. V.A. A+D 2
+
+### Verkoop Factuur (VF)
+
+1. H.G. O+C 700 ------> Vordering (400 handelsdebiteuren)
+
+
+### Omzet
+
+```
+Res = Obrengst - Kost
+                        Aankoopprijs + verkoopprijs
+(Winst/Verlies) = 150 - (100         + 10)
+                = 40
+```
