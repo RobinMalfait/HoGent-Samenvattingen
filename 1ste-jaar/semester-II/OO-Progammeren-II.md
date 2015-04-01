@@ -197,3 +197,30 @@ initialen = voornaam.substring(0, 1).concat(".").concat(achternaam.substring(0, 
 
 System.out.printf("%s", initialen);
 ```
+
+### String Builder
+
+Bij `String`
+
+```java
+String s = new String("hello");
+// s = "hello";
+
+// s blijft onveranderd zelf na een replace
+
+String s2 = s.replace("e", "a");
+//s2 = "hallo";
+
+// s2 krijgt de nieuwe waarde, s is nog steeds "hello"  
+```
+
+Bij `StringBuilder`
+
+```java
+StringBuilder s = new StringBuilder("hello");
+s = "hello"; // StringBuilder Obj;
+
+s.setCharAt(1, 'a');
+
+s = "hallo"; // Er wordt gewerkt op het object zelf, en niet op een nieuw object
+```
