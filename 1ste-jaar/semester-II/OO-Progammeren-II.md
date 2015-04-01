@@ -224,3 +224,13 @@ s.setCharAt(1, 'a');
 
 s = "hallo"; // Er wordt gewerkt op het object zelf, en niet op een nieuw object
 ```
+
+Van `String` to `StringBuilder`
+
+```java
+String s = new String("hello");
+StringBUilder builder = new StringBuilder(s);
+
+// Terug naar een String object
+s = builder.toString(); 
+```
