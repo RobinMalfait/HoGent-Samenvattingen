@@ -345,3 +345,12 @@ zin
 !
 
 ```
+
+### Split
+
+```java
+String s = "Dit is een zin";
+
+String[] tokens = s.split(" ");
+String[] tokens2 = s.split("\\s"); // Reguliere Expressions
+```
