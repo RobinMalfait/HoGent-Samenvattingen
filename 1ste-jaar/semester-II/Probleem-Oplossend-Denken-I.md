@@ -1142,11 +1142,173 @@ rij = [6, 12, 18, 42, 44, 55, 67, 94]
 > T(n) = n(n<sup>2</sup>)
 
 
-
 **Tijdcomplexiteit in het beste geval**
  
 > T(1) = 1
 > 
-> T(n) = 2 T(n / 2) + n // als n > 1
+> T(n) = 2 T(n / 2) + n // als n > 1 als element de mediaan is
 > 
 > T(n) = &Theta;(n x lg(n))
+
+#### Mediaan-van-drie
+
+Het eerste, middelste en laatste element kiezen als mogelijke spillen.
+
+#### Partionering
+
+```pascal
+rij = [57, 12, 42, 67, 55, 6, 18, 44, 94]
+spil = 55
+// Verwissel spil met de laatste
+
+rij = [57, 12, 42, 67, 94, 6, 18, 44, 55]
+
+// Grote elementen moeten rechts, kleine elementen moeten links.
+// Probleem 57 is groot en 44 is klein: omwisselen
+
+rij = [44, 12, 42, 67, 94, 6, 18, 57, 55]
+
+// 44 staat nu goed
+// 12 staat nu goed
+// 42 staat nu goed
+
+// 67 staat verkeerd; we kijken naar de rechterkant
+// 57 staat nu goed
+// 18 staat verkeerd; we verwisselen 18 met 67
+
+rij = [44, 12, 42, 18, 94, 6, 67, 57, 55]
+
+// 18 staat nu goed
+// 94 staat verkeerd; we kijken naar de rechterkant
+// 67 staat nu goed
+// 6 staat verkeerd; we verwisselen 6 met 94
+
+rij = [44, 12, 42, 18, 6, 94, 67, 57, 55]
+
+// Links (94) en rechts (6) zijn gewisseld; Links duid nu de eerste grote aan.
+
+// We verwisselen nu links met het laatste element
+
+rij = [44, 12, 42, 18, 6, 55, 67, 57, 94]
+
+```
+
+![](http://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+#### Mediaan-van-drie Partionering
+
+```pascal
+rij = [57 12 42 67 55 06 18 44 94]
+mogelijkeSpillen = [57, 55, 94] // eerste, middelste, laatste
+
+// De 3 spillen ordenen
+rij = [55, 12, 42, 67, 57, 6, 18, 44, 94]
+
+// We gaan wisselen met de voorlaatste omdat de laatste een mogelijke spil was
+rij = [55, 12, 42, 67, 44, 6, 18, 57, 94]
+
+// We kijken pas vanaf de eerste omdat de eerste ook een mogelijke spil was
+rij = [55, 12, 42, 67, 44, 6, 18, 57, 94]
+links = 67
+rechts = 6
+
+// Links en rechts zijn al gewisseld
+rij = [55, 12, 42, 18, 44, 6, 57, 67, 94]
+```
+
+> Quicksort is zeer **snel** als de rijen lang zijn; Voor kleine rijen zeer **traag**.
+
+```pascal
+quickSort(I: a: array[] van getallen) : a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de array a werd gesorteerd.
+    * Gebruikt: quickSorteer
+BEGIN
+    a <- quickSorteer(a, 0, n - 1)
+    RETOUR (a)
+EINDE
+```
+
+```pascal
+quickSorteer(I: a: array[] van getallen; begin, midden, einde: geheel getal): a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen    
+    * Postconditie: in de array a werden alle elementen tussen de positie begin en de positie einde gesorteerd
+    * Gebruikt: quickSorteer, cardSortBis
+BEGIN
+    cutoff <- 5
+    ALS (begin + cutoff > einde) DAN
+        a <- cardSortBis(a, begin, einde)
+    ANDERS
+        // Spil Bepalen
+        midden <- floor((begin + einde) / 2)
+        
+        ALS (a[midden] < a[begin]) DAN
+            verwissel a[midden] en a[begin]
+        EINDE ALS
+        
+        ALS (a[einde] < a[begin]) DAN
+            verwissel a[einde] en a[begin]
+        EINDE ALS
+        
+        ALS (a[einde] < a[midden]) DAN
+            verwissel a[einde] en a[midden]
+        EINDE ALS
+        spil <- a[midden]
+                
+        // Partitioneren
+        verwissel spil met a[einde - 1]
+        
+        links <- begin + 1
+        rechts <- einde - 2
+        
+        ZOLANG (links ≤ rechts) DOE
+            ZOLANG (a[links] < spil) DOE
+                links <- links + 1
+            EINDE ZOLANG
+            
+            ZOLANG (a[rehts] > spil) DOE
+                rechts <- rechts - 1
+            EINDE ZOLANG
+            
+            ALS (links ≤ rechts) DAN
+                verwissel a[links] en a[rechts]
+                links <- links + 1
+                rechts <- rechts - 1
+            EINDE ALS
+        EINDE ZOLANG
+        verwissel a[links] met spil
+        spilindex <- links
+        a <- quickSorteer(a, begin, spilindex - 1)
+        a <- quickSorteer(a, spilindex + 1, einde)
+    EINDE ALS
+EINDE
+```
+
+> **Examen**: van cardSort naar CardSortBis: welke lijnen moet je aanpassen en wat moet je aanpassen:
+
+```pascal
+cardSortBis (I : a: array[] van getallen; begin, einde: geheel getal) : a: array[] van getallen   * Preconditie: de array a is gevuld met n elementen.   * Postconditie: in de array a werden de elementen met index begin tot en met index einde gesorteerd.   * Gebruikt: /
+BEGIN    
+    VOOR i = begin + 1 TOT einde DOE
+        x <- a[i]
+        j <- i
+        ZOLANG j > begin EN x < a[j - 1] DOE
+            a[j] <- a[j - 1]
+            j <- j - 1
+        EINDE ZOLANG
+        a[j] <- x
+    EINDE VOOR
+    RETOUR (a)
+EINDE
+```
+
+#### Voorbeeld oefening:
+
+**14** 40 31 28 03 **15** 17 51 77 04 07 **63**<br>
+14 40 31 28 03 07 17 51 77 04 **15** 63<br>
+14 40 07 28 03 31 17 51 77 40 **15** 63<br>
+14 40 07 03 28 31 17 51 77 40 **15** 63<br>
+14 40 07 03 28 31 17 51 77 40 **15** 63<br>
+14 40 07 03 **15** 31 17 51 77 40 28 63<br>
+
+`spilIndex = 4`
