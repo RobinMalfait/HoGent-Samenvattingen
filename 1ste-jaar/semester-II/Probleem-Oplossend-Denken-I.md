@@ -1312,3 +1312,18 @@ EINDE
 14 40 07 03 **15** 31 17 51 77 40 28 63<br>
 
 `spilIndex = 4`
+
+"cardSort": 03 04 07 14 **15** 31 17 51 77 40 28 63 omdat 0+5 > 4 // 0 = Begin; 5 = Cutoff; Einde = 3<br> 
+
+`spilIndex = 5`
+
+14 40 07 03 |15| **31** 17 51 **77** 40 28 **63**<br>
+14 40 07 03 15 **31** 17 51 **63** 40 28 **77**<br>
+14 40 07 03 15 31 17 51 28 40 **63** 77<br>
+14 40 07 03 15 31 17 51 28 40 **63** 77<br>
+
+`spilIndex = 10`
+
+"cardSort": 14 40 07 03 15 31 17 28 31 40 51 63 77
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/quickSort.png)
