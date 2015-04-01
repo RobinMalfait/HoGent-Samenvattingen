@@ -1133,8 +1133,8 @@ rij = [12, 42, 6, 18, 44, 55, 67, 94] // De spil staat nu op de correcte plaats
 rij = [6, 12, 18, 42, 44, 55, 67, 94]
 ```
 
-> **Tijdcomplexiteit in het slechste geval**
-> 
+**Tijdcomplexiteit in het slechste geval** 
+
 > T(1) = 1
 > 
 > T(n) = T(n - 1) + n // als n > 1 als grootste element als spil gebruikt wordt
@@ -1143,8 +1143,8 @@ rij = [6, 12, 18, 42, 44, 55, 67, 94]
 
 
 
-> **Tijdcomplexiteit in het beste geval**
-> 
+**Tijdcomplexiteit in het beste geval**
+ 
 > T(1) = 1
 > 
 > T(n) = 2 T(n / 2) + n // als n > 1
