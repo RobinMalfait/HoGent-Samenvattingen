@@ -1005,6 +1005,8 @@ zoekGetal = 5
 
 ### Mergesort
 
+> Heeft dubbel zoveel geheugen nodig omdat hij een hulp array aanmaakt dat even groot is.
+
 ```pascal
 rij = [44, 55, 12, 42, 94, 18, 6, 67]
 ```
@@ -1114,3 +1116,37 @@ VOOR i = 0 TOT n DOE
     a[i] <- min
 EINDE VOOR
 ```
+
+### Quicksort
+
+```pascal
+rij = [12, 42, 67, 55, 06, 18, 44, 84]
+spil = 55 // Random element van de rij
+```
+> Alle elementen kleiner dan de spil, voor de spil zetten. Alle elementen groter dan de spil, achter de spil zetten. Sorteer dan recursief de rij voor de spil en de rij na de spil
+
+```pascal
+rij = [12, 42, 6, 18, 44, 55, 67, 94] // De spil staat nu op de correcte plaats
+// recursief hetzelfde doen met de rij voor de spil en de rij na de spil
+
+// Gesorteerde rij:
+rij = [6, 12, 18, 42, 44, 55, 67, 94]
+```
+
+> **Tijdcomplexiteit in het slechste geval**
+> 
+> T(1) = 1
+> 
+> T(n) = T(n - 1) + n // als n > 1 als grootste element als spil gebruikt wordt
+> 
+> T(n) = n(n<sup>2</sup>)
+
+
+
+> **Tijdcomplexiteit in het beste geval**
+> 
+> T(1) = 1
+> 
+> T(n) = 2 T(n / 2) + n // als n > 1
+> 
+> T(n) = &Theta;(n x lg(n))
