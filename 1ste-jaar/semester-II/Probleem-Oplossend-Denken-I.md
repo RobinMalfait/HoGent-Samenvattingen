@@ -1102,11 +1102,11 @@ VOOR i = n - 1 TOT 1 (STAP - 1) DOE
 EINDE VOOR
 
 // Kleinste element vooraan plaatsen
-VOOR i = 0 TOT n DOE
+VOOR i = 0 TOT n - 1 DOE
     positie <- i
     min <- a[i]
 
-    VOOR j = i TOT n DOE
+    VOOR j = i TOT n - 1 DOE
         ALS (a[j] < min) DAN
             positie <- j
             min <- a[j]
