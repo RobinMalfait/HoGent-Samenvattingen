@@ -79,3 +79,4 @@ Res = Obrengst - Kost
 (Winst/Verlies) = 150 - (100         + 10)
                 = 40
 ```
+
