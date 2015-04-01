@@ -200,6 +200,8 @@ System.out.printf("%s", initialen);
 
 ### String Builder
 
+[StringBuilder API](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+
 Bij `String`
 
 ```java
@@ -285,4 +287,61 @@ public class MijnString
     }
     
 }
+```
+
+> `StringBuffer` is de voorloper van `StringBuilder`
+
+## Klasse Character
+
+[Character API](http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
+
+## Tokenizing Strings
+
+[StringTokenizer API](https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html)
+
+> Opdelen van een stukje tekst
+> 
+> * Split
+> * StringTokenizer
+
+```java
+String s = "Dit is een zin!";
+StringTokenizer stToken = new StringTokenizer(s); // geen scheidingstekens dan: \t, \n, \r, en een spatie 
+
+// Hoeveel stukjes zijn er?
+stToken.countTokens() // 4
+
+// Stukjes ophalen
+stToken.nextToken(); // String
+
+// Alles tonen
+while(stToken.hasMoreTokens()) {
+    System.out.println(stToken.nextToken());
+}
+// Resultaat
+Dit
+is
+een
+zin!
+
+
+StringTokenizer stToken2 = new StringTokenizer(s, "! "); // Scheidingsteken is geen stukje
+// Resultaat
+Dit
+is
+een
+zin
+
+
+StringTokenizer stToken3 = new StringTokenizer(s, "! ", true); // Ook scheidingstekens als een stukje
+// Resultaat
+Dit
+ 
+is
+ 
+een
+ 
+zin
+!
+
 ```
