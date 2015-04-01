@@ -234,3 +234,55 @@ StringBUilder builder = new StringBuilder(s);
 // Terug naar een String object
 s = builder.toString(); 
 ```
+
+#### Palindroom
+
+```java
+package domein;
+
+/**
+ *
+ * @author robin
+ */
+public class MijnString 
+{
+    private String string;
+
+    public MijnString()
+    {
+        this("niet ingevuld");
+    }
+
+    public MijnString(String string)
+    {
+        this.string = string;
+    }
+    
+    public void setInhoud(String invoer)
+    {
+        if (invoer == null || invoer.equals(""))
+        {
+            throw new IllegalArgumentException("Woord is niet ingevuld");
+        }
+        
+        this.string = invoer;
+    }
+    
+    public boolean isPalindroomString()
+    {
+        for (int i = 0, j = string.length() - 1; i < j; i++, j--) {
+            if (string.charAt(i) != string.charAt(j)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean isPalindroomStringBuilder()
+    {
+        return string.equals((new StringBuilder(string)).reverse().toString());
+    }
+    
+}
+```
