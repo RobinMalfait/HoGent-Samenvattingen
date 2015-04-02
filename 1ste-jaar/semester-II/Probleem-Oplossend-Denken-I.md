@@ -1326,3 +1326,17 @@ EINDE
 "cardSort": 14 40 07 03 15 31 17 28 31 40 51 63 77
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/quickSort.png)
+
+## Hoofdstuk 5
+
+Stapels:
+
+> Een datastructuur waarbij je enkel bovenaan kan toevoegen en ook enkel het bovenste element bekijken en verwijderen: `LIFO` **(last in first out)**
+
+```pascal
+Stack(): constructor
+empty(): controleert of een stapel al dan niet leeg is
+push(): voegt een nieuw element toe bovenaan een stapel
+pop(): verwijdert het bovenste element van een stapel en retourneert het verwijderde element
+peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijderen
+```
