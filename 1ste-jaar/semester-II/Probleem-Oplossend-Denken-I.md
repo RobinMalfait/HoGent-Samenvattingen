@@ -1414,3 +1414,24 @@ EINDE
 ```
 
 > Alle methodes zijn T(n) = &Theta;(1)
+
+### Voorbeeld: methode one
+
+> Bevat de stack 1 element of niet
+
+```pascal
+one(I: s: Stack): vlag: boolean
+    * Preconditie: een stapel s wordt meegegeven
+    * Postconditie: indien juist één element tot s behoort, werd true geretourneerd anders false; de stapel s werd niet gewijzigd.
+    * Gebruikt: empty, push, pop
+BEGIN
+    ALS (s.empty()) DAN
+        vlag <- false
+    ANDERS
+    x <- s.pop()
+    vlag <- s.empty()
+    s.push(x)
+    EINDE ALS
+    RETOUR (x)
+EINDE
+```
