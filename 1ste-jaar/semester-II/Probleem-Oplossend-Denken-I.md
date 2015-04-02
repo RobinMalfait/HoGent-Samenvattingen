@@ -1382,6 +1382,21 @@ push(I: x: Element): /
     * Postconditie: het element x werd als top-element op de stapel s geplaatst.
     * Gebriukt: /
 BEGIN
+    t <- t + 1
+    data[t] <- x
+EINDE
+```
 
+#### Implementatie van `pop()`
+
+```pascal
+pop(I: /): x: Element
+    * Preconditie: de stapel s bestaat en is niet leeg
+    * Postconditie: de top van de stapel s werd verwijderd en geretourneerd
+    * Gebruikt: /
+BEGIN
+    x <- data[t]
+    t <- t - 1
+    RETOUR(x)
 EINDE
 ```
