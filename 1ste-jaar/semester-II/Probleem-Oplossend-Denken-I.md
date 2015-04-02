@@ -1435,3 +1435,35 @@ BEGIN
     RETOUR (x)
 EINDE
 ```
+
+### Toepassing 1: controle van haakjes
+
+```pascal
+controleerHaakjes(I: uitdrukking: array[] van Strings): /
+    * Preconditie: uitdrukking is een uitdrukking waarin eventueel haakjes voorkomen
+    * Postconditie: indien alle open haakjes correct worden afgesloten werd er geen foutmelding gegenereerd
+    * Gebruikt: Stack, empty, push, pop, lengte, getal
+BEGIN
+    s <- nieuwe Stack(uitdrukking.lengte)
+    VOOR i = 0 TOT uitdrukking.lengte - 1 DOE
+        symbool <- uitdrukking[i]
+        ALS (symbool e {  ),],}  }) DAN
+            s.push(symbool)
+        ANDERS
+            ALS s.empty() DAN
+                ALS (symbool e {  ),],}  }) DAN
+                    VOERUIT(scherm, "Te veel sluit symbolen")
+                ANDERS
+                    voorgaand <- s.pop()
+                    ALS(symbool != voorgaand) DAN
+                        VOERUIT(scherm, "Fout symbool")
+                    EINDE ALS
+                EINDE ALS
+            EINDE ALS
+        EINDE ALS
+    EINDE VOOR
+    ALS (NIET s.empty()) DAN
+        VOERUIT(scherm, "Te veel open symbolen")
+    EINDE ALS
+EINDE
+```
