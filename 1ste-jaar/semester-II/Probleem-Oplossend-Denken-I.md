@@ -1340,3 +1340,10 @@ push(): voegt een nieuw element toe bovenaan een stapel
 pop(): verwijdert het bovenste element van een stapel en retourneert het verwijderde element
 peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijderen
 ```
+
+| Stack |
+| ----- |
+| - data: array[] van Element <br> - t : geheel getal |
+| + Stack(n: geheel getal) <br> + empty(): boolean <br> + push(x: Element): / <br> + pope() : Element <br> + peek(): Element |
+
+> `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
