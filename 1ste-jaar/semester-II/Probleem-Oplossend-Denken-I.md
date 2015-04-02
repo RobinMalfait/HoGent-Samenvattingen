@@ -1084,7 +1084,6 @@ EINDE
 > 
 > VB.: 1000 = (1000 x 10) = 10.000
 
-
 ```pascal
 // Grootste element achteraan plaatsen
 VOOR i = n - 1 TOT 1 (STAP - 1) DOE
