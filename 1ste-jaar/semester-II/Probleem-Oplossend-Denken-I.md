@@ -1347,3 +1347,41 @@ peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijdere
 | + Stack(n: geheel getal) <br> + empty(): boolean <br> + push(x: Element): / <br> + pope() : Element <br> + peek(): Element |
 
 > `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
+
+
+#### Implementatie van `Stack()`
+
+```pascal
+Stack(I: n: geheel getal): /
+    * Preconditie: n is een natuurlijk getal
+    * Postconditie: de array data van lengte n werd gealloceerd en t werd geïnitialiseerd
+    * Gebruikt: /
+BEGIN
+    data <- nieuwe array[n]
+    t <- - 1 // Geen element op de stapel
+EINDE
+```
+
+#### Implementatie van `empty()`
+
+```pascal
+empty(I: /): vlag: Boolean
+    * Preconditie: de stapel s bestaat
+    * Postconditie: de waarde true of false werd afgeleverd, afhankelijk van het feit of de stapel s leeg is of niet
+    * Gebruikt: /
+BEGIN
+    RETOUR (t = - 1) // in java zou het ( t == - 1) zijn.
+EINDE
+```
+
+#### Implementatie van `push(x)`
+
+```pascal
+push(I: x: Element): /
+    * Preconditie: de stapel s bestaat en is nog niet vol
+    * Postconditie: het element x werd als top-element op de stapel s geplaatst.
+    * Gebriukt: /
+BEGIN
+
+EINDE
+```
