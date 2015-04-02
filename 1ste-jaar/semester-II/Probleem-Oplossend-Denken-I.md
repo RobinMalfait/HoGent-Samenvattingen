@@ -1400,3 +1400,15 @@ BEGIN
     RETOUR(x)
 EINDE
 ```
+
+#### Implementatie van `peek()`
+
+```pascal
+ppeekop(I: /): x: Element
+    * Preconditie: de stapel s bestaat en is niet leeg
+    * Postconditie: de waarde van de top werd toegekend aan x en geretourneerd, de stapel s werd niet gewijzigd
+    * Gebruikt: /
+BEGIN
+    RETOUR data[t]
+EINDE
+```
