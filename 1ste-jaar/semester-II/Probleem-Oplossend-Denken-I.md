@@ -1412,3 +1412,5 @@ BEGIN
     RETOUR data[t]
 EINDE
 ```
+
+> Alle methodes zijn T(n) = &Theta;(1)
