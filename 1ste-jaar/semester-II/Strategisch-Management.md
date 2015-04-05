@@ -108,7 +108,7 @@ Gaat hij ons aanvallen of niet aanvallen?
 
 ### Mate van verandering
 
-| &nsbp;    | Stabiel | Dynamisch |
+| &nbsp;    | Stabiel | Dynamisch |
 | --------- | ------- | --------- |
 | Eenvoudig | Cel 1   | Cel 2     |
 | Complex   | Cel 3   | Cel 4     |
@@ -362,7 +362,7 @@ Doel = Het vergroten van het huidige marktaandeel
 
 Verkopen van nieuwe producten aan bestaande klanten.
 
-1. Nieuwe producten introduceren ter vervanging van de oude huidige producten 
+1. Nieuwe producten introduceren ter vervanging van de oude huidige producten
 2. Cross-selling
 
 ### Marktontwikkeling
@@ -380,11 +380,11 @@ Nieuw product in een nieuwe markt
 Wordt gekenmerkt door de afwezigheid van ingrijpende veranderingen
 
 Wanneer?
- 
+
  * De sector verkeert in een periode van snelle verstoringen, met externe factoren die ingrijpend veranderen en de toekomst onzeker maken
  * De branche kent langzame of geen groeikansen
  * Bewust keizen voor stabiliteit
- 
+
 **Waarom niet uitbreiden?**
 
 VB.: West-vleteren
@@ -460,9 +460,9 @@ Klantenpartnerschap
 * Regel 4: Ondersteun de gekozen waardendiscipline door deze te vertalen in een bijpassend werkmodel dat volledig in dienst staat van het creëren van de gekozen waarde en pas dat dogmatisch toe.
 
 > **Verschil met porter:**
-> 
+>
 > Porter: Kijk naar de concurrentie: of wel ben je goedkoper ofwel duurder
-> 
+>
 > Treacy & Wiersema: Kijk naar de klant en doe er iets mee
 
 # De blauwe oceaan strategie
