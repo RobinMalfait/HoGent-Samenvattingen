@@ -37,7 +37,7 @@ Een methode om de activiteiten in verband met creatie, oplevering en onderhoud v
 
 Simpel process (Voor kleinere software projecten)
 
-—> Problemen: 
+—> Problemen:
 
 - Weinig flexibiliteit, houdt geen rekening met veranderende eisen van de klant.
 - Verlies van informatie: gespecialiseerde personen verlaten het project na hun respectievelijke fase)
@@ -53,7 +53,7 @@ Simpel process (Voor kleinere software projecten)
 
 ## Rational Unified Proces (RUP)
 
-**Iteratie:** 
+**Iteratie:**
 
 - Software opdelen in time boxes waarbij elke iteratie het proces Analyse, Ontwerp, Implementatie, Testen, Integratie doorlopen en dus uitbreiden.
 - We gaan domeinmodel per iteratie (en dus Use Case) opbouwen.
@@ -81,12 +81,12 @@ Simpel process (Voor kleinere software projecten)
 
 Object georiënteerde Analyse/Design
 
-Klasse: 
+Klasse:
 
 - parameters (attributen)
 - methodes
 
-Object: 
+Object:
 
 - Audi A4 (Instantie)
 
@@ -121,7 +121,6 @@ Use Case Diagram:
 - Actor (Persoon **OF** Extern Systeem)
     - De ‘starter’ is de Primaire Actor
 
-    
 Wat is een Use Case
 
 - tekstuele beschrijving van een taak
@@ -140,7 +139,7 @@ Wat is een Use Case
 **Primaire Actor:** de entiteit (belangrijke partij!) die de use case instantieert<br>
 **Pre Conditie:**
 - Voorwaarden voldaan voor een succes (Voor de use case)
-- nodige voorwaarden 
+- nodige voorwaarden
 
 **Post Conditie:** Voorwaarden voldaan na een succes<br>
 **Normaal verloop:** (Main Succes Scenario)
