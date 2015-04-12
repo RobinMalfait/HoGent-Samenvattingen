@@ -553,7 +553,7 @@ Te bewijzen:    T(n) = n + 1
     Linker Lid:     T(0)                        = 1 (gegeven)
     Rechter Lid:    n + 1 = 0 + 1               = 1
 
-2. Inductiestap: 
+2. Inductiestap:
     Veronderstel dat T(m) = m + 1               als m ≤ n
                      (Inductiehypothese)
     T(n + 1) = T(n) + 1                         (gegeven)
@@ -566,7 +566,7 @@ Te bewijzen:    T(n) = n + 1
 
 ### Torens van Hanoi
 
-| n | # Bewegingen | 
+| n | # Bewegingen |
 | - | ------------ |
 | 1 | 1            |
 | 2 | 3            |
@@ -600,16 +600,16 @@ Te bewijzen: T(n) = 2<sup>n</sup>-1 als ≥ 1
     Linker Lid:     T(1) = 1                    (gegeven)<br>
     Rechter Lid:    2<sup>n</sup>-1 = 2<sup>1</sup> - 1 = 2 - 1 = 1
 
-2. Inductiestap: 
+2. Inductiestap:
     Veronderstel dat T(m) = 2<sup>m</sup> - 1   als m ≤ n
                      (Inductiehypothese)
-                     
+
     T(n + 1) = 2T(n) + 1 (gegeven)<br>
     (inductiefase)<br>
     = 2 . (2<sup>n</sup> - 1) + 1<br>
     = 2<sup>n + 1</sup> - 2 + 1<br>
     = 2<sup>n + 1</sup> - 1<br>
-    
+
 T(n) = &Theta;(2<sup>n</sup>)
 
 \# Zetten = 2<sup>64</sup>-1 = 1,84467441 x 10<sup>19</sup>
@@ -687,7 +687,7 @@ BEGIN
     i <- 0
     // Volgorde is cruciaal (vals en iets anders is altijd vals bij een AND) => Short Circuit Evaluation
     ZOLANG (i < n) EN (rij[i] ≠ zoekGetal) DOE
-        i <- i + 1 
+        i <- i + 1
     EINDE ZOLANG
 
     ALS (i = n) DAN
@@ -695,23 +695,23 @@ BEGIN
     ANDERS
         index <- i
     EINDE ALS
-    
+
     RETOUR (index)
 EINDE
 ```
 
-**Oefeing a)**
+**Oefening a)**
 
 ```pascal
 rij = [1, 2, 3, 4, 6]
 zoekGetal = 6
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 1      | Waar               |
 | 1   | 2      | Waar               |
-| 2   | 3      | Waar               | 
+| 2   | 3      | Waar               |
 | 3   | 4      | Waar               |
 | 4   | 6      | Vals               |
 
@@ -732,7 +732,7 @@ rij = [6, 4, 3, 2, 1]
 zoekGetal = 6
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 6      | Vals               |
 
@@ -753,7 +753,7 @@ rij = [1, 3, 6, 4, 2]
 zoekGetal = 6
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 1      | Waar               |
 | 1   | 3      | Waar               |
@@ -773,7 +773,7 @@ rij = [0, 2, 4, 6, 8]
 zoekGetal = 5
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 0      | Waar               |
 | 1   | 2      | Waar               |
@@ -798,7 +798,7 @@ zoekSequentieelGesorteerd(I: zoekGetal: geheel getal, rij: array[] van gehele ge
 BEGIN
     i <- 0
     ZOLANG (i < n) EN (rij[i] < zoekGetal) DOE
-        i <- i + 1 
+        i <- i + 1
     EINDE ZOLANG
 
     ALS (i = n) OF (rij[i] > zoekGetal) DAN
@@ -806,7 +806,7 @@ BEGIN
     ANDERS
         index <- i
     EINDE ALS
-    
+
     RETOUR (index)
 EINDE
 ```
@@ -819,7 +819,7 @@ rij = [1, 3, 5, 7, 9]
 zoekGetal = 1
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 1      | Vals               |
 
@@ -837,7 +837,7 @@ rij = [1, 3, 5, 7, 9]
 zoekGetal = 6
 ```
 
-| i   | rij[i] | iteratievoorwaarde | 
+| i   | rij[i] | iteratievoorwaarde |
 | :-: | :----: | :----------------: |
 | 0   | 1      | Waar               |
 | 1   | 3      | Waar               |
@@ -851,9 +851,9 @@ zoekGetal = 6
 ```
 
 > In het beste geval: T(n) = &Theta; (1).
-> 
+>
 > In het slechtste geval: T(n) = &Theta;(n).
-> 
+>
 > In het gemiddeld geval: T(n) = &Theta;(n).
 
 ```pascal
@@ -864,7 +864,7 @@ zoekBinair(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index:
 BEGIN
     l <- 0
     r <- n - 1
-    
+
     ZOLANG (l ≠ r) DOE
         m <- floor((l + r) / 2)
         ALS rij[m] < zoekGetal  DAN
@@ -873,7 +873,7 @@ BEGIN
             r <- m
         EINDE ALS
     EINDE ZOLANG
-    
+
     ALS rij[l] = zoekGetal DAN
         index <- l
     ANDERS
@@ -914,7 +914,7 @@ zoekGetal = 3
 | &nbsp;  | 4       | &nbsp;  | &nbsp;    |
 | &nbsp;  | &nbsp;  | 2       | 3         |
 | &nbsp;  | 2       | &nbsp;  | &nbsp;    |
-| &nbsp;  | &nbsp;  | 1       | 2         |  
+| &nbsp;  | &nbsp;  | 1       | 2         |
 | 2       | &nbsp;  | &nbsp;  | &nbsp;    |
 
 ```pascal
@@ -941,7 +941,7 @@ zoekGetal = 5
 | &nbsp;  | &nbsp;  | 2       | 3         |
 | 3       | &nbsp;  | &nbsp;  | &nbsp;    |
 | &nbsp;  | &nbsp;  | 3       | 4         |
-| ***4*** | &nbsp;  | &nbsp;  | &nbsp;    | 
+| ***4*** | &nbsp;  | &nbsp;  | &nbsp;    |
 
 > l = r
 
@@ -977,7 +977,7 @@ BEGIN
         ANDERS
             index <- -1
         EINDE ALS
-        
+
     // Anders
     ANDERS
         m <- floor(((l + r) / 2))
@@ -1024,12 +1024,31 @@ rij = [6, 12, 18, 42, 44, 55, 67, 94]
 ```
 
 ```pascal
-mergeSort (I : a: array[] van getallen) : a: array[] van getallen    * Preconditie: de array a is gevuld met n elementen.    * Postconditie: de array a werd gesorteerd.    * Gebruikt: mergeSorteer.BEGIN    a <- mergeSorteer(a, 0, n - 1)    RETOUR (a)EINDE
+mergeSort (I : a: array[] van getallen) : a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de array a werd gesorteerd.
+    * Gebruikt: mergeSorteer.
+BEGIN
+    a <- mergeSorteer(a, 0, n - 1)
+    RETOUR (a)
+EINDE
 
 
 
-mergeSorteer (I : a: array[ ] van getallen; begin, einde: geheel getal) : a: array[ ] vangetallen    * Preconditie: de array a is gevuld met n elementen.
-    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.    * Gebruikt: mergeSorteer, merge.BEGIN    ALS (begin < einde) DAN        midden <- floor((begin + einde)/2)      // begin ≤ m < einde        a <- mergeSorteer(a, begin, midden)     // Eerste helft sorteren        a <- mergeSorteer(a, midden + 1, einde) // Tweede helft sorteren        a <- merge(a, begin, midden, einde)     // Helften samenvoegen    EINDE ALS    RETOUR (a)EINDE
+mergeSorteer (I : a: array[ ] van getallen; begin, einde: geheel getal) : a: array[ ] van
+getallen
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.
+    * Gebruikt: mergeSorteer, merge.
+BEGIN
+    ALS (begin < einde) DAN
+        midden <- floor((begin + einde)/2)      // begin ≤ m < einde
+        a <- mergeSorteer(a, begin, midden)     // Eerste helft sorteren
+        a <- mergeSorteer(a, midden + 1, einde) // Tweede helft sorteren
+        a <- merge(a, begin, midden, einde)     // Helften samenvoegen
+    EINDE ALS
+    RETOUR (a)
+EINDE
 
 
 merge(I: a: array[] van getallen; begin, midden, einde: geheel getal): a: array[] van getallen
@@ -1041,7 +1060,7 @@ BEGIN
     j <- midden + 1         // De teller j doorloopt de rechtse deelrij
     hulp <- nieuwe array[n] // De hulp array
     k <- i                  // De teller k doorloopt de hulparray hulp
-    
+
     ZOLANG ((i ≤ midden) EN (j ≤ einde)) DOE
         ALS a[i] ≤ a[j] DAN
             hulp[k] <- a[i]
@@ -1052,36 +1071,36 @@ BEGIN
         EINDE ALS
         k <- k + 1
     EINDE ZOLANG
-    
+
     ZOLANG (i ≤ midden) DOE
         hulp[k] <- a[i]
         i <- i + 1
         k <- k + 1
     EINDE ZOLANG
-    
+
     ZOLANG (j ≤ einde) DOE
         hulp[k] <- a[j]
         j <- j + 1
         k <- k + 1
     EINDE ZOLANG
-    
+
     VOOR k = begin TOT einde DOE
         a[k] <- hulp[k]
     EINDE VOOR
-    
+
     RETOUR (a)
 EINDE
 ```
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/mergeSort.png)
 
 > Mege T(n) = &Theta;(n)
-> 
+>
 > T(1) = 1
-> 
+>
 > T(n) = T(n / 2) = 2T(n/2) + n    // als n > 1
-> 
+>
 > T(n) = &Theta;(n x lg(n))
-> 
+>
 > VB.: 1000 = (1000 x 10) = 10.000
 
 ```pascal
@@ -1132,21 +1151,21 @@ rij = [12, 42, 6, 18, 44, 55, 67, 94] // De spil staat nu op de correcte plaats
 rij = [6, 12, 18, 42, 44, 55, 67, 94]
 ```
 
-**Tijdcomplexiteit in het slechste geval** 
+**Tijdcomplexiteit in het slechste geval**
 
 > T(1) = 1
-> 
+>
 > T(n) = T(n - 1) + n // als n > 1 als grootste element als spil gebruikt wordt
-> 
+>
 > T(n) = n(n<sup>2</sup>)
 
 
 **Tijdcomplexiteit in het beste geval**
- 
+
 > T(1) = 1
-> 
+>
 > T(n) = 2 T(n / 2) + n // als n > 1 als element de mediaan is
-> 
+>
 > T(n) = &Theta;(n x lg(n))
 
 #### Mediaan-van-drie
@@ -1230,7 +1249,7 @@ EINDE
 
 ```pascal
 quickSorteer(I: a: array[] van getallen; begin, midden, einde: geheel getal): a: array[] van getallen
-    * Preconditie: de array a is gevuld met n elementen    
+    * Preconditie: de array a is gevuld met n elementen
     * Postconditie: in de array a werden alle elementen tussen de positie begin en de positie einde gesorteerd
     * Gebruikt: quickSorteer, cardSortBis
 BEGIN
@@ -1240,35 +1259,35 @@ BEGIN
     ANDERS
         // Spil Bepalen
         midden <- floor((begin + einde) / 2)
-        
+
         ALS (a[midden] < a[begin]) DAN
             verwissel a[midden] en a[begin]
         EINDE ALS
-        
+
         ALS (a[einde] < a[begin]) DAN
             verwissel a[einde] en a[begin]
         EINDE ALS
-        
+
         ALS (a[einde] < a[midden]) DAN
             verwissel a[einde] en a[midden]
         EINDE ALS
         spil <- a[midden]
-                
+
         // Partitioneren
         verwissel spil met a[einde - 1]
-        
+
         links <- begin + 1
         rechts <- einde - 2
-        
+
         ZOLANG (links ≤ rechts) DOE
             ZOLANG (a[links] < spil) DOE
                 links <- links + 1
             EINDE ZOLANG
-            
+
             ZOLANG (a[rehts] > spil) DOE
                 rechts <- rechts - 1
             EINDE ZOLANG
-            
+
             ALS (links ≤ rechts) DAN
                 verwissel a[links] en a[rechts]
                 links <- links + 1
@@ -1286,8 +1305,11 @@ EINDE
 > **Examen**: van cardSort naar CardSortBis: welke lijnen moet je aanpassen en wat moet je aanpassen:
 
 ```pascal
-cardSortBis (I : a: array[] van getallen; begin, einde: geheel getal) : a: array[] van getallen   * Preconditie: de array a is gevuld met n elementen.   * Postconditie: in de array a werden de elementen met index begin tot en met index einde gesorteerd.   * Gebruikt: /
-BEGIN    
+cardSortBis (I : a: array[] van getallen; begin, einde: geheel getal) : a: array[] van getallen
+   * Preconditie: de array a is gevuld met n elementen.
+   * Postconditie: in de array a werden de elementen met index begin tot en met index einde gesorteerd.
+   * Gebruikt: /
+BEGIN
     VOOR i = begin + 1 TOT einde DOE
         x <- a[i]
         j <- i
@@ -1312,7 +1334,7 @@ EINDE
 
 `spilIndex = 4`
 
-"cardSort": 03 04 07 14 **15** 31 17 51 77 40 28 63 omdat 0+5 > 4 // 0 = Begin; 5 = Cutoff; Einde = 3<br> 
+"cardSort": 03 04 07 14 **15** 31 17 51 77 40 28 63 omdat 0+5 > 4 // 0 = Begin; 5 = Cutoff; Einde = 3<br>
 
 `spilIndex = 5`
 
