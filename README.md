@@ -4,6 +4,8 @@
 >
 > Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 
+[TOC]
+
 ## 1ste jaar
 
 ### Semester I
