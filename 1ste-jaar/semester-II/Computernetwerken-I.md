@@ -446,13 +446,13 @@ Switch(config-if)# end
 Switch#
 ```
 
-## Commando's
+### Commando's
 
 prompt command space argument.
 
 BV.: `ping 192.168.1.1`
 
-> Je hoeft niet het volledige commando te typen; Met een ? kan je meer info krijgen; Staat er een ^ onder dan is dat de plaats waar er iets fout staat.
+> Je hoeft niet het volledige commando te typen; Met een `?` kan je meer info krijgen; Staat er een `^` onder dan is dat de plaats waar er iets fout staat.
 
 | Sneltoetsen | Beschrijving |
 | ----------- | ------------ |
@@ -465,7 +465,7 @@ BV.: `ping 192.168.1.1`
 | Ctrl-shift-6 | Hiermee kan een IOS proces onderbroken zoals ping of traceroute worden. |
 | Ctrl-C | Verlaat de huidige configuratie of het huidig commando. |
 
-> **Belangrijk: Slide 27!**
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/commando.png)
 
 NVRAM: Non-volatile random-access memory
 
@@ -494,7 +494,7 @@ POST: Power On Self Test
 | Transport Laag  | Header toevoegen (protocol udp/tcp) (Ingepakt packetje: **segment**) |
 | Netwerk Laag    | Segment wordt ingepakt (inkapseling) + IP wordt toegevoegd **IP-packet/Data gram** |
 | Data-link Laag  | Ingepakt + header + trailer worden toegevoegd **Frame**              |
-| Fysieke Laag    | &nbsp; |
+| Fysieke Laag    | **Bits** |
 
 > (Applicatie laag) Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16bits
 > 
@@ -520,7 +520,9 @@ Packet gemaakt met UDP: Datagram
 
 > **arp**: address resolution protocol
 
-#### Waarom de switch
+## 2.2 De basis
+
+### Waarom de switch
 
 1. Naam instellen
     1. beginnen met een letter
@@ -535,13 +537,55 @@ Packet gemaakt met UDP: Datagram
 
 `enable` in de command line typen om van `Switch>` naar `Switch#` te gaan, dit is een user met alle priveleges!
 
-#### Banner berichten
+#### Beveiligen van de toegang tot het apparaat
+
+* `enable password` beperkt de toegang tot de bevoorrechte EXEC modus
+* `enable secret` Geëncrypteerde, beperkte toegang tot de bevoorrechte EXEC modus
+* `console password` Bepekrt toegang tot en apparaat met behulp van de console verbinding
+* `VTY password` beperkt toegang tot een over Telnet
+
+#### Beveiligen van de Privileged Exec toegangsmode
+
+* Gebruik het `enable secret` commando, niet het oude `enable password` commando.
+* Het `enable secret` commando biedt meer veiligheid omdat het wachtwoord wordt versleuteld.
+
+```terminal
+Sw-Floor-1>enable
+Sw-Floor-1#
+Sw-Floor-1#conf terminal
+Sw-Floor-1(config)#enable secret class
+Sw-Floor-1(config)#exit
+Sw-Floor-1#
+Sw-Floor-1#disable
+Sw-Floor-1>enable
+Password:
+Sw-Floor-1#
+```
+
+#### Beveiligen van de User EXEC toegang
+
+```terminal
+Sw-Floor-1(config)#line console 0
+Sw-Floor-1(config-line)#password cisco
+Sw-Floor-1(config-line)#login
+Sw-Floor-1(config-line)#exit
+Sw-Floor-1(config)#
+Sw-Floor-1(config)#line vty 0 15
+Sw-Floor-1(config-line)#password cisco
+Sw-Floor-1(config-line)#login
+Sw-Floor-1(config-line)#
+```
+
+* Console poort moet beveiligd worden. Dit vermindert de kans dat onbevoegd personeel fysiek een kabel in het apparaat plugt en zo toegang verkrijgt tot het apparaat.
+* VTY lijnen geven toegang tot een Cisco-apparaat via Telnet. Het aantal VTY lijnen die ondersteund worden is afhankelijk van het type paparaat en de IOS.
+
+### Banner berichten
 
 `Welcome bob` als je aanmeldt.
 
 `banner motd #This is a secure system. Authorized Access ONLY!!!#`
 
-#### IP Adressering van apparaten
+### IP Adressering van apparaten
 
 Default gateway: IP van router in ander netwerk
 
