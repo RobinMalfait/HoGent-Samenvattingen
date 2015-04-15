@@ -2,12 +2,14 @@
 
 # Hoofdstuk 1
 
+> Op verkenning binnen het netwerk.
+
 | Term | Description           |
 | ---- | --------------------- |
 | BYOD | Bring your own device |
 | QoS  | Quality of Service    |
 
-## Evolutie
+## 1.1 Wereldwijd verbonden
 
 Vroeger papier, dan vaste pc's, nu byod.
 
@@ -50,7 +52,7 @@ Ieder toestel is een client en een server tegelijkertijd. (**Denk aan:** *torren
 - Performantie: tragere pc's omdat iedereen op jou pc kan.
 
 
-## Componenten van een netwerk
+## 1.2 LANs, WANs en het Internet
 
 1. Apparaten (*Switch, Router, ...*)
 2. Media (*Kabels, transmissiekanalen, ...*)
@@ -58,9 +60,9 @@ Ieder toestel is een client en een server tegelijkertijd. (**Denk aan:** *torren
 
 ### 2 soorten apparaten
 
-**Eind Apparaten:** bijvoorbeeld een koffiezet, printer, ...
+**Eindapparaten:** bijvoorbeeld een koffiezet, printer, VoIP telefoon, Beveiligingscamera's, ...
 
-**Tussenschakelstations:** een switch, router, ...
+**Tussenschakelstations:** een switch, router, firewalls, ...
 
 #### Tussenschakelstations
 
@@ -72,10 +74,31 @@ Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen o
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/devices.png)
 
+#### Netwerk media
+
+1. Koperkabels (UTP)
+2. Fiber Optic (Glasvezel: fiber)
+3. Wireless (Bluetooth, Wi-Fi, ...)
 
 ### Toplogie diagrammen.
 
 > Topologie is geen technologie!
+
+#### Fysieke Topologie
+
+Plaats waar het apparaat fysiek staat in een bepaald gebouw.
+
+#### Logische Topologie
+
+Logisch opgebouwde topologie, wordt niet weergegeven op basis van plaats, maar op functie bijvoorbeeld:
+
+1. Internet
+2. Firewalls 
+	1. Admin Group
+	2. Classroom X
+	3. Classroom Y
+	
+#### Technologie vs Topologie
 
 **Technologie:** Techniek om iets te versturen, binaire logica op fysiek kanaal zetten.
 
@@ -108,14 +131,17 @@ Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
 ### Verbinden met het internet
 
-| Abbr. | Description             | Provider |
-| ----- | ----------------------- | -------- |
-| DSl   | Digital Subscriber Line | Proximus |
-| Cable | COAX Cable              | Telenet  |
+| Abbr.        | Description             | Provider                     |
+| ------------ | ----------------------- | ---------------------------- |
+| DSl          | Digital Subscriber Line | Proximus                     |
+| Cable        | COAX Cable              | Telenet                      |
+| Cellular     | 3G, Edge, ...           | Proxiums, Telenet, Base, ... |
 
 **Asymmetrisch dienst:** Download is hoger dan Upload.
 
 **Symmetrisch dienst:** Download even hoog dan Upload.
+
+## 1.3 Het netwerk als platform
 
 ### Het convergerend netwerk
 
@@ -126,19 +152,18 @@ Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
 **Nu:**
 
-Willen we 1 netwerk om met alle devices op te kunnen.
+Willen we 1 netwerk waar we al deze devices kunnen op aansluiten.
 
-#### Ondersteunende Netwerkarchitecture
+### Ondersteunende Netwerkarchitecture
 
 1. Fouttolerantie
 2. Kwalitiet van de dienst (QoS)
 3. Schaalbaarheid
 4. Veiligheid
 
-
 ### Circuit Switched Network
 
-Er wordt een `path` vastgelegd en gereserveerd. Communicatie kan in bijde richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
+Er wordt een `path` vastgelegd en gereserveerd. Communicatie kan in beide richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
 
 ### Packet-Switched Network
 
@@ -151,6 +176,25 @@ Fouttolerantie: foutje? Andere weg kiezen.
 > **Tier**: Lagen (Telenet, Proximus, ...)
 
 Het internet heeft een hiërarchische gelaagde structuur.
+
+### Jet verstrekken van QoS
+
+**Tijdgevoelige communicatie**
+
+* Prioriteit verhogen voor diesnten zoals telefonie of videodistributie.
+
+**Niet tijdgevoelige communicatie**
+
+* Prioriteit verlagen voor het ophalen van webpagina of e-mail.
+
+**Van groot belang voor de organisatie**
+
+* Prioriteit verhogen voor productiecontrole of zakelijke transactie data.
+
+**Ongewenste communicatie**
+
+* Afname prioriteit of blokkeren van ongewenste activiteit, zoals peer-to-peer file sharing of live entertainment.
+
 
 
 ## Commando's
