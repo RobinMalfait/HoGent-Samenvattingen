@@ -282,6 +282,84 @@ Netwerkbeveiligingsinrichtingen kunnen onder meer zijn:
 * Intrusion prevention systemen (IPS)
 * Virtual Private Networks (VPN)
 
+
+# Hoofdstuk 2
+
+Het configureren van een NOS
+
+## 2.0 Inleiding
+
+### Het thuisnetwerk
+
+Alle apparaten zijn meestal verbonden met een router waarin vier apparaten zijn geïntegreerd namelijk:
+
+* Een Router (Data packets versturen en ontvangen van en naar het internet)
+* Een Switch (Devices met elkaar verbinden met netwerk kabels)
+* Een Draadloos Toegangspunt (Devices met elkaar verbinden draadloos)
+* Een Firewall (Uitgaand verkeer beveiligen en inkomend verkeer beperken)
+
+## 2.1 IOS Bootcamp
+
+> **IOS**: Internetwork Operating System
+
+
+* Alle netwerkapparatuur zijn afhankelijk van besturingssystemen 
+* Het besturingssysteem op de router thuis wordt meestal firmware genoemd
+* Cisoc IOS -> Een verzameling besturingssystemen die gebruikt worden op Cisco-apparaten
+
+### Operating System
+
+1. Hardware 
+	 * Fysieke gedeelte van de computer)
+2. Kernel 
+	* Communiceert tussen hardware en software van de computer
+	* Beheert hoe hardware middelen worden gebruikt om software-eisen te voldoen
+3. Shell
+	* De gebruikersinterface dat er voor zorgt dat een commando van een gebruiker een specifieke taak van de computer uitvoert. Deze commando's (requests) kunnen via de CLI of via de GUI uitgevoerd worden.
+	
+### Doel van een besturingssysteem
+
+Een PC-besturingssysteem (Windows 8 en OS X) maakt het onder andere mogelijk:
+
+* Om een muis te gebruiken
+* Om de uitvoer te visualiseren op het scherm
+* Om tekst in te voeren
+
+Een switch of router IOS biedt volgende opties aan:
+
+* Interfaces configureren
+* Kan routing- en schakelfuncties activeren
+
+> Alle netwerkapparaten worden geleverd met een standaard IOS. Het is mogelijk om de IOS versie of feature set te upgraden. In deze cursus focussen: Cisco IOS release 15.x
+
+### Locatie van de Cisco IOS
+
+-> Cisco IOS is opgeslagen in de Flash
+
+* Niet-vluchtige geheugen die dus niet verloren gaat wanneer de stroom uitvalt
+* Kan worden gewijzigd of overschreven indien nodig
+* Kan gebruikt worden om meerdere versies van het IOS op te slaan
+* IOS wordt gekopieerd van flash naar vluchtig RAM
+* De Hoeveelheid flash-en RAM-geheugen bepaalt welk IOS kan gebruikt worden
+
+### IOS Functies
+
+Dit zijnde belangrijkste functies die worden uitgevoerd of mogelijk zijn bij Cisco routers en switches.
+
+* Security
+* Routing
+* QoS
+* Addressing
+* Managing Resources
+* Interfaces
+
+### Toegang methoden tot de console
+
+1. Console
+2. Telnet of SSH
+3. AUX-poort
+
+
 ## Commando's
 
 prompt command space argument.
