@@ -1,15 +1,17 @@
 # Computernetwerken I
 
+# Hoofdstuk 1
+
 | Term | Description           |
 | ---- | --------------------- |
 | BYOD | Bring your own device |
 | QoS  | Quality of Service    |
 
-# Evolutie
+## Evolutie
 
 Vroeger papier, dan vaste pc's, nu byod.
 
-## Communicatie
+### Communicatie
 
 **Vroeger**: wachten tot je een persoon tegen kwam.
 
@@ -17,14 +19,14 @@ Vroeger papier, dan vaste pc's, nu byod.
 
 > Besparingen mogelijk voor bedrijven. *Bijvoorbeeld: Skype ipv hotel & vliegtuigtickets.*
 
-# Maten van netwerken
+## Maten van netwerken
 
 1. Small Home Networks (*thuisnetwerk*)
 2. Small Office/Home Office Networks (*SOHO*)
 3. Medium to Large Networks (*bedrijfsnetwerken*)
 4. World Wide Web (*Virtuele Netwerk*, het volledige 'internet')
 
-## Netwerk modellen
+### Netwerk modellen
 
 **Clients and Server**
 
@@ -48,19 +50,19 @@ Ieder toestel is een client en een server tegelijkertijd. (**Denk aan:** *torren
 - Performantie: tragere pc's omdat iedereen op jou pc kan.
 
 
-# Componenten van een netwerk
+## Componenten van een netwerk
 
 1. Apparaten (*Switch, Router, ...*)
 2. Media (*Kabels, transmissiekanalen, ...*)
 3. Diensten (*Software, ...*)
 
-## 2 soorten apparaten
+### 2 soorten apparaten
 
 **Eind Apparaten:** bijvoorbeeld een koffiezet, printer, ...
 
 **Tussenschakelstations:** een switch, router, ...
 
-### Tussenschakelstations
+#### Tussenschakelstations
 
 Berichten/Packetjes worden gesegmenteerd, ze krijgen ook een header met informatie zoals van adres, naar adres, ...
 
@@ -71,7 +73,7 @@ Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen o
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/devices.png)
 
 
-## Toplogie diagrammen.
+### Toplogie diagrammen.
 
 > Topologie is geen technologie!
 
@@ -90,7 +92,7 @@ Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen o
 | BAN   | Body Area Network         |
 
 
-## Het Internet
+### Het Internet
 
 | Abbr. | Descrption.                                         | Welke standaarden |
 | ----- | --------------------------------------------------- | ----------------- |
@@ -100,11 +102,11 @@ Je kan gegevens tegenhouden als ze bijvoorbeeld van een bepaalde locatie komen o
 
 En vele anderen ...
 
-## Intranet en Extranet
+### Intranet en Extranet
 
 Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
-## Verbinden met het internet
+### Verbinden met het internet
 
 | Abbr. | Description             | Provider |
 | ----- | ----------------------- | -------- |
@@ -115,7 +117,7 @@ Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
 **Symmetrisch dienst:** Download even hoog dan Upload.
 
-## Het convergerend netwerk
+### Het convergerend netwerk
 
 **Vroeger:**
 
@@ -126,7 +128,7 @@ Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
 Willen we 1 netwerk om met alle devices op te kunnen.
 
-### Ondersteunende Netwerkarchitecture
+#### Ondersteunende Netwerkarchitecture
 
 1. Fouttolerantie
 2. Kwalitiet van de dienst (QoS)
@@ -134,24 +136,24 @@ Willen we 1 netwerk om met alle devices op te kunnen.
 4. Veiligheid
 
 
-## Circuit Switched Network
+### Circuit Switched Network
 
 Er wordt een `path` vastgelegd en gereserveerd. Communicatie kan in bijde richtingen. Bijvoorbeeld: Als je telefoneert naar persoon X, en persoon Y belt jou, dan kan je niet communiceren.
 
-## Packet-Switched Network
+### Packet-Switched Network
 
 Welke verbinding is optimaal om jouw informatie te versturen. Bijvoorbeeld: werken via het internet.
 
 Fouttolerantie: foutje? Andere weg kiezen.
 
-## Schaalbaarheid
+### Schaalbaarheid
 
 > **Tier**: Lagen (Telenet, Proximus, ...)
 
 Het internet heeft een hiërarchische gelaagde structuur.
 
 
-# Commando's
+## Commando's
 
 prompt command space argument.
 
@@ -225,7 +227,7 @@ Packet gemaakt met UDP: Datagram
 
 > **arp**: address resolution protocol
 
-### Waarom de switch
+#### Waarom de switch
 
 1. Naam instellen
     1. beginnen met een letter
@@ -240,19 +242,19 @@ Packet gemaakt met UDP: Datagram
 
 `enable` in de command line typen om van `Switch>` naar `Switch#` te gaan, dit is een user met alle priveleges!
 
-### Banner berichten
+#### Banner berichten
 
 `Welcome bob` als je aanmeldt.
 
 `banner motd #This is a secure system. Authorized Access ONLY!!!#`
 
-### IP Adressering van apparaten
+#### IP Adressering van apparaten
 
 Default gateway: IP van router in ander netwerk
 
 DNS: Omzetten van hostname naar ip
 
-## Hoofdstuk 3
+# Hoofdstuk 3
 
 Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver (oor) > Message Destination (Hersenen)
 
@@ -262,7 +264,7 @@ Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver 
 4. Snelheid en timing van levering
 5. Bevestiging of aanvaarding van de eisen
 
-### Protocollen
+## Protocollen
 
 * Bericht *coderen*
 * Bericht *opmaak* en *inkapseling*
@@ -328,7 +330,7 @@ Voorbeeld protocol stack:
 
 **Dekapseling**: uitpakken van informatie
 
-### Open Standaarden
+## Open Standaarden
 
 * The Internet Society (ISOC)
 * The Internet Architecture Board (IAB)
@@ -352,15 +354,15 @@ OSI: Open System Interconenction
 * Data Link
 * Physical
 
-### Andere Standaarden Organisaties
+## Andere Standaarden Organisaties
 
 * The Electronic Industries Alliance (EIA)
 * The Telecommunications Industry Association (TIA)
 * The International Telecommunications Union – Telecommunications Standardization Sector (ITU-T)
 * The Internet Corporation for Assigned Names and Numbers (ICANN)
 * The Internet Assigned Numbers Authority (IANA)
-
-### Communiceren van de berichten
+ 
+## Communiceren van de berichten
 
 **Voordelen** van het segmenteren van een bericht:
 
@@ -375,7 +377,7 @@ OSI: Open System Interconenction
 > 
 > FDN: Frequency Division Multiplexing
 
-### Protocol Data Units (PDUs)
+## Protocol Data Units (PDUs)
 
 De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (PDU) genoemd.
 
@@ -385,7 +387,7 @@ De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (
 * Frame
 * Bits
 
-## Hoofdstuk 4
+# Hoofdstuk 4
 
 De fysieke laag.
 
@@ -395,21 +397,21 @@ De fysieke laag.
 - Ethernet Switch
 - Internet Connection (router)
 
-### Netwerk Interface Cards (NICs)
+## Netwerk Interface Cards (NICs)
 
 Netwerkkaarten
 
-### Het fysieke medium
+## Het fysieke medium
 
 - TP kabels (Twisted Pair)
 - Coax kabels
 - Draadloos: Microwaves
 
-![](http://d.pr/i/1isaQ+)
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/fysieke_medium.png)
 
 PM: Fase
 
-### Kabels
+## Kabels
 
 * UTP: Unshielded Twisted Pair
 * STP: Shielded Twisted Pair
