@@ -359,6 +359,92 @@ Dit zijnde belangrijkste functies die worden uitgevoerd of mogelijk zijn bij Cis
 2. Telnet of SSH
 3. AUX-poort
 
+#### Console Poort
+
+* Het apparaat is toegankelijk zelfs als er geen netwerkdiensten zijn geconfigureerd (out-of-band)
+* Heeft een speciale console kabel nodig
+* Maakt het mogelijk configuratie commando's in te voeren
+* Moeten worden uitgerust met wachtwoorden om ongeautoriseerde toegang te voorkomen
+* Het apparaat moet zich in een beveiligde kamer bevinden, zodat de console poort niet gemakkelijk toegankelijk is
+
+#### Telnet, SSH en AUX
+
+**Telnet**
+
+* Methode voor toegang op afstand tot de CLI via een netwerk
+* Vereist actieve netwerkdiensten en een actieve interface die is geconfigureerd
+
+**Secure Shell (SSH)**
+
+* Aanmelden op afstand vergelijkbaar met Telnet, maar maakt gebruik van meer veiligheid
+* Sterkere wachtwoordauthenticatie
+* Gebruikt encryptie bij het transport van data
+
+**AUX-poort**
+
+* Gebruikt de telefoonlijn
+* Kan worden gebruikt als console-poort
+
+### Terminal emulatie programma's
+
+> Software beschikbaar voor het aansluiten van een netwerkapparaat:
+
+* PuTTY
+* Tera Term
+* SecureCRT
+* HyperTerminal
+* OS X Terminal
+* iTerm
+
+### Cisco IOS Werk Modes
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/ios_werk_modes.png)
+
+#### Primare Modes
+
+User EXEC Mode: View-only mode
+Privileged EXEC Mode: Alle monitoring commands & executie van configuratie en management commando's.
+
+#### Globale Configuratie Mode en Submodes
+
+> `configure terminal` is het commando om naar de Global Configuration Mode te gaan.
+
+Gebruik het `exit`-commando om een specifieke mode te verlaten, gebruik het `end`-commando of `Ctrl-Z` om de configuratie mode te verlaten en terug te keren naar de privileged EXEC mode.
+
+
+#### Navigatie tussen IOS Modes
+
+`Router>` is de User EXEC Mode Prompt<br>
+`Router>enable` om naar de Privileged EXEC Mode Prompt te gaan<br>
+`Router#` is de Privileged EXEC Mode Prompt<br>
+`Router#disable` Om terug naar de User EXEC Mode Prompt te gaan<br>
+`Router>exit` om alles te verlaten 
+
+```bash
+Switch> enable
+Switch# configure terminal
+Enter configuration commands, one per line.
+End with CNTL/A.
+Switch(config)# interface vlan 1
+Switch(config-if)# exit
+Switch(config)# exit
+Switch#
+
+Switch# configure terminal
+Enterl configuration commands, one per line.
+End with CNTL/Z.
+Switch(config)# vlan 1
+Switch(config-vlan)# end // Of Ctrl-Z
+Switch#
+
+Switch configure terminal
+Enter configuration commands, one per line.
+End with CNTL/Z.
+Switch(config)# line vty 0 4
+Switch(config-line)# interface fastethernet 0/1
+Switch(config-if)# end
+Switch#
+```
 
 ## Commando's
 
