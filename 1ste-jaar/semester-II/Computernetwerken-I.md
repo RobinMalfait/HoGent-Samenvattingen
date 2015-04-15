@@ -579,11 +579,39 @@ Sw-Floor-1(config-line)#
 * Console poort moet beveiligd worden. Dit vermindert de kans dat onbevoegd personeel fysiek een kabel in het apparaat plugt en zo toegang verkrijgt tot het apparaat.
 * VTY lijnen geven toegang tot een Cisco-apparaat via Telnet. Het aantal VTY lijnen die ondersteund worden is afhankelijk van het type paparaat en de IOS.
 
-### Banner berichten
+> Plain text passwords encrypteren door: `service password-encryption`
+
+#### Banner berichten
 
 `Welcome bob` als je aanmeldt.
 
 `banner motd #This is a secure system. Authorized Access ONLY!!!#`
+
+#### Configuratie bestanden
+
+```terminal
+Switch#show running-config
+```
+
+Om de configuratie te herladen
+
+```terminal
+Switch#reload
+```
+
+Om een configuratie te verwijderen
+
+```terminal
+Switch#erase startup-config
+```
+
+Om een vlan te deleten
+
+```terminal
+Switch#delete vlan.dat
+```
+
+## 2.3 Adresseringsregelingen
 
 ### IP Adressering van apparaten
 
