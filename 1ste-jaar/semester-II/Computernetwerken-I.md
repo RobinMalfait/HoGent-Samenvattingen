@@ -21,7 +21,7 @@ Vroeger papier, dan vaste pc's, nu byod.
 
 > Besparingen mogelijk voor bedrijven. *Bijvoorbeeld: Skype ipv hotel & vliegtuigtickets.*
 
-## Maten van netwerken
+### Maten van netwerken
 
 1. Small Home Networks (*thuisnetwerk*)
 2. Small Office/Home Office Networks (*SOHO*)
@@ -195,7 +195,92 @@ Het internet heeft een hiërarchische gelaagde structuur.
 
 * Afname prioriteit of blokkeren van ongewenste activiteit, zoals peer-to-peer file sharing of live entertainment.
 
+### Het verstrekken van Netwerkveiligheid
 
+Er zijn twee soorten van bezorgdheden betreffende de veiligheid van een netwerk die moet aangepakt worden:
+
+1. De netwerkinfrastructuur beveiliging
+2. De informatiebeveiliging
+
+
+> Encryptie, firewalls, access policies, ...
+
+Beveiligingsmaatregelen die zouden genomen moeten worden in een netwerk zijn:
+
+* Voorkomen van onbevoegde login
+* Voorkomen van informatie diefstal
+* Voorkomen van niet toegestane wijziging van informatie
+* Voorkomn van Denial of Service (DoS)
+
+Om de doelstellingen van veiligheid van een netwerk te realiseren, zijn er drie primaire eisen:
+
+* Waarborging van de vertrouwelijkheid
+* De integriteit van de communicatie bewaren
+* Zorgen voor beschikbaarheid
+
+## 1.4 De veranderende netwerkomgeving
+
+Trends:
+
+* Bring Your Own Device (**BYOD**)
+* Online samenwerken
+* Video
+* Cloud computing
+
+### BYOD
+
+Het concept van om het even welk apparaat, naar om het even welke inhoud, op om het even welke moment in is een belangrijke mondiale trend die belangrijke wijzigingen met zich meebrengen in de manier waarop apparaten worden gebruikt.
+
+### Online Collaboration
+
+IP Communication (VoIP), messaging, online conferenties (Google Hangouts), ...
+
+### Video Communication
+
+Skype, Google Hangouts, ...
+
+### Cloud Computing
+
+* Organisatorische flexibiliteit
+* Behendigheid en snelle inzet
+* Lagere kosten van infrastructuur
+* Heroriëntering van de IT-middelen
+* Oprichting van nieuwe bedrijven
+
+### Data Centers
+
+Een datacenter is een faciliteit die gebruikt wordt door computer systemen thuis en bijbehorende componenten waaronder:
+
+* Redundante data communicatieverbindingen
+* High-speed virtuele servers (soms aangeduid als server farms of server clusters)
+* Redundante opslag systemen (maakt meestal gebruik van SAN-technologie)
+* Redundante back-up voedingen
+* Omgevingscontroles (bijvoorbeeld airconditioning, brandbestrijding)
+* Veiligheidsvoorzieningen
+
+
+### Veiligheidsbedreigingen
+
+De meest voorkomende externe bedreigingen voor netwerken zijn:
+
+* virussen, wormen en Trojaanse paarden
+* Spyware en adware
+* Zero-day aanvallen, ook wel zero-hour-aanvallen
+* Aanvallen van hackers
+* Denial of Service (DoS of DDoS) aanvallen
+* Onderschepping van gegevens en diefstal
+* Identiteitsdiefstal
+
+### Veiligheidsoplossingen
+
+Netwerkbeveiligingsinrichtingen kunnen onder meer zijn:
+
+* Antivirus- en antispyware
+* Firewall filtering
+* Firewall-systemen
+* Access control lists (ACL)
+* Intrusion prevention systemen (IPS)
+* Virtual Private Networks (VPN)
 
 ## Commando's
 
