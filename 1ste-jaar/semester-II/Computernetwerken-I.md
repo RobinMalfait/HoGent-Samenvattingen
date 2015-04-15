@@ -420,7 +420,7 @@ Gebruik het `exit`-commando om een specifieke mode te verlaten, gebruik het `end
 `Router#disable` Om terug naar de User EXEC Mode Prompt te gaan<br>
 `Router>exit` om alles te verlaten 
 
-```bash
+```terminal
 Switch> enable
 Switch# configure terminal
 Enter configuration commands, one per line.
