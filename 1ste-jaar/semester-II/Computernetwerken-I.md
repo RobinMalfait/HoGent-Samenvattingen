@@ -776,27 +776,35 @@ De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (
 
 # Hoofdstuk 4
 
-De fysieke laag.
+Netwerktoegang. De fysieke laag.
 
-`Home Router` Om de draadloze mogelijkheid te bieden, moet een netwerk over een draadloos toegangspunt (WAP) beschikken zodat apparaten verbinding kunnen maken.
+## 4.1 Fysieke laag protocollen
+
+`Home Router` Om de draadloze mogelijkheid te bieden, moet een netwerk over een draadloos toegangspunt (`WAP`) beschikken zodat apparaten verbinding kunnen maken.
 
 - Embedded Wireles Antenna
 - Ethernet Switch
 - Internet Connection (router)
 
-## Netwerk Interface Cards (NICs)
+### Netwerk Interface Cards (NICs)
 
 Netwerkkaarten
 
-## Het fysieke medium
-
-- TP kabels (Twisted Pair)
-- Coax kabels
-- Draadloos: Microwaves
+### Het fysieke medium
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/fysieke_medium.png)
 
 PM: Fase
+
+#### Fysieke laag standaarden
+
+| Standard Organization | Networking Standards |
+| --------------------- | -------------------- |
+| ISO | RJ-11 & RJ-45 connector<br>Netwerk kabel standaard zoals EIA/TIA 568 |
+| EIA/TIA | Data Centers Telecommunicatie<br>Fiber optic color coding |
+| ANSI | RJ-45 pinouts |
+| ITU-T | ADSL |
+| IEEE | 802.3 Ethernet<br>802.11 Wireless LAN (WLAN) & Mesh (Wi-Fi certification)<br>802.15 Bluetooth |
 
 ## Kabels
 
@@ -804,4 +812,49 @@ PM: Fase
 * STP: Shielded Twisted Pair
 * FTP: Foiled Twisted Pair
 
-> Examen: plaats encoding bij media (Slide 13)
+> Examen: plaats encoding bij media ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/hoofdstuk4_slide13.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
