@@ -854,6 +854,13 @@ Signalen kunnen worden verzonden op twee manieren.
 
 > Kabels Twisten -> Elkaar platstralen = voorkomt interferencies!
 
+> **Interferentie:** Storing van buitenaf
+
+**Plug** het manneke<br>
+**Socket** het vrouwke
+
+
+
 ### UTP Kabels
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/utp_kabels_structure.png)
@@ -866,6 +873,11 @@ Signalen kunnen worden verzonden op twee manieren.
 ### Koper Medium Veiligheid
 
 > Genoeg stroom + aarding + deftige kabels + installaties controlleren
+
+
+SLIDE 32
+
+
 
 
 
