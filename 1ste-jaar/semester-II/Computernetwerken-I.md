@@ -796,7 +796,7 @@ Netwerkkaarten
 
 PM: Fase
 
-#### Fysieke laag standaarden
+### Fysieke laag standaarden
 
 | Standard Organization | Networking Standards |
 | --------------------- | -------------------- |
@@ -806,7 +806,7 @@ PM: Fase
 | ITU-T | ADSL |
 | IEEE | 802.3 Ethernet<br>802.11 Wireless LAN (WLAN) & Mesh (Wi-Fi certification)<br>802.15 Bluetooth |
 
-## Kabels
+### Kabels
 
 * UTP: Unshielded Twisted Pair
 * STP: Shielded Twisted Pair
@@ -814,20 +814,58 @@ PM: Fase
 
 > Examen: plaats encoding bij media ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/hoofdstuk4_slide13.png)
 
+### Fundamentele principes
+
+Signalen kunnen worden verzonden op twee manieren.
+
+* **Asynchroon**: Data signalen worden verzonden zonder een bijbehorend kloksignaal. De tijdsafstand tussen data karakters of blokken kunnen van willekeurige duur te zijn, wat betekent dat de afstand niet gestandaardiseerd is. Daarom  vereisen frames een start en stop indicator vlaggen. 
+* **Synchroon**: Gegevenssignalen worden verzonden samen met een kloksignaal dat optreedt op gelijkmatig tijdsafstand aangeduid als bitstijd.
+
+### Bandbreedte
+
+> Informatie per seconde op het medium
+
+| Abbr. | Description | Equivalent |
+| ----- | ----------- | ---------- |
+| bps | Bits per seconde | 1 bps = fundamentel unit of bandwith |
+| kbps | Kilobits per seconde | 1 kbps = 1.000 bps = 10<sup>3</sup> bps |
+| Mbps | Megabits per seconde | 1 Mbps = 1.000.000 bps = 10<sup>6</sup> bps |
+| Gbps | Gigabits per seconde | 1 Gbps = 1.000.000.000 bps = 10<sup>9</sup> bps |
+| Tbps | Terabits per seconde | 1 Tbps = 1.000.000.000.0000 bps = 10<sup>12</sup> bps |
+
+### Throughput
+
+> Snelheid dat het uit het medium komt, aantal doorgestuurde bytes door een netwerk
+
+### Soorten van fysiek medium
+
+- DSL: Digital Subscriber Line
+- Ethernet: RJ 45
+
+## 4.2 Netwerk Medium
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/koper_medium.png)
+
+**Koperen Kabels**
+
+* UTP
+* STP
+* Coax
+
+> Kabels Twisten -> Elkaar platstralen = voorkomt interferencies!
+
+### UTP Kabels
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/utp_kabels_structure.png)
+
+### STP Kabels
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/stp_kabels_structure.png)
 
 
+### Koper Medium Veiligheid
 
-
-
-
-
-
-
-
-
-
-
-
+> Genoeg stroom + aarding + deftige kabels + installaties controlleren
 
 
 
