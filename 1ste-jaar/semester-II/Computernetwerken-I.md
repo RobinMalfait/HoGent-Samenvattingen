@@ -671,7 +671,7 @@ Multicast: naar meerdere eindapparaten
 
 Broadcast: naar alle eindapparaten in het netwerk (behalve naar de verzender)
 
-### 3.2 Netwerkprotocollen en Standaarden
+## 3.2 Netwerkprotocollen en Standaarden
 
 > Een groep van onderling gerelateerde protocollen die nodig zijn om een communicatie-functie 
 uit te voeren wordt een **protocol suite** genoemd.
@@ -703,7 +703,7 @@ Voorbeeld protocol stack:
 
 **Dekapseling**: uitpakken van informatie
 
-#### Open Standaarden
+### Open Standaarden
 
 * The Internet Society (ISOC)
 * The Internet Architecture Board (IAB)
@@ -715,7 +715,7 @@ Voorbeeld protocol stack:
 > IEEE 802.11 standaard voor draadloze netwerken
 > IEEE 802.15 bluetooth
 
-#### Andere Standaarden Organisaties
+### Andere Standaarden Organisaties
 
 * The Electronic Industries Alliance (EIA)
 * The Telecommunications Industry Association (TIA)
@@ -723,7 +723,7 @@ Voorbeeld protocol stack:
 * The Internet Corporation for Assigned Names and Numbers (ICANN)
 * The Internet Assigned Numbers Authority (IANA)
 
-#### Referentiemodel (OSI: 7 lagen)
+### Referentiemodel (OSI: 7 lagen)
 
 OSI: Open System Interconenction
 
@@ -735,16 +735,16 @@ OSI: Open System Interconenction
 * Data Link
 * Physical
 
-#### TCP/IP Referentiemodel
+### TCP/IP Referentiemodel
 
 * Application (Application, Presentation & Session)
 * Transport
 * Internet
 * Network Access (Data Link & Physical)
 
-### 3.3 Het verplaatsen van gegevens in het netwerk
+## 3.3 Het verplaatsen van gegevens in het netwerk
  
-#### Communiceren van de berichten
+### Communiceren van de berichten
 
 **Voordelen** van het segmenteren van een bericht:
 
@@ -759,7 +759,7 @@ OSI: Open System Interconenction
 > 
 > FDN: Frequency Division Multiplexing
 
-#### Protocol Data Units (PDUs)
+### Protocol Data Units (PDUs)
 
 De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (PDU) genoemd.
 
