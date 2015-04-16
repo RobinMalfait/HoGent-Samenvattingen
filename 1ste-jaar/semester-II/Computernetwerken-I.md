@@ -715,7 +715,7 @@ Voorbeeld protocol stack:
 > IEEE 802.11 standaard voor draadloze netwerken
 > IEEE 802.15 bluetooth
 
-### Andere Standaarden Organisaties
+#### Andere Standaarden Organisaties
 
 * The Electronic Industries Alliance (EIA)
 * The Telecommunications Industry Association (TIA)
