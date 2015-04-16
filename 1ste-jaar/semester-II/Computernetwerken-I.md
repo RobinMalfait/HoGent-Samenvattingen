@@ -621,6 +621,12 @@ DNS: Omzetten van hostname naar ip
 
 # Hoofdstuk 3
 
+Netwerkprotocollen en Communicatie
+
+## 3.1 Communicatieregels
+
+### Het tot stand brengen van regels
+
 Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver (oor) > Message Destination (Hersenen)
 
 1. Geïdentificeerde afzender en ontvanger
@@ -629,7 +635,7 @@ Message (Bericht) > Transmitter (Stem) > Transmission Medium (Lucht) > Receiver 
 4. Snelheid en timing van levering
 5. Bevestiging of aanvaarding van de eisen
 
-## Protocollen
+### Protocollen
 
 * Bericht *coderen*
 * Bericht *opmaak* en *inkapseling*
@@ -665,6 +671,8 @@ Multicast: naar meerdere eindapparaten
 
 Broadcast: naar alle eindapparaten in het netwerk (behalve naar de verzender)
 
+### 3.2 Netwerkprotocollen en Standaarden
+
 > Een groep van onderling gerelateerde protocollen die nodig zijn om een communicatie-functie 
 uit te voeren wordt een **protocol suite** genoemd.
 >
@@ -695,7 +703,7 @@ Voorbeeld protocol stack:
 
 **Dekapseling**: uitpakken van informatie
 
-## Open Standaarden
+#### Open Standaarden
 
 * The Internet Society (ISOC)
 * The Internet Architecture Board (IAB)
@@ -707,7 +715,15 @@ Voorbeeld protocol stack:
 > IEEE 802.11 standaard voor draadloze netwerken
 > IEEE 802.15 bluetooth
 
-**Referentiemodel (OSI: 7 lagen)**
+### Andere Standaarden Organisaties
+
+* The Electronic Industries Alliance (EIA)
+* The Telecommunications Industry Association (TIA)
+* The International Telecommunications Union – Telecommunications Standardization Sector (ITU-T)
+* The Internet Corporation for Assigned Names and Numbers (ICANN)
+* The Internet Assigned Numbers Authority (IANA)
+
+#### Referentiemodel (OSI: 7 lagen)
 
 OSI: Open System Interconenction
 
@@ -719,15 +735,16 @@ OSI: Open System Interconenction
 * Data Link
 * Physical
 
-## Andere Standaarden Organisaties
+#### TCP/IP Referentiemodel
 
-* The Electronic Industries Alliance (EIA)
-* The Telecommunications Industry Association (TIA)
-* The International Telecommunications Union – Telecommunications Standardization Sector (ITU-T)
-* The Internet Corporation for Assigned Names and Numbers (ICANN)
-* The Internet Assigned Numbers Authority (IANA)
+* Application (Application, Presentation & Session)
+* Transport
+* Internet
+* Network Access (Data Link & Physical)
+
+### 3.3 Het verplaatsen van gegevens in het netwerk
  
-## Communiceren van de berichten
+#### Communiceren van de berichten
 
 **Voordelen** van het segmenteren van een bericht:
 
@@ -742,7 +759,7 @@ OSI: Open System Interconenction
 > 
 > FDN: Frequency Division Multiplexing
 
-## Protocol Data Units (PDUs)
+#### Protocol Data Units (PDUs)
 
 De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (PDU) genoemd.
 
@@ -751,6 +768,11 @@ De vorm die een stukje data aanneemt op elke laag wordt een Protocol Data Unit (
 * IP-Packat / Data-gram
 * Frame
 * Bits
+
+> **Inkapseling** het proces dat aanvullend protocol header informatie toevoegt aan de gegevens vóór verzending.
+
+> **De-inkapseling** het proces gebruikt door een ontvangend apparaat om een of meer protocol-headers te verwijderen.
+
 
 # Hoofdstuk 4
 
