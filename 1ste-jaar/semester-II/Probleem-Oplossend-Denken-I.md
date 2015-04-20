@@ -1372,7 +1372,7 @@ peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijdere
 > `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
 
 
-#### Implementatie van Stack()
+## Implementatie van Stack()
 
 ```pascal
 Stack(I: n: geheel getal): /
@@ -1385,7 +1385,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van empty()
+## Implementatie van empty()
 
 ```pascal
 empty(I: /): vlag: Boolean
@@ -1397,7 +1397,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van push(x)
+## Implementatie van push(x)
 
 ```pascal
 push(I: x: Element): /
@@ -1410,7 +1410,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van pop()
+## Implementatie van pop()
 
 ```pascal
 pop(I: /): x: Element
@@ -1424,7 +1424,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van peek()
+## Implementatie van peek()
 
 ```pascal
 ppeekop(I: /): x: Element
