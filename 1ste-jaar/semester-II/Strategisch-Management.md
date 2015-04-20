@@ -511,3 +511,184 @@ VB.: van een blauwe oceaan:
 * **Pad 6**: kijken naar een andere tijd
 
 > een markt is een doelgroep!
+
+# Strategieimplementatie- en evaluatie
+
+VB.: Marktaandeel doen stijgen
+
+Bedrijf A) Kosten doen dalen<br>
+Bedrijf B) Differentiatie
+
+## 1. Vertaling naar functionele gebieden
+
+Kerntaken -> concrete plannen -> jaarplannen en budgetten -> terugkoppeling
+
+Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
+
+### 1.1 Productontwikkeling
+
+- Betere resultaten met hetzelfde budget
+- Dezelfde resultaten met minder budget
+
+**Gevolgen:**
+
+* **Personeel** scholing, selectie van nieuwe medewerkers, afvloeiing en doorstroming/overplaatsing van medewerkers.
+* **Middelen** aanschaf van nieuwe, of het buiten gebruik stellen of aanpassen van bestaande apparatuur.
+
+### 1.2 Inkoop
+
+**Kerntaken:**
+
+* Vergroten van inzicht in marktaanbod
+* Scherper onderhandelen
+* Goede vorraadbeheersing
+
+**Gevolgen:**
+
+* **Personeel** training in onderhandelen
+* **Middelen** informatieopslag en goede communicatieapparatuur om steeds te kunnen beschikken over actuele marktinformatie.
+* **Managemensystemen** inkoop afstemmen
+
+### 1.3 Productie
+
+**Kerntaken:**
+
+* Kostenverlaging / Efficiëntieverbetering
+* Versnellen van de levertijd
+* Verbeteren kwaliteit
+* Invoeren ploegendienst
+
+**Gevolgen:**
+
+* **Personeel** bijscholing/opleiding
+* **Middelen** vervaning of aanpassing machines, verbetering lay-out en flexibiliteit, beslag op werkkapitaal
+* **Managementsystemen** productieplanning, invoering werkoverleg/kwaliteitscirkels, belonginssystematiek.
+
+### 1.4 Marketing
+
+**Kerntaken:**
+
+* Analyseren afzetpatronen (Producten met minste inkopen afstoten)
+* Analyseren winstgevendheid product/afnemersgroepen
+* Hanteren marketingmix (4 P's: Prijs, Plaats, Product & Promotie)
+
+**Gevolgen:**
+
+* **Personeel** bijbrengen nieuwe kennis
+* **Middelen** documentatie, gegevensverwerkende apparatuur
+* **Managementsystemen** marktonderzoek, budgettering, kosten-batenanalyses ten aanzien van zelf doen of uitbesteden.
+
+### 1.5 Verkoop
+
+**Kerntaken:**
+
+* Vergroten omzet
+* Verlagen distributiekosten
+
+**Gevolgen:**
+
+* **Personeel** bijscholing
+* **Middelen** EDI (Electronic Data Interchange), orderverwerking automatiseren, distributieapparaat (zoals type vrachtwagen)
+* **Managementsystemen** Omzetplanning, verkoopstatistiek/bezoekrapporten per vertegenwoordiger, belongingssystemen verteegenwoordigers.
+
+## 2. Toepassing van budgettering
+
+> Planning vertaald in geldbedragen
+
+Strategie -> Kritische kerntaken -> Personeel -> Budgettering -> Middelen
+
+**Budgetten opstellen in het 2e jaar!**
+
+# Hoofdstuk 2: Controle en bijsturing
+
+## 1. Het belang van controle
+
+> Het monitoren van activiteiten om ervoor te zorgen dat deze zoals gepland verlopen en waar nodig bijgestuurd kunnen worden.
+
+***
+
+> **Waarom is controle nu zo belangrijk?**
+> 
+> De enige manier waarop managers kunnen weten of organisatiedoelen worden bereikt
+
+## 2. Controle-instrumenten
+
+### 2.1 Kwantitatieve controle
+
+**Financiële controle:**
+
+- Winstconsideraties
+- Omzet
+- Kostprijzen
+- ...
+
+Financiële analyse
+ 
+ - Liquiditeit (Korte termijn)
+ - Solvabiliteit (Lange termijn)
+ - Rentabiliteit (Winstgevend genoeg?) 
+
+**Niet-financiële controle:**
+
+* 'Early warning signals' = kwaliteit
+* Productiviteit
+* human-relations en feedback van de consument
+
+### 2.2 Kwalitatieve controle
+
+**De Balanced Scorecard (BSC)**
+
+* Nemen van acties in dezelfde, gewenste stragegische richting
+
+> **KSF:** zaken die van cruciaal belang zijn om een strategie succesvol uit te kunnen voeren<br>
+> = datgene wat een organisatie vooruit brengt
+> 
+> **KPI's:** Meetmethoden die managementdoelstellingen kwantificieren, zodat de uitvoering van de strategie
+
+VB.:
+
+* **KPI** = aantal nieuwe klanten
+* **KSF** = gebruik van een callcenter om offertes uit te brengen
+
+#### 2.2.1 Balanced Scorecard
+
+**5 Principes**
+
+1. Vertaal de strategie in operationele termen
+2. Richt alle afdelingen van de organisatie op de strategie
+3. Maak strategie tot het dagelijks werk van iedereen
+4. Maak van strategie een doorlopend proces
+5. Mobiliseer tot verandering, uitgaande van de leiding
+
+##### 1) Klantenperspectief
+
+> De doelgroepen en marktsegmenten waarin men concurreert.
+
+Marktsegmenten: opdelen in `groepen`, klanten die dezelfde eisen hebben: 
+
+Voorbeeld: Wasmiddelen
+
+* **Bonux** Prijs
+* **Ariel** Groen / Milieu bewust
+* **Dash** Witter dan wit
+
+##### 2) Interne-business perspectief
+
+> Die processen die de grootste invloed hebben op de tevredenheid van afnemers en de realisering van de financiële doelstellingen van de organistie
+
+##### 3) Innovatie- en leerperspectief
+
+> De infrastructuur die een organisatie moet opbouwen als zij op lange termijn wil blijven groeien en zichzelf verbeteren.
+
+**Mensen, systemen en interne processen**
+
+##### 4) Financieel perspectief
+
+> Draagt de strategie van een organisatie bij aan de verbetering van het resultaat.
+
+#### 2.2.2 BSC in de praktijk
+
+**Voordelen**
+
+* Structuur + legt de onderlinge relaties bloot tusesn wat men meet
+* Zicht op de essentie van de bedrijfsdoelen en activiteiten
