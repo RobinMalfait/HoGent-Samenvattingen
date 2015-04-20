@@ -11,7 +11,7 @@
 | PMC  | Product - Markt Combinaties                      | &nbsp;                                              |
 | R&D  | Research & Development                           | &nbsp;                                              |
 
-#### Management:
+**Management:**
 
 * Visie (Leiding geven)
 * Plannen
@@ -23,16 +23,16 @@
 
 > De juiste methode voor het juiste probleem.
 
-#### Strategisch Management (= Processen, waarde creatie, ...)
+## Strategisch Management (= Processen, waarde creatie, ...)
 
-#### Missie: "De bestaansreden van de organisatie"
+### Missie: "De bestaansreden van de organisatie"
 
 * Werkterrein
 * Bestaansrecht: behoeften
 * betekenis voor stakeholders (stakeholders = iedereen die *iets* te maken heeft met het bedrijf.)
 * Waarden, normen en overtuigingen (imago)
 
-#### Visie: 3 componenten
+### Visie: 3 componenten
 
 Doelstellingen:
 
@@ -267,7 +267,6 @@ De systemen
 Het verschil tussen de totale kosten van alle primaire en ondersteunende activiteiten en de totale opbrengsten van de organisatie.
 
 
-
 **Primaire activiteiten:**
 
 - De ingaande logistiek
@@ -319,9 +318,9 @@ Een effectieve manier om de sterkten en de zwakten van een organisatie in kaart 
 - Gevestigde organisaties kunnen gemakkelijk het initiatief verlizen aan startende organisaties
 - Nooit volledige informatie
 
-# Strategieën op concernniveau
+## Strategieën op concernniveau
 
-## Samenwerkingsverbanden
+### Samenwerkingsverbanden
 
 > Als de kosten, het risico en het tempo waarmee men de strategie invoert.
 
@@ -397,23 +396,23 @@ Uitbreiding = Paters meer werken, meer stress
 
 = Korte termijn + prestatieproblemen zijn niet zo ernstig
 
-# Typologie van Porter
+## Typologie van Porter
 
-## 1.1. Kostenleiderschapstrategie
+### 1.1. Kostenleiderschapstrategie
 
 * Het optimaliseren van bedrijfsprocessen
 * O.a. door het verwijderen van overbodige extra's van een product, het vereenvoudigen van design, productie in lageloonlanden, het verminderen van de vaste kosten, het nastreven van het experience-curve-effect, schaaleffecten, ...
 
-## 1.2. Differentiatiestrategie
+### 1.2. Differentiatiestrategie
 
 * een uniek en superieur beeld creëren van het product
 * o.a. door hoge kwaliteit, uitzonderlijk goede service, innovatieve vormgeving, technologische knowhow, een buitengewoon positief merkimago, ...
 
-## 1.3. Focusstrategie
+### 1.3. Focusstrategie
 
 > Het concurreren op één of een beperkt aantal marktsegmenten
 
-## 1.4. Stuck-in-the-middle
+### 1.4. Stuck-in-the-middle
 
 > een positie waarin een organisatie:
 
@@ -430,29 +429,29 @@ Uitbreiding = Paters meer werken, meer stress
 | Dominante afdelingen | Aankoop, productie & beheerscontrole | R&D, marketing & sales |
 | R&D | Voornamelijk procesengineering | Product-engineering |
 
-# De waardestrategieën van Treacy & Wiersema
+## De waardestrategieën van Treacy & Wiersema
 
 ![](http://www.verduin.nl/Portals/159488/images/treacy-wiersema.jpg)
 
-## 1. Operational Excellence
+### 1. Operational Excellence
 
 Kostenleiderschap
 
 > Het gemak van de klant
 
-## 2. Product leadership
+### 2. Product leadership
 
 Productleiderschap
 
 > het ontwikkelen van innovatieve diensten of producten
 
-## 3. Customer Intimacy
+### 3. Customer Intimacy
 
 Klantenpartnerschap
 
 > De klant
 
-## 4. regels om marktleider te worden
+### 4. regels om marktleider te worden
 
 * Regel 1: Blink uit in één waardendiscipline en wees daarmee de beste in de markt
 * Regel 2: Presteer voor de overige waardendiscipline zodanig op het niveau van de minimale drempelwaarde (treshold) die daarvoor geldt in de markt
@@ -465,7 +464,7 @@ Klantenpartnerschap
 >
 > Treacy & Wiersema: Kijk naar de klant en doe er iets mee
 
-# De blauwe oceaan strategie
+## De blauwe oceaan strategie
 
 | Rode Oceaanstrategie | Blauwe Oceaanstrategie |
 | -------------------- | ---------------------- |
@@ -512,20 +511,20 @@ VB.: van een blauwe oceaan:
 
 > een markt is een doelgroep!
 
-# Strategieimplementatie- en evaluatie
+## Strategieimplementatie- en evaluatie
 
 VB.: Marktaandeel doen stijgen
 
 Bedrijf A) Kosten doen dalen<br>
 Bedrijf B) Differentiatie
 
-## 1. Vertaling naar functionele gebieden
+### 1. Vertaling naar functionele gebieden
 
 Kerntaken -> concrete plannen -> jaarplannen en budgetten -> terugkoppeling
 
 Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
 
-### 1.1 Productontwikkeling
+#### 1.1 Productontwikkeling
 
 - Betere resultaten met hetzelfde budget
 - Dezelfde resultaten met minder budget
@@ -535,7 +534,7 @@ Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
 * **Personeel** scholing, selectie van nieuwe medewerkers, afvloeiing en doorstroming/overplaatsing van medewerkers.
 * **Middelen** aanschaf van nieuwe, of het buiten gebruik stellen of aanpassen van bestaande apparatuur.
 
-### 1.2 Inkoop
+#### 1.2 Inkoop
 
 **Kerntaken:**
 
@@ -549,7 +548,7 @@ Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
 * **Middelen** informatieopslag en goede communicatieapparatuur om steeds te kunnen beschikken over actuele marktinformatie.
 * **Managemensystemen** inkoop afstemmen
 
-### 1.3 Productie
+#### 1.3 Productie
 
 **Kerntaken:**
 
@@ -564,7 +563,7 @@ Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
 * **Middelen** vervaning of aanpassing machines, verbetering lay-out en flexibiliteit, beslag op werkkapitaal
 * **Managementsystemen** productieplanning, invoering werkoverleg/kwaliteitscirkels, belonginssystematiek.
 
-### 1.4 Marketing
+#### 1.4 Marketing
 
 **Kerntaken:**
 
@@ -578,7 +577,7 @@ Voorbeelden: hangt af van bedrijf tot bedrijf en wat je juist wilt doen...
 * **Middelen** documentatie, gegevensverwerkende apparatuur
 * **Managementsystemen** marktonderzoek, budgettering, kosten-batenanalyses ten aanzien van zelf doen of uitbesteden.
 
-### 1.5 Verkoop
+#### 1.5 Verkoop
 
 **Kerntaken:**
 
