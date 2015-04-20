@@ -291,7 +291,9 @@ Het verschil tussen de totale kosten van alle primaire en ondersteunende activit
 - De verwerving
     - De relatie met de importeur + de inrichting van het gebouw
 
-# Hoofdstuk 3: SWOT - analyse
+# Hoofdstuk 3
+
+De SWOT - analyse
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Strategisch-Management/swot_voorbeeld.png)
 
@@ -598,7 +600,7 @@ Strategie -> Kritische kerntaken -> Personeel -> Budgettering -> Middelen
 
 **Budgetten opstellen in het 2e jaar!**
 
-# Hoofdstuk 2: Controle en bijsturing
+# Hoofdstuk 4
 
 ## 1. Het belang van controle
 
