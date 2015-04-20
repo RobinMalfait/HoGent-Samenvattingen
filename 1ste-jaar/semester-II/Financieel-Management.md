@@ -74,7 +74,7 @@ Nu: Nederland > BelgiÃ« (Btw in het land van bestemming, dus in dit geval BelgiÃ
 ### Omzet
 
 ```
-Res = Obrengst - Kost
+Res = Opbrengst - Kost
                         Aankoopprijs + verkoopprijs
 (Winst/Verlies) = 150 - (100         + 10)
                 = 40
