@@ -1438,7 +1438,7 @@ EINDE
 
 > Alle methodes zijn T(n) = &Theta;(1)
 
-### Voorbeeld: methode one
+## Voorbeeld: methode one
 
 > Bevat de stack 1 element of niet
 
@@ -1459,7 +1459,7 @@ BEGIN
 EINDE
 ```
 
-### Toepassing 1: controle van haakjes
+## Toepassing 1: controle van haakjes
 
 ```pascal
 controleerHaakjes(I: uitdrukking: array[] van Strings): /
