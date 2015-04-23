@@ -1367,7 +1367,7 @@ peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijdere
 | Stack |
 | ----- |
 | - data: array[] van Element <br> - t : geheel getal |
-| + Stack(n: geheel getal) <br> + empty(): boolean <br> + push(x: Element): / <br> + pope() : Element <br> + peek(): Element |
+| + Stack(n: geheel getal) <br> + empty(): boolean <br> + push(x: Element): / <br> + pop() : Element <br> + peek(): Element |
 
 > `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
 
@@ -1603,3 +1603,18 @@ EINDE
 // De uitvoertekst
 a b c + d x e f g x + x +
 ```
+
+## Hoofdstuk 6
+
+> Wachtrijen (Queues), dit is een **FIFO structuur (First In First Out)**
+
+* `Queue()` constructor
+* `empty()` controleert of een wachtrij al dan niet leeg is
+* `enqueue()` voegt een gegeven element toe aan de start van een wachtrij
+* `dequeue()` verwijdert het element aan de kop in een wachtrij en retourneert het verijwderde element
+* `front()` retourneert het voorste element, m.a.w. de kop, van een wachtrij zonder het te verwijderen
+
+| Queue |
+| ----- |
+| - data: array[] van Element <br> - k : geheel getal <br> - s : geheel getal |
+| + Queue(n: geheel getal) <br> + empty(): boolean <br> + enqueue(x: Element): / <br> + dequeue() : Element <br> + front(): Element |
