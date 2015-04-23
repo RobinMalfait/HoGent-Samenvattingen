@@ -1,12 +1,12 @@
 # Probleem Oplossend Denken I
 
-## Hoofdstuk 1
+# Hoofdstuk 1
 
 * De sequentie
 * De Selectie
 * De Iteratie
 
-**Algoritme: De Sequentie**
+## Algoritme: De Sequentie
 
 ---
 
@@ -27,7 +27,7 @@ bodyMassIndex <- gewicht/(lengte . lengte)
 RETOUR bodyMassIndex
 ```
 
-**Algoritme: De Selectie**
+## Algoritme: De Selectie
 
 ---
 
@@ -39,7 +39,7 @@ ANDERS
 EINDE ALS
 ```
 
-**De eenzijdige Selectie:**
+## De eenzijdige Selectie:
 
 ```pascal
 ALS voorwaarde DAN
@@ -59,7 +59,7 @@ ANDERS
 EINDE ALS
 ```
 
-**De Geneste selectiestructuur:**
+## De Geneste selectiestructuur:
 
 ```pascal
 VOERUIT(scherm, "Geef BMI:")
@@ -75,7 +75,7 @@ ANDERS
 EINDE ALS
 ```
 
-**Algoritme: De iteratie**
+## Algoritme: De iteratie
 
 ---
 
@@ -122,7 +122,7 @@ EINDE VOOR
 VOERUIT(scherm, "som = " som)
 ```
 
-### Methodes
+## Methodes
 
 **Sjabloon**
 
@@ -193,7 +193,7 @@ EINDE
 >
 > Dus, n > n, kan niet = contradictie
 
-### Methode 2: De zeef van Eratosthenes
+## Methode 2: De zeef van Eratosthenes
 
 ***2*** ***3*** 4 ***5*** 6 ***7*** 8 9 10 ***11*** 12 ***13*** 14 15 16 ***17*** 18 ***19*** 20 21 22 ***23*** 24 25 26 27 28 ***29***
 
@@ -219,15 +219,15 @@ BEGIN
 EINDE
 ```
 
-## Hoofdstuk 2
+# Hoofdstuk 2
 
 > De tijd is rechtevenredig met het aantal instructies die uitgevoerd worden.
 >
 > We nemen aan dat alle basis instructies even lang duren, bijvoorbeeld: optelling, aftrekken, deling, vermenigvuldiging, ...
 
-### Het aantal instructies exact gaan tellen.
+## Het aantal instructies exact gaan tellen.
 
-#### Voorbeeld 1:
+### Voorbeeld 1:
 
 ```pascal
 BEGIN
@@ -244,7 +244,7 @@ EINDE
 
 T(n) = 3
 
-#### Voorbeeld 2:
+### Voorbeeld 2:
 
 ```pascal
 BEGIN
@@ -270,7 +270,7 @@ T(n) = 5n + 4
 > Een `VOOR` lus heeft altijd 2 instructies.
 
 
-#### Voorbeeld 3:
+### Voorbeeld 3:
 
 ```pascal
 BEGIN
@@ -298,7 +298,7 @@ EINDE
 T(n) = (2 + c)n + 4
 
 
-#### Voorbeeld 4:
+### Voorbeeld 4:
 
 ```pascal
 BEGIN
@@ -330,7 +330,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 > **Examen:** zorg dat je er de &Theta; bij zet!
 
 
-### &Theta; notatie
+## &Theta; notatie
 
 > **EXAMEN:** bepaal theta notatie. (Big &Theta; Notation).
 
@@ -469,7 +469,7 @@ S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 
 (1 - a)S<sub>k</sub> = 1 - a<sup>k + 1</sup> / 1 - a = a<sup>k + 1</sup> - 1 / a - 1 = S<sub>k</sub>
 
-## Hoofdstuk 3
+# Hoofdstuk 3
 
 
 ```pascal
@@ -489,6 +489,7 @@ Voorbeeld:
    = 4 x 6
    = 24
 ```
+
 ```pascal
 berekenFaculteit(I: n: geheel getal): fac: geheel getal
     * preconditie: n is een natuurlijk getal
@@ -525,7 +526,7 @@ Gok:<br>
 T(n) = n + 1
 
 
-### Bewijs (Door inductie):
+## Bewijs (Door inductie):
 
 > Stel je hebt een oneindige rij van personen P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub>, P<sub>5</sub>, ...
 
@@ -564,7 +565,7 @@ Te bewijzen:    T(n) = n + 1
 > T(n) = &Theta;(n)
 
 
-### Torens van Hanoi
+## Torens van Hanoi
 
 | n | # Bewegingen |
 | - | ------------ |
@@ -626,7 +627,7 @@ leeftijd aarde = 4,5 x 10<sup>19</sup> jaar
 
 leeftijd universum = 13,8 x 10<sup>9</sup> jaar
 
-### De rij van Fibonacci
+## De rij van Fibonacci
 
 F<sub>0</sub> = 1<br>
 F<sub>1</sub> = 1<br>
@@ -674,7 +675,7 @@ EINDE
 T(n) = &Theta;(n)
 
 
-## Hoofdstuk 4
+# Hoofdstuk 4
 
 > Zoek- en sorteeralgoritmen
 
@@ -788,7 +789,7 @@ zoekGetal = 5
     index <- -1
 ```
 
-### Gesorteerde rij
+## Gesorteerde rij
 
 ```pascal
 zoekSequentieelGesorteerd(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
@@ -1349,7 +1350,7 @@ EINDE
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/quickSort.png)
 
-## Hoofdstuk 5
+# Hoofdstuk 5
 
 Stapels:
 
@@ -1371,7 +1372,7 @@ peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijdere
 > `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
 
 
-#### Implementatie van `Stack()`
+## Implementatie van Stack()
 
 ```pascal
 Stack(I: n: geheel getal): /
@@ -1384,7 +1385,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van `empty()`
+## Implementatie van empty()
 
 ```pascal
 empty(I: /): vlag: Boolean
@@ -1396,7 +1397,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van `push(x)`
+## Implementatie van push(x)
 
 ```pascal
 push(I: x: Element): /
@@ -1409,7 +1410,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van `pop()`
+## Implementatie van pop()
 
 ```pascal
 pop(I: /): x: Element
@@ -1423,7 +1424,7 @@ BEGIN
 EINDE
 ```
 
-#### Implementatie van `peek()`
+## Implementatie van peek()
 
 ```pascal
 ppeekop(I: /): x: Element
@@ -1437,7 +1438,7 @@ EINDE
 
 > Alle methodes zijn T(n) = &Theta;(1)
 
-### Voorbeeld: methode one
+## Voorbeeld: methode one
 
 > Bevat de stack 1 element of niet
 
@@ -1458,7 +1459,7 @@ BEGIN
 EINDE
 ```
 
-### Toepassing 1: controle van haakjes
+## Toepassing 1: controle van haakjes
 
 ```pascal
 controleerHaakjes(I: uitdrukking: array[] van Strings): /
