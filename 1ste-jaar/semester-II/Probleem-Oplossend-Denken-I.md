@@ -1582,3 +1582,24 @@ EINDE
 // De uitvoertekst
 3 4 + 5 x
 ```
+
+**Voorbeeld 2:**
+
+
+`a + (b + c) x d x (e + f x g)` 
+
+```pascal
+// De Stapel
+
+             x
+             +   +
+ +           (   (   (
+ (   (   x   x   x   x   x
+ +   +   +   +   +   +   +   +
+--- --- --- --- --- --- --- --- ---
+```
+
+```pascal
+// De uitvoertekst
+a b c + d x e f g x + x +
+```
