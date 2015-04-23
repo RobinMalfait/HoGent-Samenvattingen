@@ -1768,3 +1768,15 @@ BEGIN
     RETOUR vlag
 EINDE
 ```
+
+## Oefening 2: Methode full
+
+```pascal
+full(I: /): vlag: boolean
+    * Preconditie: de wachtrij q bestaat.
+    * Postconditie: de waarde true of false werd afgelevered, afhankelijk van het feit of de wachtrij q vol is of niet.
+    * Gebruikt: length
+BEGIN
+    RETOUR ((s + 1) MOD data.length) = k
+EINDE
+```
