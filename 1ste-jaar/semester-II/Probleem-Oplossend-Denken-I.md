@@ -1679,3 +1679,40 @@ BEGIN
     data[s] <- x
 EINDE
 ```
+
+## De implementatie van dequeue()
+
+```pascal
+dequeue(I: /): x: Element
+    * Preconditie: de wachtrij q bestaat en is neit leeg
+    * Postconditie: de kop van de wachtrij q werd verwijderd en geretourneerd
+    * Gebruikt: length
+BEGIN
+    x <- data[k]
+    
+    ALS (k = s) DAN
+        k <- -1
+        s <- -1
+    ANDERS
+        n <- data.length
+        k <- (k + 1) MOD n
+    EINDE ALS
+    
+    RETOUR (x)
+EINDE
+```
+
+## De implementatie van front()
+
+```pascal
+front(I: /): x: Element
+    * Preconditie: de wachtrij q bestaat en is neit leeg
+    * Postconditie: de kop van de wachtrij q werd geretourneerd, de wachtrij q werd neit gewijzigd.
+    * Gebruikt: /
+BEGIN
+    RETOUR data[k]
+EINDE
+```
+
+> Alle methodes zijn T(n) = &Theta;(1)
+
