@@ -1459,7 +1459,7 @@ BEGIN
 EINDE
 ```
 
-## Toepassing 1: controle van haakjes
+### Toepassing 1: controle van haakjes
 
 ```pascal
 controleerHaakjes(I: uitdrukking: array[] van Strings): /
