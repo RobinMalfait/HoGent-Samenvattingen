@@ -1604,7 +1604,7 @@ EINDE
 a b c + d x e f g x + x +
 ```
 
-## Hoofdstuk 6
+# Hoofdstuk 6
 
 > Wachtrijen (Queues), dit is een **FIFO structuur (First In First Out)**
 
@@ -1618,3 +1618,64 @@ a b c + d x e f g x + x +
 | ----- |
 | - data: array[] van Element <br> - k : geheel getal <br> - s : geheel getal |
 | + Queue(n: geheel getal) <br> + empty(): boolean <br> + enqueue(x: Element): / <br> + dequeue() : Element <br> + front(): Element |
+
+**Voorbeeld:**
+
+```pascal
+|   |   |   |   |   |     // k = s = -1
+| a |   |   |   |   |     // k = s = 0
+| a | b |   |   |   |     // k = 0   s = 1
+| a | b | c |   |   |     // k = 0   s = 2
+|   | b | c |   |   |     // k = 1   s = 2
+|   |   | c |   |   |     // k = 2   s = 2
+|   |   | c | d |   |     // k = 2   s = 3
+|   |   | c | d | e |     // k = 2   s = 4
+| f |   | c | d | e |     // k = 2   s = 0
+```
+
+> Een wachtrij is een **circulaire** array, je kan dus alle plaatsen gebruiken.
+
+## De implementatie van Queue()
+
+```pascal
+Queue(I: n: geheel getal): /
+    * Preconditie: n is een natuurlijk getal
+    * Postconditie: de array data van lengte n werd gealloceerd en t werd geïnitialiseerd
+    * Gebruikt: /
+BEGIN
+    data <- nieuwe array[n]
+    k <- - 1 // Geen element op de stapel
+    s <- - 1
+EINDE
+```
+
+## De implementatie van empty() in Queue
+
+```pascal
+empty(I: /): vlag: Boolean
+    * Preconditie: de wachtrij q bestaat
+    * Postconditie: de waarde true of false werd afgeleverd, afhankelijk van het feit of de wachtrij q leeg is of niet
+    * Gebruikt: /
+BEGIN
+    RETOUR (k = -1)
+EINDE
+```
+
+## De implementatie van enqueue()
+
+```pascal
+enqueue(I: x: Element): /
+    * Preconditie: de wachtrij q bestaat en is nog niet vol
+    * Postconditie: het element x werd aan de staart van de wachtrij q toegevoegd
+    * Gebruikt: empty, length
+BEGIN
+    ALS empty() DAN
+        k <- 0
+    EINDE ALS
+    
+    n <- data.length
+    s <- (s + 1) MOD n
+    
+    data[s] <- x
+EINDE
+```
