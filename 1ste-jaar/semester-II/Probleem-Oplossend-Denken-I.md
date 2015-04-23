@@ -1489,3 +1489,95 @@ BEGIN
     EINDE ALS
 EINDE
 ```
+
+### Toepassing 2: het berekenen van postfix-uitdrukkingen
+
+
+**Infix:**
+
+> De operator staat tussen de operandum (parameters)
+
+```java
+3 + 4 = 7
+3 + 4 x 5 = 23
+(3 + 4) x 5 = 35
+```
+
+**Postfix:**
+
+> De operatoren staan na de operandum (parameters)
+
+```java
+3 4 +
+3 4 5 x +
+3 4 + 5 x
+```
+
+**Uitrekenen:**
+
+
+#### Voorbeeld Rekenmachine 1
+
+`3 4 5 x +`
+
+```pascal
+// De stapel
+5
+4  20
+3   3 23
+-  –- -–
+```
+
+1. Kom je een getal tegen -> op de stapel plaatsen
+2. Kom je een teken tegen -> laatste 2 waarden van de stapel uitwerken en terug op de stapel plaatsen
+3. Herhalen tot het einde
+
+#### Voorbeeld Rekenmachine 2
+
+`3 4 + 5 x`
+
+
+```pacal
+// De stapel
+
+4  5
+3  7  35
+-  -  --
+```
+
+### Van infix naar postfix
+
+**Eigenschappen:**
+
+1. Volgorde van getallen is altijd gelijk
+2. Volgorde van getallen is niet altijd gelijk, maar kan wel
+3. Er zijn nooit haakjes
+
+**Uitwerking:**
+
+1. Lees de invoertekst van links naar rechts
+2. Een operand wordt naar de uitvoertekst geschreven
+3. Een operator of een haakje wordt op de stapel bewaard als:
+    * de stapel leeg is
+    * de gelezen operator een hogere prioriteit heeft dan de operator die bovenaan de stapel ligt
+    * het gelezen haakje een openingshaakje is
+    
+    Als de gelezen operator gelijke of lagere prioriteit heeft dan de operator aan de top van de stapel, dan worden alle operatoren van de stapel met gelijke of hogere prioriteit van de stapel gehaald en worden deze toegevoegd aan de uitvoertekst. Dit totdat een operator met lagere prioriteit bereikt wordt of totdat de stapel leeg is. Vervolgens wordt de ingelezen operator op de stapel geplaatst. <br>Als een sluitingshaakje wordt ingelezen dan worden alle operatoren van de stapel gehaald en toegevoegd aan de uitvoertekst totdat een openhaakje wordt bereikt. Het haakje wordt eveneens van de stapel gehaald maar niet aan de uitvoertekst toegevoegd.
+4. Als het einde van de invoertekst bereikt is, worden alle operatoren van de stapel gehaald en aan de uitvoertekst toegevoegd todat de stapel leeg is 
+
+**Voorbeeld 1:**
+
+`(3 + 4) x 5` 
+
+```pascal
+// De Stapel
+
+ +
+ (  (     x
+-- -- -- -- --
+```
+
+```pascal
+// De uitvoertekst
+3 4 + 5 x
+```
