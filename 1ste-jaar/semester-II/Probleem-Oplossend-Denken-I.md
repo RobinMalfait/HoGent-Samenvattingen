@@ -1451,11 +1451,11 @@ BEGIN
     ALS (s.empty()) DAN
         vlag <- false
     ANDERS
-    x <- s.pop()
-    vlag <- s.empty()
-    s.push(x)
+        x <- s.pop()
+        vlag <- s.empty()
+        s.push(x)
     EINDE ALS
-    RETOUR (x)
+    RETOUR vlag
 EINDE
 ```
 
@@ -1736,3 +1736,35 @@ EINDE
 ```
 
 > ^ op examen
+
+
+## Voorbeeld: methode one (in Queue)
+
+```pascal
+one(I: q: Queue): vlag: boolean
+    * Preconditie: een wachtrij q wordt meegegeven; q bevat maximaal 50 elementen
+    * Postconditie: indien q juist één element heeft dan werd true weergegeven anders false, de wachtrij q werd neit gewijzigd.
+    * Gebruikt: Queue, empty, dequeue, enqueue
+BEGIN
+    ALS (q.empty()) DAN
+        vlag <- false
+    ANDERS
+        x <- q.dequeue()
+        vlag <- q.empty()
+        
+        qHulp <- nieuwe Queue(50)
+        
+        ZOLANG NIET q.empty() DOE
+            qHulp.enqueue(q.dequeue())
+        EINDE ZOLANG
+        
+        q.enqueue(x)
+        
+        ZOLANG NIET qHulp.empty() DOE
+            q.enqueue(qHulp.dequeue())
+        EINDE ZOLANG
+    EINDE ALS
+    
+    RETOUR vlag
+EINDE
+```
