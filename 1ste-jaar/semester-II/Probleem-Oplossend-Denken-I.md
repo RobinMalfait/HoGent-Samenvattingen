@@ -1523,10 +1523,10 @@ EINDE
 
 ```pascal
 // De stapel
-5
-4  20
-3   3 23
--  –- -–
+ 5
+ 4    20
+ 3    3   23
+---  -–- --–
 ```
 
 1. Kom je een getal tegen -> op de stapel plaatsen
@@ -1541,9 +1541,9 @@ EINDE
 ```pacal
 // De stapel
 
-4  5
-3  7  35
--  -  --
+ 4    5
+ 3    7    35
+---  ---  ---
 ```
 
 ### Van infix naar postfix
