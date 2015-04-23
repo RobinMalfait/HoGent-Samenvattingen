@@ -1459,7 +1459,7 @@ BEGIN
 EINDE
 ```
 
-### Toepassing 1: controle van haakjes
+## Toepassing 1: controle van haakjes
 
 ```pascal
 controleerHaakjes(I: uitdrukking: array[] van Strings): /
@@ -1491,7 +1491,7 @@ BEGIN
 EINDE
 ```
 
-### Toepassing 2: het berekenen van postfix-uitdrukkingen
+## Toepassing 2: het berekenen van postfix-uitdrukkingen
 
 
 **Infix:**
@@ -1517,7 +1517,7 @@ EINDE
 **Uitrekenen:**
 
 
-#### Voorbeeld Rekenmachine 1
+### Voorbeeld Rekenmachine 1
 
 `3 4 5 x +`
 
@@ -1533,7 +1533,7 @@ EINDE
 2. Kom je een teken tegen -> laatste 2 waarden van de stapel uitwerken en terug op de stapel plaatsen
 3. Herhalen tot het einde
 
-#### Voorbeeld Rekenmachine 2
+### Voorbeeld Rekenmachine 2
 
 `3 4 + 5 x`
 
