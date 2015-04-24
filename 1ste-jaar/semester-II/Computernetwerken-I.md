@@ -935,10 +935,28 @@ Fiber-to-the-home (FFTH)
 > Examenvraag: welke standaar is weg t.o.v. de fysieke laag?
 > **EIA/TIA**
 
+### Fysieke WAN Topologieën
 
+> Topologie in kaart brengen hoe devices met elkaar verbonden zijn
 
+* Per Gebouw: Fysieke topologie **Waar**
+* Logische Topologie: **wat met wat**
 
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/veelvoorkomende_fysieke_wan_topologieen.png)
 
+### Half- en Full-Duplex
+
+#### Half-Duplex
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/half_duplex.png)
+
+#### Full-Duplex
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/full_duplex.png)
+
+### Fysieke LAN Topologieën
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/fysieke_lan_topologieen.png)
 
 
 
