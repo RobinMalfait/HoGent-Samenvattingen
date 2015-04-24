@@ -958,9 +958,47 @@ Fiber-to-the-home (FFTH)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/fysieke_lan_topologieen.png)
 
+### Basismethoden voor media toegangscontrole
 
+> **CSMA:** Carrie Sense Multiple Access
 
+1. Contentie gebasseerde toegang
+	* **Wired** CSMA/CD -> Collision Detection
+	* **Wireless** CSMA/CA -> Collision Avoidance
+	
+2. Gecontrolleerde Toegang
+	* VB.: ring - token
+	
+	* Heb je de token? 
+		* Ja: je mag op het netwerk = toegang
+		* Nee: geen toegang
 
+### De Frame
+
+- Fragile Environment
+	- Draadloos
+- Protected environment
+	- Kabels
+
+<table>
+	<tr>
+		<td colspan="3">Header</td>
+		<td rowspan="2">Data</td>
+		<td rowspan="2">FCS</td>
+		<td rowspan="2">STOP FRAME</td>
+	</tr>
+	<tr>
+		<td>Start Frame</td>
+		<td>Address</td>
+		<td>Type/Length</td>
+	</tr>
+</table>
+
+* **Start Frame** geeft het begin van het frame aan
+* **Address** geeft de bron-en de bestemmingsknooppunten aan op de media
+* **Type** geeft aan welke service van de bovenlaag de frame omvat
+
+> De header kan ook andere velden bevatten afhankelijk van welk datalinklaag protocol gebruikt wordt.
 
 
 
