@@ -1000,7 +1000,21 @@ Fiber-to-the-home (FFTH)
 
 > De header kan ook andere velden bevatten afhankelijk van welk datalinklaag protocol gebruikt wordt.
 
+### De Trailer
 
+<table>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">START FRAME</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">ADDRESS</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">TYPE / LENGTH</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">Data</td>
+		<td style="text-align: center; vertical-align: middle;" colspan="2">Trailer</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;">FCS (Fout Detectie a.d.h.v. CRC)</td>
+		<td style="text-align: center; vertical-align: middle;">Stop Frame</td>
+	</tr>
+</table>
 
 
 
