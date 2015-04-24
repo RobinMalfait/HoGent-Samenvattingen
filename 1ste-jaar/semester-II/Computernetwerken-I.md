@@ -982,15 +982,15 @@ Fiber-to-the-home (FFTH)
 
 <table>
 	<tr>
-		<td colspan="3">Header</td>
-		<td rowspan="2">Data</td>
-		<td rowspan="2">FCS</td>
-		<td rowspan="2">STOP FRAME</td>
+		<td style="text-align: center; vertical-align: middle;" colspan="3">Header</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">Data</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">FCS</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">STOP FRAME</td>
 	</tr>
 	<tr>
-		<td>Start Frame</td>
-		<td>Address</td>
-		<td>Type/Length</td>
+		<td style="text-align: center; vertical-align: middle;">Start Frame</td>
+		<td style="text-align: center; vertical-align: middle;">Address</td>
+		<td style="text-align: center; vertical-align: middle;">Type/Length</td>
 	</tr>
 </table>
 
