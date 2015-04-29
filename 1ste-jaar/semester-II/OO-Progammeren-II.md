@@ -354,3 +354,26 @@ String s = "Dit is een zin";
 String[] tokens = s.split(" ");
 String[] tokens2 = s.split("\\s"); // Reguliere Expressions
 ```
+
+## Reguliere Expressies
+
+> Een beschrijving van een patroon in een tekst
+
+| Symbool  | Beschrijving                |
+| :------: | --------------------------- |
+| `\d`     | [0-9]                       |
+| `\w`     | [a-zA-Z0-9_]                |
+| `\s`     | *Spaties*                   |
+| `.`      | *Willekeurig karakter*      |
+| `\s+`    | *1 of meer spaties*         |
+| `\s?`    | *0 of 1 spatie*             |
+| `\s*`    | *0 of meer spaties*         |
+| `c{1,}`  | *1 of meer c's*             |
+| `c{2}`   | *2 c's*                     |
+| `c{2,3}` | *2 of 3 c's*                |
+| `\\.`    | *Leesteken .*               |
+| `[^a-z]` | *Alles behalve, de negatie* |
+
+```java
+str.matches("[A-Z][a-zA-Z]*"); // Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
+```
