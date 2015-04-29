@@ -82,14 +82,6 @@ Res = Opbrengst - Kost
 
 ## Personeelskosten
 
-```
-KOST <-----------------------> SCHULD
-                                |
-                                |_ RSZ (herverdeling tussen werkenden en niet werkenden)
-                                |
-                                |_ Fiscus (Bedrijfsvoorheffing)
-                                |
-                                |_ WN (= nettobezoldeging)
-```
+![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/kost_schuld.png)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/belastingen.png)
