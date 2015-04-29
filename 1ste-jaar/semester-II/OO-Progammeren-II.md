@@ -375,5 +375,6 @@ String[] tokens2 = s.split("\\s"); // Reguliere Expressions
 | `[^a-z]` | *Alles behalve, de negatie* |
 
 ```java
-str.matches("[A-Z][a-zA-Z]*"); // Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
+str.matches("[A-Z][a-zA-Z]*"); 
+// Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
 ```
