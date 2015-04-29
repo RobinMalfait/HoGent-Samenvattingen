@@ -872,30 +872,149 @@ Signalen kunnen worden verzonden op twee manieren.
 
 ### Koper Medium Veiligheid
 
-> Genoeg stroom + aarding + deftige kabels + installaties controlleren
+> * Genoeg stroom 
+> * aarding 
+> * deftige kabels 
+> * installaties controlleren
 
+**Overspraak:** **IN** is gelijk aan **UIT**
 
-SLIDE 32
+### Glasvezels
 
+Fiber-to-the-home (FFTH)
 
+| Single Mode | Multi Mode |
+| ----------- | ---------- |
+| - Kleine Kern | - Grote Kern |
 
+> Je hebt een `precies` licht nodig:
+> een laser (Geen dispertie (Het blijft 1 puntje))
 
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/glasvezelconnectoren.png)
 
+### Draadloos
 
+* Beperkt dekkingsgebied
+* Storing
+* Veiligheid
 
+> Wi-Fi 802.11 + lette => duid op GHz, Mbps...
 
+| Standard | Maximum Speed        | Frequency               | Backwards Compatible  |
+| :------: | :------------------: | :---------------------: | :-------------------: |
+| 802.11a  | 54 Mbps              | 5   GHz                 | No                    |
+| 802.11b  | 11 Mbps              | 2.4 GHz                 | No                    |
+| 802.11g  | 54 Mbps              | 2.4 GHz                 | 802.11b               |
+| 802.11n  | 600 Mbps             | 2.4GHz or 5 GHz         | 802.11b/g             |
+| 802.11ac | 1.3 Gbps (1300 Mbps) | 2.4 GHz & 5.5 GHz       | 802.1b/g/n            |
+| 802.11ad | 7 Gbps (7000 Mbps)   | 2.4 GHz, 4 GHz & 60 GHz | 802.11b/g/n/ac        |
 
+## 4.3 Datalinklaag protocollen
 
+> Laag 2, deze laag zorgt voor toegang tot het medium
 
+* LLC Sublayer: Logical Link Control
+	* Software Structuur
+	
+* MAC Sublayer: Media Access Control
+	* Structuur van specifieke technologie
 
+### Een Frame Creëren
 
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/een_frame_creeren.png)
 
+### Datalaag standaarden
 
+| Standard Organization | Networking Standards |
+| --------------------- | -------------------- |
+| IEEE | <ul><li>802.2: Logical Link Control (LLC)</li><li>802.3: Ethernet</li><li>802.4: Token bus</li><li>802.5: Token passing</li><li>802.11: Wireless LAN (WLAN) & Mesh (Wi-Fi certification)</li><li>802.15: Bluetooth</li><li>802.16: WiMax</li></ul> |
+| ITU-T | <ul><li>G.992: ADSL</li><li>G.8100 - G.8199: MPLS over Transport aspects</li><li>Q.921: ISDN </li><li>Q.922: Frame Relay</li></ul> |
+| ISO | <ul><li>HDLC (High Level Data Link Control)</li><li>ISO 9314: FDDI Media Access Control (MAC)</li></ul> |
+| ANSI | <ul><li>X3T9.5 and X3T12: Fiber Distributed Data Interface (FDDI)</li></ul> |
 
+> Examenvraag: welke standaar is weg t.o.v. de fysieke laag?
+> **EIA/TIA**
 
+### Fysieke WAN Topologieën
 
+> Topologie in kaart brengen hoe devices met elkaar verbonden zijn
 
+* Per Gebouw: Fysieke topologie **Waar**
+* Logische Topologie: **wat met wat**
 
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/veelvoorkomende_fysieke_wan_topologieen.png)
+
+### Half- en Full-Duplex
+
+#### Half-Duplex
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/half_duplex.png)
+
+#### Full-Duplex
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/full_duplex.png)
+
+### Fysieke LAN Topologieën
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/fysieke_lan_topologieen.png)
+
+### Basismethoden voor media toegangscontrole
+
+> **CSMA:** Carrie Sense Multiple Access
+
+1. Contentie gebasseerde toegang
+	* **Wired** CSMA/CD -> Collision Detection
+	* **Wireless** CSMA/CA -> Collision Avoidance
+	
+2. Gecontrolleerde Toegang
+	* VB.: ring - token
+	
+	* Heb je de token? 
+		* Ja: je mag op het netwerk = toegang
+		* Nee: geen toegang
+
+### De Frame
+
+- Fragile Environment
+	- Draadloos
+- Protected environment
+	- Kabels
+
+<table>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;" colspan="3">Header</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">Data</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">FCS</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">STOP FRAME</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;">Start Frame</td>
+		<td style="text-align: center; vertical-align: middle;">Address</td>
+		<td style="text-align: center; vertical-align: middle;">Type/Length</td>
+	</tr>
+</table>
+
+* **Start Frame** geeft het begin van het frame aan
+* **Address** geeft de bron-en de bestemmingsknooppunten aan op de media
+* **Type** geeft aan welke service van de bovenlaag de frame omvat
+
+> De header kan ook andere velden bevatten afhankelijk van welk datalinklaag protocol gebruikt wordt.
+
+### De Trailer
+
+<table>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">START FRAME</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">ADDRESS</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">TYPE / LENGTH</td>
+		<td style="text-align: center; vertical-align: middle;" rowspan="2">Data</td>
+		<td style="text-align: center; vertical-align: middle;" colspan="2">Trailer</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle;">FCS (Fout Detectie a.d.h.v. CRC)</td>
+		<td style="text-align: center; vertical-align: middle;">Stop Frame</td>
+	</tr>
+</table>
 
 
 
