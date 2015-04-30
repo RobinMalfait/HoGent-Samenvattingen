@@ -2,6 +2,8 @@
 
 # Hoofdstuk 1
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md#oefeningen-14-middot-slide-15-17)
+
 * De sequentie
 * De Selectie
 * De Iteratie
@@ -220,6 +222,8 @@ EINDE
 ```
 
 # Hoofdstuk 2
+
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/2.3.oefeningen.md#oefeningen-23-middot-slide-31)
 
 > De tijd is rechtevenredig met het aantal instructies die uitgevoerd worden.
 >
@@ -471,6 +475,7 @@ S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 
 # Hoofdstuk 3
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/3.4.oefeningen.md#oefeningen-34-middot-slide-45)
 
 ```pascal
 0! = 1
@@ -1352,6 +1357,8 @@ EINDE
 
 # Hoofdstuk 5
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/5.6.oefeningen.md#oefeningen-56-middot-slide-89-91)
+
 Stapels:
 
 > Een datastructuur waarbij je enkel bovenaan kan toevoegen en ook enkel het bovenste element bekijken en verwijderen: `LIFO` **(last in first out)**
@@ -1606,6 +1613,8 @@ a b c + d x e f g x + x +
 
 # Hoofdstuk 6
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/6.5.oefeningen.md#oefeningen-65-middot-slide-100-102)
+
 > Wachtrijen (Queues), dit is een **FIFO structuur (First In First Out)**
 
 * `Queue()` constructor
@@ -1744,5 +1753,79 @@ BEGIN
     EINDE ALS
     
     RETOUR vlag
+EINDE
+```
+
+# Hoofdstuk 7
+
+> In lijsten kan je data opvragen en verwijderen of vervangen in willekeurige plaatsen, of waar je maar wilt.
+
+* `List()` Constructor
+* `empty()` controleert of een lisjt al dan niet leeg is.
+* `size()` geeft het aantal elementen van een lisjt terug
+* `geefElem()` retourneert het element dat zich bevindt op de positie bepaald door het argument
+* `geefPositie()` retourneert de positie van het eerste voorkomen van het meegeleverde argument
+* `verwijderElem()` verwijdert het element dat zich op de positie bepaald door het argumenet bevindt en geeft dit element terug
+* `invoegenNa()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst na de meegegeven positie.
+* `invoegenVoor()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst v´o´or de meegegeven positie.
+* `vervang()` het element in de lijst op de positie bepaald door het eerste argument, wordt vervangen door het meegeleverde nieuwe lijstelement
+
+| List                         |  
+| ---------------------------- |
+| - data: array[] van Element<br>- aantal: geheel getal |
+| + List(n: geheel getal)<br>+ empty() : boolean<br>+ size() : geheel getal<br>+ geefElem(p: geheel getal) : Element<br>+ geefPositie(x: Element) : geheel getal<br>+ verwijderElem(p: geheel getal) : Element<br>+ invoegenNa(p: geheel getal, x: Element): /<br>+ invoegenVoor(p: geheel getal, x: Element): /<br>+ vervang(p: geheel getal, x: Element): / |
+
+## Implementatie van geefElem()
+
+```pascal
+geefElem(I: p: geheel getal): x: Element
+    * Preconditie: de lisjt l bestaat; l bevat minstens p+1 elementen
+    * Postconditie: het element op de p-de positie in de lijst werd geretourneerd
+    * Gebruikt: /
+BEGIN
+    RETOUR data[p]
+EINDE
+```
+
+## Implementatie van geefPositie()
+
+```pascal
+geefPositie(I: x: Element): p: geheel getal
+    * Preconditie: de lijst l bestaat
+    * Postconditie: de positie van x werd geretourneerd
+    * Gebruikt: /
+BEGIN
+    i <- 0
+    ZOLANG i < aantal EN data[i] ≠ x DOE
+        i <- i + 1
+    EINDE ZOLANG
+    
+    ALS i = aantal DAN
+        p <- -1
+    ANDERS
+        p <- i
+    EINDE ALS
+    
+    RETOUR (p)
+EINDE
+```
+
+## Implementatie van verwijderElem()
+
+```pascal
+verwijderElem(I: p: geheel getal): x: Element)
+    * Preconditie: de lijst l bestaat
+    * Postconditie: het element op de p-de positie werd verwijderd uit de lijst l en werd geretourneerd
+    * Gebruikt: /
+BEGIN
+    x <- data[p]
+    
+    VOOR i = p TOT aantal - 2 DOE
+        data[i] <- data[i + 1]
+    EINDE VOOR
+    
+    aantal <- aantal - 1
+    
+    RETOUR (x)
 EINDE
 ```
