@@ -1829,3 +1829,35 @@ BEGIN
     RETOUR (x)
 EINDE
 ```
+
+## Implementatie van invoegenNa()
+
+```pascal
+invoegenNa(I: p: geheel getal, x: Element) : /
+    ...
+BEGIN
+    VOOR i = aantal TOT p + 2 STAP - 1 DOE
+        data[i] <- data[i - 1]
+    EINDE VOOR
+    
+    aantal <- aantal + 1
+    
+    data[p + 1] <- x
+EINDE
+```
+
+## Implementatie van invoegenVoor()
+
+```pascal
+invoegenVoor(I: p: geheel getal, x: Element) : /
+    ...
+BEGIN
+    VOOR i = aantal TOT p + 1 STAP - 1 DOE
+        data[i] <- data[i - 1]
+    EINDE VOOR
+    
+    aantal <- aantal + 1
+    
+    data[p] <- x
+EINDE
+```
