@@ -1767,7 +1767,7 @@ EINDE
 * `geefPositie()` retourneert de positie van het eerste voorkomen van het meegeleverde argument
 * `verwijderElem()` verwijdert het element dat zich op de positie bepaald door het argumenet bevindt en geeft dit element terug
 * `invoegenNa()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst na de meegegeven positie.
-* `invoegenVoor()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst v´o´or de meegegeven positie.
+* `invoegenVoor()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst voor de meegegeven positie.
 * `vervang()` het element in de lijst op de positie bepaald door het eerste argument, wordt vervangen door het meegeleverde nieuwe lijstelement
 
 | List                         |  
@@ -1834,7 +1834,9 @@ EINDE
 
 ```pascal
 invoegenNa(I: p: geheel getal, x: Element) : /
-    ...
+    * Preconditie: de lisjt l bestaat en is nog niet vol.
+    * Postconditie: het element x werd na de p-de positie ingevoegd in de lisjt l.
+    * Gebruikt: /
 BEGIN
     VOOR i = aantal TOT p + 2 STAP - 1 DOE
         data[i] <- data[i - 1]
@@ -1850,7 +1852,9 @@ EINDE
 
 ```pascal
 invoegenVoor(I: p: geheel getal, x: Element) : /
-    ...
+    * Preconditie: de lisjt l bestaat en is nog niet vol.
+    * Postconditie: het element x werd voor de p-de positie ingevoegd in de lisjt l.
+    * Gebruikt: /
 BEGIN
     VOOR i = aantal TOT p + 1 STAP - 1 DOE
         data[i] <- data[i - 1]
