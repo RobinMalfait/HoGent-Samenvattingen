@@ -1758,6 +1758,8 @@ EINDE
 
 # Hoofdstuk 7
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/7.4.oefeningen.md)
+
 > In lijsten kan je data opvragen en verwijderen of vervangen in willekeurige plaatsen, of waar je maar wilt.
 
 * `List()` Constructor
@@ -1830,38 +1832,14 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van invoegenNa()
+## Implementatie van vervang()
 
 ```pascal
-invoegenNa(I: p: geheel getal, x: Element) : /
-    * Preconditie: de lisjt l bestaat en is nog niet vol.
-    * Postconditie: het element x werd na de p-de positie ingevoegd in de lisjt l.
+vervang(I: p: geheel getal, x: Element): /
+    * Preconditie: de lisjt l bestaat.
+    * Postconditie: het element op de p-de positie van de lijst l werd vervangen door x
     * Gebruikt: /
 BEGIN
-    VOOR i = aantal TOT p + 2 STAP - 1 DOE
-        data[i] <- data[i - 1]
-    EINDE VOOR
-    
-    aantal <- aantal + 1
-    
-    data[p + 1] <- x
-EINDE
-```
-
-## Implementatie van invoegenVoor()
-
-```pascal
-invoegenVoor(I: p: geheel getal, x: Element) : /
-    * Preconditie: de lisjt l bestaat en is nog niet vol.
-    * Postconditie: het element x werd voor de p-de positie ingevoegd in de lisjt l.
-    * Gebruikt: /
-BEGIN
-    VOOR i = aantal TOT p + 1 STAP - 1 DOE
-        data[i] <- data[i - 1]
-    EINDE VOOR
-    
-    aantal <- aantal + 1
-    
     data[p] <- x
 EINDE
 ```
