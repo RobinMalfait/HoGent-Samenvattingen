@@ -1,5 +1,5 @@
 | Stakeholder        | Interesse (belang) | Macht (invloed) |
-| ------------------ | ------------------ | --------------- |
+| ------------------ | :----------------: | :-------------: |
 | Klanten            | Hoog               | Weinig          |
 | Leveranciers       | Laag               | Weinig          |
 | Financiers         | Hoog               | Veel            |
