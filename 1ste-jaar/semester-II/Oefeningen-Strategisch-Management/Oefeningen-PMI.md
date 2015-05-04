@@ -1,3 +1,7 @@
+# Oefeningen Stakeholder
+
+## Oefening PMI
+
 | Stakeholder        | Interesse (belang) | Macht (invloed) |
 | ------------------ | :----------------: | :-------------: |
 | Klanten            | Hoog               | Weinig          |
@@ -11,7 +15,7 @@
 | Media              | Hoog               | Veel            |
 | Lokale Politiek    | Hoog               | Veel            |
 
-**3 belangrijkste stakeholders?**
+### 3 belangrijkste stakeholders?
 
 1. Politiek
 2. Media
