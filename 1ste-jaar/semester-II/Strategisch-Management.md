@@ -694,3 +694,49 @@ Voorbeeld: Wasmiddelen
 * Structuur + legt de onderlinge relaties bloot tusesn wat men meet
 * Zicht op de essentie van de bedrijfsdoelen en activiteiten
 
+# Hoofdstuk 5
+
+> Stakeholdermanagement
+
+# Hoofdstuk 6
+
+> Maatschappelijk Verantwoord Ondernemen (MVO) en ethiek
+
+* Profit
+* People
+* Planet
+
+## Uitgangspunten van MVO
+
+* MVO is een integrale visie op ondernemerschap, waarbij de organisatie waarde creëert op economisch, ecologisch en sociaal gebied.
+* MVO is verankerd in alle bedrijfsprocessen
+* MVO Is maatwerk
+* MVO is een proces en geen eindbestemming
+
+## 2. Twee zienswijzen op maatschappelijke verantwoordelijkheid
+
+### 2.1. De klassieke zienswijze
+
+* Zoveel mogelijk winst maken
+* de aandeelhouders
+* middelen voor maatschappelijke doeleinden = Kosten omhoog
+* Maatschappelijke verantwoordelijkheid moet leiden tot winstmaximaliteit
+
+### 2.2. De sociaaleconomische zienswijze op maatschappelijke verantwoordelijkheid
+
+* Omvat ook het beschermen en verbeteren van het welzijn van de maatschappij
+
+## Vergelijking tussen de twee zienswijzen
+
+![](http://d.pr/i/63BV+)
+
+Cijfers omdraaien, vb: 
+
+- Ik heb 6 buizen van de 10
+- Ik ben er op 4 door van de 10
+
+## 3. ethiek
+
+> Valt weg voor examen
+
+# Hoofdstuk 7
