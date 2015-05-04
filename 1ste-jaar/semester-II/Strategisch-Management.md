@@ -693,3 +693,4 @@ Voorbeeld: Wasmiddelen
 
 * Structuur + legt de onderlinge relaties bloot tusesn wat men meet
 * Zicht op de essentie van de bedrijfsdoelen en activiteiten
+
