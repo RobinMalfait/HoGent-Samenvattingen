@@ -22,6 +22,7 @@
 	* [Oefeningen DESTEP](1ste-jaar/semester-II/Oefeningen-Strategisch-Management/Oefeningen-DESTEP.md)
 	* [Oefeningen Concurrentie Analyse](1ste-jaar/semester-II/Oefeningen-Strategisch-Management/Oefeningen-Concurrentie-Analyse.md)
 	* [Oefeningen SWOT](1ste-jaar/semester-II/Oefeningen-Strategisch-Management/Oefeningen-SWOT.md)
+	* [Oefeningen Stakeholder (PMI)](1ste-jaar/semester-II/Oefeningen-Strategisch-Management/Oefeningen-PMI.md)
 
 * [Probleem Oplossend Denken I](1ste-jaar/semester-II/Probleem-Oplossend-Denken-I.md)
 	* [Oefeningen Hoofdstuk 1](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md)
