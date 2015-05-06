@@ -129,9 +129,9 @@ z = adres, referentie naar String-Object
 ```
 
 > String is een object!
-> 
+>
 > String is niet overerfbaar
-> 
+>
 > Strings zijn constanten
 
 ```java
@@ -213,7 +213,7 @@ String s = new String("hello");
 String s2 = s.replace("e", "a");
 //s2 = "hallo";
 
-// s2 krijgt de nieuwe waarde, s is nog steeds "hello"  
+// s2 krijgt de nieuwe waarde, s is nog steeds "hello"
 ```
 
 Bij `StringBuilder`
@@ -234,7 +234,7 @@ String s = new String("hello");
 StringBUilder builder = new StringBuilder(s);
 
 // Terug naar een String object
-s = builder.toString(); 
+s = builder.toString();
 ```
 
 #### Palindroom
@@ -246,7 +246,7 @@ package domein;
  *
  * @author robin
  */
-public class MijnString 
+public class MijnString
 {
     private String string;
 
@@ -259,17 +259,17 @@ public class MijnString
     {
         this.string = string;
     }
-    
+
     public void setInhoud(String invoer)
     {
         if (invoer == null || invoer.equals(""))
         {
             throw new IllegalArgumentException("Woord is niet ingevuld");
         }
-        
+
         this.string = invoer;
     }
-    
+
     public boolean isPalindroomString()
     {
         for (int i = 0, j = string.length() - 1; i < j; i++, j--) {
@@ -277,15 +277,15 @@ public class MijnString
                 return false;
             }
         }
-        
+
         return true;
     }
-    
+
     public boolean isPalindroomStringBuilder()
     {
         return string.equals((new StringBuilder(string)).reverse().toString());
     }
-    
+
 }
 ```
 
@@ -300,13 +300,13 @@ public class MijnString
 [StringTokenizer API](https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html)
 
 > Opdelen van een stukje tekst
-> 
+>
 > * Split
 > * StringTokenizer
 
 ```java
 String s = "Dit is een zin!";
-StringTokenizer stToken = new StringTokenizer(s); // geen scheidingstekens dan: \t, \n, \r, en een spatie 
+StringTokenizer stToken = new StringTokenizer(s); // geen scheidingstekens dan: \t, \n, \r, en een spatie
 
 // Hoeveel stukjes zijn er?
 stToken.countTokens() // 4
@@ -336,11 +336,11 @@ zin
 StringTokenizer stToken3 = new StringTokenizer(s, "! ", true); // Ook scheidingstekens als een stukje
 // Resultaat
 Dit
- 
+
 is
- 
+
 een
- 
+
 zin
 !
 
@@ -375,7 +375,7 @@ String[] tokens2 = s.split("\\s"); // Reguliere Expressions
 | `[^a-z]` | *Alles behalve, de negatie* |
 
 ```java
-str.matches("[A-Z][a-zA-Z]*"); 
+str.matches("[A-Z][a-zA-Z]*");
 // Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
 ```
 
@@ -410,79 +410,137 @@ De `moederklasse` van alle file exception is: `IOException`
 
 ### Sequentiële bestanden
 
-1. Tekstbestanden (= leesbaar buiten Java omgeving)
-    
-    ```java
-    // SCHRIJVEN
-    public class CreateTextFile {
-        private Formatter output;
-        
-        public void openFile() {
-            try {
-                // Optie 1:
-                output = new Formatter(new FileOutputStream("clients.txt"));
-                
-                // Optie 2:
-                output = new Formatter("clients.txt");
-                
-                // Optie 3: Maar je moet een IOException catchen
-                output = new Formatter(Files.newOutputStream(Paths.get("clients.txt")));
-                
-            } catch(SecurityException securityException) {
-                System.err.println("You do not have write access to this file.");
-                System.exit(1);
-            } catch(FileNotFoundException filesNotFoundException) {
-                System.err.println("Error creating file.");
-                System.exit(1);
-            }
-        }
-        
-        public void addREcord(AccountRecord record) {
-            try {
-                output.format("%d %s %s %.2f%n", record.getAccount(), record.getFirstName(), record.getLastName(), record.getBalance();
-            } catch(IOException e) {
-                // Doe iets met de exception
-            } 
-        }
-        
-        public void closeFile() {
-            output.close();
-        }
-    }
-    ```
-    
-    ```java
-    // LEZEN
-    input = new Scanner(new File("clients.txt"));
-    while (input.hasNext()) {
-        input.nextInt();
-        input.next();
-        input.nextDouble();
-        input.nextLin(); // Leest hele record, niet appart
-        ...
-    }
-    ```
-    
-    ```java
-    // Voor Java7
-    try {
-        Formatter out = new Formatter(bsstand);
-        
-        // Werken met de stream
-    } catch() {
-        // Catch stuff
-    }
-    finally {
-        // Toch nog sluiten
-        out.close();
-    }
-    
-    // Nieuw sinds Java7
-    try (Formatter out = new Formatter(bestand)) {
-        // Werken met de stream
-    } catch() {
-        // Er moet niet meer gesloten worden.
-    }
-    ```
+#### Tekstbestanden (= leesbaar buiten Java omgeving)
 
-2. Geserialiseerde bestanden (= enkel bruikbaar binnen java)
+```java
+// SCHRIJVEN
+public class CreateTextFile {
+    private Formatter output;
+
+    public void openFile() {
+        try {
+            // Optie 1:
+            output = new Formatter(new FileOutputStream("clients.txt"));
+
+            // Optie 2:
+            output = new Formatter("clients.txt");
+
+            // Optie 3: Maar je moet een IOException catchen
+            output = new Formatter(Files.newOutputStream(Paths.get("clients.txt")));
+
+        } catch(SecurityException securityException) {
+            System.err.println("You do not have write access to this file.");
+            System.exit(1);
+        } catch(FileNotFoundException filesNotFoundException) {
+            System.err.println("Error creating file.");
+            System.exit(1);
+        }
+    }
+
+    public void addREcord(AccountRecord record) {
+        try {
+            output.format("%d %s %s %.2f%n", record.getAccount(), record.getFirstName(), record.getLastName(), record.getBalance();
+        } catch(IOException e) {
+            // Doe iets met de exception
+        }
+    }
+
+    public void closeFile() {
+        output.close();
+    }
+}
+```
+
+```java
+// LEZEN
+input = new Scanner(new File("clients.txt"));
+while (input.hasNext()) {
+    input.nextInt();
+    input.next();
+    input.nextDouble();
+    input.nextLin(); // Leest hele record, niet appart
+    ...
+}
+```
+
+```java
+// Voor Java7
+try {
+    Formatter out = new Formatter(bsstand);
+
+    // Werken met de stream
+} catch() {
+    // Catch stuff
+}
+finally {
+    // Toch nog sluiten
+    out.close();
+}
+
+// Nieuw sinds Java7
+try (Formatter out = new Formatter(bestand)) {
+    // Werken met de stream
+} catch() {
+    // Er moet niet meer gesloten worden.
+}
+```
+
+#### Geserialiseerde bestanden (= enkel bruikbaar binnen java)
+
+-> domeinklasse
+
+> ***!*** `Implements Serializable` -> Geen abstracte methodes, **`tagging`**-interface
+>
+> Alle attributen met keyword `transient` worden niet geserialiseerd
+>
+> **ObjectOutputStream** & **ObjectInputStream**
+> 
+> Data + type van attributen worden mee weggeschreven
+
+```java
+public class WriteObjects implements Serializable {
+    // Openen
+    File filename = new File("c:\\oef\\test.ser");
+    ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename));
+    
+    // Schrijven
+    output.writeObjec(/* data om te schrijven */);
+    
+    // Sluiten
+    output.close();
+}
+```
+
+
+```java
+public class ReadObjects implements Serializable {
+    
+    // Lezen
+    AccountRecord record = (AccountRecord) input.readObjec();
+    List<AccountRecord> records = (List<AccountRecord>)
+ input.readObjec();    
+ 
+    // Lezen per object
+    while (true) {} // Gooit een EOFException bij het einde van het bestand
+    
+    // Sluiten
+    input.close();
+}
+```
+
+### FileChooser
+
+> Toont een save file dialog waar je dan een naam kan aan geven.
+> 
+> Dit kan gebruikt worden om te schrijven en om te lezen!
+
+
+```java
+FileChooser fileChooser = new FileChooser();
+
+// Show Save Dialog
+File gekozenBestand = fileChooser.showSaveDialog(null);
+
+// Show Open Dialog
+File openBestand = fileChooser.showOpenDialog(null);
+```
