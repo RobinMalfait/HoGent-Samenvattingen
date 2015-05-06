@@ -413,6 +413,7 @@ De `moederklasse` van alle file exception is: `IOException`
 1. Tekstbestanden (= leesbaar buiten Java omgeving)
     
     ```java
+    // SCHRIJVEN
     public class CreateTextFile {
         private Formatter output;
         
@@ -435,6 +436,51 @@ De `moederklasse` van alle file exception is: `IOException`
                 System.exit(1);
             }
         }
+        
+        public void addREcord(AccountRecord record) {
+            try {
+                output.format("%d %s %s %.2f%n", record.getAccount(), record.getFirstName(), record.getLastName(), record.getBalance();
+            } catch(IOException e) {
+                // Doe iets met de exception
+            } 
+        }
+        
+        public void closeFile() {
+        }
+    }
+    ```
+    
+    ```java
+    // LEZEN
+    input = new Scanner(new File("clients.txt"));
+    while (input.hasNext()) {
+        input.nextInt();
+        input.next();
+        input.nextDouble();
+        input.nextLin(); // Leest hele record, niet appart
+        ...
+    }
+    ```
+    
+    ```java
+    // Voor Java7
+    try {
+        Formatter out = new Formatter(bsstand);
+        
+        // Werken met de stream
+    } catch() {
+        // Catch stuff
+    }
+    finally {
+        // Toch nog sluiten
+        out.close();
+    }
+    
+    // Nieuw sinds Java7
+    try (Formatter out = new Formatter(bestand)) {
+        // Werken met de stream
+    } catch() {
+        // Er moet niet meer gesloten worden.
     }
     ```
 
