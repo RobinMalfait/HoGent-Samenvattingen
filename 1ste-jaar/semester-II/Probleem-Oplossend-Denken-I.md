@@ -1843,3 +1843,116 @@ BEGIN
     data[p] <- x
 EINDE
 ```
+
+# Hoofdstuk 8
+
+```java
+class Knoop {
+    private Object data;
+    
+    private Knoop volgende;
+}
+
+class Lijst {
+    private Knoop eerste;
+}
+```
+
+```java
+// Hoe het echt zou zijn
+class Lijst {
+
+    private Knoop eerste;
+
+    class Knoop {
+        private Object data;
+        
+        private Knoop volgende;
+    }
+}
+```
+
+| Knoop |
+| ----- |
+| - data : Element<br>- volgende : Knoop |
+| + Knoop() |
+
+**Implementatie van Knoop**
+
+```pascal
+Knoop (I: /): /
+    * Preconditie: /
+    * Postconditie: er werd een nieuwe knoop aangemakat.
+    * Gebruikt: /
+BEGIN
+    data <- null
+    volgende <- null
+EINDE
+```
+
+| GelinkteLijst |
+| ------------- |
+| - eerste : Knoop |
+| + GelinkteLijst()<br>+ zoek(x: Element) : Knoop<br>+ verwijder(ref : Knoop): Element<br>+ voegToe(ref: Knoop, x : Element): / |
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst.png)
+
+**Implementatie van GelinkteLijst**
+
+```pascal
+GelinkteLijst(I: /): /
+    * Preconditie: /
+    * Postconditie: er werd een nieuwe gelinkte lijst
+    * Gebruikt: /
+BEGIN
+    eerste <- null
+EINDE
+```
+
+## Implementatie van zoek() in GelinkteLijst
+
+```pascal
+zoek(I: x: Element): ref: Knoop
+    * Preconditie: de gelinkte lijst l bestaat
+    * Postconditie: de referentie naar de knoop met dataveld x werd geretourneerd, indien x niet voorkomt in de lijst werd referentie null geretourneerd.
+    * Gebruikt: /
+BEGIN
+    ref <- eerste
+    ZOLANG (ref ≠ null EN ref.data ≠ x) DOE
+        ref <- ref.volgende // Equivalent van i++
+    EINDE ZOLANG
+    RETOUR (ref)
+EINDE
+```
+
+## Implementatie van verwijder() in GelinkteLijst
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_verwijderen.png)
+
+```pascal
+verwijder(I: ref: Knoop): x: Element
+    * Preconditie: de gelinkte lijst l bestaat, ref is niet de laatste knoop in de lijst
+    * Postconditie: de knoop die volgt na de knoop met referentie ref werd verwijderd uit de lijst, het data-veld van de verwijderde knoop werd geretourneerd
+BEGIN
+    x <- ref.volgende.data
+    ref.volgende <- ref.volgende.volgende
+    RETOUR (x)
+EINDE
+```
+
+## Implementatie van toevoegen() in GelinkteLijst
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_toevoegen.png)
+
+```pascal
+voegToe(I: ref: Knoop, x: Element): /
+    * Preconditie: de gelinkte lijst l bestaat.
+    * Postconditie: na de knoop, waarnaar gerefereerd wordt door de referentie ref, werd een nieuwe knoop met data-veld x toegevoegd.
+    * Gebruikt: /
+BEGIN
+    hulp <- nieuwe Knoop()
+    hulp.data <- x
+    hulp.volgende <- ref.volgende
+    ref.volgende <- hulp
+EINDE
+```
