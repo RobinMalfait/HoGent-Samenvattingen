@@ -1846,6 +1846,8 @@ EINDE
 
 # Hoofdstuk 8
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/8.5.oefeningen.md)
+
 ```java
 class Knoop {
     private Object data;
