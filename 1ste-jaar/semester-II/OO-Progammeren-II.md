@@ -378,3 +378,33 @@ String[] tokens2 = s.split("\\s"); // Reguliere Expressions
 str.matches("[A-Z][a-zA-Z]*"); 
 // Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
 ```
+
+## Werken met bestanden
+
+| Term        | Beschrijving                                       |
+| ----------- | -------------------------------------------------- |
+| Sequentieel | Van voor -> achter                                 |
+| Record      | een rij van bij databanken                         |
+| Veld        | een cell                                           |
+| Stream      | stroom van data die zich sequentieel transporteert |
+
+![](/afbeeldingen/1ste-jaar/semester-II/OO-programmeren-II/files.png)
+
+**Output Stream:** Schrijven van data
+
+**Input Stream:** Lezen van data
+
+**FileOutputStream** voor het schrijven van data naar een bestand
+
+**FileInputStream** voor het lezen van data uit een bestand
+
+`EOFException`: End Of File Exception
+
+1. Bestand openen
+2. Bestand bewerken
+3. Bestand sluiten
+
+### Sequentiële bestanden
+
+1. Tekstbestanden (= leesbaar buiten Java omgeving)
+2. Geserialiseerde bestanden (= enkel bruikbaar binnen java)
