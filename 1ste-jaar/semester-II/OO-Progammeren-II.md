@@ -446,6 +446,7 @@ De `moederklasse` van alle file exception is: `IOException`
         }
         
         public void closeFile() {
+            output.close();
         }
     }
     ```
