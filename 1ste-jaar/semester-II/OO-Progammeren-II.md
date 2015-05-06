@@ -398,7 +398,11 @@ str.matches("[A-Z][a-zA-Z]*");
 
 **FileInputStream** voor het lezen van data uit een bestand
 
+Exceptions moeten opgevangen worden! Bijvoorbeeld:
+
 `EOFException`: End Of File Exception
+
+De `moederklasse` van alle file exception is: `IOException`
 
 1. Bestand openen
 2. Bestand bewerken
@@ -407,4 +411,31 @@ str.matches("[A-Z][a-zA-Z]*");
 ### Sequentiële bestanden
 
 1. Tekstbestanden (= leesbaar buiten Java omgeving)
+    
+    ```java
+    public class CreateTextFile {
+        private Formatter output;
+        
+        public void openFile() {
+            try {
+                // Optie 1:
+                output = new Formatter(new FileOutputStream("clients.txt"));
+                
+                // Optie 2:
+                output = new Formatter("clients.txt");
+                
+                // Optie 3: Maar je moet een IOException catchen
+                output = new Formatter(Files.newOutputStream(Paths.get("clients.txt")));
+                
+            } catch(SecurityException securityException) {
+                System.err.println("You do not have write access to this file.");
+                System.exit(1);
+            } catch(FileNotFoundException filesNotFoundException) {
+                System.err.println("Error creating file.");
+                System.exit(1);
+            }
+        }
+    }
+    ```
+
 2. Geserialiseerde bestanden (= enkel bruikbaar binnen java)
