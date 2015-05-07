@@ -1958,3 +1958,71 @@ BEGIN
     ref.volgende <- hulp
 EINDE
 ```
+
+## 8.4 Toepassing: Stack op basis van knopen
+
+| Stack | 
+| ----- |
+| - t : Knoop |
+| + Stack( )<br>+ empty( ) : boolean<br>+ push(x: Element) : /<br>+ pop( ) : Element<br>+ peek( ) : Element |
+
+### Implementatie van Stack met knopen
+
+```pascal
+Stack(I: /): /
+    * Preconditie: /
+    * Postconditie: er werd een nieuwe stap aangemaakt, deze stap bestaat als lege stapel
+    * Gebruikt: /
+BEGIN
+    t <- null
+EINDE
+```
+
+### Implementatie van empty in Stack met knopen
+
+```pascal
+empty(I: /): vlag: boolean
+    * Preconditie: de stapel s bestaat
+    * Postconditie: de waarde true of false werd afgeleverd, afhankelijk van het feit of de stapel s leeg is of niet.
+    * Gebruikt: /
+BEGIN
+    RETOUR (t = null)
+EINDE
+```
+
+### Implementatie van push in Stack met knopen
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_push.png)
+
+```pascal
+push(I: x: Element): /
+    * Preconditie: de stapel s bestaat
+    * Postconditie: het element x werd als top-element op de stapel s geduwd
+    * Gebruikt: /
+BEGIN
+    hulp <- nieuwe Knoop()
+    hulp.data <- x
+    
+    hulp.volgende <- t
+    t <- hulp
+EINDE
+```
+
+### Implementatie van pop in Stack met knopen
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_pop.png)
+
+```pascal
+pop(I: /): x: Element
+    * Preconditie: de stapel s bestaat
+    * Postconditie: het element x werd geretourneerd
+    * Gebruikt: /
+BEGIN
+    x <- t.data
+    
+    t <- t.volgende
+    
+    RETOUR (x)
+EINDE
+```
+
