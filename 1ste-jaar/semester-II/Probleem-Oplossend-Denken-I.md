@@ -2026,3 +2026,102 @@ BEGIN
 EINDE
 ```
 
+# Hoofdstuk 9
+
+> Hashtabellen
+
+
+## Een woordenboek met tweeletterwoorden:
+
+```
+'aa' -> Gezonde melk
+...
+'xx' -> popgroep
+'zz' -> geluid dat men maakt als men slaapt
+```
+
+> \# woorden = 26 * 26 = 676
+> 
+> array van lengte 676 (indices 0 t.e.m. 675
+> 
+> Afbeelding van 'woorden' naar 'plaats in de array'
+
+```
+a ~> 0
+b ~> 1
+...
+z ~> 25
+
+'aa' ~> 26 *  0 +  0 =   0
+'bc' ~> 26 *  1 +  2 =  28
+'zz' ~> 26 * 25 + 25 = 675
+
+=> Berekenen van de hashCode
+```
+
+```pascal
+w.hashCode(I: /): positie: geheel getal
+    * Preconditie: de sleutel w bestaat
+    * Postconditie: een getal tussen 0...675 werd berekend en geretourneerd
+    * Gebruikt:
+BEGIN
+    positie <- 26 * w[0] + w[1]
+    
+    RETOUR (positie)
+EINDE
+```
+## Specificatie van een Hashtabel
+
+> Langste woord:
+> 
+> Hottentottententententoonstelling: 33 letters
+
+```
+grootte array:  26^33
+                27^33 (Als je lege spaties wilt)
+                
+-> array van grootte N (veel kleiner dan 26^33)
+-> bereken nog steeds hashcode:
+    ~> positie in de array = hashcode MOD N
+    
+
+| ------------ | ------------ | ------------ |
+| Gezonde Melk |              |              | 
+| ------------ | ------------ | ------------ |
+
+```
+
+## Gesloten Hashing
+
+```
+    0      1      2      3      4      5      6      7      8      9 
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|  10  |  100 |  129 |      |      |  15  |  115 |      |      |  29  |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+
+10   hashCode(10)  = 10   10  MOD 10 = 0
+15   hashCode(15)  = 15   15  MOD 10 = 5
+29   hashCode(29)  = 29   29  MOD 10 = 9
+100  hashCode(100) = 100  100 MOD 10 = 0
+115  hashCode(115) = 115  115 MOD 10 = 5
+129  hashCode(129) = 129  129 MOD 10 = 9
+
+Positie 1 is al bezet, dus we kijken naar de eerst volgende lege plaats
+```
+
+## Open Hashing
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/open_hashing.png)
+
+```
+10   hashCode(10)  = 10   10  MOD 10 = 0
+15   hashCode(15)  = 15   15  MOD 10 = 5
+29   hashCode(29)  = 29   29  MOD 10 = 9
+100  hashCode(100) = 100  100 MOD 10 = 0
+115  hashCode(115) = 115  115 MOD 10 = 5
+129  hashCode(129) = 129  129 MOD 10 = 9
+```
+
+> Je wilt liefst veel korte lijsten; Want 1 lange lijst is eigenlijk een gewone gelinkte lijst
+> 
+> Bij **Modulo**, kan je beter voor een priemgetal kiezen.
