@@ -740,3 +740,46 @@ Cijfers omdraaien, vb:
 > Valt weg voor examen
 
 # Hoofdstuk 7
+
+## E-business-strategieën
+
+> Beschrijft hoe een organisatie vorm geeft aan haar werkzaamheden door middle van het gebruik van elektronische (internet) verbindingen tussen de eenheden van de organisatie om de organisatiedoeleinden sneller en efficienter te laten gebeuren
+
+1. De met e-business aangevulde organisatie
+2. De voor e-business geschikte organisatie
+3. De pure e-businessorganisatie
+
+Door internet te gebruiken:
+
+* kennisbestanden
+* Samenwerkingspartners
+* papierloos
+* logistiek (in real time)
+
+> e-businesstrategieën dragen bij aan de ontwikkeling van een duurzaam concurrentievoordeel
+
+Bedrijf onderscheiden van ander bedrijf door gebruik te maken van internet:
+
+* een goede website
+* terugstuurbare stuff
+* vandaag besteld, morgen in huis
+
+## Klantenservicestrategieën
+
+* dat klanten krijgen wat ze willen
+* dat er effectief met hen wordt gecommuniceerd
+* dat medewerkers in klantenservice getraind worden
+
+## Innovatiestrategieën
+
+> waar ligt het accent bij innovatie + wat is de timing voor innovatie?
+
+* fundamenteel wetenschappelijk onderzoek
+* productieontwikkeling
+* procesverbetering
+
+* Kostenleider: procesverbetering
+* Differentiator:
+    * fundamenteel wetenschappelijk onderzoek
+    * productontwikkeling
+    
