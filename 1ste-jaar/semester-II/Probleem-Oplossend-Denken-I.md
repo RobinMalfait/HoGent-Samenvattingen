@@ -2028,6 +2028,8 @@ EINDE
 
 # Hoofdstuk 9
 
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/9.5.oefeningen.md)
+
 > Hashtabellen
 
 
