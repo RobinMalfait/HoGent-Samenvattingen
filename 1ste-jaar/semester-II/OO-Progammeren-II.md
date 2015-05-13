@@ -522,8 +522,7 @@ public class ReadObjects implements Serializable {
     
     // Lezen
     AccountRecord record = (AccountRecord) input.readObject();
-    List<AccountRecord> records = (List<AccountRecord>)
- input.readObject();    
+    List<AccountRecord> records = (List<AccountRecord>) input.readObject();    
  
     // Lezen per object
     while (true) {} // Gooit een EOFException bij het einde van het bestand
