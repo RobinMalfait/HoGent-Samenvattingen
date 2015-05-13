@@ -504,7 +504,7 @@ public class WriteObjects implements Serializable {
     ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename));
     
     // Schrijven
-    output.writeObjec(/* data om te schrijven */);
+    output.writeObject(/* data om te schrijven */);
     
     // Sluiten
     output.close();
@@ -516,9 +516,9 @@ public class WriteObjects implements Serializable {
 public class ReadObjects implements Serializable {
     
     // Lezen
-    AccountRecord record = (AccountRecord) input.readObjec();
+    AccountRecord record = (AccountRecord) input.readObject();
     List<AccountRecord> records = (List<AccountRecord>)
- input.readObjec();    
+ input.readObject();    
  
     // Lezen per object
     while (true) {} // Gooit een EOFException bij het einde van het bestand
