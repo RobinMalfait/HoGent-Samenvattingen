@@ -439,7 +439,12 @@ public class CreateTextFile {
 
     public void addREcord(AccountRecord record) {
         try {
-            output.format("%d %s %s %.2f%n", record.getAccount(), record.getFirstName(), record.getLastName(), record.getBalance();
+            output.format("%d %s %s %.2f%n", 
+                record.getAccount(), 
+                record.getFirstName(), 
+                record.getLastName(), 
+                record.getBalance()
+            );
         } catch(IOException e) {
             // Doe iets met de exception
         }
