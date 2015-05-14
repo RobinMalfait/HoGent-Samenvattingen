@@ -34,5 +34,6 @@
 	* [Oefeningen Hoofdstuk 7](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/7.4.oefeningen.md)
 	* [Oefeningen Hoofdstuk 8](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/8.5.oefeningen.md)
 	* [Oefeningen Hoofdstuk 9](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/9.5.oefeningen.md)
+	* [Voorbeeld Examen Vragen](1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/Examen.md)
 
 * [Computernetwerken I](1ste-jaar/semester-II/Computernetwerken-I.md)
