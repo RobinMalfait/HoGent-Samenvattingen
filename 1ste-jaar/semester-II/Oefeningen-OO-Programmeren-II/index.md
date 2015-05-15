@@ -18,3 +18,17 @@
 * [Oefening 2 Theorie](H11/Hoofdstuk11_Oef2_theorie.zip)
 * [Oefening 3 Theorie](H11/Hoofdstuk11_Oef3_theorie.zip)
 * [Oefening 4 Theorie](H11/Hoofdstuk11_Oef4_theorie.zip)
+
+### Hoofdstuk 12
+
+* [Oefening Tip Calculator](H12/TipCalculator.zip)
+
+### Hoofdstuk 14
+
+* [Oefening 2 versie 2](H14/Hoofdstuk14_Oef2_Versie2.zip)
+
+
+### Hoofdstuk 15
+
+* [Oefening 1](H15/Hoofdstuk15_Oef1.zip)
+* [Oefening 2](H15/Hoofdstuk15_Oef2.zip)
