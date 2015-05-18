@@ -1064,6 +1064,27 @@ Fiber-to-the-home (FFTH)
 * **Data** de [PDU](#protocol-data-units-pdus), meestal een IPv4 packet, dat verzonden moet worden
 * **FCS** een controle
 
+# Hoofdstuk 5
+
+> Ethernet
+
+## LLC en MAC Sublagen
+
+### Ethernet
+
+* Een van de meest gebruikte LAN-technologieën
+* Werkt in de datalinklaag en de fysieke laag
+* Familie van netwerktechnologieën die zijn gedefinieerd in de IEEE 802.2 en 802.3 standaarden
+* Ondersteunt data bandbreedtes van 10, 100, 1000, 10 000, 40 000, 100 000 Mbps(100 Gbps)
+
+### Ethernet Standaarden
+
+* Definieer laag 2 protocollen en laag 1 technologieën
+* Twee afzonderlijke sublagen van de datalinklaag om het te laten werken - Logical Link Control (LLC) en de MAC Sublagen
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/ethernet.png)
+
+
 
 
 
