@@ -860,7 +860,6 @@ Signalen kunnen worden verzonden op twee manieren.
 **Socket** het vrouwke
 
 
-
 ### UTP Kabels
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/utp_kabels_structure.png)
@@ -875,7 +874,7 @@ Signalen kunnen worden verzonden op twee manieren.
 > * Genoeg stroom 
 > * aarding 
 > * deftige kabels 
-> * installaties controlleren
+> * installaties controleren
 
 **Overspraak:** **IN** is gelijk aan **UIT**
 
@@ -1062,7 +1061,15 @@ Fiber-to-the-home (FFTH)
 * **Source** 48-bit MAC adres van de verzender
 * **Type** Waard om aan te tonen welk protocol er gebruikt moet worden
 * **Data** de [PDU](#protocol-data-units-pdus), meestal een IPv4 packet, dat verzonden moet worden
-* **FCS** een controle
+* **FCS** Frame Check Sequence
+
+**acknowledgements** verificatie door ontvangst packet te sturen
+
+* **DS**: distributie systeem
+* **More Fragments**: staat op 1 by frames die een ander fragment bevattten
+	* fragmenteren: een segment opdelen in 'fragments'
+* **MTU**: Maximum Transmission Unit
+* **FCS** Frame Check Sequence
 
 # Hoofdstuk 5
 
@@ -1084,6 +1091,76 @@ Fiber-to-the-home (FFTH)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/ethernet.png)
 
+**LLC** IEEE 802.2
+
+* Behandlet de communicatie tussen de bovenste en onderste lagen
+* Neemt de netwerkprotocolgegevens en voegt controleinformatie toe om het paket naar de bestemming te helpen
+
+**MAC** IEEE 802.3
+
+* Vormt de onderste sublaag van de datalinklaag
+* Uitgevoerd door hardware, meestal in de computer NIC.
+* Twee primaire verantwoordelijkheden:
+	* Data inkapseling
+	* Media Access Control
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/ethernet_standaarden.png)
+
+### MAC Sublaag
+
+* **OUI** Organizationally Unique Identifier
+
+**Data inkapseling**
+
+* Frame inpakken voor de uitzending en frame uitpakken bij ontvangst van een frame
+* MAC-laag voegt een header en trailer toe aan de netwerklaag PDU.
+
+**Biedt drie primaire functies**
+
+* **Frame begrenzing** identificeert ee ngroep van bits die deel uitmaken van een frame, synchronisatie tussen de zendende en ontvangende knopppunten
+* **Adressering** Elk Ethernet header toegevoegd in het frame bevat het fysieke adres (MAC-adres) dat het mogelijk maakt een frame af te leveren aan zijn bestemmingsknooppunt
+* **Foutdetectie** elk Ethernet-frame heeft een einde met een cyclische redundantiecontrole (CRC) van de inhoud van frame
+* Verantwoordelijk voor het plaatsen van frames op het medium en het verwijderen vande frame van het medium
+* Communiceert rechtstreeks met de fysieke laag
+* Als er meerdere apparaten op een enkel medium poging doen de gegevens tegelijkertijd te versturen ontstaan er botsingen (**collisions**) waardoor beschadigde, onbruikbare data ontstaan
+* Ethernet biedt a.d.h.v. de Carrier Sese Multiple Access (CSMA) technologie een methode om de toegangsknooppunten te delen
+
+**Carrier Sense Multiple Access (CSMA)**
+
+* wordt gebruikt om eerst te detecteren als het medium een signaal draagt
+* indien er geen signaal wordt gedetecteerd, verzendt het apparaat de gegevens
+* Als twee apparaten gelijktijdig versturen -> databotsing
+
+
+**CSMA/CD** Collision Detection
+
+* Het apparaat controleert het medium voor de aanwezigheid van een datasignaal
+* wanneer een datasignaal afwezig is, wat aangeeft dat het medium vrij is, verzendt het apparaat de gegevens
+* Als er vervolgens signalen worden gedetecteerd die door een ander apparaat wordt verzonden op hetzelfde moment, stoppen alle apparaten met versturen en proberen ze het later opnieuw
+* Terwijl Ethernet-netwerken zijn ontworpen met de CSMA/CD-technologie, met huidige tussenliggende apparaten, treden botsingen niet op en zijn processen gebruikt door CSMA/CD echt overbodig
+* Draadloze verbindingen in een LAN omgeving moeten nog steeds rekening houden met botsingen
+
+**CSMA/CA** Collision Avoidance
+
+* Het apparaat onderzoekt het medium voor de aanwezigheid van datasignaal - als het medium vrij is, stuurt het apparaat een waarschuwing over het medium van zijn voornemen om het te gebruiken
+* Het apparaat stuurt dan de gegevens nadat goedkeuring werd ontvangen
+* Gebruikt door 802.11 draadloze netwerktechnologieën 
+
+### Frame verwerking
+
+> MAC-adres = BIA (Burned-In Address)
+
+* MAC-adressen worden toegewezen aan werkstations, servers, printers, switches en routers
+* Voorbeelden van MAC-Adressen zijn bijvoorbeeld:
+	* 00-05-9A-3C-78-00
+	* 00:05:9A:3C:78:00
+	* 0005.9A3C.7800
+* Wanneer een apparaat een bericht doorstuurt naar een Ethernet-netwerk, wordt headerinformatie aan het pakket toegevoegd dat het bron-en het bestemmings MAC-adres bevat.
+* Elke NIC bekijkt de informatie om te zien of het bestemmingsMAC-adres in de frame past met een fysieke MAC-adres opgeslagen in het RAM
+* Indien er geen match is, verwijdert het apparaat de frame
+* Alser er overeenkomst is met de bestemmingsMAC van het frame, gaat de NIC de frame doorgeven aan de bovenliggende OSI-lagen, waar het de-inkapselingsproces plaatsvindt.
+
+### Fram Grootte
 
 
 
