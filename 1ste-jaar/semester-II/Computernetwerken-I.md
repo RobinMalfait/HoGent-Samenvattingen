@@ -1029,11 +1029,11 @@ Fiber-to-the-home (FFTH)
 	<thead>
 		<tr>
 			<td></td>
-			<th colspan=6>Frame</th>
+			<th style="text-align: center; vertical-align: middle;" colspan=6>Frame</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
+		<tr style="text-align: center; vertical-align: middle;">
 			<th>Field Name</th>
 			<td>Preamble</td>
 			<td>Destination</td>
@@ -1042,7 +1042,7 @@ Fiber-to-the-home (FFTH)
 			<td>Data</td>
 			<td>Frame Check Sequence</td>
 		</tr>
-		<tr>
+		<tr style="text-align: center; vertical-align: middle;">
 			<th>Size</th>
 			<td>8 bytes</td>
 			<td>6 bytes</td>
