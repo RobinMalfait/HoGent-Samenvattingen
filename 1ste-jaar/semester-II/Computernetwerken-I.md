@@ -1016,9 +1016,43 @@ Fiber-to-the-home (FFTH)
 	</tr>
 </table>
 
+* FCS: Frame Check Sequence
+* Stop Frame: indicatie van het einde van het frame
+
+### LAN en WAN Frames
+
+* **LAN** gebruikt hoge bandbreedte technologie
+* **WAN** gebruikt lagere bandbreedte technologie
 
 
-
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			<th colspan=6>Frame</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Field Name</th>
+			<td>Preamble</td>
+			<td>Destination</td>
+			<td>Source</td>
+			<td>Type</td>
+			<td>Data</td>
+			<td>Frame Check Sequence</td>
+		</tr>
+		<tr>
+			<th>Size</th>
+			<td>8 bytes</td>
+			<td>6 bytes</td>
+			<td>6 bytes</td>
+			<td>2 bytes</td>
+			<td>46 - 1500 bytes</td>
+			<td>4 bytes</td>
+		</tr>
+	</tbody>
+</table>
 
 
 
