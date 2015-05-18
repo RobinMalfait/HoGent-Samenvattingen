@@ -1024,6 +1024,9 @@ Fiber-to-the-home (FFTH)
 * **LAN** gebruikt hoge bandbreedte technologie
 * **WAN** gebruikt lagere bandbreedte technologie
 
+### Ethernet Frame
+
+> IEEE 802.2 en 802.3
 
 <table>
 	<thead>
@@ -1054,7 +1057,12 @@ Fiber-to-the-home (FFTH)
 	</tbody>
 </table>
 
-
+* **Preambl** synchronisatie
+* **Destination** 48-bit MAC adres van de ontvanger
+* **Source** 48-bit MAC adres van de verzender
+* **Type** Waard om aan te tonen welk protocol er gebruikt moet worden
+* **Data** de [PDU](#protocol-data-units-pdus), meestal een IPv4 packet, dat verzonden moet worden
+* **FCS** een controle
 
 
 
