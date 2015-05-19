@@ -1160,7 +1160,7 @@ Fiber-to-the-home (FFTH)
 * Indien er geen match is, verwijdert het apparaat de frame
 * Alser er overeenkomst is met de bestemmingsMAC van het frame, gaat de NIC de frame doorgeven aan de bovenliggende OSI-lagen, waar het de-inkapselingsproces plaatsvindt.
 
-### Fram Grootte
+### Frame Grootte
 
 
 
