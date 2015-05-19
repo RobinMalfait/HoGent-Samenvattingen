@@ -460,7 +460,7 @@ BV.: `ping 192.168.1.1`
 | Ctrl-R | geeft opnieuw een lijn |
 | Ctrl-A | Gaat naar het begin van de regel |
 | Ctrl-Z | Sluit de configuratie mode en keert terug naar de gebruiker EXEC. |
-| Pijl omloog | Hiermee kan de gebruiker voorwaarts bladeren doorheen coormalige commando's |
+| Pijl omlaag | Hiermee kan de gebruiker voorwaarts bladeren doorheen coormalige commando's |
 | Pijl omhoog | Hiermee kan de gebruiker achteruit bladeren doorheen voormalige commando's |
 | Ctrl-shift-6 | Hiermee kan een IOS proces onderbroken zoals ping of traceroute worden. |
 | Ctrl-C | Verlaat de huidige configuratie of het huidig commando. |
