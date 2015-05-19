@@ -1211,3 +1211,16 @@ VB.: 127.0.0.1/8
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/subnetting_example.png)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/subnetting_verdeling.png)
+
+1. Vast #bit
+	* -> Subnet -> #Subnets -> 2b
+	* -> Hosts -> # Maximum Hosts per subnet (7 bit)
+	
+	> Zelfde subnetmask voor elk subnet
+
+2. VLSM Variabel Length Subnet Mask
+	Variabele opsplitsing nemen tussen N (Aanpassen aan #hosts in het subnet) en H per subnet
+		
+	> ≠ subnetmask per subnet!
+	
+	Moet uniek blijven (het ip), dus verdelen vanaf kleinste van de range tot de grootste van de rang	
