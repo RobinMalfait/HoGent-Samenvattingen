@@ -1160,10 +1160,54 @@ Fiber-to-the-home (FFTH)
 * Indien er geen match is, verwijdert het apparaat de frame
 * Alser er overeenkomst is met de bestemmingsMAC van het frame, gaat de NIC de frame doorgeven aan de bovenliggende OSI-lagen, waar het de-inkapselingsproces plaatsvindt.
 
-### Frame Grootte
+# Hoofdstuk 8
 
+## IP-adres v4
 
+* 32b -> Uniek
+	* Binaire notatie
+	* dotted decimal notatie
+	
+<font color="green">netwerkgedeelte (N)</font> <font color=red>hostgedeelte (H)</font>	 
 
+## 1 ClassFull
 
+> Zonder cidr
 
+* A 0<font color=green>1B (n)</font> <font color=red>3B (H)</font> ~> 1ste decimaal 0..127 (loopback)
+* B 10<font color=green>2B (N)</font> <font color=red>2B (H)</font> ~> 1ste decimaal 128..191
+* C 110<font color=green>3B (N)</font> <font color=red>1B (H)</font> ~> 1ste decimaal 192..223
 
+2^8 = 256 mogelijke combinaties
+
+netwerkadres 0 .. 255 broadcastadres
+
+> 256 - 2 = hosts
+
+* Private en Publieke IP-adressen
+	* Privaat: uniek per LAN
+	* Publiek: Uniek wereldwijd
+* DHCP
+* NAT: globaal adres (publiek) en lokaal adres (privaat)
+
+## 2 ClassLess
+
+> met netmask of cidr
+
+IP-adres + netmask
+
+<font color=green>1.....1 (N)</font> <font color=red>0.....0 (H)</font>
+
+> CiDR (Classless inter Domain Routing)
+
+IP-adres/# bits uit netwerkgedeelte (cidr notatie)
+
+VB.: 127.0.0.1/8
+
+# Hoofdstuk 9
+
+> Subnetting
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/subnetting_example.png)
+
+![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/subnetting_verdeling.png)
