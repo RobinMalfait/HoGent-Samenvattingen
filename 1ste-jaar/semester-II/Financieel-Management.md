@@ -12,7 +12,28 @@
 
 **Liquide middelen:** Geld dat op rekeningen staat. Cash geld (kas)
 
-> Meer dan 500.000 euro jaaromzet => Dubbele Boekhouding.
+Soorten ondernemingen
+Ondernemingen met een bijzonder regime
+-	Financiële instellingen: banken, private spaarbanken,…;
+-	Kredietinstellingen waarvoor een bijzondere wet geldt en door hun erkende instellingen;
+-	Portefeuillemaatschappijen;
+-	Verzekeringmaatschappijen.
+Kleine ondernemingen
+Kleine ondernemingen moeten aan de drie volgende voorwaarden voldoen:
+-	Het zijn natuurlijke personen die koopman zijn of vennootschappen onder firma of gewone commanditaire vennootschappen;
+-	De omzet (exclusief btw) mag niet meer bedragen dan € 500.000,00 of € 620.000,00 voor de kleinhandelaars die handel drijven in koolwaterstoffen;
+-	Bepaalde activiteitsectoren worden uitgesloten;
+-	Onderneming met bijzonder regime;
+-	De ondernemingen die omwille van hun activiteit als grote ondernemingen beschouwd worden.
+Grote ondernemingen
+De ondernemingen die niet behoren tot de kleine ondernemingen of tot de ondernemingen met bijzonder regime en:
+-	ofwel: gemiddeld meer dan 100 werknemers per jaar hebben;
+-	ofwel: meer dan één van volgende criteria overschrijden:
+o	jaargemiddelde personeelsbestand: 50 werknemers;
+o	jaaromzet van € 7.300.000,00 exclusief btw;
+o	balanstotaal van € 3.650.000,00
+De onderneming met een activiteit die hen in elk geval tot de grote ondernemingen doet behoren zoals wisselagenten of ondernemingen van hypothecair krediet en kapitalisatie.
+
 
 **De Jaarrekening:** 7 Jaar bijhouden
 
