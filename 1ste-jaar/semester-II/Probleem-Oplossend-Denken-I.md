@@ -306,7 +306,6 @@ EINDE
 
 T(n) = (2 + c)n + 4
 
-
 ### 2.1.4 Voorbeeld 4
 
 ```pascal
@@ -337,7 +336,6 @@ T(n) = 5n<sup>2</sup> + 4n + 4
 T(n) = &Theta;(n<sup>2</sup>)
 
 > **Examen:** zorg dat je er de &Theta; bij zet!
-
 
 ## 2.2 Asymptotische analyse (&Theta; notatie)
 
@@ -541,7 +539,6 @@ T(4) = T(3) + 1 = 4 + 1 = 5<br>
 Gok:<br>
 T(n) = n + 1
 
-
 #### Bewijs (Door inductie):
 
 > Stel je hebt een oneindige rij van personen P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub>, P<sub>5</sub>, ...
@@ -563,7 +560,6 @@ Te bewijzen:    T(n) = n + 1
 **Bewijs:**
 
 > Kan op een examen komen!
-
 
 ```pascal
 1. Basisstap: verifieer dat het te bewijzen waar is voor n = 0
@@ -1049,7 +1045,73 @@ zoekGetal = 5
 
 ### 4.2.1 Sorteren door selectie
 
+In de te sorteren array a gaan we op zoek naar het grootste element. Indien dit element niet achteraan staat in de rij, moet dit element verwisseld worden met het element op de laatste plaats. Het grootste element staat nu achteraan in de rij; dat is de juiste plaats voor dit element. De (n − 1) overige elementen van de array moeten nog gesorteerd worden.
+
+Voor de deelrij a[0], ..., a[n − 2] gaan we op analoge manier tewerk. Het grootste element
+in de rij wordt bepaald en achteraan geplaatst, dus op de (n − 2)-de positie.
+
+Deze werkwijze wordt herhaald op steeds kortere deelrijen. De laatste keer zal de deelrij
+nog bestaan uit twee elementen. De implementatie wordt gegeven in Algoritme 4.33.
+
+![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/sorteren_door_selectie.png)
+
+```pascal
+selectionSort(I: a: array[] van getallen): a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen
+    * Postconditie: de array a is gesorteerd.
+    * Gebruikt: /
+BEGIN
+    VOOR i = n - 1 TOT 1 (STAP - 1) DOE             // Achteraan starten
+        positie <- i
+        max <- a[i]
+        VOOR j = i - 1 TOT 0 (STAP - 1) DOE         // j doorloopt de deelrij
+            ALS(a[j] > max) DAN
+                positie <- j
+                max <- a[j]
+            EINDE ALS
+        EINDE VOOR
+        a[positie] <- a[i]                          // het grooste element verwisselen met het laatste
+        a[i] <- max
+    EINDE VOOR
+    RETOUR (a)
+EINDE
+```
+
+#### 4.2.1.1 Complexiteitsanalyse
+
+`T(n) = &Theta;(n<sup>2</sup>)`
+
 ### 4.2.2 Sorteren door tussenvoegen (Insertion sort of Card sort)
+
+Sorteren door tussenvoegen of card sort kan het best vergeleken worden met het op volgorde steken van kaarten.
+We beginnen met de tweede kaart. We kijken of deze voor de eerste moet komen of niet. Vervolgens nemen we de volgende kaart en deze plaatsen we dan direct op de juiste positie ten opzichte van de vorige kaarten. Zo doen we verder tot alle kaarten op de juiste plaats zitten.
+
+In het algoritme is dit: indien de eerste k elementen reeds gesorteerd zijn dan gaan we kijken naar het (k + 1)-ste element. Dit element wordt op de juiste plaats tussenge- voegd. Indien nodig moeten de reeds gesorteerde grotere elementen allen e ́e ́n positie doorschuiven.
+
+```pascal
+cardSort(I: a: array[] van getallen): a: array[] van getallen
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de array a is gesorteerd.
+    * Gebruikt: /
+BEGIN
+    VOOR i = 1 TOT n - 1 DOE
+        x <- a[i]                               // x bevat het in te voegen element
+        j <- i                                  // j zoekt de juiste positie voor x
+        ZOLANG j > 0 EN x < a[j - 1] DOE        // de grotere elementen doorschuiven
+            a[j] <- a[j - 1]                    // schuif a[j - 1] eentje op
+            j <- j - 1
+        EINDE ZOLANG
+        a[j] <- x                               // x wordt op de juiste positie tussengevoegd
+    EINDE VOOR
+    RETOUR (a)
+EINDE
+```
+
+#### 4.2.2.1 Complexiteitsanalyse
+
+* `T(n) = &Theta;(n<sup>2</sup>)` het slechtste geval
+* `T(n) = &Theta;(n)` het beste geval
+* `T(n) = &Theta;(n<sup>2</sup>)` het gemiddelde geval
 
 ### 4.2.3 Mergesort
 
@@ -1963,6 +2025,8 @@ EINDE
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/8.5.oefeningen.md)
 
+## 8.1 Specificatie
+
 ```java
 class Knoop {
     private Object data;
@@ -1989,12 +2053,14 @@ class Lijst {
 }
 ```
 
+## 8.2 Algoritmen
+
 | Knoop |
 | ----- |
 | - data : Element<br>- volgende : Knoop |
 | + Knoop() |
 
-**Implementatie van Knoop**
+### 8.2.1 Een implementatie van een knoop
 
 ```pascal
 Knoop (I: /): /
@@ -2014,7 +2080,9 @@ EINDE
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst.png)
 
-**Implementatie van GelinkteLijst**
+### 8.2.2 Implementatie van een gelinkte lijst
+
+#### 8.2.2.1 Algoritme voor de constructor
 
 ```pascal
 GelinkteLijst(I: /): /
@@ -2026,7 +2094,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van zoek() in GelinkteLijst
+#### 8.2.2.2 Algoritme voor het opzoeken van een element x
 
 ```pascal
 zoek(I: x: Element): ref: Knoop
@@ -2042,7 +2110,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van verwijder() in GelinkteLijst
+#### 8.2.2.3 Algoritme voor het verwijderen van een component
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_verwijderen.png)
 
@@ -2057,7 +2125,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van toevoegen() in GelinkteLijst
+#### 8.2.2.4 Algoritme voor het toevoegen van een component
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_toevoegen.png)
 
@@ -2074,14 +2142,24 @@ BEGIN
 EINDE
 ```
 
-## 8.4 Toepassing: Stack op basis van knopen
+## 8.3 Dubbelgelinkte lijsten
+
+In een dubbelgelinkte lijst kan je zowel naar de volgende als naar de vorige knoop gaan.
+Zo kan je snel zoeken zonder altijd van in het begin te beginnen.
+Dubbelgelinkte lijsten maken gebruik van 2 anker componenten.
+
+[Dubbelgelinkte Lijsten](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/8.5.oefeningen.md#oefening-853)
+
+## 8.4 Toepassing
+
+> Stack op basis van knopen
 
 | Stack |
 | ----- |
 | - t : Knoop |
 | + Stack( )<br>+ empty( ) : boolean<br>+ push(x: Element) : /<br>+ pop( ) : Element<br>+ peek( ) : Element |
 
-### Implementatie van Stack met knopen
+### 8.4.1 Algoritme voor de constructor
 
 ```pascal
 Stack(I: /): /
@@ -2093,7 +2171,7 @@ BEGIN
 EINDE
 ```
 
-### Implementatie van empty in Stack met knopen
+### 8.4.2 Algoritme ter controle of een stapel al dan niet leeg is
 
 ```pascal
 empty(I: /): vlag: boolean
@@ -2105,7 +2183,7 @@ BEGIN
 EINDE
 ```
 
-### Implementatie van push in Stack met knopen
+### 8.4.3 Algoritme voor het toevoegen van een element aan een stapel
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_push.png)
 
@@ -2123,7 +2201,7 @@ BEGIN
 EINDE
 ```
 
-### Implementatie van pop in Stack met knopen
+### 8.4.4 Algoritme voor het verwijderen van een element van een stapel
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/gelinkte_lijst_pop.png)
 
@@ -2141,14 +2219,11 @@ BEGIN
 EINDE
 ```
 
-# Hoofdstuk 9
+# 9 Hashtabellen
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/9.5.oefeningen.md)
 
-> Hashtabellen
-
-
-## Een woordenboek met tweeletterwoorden:
+## 9.1 Woordenboeken met tweeletterwoorden
 
 ```
 'aa' -> Gezonde melk
@@ -2176,18 +2251,7 @@ z ~> 25
 => Berekenen van de hashCode
 ```
 
-```pascal
-w.hashCode(I: /): positie: geheel getal
-    * Preconditie: de sleutel w bestaat
-    * Postconditie: een getal tussen 0...675 werd berekend en geretourneerd
-    * Gebruikt:
-BEGIN
-    positie <- 26 * w[0] + w[1]
-
-    RETOUR (positie)
-EINDE
-```
-## Specificatie van een Hashtabel
+## 9.1 Specificatie
 
 > Langste woord:
 >
@@ -2205,10 +2269,81 @@ grootte array:  26^33
 | ------------ | ------------ | ------------ |
 | Gezonde Melk |              |              |
 | ------------ | ------------ | ------------ |
-
 ```
 
-## Gesloten Hashing
+### 9.1.2 Implementatie
+
+#### 9.1.2.1 Algoritme voor de methode hashCode
+
+```pascal
+w.hashCode(I: /): positie: geheel getal
+    * Preconditie: de sleutel w bestaat
+    * Postconditie: een getal tussen 0...675 werd berekend en geretourneerd
+    * Gebruikt:
+BEGIN
+    positie <- 26 * w[0] + w[1]
+
+    RETOUR (positie)
+EINDE
+```
+
+#### 9.1.2.2 Algoritme voor de methode voegToe
+
+```pascal
+b.voegToe(I: w: Sleutel, definitie: String): /
+    * Preconditie: de sleutel w wordt meegegeven, zijn definitie moet aan het woordenboek b toegevoegd worden.
+    * Postconditie: de gegevens betekenis van w werd aan het woordenboek b toegevoegd op de juiste positie.
+    * Gebruikt: hashCode.
+BEGIN
+    b[w.hashCode()] <- definitie
+EINDE
+```
+
+#### 9.1.2.3 Algoritme voor de methode zoekOp
+
+```pascal
+b.zoekOp(I: w: Sleutel): definitie: String
+    * Preconditie: de sleutel w wordt meegegeven.
+    * Postconditie: de definitie van w werd geretourneerd.
+    * Gebruikt: hashCode.
+BEGIN
+    definitie <- b[w.hashCode()]
+    RETOUR(definitie)
+EINDE
+```
+
+## 9.2 Specificatie
+
+Voor de opbouw van het woordenboek met tweeletterwoorden was er nood aan een functie die alle sleutels afbeeldt op een positie (bucket) van een tabel. Aangezien het over een beperkt aantal sleutels ging, was het mogelijk om de tabel voor te stellen door een array.
+
+Wanneer alle mogelijke woorden van willekeurige lengte moeten opgenomen worden in het woordenboek dan wordt het aantal benodigde sleutels aanzienlijk groter.
+Stel dat het woord ‘hottentottententententoonstelling’, dat 33 letters telt, het langste op te nemen woord is. Dan moeten er, om alle mogelijke woorden te kunnen opnemen, 2633 sleutels worden voorzien. Werken met een array van dergelijke lengte is niet meer efficie ̈nt naar geheugengebruik toe.
+
+Een mogelijke oplossing is om bij aanvang een getal N te selecteren dat het maximum posities van de te gebruiken tabel, waarin alle waarden worden opgeslagen, aangeeft. Dit betekent dat de hashtabel in een array van lengte N opgeslagen wordt.
+
+Een woord wordt, analoog aan het voorbeeld van de tweeletterwoorden, omgezet naar een code via een methode hashCode. Er zullen veel meer hashcodes zijn dan enkel de waarden tussen 0 en N − 1.
+Standaard wordt het totaal aantal woorden op te nemen in het woordenboek voorgesteld door n. Dit aantal n komt overeen met het aantal benodigde hashcodes. Over het algemeen zal n > N.
+
+Aangezien er slechts N posities voorzien zijn in de tabel moeten al deze hashcodes met
+een hashfunctie omgezet worden naar een correcte positie uit de tabel.
+
+Een mogelijke hashfunctie h die de positie berekent van alle sleutels w die overeenkomen
+met alle op te nemen woorden in het woordenboek, zou kunnen zijn:
+
+`h(w) = w.hashCode() (mod N).`
+
+Het resultaat van deze hashfunctie is steeds een getal tussen 0 en N − 1. Wat overeen- komt met alle mogelijke posities in de tabel.
+
+Door deze hashfunctie toe te passen op alle sleutels is het zeer plausibel dat de betekenis van een aantal sleutels op dezelfde positie moet opgeslagen worden.
+De opbouw van de hashtabel zal afhangen van de manier waarop wordt omgegaan met deze samenvallende posities.
+
+Algemeen kunnen we stellen dat hashing kan opgesplitst worden in twee luiken:
+    1. De keuze van een hashfunctie h die alle mogelijke sleutels afbeeldt op een positie uit de hashtabel.
+    2. Een methode selecteren om de waarden die overlappen of botsen (collisions) te verwerken.
+
+### 9.2.1 Verwerken van de overlappingen
+
+#### 9.2.1.1 Gesloten Hashing
 
 ```
     0      1      2      3      4      5      6      7      8      9
@@ -2226,7 +2361,7 @@ grootte array:  26^33
 Positie 1 is al bezet, dus we kijken naar de eerst volgende lege plaats
 ```
 
-## Open Hashing
+#### 9.2.1.2 Open Hashing
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/open_hashing.png)
 
