@@ -270,7 +270,7 @@ EINDE
 | ------------------------------------------ | :-----------: | :----: | :----: |
 | som <- 0                                   | 1             | 1      | 1      |
 | VOOR i = 1 TOT n DOE                       | 2             | n + 1  | 2n + 2 |
-| &emsp;som <- som + i . i | 3               | n             | 3n     | &nbsp; |
+| &emsp;som <- som + i . i                   | 3             | n      | 3n     |
 | EINDE VOOR                                 | &nbsp;        | &nbsp; | &nbsp; |
 | RETOUR (som)                               | 1             | 1      | 1      |
 | &nbsp;                                     | &nbsp;        | &nbsp; | 5n + 4 |
