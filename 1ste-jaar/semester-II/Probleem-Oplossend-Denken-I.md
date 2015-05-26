@@ -1079,7 +1079,7 @@ EINDE
 
 #### 4.2.1.1 Complexiteitsanalyse
 
-`T(n) = &Theta;(n<sup>2</sup>)`
+`T(n) = Θ(n<sup>2</sup>)`
 
 ### 4.2.2 Sorteren door tussenvoegen (Insertion sort of Card sort)
 
@@ -1109,9 +1109,9 @@ EINDE
 
 #### 4.2.2.1 Complexiteitsanalyse
 
-* `T(n) = &Theta;(n<sup>2</sup>)` het slechtste geval
-* `T(n) = &Theta;(n)` het beste geval
-* `T(n) = &Theta;(n<sup>2</sup>)` het gemiddelde geval
+* `T(n) = Θ(n<sup>2</sup>)` het slechtste geval
+* `T(n) = Θ(n)` het beste geval
+* `T(n) = Θ(n<sup>2</sup>)` het gemiddelde geval
 
 ### 4.2.3 Mergesort
 
@@ -2017,9 +2017,9 @@ EINDE
 
 ### 7.2.3 Tijdscomplexiteit
 
-* In het beste geval `T(n) = &Theta;(1)`
-* In het gemiddelde geval `T(n) = &Theta;(n)`
-* In het slechtste geval `T(n) = &Theta;(n)`
+* In het beste geval `T(n) = Θ(1)`
+* In het gemiddelde geval `T(n) = Θ(n)`
+* In het slechtste geval `T(n) = Θ(n)`
 
 # 8 Gelikte lijsten
 
