@@ -718,7 +718,9 @@ T(n) = &Theta;(n)
 
 # 4 Zoek- en sorteeralgoritmen
 
-> Zoek- en sorteeralgoritmen
+## 4.1 Zoekalgoritmen
+
+### 4.1.1 Sequentieel of lineair zoeken in een array
 
 ```pascal
 zoekSequentieel(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
@@ -830,7 +832,7 @@ zoekGetal = 5
     index <- -1
 ```
 
-## Gesorteerde rij
+#### 4.1.1.1 Gesorteerde rij
 
 ```pascal
 zoekSequentieelGesorteerd(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
@@ -898,6 +900,8 @@ zoekGetal = 6
 >
 > In het gemiddeld geval: T(n) = &Theta;(n).
 
+### 4.1.2 Binair zoeken in een array
+
 ```pascal
 zoekBinair(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
     * Preconditie: rij is een gesorteere array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
@@ -926,7 +930,6 @@ EINDE
 ```
 
 > |_ getal _| = afronden naar beneden = floor
-
 
 ```pascal
 l = 2, r = 6
@@ -996,7 +999,6 @@ zoekGetal = 5
 
 > ^ **Op Examen!**
 
-
 ```pascal
 zoekRecursief(I: zoekGetal: geheel getal, rij: array[] van gehele getallen): index: geheel getal
     * Preconditie: rij is een gesorteere array van lengte n van gehele getallen; zoekGetal is het te zoeken element in de array.
@@ -1043,9 +1045,13 @@ zoekGetal = 5
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/zoekRecursief.png)
 
-## Soorteeralgoritmen
+## 4.2 Soorteeralgoritmen
 
-### Mergesort
+### 4.2.1 Sorteren door selectie
+
+### 4.2.2 Sorteren door tussenvoegen (Insertion sort of Card sort)
+
+### 4.2.3 Mergesort
 
 > Heeft dubbel zoveel geheugen nodig omdat hij een hulp array aanmaakt dat even groot is.
 
@@ -1067,21 +1073,19 @@ rij = [6, 12, 18, 42, 44, 55, 67, 94]
 
 ```pascal
 mergeSort (I : a: array[] van getallen) : a: array[] van getallen
-    * Preconditie: de array a is gevuld met n elementen.
-    * Postconditie: de array a werd gesorteerd.
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: de array a werd gesorteerd.
     * Gebruikt: mergeSorteer.
 BEGIN
     a <- mergeSorteer(a, 0, n - 1)
     RETOUR (a)
 EINDE
 
-
-
 mergeSorteer (I : a: array[ ] van getallen; begin, einde: geheel getal) : a: array[ ] van
 getallen
-    * Preconditie: de array a is gevuld met n elementen.
+    * Preconditie: de array a is gevuld met n elementen.
     * Postconditie: de elementen met index begin tot en met index einde werden gesorteerd.
-    * Gebruikt: mergeSorteer, merge.
+    * Gebruikt: mergeSorteer, merge.
 BEGIN
     ALS (begin < einde) DAN
         midden <- floor((begin + einde)/2)      // begin ≤ m < einde
@@ -1091,7 +1095,6 @@ BEGIN
     EINDE ALS
     RETOUR (a)
 EINDE
-
 
 merge(I: a: array[] van getallen; begin, midden, einde: geheel getal): a: array[] van getallen
     * Preconditie: de array a is gevuld met n elementen; de elementen van de deelrij gaande van de begin-positie tot en met de midden positie zijn gesorteerd; de elementen van de deelrij gaande van de (midden+1)-positie tot en met de eind-positie zijn gesorteerd.
@@ -1133,6 +1136,7 @@ BEGIN
     RETOUR (a)
 EINDE
 ```
+
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/mergeSort.png)
 
 > Mege T(n) = &Theta;(n)
@@ -1177,7 +1181,7 @@ VOOR i = 0 TOT n - 1 DOE
 EINDE VOOR
 ```
 
-### Quicksort
+### 4.2.4 Quicksort
 
 ```pascal
 rij = [12, 42, 67, 55, 06, 18, 44, 84]
@@ -1348,9 +1352,9 @@ EINDE
 
 ```pascal
 cardSortBis (I : a: array[] van getallen; begin, einde: geheel getal) : a: array[] van getallen
-   * Preconditie: de array a is gevuld met n elementen.
-   * Postconditie: in de array a werden de elementen met index begin tot en met index einde gesorteerd.
-   * Gebruikt: /
+    * Preconditie: de array a is gevuld met n elementen.
+    * Postconditie: in de array a werden de elementen met index begin tot en met index einde gesorteerd.
+    * Gebruikt: /
 BEGIN
     VOOR i = begin + 1 TOT einde DOE
         x <- a[i]
@@ -1391,7 +1395,7 @@ EINDE
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/quickSort.png)
 
-# Hoofdstuk 5
+# 5 Stapels (Stacks)
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/5.6.oefeningen.md)
 
@@ -1399,13 +1403,24 @@ Stapels:
 
 > Een datastructuur waarbij je enkel bovenaan kan toevoegen en ook enkel het bovenste element bekijken en verwijderen: `LIFO` **(last in first out)**
 
+## 5.1 Specificatie
+
+* Een element dat we willen toevoegen aan een stapel, komt steeds bovenop de reeds bestaande stapel te liggen.
+* Een element verwijderen is enkel mogelijk indien dit het bovenste element is, enkel het bovenste element van de stapel is bereikbaar. Dit element wordt de top van de stapel genoemd.
+
+## 5.2 Implementatie met behulp van arrays
+
 ```pascal
 Stack(): constructor
 empty(): controleert of een stapel al dan niet leeg is
 push(): voegt een nieuw element toe bovenaan een stapel
 pop(): verwijdert het bovenste element van een stapel en retourneert het verwijderde element
-peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijderen
+peek(): geeft het bovenste element van de stapel terug, zonder het te verwijderen
 ```
+
+### 5.2.1 Voorbeeld
+
+### 5.2.2 Algoritmen
 
 | Stack |
 | ----- |
@@ -1414,8 +1429,7 @@ peek(): geeft het bovesnte element van de stapel terug, zonder het te verwijdere
 
 > `t` is de top index, dus om het laatste element te zien moet je `data[t]` gebruiken.
 
-
-## Implementatie van Stack()
+### 5.2.2.1 Implementatie van Stack()
 
 ```pascal
 Stack(I: n: geheel getal): /
@@ -1428,7 +1442,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van empty()
+### 5.2.2.2 Implementatie van empty()
 
 ```pascal
 empty(I: /): vlag: Boolean
@@ -1440,7 +1454,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van push(x)
+### 5.2.2.3 Implementatie van push(x)
 
 ```pascal
 push(I: x: Element): /
@@ -1453,7 +1467,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van pop()
+### 5.2.2.4 Implementatie van pop()
 
 ```pascal
 pop(I: /): x: Element
@@ -1467,7 +1481,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van peek()
+### 5.2.2.5 Implementatie van peek()
 
 ```pascal
 ppeekop(I: /): x: Element
@@ -1481,7 +1495,7 @@ EINDE
 
 > Alle methodes zijn T(n) = &Theta;(1)
 
-## Voorbeeld: methode one
+## 5.3 Voorbeeld: de methode one
 
 > Bevat de stack 1 element of niet
 
@@ -1502,7 +1516,7 @@ BEGIN
 EINDE
 ```
 
-## Toepassing 1: controle van haakjes
+## 5.4 Toepassing 1: controle van haakjes
 
 ```pascal
 controleerHaakjes(I: uitdrukking: array[] van Strings): /
@@ -1534,8 +1548,9 @@ BEGIN
 EINDE
 ```
 
-## Toepassing 2: het berekenen van postfix-uitdrukkingen
+## 5.5 Toepassing 2: het berekenen van postfix-uitdrukkingen
 
+### 5.5.1 Het bepalen van de waarde van een postfix-uitdrukking
 
 **Infix:**
 
@@ -1560,7 +1575,7 @@ EINDE
 **Uitrekenen:**
 
 
-### Voorbeeld Rekenmachine 1
+#### 5.5.1.1 Voorbeeld Rekenmachine 1
 
 `3 4 5 x +`
 
@@ -1576,10 +1591,9 @@ EINDE
 2. Kom je een teken tegen -> laatste 2 waarden van de stapel uitwerken en terug op de stapel plaatsen
 3. Herhalen tot het einde
 
-### Voorbeeld Rekenmachine 2
+#### 5.5.1.2 Voorbeeld Rekenmachine 2
 
 `3 4 + 5 x`
-
 
 ```pacal
 // De stapel
@@ -1589,7 +1603,7 @@ EINDE
 ---  ---  ---
 ```
 
-### Van infix naar postfix
+### 5.5.2 Van infix naar postfix
 
 **Eigenschappen:**
 
@@ -1647,9 +1661,11 @@ EINDE
 a b c + d x e f g x + x +
 ```
 
-# Hoofdstuk 6
+# 6 Wachtrijen (Queues)
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/6.5.oefeningen.md)
+
+## 6.1 Specificatie
 
 > Wachtrijen (Queues), dit is een **FIFO structuur (First In First Out)**
 
@@ -1659,12 +1675,11 @@ a b c + d x e f g x + x +
 * `dequeue()` verwijdert het element aan de kop in een wachtrij en retourneert het verijwderde element
 * `front()` retourneert het voorste element, m.a.w. de kop, van een wachtrij zonder het te verwijderen
 
-| Queue |
-| ----- |
-| - data: array[] van Element <br> - k : geheel getal <br> - s : geheel getal |
-| + Queue(n: geheel getal) <br> + empty(): boolean <br> + enqueue(x: Element): / <br> + dequeue() : Element <br> + front(): Element |
+## 6.2 Implementatie met behulp van arrays
 
-**Voorbeeld:**
+### 6.2.1 Voorbeelden
+
+#### 6.2.1.1 Voorbeeld 1
 
 ```pascal
 |   |   |   |   |   |     // k = s = -1
@@ -1680,7 +1695,14 @@ a b c + d x e f g x + x +
 
 > Een wachtrij is een **circulaire** array, je kan dus alle plaatsen gebruiken.
 
-## De implementatie van Queue()
+### 6.2.2 Algoritmen
+
+| Queue |
+| ----- |
+| - data: array[] van Element <br> - k : geheel getal <br> - s : geheel getal |
+| + Queue(n: geheel getal) <br> + empty(): boolean <br> + enqueue(x: Element): / <br> + dequeue() : Element <br> + front(): Element |
+
+#### 6.2.2.1 Algoritme voor de constructor
 
 ```pascal
 Queue(I: n: geheel getal): /
@@ -1694,7 +1716,7 @@ BEGIN
 EINDE
 ```
 
-## De implementatie van empty() in Queue
+#### 6.2.2.2 Algoritme ter controle of een wachtrij leeg is
 
 ```pascal
 empty(I: /): vlag: Boolean
@@ -1706,7 +1728,7 @@ BEGIN
 EINDE
 ```
 
-## De implementatie van enqueue()
+#### 6.2.2.3 Algoritme voor het toevoegen van een element aan een wachtrij
 
 ```pascal
 enqueue(I: x: Element): /
@@ -1725,7 +1747,7 @@ BEGIN
 EINDE
 ```
 
-## De implementatie van dequeue()
+#### 6.2.2.4 Algoritme voor het verwijderen van een element van een wachtrij
 
 ```pascal
 dequeue(I: /): x: Element
@@ -1747,7 +1769,7 @@ BEGIN
 EINDE
 ```
 
-## De implementatie van front()
+#### 6.2.2.5 Algoritme vooor het weergeven van de kop van een wachtrij
 
 ```pascal
 front(I: /): x: Element
@@ -1759,9 +1781,11 @@ BEGIN
 EINDE
 ```
 
+### 6.2.3 Complexiteit
+
 > Alle methodes zijn T(n) = &Theta;(1)
 
-## Voorbeeld: methode one (in Queue)
+## 6.3 Voorbeeld: methode one
 
 ```pascal
 one(I: q: Queue): vlag: boolean
@@ -1792,9 +1816,11 @@ BEGIN
 EINDE
 ```
 
-# Hoofdstuk 7
+# 7 Lijsten
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/7.4.oefeningen.md)
+
+## 7.1 Specificatie
 
 > In lijsten kan je data opvragen en verwijderen of vervangen in willekeurige plaatsen, of waar je maar wilt.
 
@@ -1808,12 +1834,16 @@ EINDE
 * `invoegenVoor()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst voor de meegegeven positie.
 * `vervang()` het element in de lijst op de positie bepaald door het eerste argument, wordt vervangen door het meegeleverde nieuwe lijstelement
 
+## 7.2 Implementatie met behulp van arrays
+
 | List                         |
 | ---------------------------- |
 | - data: array[] van Element<br>- aantal: geheel getal |
 | + List(n: geheel getal)<br>+ empty() : boolean<br>+ size() : geheel getal<br>+ geefElem(p: geheel getal) : Element<br>+ geefPositie(x: Element) : geheel getal<br>+ verwijderElem(p: geheel getal) : Element<br>+ invoegenNa(p: geheel getal, x: Element): /<br>+ invoegenVoor(p: geheel getal, x: Element): /<br>+ vervang(p: geheel getal, x: Element): / |
 
-## Implementatie van geefElem()
+### 7.2.2 Algoritmen
+
+#### 7.2.2.1 Algoritme voor de constructor
 
 ```pascal
 geefElem(I: p: geheel getal): x: Element
@@ -1825,7 +1855,50 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van geefPositie()
+#### 7.2.2.2 Algoritme ter controle of een lijst leeg is
+
+```pascal
+empty(I: /): vlag: boolean
+    * Preconditie: de lijst l bestaat
+    * Postconditie: de waarde true of false werd afgeleverd, afhankelijk van het feit of de lijst l leeg is of niet
+    * Gebruikt: /
+BEGIN
+    ALS (aantal = 0) DAN
+        vlag <- true
+    ANDERS
+        vlag <- false
+    EINDE ALS
+    RETOUR (vlag)
+EINDE
+```
+
+#### 7.2.2.3 Algoritme ter controle van de omvang van de lijst
+
+```pascal
+size(I: /): grootte: geheel getal
+    * Preconditie: de lijst l bestaat
+    * Postconditie: het aantal elementen van de lijst l werd geretourneerd
+    * Gebruikt: /
+BEGIN
+    grootte <- aantal
+    RETOUR (grootte)
+EINDE
+```
+
+#### 7.2.2.4 Algoritme voor het opzoeken van een element
+
+```pascal
+geefElem(I: p: geheel getal): x: Element
+    * Preconditie: de lijst l bestaat; l bevat minstens p + 1 elementen.
+    * Postconditie: het element op de p-de positie in de lijst werd geretourneerd.
+    * Gebruikt: /
+BEGIN
+    x <- data[p]
+    RETOUR (x)
+EINDE
+```
+
+#### 7.2.2.5 Algoritme voor het opzoeken van een positie
 
 ```pascal
 geefPositie(I: x: Element): p: geheel getal
@@ -1848,7 +1921,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van verwijderElem()
+#### 7.2.2.6 Algoritme voor het verwijderen van een element
 
 ```pascal
 verwijderElem(I: p: geheel getal): x: Element)
@@ -1868,7 +1941,7 @@ BEGIN
 EINDE
 ```
 
-## Implementatie van vervang()
+#### 7.2.2.7 Algoritme voor het vervangen van een element
 
 ```pascal
 vervang(I: p: geheel getal, x: Element): /
@@ -1880,7 +1953,13 @@ BEGIN
 EINDE
 ```
 
-# Hoofdstuk 8
+### 7.2.3 Tijdscomplexiteit
+
+* In het beste geval `T(n) = &Theta;(1)`
+* In het gemiddelde geval `T(n) = &Theta;(n)`
+* In het slechtste geval `T(n) = &Theta;(n)`
+
+# 8 Gelikte lijsten
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/8.5.oefeningen.md)
 
