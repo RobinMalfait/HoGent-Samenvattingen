@@ -2,13 +2,17 @@
 
 # Hoofdstuk 1
 
+> Inleiding
+
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md#oefeningen-14-middot-slide-15-17)
 
 * De sequentie
 * De Selectie
 * De Iteratie
 
-## Algoritme: De Sequentie
+## 1.1 Basisstructuren
+
+### 1.1.1 De sequentiestructuur
 
 ---
 
@@ -29,7 +33,7 @@ bodyMassIndex <- gewicht/(lengte . lengte)
 RETOUR bodyMassIndex
 ```
 
-## Algoritme: De Selectie
+### 1.1.2 De selectiestructuur
 
 ---
 
@@ -41,7 +45,7 @@ ANDERS
 EINDE ALS
 ```
 
-## De eenzijdige Selectie:
+#### De eenzijdige Selectie:
 
 ```pascal
 ALS voorwaarde DAN
@@ -61,7 +65,7 @@ ANDERS
 EINDE ALS
 ```
 
-## De Geneste selectiestructuur:
+#### De Geneste selectiestructuur:
 
 ```pascal
 VOERUIT(scherm, "Geef BMI:")
@@ -77,7 +81,7 @@ ANDERS
 EINDE ALS
 ```
 
-## Algoritme: De iteratie
+### 1.1.3 De iteratiestructuur
 
 ---
 
@@ -124,7 +128,7 @@ EINDE VOOR
 VOERUIT(scherm, "som = " som)
 ```
 
-## Methodes
+## 1.2 Methodes
 
 **Sjabloon**
 
@@ -138,7 +142,9 @@ BEGIN
 EINDE
 ```
 
-Voorbeeld: Wat is het grootste getal?
+## 1.3 Voorbeelden
+
+### 1.3.1 Voorbeeld: Wat is het grootste getal?
 
 ```pascal
 bepaalMaximum (I: a, b, c: gehele getallen): x: geheel getal
@@ -157,7 +163,7 @@ BEGIN
 EIND
 ```
 
-Voorbeeld: Bepaal het aantal priemgetallen kleiner dan n.
+### 1.3.2 Voorbeeld: Bepaal het aantal priemgetallen kleiner dan n.
 
 ```pascal
 telPriemgetallen (I: n: geheel getal) : aantal: geheel getal
@@ -195,7 +201,7 @@ EINDE
 >
 > Dus, n > n, kan niet = contradictie
 
-## Methode 2: De zeef van Eratosthenes
+### 1.3.3 Methode 2: De zeef van Eratosthenes
 
 ***2*** ***3*** 4 ***5*** 6 ***7*** 8 9 10 ***11*** 12 ***13*** 14 15 16 ***17*** 18 ***19*** 20 21 22 ***23*** 24 25 26 27 28 ***29***
 
@@ -221,7 +227,9 @@ BEGIN
 EINDE
 ```
 
-# Hoofdstuk 2
+## Hoofdstuk 2
+
+> De uitvoeringstijd van een algoritme
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/2.3.oefeningen.md#oefeningen-23-middot-slide-31)
 
@@ -229,9 +237,9 @@ EINDE
 >
 > We nemen aan dat alle basis instructies even lang duren, bijvoorbeeld: optelling, aftrekken, deling, vermenigvuldiging, ...
 
-## Het aantal instructies exact gaan tellen.
+### 2.1 Het aantal instructies exact gaan tellen.
 
-### Voorbeeld 1:
+#### 2.1.1 Voorbeeld 1:
 
 ```pascal
 BEGIN
@@ -248,7 +256,7 @@ EINDE
 
 T(n) = 3
 
-### Voorbeeld 2:
+#### 2.1.2 Voorbeeld 2:
 
 ```pascal
 BEGIN
@@ -274,7 +282,7 @@ T(n) = 5n + 4
 > Een `VOOR` lus heeft altijd 2 instructies.
 
 
-### Voorbeeld 3:
+#### 2.1.3 Voorbeeld 3:
 
 ```pascal
 BEGIN
@@ -302,7 +310,7 @@ EINDE
 T(n) = (2 + c)n + 4
 
 
-### Voorbeeld 4:
+#### 2.1.4 Voorbeeld 4:
 
 ```pascal
 BEGIN
@@ -334,7 +342,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 > **Examen:** zorg dat je er de &Theta; bij zet!
 
 
-## &Theta; notatie
+### 2.2 &Theta; notatie
 
 > **EXAMEN:** bepaal theta notatie. (Big &Theta; Notation).
 
@@ -342,7 +350,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/n_is_50.png)
 
-**Voorbeeld 1:**
+#### 2.2.1 Voorbeeld 1
 
 ```pascal
 som <- o
@@ -355,7 +363,7 @@ T(n) = c<sub>1</sub> + c<sub>2</sub>n
 
 = &Theta;(n)
 
-**Voorbeeld 2:**
+#### 2.2.2 Voorbeeld 2
 
 ```pascal
 som <- 0
@@ -381,7 +389,7 @@ EINDE VOOR
 
 T(n) = &Theta;(n<sup>2</sup>)
 
-**Voorbeeld 3:**
+#### 2.2.3 Voorbeeld 3
 
 ```pascal
 som <- 0
@@ -394,7 +402,7 @@ EINDE VOOR
 
 T(n) = &Theta;(n<sup>2</sup>)
 
-**Voorbeeld 4:**
+#### 2.2.4 Voorbeeld 4
 
 Stel: n = 2<sup>k</sup>
 
@@ -429,7 +437,7 @@ T(n) = &Theta;(ng lg(n))
 > In &Theta; notatie zijn alle `log`, `lg`, `ln` gelijk. Ze verschillen van een factor die geen rol speelt bij deze notatie.
 
 
-**Voorbeeld 5:**
+#### 2.2.5 Voorbeeld 5
 
 Stel: n = 2<sup>k</sup>
 
