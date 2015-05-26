@@ -1079,14 +1079,14 @@ EINDE
 
 #### 4.2.1.1 Complexiteitsanalyse
 
-`T(n) = Θ(n<sup>2</sup>)`
+* **T(n) = &Theta;(n<sup>2</sup>)**
 
 ### 4.2.2 Sorteren door tussenvoegen (Insertion sort of Card sort)
 
 Sorteren door tussenvoegen of card sort kan het best vergeleken worden met het op volgorde steken van kaarten.
 We beginnen met de tweede kaart. We kijken of deze voor de eerste moet komen of niet. Vervolgens nemen we de volgende kaart en deze plaatsen we dan direct op de juiste positie ten opzichte van de vorige kaarten. Zo doen we verder tot alle kaarten op de juiste plaats zitten.
 
-In het algoritme is dit: indien de eerste k elementen reeds gesorteerd zijn dan gaan we kijken naar het (k + 1)-ste element. Dit element wordt op de juiste plaats tussenge- voegd. Indien nodig moeten de reeds gesorteerde grotere elementen allen e ́e ́n positie doorschuiven.
+In het algoritme is dit: indien de eerste k elementen reeds gesorteerd zijn dan gaan we kijken naar het (k + 1)-ste element. Dit element wordt op de juiste plaats tussenge- voegd. Indien nodig moeten de reeds gesorteerde grotere elementen allen één positie doorschuiven.
 
 ```pascal
 cardSort(I: a: array[] van getallen): a: array[] van getallen
@@ -1109,9 +1109,9 @@ EINDE
 
 #### 4.2.2.1 Complexiteitsanalyse
 
-* `T(n) = Θ(n<sup>2</sup>)` het slechtste geval
-* `T(n) = Θ(n)` het beste geval
-* `T(n) = Θ(n<sup>2</sup>)` het gemiddelde geval
+* **T(n) = &Theta;(n<sup>2</sup>)** het slechtste geval
+* **T(n) = &Theta;(n)** het beste geval
+* **T(n) = &Theta;(n<sup>2</sup>)** het gemiddelde geval
 
 ### 4.2.3 Mergesort
 
@@ -2017,9 +2017,9 @@ EINDE
 
 ### 7.2.3 Tijdscomplexiteit
 
-* In het beste geval `T(n) = Θ(1)`
-* In het gemiddelde geval `T(n) = Θ(n)`
-* In het slechtste geval `T(n) = Θ(n)`
+* In het beste geval **T(n) = &Theta;(1)**
+* In het gemiddelde geval **T(n) = &Theta;(n)**
+* In het slechtste geval **T(n) = &Theta;(n)**
 
 # 8 Gelikte lijsten
 
