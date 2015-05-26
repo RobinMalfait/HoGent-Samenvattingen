@@ -632,6 +632,23 @@ leeftijd aarde = 4,5 x 10<sup>19</sup> jaar
 
 leeftijd universum = 13,8 x 10<sup>9</sup> jaar
 
+
+```pascal
+verplaatsToren(I: n, staaf1, staaf2, staaf3: geheel getal): /
+	* Preconditie: het aantal schijven n (n e N0) en de drie staven staaf1, staaf2, staaf3 zijn geïnitialiseerd
+	* Postconditie: de n schijven werden verplaatsts van staaf1 naar staaf 3 met behulp van staaf2 voor tijdelijke opslag
+	* Gebruikt: verplaatsToren
+BEGIN
+	ALS (n = 1) DAN
+		VOERUIT(scherm, "Verplaats schijf van", staaf1, "naar", staaf3)
+	ANDERS
+		verplaatsToren(n - 1, staaf1, staaf3, staaf2)  // 1 3 2
+		verplaatsToren(1, staaf1, staaf2, staaf3)      // 1 2 3
+		verplaatsToren(n - 1, staaf2, staaf1, staaf3)  // 2 1 3
+	EINDE ALS
+EINDE
+```
+
 ## De rij van Fibonacci
 
 F<sub>0</sub> = 1<br>
