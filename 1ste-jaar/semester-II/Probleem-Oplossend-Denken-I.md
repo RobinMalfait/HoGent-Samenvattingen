@@ -1,10 +1,8 @@
 # Probleem Oplossend Denken I
 
-# Hoofdstuk 1
+# 1 Inleiding
 
-> Inleiding
-
-[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md#oefeningen-14-middot-slide-15-17)
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/1.4.oefeningen.md)
 
 * De sequentie
 * De Selectie
@@ -128,7 +126,7 @@ EINDE VOOR
 VOERUIT(scherm, "som = " som)
 ```
 
-## 1.2 Methodes
+## 1.2 Gebruik van methodes
 
 **Sjabloon**
 
@@ -144,7 +142,7 @@ EINDE
 
 ## 1.3 Voorbeelden
 
-### 1.3.1 Voorbeeld: Wat is het grootste getal?
+### 1.3.1 Bepalen van het maximum van drie getallen
 
 ```pascal
 bepaalMaximum (I: a, b, c: gehele getallen): x: geheel getal
@@ -163,7 +161,7 @@ BEGIN
 EIND
 ```
 
-### 1.3.2 Voorbeeld: Bepaal het aantal priemgetallen kleiner dan n.
+### 1.3.2 Bepaal het aantal priemgetallen kleiner dan n.
 
 ```pascal
 telPriemgetallen (I: n: geheel getal) : aantal: geheel getal
@@ -227,9 +225,7 @@ BEGIN
 EINDE
 ```
 
-## Hoofdstuk 2
-
-> De uitvoeringstijd van een algoritme
+# 2 De uitvoeringstijd van een algoritme
 
 [Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/2.3.oefeningen.md#oefeningen-23-middot-slide-31)
 
@@ -237,9 +233,11 @@ EINDE
 >
 > We nemen aan dat alle basis instructies even lang duren, bijvoorbeeld: optelling, aftrekken, deling, vermenigvuldiging, ...
 
-### 2.1 Het aantal instructies exact gaan tellen.
+## 2.1 De uitvoeringstijd van een algoritme
 
-#### 2.1.1 Voorbeeld 1:
+> Het aantal instructies exact gaan tellen.
+
+### 2.1.1 Voorbeeld 1
 
 ```pascal
 BEGIN
@@ -256,7 +254,7 @@ EINDE
 
 T(n) = 3
 
-#### 2.1.2 Voorbeeld 2:
+### 2.1.2 Voorbeeld 2
 
 ```pascal
 BEGIN
@@ -281,8 +279,7 @@ T(n) = 5n + 4
 
 > Een `VOOR` lus heeft altijd 2 instructies.
 
-
-#### 2.1.3 Voorbeeld 3:
+### 2.1.3 Voorbeeld 3
 
 ```pascal
 BEGIN
@@ -310,7 +307,7 @@ EINDE
 T(n) = (2 + c)n + 4
 
 
-#### 2.1.4 Voorbeeld 4:
+### 2.1.4 Voorbeeld 4
 
 ```pascal
 BEGIN
@@ -342,7 +339,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 > **Examen:** zorg dat je er de &Theta; bij zet!
 
 
-### 2.2 &Theta; notatie
+## 2.2 Asymptotische analyse (&Theta; notatie)
 
 > **EXAMEN:** bepaal theta notatie. (Big &Theta; Notation).
 
@@ -350,7 +347,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I/n_is_50.png)
 
-#### 2.2.1 Voorbeeld 1
+### 2.2.1 Voorbeeld 1
 
 ```pascal
 som <- o
@@ -363,7 +360,7 @@ T(n) = c<sub>1</sub> + c<sub>2</sub>n
 
 = &Theta;(n)
 
-#### 2.2.2 Voorbeeld 2
+### 2.2.2 Voorbeeld 2
 
 ```pascal
 som <- 0
@@ -389,7 +386,7 @@ EINDE VOOR
 
 T(n) = &Theta;(n<sup>2</sup>)
 
-#### 2.2.3 Voorbeeld 3
+### 2.2.3 Voorbeeld 3
 
 ```pascal
 som <- 0
@@ -402,7 +399,7 @@ EINDE VOOR
 
 T(n) = &Theta;(n<sup>2</sup>)
 
-#### 2.2.4 Voorbeeld 4
+### 2.2.4 Voorbeeld 4
 
 Stel: n = 2<sup>k</sup>
 
@@ -436,8 +433,7 @@ T(n) = &Theta;(ng lg(n))
 
 > In &Theta; notatie zijn alle `log`, `lg`, `ln` gelijk. Ze verschillen van een factor die geen rol speelt bij deze notatie.
 
-
-#### 2.2.5 Voorbeeld 5
+### 2.2.5 Voorbeeld 5
 
 Stel: n = 2<sup>k</sup>
 
@@ -481,9 +477,11 @@ S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 
 (1 - a)S<sub>k</sub> = 1 - a<sup>k + 1</sup> / 1 - a = a<sup>k + 1</sup> - 1 / a - 1 = S<sub>k</sub>
 
-# Hoofdstuk 3
+# 3 Recursie
 
-[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/3.4.oefeningen.md#oefeningen-34-middot-slide-45)
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/3.4.oefeningen.md)
+
+## 3.1 Berekenen van faculteiten
 
 ```pascal
 0! = 1
@@ -503,6 +501,8 @@ Voorbeeld:
    = 24
 ```
 
+### 3.1.1 Algoritme
+
 ```pascal
 berekenFaculteit(I: n: geheel getal): fac: geheel getal
     * preconditie: n is een natuurlijk getal
@@ -517,7 +517,10 @@ BEGIN
     RETOUR (faculteit)
 EINDE
 ```
-**Hoe lang duurt dit?**
+
+### 3.1.2 Complexiteitsanalyse
+
+> Hoelang duurt dit?
 
 T(0) = &Theta;(1)<br>
 T(n) = T(n - 1) + &Theta;(1)    als n ≥ 1
@@ -539,7 +542,7 @@ Gok:<br>
 T(n) = n + 1
 
 
-## Bewijs (Door inductie):
+#### Bewijs (Door inductie):
 
 > Stel je hebt een oneindige rij van personen P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub>, P<sub>5</sub>, ...
 
@@ -578,7 +581,7 @@ Te bewijzen:    T(n) = n + 1
 > T(n) = &Theta;(n)
 
 
-## Torens van Hanoi
+## 3.2 De torens van Hanoi
 
 | n | # Bewegingen |
 | - | ------------ |
@@ -587,6 +590,8 @@ Te bewijzen:    T(n) = n + 1
 | 3 | 7            |
 | 4 | 15           |
 | 5 | 31           |
+
+### 3.1.1 Oplossingsmethode
 
 **Recursiebetrekking:**
 
@@ -608,7 +613,6 @@ Te bewijzen: T(n) = 2<sup>n</sup>-1 als ≥ 1
 
 **Bewijs:**
 
-
 1. Basisstap: verifieer dat het te bewijzen waar is voor n = 1
 
     Linker Lid:     T(1) = 1                    (gegeven)<br>
@@ -623,6 +627,26 @@ Te bewijzen: T(n) = 2<sup>n</sup>-1 als ≥ 1
     = 2 . (2<sup>n</sup> - 1) + 1<br>
     = 2<sup>n + 1</sup> - 2 + 1<br>
     = 2<sup>n + 1</sup> - 1<br>
+
+### 3.2.2 Algoritme
+
+```pascal
+verplaatsToren(I: n, staaf1, staaf2, staaf3: geheel getal): /
+    * Preconditie: het aantal schijven n (n e N0) en de drie staven staaf1, staaf2, staaf3 zijn geïnitialiseerd
+    * Postconditie: de n schijven werden verplaatsts van staaf1 naar staaf 3 met behulp van staaf2 voor tijdelijke opslag
+    * Gebruikt: verplaatsToren
+BEGIN
+    ALS (n = 1) DAN
+        VOERUIT(scherm, "Verplaats schijf van", staaf1, "naar", staaf3)
+    ANDERS
+        verplaatsToren(n - 1, staaf1, staaf3, staaf2)  // 1 3 2
+        verplaatsToren(1, staaf1, staaf2, staaf3)      // 1 2 3
+        verplaatsToren(n - 1, staaf2, staaf1, staaf3)  // 2 1 3
+    EINDE ALS
+EINDE
+```
+
+### 3.2.3 Complexiteitsanalyse
 
 T(n) = &Theta;(2<sup>n</sup>)
 
@@ -640,28 +664,13 @@ leeftijd aarde = 4,5 x 10<sup>19</sup> jaar
 
 leeftijd universum = 13,8 x 10<sup>9</sup> jaar
 
-
-```pascal
-verplaatsToren(I: n, staaf1, staaf2, staaf3: geheel getal): /
-	* Preconditie: het aantal schijven n (n e N0) en de drie staven staaf1, staaf2, staaf3 zijn geïnitialiseerd
-	* Postconditie: de n schijven werden verplaatsts van staaf1 naar staaf 3 met behulp van staaf2 voor tijdelijke opslag
-	* Gebruikt: verplaatsToren
-BEGIN
-	ALS (n = 1) DAN
-		VOERUIT(scherm, "Verplaats schijf van", staaf1, "naar", staaf3)
-	ANDERS
-		verplaatsToren(n - 1, staaf1, staaf3, staaf2)  // 1 3 2
-		verplaatsToren(1, staaf1, staaf2, staaf3)      // 1 2 3
-		verplaatsToren(n - 1, staaf2, staaf1, staaf3)  // 2 1 3
-	EINDE ALS
-EINDE
-```
-
-## De rij van Fibonacci
+## 3.3 De rij van Fibonacci
 
 F<sub>0</sub> = 1<br>
 F<sub>1</sub> = 1<br>
 F<sub>n</sub> = F<sub>n - 1</sub> + F<sub>n - 2</sub> als n ≥ 2
+
+### 3.3.1 Berekenen van Fibonacci-getallen met recursie
 
 > Het volgende algoritme werkt maar is zeer traag.
 
@@ -681,6 +690,8 @@ EINDE
 ```
 T(n) = T(n - 1) + T(n - 2) + &Theta;(1)<br>
 T(n) ≥ (3/2)<sup>n-2</sup> voor n ≥ 1
+
+### 3.3.1 Berekenen van Fibonacci-getallen met iteratie
 
 > Het volgende algoritme is veel sneller.
 
@@ -705,7 +716,7 @@ EINDE
 T(n) = &Theta;(n)
 
 
-# Hoofdstuk 4
+# 4 Zoek- en sorteeralgoritmen
 
 > Zoek- en sorteeralgoritmen
 
@@ -1382,7 +1393,7 @@ EINDE
 
 # Hoofdstuk 5
 
-[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/5.6.oefeningen.md#oefeningen-56-middot-slide-89-91)
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/5.6.oefeningen.md)
 
 Stapels:
 
@@ -1594,13 +1605,13 @@ EINDE
     * de stapel leeg is
     * de gelezen operator een hogere prioriteit heeft dan de operator die bovenaan de stapel ligt
     * het gelezen haakje een openingshaakje is
-    
+
     Als de gelezen operator gelijke of lagere prioriteit heeft dan de operator aan de top van de stapel, dan worden alle operatoren van de stapel met gelijke of hogere prioriteit van de stapel gehaald en worden deze toegevoegd aan de uitvoertekst. Dit totdat een operator met lagere prioriteit bereikt wordt of totdat de stapel leeg is. Vervolgens wordt de ingelezen operator op de stapel geplaatst. <br>Als een sluitingshaakje wordt ingelezen dan worden alle operatoren van de stapel gehaald en toegevoegd aan de uitvoertekst totdat een openhaakje wordt bereikt. Het haakje wordt eveneens van de stapel gehaald maar niet aan de uitvoertekst toegevoegd.
-4. Als het einde van de invoertekst bereikt is, worden alle operatoren van de stapel gehaald en aan de uitvoertekst toegevoegd todat de stapel leeg is 
+4. Als het einde van de invoertekst bereikt is, worden alle operatoren van de stapel gehaald en aan de uitvoertekst toegevoegd todat de stapel leeg is
 
 **Voorbeeld 1:**
 
-`(3 + 4) x 5` 
+`(3 + 4) x 5`
 
 ```pascal
 // De Stapel
@@ -1618,7 +1629,7 @@ EINDE
 **Voorbeeld 2:**
 
 
-`a + (b + c) x d x (e + f x g)` 
+`a + (b + c) x d x (e + f x g)`
 
 ```pascal
 // De Stapel
@@ -1638,7 +1649,7 @@ a b c + d x e f g x + x +
 
 # Hoofdstuk 6
 
-[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/6.5.oefeningen.md#oefeningen-65-middot-slide-100-102)
+[Oefeningen](/1ste-jaar/semester-II/Oefeningen-Probleem-Oplossend-Denken-I/6.5.oefeningen.md)
 
 > Wachtrijen (Queues), dit is een **FIFO structuur (First In First Out)**
 
@@ -1706,10 +1717,10 @@ BEGIN
     ALS empty() DAN
         k <- 0
     EINDE ALS
-    
+
     n <- data.length
     s <- (s + 1) MOD n
-    
+
     data[s] <- x
 EINDE
 ```
@@ -1723,7 +1734,7 @@ dequeue(I: /): x: Element
     * Gebruikt: length
 BEGIN
     x <- data[k]
-    
+
     ALS (k = s) DAN
         k <- -1
         s <- -1
@@ -1731,7 +1742,7 @@ BEGIN
         n <- data.length
         k <- (k + 1) MOD n
     EINDE ALS
-    
+
     RETOUR (x)
 EINDE
 ```
@@ -1763,20 +1774,20 @@ BEGIN
     ANDERS
         x <- q.dequeue()
         vlag <- q.empty()
-        
+
         qHulp <- nieuwe Queue(50)
-        
+
         ZOLANG NIET q.empty() DOE
             qHulp.enqueue(q.dequeue())
         EINDE ZOLANG
-        
+
         q.enqueue(x)
-        
+
         ZOLANG NIET qHulp.empty() DOE
             q.enqueue(qHulp.dequeue())
         EINDE ZOLANG
     EINDE ALS
-    
+
     RETOUR vlag
 EINDE
 ```
@@ -1797,7 +1808,7 @@ EINDE
 * `invoegenVoor()` het element, dat als tweede argument wordt meegeleverd, wordt ingevoegd in de lijst voor de meegegeven positie.
 * `vervang()` het element in de lijst op de positie bepaald door het eerste argument, wordt vervangen door het meegeleverde nieuwe lijstelement
 
-| List                         |  
+| List                         |
 | ---------------------------- |
 | - data: array[] van Element<br>- aantal: geheel getal |
 | + List(n: geheel getal)<br>+ empty() : boolean<br>+ size() : geheel getal<br>+ geefElem(p: geheel getal) : Element<br>+ geefPositie(x: Element) : geheel getal<br>+ verwijderElem(p: geheel getal) : Element<br>+ invoegenNa(p: geheel getal, x: Element): /<br>+ invoegenVoor(p: geheel getal, x: Element): /<br>+ vervang(p: geheel getal, x: Element): / |
@@ -1826,13 +1837,13 @@ BEGIN
     ZOLANG i < aantal EN data[i] ≠ x DOE
         i <- i + 1
     EINDE ZOLANG
-    
+
     ALS i = aantal DAN
         p <- -1
     ANDERS
         p <- i
     EINDE ALS
-    
+
     RETOUR (p)
 EINDE
 ```
@@ -1846,13 +1857,13 @@ verwijderElem(I: p: geheel getal): x: Element)
     * Gebruikt: /
 BEGIN
     x <- data[p]
-    
+
     VOOR i = p TOT aantal - 2 DOE
         data[i] <- data[i + 1]
     EINDE VOOR
-    
+
     aantal <- aantal - 1
-    
+
     RETOUR (x)
 EINDE
 ```
@@ -1876,7 +1887,7 @@ EINDE
 ```java
 class Knoop {
     private Object data;
-    
+
     private Knoop volgende;
 }
 
@@ -1893,7 +1904,7 @@ class Lijst {
 
     class Knoop {
         private Object data;
-        
+
         private Knoop volgende;
     }
 }
@@ -1986,7 +1997,7 @@ EINDE
 
 ## 8.4 Toepassing: Stack op basis van knopen
 
-| Stack | 
+| Stack |
 | ----- |
 | - t : Knoop |
 | + Stack( )<br>+ empty( ) : boolean<br>+ push(x: Element) : /<br>+ pop( ) : Element<br>+ peek( ) : Element |
@@ -2027,7 +2038,7 @@ push(I: x: Element): /
 BEGIN
     hulp <- nieuwe Knoop()
     hulp.data <- x
-    
+
     hulp.volgende <- t
     t <- hulp
 EINDE
@@ -2044,9 +2055,9 @@ pop(I: /): x: Element
     * Gebruikt: /
 BEGIN
     x <- t.data
-    
+
     t <- t.volgende
-    
+
     RETOUR (x)
 EINDE
 ```
@@ -2068,9 +2079,9 @@ EINDE
 ```
 
 > \# woorden = 26 * 26 = 676
-> 
+>
 > array van lengte 676 (indices 0 t.e.m. 675
-> 
+>
 > Afbeelding van 'woorden' naar 'plaats in de array'
 
 ```
@@ -2093,27 +2104,27 @@ w.hashCode(I: /): positie: geheel getal
     * Gebruikt:
 BEGIN
     positie <- 26 * w[0] + w[1]
-    
+
     RETOUR (positie)
 EINDE
 ```
 ## Specificatie van een Hashtabel
 
 > Langste woord:
-> 
+>
 > Hottentottententententoonstelling: 33 letters
 
 ```
 grootte array:  26^33
                 27^33 (Als je lege spaties wilt)
-                
+
 -> array van grootte N (veel kleiner dan 26^33)
 -> bereken nog steeds hashcode:
     ~> positie in de array = hashcode MOD N
-    
+
 
 | ------------ | ------------ | ------------ |
-| Gezonde Melk |              |              | 
+| Gezonde Melk |              |              |
 | ------------ | ------------ | ------------ |
 
 ```
@@ -2121,7 +2132,7 @@ grootte array:  26^33
 ## Gesloten Hashing
 
 ```
-    0      1      2      3      4      5      6      7      8      9 
+    0      1      2      3      4      5      6      7      8      9
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |  10  |  100 |  129 |      |      |  15  |  115 |      |      |  29  |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -2150,5 +2161,5 @@ Positie 1 is al bezet, dus we kijken naar de eerst volgende lege plaats
 ```
 
 > Je wilt liefst veel korte lijsten; Want 1 lange lijst is eigenlijk een gewone gelinkte lijst
-> 
+>
 > Bij **Modulo**, kan je beter voor een priemgetal kiezen.
