@@ -1908,13 +1908,7 @@ EINDE
 #### 7.2.2.1 Algoritme voor de constructor
 
 ```pascal
-geefElem(I: p: geheel getal): x: Element
-    * Preconditie: de lisjt l bestaat; l bevat minstens p+1 elementen
-    * Postconditie: het element op de p-de positie in de lijst werd geretourneerd
-    * Gebruikt: /
-BEGIN
-    RETOUR data[p]
-EINDE
+List(I: n: geheel getal): /   * Preconditie: n is een natuurlijk getal.   * Postconditie: de array data van lengte n werd gealloceerd, het natuurlijk getalaantal werd ge¨ınitialiseerd.   * Gebruikt: /BEGIN    data <- nieuwe array[n]    aantal <- 0EINDE
 ```
 
 #### 7.2.2.2 Algoritme ter controle of een lijst leeg is
