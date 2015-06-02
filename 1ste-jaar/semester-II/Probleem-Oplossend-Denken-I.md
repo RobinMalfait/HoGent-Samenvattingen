@@ -348,7 +348,7 @@ T(n) = &Theta;(n<sup>2</sup>)
 ### 2.2.1 Voorbeeld 1
 
 ```pascal
-som <- o
+som <- 0
 VOOR i = 1 TOT n DOE
     som <- som + i
 EINDE VOOR
@@ -403,7 +403,7 @@ Stel: n = 2<sup>k</sup>
 
 ```pascal
 som <- 0
-i <- i
+i <- 1
 ZOLANG i ≤ n DOE
     VOOR j = 1 TOT n DOE
         som <- som + j
@@ -437,7 +437,7 @@ Stel: n = 2<sup>k</sup>
 
 ```pascal
 som <- 0
-i <- i
+i <- 1
 ZOLANG i ≤ n DOE
     VOOR j = 1 TOT i DOE
         som <- som + j
