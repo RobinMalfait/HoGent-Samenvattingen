@@ -93,15 +93,36 @@ Een jaarrekening bestaat uit volgende delen:
 
 #### 4.1 Principe van de periodiciteit; begrip "boekjaar"
 
+Een boekjaar valt niet noodzakelijk samen met het burgerlijk jaar, maar loopt normaliter wel over twaalf maanden.
+
+> VB.: Van 1 april jaar X tot en met 31 maart jaar X+1.
+
+Voor startende ondernemingen kan het eerste boekjaar langer of korter zijn dan twaalf maanden.
+
 #### 4.1 Principe van de verantwoordingsstukken; begrip "boeking"
+
+Wat *registreert* men in de boekhouding. Een verrichting.
 
 ##### 4.2.1 Interne en externe verantwoordingsstukken
 
+Een geschrift dat bewijskracht heeft tegenover derden en een boeking staaft, is een extern verantwoordeingsstuk
+
 ##### 4.2.2 Verwijzing en raadpleging
 
-#### 4.3 Principe van de boekhoudkundige entiteit
+De boeking moet "verwijzen" naar een verantwoordingsstuk.
 
-#### 4.4 Principe van het grouwe beeld
+De 9 verwijst naar een nummer.
+
+| Abbr. | Beschrijving |
+| ----- | ------------ |
+| AF/9 | aankoopfactuur of inkomende factuur |
+| VF/9 | Verkoopfactuur of uitgaande factuur |
+| CNIN/9 | inkomende creditnota |
+| CNUIT/9 | Uitgaande creditnota |
+| B/9 | bankrekeninguittreksel |
+| K/9 | kasdocument |
+| DIV/9 | document horende tot de diverse documenten |
+| INV/9 | inventarisdocument |
 
 ## Hoofdstuk 2: Balanse en resultatenrekening
 
