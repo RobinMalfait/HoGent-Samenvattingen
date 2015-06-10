@@ -56,9 +56,38 @@ Het betreft zowel de handelsvennootschappen als de burgerlijke vennootschappen d
 
 ##### 2.3.1 Volleidge boekhouding
 
+De boekhoudwetgeving bepaalt dat de ondernemingen een boekhouding moeten voeren:
+
+- die **aangepast** is aan de aard en omvang van het bedrijf
+- die **volledig** is. Dat betekent dat ze alle verrichtingen, bezittingen, vorderingen, schulden en verplichtingen omvat
+- door middel van een **stelsel van boeken en rekeningen**
+- met inachtneming van de gebruikelijke regels van het **dubbel boekhouden**.
+
 ##### 2.3.2 Vereenvoudigde beokhouding
 
+Kleine ondernemingen mogen opteren voor een "**vereenvoudigde boekhouding**". ze moeten dan aan volgende cumulatieve voorwaarden voldoen:
+
+- Natuurlijke persoon-koopman zijn, V.O.F. of COMM.V 
+
+  (Deze drie soorten handelaars hebben telkens volledige aansprakelijkheid)
+
+- Een jaaromzet hebben voor het laatste boekjaar die niet hoger is dan **€ 500.000,00**, exclusief btw 
+
+  (**€ 620.000,00** voor benzinepomphouders)
+  
+Ondernemingen die niet behoren tot de **kleine ondernemingen** noemen we de:
+
+ - **Middelgrote ondernemingen**
+ - **Grote ondernemeningen**
+
 ### 3 De jaarrekening
+
+Een jaarrekening bestaat uit volgende delen:
+
+- de **balans** geeft weer uit welke bouwstenen of vermogenselementen een onderneming bestaat
+- de **resultatenrekening** analyseert het eindresultaat van een boekjaar
+- de **toelichting** verklaart verder bepaalde aspecten van de balans en resultatenrekening
+- de **sociale balans** verstrekt gegevens over de tewerkstelling en steunt zowel op de boekhoudkundige bronnen als op gegevens van de personeelsadministratie.
 
 ### 4 Enkele boekhoudprincipes
 
