@@ -6,11 +6,51 @@
 
 ### 1 Een informatieverwerkend systeem
 
+In de boekhoudwerkzaamheden onderscheiden we:
+
+- het registreren van financiële gevolgen van de ondernemingsactiviteit
+- het opslaan van de informatie
+- het opstellen van rapporten ten behoeve van het bedrijfsbeheer
+
+> Het belangrijkste rapport is de **jaarrekening**
+
 ### 2 Boekhoudwetgeving
 
 #### 2.1 Belgisch en Europees boekhoudrecht
 
+Sinds 1975 bestaat er een **boekhoudwetgeving** die voorschrijft hoe de boekhouding moet gevoerd worden.
+
+> Een boekhouding die gevoerd wordt volgens de voorschriften van de boekhoudwetgeving is een **"regelmatige boekhouding"**.
+
+De basis van het Belgisch boekhoudrechts is **Wet van 17 juli 1975 op de boekhouding van de ondernemingen**
+
+Uit de oorspronkelijke teksten van deze boekhoudwet werd de wetgeving die over de jarrekening handelt gelicht en overgebracht naar het **Wetboek van Vennootschappen.**
+
+| Abbr. | Beschrijving                             |
+| ----- | ---------------------------------------- | 
+| CBN   | commissie voor boekhoudkundige normen    | 
+| IAS   | International Accounting Standards       |
+| IASB  | International Accounting Standards Board |
+
+> Een Europese Verordening verplicht de toepassing van de IAS-normen voor de **geconsolideerde jaarrekening van berusgenoteerde ondernemingen**.
+
 #### 2.2 Wie moet een boekhouding voeren?
+
+1. **De natuurlijke personen, die koopman zijn.** Om te weten wie "koopman" of handelaar is moet men naar het handelsrecht grijpen.
+2. **De vennootschappen** in één van de volgende vormen, waaran de vennootschapswet de rechtsperoonlijkheid verleent:
+
+    | Abbr. | Beschrijving |
+    | ----- | ------------ |
+    | NV    | Naamloze Vennootschap |
+    | BVBA | Besloten vennootschap met beperkte aansprakelijkheid |
+    | V.O.F. | Vennootschap onder firma |
+    | COMM.V | Gewone commanditaire vennootschap |
+    | COMM.VA | Commanditaire vennootschap op aandelen |
+    | CVBA | Coöperatieve vennootschap met beperkte aansprakelijkheid |
+    | CVOA | Coöperatieve vennootschap met onbeperkte aansprakelijkheid |
+    | ESV | Economisch Samenwerkingsverband |
+    
+Het betreft zowel de handelsvennootschappen als de burgerlijke vennootschappen die in &&n van de vermelde vormen werdne opgericht.
 
 #### 2.3 Boekhoudsysteem
 
