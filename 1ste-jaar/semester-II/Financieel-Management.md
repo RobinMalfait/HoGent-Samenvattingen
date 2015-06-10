@@ -1,6 +1,51 @@
 # Financieel Management
 
-## De Balans
+# Deel 1 Basisbegrippen
+
+## Hoofdstuk 1: Boekhouden in de onderneming
+
+### 1 Een informatieverwerkend systeem
+
+### 2 Boekhoudwetgeving
+
+#### 2.1 Belgisch en Europees boekhoudrecht
+
+#### 2.2 Wie moet een boekhouding voeren?
+
+#### 2.3 Boekhoudsysteem
+
+##### 2.3.1 Volleidge boekhouding
+
+##### 2.3.2 Vereenvoudigde beokhouding
+
+### 3 De jaarrekening
+
+### 4 Enkele boekhoudprincipes
+
+#### 4.1 Principe van de periodiciteit; begrip "boekjaar"
+
+#### 4.1 Principe van de verantwoordingsstukken; begrip "boeking"
+
+##### 4.2.1 Interne en externe verantwoordingsstukken
+
+##### 4.2.2 Verwijzing en raadpleging
+
+#### 4.3 Principe van de boekhoudkundige entiteit
+
+#### 4.4 Principe van het grouwe beeld
+
+## Hoofdstuk 2: Balanse en resultatenrekening
+
+### 1 Vermogen
+
+#### 1.1 Aanwending van vermogen
+
+#### 1.2 Oorsprong van vermogen
+
+#### 1.3 Evenwicht
+
+
+### 2 Balans
 
 | ACTIVA | PASSIVA |
 | -------| ------- |
@@ -12,16 +57,33 @@
 
 **Liquide middelen:** Geld dat op rekeningen staat. Cash geld (kas)
 
-## Soorten ondernemingen
+#### 2.1 Begrip
 
-### Ondernemingen met een bijzonder regime
+#### 2.2 Indeling van de balans
+
+##### 2.2.1 Indeling der activa
+
+##### 2.2.2 Indeling der passiva
+
+##### 2.2.3 Voorbeeld
+
+#### 2.3 Nog enkele begrippen
+
+##### 2.3.1 Beginbalans en eindbalans
+
+##### 2.3.2 Balans van de jaarrekening versus tussentijdse balansen
+
+
+### Soorten ondernemingen
+
+#### Ondernemingen met een bijzonder regime
 
 -	Financiële instellingen: banken, private spaarbanken,…;
 -	Kredietinstellingen waarvoor een bijzondere wet geldt en door hun erkende instellingen;
 -	Portefeuillemaatschappijen;
 -	Verzekeringmaatschappijen.
 
-### Kleine ondernemingen
+#### Kleine ondernemingen
 
 Kleine ondernemingen moeten aan de drie volgende voorwaarden voldoen:
 
@@ -31,7 +93,7 @@ Kleine ondernemingen moeten aan de drie volgende voorwaarden voldoen:
 -	Onderneming met bijzonder regime;
 -	De ondernemingen die omwille van hun activiteit als grote ondernemingen beschouwd worden.
 
-### Grote ondernemingen
+#### Grote ondernemingen
 
 De ondernemingen die niet behoren tot de kleine ondernemingen of tot de ondernemingen met bijzonder regime en:
 
@@ -48,13 +110,13 @@ De onderneming met een activiteit die hen in elk geval tot de grote onderneminge
 **De Jaarrekening:** 7 Jaar bijhouden
 
 
-## Belastingen
+### Belastingen
 
 1. Personenbelasting
 2. **BTW**
 3. Vennootschapsbelasting
 
-### Belastingplichtige
+#### Belastingplichtige
 
 1. De BTW-belastingplichtige is een **eenieder**
 2. die een bepaalde werkzaamheid uitoefent: het verrichten van een **economische activiteit** die bestaat uit het leveren van goederen of het verrichten van diensten.
@@ -71,14 +133,14 @@ De onderneming met een activiteit die hen in elk geval tot de grote onderneminge
 4. bepaalde dienstverleners die in het BTW-wetboek expliciet vrijgesteld worden van belastingplicht inzake BTW
 
 
-## Onderworpen handelingen
+### Onderworpen handelingen
 
 Wereld > EU > België
 
 Van EU naar België = ~~geen invoer~~ maar **Intracommunautaire Verwerving**
 Van China naar België = **Invoer / Import**
 
-### NELUX-Verlegging
+#### NELUX-Verlegging
 
 Vroeger: BTW bij grens 6% btw betalen. (Betalen aan douane)
 
@@ -87,22 +149,22 @@ Nu: Nederland > België (Btw in het land van bestemming, dus in dit geval Belgi�
 * Aftrekbare BTW
 * Verschuldigde BTW
 
-## Facturen
+### Facturen
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/facturen.png)
 
-### Aankoop Factuur (AF)
+#### Aankoop Factuur (AF)
 
 1. H.G. K+D 604
 2. D & D.G. K+D 61
 3. V.A. A+D 2
 
-### Verkoop Factuur (VF)
+#### Verkoop Factuur (VF)
 
 1. H.G. O+C 700 ------> Vordering (400 handelsdebiteuren)
 
 
-### Omzet
+#### Omzet
 
 ```
 Res = Opbrengst - Kost
@@ -111,7 +173,7 @@ Res = Opbrengst - Kost
                 = 40
 ```
 
-## Personeelskosten
+### Personeelskosten
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/kost_schuld.png)
 
