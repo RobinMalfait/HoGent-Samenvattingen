@@ -958,7 +958,7 @@ Fiber-to-the-home (FFTH)
 
 ### Basismethoden voor media toegangscontrole
 
-> **CSMA:** Carrie Sense Multiple Access
+> **CSMA:** Carrier Sense Multiple Access
 
 1. Contentie gebasseerde toegang
 	* **Wired** CSMA/CD -> Collision Detection
@@ -1055,14 +1055,14 @@ Fiber-to-the-home (FFTH)
 	</tbody>
 </table>
 
-* **Preambl** synchronisatie
+* **Preamble** synchronisatie
 * **Destination** 48-bit MAC adres van de ontvanger
 * **Source** 48-bit MAC adres van de verzender
-* **Type** Waard om aan te tonen welk protocol er gebruikt moet worden
+* **Type** waarde om aan te tonen welk protocol er gebruikt moet worden
 * **Data** de [PDU](#protocol-data-units-pdus), meestal een IPv4 packet, dat verzonden moet worden
-* **FCS** Frame Check Sequence
+* **FCS** Frame Check Sequence (Adhv CRC)
 
-**acknowledgements** verificatie door ontvangst packet te sturen
+**Acknowledgements** verificatie door ontvangst packet te sturen
 
 * **DS**: distributie systeem
 * **More Fragments**: staat op 1 by frames die een ander fragment bevattten
