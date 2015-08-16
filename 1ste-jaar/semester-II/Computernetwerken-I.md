@@ -93,11 +93,11 @@ Plaats waar het apparaat fysiek staat in een bepaald gebouw.
 Logisch opgebouwde topologie, wordt niet weergegeven op basis van plaats, maar op functie bijvoorbeeld:
 
 1. Internet
-2. Firewalls 
+2. Firewalls
 	1. Admin Group
 	2. Classroom X
 	3. Classroom Y
-	
+
 #### Technologie vs Topologie
 
 **Technologie:** Techniek om iets te versturen, binaire logica op fysiek kanaal zetten.
@@ -303,20 +303,20 @@ Alle apparaten zijn meestal verbonden met een router waarin vier apparaten zijn 
 > **IOS**: Internetwork Operating System
 
 
-* Alle netwerkapparatuur zijn afhankelijk van besturingssystemen 
+* Alle netwerkapparatuur zijn afhankelijk van besturingssystemen
 * Het besturingssysteem op de router thuis wordt meestal firmware genoemd
 * Cisoc IOS -> Een verzameling besturingssystemen die gebruikt worden op Cisco-apparaten
 
 ### Operating System
 
-1. Hardware 
+1. Hardware
 	 * Fysieke gedeelte van de computer)
-2. Kernel 
+2. Kernel
 	* Communiceert tussen hardware en software van de computer
 	* Beheert hoe hardware middelen worden gebruikt om software-eisen te voldoen
 3. Shell
 	* De gebruikersinterface dat er voor zorgt dat een commando van een gebruiker een specifieke taak van de computer uitvoert. Deze commando's (requests) kunnen via de CLI of via de GUI uitgevoerd worden.
-	
+
 ### Doel van een besturingssysteem
 
 Een PC-besturingssysteem (Windows 8 en OS X) maakt het onder andere mogelijk:
@@ -400,10 +400,10 @@ Dit zijnde belangrijkste functies die worden uitgevoerd of mogelijk zijn bij Cis
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/ios_werk_modes.png)
 
-#### Primare Modes
+#### Primaire Modes
 
-User EXEC Mode: View-only mode
-Privileged EXEC Mode: Alle monitoring commands & executie van configuratie en management commando's.
+* User EXEC Mode: View-only mode
+* Privileged EXEC Mode: Alle monitoring commands & executie van configuratie en management commando's.
 
 #### Globale Configuratie Mode en Submodes
 
@@ -418,7 +418,7 @@ Gebruik het `exit`-commando om een specifieke mode te verlaten, gebruik het `end
 `Router>enable` om naar de Privileged EXEC Mode Prompt te gaan<br>
 `Router#` is de Privileged EXEC Mode Prompt<br>
 `Router#disable` Om terug naar de User EXEC Mode Prompt te gaan<br>
-`Router>exit` om alles te verlaten 
+`Router>exit` om alles te verlaten
 
 ```terminal
 Switch> enable
@@ -497,11 +497,11 @@ POST: Power On Self Test
 | Fysieke Laag    | **Bits** |
 
 > (Applicatie laag) Belangrijkste informatie van een header is de afkomst/bron poortnummers: 16bits
-> 
+>
 > (Netwerk Laag) Belangrijkste informatie van een header is het IP adres van ontvanger & verzender
-> 
+>
 > (Data-link Laag) Belangrijkste informatie van een header is het MAC Adres
-> 
+>
 > (Fysieke Laag)
 
 | Abbr. | Voluit                | Info |
@@ -673,7 +673,7 @@ Broadcast: naar alle eindapparaten in het netwerk (behalve naar de verzender)
 
 ## 3.2 Netwerkprotocollen en Standaarden
 
-> Een groep van onderling gerelateerde protocollen die nodig zijn om een communicatie-functie 
+> Een groep van onderling gerelateerde protocollen die nodig zijn om een communicatie-functie
 uit te voeren wordt een **protocol suite** genoemd.
 >
 > Een **protocol stack is een gelaagd model** dat laat zien hoe de afzonderlijke protocollen binnen een suite worden uitgevoerd.
@@ -743,7 +743,7 @@ OSI: Open System Interconenction
 * Network Access (Data Link & Physical)
 
 ## 3.3 Het verplaatsen van gegevens in het netwerk
- 
+
 ### Communiceren van de berichten
 
 **Voordelen** van het segmenteren van een bericht:
@@ -756,7 +756,7 @@ OSI: Open System Interconenction
 * verhoogd het niveau van complexiteit
 
 > TDN: Time Division Multiplexing
-> 
+>
 > FDN: Frequency Division Multiplexing
 
 ### Protocol Data Units (PDUs)
@@ -818,7 +818,7 @@ PM: Fase
 
 Signalen kunnen worden verzonden op twee manieren.
 
-* **Asynchroon**: Data signalen worden verzonden zonder een bijbehorend kloksignaal. De tijdsafstand tussen data karakters of blokken kunnen van willekeurige duur te zijn, wat betekent dat de afstand niet gestandaardiseerd is. Daarom  vereisen frames een start en stop indicator vlaggen. 
+* **Asynchroon**: Data signalen worden verzonden zonder een bijbehorend kloksignaal. De tijdsafstand tussen data karakters of blokken kunnen van willekeurige duur te zijn, wat betekent dat de afstand niet gestandaardiseerd is. Daarom  vereisen frames een start en stop indicator vlaggen.
 * **Synchroon**: Gegevenssignalen worden verzonden samen met een kloksignaal dat optreedt op gelijkmatig tijdsafstand aangeduid als bitstijd.
 
 ### Bandbreedte
@@ -871,9 +871,9 @@ Signalen kunnen worden verzonden op twee manieren.
 
 ### Koper Medium Veiligheid
 
-> * Genoeg stroom 
-> * aarding 
-> * deftige kabels 
+> * Genoeg stroom
+> * aarding
+> * deftige kabels
 > * installaties controleren
 
 **Overspraak:** **IN** is gelijk aan **UIT**
@@ -914,7 +914,7 @@ Fiber-to-the-home (FFTH)
 
 * LLC Sublayer: Logical Link Control
 	* Software Structuur
-	
+
 * MAC Sublayer: Media Access Control
 	* Structuur van specifieke technologie
 
@@ -964,11 +964,11 @@ Fiber-to-the-home (FFTH)
 1. Contentie gebasseerde toegang
 	* **Wired** CSMA/CD -> Collision Detection
 	* **Wireless** CSMA/CA -> Collision Avoidance
-	
+
 2. Gecontrolleerde Toegang
 	* VB.: ring - token
-	
-	* Heb je de token? 
+
+	* Heb je de token?
 		* Ja: je mag op het netwerk = toegang
 		* Nee: geen toegang
 
@@ -1144,7 +1144,7 @@ Fiber-to-the-home (FFTH)
 
 * Het apparaat onderzoekt het medium voor de aanwezigheid van datasignaal - als het medium vrij is, stuurt het apparaat een waarschuwing over het medium van zijn voornemen om het te gebruiken
 * Het apparaat stuurt dan de gegevens nadat goedkeuring werd ontvangen
-* Gebruikt door 802.11 draadloze netwerktechnologieën 
+* Gebruikt door 802.11 draadloze netwerktechnologieën
 
 ### Frame verwerking
 
@@ -1167,8 +1167,8 @@ Fiber-to-the-home (FFTH)
 * 32b -> Uniek
 	* Binaire notatie
 	* dotted decimal notatie
-	
-<font color="green">netwerkgedeelte (N)</font> <font color=red>hostgedeelte (H)</font>	 
+
+<font color="green">netwerkgedeelte (N)</font> <font color=red>hostgedeelte (H)</font>
 
 ## 1 ClassFull
 
@@ -1215,12 +1215,12 @@ VB.: 127.0.0.1/8
 1. Vast #bit
 	* -> Subnet -> #Subnets -> 2b
 	* -> Hosts -> # Maximum Hosts per subnet (7 bit)
-	
+
 	> Zelfde subnetmask voor elk subnet
 
 2. VLSM Variabel Length Subnet Mask
 	Variabele opsplitsing nemen tussen N (Aanpassen aan #hosts in het subnet) en H per subnet
-		
+
 	> ≠ subnetmask per subnet!
-	
-	Moet uniek blijven (het ip), dus verdelen vanaf kleinste van de range tot de grootste van de rang	
+
+	Moet uniek blijven (het ip), dus verdelen vanaf kleinste van de range tot de grootste van de rang
