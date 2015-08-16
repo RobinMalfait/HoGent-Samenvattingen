@@ -707,7 +707,7 @@ Voorbeeld protocol stack:
 * The Internet Society (ISOC)
 * The Internet Architecture Board (IAB)
 * The Internet Engineering Task Force (IETF) (Netwerk, transport, applicatie)
-* Institute of Electrical and Electronics * Engineers (IEEE) (Data-link, fysieke laag)
+* Institute of Electrical and Electronics Engineers (IEEE) (Data-link, fysieke laag)
 * The International Organization for Standards (ISO)
 
 > IEEE 802.3 standaard voor bekabelde netwerken
@@ -718,7 +718,7 @@ Voorbeeld protocol stack:
 
 * The Electronic Industries Alliance (EIA)
 * The Telecommunications Industry Association (TIA)
-* The International Telecommunications Union – Telecommunications Standardization Sector (ITU-T)
+* The International Telecommunications Union - Telecommunications Standardization Sector (ITU-T)
 * The Internet Corporation for Assigned Names and Numbers (ICANN)
 * The Internet Assigned Numbers Authority (IANA)
 
