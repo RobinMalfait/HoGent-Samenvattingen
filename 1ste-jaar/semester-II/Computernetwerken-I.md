@@ -1092,8 +1092,8 @@ Fiber-to-the-home (FFTH)
 
 **LLC** IEEE 802.2
 
-* Behandlet de communicatie tussen de bovenste en onderste lagen
-* Neemt de netwerkprotocolgegevens en voegt controleinformatie toe om het paket naar de bestemming te helpen
+* Behandelt de communicatie tussen de bovenste en onderste lagen
+* Neemt de netwerkprotocolgegevens en voegt controleinformatie toe om het pakket naar de bestemming te helpen
 
 **MAC** IEEE 802.3
 
@@ -1157,7 +1157,7 @@ Fiber-to-the-home (FFTH)
 * Wanneer een apparaat een bericht doorstuurt naar een Ethernet-netwerk, wordt headerinformatie aan het pakket toegevoegd dat het bron-en het bestemmings MAC-adres bevat.
 * Elke NIC bekijkt de informatie om te zien of het bestemmingsMAC-adres in de frame past met een fysieke MAC-adres opgeslagen in het RAM
 * Indien er geen match is, verwijdert het apparaat de frame
-* Alser er overeenkomst is met de bestemmingsMAC van het frame, gaat de NIC de frame doorgeven aan de bovenliggende OSI-lagen, waar het de-inkapselingsproces plaatsvindt.
+* Als er een overeenkomst is met de bestemmingsMAC van het frame, gaat de NIC de frame doorgeven aan de bovenliggende OSI-lagen, waar het de-inkapselingsproces plaatsvindt.
 
 # Hoofdstuk 8
 
