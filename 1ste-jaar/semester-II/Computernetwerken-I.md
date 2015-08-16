@@ -930,15 +930,15 @@ Fiber-to-the-home (FFTH)
 | ISO | <ul><li>HDLC (High Level Data Link Control)</li><li>ISO 9314: FDDI Media Access Control (MAC)</li></ul> |
 | ANSI | <ul><li>X3T9.5 and X3T12: Fiber Distributed Data Interface (FDDI)</li></ul> |
 
-> Examenvraag: welke standaar is weg t.o.v. de fysieke laag?
+> Examenvraag: welke standaard is weg t.o.v. de fysieke laag?
 > **EIA/TIA**
 
 ### Fysieke WAN Topologieën
 
 > Topologie in kaart brengen hoe devices met elkaar verbonden zijn
 
-* Per Gebouw: Fysieke topologie **Waar**
-* Logische Topologie: **wat met wat**
+* Per Gebouw: Fysieke topologie **waar (locatie gerelateerd)**
+* Logische Topologie: **wat met wat (per type)**
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Computernetwerken-I/veelvoorkomende_fysieke_wan_topologieen.png)
 
