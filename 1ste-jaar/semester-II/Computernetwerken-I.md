@@ -724,7 +724,7 @@ Voorbeeld protocol stack:
 
 ### Referentiemodel (OSI: 7 lagen)
 
-OSI: Open System Interconenction
+OSI: Open System Interconnection
 
 * Application
 * Presentation
