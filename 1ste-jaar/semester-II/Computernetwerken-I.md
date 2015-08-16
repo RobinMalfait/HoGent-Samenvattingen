@@ -817,7 +817,7 @@ PM: Fase
 
 Signalen kunnen worden verzonden op twee manieren.
 
-* **Asynchroon**: Data signalen worden verzonden zonder een bijbehorend kloksignaal. De tijdsafstand tussen data karakters of blokken kunnen van willekeurige duur te zijn, wat betekent dat de afstand niet gestandaardiseerd is. Daarom  vereisen frames een start en stop indicator vlaggen.
+* **Asynchroon**: Data signalen worden verzonden zonder een bijbehorend kloksignaal. De tijdsafstand tussen data karakters of blokken kunnen van willekeurige duur zijn, wat betekent dat de afstand niet gestandaardiseerd is. Daarom  vereisen frames start en stop indicator vlaggen.
 * **Synchroon**: Gegevenssignalen worden verzonden samen met een kloksignaal dat optreedt op gelijkmatig tijdsafstand aangeduid als bitstijd.
 
 ### Bandbreedte
@@ -896,7 +896,7 @@ Fiber-to-the-home (FFTH)
 * Storing
 * Veiligheid
 
-> Wi-Fi 802.11 + lette => duid op GHz, Mbps...
+> Wi-Fi 802.11 + letter => duid op GHz, Mbps...
 
 | Standard | Maximum Speed        | Frequency               | Backwards Compatible  |
 | :------: | :------------------: | :---------------------: | :-------------------: |
