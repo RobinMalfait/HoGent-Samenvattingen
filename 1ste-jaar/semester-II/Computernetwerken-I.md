@@ -139,7 +139,7 @@ Intranet (Bedrijf) -> Extranet (Klanten, Werklui, ...) -> Internet (iedereen)
 
 **Asymmetrisch dienst:** Download is hoger dan Upload.
 
-**Symmetrisch dienst:** Download even hoog dan Upload.
+**Symmetrisch dienst:** Download even hoog als Upload.
 
 ## 1.3 Het netwerk als platform
 
@@ -310,7 +310,7 @@ Alle apparaten zijn meestal verbonden met een router waarin vier apparaten zijn 
 ### Operating System
 
 1. Hardware
-	 * Fysieke gedeelte van de computer)
+    * Fysieke gedeelte van de computer)
 2. Kernel
 	* Communiceert tussen hardware en software van de computer
 	* Beheert hoe hardware middelen worden gebruikt om software-eisen te voldoen
