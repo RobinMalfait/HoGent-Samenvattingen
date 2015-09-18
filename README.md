@@ -1,10 +1,12 @@
 # HoGent Samenvattingen
 
-> Al mijn HoGent Samenvattingen.
+> Dit zijn wat samenvattingen voor toegepaste informatica aan de HoGent.
+>
+> Alle contributies zijn welkom!
+>
+> Bij fouten, verbeteringein, opmerkingen, Pull Requests & Issues zijn geldig op [Github](https://github.com/RobinMalfait/HoGent-Samenvattingen)
 >
 > Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
->
-> Of [robinmalfait.be/samenvattingen](http://robinmalfait.be/samenvattingen)
 
 ## 2de jaar
 
