@@ -1,4 +1,6 @@
-> [Ga Terug](/samenvattingen)
+# Gearchiveerd op 18 September 2015
+
+[Ga Terug](/samenvattingen)
 
 ## 1ste jaar
 
