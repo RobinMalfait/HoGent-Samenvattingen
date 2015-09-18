@@ -4,7 +4,7 @@
 >
 > Alle contributies zijn welkom!
 >
-> Bij fouten, verbeteringein, opmerkingen, Pull Requests & Issues zijn geldig op [Github](https://github.com/RobinMalfait/HoGent-Samenvattingen)
+> Bij fouten, verbeteringein, opmerkingen, Pull Requests & Issues zijn welkom op [Github](https://github.com/RobinMalfait/HoGent-Samenvattingen)
 >
 > Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 
