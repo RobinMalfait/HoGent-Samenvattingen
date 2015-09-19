@@ -25,9 +25,9 @@
 * [Databanken II](2de-jaar/semester-II/Databanken-II.md)
 * [IT2Business](2de-jaar/semester-II/IT2Business.md)
 * [Onderzoekstechnieken](2de-jaar/semester-II/Onderzoekstechnieken.md)
-* [OO Ontwerpen III](2de-jaar/semester-I/OO-Ontwerpen-III.md)
+* [OO Ontwerpen III](2de-jaar/semester-II/OO-Ontwerpen-III.md)
 * [Probleemoplossend denken II](2de-jaar/semester-II/Probleemoplossend-denken-II.md)
-* [Webapplicaties IV](2de-jaar/semester-I/Webapplicaties-IV.md)
+* [Webapplicaties IV](2de-jaar/semester-II/Webapplicaties-IV.md)
 
 ## 1ste jaar (Gearchiveerd)
 
