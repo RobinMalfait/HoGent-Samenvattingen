@@ -1,3 +1,4 @@
+<!--
 title: HoGent Samenvattingen
 description:
   now this is a story all about how
@@ -11,7 +12,8 @@ markup:
   * one
   * two
   * three
----
+-->
+
 > Dit zijn wat samenvattingen voor toegepaste informatica aan de HoGent.
 >
 > Alle contributies zijn welkom!
