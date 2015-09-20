@@ -1,5 +1,5 @@
 <!--
-title: "Financieel Management"
+title: Analyse I
 -->
 
 # Deel 1 Basisbegrippen
