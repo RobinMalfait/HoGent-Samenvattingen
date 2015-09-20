@@ -1,6 +1,6 @@
 <!--
 title: Gearchiveerd op 18 September 2015
-description: [Ga Terug](/samenvattingen)
+description: "[Ga Terug](/samenvattingen)"
 -->
 ## 1ste jaar
 
