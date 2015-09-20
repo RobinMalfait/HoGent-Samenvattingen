@@ -1,1 +1,3 @@
-# Onderzoekstechnieken
+<!--
+title: Onderzoekstechnieken
+-->

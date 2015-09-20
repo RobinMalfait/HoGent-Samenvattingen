@@ -1,1 +1,3 @@
-# Bedrijfsmanagement
+<!--
+title: Bedrijfsmanagement
+-->

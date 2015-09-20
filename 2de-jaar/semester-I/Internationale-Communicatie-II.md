@@ -1,1 +1,3 @@
-# Internationale Communicatie II
+<!--
+title: Internationale Communicatie II
+-->
