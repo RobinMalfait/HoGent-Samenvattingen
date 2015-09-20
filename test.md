@@ -1,12 +1,12 @@
 <!--
 title: HoGent Samenvattingen
-description:
+description: >
   now this is a story all about how
   my life got flipped turned upside down
   and I would like to take a minute just sit right here and tell you
   how I became the prince of a town called bell-air
 date: Tuesday
-markup:
+markup: >
   > Nice
 
   * one
