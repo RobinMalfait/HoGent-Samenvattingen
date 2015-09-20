@@ -1,6 +1,6 @@
-<!--
-title: Analyse I
--->
+# Financieel Management
+
+# Deel 1 Basisbegrippen
 
 ## Hoofdstuk 1: Boekhouden in de onderneming
 
