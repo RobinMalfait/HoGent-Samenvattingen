@@ -1,4 +1,6 @@
-# Gearchiveerd op 18 September 2015
+title: Gearchiveerd op 18 September 2015
+
+---
 
 [Ga Terug](/samenvattingen)
 
