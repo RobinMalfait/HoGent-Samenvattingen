@@ -1,4 +1,6 @@
-<!-- title: Analyse I -->
+<!--
+title: Analyse I
+-->
 ## Kwaliteitsvolle ICT projecten opleveren
 
 - Tijd
