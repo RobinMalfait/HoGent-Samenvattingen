@@ -1,5 +1,4 @@
-<!--title: "Financieel Management"-->
-
+<!-- title: "Financieel Management" -->
 # Deel 1 Basisbegrippen
 
 ## Hoofdstuk 1: Boekhouden in de onderneming
