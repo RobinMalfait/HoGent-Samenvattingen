@@ -23,7 +23,7 @@ contributions: true
 * [OO Programmeren III](2de-jaar/semester-I/OO-Programmeren-III.md)
 * [Webapplicaties III](2de-jaar/semester-I/Webapplicaties-III.md)
 
-### Semester II
+### Semester II (Keuze Programmeren)
 
 * [Databanken II](2de-jaar/semester-II/Databanken-II.md)
 * [IT2Business](2de-jaar/semester-II/IT2Business.md)
