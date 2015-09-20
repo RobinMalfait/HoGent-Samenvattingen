@@ -2,8 +2,6 @@
 title: Analyse I
 -->
 
-# Deel 1 Basisbegrippen
-
 ## Hoofdstuk 1: Boekhouden in de onderneming
 
 ### 1 Een informatieverwerkend systeem
