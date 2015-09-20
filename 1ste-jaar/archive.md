@@ -2,6 +2,7 @@
 title: Gearchiveerd op 18 September 2015
 description: "[Ga Terug](/samenvattingen)"
 -->
+
 ## 1ste jaar
 
 ### Semester I

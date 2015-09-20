@@ -1,6 +1,4 @@
-<!--
-title: Analyse I
--->
+# Analyse I
 
 ## Kwaliteitsvolle ICT projecten opleveren
 
