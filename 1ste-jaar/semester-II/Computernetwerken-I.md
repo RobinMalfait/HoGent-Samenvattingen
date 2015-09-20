@@ -1,5 +1,6 @@
-# Computernetwerken I
-
+<!--
+title: Computernetwerken I
+-->
 # Hoofdstuk 1
 
 > Op verkenning binnen het netwerk.

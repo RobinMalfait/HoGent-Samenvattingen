@@ -1,5 +1,4 @@
-# Financieel Management
-
+<!-- title: Financieel Management -->
 # Deel 1 Basisbegrippen
 
 ## Hoofdstuk 1: Boekhouden in de onderneming
@@ -27,8 +26,8 @@ De basis van het Belgisch boekhoudrechts is **Wet van 17 juli 1975 op de boekhou
 Uit de oorspronkelijke teksten van deze boekhoudwet werd de wetgeving die over de jarrekening handelt gelicht en overgebracht naar het **Wetboek van Vennootschappen.**
 
 | Abbr. | Beschrijving                             |
-| ----- | ---------------------------------------- | 
-| CBN   | commissie voor boekhoudkundige normen    | 
+| ----- | ---------------------------------------- |
+| CBN   | commissie voor boekhoudkundige normen    |
 | IAS   | International Accounting Standards       |
 | IASB  | International Accounting Standards Board |
 
@@ -49,7 +48,7 @@ Uit de oorspronkelijke teksten van deze boekhoudwet werd de wetgeving die over d
     | CVBA | Coöperatieve vennootschap met beperkte aansprakelijkheid |
     | CVOA | Coöperatieve vennootschap met onbeperkte aansprakelijkheid |
     | ESV | Economisch Samenwerkingsverband |
-    
+
 Het betreft zowel de handelsvennootschappen als de burgerlijke vennootschappen die in &&n van de vermelde vormen werdne opgericht.
 
 #### 2.3 Boekhoudsysteem
@@ -67,14 +66,14 @@ De boekhoudwetgeving bepaalt dat de ondernemingen een boekhouding moeten voeren:
 
 Kleine ondernemingen mogen opteren voor een "**vereenvoudigde boekhouding**". ze moeten dan aan volgende cumulatieve voorwaarden voldoen:
 
-- Natuurlijke persoon-koopman zijn, V.O.F. of COMM.V 
+- Natuurlijke persoon-koopman zijn, V.O.F. of COMM.V
 
   (Deze drie soorten handelaars hebben telkens volledige aansprakelijkheid)
 
-- Een jaaromzet hebben voor het laatste boekjaar die niet hoger is dan **€ 500.000,00**, exclusief btw 
+- Een jaaromzet hebben voor het laatste boekjaar die niet hoger is dan **€ 500.000,00**, exclusief btw
 
   (**€ 620.000,00** voor benzinepomphouders)
-  
+
 Ondernemingen die niet behoren tot de **kleine ondernemingen** noemen we de:
 
  - **Middelgrote ondernemingen**
