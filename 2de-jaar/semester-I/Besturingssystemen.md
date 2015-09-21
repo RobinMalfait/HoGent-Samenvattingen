@@ -84,3 +84,6 @@ Dit voor alle 3 de groepen:
 - group
 - other
 
+# Labo 1
+
+[Labo 1](Besturingssytemen/Linux-Labo-1.md)
