@@ -38,7 +38,7 @@ Wanneer je `less` wil stoppen, kan je <kbd>q</kbd> drukken.
 
 ## Navigeren
 
-Navigeren in het bestandensysteem kan je met het commando `cd`.
+Navigeren in het bestandensysteem kan je met het commando `cd`. cd staat voor change directory.
 
 Met `cd` kan je paden meegeven.
 
@@ -54,4 +54,12 @@ Er is een *relatief* en een *absoluut* pad.
 Met `cd` kan je teruggaan naar een parent map met het commando `cd ..`
 
 Met het commando `ls` kan je alles in een bepaalde map zien.
+
+Tekstbestanden hun inhoud kan je bekijken met het commando `cat`
+
+Om bestanden aan te maken, kan je dit snel doen met het commando `touch`
+
+Om iets snel in een bestand te plaatsen, kan je gebruik maken van het commando `echo welkom > testbestand`.
+Op deze manier kan je je standaard input redirecten naar het testbestand.
+
 
