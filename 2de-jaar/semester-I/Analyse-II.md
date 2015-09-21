@@ -48,3 +48,8 @@ title: Analyse II
 > **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een functionele requirement detecteren + use case uitschrijven
 >
 > **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een niet-functionele requirement detecteren + use case uitschrijven
+
+
+## Pareto Regel
+
+> 80-20 regel: 80% van de bevolking gebruikt 20% van de mogelijkheden.
