@@ -44,3 +44,7 @@ title: Analyse II
 ### Het plaatje dat boven elke ICT'ers zijn bed moet hangen
 
 ![](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fdeceth.com%2Fwp-content%2Fuploads%2F2010%2F03%2Frequirements_tree_swing.png&f=1)
+
+> **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een functionele requirement detecteren + use case uitschrijven
+>
+> **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een niet-functionele requirement detecteren + use case uitschrijven
