@@ -4,8 +4,8 @@ title: Besturingssystemen
 
 # Inleiding
 
-`CLI`: Command Line Interface
-`GUI`: Graphical User Interface
+- `CLI`: Command Line Interface
+- `GUI`: Graphical User Interface
 
 ## Commando's
 
