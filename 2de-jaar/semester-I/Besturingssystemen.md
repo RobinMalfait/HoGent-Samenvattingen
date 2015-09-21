@@ -62,4 +62,16 @@ Om bestanden aan te maken, kan je dit snel doen met het commando `touch`
 Om iets snel in een bestand te plaatsen, kan je gebruik maken van het commando `echo welkom > testbestand`.
 Op deze manier kan je je standaard input redirecten naar het testbestand.
 
+Wanneer je `ls -l` gebruikt krijg je een lijst met informatie bij.
+In de informatie staat bijvoorbeeld als eerste character het type, zoals `d: directory, l: link`
+Daarna volgen de permissies:
 
+- r: read
+- w: write
+- x: excute
+
+Dit voor alle 3 de groepen:
+
+- user
+- group
+- other
