@@ -86,4 +86,4 @@ Dit voor alle 3 de groepen:
 
 # Labo 1
 
-[Labo 1](Besturingssytemen/Linux-Labo-1.md)
+[Labo 1](2de-jaar/semester-I/Besturingssystemen/Linux-Labo-1.md)
