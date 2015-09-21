@@ -53,6 +53,14 @@ Er is een *relatief* en een *absoluut* pad.
 
 Met `cd` kan je teruggaan naar een parent map met het commando `cd ..`
 
+Als je naar je home directory wilt navigeren kan je dit doen door:
+
+- `cd`
+- `cd ~`
+- `cd /home/username`
+
+De huidige map wordt aangeduid door een `.`
+
 Met het commando `ls` kan je alles in een bepaalde map zien.
 
 Tekstbestanden hun inhoud kan je bekijken met het commando `cat`
@@ -68,10 +76,11 @@ Daarna volgen de permissies:
 
 - r: read
 - w: write
-- x: excute
+- x: execute
 
 Dit voor alle 3 de groepen:
 
 - user
 - group
 - other
+
