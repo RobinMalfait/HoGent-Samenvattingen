@@ -4,19 +4,35 @@ title: Analyse II
 
 # Kwaliteitsvollen ICT Projecten Opleveren
 
-Voldoet aan alle eisen.
+> Voldoet aan alle eisen.
+
+- Voldoet: TESTEN
+- Alle: FR+NFR
+- Eisen: verwachtingen -> klant
+    - Opdrachtgever
+    - Gebruikers -> UX & Tevreden
 
 > **!** TESTEN
 
-- Functionele Requiremenets
+- **Functionele Requiremenets**
     - Use Case
 
-- Niet-functionele Requirements
+- **Niet-functionele Requirements**
     - Meetvoorschriften
     - Normen
     - Kritische Succes Factoren (KSF)
 
-Projecten: **Agile**
+## Projecten:
 
-- Scrum
-- Kanban
+- **Agile**
+    - Scrum
+    - Kanban
+- Time
+- Money
+- Resources
+    - Business Experts
+    - Geld
+    - Money
+    - Analisten
+    - Ontwerpen
+    - Programmeurs
