@@ -42,4 +42,6 @@ title: Analyse II
 - 1994: +50% faalt
 - Nu, door agile: +40% is succesvol
 
+### Het plaatje dat boven elke ICT'er zijn bed moet hangen
+
 ![](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fdeceth.com%2Fwp-content%2Fuploads%2F2010%2F03%2Frequirements_tree_swing.png&f=1)
