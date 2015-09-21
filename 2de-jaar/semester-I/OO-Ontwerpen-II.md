@@ -44,8 +44,8 @@ title: OO Ontwerpen II
 
 1. Klassendiagram
 2. Schrijf tests
-3. Voer uit (red)
-4. Maak code werkend (green)
+3. Voer uit (<font color=red>red</font>)
+4. Maak code werkend (<font color=green>green</font>)
 5. Refactor
 6. Repeat
 
