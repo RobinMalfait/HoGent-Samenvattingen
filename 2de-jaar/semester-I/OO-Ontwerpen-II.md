@@ -53,19 +53,12 @@ title: OO Ontwerpen II
 
 ## TDD t.o.v. Classic Development
 
-**TDD:**
-
-- test
-- code
-- test
-- code
-
-**Classic:**
-
-- Code
-- Code
-- Code
-- tes
+| TDD  | Classic |
+| ---- | ------- |
+| test | code    |
+| code | code    |
+| test | code    |
+| code | test    |
 
 ## JUnit Test Case
 
