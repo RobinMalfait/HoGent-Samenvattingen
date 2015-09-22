@@ -100,6 +100,45 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 4. Kernel
 5. Hardware
 
+### 4.2. Processen
+
+Elk programmatje heeft 1 of meerdere processen.
+
+### 4.3. Resources
+
+Een OS moet
+
+- zorgen voor voldoende gehuegen voor het proces
+- het gebruik van de CPU regelen
+- de gegevensstroom regelen van of naar devices
+- bestanden en records kunnen lokaliseren
+
+### 4.4. Concurrency
+
+Processen zijn meestal niet onafhankelijk, processen zijn concurrent
+
+OS regelt in welke volgorde processen afgehandeld worden = synchronisatie
+
+### 4.5. Ontwerp-criteria
+
+- Consistentie
+- Flexibiliteit
+- Overdraagbaarheid
+
+### 4.6. Compromissen
+
+Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeofferd ten gunste van het andere.
+
+## 5. Inleiding Linux
+
+### 5.1. Wat is Linux
+
+- Is een voorbeeld van een multi-usersysteem
+- Is een besturingssysteem dat overal is
+- Is ontwikkeld vanuit UNIX
+- Is ontwikkeld door Linus Torvalds
+- Verschillende distributies: wij kiezen voor Fedora (huidige versie: Fedora 22)
+
 # Hoofdstuk 2: Scheduling
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
