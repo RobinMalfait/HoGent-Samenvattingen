@@ -10,7 +10,7 @@ title: Besturingssystemen
 
 > **Besturingssysteem**: programma dat het mogelijk maakt de hardware van een computer te gebruiken.
 
-## 1 Functies
+## 1. Functies
 
 - opslaan en ophalen
 - programma's afschermen
@@ -23,7 +23,7 @@ title: Besturingssystemen
 - reageren op fouten
 - tijdsplanning maken
 
-## 2 Historisch Overzicht
+## 2. Historisch Overzicht
 
 - **Eerste computers** geen OS
 - **Jaren 50** -> eenvoudige OS:
@@ -45,22 +45,22 @@ title: Besturingssystemen
 >
 > Multi core: Meerdere processors op 1 core
 
-## 3 Soorten besturingssystemen
+## 3. Soorten besturingssystemen
 
-### 3.1 Single-tasking
+### 3.1. Single-tasking
 
 > Systeem waarin 1 gebruiker 1 applicatie tegelijk draait
 
 De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 
-### 3.2 Multitasking (single-user)
+### 3.2. Multitasking (single-user)
 
 > Meestal 1 gebruiker die verscheidene taken kan uitvoeren tezelfdertijd
 
 - Synchronisatie problemen
 - RAM is niet oneindig
 
-### 3.3 Multi-user-systemen
+### 3.3. Multi-user-systemen
 
 > Meerdere gebruikers maken simultaan gebruik van de computerresources
 
@@ -84,7 +84,7 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 - **Real-time programma's** respons in een beperkte tijd
     - VB.: Zelfrijdende auto van google, wanneer er een voetganger gedetecteerd wordt, moet hij instant remmen en niet na 10 seconden pas.
 
-### 3.4 Virtuele Machines
+### 3.4. Virtuele Machines
 
 > **Virtuele Machine**: computerprogramma die een computer nabootsen, waar andere programma's op kunnen worden uitgevoerd
 
@@ -92,7 +92,13 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
     - Programmeertaal specifiek: VB.: JVM
     - emulator
 
+## 4. Concepten
 
+1. User
+2. Shell of command interpreter
+3. Utilities
+4. Kernel
+5. Hardware
 
 # Hoofdstuk 2: Scheduling
 
