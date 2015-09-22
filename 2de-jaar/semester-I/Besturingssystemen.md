@@ -18,8 +18,21 @@ title: Besturingssystemen
 - prioriteiten regelen
 - mogelijk maken om bronnen te delen
 - tijdelijke samenwerking tussen onafhankelijke programma's mogelijk te maken.
+    - Word & Printer
+    - ...
 - reageren op fouten
 - tijdsplanning maken
+
+## Historisch Overzicht
+
+- **Eerste computers** geen OS
+- **Jaren 50** -> eenvoudige OS:
+    - sequentieel opladen en opstarten van programma's
+    - alle bronnen bruikbaar door slechts 1 programma
+- **Begin jaren 60** -> geavanceerder OS:
+    - Verscheidene programma's konden tegelijkertijd opgeslagen worden in het geheugen
+    - Beurtelingse uitvoering van programma's
+    - Gemeenschappelijke bronnen
 
 # Hoofdstuk 2: Scheduling
 
