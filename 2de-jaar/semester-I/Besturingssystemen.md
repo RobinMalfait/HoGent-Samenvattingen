@@ -75,7 +75,24 @@ Elke gebruiker krijgt deze indruk, waardoor het performanter wordt.
 
 Hierbij is *scheduling* een belangrijk concept
 
-*scheduling*: verwijst naar de manier waarop processen prioriteiten worden gegeven in een prioriteitenwachtrij
+*scheduling*: verwijst naar de manier waarop processen prioriteiten worden gegeven in een prioriteitenwachtrij.
+
+Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankunnen:
+
+- **Interactieve programma's** snelle respons
+- **Batch-programma's** geen directe respons
+- **Real-time programma's** respons in een beperkte tijd
+    - VB.: Zelfrijdende auto van google, wanneer er een voetganger gedetecteerd wordt, moet hij instant remmen en niet na 10 seconden pas.
+
+### 3.4 Virtuele Machines
+
+> **Virtuele Machine**: computerprogramma die een computer nabootsen, waar andere programma's op kunnen worden uitgevoerd
+
+**Soorten:**
+    - Programmeertaal specifiek: VB.: JVM
+    - emulator
+
+
 
 # Hoofdstuk 2: Scheduling
 
