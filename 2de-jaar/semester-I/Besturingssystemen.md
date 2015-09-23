@@ -108,7 +108,7 @@ Elk programmatje heeft 1 of meerdere processen.
 
 Een OS moet
 
-- zorgen voor voldoende gehuegen voor het proces
+- zorgen voor voldoende geheugen voor het proces
 - het gebruik van de CPU regelen
 - de gegevensstroom regelen van of naar devices
 - bestanden en records kunnen lokaliseren
