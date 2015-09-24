@@ -50,6 +50,8 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
         - `Map<K, V>`
         - `Queue<E>`
 
+### Interfaces
+
 ```java
 Interface Iterator<E>
     boolean hasNext()
