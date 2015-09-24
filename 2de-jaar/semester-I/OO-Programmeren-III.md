@@ -49,3 +49,18 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
         - `List<E>`
         - `Map<K, V>`
         - `Queue<E>`
+
+```java
+Interface Iterator<E>
+    boolean hasNext()
+    E next()
+    void remove()           // optional
+
+Inteface ListIterator<E> extends Iterator<E>
+    void add(E o)           // optional
+    boolean hasPrevious()
+    E previous()
+    int nextIndex()
+    int previousIndex()
+    void set(E o)           // optional
+```
