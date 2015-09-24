@@ -39,9 +39,9 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
 
 ## Overzicht
 
-- Collection
+- **Collection**
     - Datastructuur (object) die referenties naar andere objecten bijhoudt.
-- Collections framework
+- **Collections framework**
     - Interfaces die de operaties declareren voor verschillende collection types en verschillende implementaties (classes) daarvan.
     - Behoren tot het package `java.util`
         - `Collection<E>`
