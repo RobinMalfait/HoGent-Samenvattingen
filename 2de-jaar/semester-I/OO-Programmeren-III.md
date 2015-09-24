@@ -16,7 +16,7 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
 
 # Onderdelen
 
-- Data Structuren
+1. Data Structuren
     - List
-- Collections
-- Lambda's & streams (Java 8)
+2. Collections
+3. Lambda's & streams (Java 8)
