@@ -21,5 +21,18 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
 2. Collections
 3. Lambda's & streams (Java 8)
 4. Generics
-5. Files Deel 2 -> NIO (New I/O) -> Channel/Buffer
+5. Files Deel 2 -> NIO (New I/O) & NIO2 -> Channel/Buffer
 6. Multithreading
+7. MCV
+    - Model (Business Model)
+    - View (GUI)
+    - Controller
+8. JPA (Databases met ORM)
+9. Netwerk TCP/UDP
+
+# 1. Inleiding
+
+## Collections Framework
+
+> - Meest voorkomende datastructuren gestandaardiseerd en efficient geïmplementeerd.
+> - Goed voorbeeld van herbruikbare code
