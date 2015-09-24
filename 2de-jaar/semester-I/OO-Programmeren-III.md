@@ -2,7 +2,7 @@
 title: OO Programmeren III
 -->
 
-# Herhaling
+# Mini Herhaling
 
 ```java
 int z = 123;
@@ -30,9 +30,22 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
 8. JPA (Databases met ORM)
 9. Netwerk TCP/UDP
 
-# 1. Inleiding
+# Collections
 
 ## Collections Framework
 
 > - Meest voorkomende datastructuren gestandaardiseerd en efficient geïmplementeerd.
 > - Goed voorbeeld van herbruikbare code
+
+## Overzicht
+
+- Collection
+    - Datastructuur (object) die referenties naar andere objecten bijhoudt.
+- Collections framework
+    - Interfaces die de operaties declareren voor verschillende collection types en verschillende implementaties (classes) daarvan.
+    - Behoren tot het package `java.util`
+        - `Collection<E>`
+        - `Set<E>`
+        - `List<E>`
+        - `Map<K, V>`
+        - `Queue<E>`
