@@ -13,3 +13,10 @@ String x = new String("jan"),
 x == y;         // false, omdat de adresreferentie vergeleken worden.
 x.equals(y);    // true, omdat de inhoud vergeleken wordt.
 ```
+
+# Onderdelen
+
+- Data Structuren
+    - List
+- Collections
+- Lambda's & streams (Java 8)
