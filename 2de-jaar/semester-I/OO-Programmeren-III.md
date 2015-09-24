@@ -20,3 +20,6 @@ x.equals(y);    // true, omdat de inhoud vergeleken wordt.
     - List
 2. Collections
 3. Lambda's & streams (Java 8)
+4. Generics
+5. Files Deel 2 -> NIO (New I/O) -> Channel/Buffer
+6. Multithreading
