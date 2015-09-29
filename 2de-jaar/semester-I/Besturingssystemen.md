@@ -187,12 +187,65 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
     - Besturingssysteem baseert zich hierop bij de scheduling
     - Lever ook problemen:
         - Wie bepaalt de prioriteiten?
-            - <striketrough><font color=red>Gebruiker</font></striketrough>
+            - <font color=red>Gebruiker</font>
             - <font color=green>Besturingssysteem</font>
-            - <striketrough><font color=red>Planner</font></striketrough>
+            - <font color=red>Planner</font>
         - Wie kent ze toe?
             - <font color=green>Besturingssysteem</font>
+        - Welke richtlijnen zijn er?
+        - Wanneer is een proces belangrijk en verdient het daarom een hogere prioriteit?
+        - Wat gebeurt er als scheduling op basis van prioriteiten de systeemefficiëntie verlaagt?
+            - Besturingssysteem de prioriteiten aanpassen -> betere planning
 - **Real-time systemen**
+    - Snelle respons voor besturing van een doorgaand proces => hoogste prioriteit
+        - > Een process die in 1 keer doorgaat `binnen -> afhandelen -> buiten`
+    - Rechtvaardigheid en systeemefficiëntie => lagere prioriteit
+        - > Iedereen / elk process krijgt de kans om uitgevoerd te worden.
+
+**Scheduling**
+
+- Ingewikkelde zaak
+- Moet rekening houden met
+    - Behoeften van de processen
+    - Systeemefficiëntie
+    - Bestaande hardware
+    - Wat eerlijk is
+- <-> Conflicten!!!
+
+| &nbsp; | MEM |
+| ------ | --- |
+| 30     | 1901|
+| 31 | 2902 |
+| 32 | 4902 |
+| 901 | 0001 |
+| 902 | 0002 |
+
+| &nbsp; | CPU |
+| ------ | --- |
+| PC | 30 |
+| IR | 1901 |
+| ACC | 0001 |
+
+| &nbsp; | CPU |
+| ------ | --- |
+| PC | 31 |
+| IR | 2902 |
+| ACC | 0003 |
+
+| &nbsp; | CPU |
+| ------ | --- |
+| PC | 32 |
+| IR | 5902 |
+| ACC | 0003 |
+
+-> het adres 902 wordt overschreven met 0003
+
+| PROCES |
+| ------ |
+| CONTEXT |
+| Instructies |
+| Data |
+
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
