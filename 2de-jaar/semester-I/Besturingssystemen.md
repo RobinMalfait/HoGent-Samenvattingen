@@ -214,7 +214,7 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 
 | &nbsp; | MEM |
 | ------ | --- |
-| 30     | 1901|
+| 30 | 1901|
 | 31 | 2902 |
 | 32 | 4902 |
 | 901 | 0001 |
