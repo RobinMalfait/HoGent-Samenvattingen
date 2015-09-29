@@ -141,6 +141,34 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 
 # Hoofdstuk 2: Scheduling
 
+> Om efficiënt middelen (bronnen, resources) in te zetten om de taken (opdrachten, jobs) uit te voeren.
+
+**Doel:**
+
+- doematigheid en tevredenheid van de gebruiker
+- resources moeten effectief/efficiënt gebruikt worden
+    - op een snelle rendabele manier
+
+**Efficiëntie** met betrekking tot gebruik resources wordt gemeten door:
+
+- Doorvoersnelheid (troughput)
+    - > aantal processen/tijdseenheid door het systeem
+    - Gevolg:
+        - Hoge Troughput (veel processen)
+        - Lage Troughput (weinig processen)
+- Responstijd
+    - Interactive gebruikers -> snelle respons
+    - Batch-gebruikers -> redelijke responstijd
+    - Snelle reactie op elk proces -> processen/tijdseenheid
+        - Responstijd lijkt hetzelfde als doorvoersnelheid
+    - Dorovoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
+        - lange processen worden niet beantwoord
+- Consistentie
+- Houd de processor aan het werk
+    - Efficiënt werken, niet te veel idle staan
+- Prioriteiten
+- Real-time systemen
+
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
 # Hoofdstuk 4: processen in Linux
