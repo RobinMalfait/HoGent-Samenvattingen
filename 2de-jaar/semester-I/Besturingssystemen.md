@@ -151,23 +151,48 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 
 **Efficiëntie** met betrekking tot gebruik resources wordt gemeten door:
 
-- Doorvoersnelheid (troughput)
+- **Doorvoersnelheid (troughput)**
     - > aantal processen/tijdseenheid door het systeem
     - Gevolg:
         - Hoge Troughput (veel processen)
         - Lage Troughput (weinig processen)
-- Responstijd
+- **Responstijd**
     - Interactive gebruikers -> snelle respons
     - Batch-gebruikers -> redelijke responstijd
     - Snelle reactie op elk proces -> processen/tijdseenheid
         - Responstijd lijkt hetzelfde als doorvoersnelheid
     - Dorovoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
         - lange processen worden niet beantwoord
-- Consistentie
-- Houd de processor aan het werk
+- **Consistentie**
+    - Eisen gesteld aan systeem:
+        - Dezelfde om 15u en om 10u
+        - => Responstijd moet ongeveer gelijk zijn
+    - Als respons sterk varieert, dan weten de gebruikers niet wat ze mogen verwachten
+        - => problemen met werkindeling
+- **Houd de processor aan het werk**
+    - Besturingssysteem moet resources aan het werk houden
+    - VB.: I/O-processors
+        - => meer aandacht aan processen die veel I/O vragen
+        - => meer processors aan het werk => meer gedaan
+        - Als ze allemaal bezig zijn => geen I/O request meer genereren
+        - => CPU verwerkt andere processen die op CPU wachten
+        - => Besturingssysteem moet minder ingrijpen
+        - => systeem efficiëntie neemt toe
+    - *Ideale geval*: Besturingssysteem houdt elke processor aan het werk, zonder deze zwaar te belasten (CPU kan best aan 90% draaien)
+        - Afhankelijk van mix van processen in systeem
     - Efficiënt werken, niet te veel idle staan
-- Prioriteiten
-- Real-time systemen
+- **Prioriteiten**
+    - Elk proces krijgt ene prioriteit
+        - Hoe hoger hoe belangrijker
+    - Besturingssysteem baseert zich hierop bij de scheduling
+    - Lever ook problemen:
+        - Wie bepaalt de prioriteiten?
+            - <striketrough><font color=red>Gebruiker</font></striketrough>
+            - <font color=green>Besturingssysteem</font>
+            - <striketrough><font color=red>Planner</font></striketrough>
+        - Wie kent ze toe?
+            - <font color=green>Besturingssysteem</font>
+- **Real-time systemen**
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
