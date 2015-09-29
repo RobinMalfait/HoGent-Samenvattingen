@@ -210,7 +210,7 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
     - Systeemefficiëntie
     - Bestaande hardware
     - Wat eerlijk is
-- <-> Conflicten!!!
+- < - > Conflicten!!!
 
 | &nbsp; | MEM |
 | ------ | --- |
