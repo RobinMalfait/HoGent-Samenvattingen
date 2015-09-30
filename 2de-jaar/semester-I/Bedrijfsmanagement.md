@@ -132,6 +132,21 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
             - landbouw
 4. Saneringskosten
 
+## 2.6 De kosten van de belastingen
+
+2 Groepen:
+
+- Kostprijsverhogende belastingen
+    - Accijnzen (Alcohol, tabak, brandstof)
+    - Onroerende voorheffing
+    - Invoerrechten
+    - Milieubelasting
+    - Vergunningsrechten
+    - BTW
+
+- Kostprijsneutrale belastingen
+
+
 ### 3 soorten Belastingen
 
 1. BTW
