@@ -89,7 +89,7 @@ Fiscaal niet aanvarde methoden: (NTK)
 
 > **3 Regels**
 >
-> -Verdubbeld t.o.v. het tarief van ene lineaire afschrijving
+> - Verdubbeld t.o.v. het tarief van ene lineaire afschrijving
 > - 40% van de aanschaffingswaarde
 > - Automatische overgang van degressief naar lineair als deze laatste methode een hoger bedrag heeft
 
@@ -117,6 +117,20 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 
 - Afschrijving met een vast percentage van de BW
 - Afschrijving met meerdere afnemende percentages van het totaal af te schrijven bedrag
+
+## 2.4 De kosten van de grond
+
+4 soorten kosten van grond:
+
+1. Aan- en verkoop grond
+2. Pacht/huur
+3. Afschrijvingen !!
+    - Grond niet afschrijven
+    - Grond wel afschrijven bij:
+        -**Grond minder waard bij: **
+            - ontginning (mijnbouw, ijzer erts, ..)
+            - landbouw
+4. Saneringskosten
 
 ### 3 soorten Belastingen
 
