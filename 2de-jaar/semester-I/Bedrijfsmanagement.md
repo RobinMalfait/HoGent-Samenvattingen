@@ -112,7 +112,7 @@ Beschrijving:
 Eerste jaar: af te schrijven bedrag = €400 (dit is 40% van €1000 i.p.v 50%)
 Tweede jaar: af te schrijven bedrag = €300 (dit is 50% van €600 euro, het resterend bedrag).
 Derde jaar: af te schrijven bedrag = €250 (het bedrag dat volgens de lineaire methode berekend wordt) i.p.v. €150 (dit is 50% van het af te schrijven saldo van €300 dat volgens de degressieve methode berekend wordt)
-Vierde jaar:
+Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 ```
 
 - Afschrijving met een vast percentage van de BW
