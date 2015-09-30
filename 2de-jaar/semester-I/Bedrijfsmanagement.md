@@ -2,8 +2,6 @@
 title: Bedrijfsmanagement
 -->
 
-# 2
-
 ## 2.2 De arbeidskosten
 
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
