@@ -16,6 +16,8 @@
 
 ### 3 Belastingen
 
-1.
-2.
+1. BTW
+2. VennootschapsBelasting
 3. Personenbelasting
+
+![](http://robinmalfait.com/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/belastingen.png)
