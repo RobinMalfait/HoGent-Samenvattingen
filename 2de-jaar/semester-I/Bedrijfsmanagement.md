@@ -127,7 +127,7 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 3. Afschrijvingen !!
     - Grond niet afschrijven
     - Grond wel afschrijven bij:
-        -**Grond minder waard bij: **
+        - **Grond minder waard bij: **
             - ontginning (mijnbouw, ijzer erts, ..)
             - landbouw
 4. Saneringskosten
@@ -146,11 +146,19 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 
 - Kostprijsneutrale belastingen
 
+### Invoerrechten (ter informatie)
 
-### 3 soorten Belastingen
+#### Tarifaire Belemmeringen
 
-1. BTW
-2. Vennootschaps Belasting
-3. Personenbelasting
+= invoerrechten, specifieke rechten (VB.: per ton rijst van china 20% invoerrecht)
 
-![](http://robinmalfait.com/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/belastingen.png)
+- Specifieke rechten
+- Ad-valorem rechten (Waarde van wat ingevoerd wordt)
+- Exportsubsidies
+
+#### Niet-tarifaire Belemmeringen
+
+- Importquota of contingenten (VB.: Maximum X aantal ton van kledij van china)
+- Economische boycot
+- Embargo
+- Invoeren technische en/of administratieve voorschriften (certificaat)
