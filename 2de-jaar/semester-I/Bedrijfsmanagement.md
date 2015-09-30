@@ -18,15 +18,15 @@
 
 **TIJDLOON -> bandwerk!**
 
-    > Bij tijdloon (vastloon) wordt alleen van de gewerkte uren uitgegaan.
+> Bij tijdloon (vastloon) wordt alleen van de gewerkte uren uitgegaan.
 
 **STUKLOON / TARIEFLOON**
 
-    > Bij stukloon, ook wel tariefloon genoemd, wordt de belonging betaald per geleverde prestatie.
+> Bij stukloon, ook wel tariefloon genoemd, wordt de belonging betaald per geleverde prestatie.
 
 **PREMIELOON**
 
-    > Boven op basisvergoeding kan de werknemer nog een extra vergoeding verdienen, als hij boven een bepaalde norm presteert.
+> Boven op basisvergoeding kan de werknemer nog een extra vergoeding verdienen, als hij boven een bepaalde norm presteert.
 
 ### 3 Belastingen
 
