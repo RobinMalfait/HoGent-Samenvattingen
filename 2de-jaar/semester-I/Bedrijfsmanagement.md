@@ -28,7 +28,28 @@
 
 > Boven op basisvergoeding kan de werknemer nog een extra vergoeding verdienen, als hij boven een bepaalde norm presteert.
 
-### 3 Belastingen
+## 2.3 De kosten van duurzame productiemiddelen
+
+**Duurzame productiemiddelen**
+
+> Middelen waarvan doorgaans meerdere jaren gebruik wordt gemaakt voor het productieproces.
+
+- Machines
+- Computers
+- Transportmiddelen
+- Gebouwen
+
+**Technische levensuurd (TLD)**
+
+> Waardevermindering is het gevolg van het gebruik
+
+**Economische levensduur (ELD)**
+
+> Waardevermindering is het gevolg van technologische vooruitgang
+
+> **!** ELD < TLD
+
+### 3 soorten Belastingen
 
 1. BTW
 2. VennootschapsBelasting
