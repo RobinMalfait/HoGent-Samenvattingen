@@ -1,6 +1,4 @@
-<!--
-title: Bedrijfsmanagement
--->
+# Bedrijfsmanagement
 
 ## 2.2 De arbeidskosten
 
