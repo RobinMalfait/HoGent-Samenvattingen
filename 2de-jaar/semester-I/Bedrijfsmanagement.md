@@ -181,3 +181,19 @@ Onderneming:
 ## 3.1 De totale constante kosten
 
 > Constante (of vaste) kosten van een onderneming zijn de kosten die structureel karakter hebben en die binnen bepaalde grenzen <font color=red>niet reageren op veranderingen in de productieomvang</font>
+
+Dit kan omhoog gaan door:
+
+- Prijs Stijging
+
+## 3.2 De totale variabele kosten
+
+
+> Variabele kosten <font color=red>variëren als gevolg van veranderingen in de productieomvang</font>
+
+Voorbeelden:
+
+- grondstoffen
+- arbeid (extra arbeid)
+- kosten van verpakking
+- transportkosten
