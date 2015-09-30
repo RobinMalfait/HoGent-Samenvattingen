@@ -162,3 +162,22 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 - Economische boycot
 - Embargo
 - Invoeren technische en/of administratieve voorschriften (certificaat)
+
+## 2.7 De rentekosten
+
+Onderneming:
+
+- Werkmiddelen (Activa)
+- Financieringsmiddelen (Passiva)
+    - Eigen Vermogen (Niet opeisbaar)
+    - Vreemd Vermogen (Wel opeisbaar)
+- Activiteiten
+
+# 3. Constanten en variabele kosten
+
+- Contante kosten (CK) of vaste kosten/fixed costs (FK)
+- Variabele Kosten (VK)
+
+## 3.1 De totale constante kosten
+
+> Constante (of vaste) kosten van een onderneming zijn de kosten die structureel karakter hebben en die binnen bepaalde grenzen <font color=red>niet reageren op veranderingen in de productieomvang</font>
