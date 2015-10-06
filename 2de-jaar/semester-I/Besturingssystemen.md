@@ -244,6 +244,28 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 | Instructies |
 | Data |
 
+## 3 Soorten
+
+![](http://d.pr/i/1dXSt+)
+
+- High-level (lange termijn, weinig)
+    - 1, 2, 7
+
+- Intermediate (middelkorte frequent)
+    - 5, 6
+
+- Low-level (Short term, heel frequent)
+    - 3, 4
+
+## Process
+
+- data
+- instructies
+
+> => PCB
+> - id
+> - prioriteit
+> - looptijd
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
