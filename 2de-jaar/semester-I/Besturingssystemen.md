@@ -1,6 +1,4 @@
-<!--
-title: Besturingssystemen
--->
+# Besturingssystemen
 
 # Werk Colleges
 

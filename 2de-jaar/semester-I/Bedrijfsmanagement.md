@@ -197,3 +197,13 @@ Voorbeelden:
 - arbeid (extra arbeid)
 - kosten van verpakking
 - transportkosten
+
+> Er kan verschil zijn in de mate waarop de totale variabele kosten reageren op de productieomvang
+
+- Progresief variabele kosten (Meer dan everedig toenemen door overwerk)
+- Degressief variabele kosten (Minder dan verdubbelen)
+- Trapsgewijs variabele kosten (Transport, bestelwagen per X tijd)
+
+## 3.3 De totale kosten
+
+= totale vaste kosten + totale variabele kosten
