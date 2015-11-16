@@ -238,11 +238,11 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 
 -> het adres 902 wordt overschreven met 0003
 
-| PROCES |
-| ------ |
-| CONTEXT |
+| PROCES      |
+| ----------- |
+| CONTEXT     |
 | Instructies |
-| Data |
+| Data        |
 
 ## 3 Soorten
 
@@ -266,6 +266,8 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 > - id
 > - prioriteit
 > - looptijd
+
+## Round Robin
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
