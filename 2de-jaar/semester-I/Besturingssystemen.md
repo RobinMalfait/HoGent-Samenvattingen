@@ -37,7 +37,7 @@
 - **Midden jaren 60** -> verschillende computers van hetzelfde type gebruikten één OS
 - **Begin jaren 70** -> OS kan computers met meer dan 1 prcoessor aan
 - **Begin jaren 80**-> gemeenschappelijk gebruik van informatie
-- **Jaren 90** -> distributed computing
+- **Jaren 90** -> distributed computing, parallelle verwerking
 
 > Multi Processor: Meerdere processors
 >
@@ -51,12 +51,16 @@
 
 De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 
+![](http://d.pr/i/AK2Z+)
+
 ### 3.2. Multitasking (single-user)
 
 > Meestal 1 gebruiker die verscheidene taken kan uitvoeren tezelfdertijd
 
 - Synchronisatie problemen
 - RAM is niet oneindig
+
+![](http://d.pr/i/10Y6l+)
 
 ### 3.3. Multi-user-systemen
 
@@ -82,6 +86,8 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 - **Real-time programma's** respons in een beperkte tijd
     - VB.: Zelfrijdende auto van google, wanneer er een voetganger gedetecteerd wordt, moet hij instant remmen en niet na 10 seconden pas.
 
+![](http://d.pr/i/1kTA4+)
+
 ### 3.4. Virtuele Machines
 
 > **Virtuele Machine**: computerprogramma die een computer nabootsen, waar andere programma's op kunnen worden uitgevoerd
@@ -89,6 +95,10 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 **Soorten:**
     - Programmeertaal specifiek: VB.: JVM
     - emulator
+
+> **Virtuele machine monitor**: elke gebruker heeft een uniek beeld van de computeromgeving
+
+A.d.h.v. virtuele machines kunnen <font color=red>verschillende besturingssystemen tegelijkertijd op 1 computer</font> bestaan.
 
 ## 4. Concepten
 
@@ -102,7 +112,21 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 
 Elk programmatje heeft 1 of meerdere processen.
 
+> **Process**: een of meerdere reeksenopdrachten die door een besturingsprogramma worden beschouwd als een werkeenheid
+
+![](http://d.pr/i/1gNBE+)
+
 ### 4.3. Resources
+
+Een process spreekt een resource (bron) aan:
+
+- randapparatuur
+- geheugen
+- processen
+- CPU
+- bestanden
+
+![](http://d.pr/i/1eK3w+)
 
 Een OS moet
 
@@ -136,6 +160,98 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 - Is ontwikkeld vanuit UNIX
 - Is ontwikkeld door Linus Torvalds
 - Verschillende distributies: wij kiezen voor Fedora (huidige versie: Fedora 22)
+
+### 5.2 Basis Commando's
+
+| commando | uitleg |
+| -------- | ------ |
+| ls -l | print alle bestanden in lijst vorm |
+| pwd | print working directory (huidige map) |
+| cd | Change directory |
+| tree | boomstructuur |
+
+> "On a linux system, everything is a file; if something is not a file, it is a process"
+<br>
+> **een inode**: elke file wordt op een schijf voorgesteld door een inode, inode komt van index-node of information node. Het is een soort van seriële nummering die informatie bijhoudt over het bestand (file)
+
+Informatie geassocieerd met een bestand wordt bijgehouden in een inode:
+
+- file type
+- permissies: owner & group
+- grootte
+- aantal links
+- access, modification & change date
+
+Een inode wordt geindentificeerd via een *inodenummer*
+
+* elk inodenummer is uniek binnen dezelfde device
+* men kan de inodenummers van files en directories zien via
+    - `ls -i`
+    - `stat`
+
+![](http://d.pr/i/1lFa3+)
+
+#### 5.2.1 Oriëntatie in het bestandssysteem
+
+> **PATH**: zorgt ervoor dat we niet steeds het volledige pad moeten ingeven om een commando uit te voeren of om een bestand te openen.
+>
+> PATH is een environment variable dat één of meerdere map verwijzigen bevat gescheiden met ";", Deze worden onderzocht om een commando te lokaliseren en uit te voeren.
+
+**Absoluut vs relatief pad**:
+
+- Absoluut pad: start steeds vanaf de root en begint steeds met een slash (/).
+- Relatief pad: start vanaf de huidige map en begint nooit met een slash.
+
+In relatieve paden kan ook gewerkt worden met:
+
+- . (dot): verwijst naar de huidige map
+- .. (dot dot): verwijst naar de hoger liggende map, de parent.
+
+Alles is een bestand, zo is een map ook een bestand:
+
+- mappen: bestanden die andere bestanden of mappen bevatten
+- speciale bestanden: het mechanisme dat gebruikt wordt voor input en output. De meeste van deze bestanden bevinden zich in /dev.
+- links: een systeem gebruikt om een bestand op meerdere plaatsen in het systeem zichtbaar te maken.
+- sockets: een bestandstype voor netwerkcommunicatie tussen processen onderling.
+- Named pipes: een bestandstype voor communicatie tussen processen zonder dat die gebruik maken van netwerksemantiek.
+
+`ls -F` toont het bestandstype d.m.v. suffix
+
+| Karakter | Bestandstype |
+| -------- | ------------ |
+| / | map |
+| * | uitvoerbaar bestand, programma of script. |
+| @ | link |
+| = | socket |
+| \| | named pipe |
+
+Kleurenschema voor type bestanden
+
+| Karakter | Bestandstype |
+| -------- | ------------ |
+| blauw | mappen |
+| rood | gecompresseerde archieven |
+| zwart | tekstbestanden |
+| rose | afbeeldingen |
+| cyaan | links |
+| geel | randapparaten of devices |
+| groen | uitvoerbare betanden |
+| knipperend rood | gebroken links |
+
+Lange lijst: `ls -l`
+
+| Symbool | Betekenis |
+| ------- | --------- |
+| - | gewoon bestand |
+| d | map (directory) |
+| l | link |
+| c | speciaal bestand |
+| s | socket |
+| p | named pipe |
+| b | blokapparaat |
+| c | karakterapparaat |
+
+Nog meer details? `file` het geeft informatie over de aard en het formaat van bestanden.
 
 # Hoofdstuk 2: Scheduling
 
