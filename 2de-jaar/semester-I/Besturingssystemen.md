@@ -169,6 +169,10 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 | pwd | print working directory (huidige map) |
 | cd | Change directory |
 | tree | boomstructuur |
+| cat | Concatenate, laat de inhoud van een tekstbestand ove rhet scherm lopen |
+| less | laat je toe om de tekst, pagina per pagina op je scherm te bekijken |
+| man | manuals (handleidingen) voor een gegeven commando: `man ls` |
+
 
 > "On a linux system, everything is a file; if something is not a file, it is a process"
 <br>
@@ -252,6 +256,39 @@ Lange lijst: `ls -l`
 | c | karakterapparaat |
 
 Nog meer details? `file` het geeft informatie over de aard en het formaat van bestanden.
+
+
+### 5.2.2 Shell
+
+> **SHELL**: is een programma dat wordt opgestart in een terminal venster.
+
+Het is de interface naar het hart van je computer.
+
+Verschillende shells:
+
+- sh
+- bash
+- csh
+- tcsh
+- ksh
+- zsh
+
+Overzicht terug te vinden in `/etc/shell`
+
+De default shell is gedeclareerd in `/etc/passwd`
+
+Huidige shell: `echo $SHELL`
+
+| Toets (combinatie) | Functie |
+| ------------------ | ------- |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd> | Plaatst de cursor aan het begin van de lijn, vlak achter de prompt. |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Beëindigt een lopend programma en geef je de prompt terug zodat je een nieuw commando kan starten. |
+| <kbd>Ctrl</kbd>+<kbd>D</kbd> | Verlaat de huidige shell sessie, dit staat gelijk met exit of logout. |
+| <kbd>Ctrl</kbd>+<kbd>E</kbd> | Plaatst de cursor aan het einde van de lijn. |
+| <kbd>Ctrl</kbd>+<kbd>H</kbd> | Genereert een backspace, verwijdert het karakter links van de cursor. |
+| <kbd>Ctrl</kbd>+<kbd>L</kbd> | Maakt de terminal leeg, zodat je prompt bovenaan komt te staan. |
+| <kbd>Ctrl</kbd>+<kbd>R</kbd> | Zoek in de commandogeschiedenis |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd> | Bevriest een programma |
 
 # Hoofdstuk 2: Scheduling
 
