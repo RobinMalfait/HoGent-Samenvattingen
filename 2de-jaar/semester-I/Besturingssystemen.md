@@ -288,7 +288,12 @@ Huidige shell: `echo $SHELL`
 | <kbd>Ctrl</kbd>+<kbd>H</kbd> | Genereert een backspace, verwijdert het karakter links van de cursor. |
 | <kbd>Ctrl</kbd>+<kbd>L</kbd> | Maakt de terminal leeg, zodat je prompt bovenaan komt te staan. |
 | <kbd>Ctrl</kbd>+<kbd>R</kbd> | Zoek in de commandogeschiedenis |
-| <kbd>Ctrl</kbd>+<kbd>A</kbd> | Bevriest een programma |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Bevriest een programma |
+| Pijtljes toetsen <kbd>◀︎</kbd> of <kbd>▶︎</kbd> | Beweeg de cursor over en weer op de commandolijn |
+| Pijtljes toetsen <kbd>▲</kbd> of <kbd>▼</kbd> | Overloopt de commandogeschiedenis. Ga naar de lijn die je opnieuw wilt uitvoeren, editeer eventueel en druk <kbd>enter</kbd> |
+| <kbd>Shift</kbd>+<kbd>PageUp</kbd> en <kbd>Shift</kbd>+<kbd>PageDown</kbd> | Overloopt de terminalbuffer om tekst te zien die al van het scherm gerold is. |
+| <kbd>Tab</kbd> | Commando- of bestandsnaam vervolledigen. Als er meerdere mogelijkheden zijn, zal de shell je met een geluidje of een flits waarschuwen |
+| <kbd>Tab</kbd> <kbd>Tab</kbd> | Toont de mogelijke bestandsnamen of commandonamen om te vervolledigen |
 
 # Hoofdstuk 2: Scheduling
 
