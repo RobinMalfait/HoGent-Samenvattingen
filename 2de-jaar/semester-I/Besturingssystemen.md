@@ -632,6 +632,9 @@ Oplossingen:
 | Doorvoersnelheid | Kan laag zijn als quantum te klein is | &nbsp; | Kan laag zijn als de quanta te klein zijn | hoog | hoog |
 | Responstijd | Korte gemiddelde responstijd, als quantum juist is gekozen | kan gebrekkig zijn voor als en lang proces de besturing over de CPU heeft | goed voor I/O-gebonden processen, maar kan gebrekkig zijn voor de CPU-gebonden processen | Goed voor korte processen, maar kan gebrekkig zijn voor langere processen | goed voor korte processen, maar kan gebrekkig zijn voor langere processen |
 | Overheat | laag | de laagste van alle methoden | kan hog zijn; ingewikkelde datastructuren en routines zijn nodig om na elke reschedule de juiste queue te vinden | Kan hoog zijn; vereist een routine om voor elke reschedule de kortste job te vinden | kan hoog zijn; vereist een routine om voor elke reschedule de minimale resterende tijd te vinden |
+| CPU-gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | krijgt lage prioriteit als de I/O-gebonden processen aanwezig zijn | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen |
+| I/O-gebonden processen |geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | krijgt hoge prioriteit om I/O processors actief te houden | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen |
+| Onbepaald uitstel | treedt niet op | treedt niet op | kan optreden bij CPU-gebonden processen | kan optreden bij processe met lange geschatte runtijden | kan optreden bij processe met lange geschatte runtijden |
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
