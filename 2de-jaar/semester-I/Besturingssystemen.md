@@ -51,7 +51,7 @@
 
 De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 
-![](http://d.pr/i/AK2Z+)
+![](https://d.pr/i/AK2Z+)
 
 ### 3.2. Multitasking (single-user)
 
@@ -60,7 +60,7 @@ De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 - Synchronisatie problemen
 - RAM is niet oneindig
 
-![](http://d.pr/i/10Y6l+)
+![](https://d.pr/i/10Y6l+)
 
 ### 3.3. Multi-user-systemen
 
@@ -86,7 +86,7 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 - **Real-time programma's** respons in een beperkte tijd
     - VB.: Zelfrijdende auto van google, wanneer er een voetganger gedetecteerd wordt, moet hij instant remmen en niet na 10 seconden pas.
 
-![](http://d.pr/i/1kTA4+)
+![](https://d.pr/i/1kTA4+)
 
 ### 3.4. Virtuele Machines
 
@@ -114,7 +114,7 @@ Elk programmatje heeft 1 of meerdere processen.
 
 > **Process**: een of meerdere reeksenopdrachten die door een besturingsprogramma worden beschouwd als een werkeenheid
 
-![](http://d.pr/i/1gNBE+)
+![](https://d.pr/i/1gNBE+)
 
 ### 4.3. Resources
 
@@ -126,7 +126,7 @@ Een process spreekt een resource (bron) aan:
 - CPU
 - bestanden
 
-![](http://d.pr/i/1eK3w+)
+![](https://d.pr/i/1eK3w+)
 
 Een OS moet
 
@@ -193,7 +193,7 @@ Een inode wordt geindentificeerd via een *inodenummer*
     - `ls -i`
     - `stat`
 
-![](http://d.pr/i/1lFa3+)
+![](https://d.pr/i/1lFa3+)
 
 #### 5.2.1 Oriëntatie in het bestandssysteem
 
@@ -456,11 +456,11 @@ Links:
 
 Instructiecyclus zonder onderbrekingen
 
-![](http://d.pr/i/16GWm+)
+![](https://d.pr/i/16GWm+)
 
 Instructiecyclus met onderbrekingen
 
-![](http://d.pr/i/12e7r+)
+![](https://d.pr/i/12e7r+)
 
 | &nbsp; | MEM |
 | ------ | --- |
@@ -490,7 +490,7 @@ Instructiecyclus met onderbrekingen
 
 -> het adres 902 wordt overschreven met 0003
 
-![](http://d.pr/i/L15G+)
+![](https://d.pr/i/L15G+)
 
 ## 4. Systeembeeld van een proces
 
@@ -514,7 +514,7 @@ Instructiecyclus met onderbrekingen
 - Toestandsovergangen
     - Pijlen in procestoestandsdiagram
 
-![](http://d.pr/i/13Glg+)
+![](https://d.pr/i/13Glg+)
 
 ### -> Procestoestanden
 
@@ -551,7 +551,7 @@ bevatten:
 
 ### Niveaus van scheduling
 
-![](http://d.pr/i/1dXSt+)
+![](https://d.pr/i/1dXSt+)
 
 - High-level (lange termijn, weinig)
     - 1, 2, 7
@@ -582,21 +582,21 @@ bevatten:
 
 Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het procs onderbreken en een volgend proces inladen.
 
-![](http://d.pr/i/15Nfe+)
+![](https://d.pr/i/15Nfe+)
 
-![](http://d.pr/i/1bsKh+)
+![](https://d.pr/i/1bsKh+)
 
 ### 5.2. First-in-First-out*$ scheduling (FIFO) of First-come-first-served-scheduling (FCFS)
 
 Wanneer een proces als eerste de CPU vraagt zal hij die ook krijgen, waarbij de andere processen die erna komen zullen moeten wachten.
 
-![](http://d.pr/i/1hJUS+)
+![](https://d.pr/i/1hJUS+)
 
 Een FIFO-scheduler kan deel uitmaken van een ingewikkeldere methode zoals bijvoorbeeld bij system die zowel batch-gebruikers als interactieve gebruikers hebben.
 
 Een manier om hybride methode van scheduling te implementeren is met *batch-partities* (= virtuele geheugenconstructie die 1 batch-proces bevat)
 
-![](http://d.pr/i/1anIs+)
+![](https://d.pr/i/1anIs+)
 
 ### 5.3. Multilevel feedback queues (MFQ)
 
@@ -604,7 +604,7 @@ Hierbij lijkt de scheduling-methode op Round-Robin als er veel I/O-activiteit is
 
 De beste scheduling-methode is afhankelijk van de soorten processen in de ready-toestan en het MFQ is gevoelig voor wijzigingen in de activiteiten (**adaptieve methode**)
 
-![](http://d.pr/i/1bAy8+)
+![](https://d.pr/i/1bAy8+)
 
 ### 5.4. Shortest-job-first-scheduling (SJF)
 
@@ -613,7 +613,7 @@ Er zijn twee strategieën die ana korte processen een hoge prioriteit geven:
 - Shortest Remaining Job Next (SRJN) = preëmptieve versie van SJF
 - Shortest Job First (SJF) -> hier zal de scheduler van het proces met de kleinste lengte uitvoeren
 
-![](http://d.pr/i/1ecG+)
+![](https://d.pr/i/1ecG+)
 
 ### 5.5 Starvation
 
@@ -869,7 +869,7 @@ void main()
 
 ## 3.7 Semaforen
 
-![](http://d.pr/i/1hQt3+)
+![](https://d.pr/i/1hQt3+)
 
 > een integer-variabele die door slechts 2 primitieve operaties kan worden veranderd.
 
@@ -1035,7 +1035,7 @@ semafoor**.
 
 Voorbeeld van een sterke semafoor:
 
-![](http://d.pr/i/11x3N+)
+![](https://d.pr/i/11x3N+)
 
 **Het algoritme van wederzijdse uitsluiting:**
 
@@ -1061,7 +1061,7 @@ void main()
 
 Mogelijke volgorde van 3 processen die voor de wederzijdse uitsluiting de aanpak van bovenstaande code gebruiken:
 
-![](http://d.pr/i/1jVY7+)
+![](https://d.pr/i/1jVY7+)
 
 > **!** Sterke semaforen garanderen de afwezigheid van starvation, zwakke semaforen doen dit niet!!!
 
