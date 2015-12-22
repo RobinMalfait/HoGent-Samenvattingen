@@ -352,7 +352,6 @@ Verwijderen van mappen
 
 `rmdir mapnaam` (meerdere namen mag), enkel lege mappen worden verwijderd
 
-
 Links:
 
 - **harde link**: associeert twee of meerdere bestandsnamen met dezelfde inode, harde links delen dezelfde datablokken op de harde schijf en gedragen zich onderling onafhankelijk van elkaar. Elk gewoon bestand is in principe een hardlink naar zichzelf
@@ -378,19 +377,25 @@ Links:
 
 > Om efficiënt middelen (bronnen, resources) in te zetten om de taken (opdrachten, jobs) uit te voeren.
 
+> **Scheduling** verwijst dus naar de manier waarop processen prioriteiten worden gegeven. Deze taak wordt uitgevoerd door software die bekend staat als een **scheduler**.
+
 **Doel:**
 
-- doematigheid en tevredenheid van de gebruiker
-- resources moeten effectief/efficiënt gebruikt worden
-    - op een snelle rendabele manier
+- Doematigheid en tevredenheid van de gebruiker
+- Resources moeten effectief/efficiënt gebruikt worden
+    - Op een snelle rendabele manier
 
 **Efficiëntie** met betrekking tot gebruik resources wordt gemeten door:
 
 - **Doorvoersnelheid (troughput)**
-    - > aantal processen/tijdseenheid door het systeem
+    - = aantal processen/tijdseenheid door het systeem
     - Gevolg:
-        - Hoge Troughput (veel processen)
         - Lage Troughput (weinig processen)
+        - Hoge Troughput (veel processen)
+            - Lijkt het interessants
+            - Maar geen rekening met procesgrootte
+            - => meest efficiënte systeem kan sommigep rocessen negeren
+            - => redelijkheid opgeofferd aan efficiëntie
 - **Responstijd**
     - Interactive gebruikers -> snelle respons
     - Batch-gebruikers -> redelijke responstijd
@@ -411,7 +416,7 @@ Links:
         - => meer processors aan het werk => meer gedaan
         - Als ze allemaal bezig zijn => geen I/O request meer genereren
         - => CPU verwerkt andere processen die op CPU wachten
-        - => Besturingssysteem moet minder ingrijpen
+        - => Besturingssysteem (BS) moet minder ingrijpen
         - => systeem efficiëntie neemt toe
     - *Ideale geval*: Besturingssysteem houdt elke processor aan het werk, zonder deze zwaar te belasten (CPU kan best aan 90% draaien)
         - Afhankelijk van mix van processen in systeem
@@ -439,7 +444,7 @@ Links:
 
 **Scheduling**
 
-- Ingewikkelde zaak
+- = Ingewikkelde zaak
 - Moet rekening houden met
     - Behoeften van de processen
     - Systeemefficiëntie
@@ -476,7 +481,7 @@ Links:
 -> het adres 902 wordt overschreven met 0003
 
 | PROCES      |
-| ----------- |
+| :---------: |
 | CONTEXT     |
 | Instructies |
 | Data        |
