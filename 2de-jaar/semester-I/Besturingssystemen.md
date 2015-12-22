@@ -640,6 +640,113 @@ Oplossingen:
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
+## 3.1 Wat is concurrency
+
+- **Multiprogrammering**: het beheer van meerdere processen in een systeem met 1 processor
+- **Multiprocessing**: Het beheer van meerdere processen in een systeem met meerdere processors
+- **Gedistribueerde verwerking**: Het beheer van meerdere processen die worden uitgevoerd op een aantal verspreide computersystemen.
+
+> Aan de basis van al deze zaken, en daarmee aan de basis van het ontwerp van besturingssystemen, ligt **concurrency** (**gelijktijdig**)
+
+In de systemen met I/O channels(I/O-processors) zijn verscheidene acties tegelijkertijd gaande. De CPU werkt aan één proces, terwijl de I/O channelsaan andere werken. Het is duidelijk dat het gebruik van meerdere processors de verwerkingscapaciteit vergroot.
+Stel dat er een programmeertaal bestaat waarin je onafhankelijke processen kan specificeren, en dat er meerdere processors beschikbaar zijn om aan een proces te werken.
+
+```
+PARBEGIN
+    statement1;
+    statement2;
+    ...
+    statementn;
+PAREND
+```
+
+Concurrency treedt op in 3 verschilllende situaties:
+
+- **Meerdere toepassingen**. Multiprogramming werd uitgevonden om verwerkingstijd dynamisch te kunnen verdelen tussen een aantal actieve toepassingen.
+- **Gestructureerde toepassing**. Als uitbreiding op de beginselen van modulair ontwerpen en gestructureerd programmeren kunnen sommige toepassingn effectief worden geprogrammeerd als een verzameling gelijktrijdige processen.
+- **Structuur van het besturingssysteem**. Dezelfde voordelen van het structureren gelden voor de systeemprogrammeur en we hebben gezien dat besturingssystemen zelf vaak worden geïmplementeerd als een verzameling processen of thread.
+
+## 3.2 Wederzijdse uitsluiting (mutual exclusion)
+
+### 3.2.1 Concurrency met meerdere processors
+
+Niet alleen processen, maar ook activiteiten binnen één proces kunnen gelijktijdig worden uitgevoerd.
+
+De moeilijkheden ontstaan wanneer de processen het gemeenschappelijke geheugen aanspreken.
+
+### 3.2.2 Concurrency met 1 processor
+
+Hier zijn er ook parallelle processen mogelijk.
+In een dergelijk geval kunnen de processen niet tegelijkertijd
+worden uitgevoerd, maar ze kunnen wel op hetzelfde
+moment proberen de besturing van de CPU te krijgen.
+
+Wanneer twee van zulke processen het gemeenschappelijk
+geheugen aanspreken, kunnen er nog steeds problemen
+ontstaan.
+
+**Voorbeeld:**
+
+Beschouw een computersysteem met veel terminals. Stel dat de gebruikers elke regel, bestemd voor het computersysteem, beëindigen met de <enter>-toets. Stel dat wij het totaal aantal lijnen voor alle gebruikers samen wensen bij te houden in een variabele "linesentered". Veronderstel dat twee processen proberen de variabele "linesentered" simultaan te verhogen met 1.
+
+Elk proces heeft dan zijn eigen kopij van volgende code:
+
+```
+load linesentered
+add 1
+store linesentered
+```
+
+> Dit is een vervelende situatie: de informatie in linesentered is fout!
+
+### 3.2.3 Wederzijdse uitsluiding
+
+> De kritieke sectie van een proces is de code die naar gemeenschappelijke data verwijst
+>
+> Net voor de kritieke sectie van een proces wodt ENTERMUTUALEXCLUSION uitgevoerd en na de kritieke sectie wordt EXITMUTUALEXCLUSION uitgevoerd
+
+- ENTERMUTUALEXCLUSION doet het volgende:
+    - Controleren of een ander proces in zijn kritieke sectie is en, als dat het geval is, wachten;
+    - Doorgaan met de uitvoering van de kritieke sectie als er geen ander proces in de kritieke sectie bezig is.
+- EXITMUTUALEXCLUSION moet alle andere processen vertellen dat een proces klaar is met de uitvoering van zijn kritieke sectie.
+
+## 3.3 Het programmeren van wederzijdse uitsluiting
+
+We gaan er van uit dat er slechts 2 gelijktijdige processen zijn.
+
+### 3.3.1 Eerste poging
+
+We declareren een <font color="red">booleaanse variabele "bezet"</font>, die voor beide processen globaal is. "Bezet" krijgt de waarde trueals één van de processen zijn kritieke sectie ingaat en is falseals dit niet het geval is.
+Zo kan een proces dat aan zijn kritieke sectie moet beginnen, "bezet" controleren om te zien of het andere proces in zijn kritieke sectie is.
+Het "wachten" en "wekken" kan op verschillende manieren worden geïmplementeerd. Een proces kan wachten en een ander proces kan het wekken.
+
+Er is hier een probleem omdat de processen in ENTERMUTUALEXCLUSION gemeenschappelijk geheugen aanspreken.
+Beide verwijzen naar "bezet". Een ongelukkige timing kan tot gevolg hebben dat het ene proces het andere ondermijnt.
+
+### 3.3.2 Tweede poging
+
+Eén manier om te voorkomen dat beide processen bijna gelijktijdig "bezet" controleren, is een tweede voorwaarde te gebruiken. We nemen aan dat beide processen op bijna hetzelfde moment proberen hun kritieke sectie in te gaan. Welk proces wanneer voorrang heeft, wordt geregeld door <font color="red">een globale variabele "welk"</font>, met een waarde van of 1, of 2, te declareren. Beide processen moeten de waarde van "welk" controleren voordat zij hun kritieke secties ingaan. Eén proces mag doorgaan, het andere moet wachten. Zo wordt wederzijdse uitsluiting afgedwongen.
+
+Helaas is er een ongewenst neveneffect. De twee processen kunnen niet meer onafhankelijk worden uitgevoerd. Ze moeten hun kritieke secties om beurten uitvoeren. Zo kan een proces door onbepaald uitstel worden getroffen: het moet voor onbepaalde tijd wachten. <font color="red">Deze oplossing brengt wederzijdse uitsluiting tot stand, maar er moet wel veel voor worden ingeleverd</font>. Processen worden misschien helemaal niet uitgevoerd.
+
+### 3.3.3 Derde poging
+
+**Zwakke plek** in 2<sup>de</sup>poging -> gebruik van de variabele "welk" om te bepalen welk proces zijn kritieke sectie kan ingaan. De waarde van "welk" staat dit slechts aan één proces toe, zonder rekening te houden met wat het tweede proces aan het doen is. Dit is een te zware beperking.
+
+Twee processen kunnen hun kritieke secties op hetzelfde moment ingaan omdat beide een "bezetting" pas claimen nadat gecontroleerd is of er een proces met zijn kritieke sectie bezig is.
+
+**Zwakke plek** -> wanneer een proces "bezet" op truezet, moet het wachten omdat "bezet" trueis. Het proces maakt het zichzelf onmogelijk in zijn kritieke sectie te komen. De poging mislukt omdat het hier geen verschil maakt welk proces in zijn kritieke sectie zit. Een proces moet onderscheid kunnen maken tussen zichzelf en andere processen.
+
+Mogelijke oplossing -> twee globale booleaanse variabelen gebruiken "bezet1" en "bezet2". "Bezet1" is trueals proces 1 in zijn kritieke sectie is en falseals dit niet het geval is. "Bezet2" is trueals proces 2 in zijn kritieke sectie is en falseals het dat niet is. <font color="red">Een proces declareert dus het betreden van zijn kritieke sectie en controleert dan of het andere proces dat ook heeft gedaan.</font>
+
+Als proces 1 in zijn kritieke sectie is en deze vervolgens verlaat, zet het "bezet1" op false. Als proces 2 staat te wachten, wordt het hervat. Het omgekeerde vindt plaats als proces 2 zijn kritieke sectie verlaat. Elk proces kan zijn kritieke sectie dus diverse malen uitvoeren indien het ander proces inactief is.
+
+**Deze constructie zorgt voor wederzijdse uitsluiting zonder de processen te dwingen bij toerbeurt hun kritieke secties in te gaan**. Alleen als het andere proces niet in zijn kritieke sectie is of bezig is daar in te gaan, kan een proces zijn kritieke sectie betreden. **Wederzijdse uitsluiting is dus gegarandeerd.**
+
+Helaas is er **nog een probleem** dat zich kan voordoen. Stel dat beide processen tegelijk, of vrijwel op hetzelfde moment hun kritieke sectie proberen in te gaan. Het probleem is dat elk proces denkt dat het andere in zijn kritieke sectie is. <font color="red">Elk wacht dus tot de ander EXITMUTUALEXCLUSION heeft uitgevoerd. Omdat beide wachten, gebeurt er niets, nooit meer.</font>
+
+Een dergelijke situatie, waarin twee processen elk erop wachten dat de ander iets doet, noemen we een <font color="red">**deadlock (impasse)**</font>. Het resultaat is dat geen van de processen verder kan. Gewoonlijk moet één proces worden afgebroken, waarbij al het verrichte werk geheel of gedeeltelijk verloren gaat. Dan moet het proces opnieuw worden gestart.
+
 # Hoofdstuk 4: processen in Linux
 
 # Hoofdstuk 5: Scripts in Linux
