@@ -627,6 +627,8 @@ Oplossingen:
 
 > Bij Round Robin en FIFO kan geen starvation optreden
 
+### Samenvatting van de strategieën
+
 | &nbsp;           | Round Robin | FIFO | MFQ | SJF | SRJN |
 | ---------------: | ----------- | ---- | --- | --- | ---- |
 | Doorvoersnelheid | Kan laag zijn als quantum te klein is | &nbsp; | Kan laag zijn als de quanta te klein zijn | hoog | hoog |
