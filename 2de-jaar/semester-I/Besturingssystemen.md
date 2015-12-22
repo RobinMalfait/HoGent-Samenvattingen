@@ -578,7 +578,7 @@ bevatten:
 - Wachttijd
 - Responstijd
 
-### 5.1. **Round Robin** scheduling (RR)
+### 5.1. Round Robin scheduling (RR)
 
 Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het procs onderbreken en een volgend proces inladen.
 
@@ -586,7 +586,7 @@ Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer
 
 ![](http://d.pr/i/1bsKh+)
 
-### 5.2. **First-in-First-out*$ scheduling (FIFO) of **First-come-first-served-scheduling** (FCFS)
+### 5.2. First-in-First-out*$ scheduling (FIFO) of First-come-first-served-scheduling (FCFS)
 
 Wanneer een proces als eerste de CPU vraagt zal hij die ook krijgen, waarbij de andere processen die erna komen zullen moeten wachten.
 
@@ -598,7 +598,7 @@ Een manier om hybride methode van scheduling te implementeren is met *batch-part
 
 ![](http://d.pr/i/1anIs+)
 
-### 5.3. **Multilevel feedback queues** (MFQ)
+### 5.3. Multilevel feedback queues (MFQ)
 
 Hierbij lijkt de scheduling-methode op Round-Robin als er veel I/O-activiteit is en op FIFO wanneer er weinig of geen I/O-activiteit is.
 
@@ -606,7 +606,7 @@ De beste scheduling-methode is afhankelijk van de soorten processen in de ready-
 
 ![](http://d.pr/i/1bAy8+)
 
-### 5.4. **Shortest-job-first**-scheduling (SJF)
+### 5.4. Shortest-job-first-scheduling (SJF)
 
 Er zijn twee strategieën die ana korte processen een hoge prioriteit geven:
 
