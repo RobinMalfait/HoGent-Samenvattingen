@@ -747,6 +747,78 @@ Helaas is er **nog een probleem** dat zich kan voordoen. Stel dat beide processe
 
 Een dergelijke situatie, waarin twee processen elk erop wachten dat de ander iets doet, noemen we een <font color="red">**deadlock (impasse)**</font>. Het resultaat is dat geen van de processen verder kan. Gewoonlijk moet één proces worden afgebroken, waarbij al het verrichte werk geheel of gedeeltelijk verloren gaat. Dan moet het proces opnieuw worden gestart.
 
+## 4. Het algoritme van Dekker
+
+> zonder ongewenste neveneffecten
+
+Het staat in voor <font color="red">wederzijdse uitsluiting voor twee parallelle, asynchrone processen</font> door ideeën uit de eerder beschreven algoritmen te gebruiken.
+
+```
+int bezet1 = 0; // false
+int bezet2 = 0; // false
+
+int main(void)
+{ // main
+    void proces1 (void);
+    void proces2 (void);
+    parbegin
+        process1();
+        process2();
+    parend
+    return 0;
+} // main
+
+void process1(void)
+{   // process1
+    ...
+    // Begin van ENTERMUTUALEXCLUSION
+    bezet1 = 1; //true
+    while (bezet2)
+    {
+        if (welk == 2)
+        {
+            bezet1 = 0; // false
+            while (welk == 2); // wacht tot welk 1 wordt
+            bezet1 = 1; // true
+        }
+    }
+    // Einde van ENTERMUTUALEXCLUSION
+    ...
+    // Kritieke sectie van process1
+    ...
+    // begin van EXITMUTUALEXCLUSION
+    welk = 2;
+    bezet1 = 0; // false
+    // einde van EXITMUTUALEXCLUSION
+    ...
+}
+
+void process2(void)
+{   // process2
+    ...
+    // begin van ENTERMUTUALEXCLUSION
+    bezet2 = 1; // true
+    while (bezet1)
+    {
+        if (welk == 1)
+        {
+            bezet2 = 0; // false
+            while (welk == 1); // wacht tot welk 2 wordt
+            bezet2 = 1; // true
+        }
+    }
+    // einde van ENTERMUTUALEXCLUSION
+    ...
+    // kritieke sectie van proces2
+    ...
+    // begin van EXITMUTUALEXCLUSION
+    welk = 1;
+    bezet2 = 0; // false
+    // einde van EXITMUTUALEXCLUSION
+    ...
+}
+```
+
 # Hoofdstuk 4: processen in Linux
 
 # Hoofdstuk 5: Scripts in Linux
