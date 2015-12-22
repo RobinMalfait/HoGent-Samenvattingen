@@ -452,6 +452,16 @@ Links:
     - Wat eerlijk is
 - < - > Conflicten!!!
 
+## 3. Uitvoeren van een process
+
+Instructiecyclus zonder onderbrekingen
+
+![](http://d.pr/i/16GWm+)
+
+Instructiecyclus met onderbrekingen
+
+![](http://d.pr/i/12e7r+)
+
 | &nbsp; | MEM |
 | ------ | --- |
 | 30 | 1901|
@@ -480,13 +490,66 @@ Links:
 
 -> het adres 902 wordt overschreven met 0003
 
-| PROCES      |
-| :---------: |
-| CONTEXT     |
-| Instructies |
-| Data        |
+![](http://d.pr/i/L15G+)
 
-## 3 Soorten
+## 4. Systeembeeld van een proces
+
+**Proces bestaat uit**
+
+- Context
+    - Id/Nummer
+    - Status of toestand
+    - PC (Process Counter)
+    - Prioriteit
+- Instructies
+- Data
+
+**BS (besturingssysteem)**
+
+- Bekijkt de processen die het computersysteem binnenkomen
+- Procestoestand
+    - = Status
+    - Gedefinieerd in termen van de mogelijkheid om te worden uitgevoerd
+    - Rechthoek in procestoestandsdiagram
+- Toestandsovergangen
+    - Pijlen in procestoestandsdiagram
+
+![](http://d.pr/i/13Glg+)
+
+### -> Procestoestanden
+
+* **HOLD** -> is aangeboden
+* **READY** -> gereed om uit te voeren
+* **RUNNING** -> wordt uitgevoerd en onder besturing van de CPU
+* **WAIT** -> wacht op iets
+* **SUSPENDED** -> is opgeschort
+* **COMPLETE** -> volledig afgewerkt
+
+### -> Toestandsovergangen
+
+1. niet-aangeboden -> HOLD
+2. niet-aangeboden of HOLD -> READY
+3. READY -> RUNNING
+4. RUNNING -> READY
+5. RUNNING -> WAIT
+6. WAIT -> READY
+7. RUNNING -> COMPLETE
+8. READY -> SUSPEND
+9. SUSPENDED -> READY
+
+### Process Control Blocks (PCB)
+
+bevatten:
+
+- Proces-ID
+- Procestoestand
+- Maximale en actuele looptijd
+- Huidige resources en limieten
+- Procesprioriteit
+- Opslaggebieden
+- Locatie van de code of de segmenttable van een proces
+
+### Niveaus van scheduling
 
 ![](http://d.pr/i/1dXSt+)
 
@@ -494,22 +557,81 @@ Links:
     - 1, 2, 7
 
 - Intermediate (middelkorte frequent)
-    - 5, 6
+    - 5, 6, 8, 9
 
 - Low-level (Short term, heel frequent)
     - 3, 4
 
-## Process
+## 5. Strategieën voor low-level scheduling
 
-- data
-- instructies
+**2 hoofdcategorieën:**
 
-> => PCB
-> - id
-> - prioriteit
-> - looptijd
+- algoritme voor **preëmptive** scheduling
+    > Processen worden onderbroken om een ander proces te hervatten
+- algoritme voor **nonpreëmptive** scheduling
+    > een ander proces kan pas gestart worden nadat het huidige proces klaar is
 
-## Round Robin
+**Criteria voor scheduler:**
+
+- CPU-gebruik
+- Throughput (doorvoersnelheid)
+- Wachttijd
+- Responstijd
+
+### 5.1. **Round Robin** scheduling (RR)
+
+Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het procs onderbreken en een volgend proces inladen.
+
+![](http://d.pr/i/15Nfe+)
+
+![](http://d.pr/i/1bsKh+)
+
+### 5.2. **First-in-First-out*$ scheduling (FIFO) of **First-come-first-served-scheduling** (FCFS)
+
+Wanneer een proces als eerste de CPU vraagt zal hij die ook krijgen, waarbij de andere processen die erna komen zullen moeten wachten.
+
+![](http://d.pr/i/1hJUS+)
+
+Een FIFO-scheduler kan deel uitmaken van een ingewikkeldere methode zoals bijvoorbeeld bij system die zowel batch-gebruikers als interactieve gebruikers hebben.
+
+Een manier om hybride methode van scheduling te implementeren is met *batch-partities* (= virtuele geheugenconstructie die 1 batch-proces bevat)
+
+![](http://d.pr/i/1anIs+)
+
+### 5.3. **Multilevel feedback queues** (MFQ)
+
+Hierbij lijkt de scheduling-methode op Round-Robin als er veel I/O-activiteit is en op FIFO wanneer er weinig of geen I/O-activiteit is.
+
+De beste scheduling-methode is afhankelijk van de soorten processen in de ready-toestan en het MFQ is gevoelig voor wijzigingen in de activiteiten (**adaptieve methode**)
+
+![](http://d.pr/i/1bAy8+)
+
+### 5.4. **Shortest-job-first**-scheduling (SJF)
+
+Er zijn twee strategieën die ana korte processen een hoge prioriteit geven:
+
+- Shortest Remaining Job Next (SRJN) = preëmptieve versie van SJF
+- Shortest Job First (SJF) -> hier zal de scheduler van het proces met de kleinste lengte uitvoeren
+
+![](http://d.pr/i/1ecG+)
+
+### 5.5 Starvation
+
+> Wanneer een heel lang proces nooit uitgevoerd zal worden, noemen we di starvation.
+
+Oplossingen:
+
+- Negeren
+- Opschorten van een aantal READY-processen
+- Periodiek prioriteiten opnieuw berekenen
+
+> Bij Round Robin en FIFO kan geen starvation optreden
+
+| &nbsp;           | Round Robin | FIFO | MFQ | SJF | SRJN |
+| ---------------: | ----------- | ---- | --- | --- | ---- |
+| Doorvoersnelheid | Kan laag zijn als quantum te klein is | &nbsp; | Kan laag zijn als de quanta te klein zijn | hoog | hoog |
+| Responstijd | Korte gemiddelde responstijd, als quantum juist is gekozen | kan gebrekkig zijn voor als en lang proces de besturing over de CPU heeft | goed voor I/O-gebonden processen, maar kan gebrekkig zijn voor de CPU-gebonden processen | Goed voor korte processen, maar kan gebrekkig zijn voor langere processen | goed voor korte processen, maar kan gebrekkig zijn voor langere processen |
+| Overheat | laag | de laagste van alle methoden | kan hog zijn; ingewikkelde datastructuren en routines zijn nodig om na elke reschedule de juiste queue te vinden | Kan hoog zijn; vereist een routine om voor elke reschedule de kortste job te vinden | kan hoog zijn; vereist een routine om voor elke reschedule de minimale resterende tijd te vinden |
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
