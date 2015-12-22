@@ -819,6 +819,206 @@ void process2(void)
 }
 ```
 
+Er zijn twee grote verschillen tussen deze oplossing en de vorige
+
+- 1<sup>ste</sup> -> de booleaanse variabelen geven niet aan of een proces daadwerkelijk in zijn kritieke sectie is; ze maken slechts kenbaar dat een proces dat wil gaan doen.
+- 2<sup>de</sup> -> de voorrang niet streng wordt voogeschreven, tenzij beide processen op vrijwel hetzelfde moment proberen hun kritieke secties in te gaan.
+
+## 3.5 Het algoritme van Peterson
+
+> biedt een envoudiger elegante oplossing
+
+```
+boolean flag [2];
+int turn;
+void P0()
+{
+    while(true)
+    {
+        flag[0] = true;
+        turn = 0;
+        while (flag[1] && turn == 1) {
+            // Do nothing...
+        }
+        /* Critical section */
+        flag[0] = false;
+        /* ... */
+    }
+}
+void P1()
+{
+    while(true)
+    {
+        flag[1] = true;
+        turn = 0;
+        while (flag[0] && turn == 0) {
+            // Do nothing...
+        }
+        /* Critical section */
+        flag[1] = false;
+        /* ... */
+    }
+}
+void main()
+{
+    flag[0] = false;
+    flag[1] = false;
+    parbegin(P0, P1);
+}
+```
+
+## 3.7 Semaforen
+
+![](http://d.pr/i/1hQt3+)
+
+> een integer-variabele die door slechts 2 primitieve operaties kan worden veranderd.
+
+Een primitieve kan niet worden onderbroken; eenmaal begonne, kan het proces tot het klaar is niet worden onderbroken of opgeschort. Primitieve operaties zijn afhankelijk van het systeemontwerp, daarom moet er bij het ontwerpen van computersystemen altijd rekening mee worden gehouden.
+
+### 3.7.1 Inleiding
+
+De primitieve operaties voor een semafoor zijn P en V, en worden als volgt gedefinieerd. Als S een semafoor is, dan is
+
+```
+P(S): (wait)
+if (S > 0)
+    S = S - 1;
+else
+    (proces uitstellen)
+
+V(S): (signal)
+if (een proces uitgesteld is als gevolg van P(S))
+    (hervat een proces)
+else
+    S = S + 1;
+```
+
+Een proces dat de primitieve P uitvoert, moet misschien wachten (WAIT). Een proces dat de primitieve V uitvoert, geeft misschien het signaal dat een ander proces kan worden hervat. Het feit dat P en V niet onderbroken kunnen worden is essentieel. Een eenmaal begonnen operatie eindigt zonder onderbreking.
+
+Het algoritme wordt dan:
+
+```
+int S = 1; // Semafoor
+
+int main(void)
+{
+    void proces1(void);
+    void proces2(void);
+    parbegin
+        proces1();
+        proces2();
+    perend
+    return 0;
+}
+
+void proces1(void)
+{
+    ...
+    // Begin van ENTERMUTUALEXCLUSION
+    P(S);
+    // Einde van ENTERMUTUALEXCLUSION
+    ...
+    // Kritieke sectie van proces1
+    ...
+    // begin van EXITMUTUALEXCLUSION
+    V(S);
+    // einde van EXITMUTUALEXCLUSION
+    ...
+}
+
+void proces2(void)
+{
+    ...
+    // Begin van ENTERMUTUALEXCLUSION
+    P(S);
+    // Einde van ENTERMUTUALEXCLUSION
+    ...
+    // Kritieke sectie van proces2
+    ...
+    // begin van EXITMUTUALEXCLUSION
+    V(S);
+    // einde van EXITMUTUALEXCLUSION
+    ...
+}
+```
+
+Naast de eenvoud en de elegantie van semaforen hebben ze nog een ander belangrijk voordeel. Het algoritme kan gemakkelijk worden uitgebreid voor een situatie geval met n parallelle processen.
+
+<font color="red">Als 1 proces P(S) uitvoert, zijn alle andere gedwongen te wachten.</font>
+
+Een semafooris dus een onderdeel van een synchronisatie-mechanisme voor parallelle of gedistribueerde programma's.
+
+### 3.7.2 Sterke Semaforen
+
+- Voor het verzenden van een signaal via semafoor s voert een proces de primitieve signal(s) uit.
+- Voor het ontvangen van een signaal via semafoor s voert een proces de primitieve wait(s) uit; is het corresponderende signaal nog niet verzonden, dan wordt het proces onderbroken totdat het versturen ervan plaatsvindt.
+
+Om het gewenste effect te bereiken kunnen we de semafoor beschouwen als een variabele die een gehele waarde heeft en waarvoor **3 bewerkingen zijn gedefinieerd:**
+
+1. Een semafoor kan worden <font color="#0088cc">geïnitialiseerdop een niet-negatieve waarde</font>.
+2. De bewerking <font color="#0088cc">**wait** verlaagt de semafoorwaarde</font>. Wordt de waarde negatief, dan wordt het proces dat de opdracht waituitvoert, geblokkeerd.
+3. De bewerking <font color="#0088cc">**signal** verhoogt de semafoorwaarde</font>. Is de waarde niet positief, dan wordt een proces dat is geblokkeerd door een bewerking waitgeblokkeerd.
+
+Er bestaat geen mogelijkheid, anders dan deze 3 bewerkingen, om semaforen te inspecteren of te bewerken.
+
+```
+struct semaphore {
+    int count;
+    queueType queue;
+}
+
+void wait(semaphore s)
+{
+    s.count--;
+    if (s.count < 0)
+    {
+        place this process in s.queue;
+        block this process
+    }
+}
+
+void signal(semaphore s)
+{
+    s.count++;
+    if (s.count <= 0)
+    {
+        remove a process P from s.queue;
+        place process P on ready list;
+    }
+}
+```
+
+De primitieven **wait** en **signal** worden verondersteld atomair te zijn. D.w.z ze kunnen niet worden onderbroken en elke routine kan worden behandeld als 1 ondeelbare stap.
+
+> Definitie van <font color="red">binaire</font> semafoorprimitieven:
+
+
+```
+struct binary_semaphore {
+    enum (zero, one) value;
+    queType queue;
+};
+
+void waitB(binary_semaphore s)
+{
+    if (s.value == 1) {
+        s.value = 0;
+    } else {
+        place this process in s.queue;
+        block this process;
+    }
+}
+
+void signalB(binary_semaphore s)
+{
+    if (s.queue.is_empty()) {
+        s.value = 1;
+    } else {
+        remove a process P from s.queue;
+        place process P on ready list;
+    }
+}
+```
 # Hoofdstuk 4: processen in Linux
 
 # Hoofdstuk 5: Scripts in Linux
