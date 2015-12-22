@@ -1019,6 +1019,122 @@ void signalB(binary_semaphore s)
     }
 }
 ```
+
+Voor zowel semaforen als binaire semaforen wordt een wachtrij (queue) gebruikt, die alle processen bevat die op de semafoor wachten. Hierbij speelt de vraag in welke volgorde de processen uit de wachtrij worden verwijderd. De meest eerlijke strategie is <font color="red">FIFO</font>.
+
+
+> **!** Verschil tussen zwakke en sterke semaforen:
+
+- Bevat de definitie van een semafoor deze
+FIFO-strategie, dan wordt dit een **sterke
+semafoor genoemd**.
+- Als niet is vastgelegd in welke volgorde
+processen uit de wachtrij worden
+verwijderd, is er sprake van een **zwakke
+semafoor**.
+
+Voorbeeld van een sterke semafoor:
+
+![](http://d.pr/i/11x3N+)
+
+**Het algoritme van wederzijdse uitsluiting:**
+
+```
+/* Program mutualexclusion */
+const int n = /* number of processes */;
+semaphore s = 1;
+void P(int i)
+{
+    while (true) {
+        wait(s);
+        /* Cirtical Section */;
+        signal(s);
+        /* remainder */;
+    }
+}
+
+void main()
+{
+    parbargin(P(1), P(2), ..., P(n));
+}
+```
+
+Mogelijke volgorde van 3 processen die voor de wederzijdse uitsluiting de aanpak van bovenstaande code gebruiken:
+
+![](http://d.pr/i/1jVY7+)
+
+> **!** Sterke semaforen garanderen de afwezigheid van starvation, zwakke semaforen doen dit niet!!!
+
+Implementatie semaforen:
+
+- 1ste mogelijkheid -> **implementateren in hardware of firmware**
+- 2de mogelijkheid -> **softwarebenadering** zoals algoritme van Dekker of Peterson => leidt tot een aanzienlijke overhead in de verwerking.
+- 3de mogelijkheid -> **het gebruiken van een in hardware ondersteund mechanisme voor wederzijdse uitsluiting** zoals bijvoorbeeld het gebruik van een instructie test and set waarbi de semafoor weer een datastructuur heeft en een nieuwe integere als component, s.flag bevat.
+- 4de mogelijkheid -> bij een systeem met 1 processor is het mogelijk **interrupts** te **verbieden** tijdens de bewerkingen wait en signal.
+
+
+**De instructie testset:**
+
+```
+wait(s)
+{
+    while ( ! testset(s.flag))
+    {
+        /* Do Nothing */
+    }
+    s.count--;
+    if (s.count < 0)
+    {
+        place this process in s.queue;
+        block this proes (must also set s.flag to 0)
+    }
+}
+
+signal(s)
+{
+    while ( ! testset(s.flag))
+    {
+        /* Do nothing */
+    }
+    s.count++;
+    if (s.count <= 0)
+    {
+        remove a proess P from s.queue;
+        place process P on ready list;
+    }
+    s.flag = 0;
+}
+```
+
+**Interrupts:**
+
+```
+wait(s)
+{
+    inhibit interrupts;
+    s.count--;
+    if (s.count < 0) {
+        place this process in s.queue;
+        block this process and allow interrupts
+    } else {
+        allow interrupts;
+    }
+}
+
+signal(s)
+{
+    inhibit interrupts;
+    s.count++;
+    if (s.count <= 0) {
+        remove a process P from s.queue;
+    }
+
+    allow interrupts;
+}
+```
+
+## 3.8
+
 # Hoofdstuk 4: processen in Linux
 
 # Hoofdstuk 5: Scripts in Linux
