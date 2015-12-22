@@ -289,11 +289,90 @@ Huidige shell: `echo $SHELL`
 | <kbd>Ctrl</kbd>+<kbd>L</kbd> | Maakt de terminal leeg, zodat je prompt bovenaan komt te staan. |
 | <kbd>Ctrl</kbd>+<kbd>R</kbd> | Zoek in de commandogeschiedenis |
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Bevriest een programma |
-| Pijtljes toetsen <kbd>◀︎</kbd> of <kbd>▶︎</kbd> | Beweeg de cursor over en weer op de commandolijn |
+| Pijtljes toetsen <kbd>◀</kbd> of <kbd>▶</kbd> | Beweeg de cursor over en weer op de commandolijn |
 | Pijtljes toetsen <kbd>▲</kbd> of <kbd>▼</kbd> | Overloopt de commandogeschiedenis. Ga naar de lijn die je opnieuw wilt uitvoeren, editeer eventueel en druk <kbd>enter</kbd> |
 | <kbd>Shift</kbd>+<kbd>PageUp</kbd> en <kbd>Shift</kbd>+<kbd>PageDown</kbd> | Overloopt de terminalbuffer om tekst te zien die al van het scherm gerold is. |
 | <kbd>Tab</kbd> | Commando- of bestandsnaam vervolledigen. Als er meerdere mogelijkheden zijn, zal de shell je met een geluidje of een flits waarschuwen |
 | <kbd>Tab</kbd> <kbd>Tab</kbd> | Toont de mogelijke bestandsnamen of commandonamen om te vervolledigen |
+
+### 5.2.3 Werken met bestanden
+
+`touch bestand1 bestand2` om bestanden aan te maken, wanneer het bestand reeds bestaat dan wordt de datum geupdatet.
+
+`cp BRON DEST` kopieert een bestand van bron naar dest.
+
+Opties:
+
+- -r: kopieert mappen, inclusief hun inhoud (recursief)
+- -v: verbose, toont alle copieacties op het scherm
+
+`mv BRON DEST` verplaatst een bestand van bron naar dest.
+
+Opties:
+
+- -i: interactive mode, vraagt bevestiging
+- -v: verbose
+- -f: force, geeft geen waarshuwing
+- -r: recursief, kan dus ook met mappen
+
+`rm BRON` verwijdert een bestand
+
+Opties:
+
+- -r: recursief, verwijdet een map inclusief bestanden en submappen
+- -f: force, geeft geen waarschuwing
+- -v: verbose
+
+> **!** Let op: `rm -rf /` als root uitvoeren, dan ben je alles kwijt...
+
+`locate` zoekt bestandsnamen, maakt gebruik van een 's nachts opgebouwde database
+
+`which commandonaam`  zoekt in de mappen die gedefinieerd staan in `PATH` vb `which cat` = `/bin/cat`
+
+`find zoekmap zoekoptie[s] [tests] [acties]` geavanceerd zoeken (alle opties zie je in de man pages `man find`)
+
+tests:
+
+- -name patroon: naam van het bestand voldoet aan een zeker patroon
+- -size n
+- -type c
+
+acties:
+
+- -exec opdracht
+- -print: stuurt resultaat naar standard output
+
+### 5.2.4 Werken met mappen
+
+Aanmaken van mappen
+
+`mkdir mapnaam` (meerdere namen mag) vb: `mkdir -p dir/dir1`
+
+Verwijderen van mappen
+
+`rmdir mapnaam` (meerdere namen mag), enkel lege mappen worden verwijderd
+
+
+Links:
+
+- **harde link**: associeert twee of meerdere bestandsnamen met dezelfde inode, harde links delen dezelfde datablokken op de harde schijf en gedragen zich onderling onafhankelijk van elkaar. Elk gewoon bestand is in principe een hardlink naar zichzelf
+- **symbolische link**: is een pointer (wegwijze) naar een andere bestandsnaam. Een symbolische link is niet onafhankelijk van het doelbestand: als het doelbestand verdwijnt, werkt de link niet meer.
+
+> Het voordeel van een symbolische link is dat dit type link partities kan overspannen. Een harde link moet binnen eenzelfde partitie blijven.
+
+`ln doelbestand linknaam` of `ln -s doelbestand linknaam`
+
+### 5.2.5 Inhoud van bestanden
+
+- `cat`: concatenatie
+- `tac`: zelfde als cat, maar omgekeerde volgoerde van regels
+- `head`: toont de eerste 10 lijnen van een bestand
+- `tail`: toont de laatste 10 lijnen van een bestand, deze wordt veel gebruikt voor inhoud van log bestanden te bekijken, met de optie `tail -f /var/log/message..` houdt het commando het bestand in de gaten en update het automatisch.
+- `more`: voorganger van `less` (`more` is less then `less`)
+- `grep [OPTIES] tekenreeks [bestanden]`, enkele opties zijn:
+    - -i, --ignore-case
+    - -n, --line-number
+    - -s, --slient (onderdrukt alle foutmeldingen)
 
 # Hoofdstuk 2: Scheduling
 
