@@ -1622,3 +1622,288 @@ De waarde van de exit status van shellcommando's wordt opgeslagen in een special
 Processen eindigen omdat ze een signaal krijgen. Je kan verschillende signalen naar een proces sturen. Om dat te doen gebruik je het **`kill` commando**.
 
 # Hoofdstuk 5: Scripts in Linux
+
+Een shell script is een bestand met instructies die door de shell(bash) gelezen en begrepen moeten worden. Met de scripttaaldie in bashisingebouwdishetmogelijk eenvolledigfunctionerendprogramma te schrijven. Shell soorten: sh, bash, csh, tcsh, ksh In hetbestand/etc/shellsvindje eenoverzichtvan alle gekendeshellsop jouwlinux systeem.
+
+Elke script heeft een **shebang**
+
+```bash
+#!/bin/bash
+```
+
+Ook aangeraden op de volgende instructies bovenaan te vermelden
+
+```bash
+#!/bin/bash
+
+# Script stoppen als instructie faalt
+set -o errexit
+
+# Script stoppen bij gebruik van niet-gedefinieerde variabele
+set -o nounset
+```
+
+Een eerste voorbeeld script (mijnsysteem.sh):
+
+```bash
+#!/bin/bash
+clear
+cat << _EOF_
+Deze informatie wordt aangeboden door ${0}
+Het programma start nu
+
+Hallo ${USER}
+
+Vandaag zijn we $(date) en dit is week $(date +"%V").
+
+Deze gebruikers zijn aangemeld:
+$(w | cut -d " " -f 1 | grep -v USER | sort -u)
+
+Dit OS is $(uname -s) en draait op een $(uname -m) processor.
+
+Uptime informatie:
+$(uptime)
+_EOF_
+```
+
+De script kan je laten uitvoeren aan de hand van het commando `bash mijnsysteem.sh` of `./mijnsysyteem.sh`
+
+```
+chmod +x mijnsysteem.sh
+./mijnsysteem.sh
+```
+
+Output:
+
+```
+Deze informatie wordt aangeboden door mijnsysteem.sh
+Het programma start nu
+
+Hallo robin
+
+Vandaag zijn we Wed Dec 23 15:03:19 CET 2015 en dit is week 52.
+
+Deze gebruikers zijn aangemeld:
+
+robin
+
+Dit OS is Darwin en draait op een x86_64 processor.
+
+Uptime informatie:
+15:03  up 13 days, 42 mins, 2 users, load averages: 2.26 2.39 2.88
+```
+
+Deze scripts kan je bewerken met `vim`, `nano`, ...
+
+Kies altijd een goede naam voor je script, zoeken naar bestaande script op dezelfde naam kan met `which` of `whereis`.
+
+## het activeren van een script
+
+```bash
+chmod u+x naam_van_het_script   # Dit maakt het executable
+bash -x naam_van_het_script     # Dit runt het script, met debug mode aan
+source naam_van_het_script      # Werkt ook zeker
+```
+
+## Debuggen van ene bash script.
+
+```
+bash -x naam_van_het_script
+```
+
+Zo worden alle acties op het scherm afgedrukt.
+
+Wil je enkele delen uit je script debuggen, kan je dit doen met `set`:
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+set -x
+exho Dit zal in debug mode komen...
+set +x
+```
+
+## Werken met variabelen en parameters
+
+1. `variabele=waarde`
+2. `variabele="meerdere waarden"`
+3. `variabele=`
+
+Deze waarde kan je weer aanroepen door gebruik te maken van:
+
+```bash
+$naam_variabele
+# Of
+${naam_variabele} # Dit is de beste notatie hiervoor
+```
+
+### Types van variabelen
+
+- Read-only variabelen
+- Lokale variabelen
+- Omgevingsvariabelen (env)
+- Shell-variabelen
+
+**Belangrijkste omgevingsvariabelen:**
+
+| Variabele | Beschrijving |
+| --------- | ------------ |
+| $HOME | Home map van de gebruiker |
+| $USER / $USERNAME | Naam van de gebruiker |
+| $PWD | Huidige werkmap (print working directory) |
+| $BASH / $SHELL | Locatie van bash of shell |
+| $BASH_VERSION | Versie van bash |
+| $OSTYPE | Info over het OS |
+| $PATH | Alle locaties voor uitvoerbare bestanden |
+| $IFS | Bevat alle scheidingstekens |
+
+**Belangrijkste shellvariabelen:**
+
+| Variabele | Beschrijving |
+| --------- | ------------ |
+| $0 | Scriptnaam |
+| $# | Aantal meegegeven parameters |
+| $@ | Alle meegegeven parameters |
+| $1, $2, ... ${n} | Positionele parameter |
+| $? | Uitvoerstatus laatste commando (exit status) |
+| $$ | Proces-id van het script |
+| $! | Proces-id van het laatste commando opgestart met `&` |
+
+### Werken met invoer
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+echo "Geef een naam: ";read naam1
+echo
+echo "Geef nog een naam: "; read naam2
+echo
+echo "De eerste naam is ${naam1}"
+echo "De tweede naam is ${naam2}"
+echo
+```
+
+Output: ![](https://d.pr/i/1azML+)
+
+### Positionele parameters:
+
+Dit zijn de parameters die je meegeeft aan je script, `$0` is je script zelf.
+
+Voorbeeld:
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+echo "De opdrachtnaam is " $0
+echo "De eerste parameter is " $1
+echo "De negende parammeter is " $9
+echo
+```
+
+Output: ![](https://d.pr/i/tbE9+)
+
+Je kan met het commando `shift` de positie van de parameter naar links opschuiven.
+
+Voorbeeld:
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+echo "De opdrachtnaam is " $0
+
+# Loops komen nog, achja
+while [[ "$#" -gt 0 ]]; do
+    echo "De huidige parameter is " $1
+    shift
+done
+```
+
+Output: ![](https://d.pr/i/10ROd+)
+
+Met het commando `set` kan je nieuwe parameters instellen:
+
+Voorbeeld:
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+echo "Meegegeven parameters ($#): $@"
+
+x="een twee drie vier"
+echo "Oproepen set met volgende waarde: ${x}"
+
+set ${x}
+echo "Nieuwe parameters ($#): $@"
+```
+
+Output: ![](https://d.pr/i/1hSeV+)
+
+### Speciale Parameters:
+
+| Speciale Parameter | Betekenis |
+| ------------------ | --------- |
+| $# | Verwijst naar het aantal gegeven parameters |
+| $* | Geeft als resultaat één tekenreekswaarin alle parameters voorkomen. Elke parameter wordt van de vorige gescheiden door het scheidingsteken dat is gedefinieerd als waarde van de systeemvariabele IFS. |
+| $@ | Geeft als output alle parameters waarbij elkeparameter als individuele tekenreeks kan worden gebruikt. |
+
+## Commando substitution
+
+Hiermee kan je de uitvoer van een commando opvangen en eventueel opslaan in een variabele
+
+- `$(commando)`
+- `\`commando\``
+
+Voorbeeld:
+
+```bash
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+thatsMe=$(whoami)
+
+echo "Ik ben" $thatsMe
+```
+
+Output: ![](https://d.pr/i/TwoQ+)
+
+## Reguliere Expressies
+
+| Expression | Uitleg |
+| ---------- | ------ |
+| . | Jokerteken. Vervangt elk willekeurig teken met uitzondering van \n |
+| ^ | Verwijst naar het begin van de regel |
+| $ | Verwijst naar het einde van de regel |
+| < | Verwijst naar het begin van een woord |
+| > | Verwijst naar het einde van een woord |
+| [] | Match met één van de tekens tussen de haken.<br>Vb.: [ab] is hetzelfde als [a\|b]; [a-d] = [a\|b\|c\|d] |
+| [^] | Match met alle tekens die niet tussen de haken staan. <br>Vb.: ^[^a-z] regel die niet begint met een kleine letter
+| () | Groepering. <br>Vb.: (va|moe)der matcht met 'vader' en 'moeder'; (groot)?vader matcht met 'vader' en 'grootvader' |
+| ? | Voorgaand teken of reguliere epxressie komt nul of één keer voor |
+| * | Voorgaand teken of reguliere expressie mag 0, 1 of meerdere keren voorkomen |
+| + | Voorgaand teken komt één of meerdere keren voor |
+| {n} | Voorafgaand teken komt juist n keer voor |
+| {n,} | Voorafgaand teken komt minstens n keer voor |
+| {,n} | Voorafgaand teken komt hoogstens n keer voor
+| \ | Escape teken: Voorkoomt dat de shell de speciale regex tekens interpreteert en vervangt. |
