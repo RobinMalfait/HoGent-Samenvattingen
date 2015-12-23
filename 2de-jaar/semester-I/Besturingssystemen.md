@@ -1869,7 +1869,9 @@ Output: ![](https://d.pr/i/1hSeV+)
 
 Hiermee kan je de uitvoer van een commando opvangen en eventueel opslaan in een variabele
 
-- `$(commando)`
+- ```
+$(commando)
+```
 - ```
 `commando`
 ```
