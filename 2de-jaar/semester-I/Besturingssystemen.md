@@ -1133,7 +1133,97 @@ signal(s)
 }
 ```
 
-## 3.8
+## 3.8 Synchronisatie
+
+Het gemak waarmee semaforen wederzijdse uitsluiting afdwingen, maakt het ons mogelijk ook andere problemen, bijvoorbeeld het <font color="red">synchroniseren van processen</font>, op te lossen.
+
+We definiëren dit als het opleggen van een dwingende volgorde aan events die door concurrente, asynchrone processen worden uitgevoerd.
+
+Wij moeten garanderen dat processen in een bepaalde volgorde verlopen.
+
+**Illustratie van de problematiek van synchroniseren a.d.h.v. het filosofen probleem:**
+
+De vijf filosofen zitten aan een tafel en kunnen twee dingen doen: spaghetti eten of filosoferen. Als ze eten kunnen ze niet denken en als ze denken kunnen ze niet eten. De spaghetti staat midden op de ronde tafel en om te eten heeft elke filosoof twee vorken nodig. Er zijn echter slechts vijf vorken. Zo heeft elke filosoof één vork aan zijn linker en één aan zijn rechterhand; de filosoof kan die oppakken, maar alleen een voor een.
+
+Het probleem is nu om de filosofen zodanige instructies te geven dat ze niet zullen verhongeren.
+
+Dit soort problemen zijn in het algemeen niet zo eenvoudig op te lossen.
+
+![](https://d.pr/i/17VrF+)
+
+Stel bijvoorbeeld dat elke denker als filosofie heeft: ik pak een vork zo gauw ik kan, als beide beschikbaar zijn eerst de linkervork; zo gauw ik beide vorken heb eet ik wat; dan leg ik de vorken weer neer.
+
+Op het eerste gezicht een redelijk plan, maar nu kan de situatie ontstaan dat elke filosoof de linkervorkin de linkerhand heeft, eeuwig wachtend tot de rechtervork vrijkomt. Dit is een voorbeeld van <font color="red">**'deadlock'**</font>: er is helemaal geen voortgang in het systeem meer mogelijk. Elke filosoof zal verhongeren.
+
+Er zijn technieken om tot oplossingen te komen die deadlock bewijsbaar voorkomen; Dijkstra heeft het probleem verzonnen om zulke technieken te demonstreren.
+
+We kunnen bijvoorbeeld de denkers nummeren en elke denker alleen een vork laten pakken als er geen hoger genummerde denker al een vork vastheeft. Nu is deadlock onmogelijk.
+
+Deadlock is echter niet het enige soort situatie dat in het ontwerp moet worden uitgesloten.
+
+Stel bijvoorbeeld dat we een denker zelfs geen vork laten pakken als tegelijk een hoger genummerde hetzelfde probeert. Dan zal de hoogstgenummerdealtijd eten, terwijl de rest verhongert. Zo'n situatie wordt <font color="red">**starvation**</font> genoemd.
+
+We kunnen dit nog verder aanscherpen, bijvoorbeeld door te eisen dat het systeem eerlijk is, in de zin dat de filosofen niet alleen allemaal altijd nog ooit de kans krijgen te eten, maar ze die kans zelfs even vaak krijgen; of door te eisen dat de totale wachttijd zo klein mogelijk is.
+
+Deze situatie illustreert de problemen die zich kunnen voordoen bij het synchroniseren van toegang tot resources (de vorken), bijvoorbeeld door verschillende threads(de filosofen) in een computerprogramma.
+
+Als verschillende threadsgebruik maken van dezelfde variabelen of bestanden is het niet veilig dat ze die tegelijk proberen aan te passen; daarom kan het onvermijdelijk zijn dat threadsop elkaar moeten wachten. Als deze synchronisatie niet correct wordt ontworpen kan het voorkomen dat een thread helemaal nooit meer aan de beurt komt (<font color="red">**starvation**</font>) of dat dat zelfs voor elke thread geldt (<font color="red">**deadlock**</font>).
+
+Bij de interactie tussen processen moet aan twee fundamenten eisen worden voldaan: **synchronisatie** en **communicatie**.
+
+Processen moeten worden gesynchroniseerd om wederzijdse uitsluiting af te dwingen; samenwerkende processen moeten soms informatie uitwisselen.
+
+Een benadering die voorziet in beide functies, is het uitwisselen van berichten (<font color="red">**message passing**</font>).
+
+Het uitwisselen van berichten heeft het bijkomende voordeel dat dit kan worden gebruikt in gedistribueerde systemen en in systemen met een of meer processors en bij gedeeld geheugen.
+
+Er bestaan tal van manieren voor het uitwisselen van berichten.
+
+De feitelijke functie voor het uitwisselen van berichten wordt meestal geformuleerd als een stel <font color="red">**primitieven**</font>:
+
+```
+send(bestemming, bericht)
+receive(bron, bericht)
+```
+
+Dit is minimale aantal bewerkingen dat nodig is bij het uitwisselen van berichten door processen.
+
+Een proces verstuurt met de primitieve verzenden (send) informatie in de vorm van een bericht (message) aan een proces dat wordt aangeduid als bestemming of doel (destination).
+
+Een proces ontvangt informatie met de primitieve ontvangen (receive), waarbij de bron (source) van het verzendende proces en het bericht worden aangegeven.
+
+Het uitwisselen van een bericht tussen 2 processen vraagt om een zekere mate van synchronisatie tussen beide processen.
+De ontvanger kan pas een bericht ontvangen als dat is verzonden door een ander proces.
+
+> Synchronisatie kunnen we dus definiëren als het coördineren van de activiteiten van twee of meer processen op basis van een conditie.
+
+Soorten Synchronisatie
+
+* Blokkerende zender, blokkerende ontvanger
+    - Rendez-vous
+    - Dichte synchronisatie processen
+* Niet-blokkerende zender, blokkerende ontvanger
+    - Meest gebruikt
+    - Meerdere boodschappen naar verschilllende ontvangers
+    - B.V.: Serverproces (= ontvanger)
+* Niet-blokkerende zender, niet-blokkerende ontvanger
+    - B.V.: UDP
+
+**GEEN** Combinaties:
+
+* Blokkerende zender, niet blokkerende ontvanger
+
+![](https://d.pr/i/1e223+)
+
+## 3.9 Monitoren
+
+Semaforen zijn een primitief maar krachtig en flexibel gereedschap voor het afdwingen van wederzijdse uitsluiting en voor het coördineren van processen.
+
+Het kan echter moeilijk zijn een correct programma te maken met semaforen. De moeilijkheid is dat de bewerkingen waiten signalverspreid kunnen zijn over het programma en het is lastig te zien welke algehele invloed bewerkingen hebben op de betreffende semaforen.
+
+De monitor is een constructie in een programmeertaal die een functionaliteit biedt die vergelijkbaar is met die van semaforen, maar die gemakkelijker te besturen is.
+
+![](https://d.pr/i/UpMf+)
 
 # Hoofdstuk 4: processen in Linux
 
