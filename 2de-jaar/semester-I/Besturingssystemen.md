@@ -1359,7 +1359,7 @@ Net zoals processen hebben threadsuitvoeringsstoestandenen kunnen ze met elkaar 
 
 ## 4.1 Wat is een proces
 
-> **Proces**: is een uitvoerbaar deel van een programma, dat in het geheugen geladen wordt en daar instructies doorgeeft naar de process.
+> **Proces**: is een uitvoerbaar deel van een programma, dat in het geheugen geladen wordt en daar instructies doorgeeft naar de processor.
 
 **Multi**:
 
@@ -1394,7 +1394,7 @@ Het programma dat het eerste in de wachtrijterecht kwam, wordt ook eerst uitgevo
 1. **at**: zie later
 2. **batch**: systeemadministratie - (3<sup>e</sup> jaar)
 
-### 4.2.3 Daemens (demonen)
+### 4.2.3 Daemons (demonen)
 
 Zijn server processen die continu draaien.
 
