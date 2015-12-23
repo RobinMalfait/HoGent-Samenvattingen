@@ -1497,9 +1497,11 @@ Het initiële proces waarmee het systeem gestart wordt.
 
 **Enkele handige commando's:**
 
-- `time`: Het **time** commando werkt als een chronometer. Het geeft aan hoeveel uur, minuten en seconden een opdracht duurt om uit te voeren. Je gebruikt het door het te plaatsen vóór het commando dat je wilt uitvoeren.
-- `uptime`: Het commando **uptime** geeft informatie over de belasting van het systeem.
-- `w`: Het commando **w** geeft een overzicht van de aangemelde gebruikers en hun activiteit(en).
+| Commando | Uitleg |
+| -------- | ------ |
+| `time` | Het **time** commando werkt als een chronometer. Het geeft aan hoeveel uur, minuten en seconden een opdracht duurt om uit te voeren. Je gebruikt het door het te plaatsen vóór het commando dat je wilt uitvoeren. |
+| `uptime` | Het commando **uptime** geeft informatie over de belasting van het systeem. |
+| `w` | Het commando **w** geeft een overzicht van de aangemelde gebruikers en hun activiteit(en). |
 
 Indien één van de processen die je zelf hebt opgestart, te veel middelen gebruikt, heb je twee mogelijkheden:
 
@@ -1519,7 +1521,7 @@ renice -n prioriteit -p PID
 
 ### Processen onderbreken
 
-#### Het `kill` commando.
+**Het `kill` commando.**
 
 Een proces stoppen omdat het hangt, op hol slaat of teveel of te grote bestanden aanmaakt, doe je met kill.
 
@@ -1536,11 +1538,87 @@ Dit instrueert het proces om af te handelen waar het mee bezig is volgens de pro
 
 ![](https://d.pr/i/1fxX6+)
 
-#### Het `xkill` commando
+**Het `xkill` commando**
 
 Grafische programma's die vasthangen kan je proberen stoppen met `xkill`.
 
 Na het ingeven van dit commando verandert de muispijl in een doodshoofd. Beweeg het doodshoofd over het venster van het programma dat je wilt stoppen en klik met de linker muistoets.
 
+## 4.8 Processen programmeren voor automatische uitvoering
+
+3 manieren op uitgestelde taken in te plannen:
+
+1. Een korte tijd wachten en daarna de taak uitvoeren, gebruik makend van het **sleep** commando. Het tijdstip van uitvoering hangt af van het tijdstip waarop de taak gepland werd.
+2. De taak uitvoeren op een welbepaald tijdstip met het **at** commando. Het tijdstip van uitvoering is niet afhankelijk van het tijdstip van planning.
+3. Een taak steeds opnieuw uitvoeren, maandelijks, wekelijks, dagelijks, elk uur of elke minuut, door gebruik te maken van de **cron** faciliteit.
+
+**Het `sleep` commando**
+
+Het enige dat sleep doet is wachten. Standaard wordt de awchttijd uitgedrukt in seconden.
+
+**Het `at` commando**
+
+Geef het **at** commando in, gevolgd door het tijdstip waarop de geplande taak uitgevoerd moet worden.
+
+Daarmee kom je in de at omgeving, gekenmerkt door de at prompt.Hier geef je het commando of de commando's in die gepland moeten worden.
+
+Sluit af met <kbd>Ctrl</kbd>+<kbd>D</kbd> en de taak wordt gepland.
+
+Je kan een overzicht krijgen van alle at jobs met het commando atq.
+
+Met het **atrm** commando kan je de job verwijderen. Gebruik het jobnummeruit de eerste kolom van de output van atq als argument.
+
+**Het `cron` systeem:**
+
+De **cron** daemon draait constant op je systeem.
+
+Deze dienst gaat elke minuut na of er taken uit te voeren zijn voor de gebruikers of voor de diensten die op een systeem draaien.
+
+De taken worden opgeslagen in zogenaamde crontabs(tabellen).
+
+Elke gebruiker kan een crontabhebben, waarin elke lijn een taak voorstelt die regelmatig herhaald moet worden.
+
+Verder is er ook nog een crontabwaarin de **systeem-specifieke taken** vernoemd worden, zoals bijvoorbeeld:
+
+- Dagelijks de index maken waarvan het `locate` commando gebruik maakt
+- Dagelijks nagaan of er **updates** zijn voor de software op het systeem
+- Er dagelijks voor zorgen dat **logbestanden**, waarin informatie wordt opgeslagen over wat er allemaal op het systeem gebeurd is, niet te groot worden.
+- Dagelijks en wekelijks een index maken van alle **man pagina's**, zodat apropos en whatis kunnen werken.
+
+Andere taken kunnen zijn: het maken van backups, rapporten opmaken en doorsturen, systeeminformatie analyzerenen doormailen naar de administrator, herinneringsbrieven mailen, enzovoorts.
+
+> Alle taken die periodiek uitgevoerd moeten worden, komen voor opname in het cronsysteem in aanmerking.
+
+De crontabsvoor het systeem vind je in de **/etc** map, die van de gebruikers in **/var/spool/cron/crontabs**, maar die map is niet toegankelijk voor de niet-gepriviligieerdegebruiker. In **/var/spool/cron** vind je ook nog atjobsen atspool, omdat de at jobs onder de verantwoordelijkheid van de crondaemonvallen.
+
+## 4.9 Levenscyclus
+
+**Een proces aanmaken**
+
+Een nieuw proces wordt aangemaakt doordat een bestaand proces een exacte kopie van zichzelf maakt. Dit childprocessis eigenlijk net hetzelfde als het ouderproces, enkel het procesidentificatienummer verschilt. Deze procedure heet men een **fork** (letterlijk: een vork of splitsing).
+
+Na de forkwordt de geheugenruimte van het kindproces overschreven met de nieuwe procesdata: het commando dat gevraagd werd, wordt in het geheugen geladen. Dit noemt men een **exec**.
+
+Het geheel wordt **fork-and-exec** genoemd.
+
+**Een proces aanmaken `fork-and-exec`**
+
+![](https://d.pr/i/1aExM+)
+
+**De rol van `systemd`**
+
+Zoals je kunt zien aan de output van het **pstree** commando, hebben veel processen systemdals ouderproces, terwijl dat helemaal niet mogelijk is.
+
+Veel programma's "demoniseren" hun kindprocessen, zodanig dat die kunnen blijven draaien als de ouder stopt. Het systemdproces neemt de rol van peetvader van zulke processen: als de ouder sterft, vallen ze onder de verantwoordelijkheid van systemd.
+
+Heel af en toe wil het nog wel eens mislopen met de "adoptie" van processen. Een proces dat geen ouderproces heeft, noemt men een *zombie*. Het systeem heeft geen vat meer op zo'n zombie- proces, het blijft in het geheugen hangen tot je de computer herstart.
+
+**Een proces beëndigen**
+
+Wanneer een proces normaal eindigt, geeft het een code, de exit status, door aan de ouder. Als alles goed verlopen is, is de exit status nul.
+
+De waarde van de exit status van shellcommando's wordt opgeslagen in een speciale variabele, aangeduid met `$?`. Met het `echo` commando kan je de inhoud van deze variabele bekijken.
+
+Processen eindigen omdat ze een signaal krijgen. Je kan verschillende signalen naar een proces sturen. Om dat te doen gebruik je het **`kill` commando**.
 
 # Hoofdstuk 5: Scripts in Linux
