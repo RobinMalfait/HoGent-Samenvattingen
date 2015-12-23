@@ -1061,7 +1061,7 @@ void main()
 
 Mogelijke volgorde van 3 processen die voor de wederzijdse uitsluiting de aanpak van bovenstaande code gebruiken:
 
-![](https://d.pr/i/1jVY7+)
+![](https://d.pr/i/1fPBP+)
 
 > **!** Sterke semaforen garanderen de afwezigheid van starvation, zwakke semaforen doen dit niet!!!
 
@@ -1247,8 +1247,6 @@ De monitorconstructie is geïmplementeerd in enkele programmeertalen waaronder M
 
 Een deadlock of een impassetoestand treedt op wanneer 2 of meer processen voor onbepaalde tijd wachten op een gebeurtenis die alleen door 1 van de wachtende processen kan worden veroorzaakt.
 
-![](https://d.pr/i/1bfoB+)
-
 **2methoden voor het behandelen van deadlocks:**
 
 - gebruik één of ander protocol (afspraak) om te garanderen dat het systeem nooit in een deadlock-situatie zal komen;
@@ -1357,6 +1355,192 @@ Net zoals processen hebben threadsuitvoeringsstoestandenen kunnen ze met elkaar 
 3. Block
 4. Finish
 
-# Hoofdstuk 4: processen in Linux
+# Hoofdstuk 4: Processen in Linux
+
+## 4.1 Wat is een proces
+
+> **Proces**: is een uitvoerbaar deel van een programma, dat in het geheugen geladen wordt en daar instructies doorgeeft naar de process.
+
+**Multi**:
+
+- **Multi-user** (veel gebruikers): verschillende gebruikers kunnen tezelfdertijd processen opstarten.
+- **Multi-tasking** (veel taken uitvoeren): een gebruiker kan meerdere processen tezelfdertijd opstarten.
+- Processen moeten beheerd worden: geheugen - schijfruimte - processor capaciteit - ...
+
+## 4.2 Soorten Processen
+
+3 soorten:
+
+1. interactieve
+2. automatische (batch)
+3. daemons
+
+### 4.2.1 Interactieve Processen
+
+Opstarten en controleren vanuit een terminal sessie, m.a.w. er moet iemand aangemeld zijn op het systeem.
+
+- **Interactieve** processen kunnen zowel op de voorgrond (foreground) als in de achtergrond (background) draaien.
+- **Foreground** processen houden de terminal bezet zolang ze lopen.
+- **Background** processen bezetten de terminal niet en kunnen andere taken uitgevoerd worden.
+
+### 4.2.2 Automatische (batch) processen
+
+Deze processen wachten eerst op uitvoering in een daartoe bestemde map. Vandaar uit worden ze opgeroepen door een programma dat de wachtrijanalyseert en de programma's systematisch uitvoert.
+
+Het programma dat het eerste in de wachtrijterecht kwam, wordt ook eerst uitgevoerd. De naam van dit systeem is "FIFO", wat staat voor "firstin, firstout".
+
+2 manieren:
+
+1. **at**: zie later
+2. **batch**: systeemadministratie - (3<sup>e</sup> jaar)
+
+### 4.2.3 Daemens (demonen)
+
+Zijn server processen die continu draaien.
+
+Meestal worden ze opgestart wanneer het systeem opstart, waarna ze in de achtergrond wachten tot hun diensten vereist zijn.
+
+Vb.: Apache (httpd), mysql, redis, ...
+
+## 4.3 Background
+
+Door middel van job control beheer je processen in foreground of background.
+
+Een process in background draaien heeft enkel zin als het over processen gaat die geen input verwachten en veel tijd nodig hebben.
+
+Een process opstarten in background:
+
+`tree / > boomStructuur.txt &`, het **&** teken zorgt voor de background job
+
+![](https://d.pr/i/18GKH+)
+
+**PID**: Process identification - proces volgnummer.
+
+Jobnummer - dit is een nummer dat door de shell gebruikt wordt.
+
+## 4.4 Eigenschappen
+
+Elk process heeft een **aantal vaste eigenschappen**:
+
+- PID: uniek nummer dat verwijst naar een proces
+- PID dat het process gestart heeft, **PPID** Komt van Parent-PID
+- Het zogenaamde **nice number**: de mate van vriendelijkheid van dit proces: laat het nog veel processorcapaciteit over aan andere processen, of juist niet?
+- De terminal van waaruit dit proces opgestart werd, als het om een interactief proces gaat. Dit wordt aangeduid met een **tty number**.
+- De **gebruikersnaam** van de gebruiker aan wie het proces toebehoort.
+- De **groepsnaam** van de groep aan wie het proces toebehoort.
+
+## 4.5 Informatie weergeven
+
+### Korte Informatie
+
+`ps` zonder opties.
+
+| PID | TTY | TIME | CMD |
+| --- | --- | ---- | --- |
+| het procesidentificatienummer. | het terminal type en nummer waaraan het proces verbonden is. Wij gebruiken pts, pseudo-terminals, in tegenstelling tot echte terminals waarbij je een toetsenbord en een scherm hebt, waarmee je niets anders kan doen dan 1 enkele shellopenen, in een tekstuele omgeving (te vergelijken met DOS vroeger). Pseudo-terminalszijn terminal vensters in een grafische omgeving, of verbindingen vanopeen netwerk. | een relatieve indicatie van de tijd die het aantal processorcycli dat het processal verbruikt heeft. Gewone processen van gebruikers verbruiken slechts een klein deel van de totale processorkracht. | de naam van het commando. |
+
+(Deze screenshot is genomen op een mac, dus kan iets anders zijn)
+![](https://d.pr/i/18w9v+)
+
+### Uitgebreide Informatie
+
+`ps -ef`
+
+| UID | PID | PPID | TTY | CMD |
+| --- | --- | ---- | --- | --- |
+| de naam van de gebruiker die het proces opstartte | het procesidentificatienummer. | procesidentificatienummer van het *parent process, het proces dat dit proces opstartte*. | de terminal waaraan het proces verbonden is, "?" wil zeggen dat het proces niet aan een terminal verbonden is. | de naam van het commando. |
+
+(Deze screenshot is genomen op een mac, dus kan iets anders zijn)
+![](https://d.pr/i/12GZH+)
+
+`top` commando:
+
+Geeft ongeveer dezelfde informatie als ps-ef, maar het wordt om de 5 seconden opgefrist.
+
+Bovendien hebben we hier al automatisch een zeker vorm van sorteren: de zwaarste processen, dat wil zeggen de processen die het meeste processortijd verbruiken, worden bovenaan in de lijst getoond.
+We krijgen ook niet alle processen te zien. Al naargelang de grootte van je terminal venster wordt de lijst ingekort.
+
+We krijgen dus een "top" van de processen te zien.
+
+`uptime` commando:
+
+De output van het <font color="red">**uptime**</font> commando, met daarin informatie over hoe lang het systeem al draait, hoeveel gebruikers er verbonden zijn en wat de belasting is.
+
+Het aantal processen en de status ervan: er draait altijd slechts 1 proces tegelijk op de CPU, terwijl de andere in een wachtrijstaan.
+
+De belasting van de processor(s): moet de processor veel berekeningen maken, dan is de belasting hoog.
+
+Gebruik van het geheugen: alle programma's die actief zijn, nemen een plaatsje in op het geheugen.
+
+Gebruik van de swap space (het virtuele geheugen): als er teveel programma's draaien, wordt alle beschikbare plaats in het geheugen opgevuld. Een speciale plek op de harde schijf wordt dan gebruikt als extra geheugen.
+
+![](https://d.pr/i/13iFZ+)
+
+`pstree` commando: Samenhang van processen
+
+De meeste processen stammen af van **systemd**
+Het initiële proces waarmee het systeem gestart wordt.
+
+## 4.6 Processen beheren
+
+| (deel van) Commando | Betekenis |
+| ------------------- | --------- |
+| commandonaam | Draait het commando in de voorgrond |
+| commandonaam **&** | Draait het commando in de achtergrond en geeft de terminal vrij.
+| **jobs** | Toon de commando's die in de achtergrond aan het draaien zijn. |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Bevries het commando (in het Engels: Suspend) |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Beëindig het commando dat in de voorgrond draait |
+| **%n** | Elk commando in de achtergrond krijgt een jobnummer(in bovenstaand voorbeeld: 1. Gebruik de uitdrukking % met dit nummer om naar een proces te verwijzen |
+| **bg** | Activeer een bevrorern commando terug, na <kbd>Ctrl</kbd>+<kbd>Z</kbd>, maar wordt uitgevoerd in de background |
+| **fg**  | Zelfde als bg, maar wordt in de foreground uitgevoerd. |
+| **kill** | Beëindig een programma dat in de achtergrond draait. |
+
+**Enkele handige commando's:**
+
+- `time`: Het **time** commando werkt als een chronometer. Het geeft aan hoeveel uur, minuten en seconden een opdracht duurt om uit te voeren. Je gebruikt het door het te plaatsen vóór het commando dat je wilt uitvoeren.
+- `uptime`: Het commando **uptime** geeft informatie over de belasting van het systeem.
+- `w`: Het commando **w** geeft een overzicht van de aangemelde gebruikers en hun activiteit(en).
+
+Indien één van de processen die je zelf hebt opgestart, te veel middelen gebruikt, heb je twee mogelijkheden:
+
+1. Zorg dat het proces minder belastend is door middel van het `renice` commando; hiervoor moet je het proces niet onderbreken.
+2. Stop het process.
+
+### De prioriteiten veranderen
+
+Het werken met **nice** en **renice** vereist een uitgebreide kennis van het systeem. Er is echter een gemakkelijker manier: **top**.
+Een belastend proces zal vermoedelijk een negatieve nicewaarde hebben in de kolom "NI".
+
+Parktisch:
+
+```bash
+renice -n prioriteit -p PID
+```
+
+### Processen onderbreken
+
+#### Het `kill` commando.
+
+Een proces stoppen omdat het hangt, op hol slaat of teveel of te grote bestanden aanmaakt, doe je met kill.
+
+Als je daartoe de gelegenheid hebt, probeer dan eerst de zachtaardige manier en stuur een SIGTERM (waarde 15) signaal.
+
+Dit instrueert het proces om af te handelen waar het mee bezig is volgens de procedures zoals beschreven in de code van het programma. Op die manier wordt alle rommel opgeruimd en worden er geen bestanden beschadigd.
+
+1. Zoek het procesidentificatienummer van het proces dat je wilt stoppen met behulp van **ps -ef**.
+2. Gebruik het commando **kill -15 PID_nummer**.
+3. Ga na met **ps** of het proces echt wel weg is.
+4. Van sommige processen raak je echter niet zo makkelijk af. Probeer dan in eerste instantie **kill -2**, een interruptiesignaal. Dat is hetzelfde als een programma onderbreken met <kbd>Ctrl</kbd>+<kbd>C</kbd> als het in de voorgrond draait.
+5. Als ook dat niet helpt, zit er niet veel anders op dan het sterkste signaal te sturen, een SIGKILL, met **kill -9**.
+6. Kijk in elk geval altijd na met **ps** of het stoppen gelukt is.
+
+![](https://d.pr/i/1fxX6+)
+
+#### Het `xkill` commando
+
+Grafische programma's die vasthangen kan je proberen stoppen met `xkill`.
+
+Na het ingeven van dit commando verandert de muispijl in een doodshoofd. Beweeg het doodshoofd over het venster van het programma dat je wilt stoppen en klik met de linker muistoets.
+
 
 # Hoofdstuk 5: Scripts in Linux
