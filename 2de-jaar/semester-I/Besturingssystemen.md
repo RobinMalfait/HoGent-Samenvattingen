@@ -1035,7 +1035,7 @@ semafoor**.
 
 Voorbeeld van een sterke semafoor:
 
-![](https://d.pr/i/11x3N+)
+![](https://d.pr/i/1cXb4+)
 
 **Het algoritme van wederzijdse uitsluiting:**
 
@@ -1219,11 +1219,143 @@ Soorten Synchronisatie
 
 Semaforen zijn een primitief maar krachtig en flexibel gereedschap voor het afdwingen van wederzijdse uitsluiting en voor het coördineren van processen.
 
-Het kan echter moeilijk zijn een correct programma te maken met semaforen. De moeilijkheid is dat de bewerkingen waiten signalverspreid kunnen zijn over het programma en het is lastig te zien welke algehele invloed bewerkingen hebben op de betreffende semaforen.
+Het kan echter moeilijk zijn een correct programma te maken met semaforen. De moeilijkheid is dat de bewerkingen **wait** en **signal** verspreid kunnen zijn over het programma en het is lastig te zien welke algehele invloed bewerkingen hebben op de betreffende semaforen.
 
 De monitor is een constructie in een programmeertaal die een functionaliteit biedt die vergelijkbaar is met die van semaforen, maar die gemakkelijker te besturen is.
 
 ![](https://d.pr/i/UpMf+)
+
+Een monitor is een constructie die code kan bevatten die naar gemeenschappelijke gebruikte data verwijst. Oppervlakkig gezien lijkt het een verzameling datatypen, datastructuren en procedures, onder de monitor heading. Maar een monitor is veel meer
+
+2 procedures binnen dezelfde monitor kunnen niet tegelijk actief zijn. Door de taal gedefinieerde <font color="red">**aanroep-protocollen**</font> (callingprotocollen) dwingen dit automatisch af.
+
+Een kritieke sectie kunnen we daarom, i.p.v. deze in een proces te coderen, als monitor-procedureschrijven. De code wordt dan niet gedupliceerd. Wanneer een proces gemeenschappelijke data moet gebruiken, roept het een monitor-procedure aan.
+
+Door een compiler gegeneerde code, die de besturing aan een monitor-procedure overdraagt, wordt wederzijdse uitsluiting gegarandeerd.
+
+Op deze manier is er een aanzienlijk verschil tussen een monitor en een eenvoudige collectie procedures. Een monitor dwingt heel streng wederzijdse uitsluiting af tussen processen die proberen zijn procedures uit te voeren. Om dit verschil te benadrukken wordt een monitor-procedure een <font color="red">**procedure-entrygenoemd**</font>.
+
+Via conditionele variabelen kan de monitor processen uitstellen of hervatten om events te synchroniseren.
+
+Monitoren werken het best wanneer ze centraal geïnstalleerd kunnen worden. Omdat alle processen de monitor aanspreken, is deze het middelpunt van alle discussies en analyses. Maar vele systemen hebben geen centrale component.
+
+De monitorconstructie is geïmplementeerd in enkele programmeertalen waaronder Modula-3, Java, … . Ook is ze geïmplementeerd als een programmabibliotheek. Dit biedt de mogelijkheid grendels op elk object te plaatsen. Vooral bij zoiets als een verbonden lijst kan het zinvol zijn alle verbonden lijsten te vergrendelen met 1 grendel, 1 grendel te gebruiken voor elke lijst of 1 grendel te gebruiken voor elk element van elke lijst.
+
+> Monitor: Een constructie in een programmeertaal die voorziet in abstracte gegevenstypen en toegang, met wederzijdse uitsluiting, tot een aantal procedures.
+
+## 3.10 Deadlocks
+
+Een deadlock of een impassetoestand treedt op wanneer 2 of meer processen voor onbepaalde tijd wachten op een gebeurtenis die alleen door 1 van de wachtende processen kan worden veroorzaakt.
+
+![](https://d.pr/i/1bfoB+)
+
+**2methoden voor het behandelen van deadlocks:**
+
+- gebruik één of ander protocol (afspraak) om te garanderen dat het systeem nooit in een deadlock-situatie zal komen;
+- laat toe dat het systeem in een deadlock-situatie geraakt en los deze dan op
+
+![](https://d.pr/i/1kUJ2+)
+
+Aspecten van deadlock:
+
+- Deadlock-preventie
+
+    Het besturingssysteem beperkt het gemeenschappelijk gebruik van resources om deadlock onmogelijk te maken.
+
+- Deadlock-vermijding
+
+    Het besturingssysteem onderzoekt alle aanvragen voor resources heel nauwkeurig. Ziet het besturingssysteem dat de toewijzing van een resource het risico van deadlock met zich meebrengt, dan weigert het de gevraagde toegang en vermijdt zo het probleem.
+
+- Deadlock-signalering
+
+    Als er een deadlock optreedt, moet het besturingssysteem dit kunnen signaleren. Het besturingssysteem ziet elk proces in een wachttoestand. Hoe kan het besturingssysteem erachter komen dat dit wachten permanent is?
+
+- Deadlock-hestel
+
+    Wat moet er gebeuren nadat het besturingssysteem een deadlock ontdekt? De processen moeten daar toch een keer uit bevrijd worden. Het besturingssysteem moet dit probleem oplossen.
+
+### 3.10.1 Deadlock-preventie
+
+Een deadlock kan alleen dan optreden indien en een systeem tegelijkertijd aan de volgende 4 voorwaarden is voldaan:
+
+1. Wederzijdse uitsluiting (mutual exclusion)
+2. bezet houden en wachten (hold en request)
+3. geen voortijdig ontnemen (non-preëmption)
+4. wachten in een kring (circular wait)
+
+Om deadlock te voorkomen zorgen we ervoor dat tenminste 1 van de voorwaarden nooit optreedt.
+
+Er ontstaan aanzienlijke problemen als we proberen deadlock te voorkomen door een noodzakelijke conditie op te heffen.
+
+**Problemen:**
+
+- Als er geen wederzijdse uitsluiting wordt afgedwongen, kunnen de activiteiten van het ene proces de voortgang van het andere proces beïnvloeden. Deze conditie mag dus niet worden verwijderd.
+- Alvorens met zijn uitvoering te beginnen moet elk proces al de resources, die het nodig heeft, verkrijgen. Als een proces alle resources tegelijkertijd moet aanvragen, heeft het een aantal resources voor lange tijd onder beheer zonder ze daadwerkelijk te gebruiken. Dit beperkt de beschikbaarheid van de resources.
+- Als het proces enkele resources vasthoudt en het vraagt nog een resource aan, en deze resource kan niet onmiddellijk aan dat proces worden toegewezen (d.w.z. het proces moet wachten), dan moet het proces al de resources die het op dat ogenblik vasthoudt, vrijgeven. Als we deze conditie verwijderen, dan kan een resource met geweld van een proces ontnomen worden.
+- Onderwerp alle processen aan een lineair ordeningsschema. Ieder proces kan alleen resources in opklimmende volgorde verkrijgen.
+
+### 3.10.2 Deadlock-vermijden
+
+Het verschil tussen het vermijden en het voorkomen van een deadlock is dat in het eerste geval deadlock niet onmogelijk is. De idee is de aanvragen die eventueel tot deadlock kunnen leiden, te weigeren.
+
+### 3.10.3 Deadlock Signaleren
+
+Steeds wanneer een proces een resource aanvraagt is er deadlock mogelijk. We vragen ons af hoe het besturingssysteem deadlock kan signaleren en wat het besturingssysteem eraan doet als er een deadlock is.
+
+Eén manier om deadlock te signaleren, is een resource allocationgraf. Dit is een georiënteerde graf die gebruikt wordt om de resource-toewijzingen weer te geven.
+
+Een deadlock kunnen we signaleren door de resource allocationgraf te bekijken. Al deze een cyclus bevat, is er een deadlock. Om cycli in een georiënteerde graf te signaleren, heeft het besturingssysteem diverse algoritmen ter beschikking.
+
+### 3.10.4 Hestel in een deadlock-situatie
+
+Nu we weten hoe we een deadlock signaleren, rest ons nog 1 vraag: wat doen we eraan?
+
+Eén mogelijkheid is een proces gewoon maar af te breken en de eraan toegewezen resources verwijderen. Hierdoor wordt de cyclus en dus ook de deadlock geëlimineerd ten koste van het proces.
+
+Een andere mogelijkheid is een <font color="red">**rollback**</font> op het proces uit te voeren. Hierbij worden alle eraan toegewezen resources verwijderd. Het proces verliest alle updates die het met gebruik van deze resources heeft gemaakt, en al het werk dat inmiddels was gedaan, maar wordt niet afgebroken. Het besturingssysteem brengt het terug in de toestand van vóór de aanvraag en toewijzing van de verwijderde resources. Dit kan overeenkomen met de oorspronkelijke start van het proces, of met een checkpoint. Een checkpoint treedt op wanneer een proces vrijwillig alle resources vrijgeeft. Door het gebruik van checkpointskan elk proces eventueel verlies van werk echter zo klein mogelijk houden.
+
+## 3.11 Threads
+
+
+Een proces bestaat uit 2 afzonderlijke en mogelijk onafhankelijke concepten: een concept dat samenhangt met de eigendom van bronnen en een concept dat samenhangt met de uitvoering. Dit onderscheid heeft in enkele besturingssystemen geleid tot de ontwikkeling van een constructie die bekendstaat als een <font color="red">**thread**</font>.
+
+Om een onderscheid te maken tussen de 2 concepten, wordt de eenheid voor de verdeling (uitvoering) doorgaans een thread of lichtgewicht proces genoemd en de eenheid voor de eigendom van bronnen een proces of een taak.
+
+Multithreadingverwijst naar de mogelijkheid van een besturingssysteem binnen een proces meerdere threadsof draden te gebruiken voor de uitvoering. De traditionele benadering met één uitvoeringsthread per proces, waarin het concept thread in feite niet bestaat, wordt ook wel een benadering met één thread genoemd.
+
+![](https://d.pr/i/173QP+)
+
+In een omgeving met multithreadingwordt een proces gedefinieerd als beveiligings-en brontoewijzingseenheid.
+
+Het volgende is verbonden met processen:
+
+- een **virtuele adresruimte**, die het procesbeeld bevat
+- **beveiligde toegang** tot processors, andere processen (voor de communicatie tussen processen), bestanden en I/O bronnen (apparaten en kanalen)
+
+![](https://d.pr/i/160FL+)
+
+Binnen een proces kunnen er een of meer threadszijn, elk met het volgende:
+
+* een **uitvoeringstoestand** van de thread (actief, gereed, ...)
+* een **context** die wordt opgeslagen als de thread niet actief is, een thread kan onder meer worden gezien als een onafhankelijke programmateller die binnen een proces werk
+* **een stack** voor de uitvoering
+* **enige statische opslagcapaciteit per thread** voor lokale variabelen
+* toegang tot het geheugen en de bronnen van het bijhorende proces, die wordt gedeeld door alle threadsbinnen dat proces.
+
+Alle threadsvan een proces delen de toestand en de bronnen van dat proces. Ze bevinden zich in dezelfde adresruimte en hebben toegang tot dezelfde gegevens.
+
+De grootste voordelen van threadshangen samen met de gevolgen voor de prestaties: het creëren van een nieuwe thread binnen een bestaand proces kost veel minder tijd dan het creëren van een geheel nieuw proces en ditzelfde geldt voor het overschakelen tussen 2 threadsbinnen hetzelfde proces.
+
+Threadsverbeteren ook de efficiëntie van de communicatie tussen verschillende actieve programma's. Aangezien threadsbinnen hetzelfde proces echter geheugen en bestanden delen, kunnen ze rechtstreeks met elkaar communiceren.
+
+Net zoals processen hebben threadsuitvoeringsstoestandenen kunnen ze met elkaar worden gesynchroniseerd.
+
+![](https://d.pr/i/1jrg8+)
+
+1. Spawn
+2. Unblock
+3. Block
+4. Finish
 
 # Hoofdstuk 4: processen in Linux
 
