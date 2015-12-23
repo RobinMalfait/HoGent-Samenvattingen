@@ -1892,18 +1892,476 @@ Output: ![](https://d.pr/i/TwoQ+)
 
 | Expression | Uitleg |
 | ---------- | ------ |
-| . | Jokerteken. Vervangt elk willekeurig teken met uitzondering van \n |
-| ^ | Verwijst naar het begin van de regel |
-| $ | Verwijst naar het einde van de regel |
-| < | Verwijst naar het begin van een woord |
-| > | Verwijst naar het einde van een woord |
-| [] | Match met één van de tekens tussen de haken.<br>Vb.: [ab] is hetzelfde als [a\|b]; [a-d] = [a\|b\|c\|d] |
-| [^] | Match met alle tekens die niet tussen de haken staan. <br>Vb.: ^[^a-z] regel die niet begint met een kleine letter
-| () | Groepering. <br>Vb.: (va|moe)der matcht met 'vader' en 'moeder'; (groot)?vader matcht met 'vader' en 'grootvader' |
-| ? | Voorgaand teken of reguliere epxressie komt nul of één keer voor |
+| . | **Jokerteken**. Vervangt elk willekeurig teken met uitzondering van \n |
+| ^ | Verwijst naar het **begin** van de regel |
+| $ | Verwijst naar het **einde** van de regel |
+| < | Verwijst naar het begin van een **woord** |
+| > | Verwijst naar het einde van een **woord** |
+| [] | Match met **één van de tekens** tussen de haken.<br>Vb.: [ab] is hetzelfde als [a\|b]; [a-d] = [a\|b\|c\|d] |
+| [^] | Match met alle **tekens** die **niet** tussen de haken staan. <br>Vb.: ^[^a-z] regel die niet begint met een kleine letter
+| () | Groepering. <br>Vb.: (va\|moe)der matcht met 'vader' en 'moeder'; (groot)?vader matcht met 'vader' en 'grootvader' |
+| ? | Voorgaand teken of reguliere epxressie komt **nul** of **één** keer voor |
 | * | Voorgaand teken of reguliere expressie mag 0, 1 of meerdere keren voorkomen |
-| + | Voorgaand teken komt één of meerdere keren voor |
-| {n} | Voorafgaand teken komt juist n keer voor |
-| {n,} | Voorafgaand teken komt minstens n keer voor |
-| {,n} | Voorafgaand teken komt hoogstens n keer voor
-| \ | Escape teken: Voorkoomt dat de shell de speciale regex tekens interpreteert en vervangt. |
+| + | Voorgaand teken komt **één** of **meerdere** keren voor |
+| {n} | Voorafgaand teken komt **juist n** keer voor |
+| {n,} | Voorafgaand teken komt **minstens n** keer voor |
+| {,n} | Voorafgaand teken komt **hoogstens n** keer voor
+| \ | Escape teken: Voorkomt dat de shell de speciale regex tekens interpreteert en vervangt. |
+| Lin.x | De tekens 'Lin' gevolgd door een willekeurig teken, gevolgd door 'x' **ergens** in de tekst. |
+| ^[M\|W]ortel | Matcht met Mortel en Wortel aan het begin van een **regel** |
+| ab*c | 'a' gevolgd door **0 of meer** 'b'-s gevolgd door 'c' (dus 'ac', 'abc', 'abbc', 'abbbc', ...) |
+| a(bc){2,4} | Matcht met 'abcbc', 'abcbcbc' en 'abcbcbcbc' |
+| ,[a-zA-Z0-9]$ | Matcht regels die eindigen op een komma, gevolgd door een alfanumeriek karakter. |
+
+Om interpretatie problemen te voorkomen, is het aan te raden reguliere expressies altijd tussen aanhalingstekens te zetten, zo zorg je er voor dat ze niet door de shell geïnterpreteerd worden.
+
+> *Note:* Wil je je regex skills testen, of nog meer informatie opdoen? [https://regexr.com](https://regexr.com). Check et ut gasten
+
+## Programeerbare filters
+
+In veel gevallen is het wenselijk tekst in bestanden te bewerken op basis van woorden die voorkomen in de regels van dat bestand.
+
+Hiervoor kan gebruik gemaakt worden van `gawk` en `sed`
+
+
+### SED
+
+> Stream EDitor
+
+De streameditor sed is een afgeleide van de oereditor ed.
+
+Perl wordt vaak gezien als de opvolger van sed.
+
+Op elke **regel** van het bestand wordt de **filteropdracht** uitgevoerd.
+
+**Syntaxt** sed: `sed 'lijst van opdrachten' bestandsnaam`
+
+De filteropdrachten kunnen ok uit een tekstbestand genomen worden (**-f** optie)
+
+Gebruik de **-n** optie om te voorkomen dat het oorspronkelijk bestand ook uitgevoerd (getoond) wordt.
+
+Regel selectie gebeut met een reguliere expressie tussen **/** gevolgd door een opdracht:
+
+- **p** voor afdrukken
+- **d** voor delete
+- **a** voor add
+
+Voorbeeld:
+
+```
+Pieter Paashaas
+
+Daar komt Pieter Paashaas aan
+voor het kippenhok blijft hij staan
+hij doet alle deurtjes open
+kan ik hier ook eitjes kopen?
+tok, tok, tok
+tok, tok, tok
+alle kippetjes zijn op stok
+kukeleku, kukeleku
+alle eitjes zijn voor u.
+```
+
+Output: ![](https://d.pr/i/17oHe+)
+
+#### Substitutieopdrachten
+
+Syntaxt: `s/patroon/vercanging/[opties]`
+
+Opties:
+
+- getal -> vervang alleen de n-de keer
+- g -> vervang elke keer
+- p -> druk elke regel af waarin vervangen werd
+- w bestand -> schrijf gewijzigde regels weg naar bestand
+
+Voorbeelden:
+
+![](https://d.pr/i/wbED+)
+![](https://d.pr/i/1aIQR+)
+![](https://d.pr/i/16zZJ+)
+
+## Flow Control
+
+`if`, `else`, `case`, `for`, `while` & `until`
+
+### Exit-status: exit
+
+Elk script moet een exit-status terug geven `exit 0`, als de exit-status **0** is dan is alles correct, wanneer de exit-status 1 tot en met 255 is, dan is er wat fout gegaan.
+
+Je kan de exit status opvragen met `$?`
+
+### Return en test
+
+Met het commando `return` doet men hetzelfde als exit, maar het wordt alleen gebruikt binnen een functie of een script dat is aangeroepen met het commando `source`.
+
+Het commando `test` wordt gebruikt om een conditie te 'testen'
+
+Voorbeeld: `if test -z $1` in bash kan dit vervangen worden door gebruik te maken van vierkante haken: `if [ -z $1 ]`
+
+Voorbeeld:
+
+```bash
+#!/bin/bash
+
+clear
+
+if [ -z $1 ]
+then
+    echo "Foutmelding"
+    exit 1
+fi
+```
+
+Output: ![](https://d.pr/i/17Ayi+)
+
+Met het commando `test` wordt een expressie geëvalueerd:
+
+- Is de uitkomst positief, wordt een exit-status 0 gegeven
+- Is de uitkomst negatief, wordt een exit-status 1 gegeven.
+
+Er kunnen 5 soorten tests worden uitgevoerd:
+
+- File testers: waarmee gekeken wordt naar de eigenschapen van een bestand
+- File comparisons: waarmee bestanden vergeleken worden;
+- String tests: waarmee de lengte van een string bekeken kan worden;
+- Expression test: waarmee gekeken wordt naar de uitkomst van expressies
+- integer tests: waarmee 'getallen' vergeleken kunnen worden.
+
+Voor elke test kan ook gekeken worden of niet aan de voorwaarde wordt voldaan; hiervoer dient het uitroepteken(**!**)
+
+**FILE TESTER**
+
+| Test        | Description |
+| ----------- | ----------- |
+| [ -b FILE ] | True if FILE exists and is a block-special file. |
+| [ -c FILE ] | True if FILE exists and is a character-special file. |
+| [ -d FILE ] | True if FILE exists and is a directory. |
+| [ -e FILE ] | True if FILE exists. |
+| [ -s FILE ] | True if FILE exists and has a size greater than zero. |
+| [ -f FILE ] | True if FILE exists and is a regular file. |
+| [ -h FILE ] | True if FILE exists and is a symbolic link. |
+| [ -r FILE ] | True if FILE exists and is readable. |
+| [ -w FILE ] | True if FILE exists and is writable. |
+| [ -x FILE ] | True if FILE exists and is executable. |
+| [ -O FILE ] | True if FILE exists and is owned by the effective user ID. |
+| [ -G FILE ] | True if FILE exists and is owned by the effective group ID. |
+| [ -L FILE ] | True if FILE exists and is a symbolic link. |
+| [ -N FILE ] | True if FILE exists and has been modified since it was last read. |
+| [ -S FILE ] | True if FILE exists and is a socket. |
+
+**FILE COMPARISONS**
+
+| Test | Description |
+| ---- | ----------- |
+| [ FILE1 -ntFILE2 ] | True if FILE1 has been changed more recently than FILE2, or if FILE1 exists and FILE2 does not. |
+| [ FILE1 -otFILE2 ] | True if FILE1 is older than FILE2, or is FILE2 exists and FILE1 does not. |
+| [ FILE1 -efFILE2 ] | True if FILE1 and FILE2 refer to the same device and inodenumbers. |
+
+**STRING TESTS**
+
+| Test | Description |
+| ---- | ----------- |
+| [ -z STRING ] | True if the length of "STRING" is zero. |
+| [ -n STRING ] or [ STRING ] | True if the length of "STRING" is non-zero. |
+| [ STRING1 == STRING2 ] | True if the strings are equal. |
+| [ STRING1 != STRING2 ] | True if the strings are not equal. |
+
+**INTEGER TESTS - operators**
+
+`[ ARG1 OP ARG2 ]`
+
+"OP" is one of `-eq`, `-ne`, `-lt`, `-le`, `-gt` or `-ge`.
+
+These arithmetic binary operators return true if "ARG1" is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to "ARG2", respectively.
+"ARG1" and "ARG2" are integers.
+
+## IF THEN ELSE
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+if [[ -e "${1}" ]]; then
+    echo "${1) bestaat"
+else
+    echo "${1} bestaat niet"
+fi
+```
+
+## CASE
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+case $1 in
+    -a) echo u hebt optie -a ingegeven;;
+    -b) echo u hebt optie -b ingegeven;;
+    *) echo Fout!! U hebt een onbekende optie ingegeven; exit 1;;
+esac
+```
+
+## FOR
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+# Zorgt er voor dat de separator ":" is ipv " "
+IFS=:
+
+for dir in $PATH
+do
+    ls --ld $dir
+done
+```
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+for ((getal=1; "${getal}" <= 10; getal++))
+do
+    echo "${getal}"
+done
+```
+
+## WHILE / UNTIL
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+while who | grep elvis >/dev/null
+do
+    sleep 10
+done
+echo "Elvis left the building!"
+
+until who | grep elvis >/dev/null
+do
+    sleep 10
+done
+echo "Elvis arrived"
+
+
+count=1
+while [ -n "$*" ]
+do
+    echo "Dit is parameter nummer $count: $1"
+    shift
+    count=`expr $count + 1`
+done
+```
+
+## Meer over variabelen
+
+Met het commando `declare`:
+
+`declare opties variabele=waarde`
+
+Enkele opties:
+
+- -a -> variabele is een tabel
+- -i -> variabele is een integer
+- -p -> toont de kenmerken en de waarde van de variabele
+- -r -> variabele is readonly
+
+
+**Constanten:**
+
+`readonly OPTION VARIABELE(N)`
+
+## Rekenen in script
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+teller=1
+
+while true
+do
+    teller=$((teller + 1))      # Optie 1: $(( ... ))
+    echo teller is $teller
+done
+
+x=`expr $1 + $2 + $3`           # Optie 2: `expr ...`
+echo $x
+
+n=0
+echo "n = $n"
+(( n += 1 ))                    # Optie 3: (( ... ))
+let n=n+3                       # Optie 4: let
+```
+
+## Functies
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+blub()
+{
+    echo "Dit is een functie..."
+    echo "Met ${#} parameters:" $@
+}
+
+blub hallo alles goed
+```
+
+**Waarden uit functie teruggeven:**
+
+```
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+clear
+
+product()
+{
+    echo "$(($1 * $2))"     # Optie 1: Door middel van echo waarde
+}
+
+k=$(product $1 $2)
+
+echo "$1 * $2 = $k"
+
+
+som=                        # Optie 2.1: Globale variabele declareren
+
+plus()
+{
+    som=$(($1 + $2))        # Optie 2.2: Globale variabele instellen
+}
+
+product $1 $2
+
+echo "$1 + $2 = $som"
+```
+
+## Opties
+
+- manueel parsen
+- `grep` zoeken met het koppelteken
+- met `getopts`
+
+### Manueel Parsen:
+
+```
+#!/bin/bash
+
+# Optie [ -a -b -c ] parameters
+set -o errexit
+set -o nounset
+
+clear
+
+while [ "$#" -gt 0 ]
+do
+    # Met een If-elif-else-fi structuur
+    if [ "$1" = "-a" ]; then # Als je de then opdezelfde lijn zet, met er een ; vor
+        echo "Dit is de eerste optie"
+    elif [ "$1" = "-b" ]
+    then
+        echo "Dit is de tweede optie"
+    elif [ "$1" = "-c" ]
+        echo "Dit is de derde optie"
+    else
+        echo "$1 is geen geldige optie"
+    fi
+    shift
+
+    # Met een case-esac structuur
+    case $1 in
+        -a) echo "Dit is de eerste optie";;
+        -b) echo "Dit is de tweede optie";;
+        -c) echo "Dit is de derde optie";;
+        *) echo "$1 is geen geldige optie";;
+    esac
+    shift
+done
+
+echo "parameter 1 is $1"
+```
+
+### GREP Parsen:
+
+```
+#!/bin/bash
+
+# Optie [ -a -b -c ] parameters
+set -o errexit
+set -o nounset
+
+clear
+
+while [ -n "$(echo $1 | grep '-')" ]; do
+    case $1 in
+        -a) echo "dit is de eerste optie";;
+        -b) echo "dit is de tweede optie";;
+        -c) echo "dit is de derde optie";;
+        *) echo "foute optie"; exit;;
+    esac
+    shift
+done
+echo "parameter 1 is $1" # en verdere afhandeling
+```
+
+### GETOPTS Parsen:
+
+```
+#!/bin/bash
+
+# getoptions.sh [-a] [-b args] [-c] args...
+# Toont de werkign van getopts
+set -o errexit
+set -o nounset
+
+clear
+
+while getopts ":ab:c" opt
+do
+    case $opt in
+        a) echo "Je hebt optie -a gekozen";;
+        b) echo "Je hebt optie -b gekozen"
+           echo "Het argument van -b is $OPTARG";;
+        c) echo "Je hebt optie -c gekozen";;
+        *) echo 'optie [-a] [-b argument] [-c] args...'
+           exit 1;;
+    esac
+done
+shift $(($OPTIND -1))
+echo parameter 1 is $1
+```
