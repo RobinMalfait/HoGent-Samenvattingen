@@ -196,15 +196,91 @@ public class PizzaStore
         return pizza;
     }
 }
+
+/**
+ * Objecten
+ */
+PizzaStore store = new PizzaStore(new PizzaFactory());
+store.orderPizza("cheese");
 ```
 
 # 3. Decorator Pattern
 
+Voorbeeld in de cursus: Koffie
+
+Ik ga het voorbeeld nemen van een kerstboom, het is toch kerst voor iedereen, niet waar?
+
+Structuur van objecten.
+
 ## 3.1. DEFINITIE
+
+> Het Decorator Pattern kent dynamisch additionele verantwoordelijkheden toe aan een object. Decorators bieden een flexibel alternatief voor het gebruik van subklassen om functionaliteiten uit te breiden.
 
 ## 3.2. UML DIAGRAM
 
+![](https://d.pr/i/p59T+)
+
 ## 3.3. CODE
+
+```java
+public interface Versiering // Component
+{
+    public String versier();
+}
+
+public class Kerstboom implements Versiering // Concrete Component
+{
+    public String versier()
+    {
+        return "Kerstboom";
+    }
+}
+
+public class KerstBal implements Versiering // Decorators
+{
+    private Versiering versiering;
+    private int aantal;
+
+    public KerstBal(int aantal, Versiering versiering)
+    {
+        this.aantal = aantal;
+        this.versiering = versiering;
+    }
+
+    public String versier()
+    {
+        return versiering.versier() + ', met ' + aantal + ' kerstballen';
+    }
+}
+
+public class KerstSlinger implements Versiering // Decorators
+{
+    private Versiering versiering;
+
+    public KerstSlinger(Versiering versiering)
+    {
+        this.versiering = versiering;
+    }
+
+    public String versier()
+    {
+        return versiering.versier() + ', met een slinger';
+    }
+}
+
+/**
+ * Objecten
+ */
+Versiering kerstBoom = new KerstBoom();
+Versiering kerstBoomMetBallen = new KerstBal(10, new KerstBoom());
+Versiering kerstBoomMetBallenEnEenSlinger = new KerstBal(10, new KerstSlinger(new KerstBoom()));
+Versiering kerstBoomMetSlinger = new KerstSlinger(new KerstBoom());
+
+System.out.println(kerstBoom.versier());
+System.out.println(kerstBoomMetBallen.versier());
+System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
+System.out.println(kerstBoomMetSlinger.versier());
+```
 
 # 4. Observer Pattern
 
