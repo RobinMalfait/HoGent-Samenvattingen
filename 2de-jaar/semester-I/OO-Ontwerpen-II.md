@@ -2,21 +2,21 @@
 title: OO Ontwerpen II
 -->
 
-# Desig Patterns
-
 > De enige constante die je altijd tegenkomt is **VERANDERING**
 
-## Strategy Pattern (gedrag van objecten)
+# Strategy Pattern (gedrag van objecten)
+
+## DEFINITIE
 
 > **Het Strategy Pattern** definieert een familie algoritmen, isoleert ze en maakt ze uitwisselbaar. Strategy maakt het mogelijk om het algoritme los van de client die deze gebruikt, te veranderen.
 
-### UML Diagram
+## UML Diagram
 
 ![](https://d.pr/i/meLo+)
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden kome...)
 
-### CODE
+## CODE
 
 ```java
 /**
@@ -134,3 +134,44 @@ System.out.println(duck1.peformQuack());
 Duck duck2 = new WeirdDuck();
 System.out.println(duck2.peformQuack());
 ```
+
+# Simple Factory Pattern
+
+## DEFINITIE
+
+## UML DIAGRAM
+
+## CODE
+
+
+# Decorator Pattern
+
+## DEFINITIE
+
+## UML DIAGRAM
+
+## CODE
+
+# Observer Pattern
+
+## DEFINITIE
+
+## UML DIAGRAM
+
+## CODE
+
+# Façade Pattern
+
+## DEFINITIE
+
+## UML DIAGRAM
+
+## CODE
+
+# State Pattern
+
+## DEFINITIE
+
+## UML DIAGRAM
+
+## CODE
