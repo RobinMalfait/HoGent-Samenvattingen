@@ -212,6 +212,9 @@ Ik ga het voorbeeld nemen van een kerstboom, het is toch kerst voor iedereen, ni
 
 Structuur van objecten.
 
+Decorators kunnen gebruik maken van een interface als component (Zie Code) of van een Abtracte Klasse van een Component (Zie UML DIAGRAM).
+Niet duidelijk? Schrijf maar iets in de comments of verwittig me :)
+
 ## 3.1. DEFINITIE
 
 > Het Decorator Pattern kent dynamisch additionele verantwoordelijkheden toe aan een object. Decorators bieden een flexibel alternatief voor het gebruik van subklassen om functionaliteiten uit te breiden.
