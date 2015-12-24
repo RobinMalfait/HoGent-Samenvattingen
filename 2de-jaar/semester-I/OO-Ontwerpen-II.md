@@ -12,7 +12,7 @@ title: OO Ontwerpen II
 
 ### UML Diagram
 
-![](http://d.pr/Y5ew+)
+![](https://d.pr/Y5ew+)
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden kome...)
 
