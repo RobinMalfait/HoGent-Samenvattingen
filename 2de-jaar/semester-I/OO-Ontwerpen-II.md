@@ -6,6 +6,8 @@ title: OO Ontwerpen II
 
 # 1. Strategy Pattern
 
+Voorbeeld: Eenden
+
 Gedrag van objecten.
 
 ## 1.1. DEFINITIE
@@ -14,9 +16,9 @@ Gedrag van objecten.
 
 ## 1.2. UML Diagram
 
-![](https://d.pr/i/meLo+)
+![](https://d.pr/i/ywLl+)
 
-(*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden kome...)
+(*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden komen...)
 
 ## 1.3. CODE
 
@@ -139,12 +141,62 @@ System.out.println(duck2.peformQuack());
 
 # 2. Simple Factory Pattern
 
+Voorbeeld: Pizzeria
+
+Creëren van klassen.
+
 ## 2.1. DEFINITIE
+
+> We nemen de code voor de creatie op en verplaatsen deze naar een ander object at alleen maar het maken van pizza's als taak zal hebben. Dit object noemen we Factory.
 
 ## 2.2. UML DIAGRAM
 
+![](https://d.pr/i/wBun+)
+
 ## 2.3. CODE
 
+```java
+public class PizzaFactory
+{
+    public Pizza createPizza(String type)
+    {
+        switch(type.toLowerCase())
+        {
+            case "cheese": return new CheesePizza();
+            case "pepperoni": return new PepperoniPizza();
+            case "clam": return new ClamPizza();
+            case "veggie": return new VeggiePizza();
+            default: return null;
+        }
+    }
+}
+
+public class PizzaStore
+{
+    private PizzaFactory factory;
+
+    public PizzaStore(PizzaFactory factory)
+    {
+        this.factory = factory;
+    }
+
+    public Pizza orderPizza(String type)
+    {
+        Pizza pizza = factory.createPizza(type);
+
+        if (pizza != null)
+        {
+            pizza.prepare();
+            pizza.bake();
+            pizza.cut();
+            pizza.box();
+            // ...
+        }
+
+        return pizza;
+    }
+}
+```
 
 # 3. Decorator Pattern
 
