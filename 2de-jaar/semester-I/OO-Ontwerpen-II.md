@@ -4,19 +4,21 @@ title: OO Ontwerpen II
 
 > De enige constante die je altijd tegenkomt is **VERANDERING**
 
-# Strategy Pattern (gedrag van objecten)
+# 1. Strategy Pattern
 
-## DEFINITIE
+Gedrag van objecten.
+
+## 1.1. DEFINITIE
 
 > **Het Strategy Pattern** definieert een familie algoritmen, isoleert ze en maakt ze uitwisselbaar. Strategy maakt het mogelijk om het algoritme los van de client die deze gebruikt, te veranderen.
 
-## UML Diagram
+## 1.2. UML Diagram
 
 ![](https://d.pr/i/meLo+)
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden kome...)
 
-## CODE
+## 1.3. CODE
 
 ```java
 /**
@@ -135,43 +137,43 @@ Duck duck2 = new WeirdDuck();
 System.out.println(duck2.peformQuack());
 ```
 
-# Simple Factory Pattern
+# 2. Simple Factory Pattern
 
-## DEFINITIE
+## 2.1. DEFINITIE
 
-## UML DIAGRAM
+## 2.2. UML DIAGRAM
 
-## CODE
+## 2.3. CODE
 
 
-# Decorator Pattern
+# 3. Decorator Pattern
 
-## DEFINITIE
+## 3.1. DEFINITIE
 
-## UML DIAGRAM
+## 3.2. UML DIAGRAM
 
-## CODE
+## 3.3. CODE
 
-# Observer Pattern
+# 4. Observer Pattern
 
-## DEFINITIE
+## 4.1. DEFINITIE
 
-## UML DIAGRAM
+## 4.2. UML DIAGRAM
 
-## CODE
+## 4.3. CODE
 
-# Façade Pattern
+# 5. Façade Pattern
 
-## DEFINITIE
+## 5.1. DEFINITIE
 
-## UML DIAGRAM
+## 5.2. UML DIAGRAM
 
-## CODE
+## 5.3. CODE
 
-# State Pattern
+# 6. State Pattern
 
-## DEFINITIE
+## 6.1. DEFINITIE
 
-## UML DIAGRAM
+## 6.2. UML DIAGRAM
 
-## CODE
+## 6.3. CODE
