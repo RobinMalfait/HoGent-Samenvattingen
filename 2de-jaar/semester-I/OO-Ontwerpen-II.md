@@ -287,11 +287,31 @@ System.out.println(kerstBoomMetSlinger.versier());
 
 # 4. Observer Pattern
 
+Gedrag van objecten.
+
 ## 4.1. DEFINITIE
+
+> Het Observer Pattern definieert een één-op-veel-relatie (1:n) tussen objecten, zodanig dat wanneer de toestand van een object verandert, alle afhankelijke objecten worden bericht en automatisch worden geüpdatet.
 
 ## 4.2. UML DIAGRAM
 
+![](https://d.pr/i/142OW+)
+
 ## 4.3. CODE
+
+```java
+public interface Subject
+{
+    public void addObserver(Observer o);
+    public void removeObserver(Observer o);
+    public void notifyObserver();
+}
+
+public interface Observer
+{
+    public void update();
+}
+```
 
 # 5. Façade Pattern
 
