@@ -427,11 +427,78 @@ weatherData.setMeasurements(78, 90, 29.2f);
 
 # 5. Façade Pattern
 
+Structuur van objecten
+
 ## 5.1. DEFINITIE
+
+> Het Façade Pattern zorgt voor een vereenvoudigde interface naar een verzameling interfaces in een subsysteem. De façade definieert een interface op een hoger niveau zodat het gebruikt van het subsysteem vereenvoudigt.
 
 ## 5.2. UML DIAGRAM
 
+![]https://d.pr/i/13fyo+)
+
 ## 5.3. CODE
+
+**Voorbeeld**: Home Theater
+
+```java
+public class HomeTheaterFacade
+{
+    private Amplifier amp; private Tuner tuner;
+    private DvdPlayer dvd; private CdPlayer cd;
+    private Projector projector; private TheaterLights lights;
+    private Screen screen; private PopcornPopper popper;
+
+    public HomeTheaterFacade(Amplifier amp, Tuner tuner, DvdPlayer dvd, CdPlayer cd, Projector projector, Screen screen, TheaterLights lights, PopcornPopper popper)
+    {
+        this.amp = amp;
+        this.tuner = tuner;
+        this.dvd = dvd;
+        this.cd = cd;
+        this.projector = projector;
+        this.screen = screen;
+        this.lights = lights;
+        this.popper = popper;
+    }
+
+    public void watchMovie(String movie)
+    {
+        System.out.println("Get ready to watch a movie...");
+
+        popper.on();
+        popper.pop();
+
+        lights.dim(10);
+        screen.down();
+
+        projector.on();
+        projector.wideScreenMode();
+
+        amp.on();
+        amp.setDvd(dvd);
+        amp.setSurroundSound();
+        amp.setVolume(5);
+
+        dvd.on();
+        dvd.play(movie);
+    }
+
+    public void endMovie()
+    {
+        System.out.println("Shutting movie theater down...");
+
+        popper.off();
+        lights.on();
+        screen.up();
+        projector.off();
+        amp.off();
+
+        dvd.stop();
+        dvd.eject();
+        dvd.off();
+    }
+}
+```
 
 # 6. State Pattern
 
