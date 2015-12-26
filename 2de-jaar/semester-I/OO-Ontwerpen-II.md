@@ -516,7 +516,7 @@ Gedrag van objecten
 
 Voorbeeld van een state machine diagram:
 
-![](https://d.pr/i/162nL+)
+![](https://d.pr/i/1c575+)
 
 ## 6.4. CODE
 
