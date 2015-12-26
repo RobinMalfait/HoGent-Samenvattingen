@@ -946,18 +946,18 @@ Naast de eenvoud en de elegantie van semaforen hebben ze nog een ander belangrij
 
 <font color="red">Als 1 proces P(S) uitvoert, zijn alle andere gedwongen te wachten.</font>
 
-Een semafooris dus een onderdeel van een synchronisatie-mechanisme voor parallelle of gedistribueerde programma's.
+Een semafoor is dus een onderdeel van een synchronisatie-mechanisme voor parallelle of gedistribueerde programma's.
 
 ### 3.7.2 Sterke Semaforen
 
 - Voor het verzenden van een signaal via semafoor s voert een proces de primitieve signal(s) uit.
-- Voor het ontvangen van een signaal via semafoor s voert een proces de primitieve wait(s) uit; is het corresponderende signaal nog niet verzonden, dan wordt het proces onderbroken totdat het versturen ervan plaatsvindt.
+- Voor het ontvangen van een signaal via semafoor s voert een proces de primitieve wait(s) uit; is het corresponderende signaal nog niet verzonden, dan wordt het proces onderbroken totdat het versturen ervan plaats vindt.
 
 Om het gewenste effect te bereiken kunnen we de semafoor beschouwen als een variabele die een gehele waarde heeft en waarvoor **3 bewerkingen zijn gedefinieerd:**
 
-1. Een semafoor kan worden <font color="#0088cc">geïnitialiseerdop een niet-negatieve waarde</font>.
-2. De bewerking <font color="#0088cc">**wait** verlaagt de semafoorwaarde</font>. Wordt de waarde negatief, dan wordt het proces dat de opdracht waituitvoert, geblokkeerd.
-3. De bewerking <font color="#0088cc">**signal** verhoogt de semafoorwaarde</font>. Is de waarde niet positief, dan wordt een proces dat is geblokkeerd door een bewerking waitgeblokkeerd.
+1. Een semafoor kan worden <font color="#0088cc">geïnitialiseerd op een niet-negatieve waarde</font>.
+2. De bewerking <font color="#0088cc">**wait** verlaagt de semafoorwaarde</font>. Wordt de waarde negatief, dan wordt het proces dat de opdracht wait uitvoert, geblokkeerd.
+3. De bewerking <font color="#0088cc">**signal** verhoogt de semafoorwaarde</font>. Is de waarde niet positief, dan wordt een proces dat is geblokkeerd door een bewerking wait gedeblokkeerd.
 
 Er bestaat geen mogelijkheid, anders dan deze 3 bewerkingen, om semaforen te inspecteren of te bewerken.
 
