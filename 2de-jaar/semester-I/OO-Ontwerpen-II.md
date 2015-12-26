@@ -147,7 +147,7 @@ Creëren van klassen.
 
 ## 2.1. DEFINITIE
 
-> We nemen de code voor de creatie op en verplaatsen deze naar een ander object at alleen maar het maken van pizza's als taak zal hebben. Dit object noemen we Factory.
+> We nemen de code voor de creatie op en verplaatsen deze naar een ander object at alleen maar het maken van pizza's als taak zal hebben. Dit object noemen we **Factory**.
 
 ## 2.2. UML DIAGRAM
 
@@ -217,7 +217,7 @@ Niet duidelijk? Schrijf maar iets in de comments of verwittig me :)
 
 ## 3.1. DEFINITIE
 
-> Het Decorator Pattern kent dynamisch additionele verantwoordelijkheden toe aan een object. Decorators bieden een flexibel alternatief voor het gebruik van subklassen om functionaliteiten uit te breiden.
+> Het **Decorator Pattern** kent dynamisch additionele verantwoordelijkheden toe aan een object. Decorators bieden een flexibel alternatief voor het gebruik van subklassen om functionaliteiten uit te breiden.
 
 ## 3.2. UML DIAGRAM
 
@@ -291,7 +291,7 @@ Gedrag van objecten.
 
 ## 4.1. DEFINITIE
 
-> Het Observer Pattern definieert een één-op-veel-relatie (1:n) tussen objecten, zodanig dat wanneer de toestand van een object verandert, alle afhankelijke objecten worden bericht en automatisch worden geüpdatet.
+> Het **Observer Pattern** definieert een één-op-veel-relatie (1:n) tussen objecten, zodanig dat wanneer de toestand van een object verandert, alle afhankelijke objecten worden bericht en automatisch worden geüpdatet.
 
 ## 4.2. UML DIAGRAM
 
@@ -431,7 +431,7 @@ Structuur van objecten
 
 ## 5.1. DEFINITIE
 
-> Het Façade Pattern zorgt voor een vereenvoudigde interface naar een verzameling interfaces in een subsysteem. De façade definieert een interface op een hoger niveau zodat het gebruikt van het subsysteem vereenvoudigt.
+> Het **Façade Pattern** zorgt voor een vereenvoudigde interface naar een verzameling interfaces in een subsysteem. De façade definieert een interface op een hoger niveau zodat het gebruikt van het subsysteem vereenvoudigt.
 
 ## 5.2. UML DIAGRAM
 
@@ -502,8 +502,277 @@ public class HomeTheaterFacade
 
 # 6. State Pattern
 
+Gedrag van objecten
+
 ## 6.1. DEFINITIE
+
+> Het **State Pattern** maakt het voor een object mogelijk zijn gedrag te veranderen wanneer zijn interne toestand verandert. Het object lijkt van klasse te veranderen.
 
 ## 6.2. UML DIAGRAM
 
-## 6.3. CODE
+![](https://d.pr/i/1djSq+)
+
+## 6.3. STATE MACHINE DIAGRAM
+
+Voorbeeld van een state machine diagram:
+
+![](https://d.pr/i/162nL+)
+
+## 6.4. CODE
+
+**Voorbeeld:** kauwgomballen
+
+```java
+abstract class GumballMachineState
+{
+    protected GumballMachine gumballMachine;
+
+    protected GumballMachineState(GumballMachine gumballMachine)
+    {
+        this.gumballMachine = gumballMachine;
+    }
+
+    protected String insertQuarter()
+    {
+        return "You can't insert a quarter";
+    }
+
+    protected String ejectQuarter()
+    {
+        return "You haven't inserted a quarter";
+    }
+
+    protected String turnCrank()
+    {
+        return "You can't turn";
+    }
+
+    protected String dispense()
+    {
+        return "You need to pay first";
+    }
+}
+
+public class GumballMachine
+{
+
+    private GumballMachineState currentState;
+    private int count = 0;
+
+    public GumballMachine(int numberGumballs)
+    {
+        this.count = numberGumballs;
+        if (numberGumballs > 0) {
+            toState(new NoQuarterState(this));
+        } else {
+            toState(new OutOfGumballsState(this));
+        }
+    }
+
+    public String insertQuarter()
+    {
+        return currentState.insertQuarter();
+    }
+
+    public String ejectQuarter()
+    {
+        return currentState.ejectQuarter();
+    }
+
+    public String turnCrank()
+    {
+        String msg1 = currentState.turnCrank();
+        String msg2 = currentState.dispense();
+        return String.format("%s\n%s", msg1, msg2);
+    }
+
+    protected String releaseBall()
+    {
+        if (count != 0) {
+            count = count - 1;
+        }
+        return "A gumball comes rolling out the slot...";
+    }
+
+    public int getCount()
+    {
+        return count;
+    }
+
+    public void refill(int count)
+    {
+        this.count = count;
+        toState(new NoQuarterState(this));
+    }
+
+    protected void toState(GumballMachineState state)
+    {
+        currentState = state;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\nJava-enabled Standing Gumball Model");
+        result.append("\nInventory: " + count + " gumball");
+        if (count != 1) {
+            result.append("s");
+        }
+        result.append("\n");
+        result.append("Machine is " + currentState + "\n");
+        return result.toString();
+    }
+}
+
+class HasQuarterState extends GumballMachineState
+{
+    private Random randomWinner = new java.util.Random();
+
+    protected HasQuarterState(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
+    }
+
+    @Override
+    protected String ejectQuarter()
+    {
+        gumballMachine.toState(new NoQuarterState(gumballMachine));
+        return "Quarter returned";
+    }
+
+    @Override
+    protected String turnCrank()
+    {
+        int winner = randomWinner.nextInt(10);
+        if ((winner == 0) && (gumballMachine.getCount() > 1)) {
+            gumballMachine.toState(new WinnerState(gumballMachine));
+        } else {
+            gumballMachine.toState(new SoldState(gumballMachine));
+        }
+        return "You turned...";
+    }
+
+    @Override
+    public String toString()
+    {
+        return "waiting for turn of crank";
+    }
+}
+
+class NoQuarterState extends GumballMachineState
+{
+    protected NoQuarterState(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
+    }
+
+    @Override
+    protected String insertQuarter()
+    {
+        gumballMachine.toState(new HasQuarterState(gumballMachine));
+        return "You inserted a quarter";
+    }
+
+    @Override
+    public String toString()
+    {
+        return "waiting for quarter";
+    }
+}
+
+class OutOfGumballsState extends GumballMachineState
+{
+    protected OutOfGumballsState(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "sold out";
+    }
+}
+
+class SoldState extends GumballMachineState
+{
+    protected SoldState(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
+    }
+
+    @Override
+    protected String dispense()
+    {
+        String msg = gumballMachine.releaseBall();
+        if (gumballMachine.getCount() > 0) {
+            gumballMachine.toState(new NoQuarterState(gumballMachine));
+        } else {
+            msg = String.format("%s\n%s", msg, "Oops, out of gumballs!");
+            gumballMachine.toState(new OutOfGumballsState(gumballMachine));
+        }
+        return msg;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "dispensing a gumball";
+    }
+}
+
+
+class WinnerState extends GumballMachineState
+{
+    protected WinnerState(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
+    }
+
+    @Override
+    protected String dispense()
+    {
+        String msg = "YOU'RE A WINNER! You get two gumballs for your quarter\n";
+        gumballMachine.releaseBall();
+        if (gumballMachine.getCount() == 0) {
+            msg += "\nOops, out of gumballs!";
+            gumballMachine.toState(new OutOfGumballsState(gumballMachine));
+        } else {
+            msg += gumballMachine.releaseBall();
+            if (gumballMachine.getCount() > 0) {
+                gumballMachine.toState(new NoQuarterState(gumballMachine));
+            } else {
+                gumballMachine.toState(new OutOfGumballsState(gumballMachine));
+            }
+        }
+        return msg;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "despensing two gumballs for your quarter, because YOU'RE A WINNER!";
+    }
+}
+
+/**
+ * Objects
+ */
+GumballMachine gumballMachine = new GumballMachine(5);
+
+System.out.println(gumballMachine);
+
+System.out.println(gumballMachine.insertQuarter());
+System.out.println(gumballMachine.turnCrank());
+
+System.out.println(gumballMachine);
+
+System.out.println(gumballMachine.insertQuarter());
+System.out.println(gumballMachine.turnCrank());
+System.out.println(gumballMachine.insertQuarter());
+System.out.println(gumballMachine.turnCrank());
+
+System.out.println(gumballMachine);
+```
