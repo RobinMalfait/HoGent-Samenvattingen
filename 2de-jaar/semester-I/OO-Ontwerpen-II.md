@@ -299,6 +299,8 @@ Gedrag van objecten.
 
 ## 4.3. CODE
 
+**Voorbeeld:** Weather Data
+
 ```java
 public interface Subject
 {
@@ -309,8 +311,118 @@ public interface Subject
 
 public interface Observer
 {
-    public void update();
+    public void update(double temp, dobule humidity, double pressure);
 }
+
+public interface DisplayElement
+{
+    public void display();
+}
+
+public class WeatherData implements Subject
+{
+    private double temperature, humidity, pressure;
+    private Set<Observer> observers;
+
+    public WeatherData()
+    {
+        observers = new HashSet<>();
+    }
+
+    public void setMeasurements(double temperature, double humidity, double pressure)
+    {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+
+        // Dit is de belangrijkste magische stap,
+        // Als je dit niet doet wordt de observer niet aangeroepen
+        this.notifyObservers();
+    }
+
+    public double getTemperature()
+    {
+        return temperature;
+    }
+
+    public double getHumidity()
+    {
+        return humidity;
+    }
+
+    public double getPressure()
+    {
+        return pressure;
+    }
+
+    @Override
+    public void addObserver(Observer o)
+    {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o)
+    {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObserver()
+    {
+        /**
+         * In dit geval maken we gebruik van het "PUSH"-model
+         * Dit wilt zeggen dat we de gegevens al meegeven met de update methode.
+         * Je kan ook de "PULL"-methode gebruiken, dit wilt zeggen dat je de interfaces kan her-gebruiken
+         * omdat je geen gegevens meegeeft, maar in de "update" methode van de observer, een eventuele getter aanroept.
+         */
+        // Java 8
+        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
+
+
+        // Java 7
+        for(Observer o : observers)
+        {
+            o.update(temperature, humidity, pressure);
+        }
+    }
+}
+
+public class CurrentConditionsDisplay implements Observer, DisplayElement
+{
+    private Subject weatherData;
+    private double temperature, humidity;
+
+    public CurrentConditionsDisplay(Subject weatherData)
+    {
+        this.weatherData = weatherData;
+
+        // Deze stap is zeer belangrijk, want je moet je registreren als een observer
+        weatherData.addObserver(this);
+    }
+
+    public void update(double temp, dobule humidity, double pressure)
+    {
+        this.temperature = temp;
+        this.humidity = humidity;
+        display();
+    }
+
+    public void display()
+    {
+        System.out.printf("Actuele weergesteldheid %.1f graden en %.1f %% luchtvochtigheid%n", temperature, humidity);
+    }
+}
+
+/**
+ * Objecten
+ */
+WeatherData weatherData = new WeatherData();
+CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
+
+weatherData.setMeasurements(80, 65, 30.4f);
+weatherData.setMeasurements(82, 70, 29.2f);
+weatherData.setMeasurements(78, 90, 29.2f);
 ```
 
 # 5. Façade Pattern
