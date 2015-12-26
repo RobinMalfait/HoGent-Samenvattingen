@@ -435,7 +435,7 @@ Structuur van objecten
 
 ## 5.2. UML DIAGRAM
 
-![]https://d.pr/i/13fyo+)
+![](https://d.pr/i/13fyo+)
 
 ## 5.3. CODE
 
