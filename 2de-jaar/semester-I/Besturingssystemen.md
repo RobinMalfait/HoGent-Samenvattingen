@@ -1256,19 +1256,19 @@ Een deadlock of een impassetoestand treedt op wanneer 2 of meer processen voor o
 
 Aspecten van deadlock:
 
-- Deadlock-preventie
+- **Deadlock-preventie**
 
     Het besturingssysteem beperkt het gemeenschappelijk gebruik van resources om deadlock onmogelijk te maken.
 
-- Deadlock-vermijding
+- **Deadlock-vermijding**
 
     Het besturingssysteem onderzoekt alle aanvragen voor resources heel nauwkeurig. Ziet het besturingssysteem dat de toewijzing van een resource het risico van deadlock met zich meebrengt, dan weigert het de gevraagde toegang en vermijdt zo het probleem.
 
-- Deadlock-signalering
+- **Deadlock-signalering**
 
     Als er een deadlock optreedt, moet het besturingssysteem dit kunnen signaleren. Het besturingssysteem ziet elk proces in een wachttoestand. Hoe kan het besturingssysteem erachter komen dat dit wachten permanent is?
 
-- Deadlock-hestel
+- **Deadlock-hestel**
 
     Wat moet er gebeuren nadat het besturingssysteem een deadlock ontdekt? De processen moeten daar toch een keer uit bevrijd worden. Het besturingssysteem moet dit probleem oplossen.
 

@@ -825,10 +825,10 @@ System.out.println(gumballMachine);
 MVC is een combinatie van een paar patterns.
 
 - Strategy Pattern
-    Dit wordt gebruikt om de "input" om te zetten naar acties
+    - Dit wordt gebruikt om de "input" om te zetten naar acties
 - Observer Pattern
-    Dit wordt gebruikt om de view te updaten als er iets gewijzigd wordt.
+    - Dit wordt gebruikt om de view te updaten als er iets gewijzigd wordt.
 - Composite Pattern
-    Dit wordt gebruikt om de GUI-componenten op te bouwen.
+    - Dit wordt gebruikt om de GUI-componenten op te bouwen.
 
 ![](https://d.pr/i/10SMs+)
