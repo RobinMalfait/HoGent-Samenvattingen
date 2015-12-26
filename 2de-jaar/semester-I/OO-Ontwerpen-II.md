@@ -20,7 +20,30 @@ Gedrag van objecten.
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden komen...)
 
-## 1.3. CODE
+## 1.3. ONTWERPRINCIPE
+
+> Bepaal de aspecten van je applicatie die variëren en scheid deze van de aspecten die hetzelfde blijven.
+
+M.a.w bevat onze code een aspect dat verandert, bijvoorbeeld met ieder nieuwe systeemeis, dan weten we dat we een gedrag hebben dat eruit gelicht moet worden en moet worden afgezonderd van alle code die niet verandert.
+
+## 1.4. TWEEDE ONTWERPPRINCIPE
+
+> Programmeer naar een interface, niet naar een implementatie.
+
+Zo kan je er voor zorgen dat je geen sterke koppeling krijgt.
+
+## 1.5. DERDE ONTWERPPRINCIPE
+
+> Geef een compositie de voorkeur boven overerving.
+
+```java
+class SomeClass extends OtherClass // Extends = overerving
+{
+    private SpecialClass specialClass; // Compositie
+}
+```
+
+## 1.6. CODE
 
 ```java
 /**
@@ -223,7 +246,15 @@ Niet duidelijk? Schrijf maar iets in de comments of verwittig me :)
 
 ![](https://d.pr/i/p59T+)
 
-## 3.3. CODE
+## 3.3. OCP (Open Closed Principle)
+
+Dit is een van de principes van de **SOLID** principles.
+
+> Klassen moeten open zijn voor uitbreiding, maar gesloten voor verandering.
+
+Ons doel is dat klassen eenvoudig uitgebreid kunnen worden om nieuw gedrag te incorporeren zonder de bestaande code te wijzigen. Hoe we dat gaan bereiken?
+
+## 3.4. CODE
 
 ```java
 public interface Versiering // Component
@@ -297,7 +328,13 @@ Gedrag van objecten.
 
 ![](https://d.pr/i/142OW+)
 
-## 4.3. CODE
+## 4.3. De kracht van zwakke koppeling
+
+> Streef naar ontwerpen met een zwakke koppeling tussen de objecten die samenwerken.
+
+Zwak gekoppelde ontwerpen stellen ons in staat flexibele OO-systemen te bouwen die met verandering om kunnen gaan, omdat ze de wederzijdse afhankelijkheid tussen objecten erg klein maken.
+
+## 4.4. CODE
 
 **Voorbeeld:** Weather Data
 
@@ -437,7 +474,13 @@ Structuur van objecten
 
 ![](https://d.pr/i/13fyo+)
 
-## 5.3. CODE
+## 5.3. Het principe van Kennisabastractie
+
+> Praat alleen met je directe vrienden. Hoe minder je weet hoe beter.
+
+Dit principe voorkomt dat we ontwerpen maken waarbij veel klassen gekoppeld worden, zodat veranderingen in het ene deel van het systeem invloed hebben op andere delen. Wanneer je veel afhankelijkheden aanbrengt tussen klassen, dan maak je een teer systeem dat duur in onderhoud is en bovendien voor anderen moeilijk te begrijpen.
+
+## 5.4. CODE
 
 **Voorbeeld**: Home Theater
 
@@ -776,3 +819,16 @@ System.out.println(gumballMachine.turnCrank());
 
 System.out.println(gumballMachine);
 ```
+
+## 7. MVC Pattern
+
+MVC is een combinatie van een paar patterns.
+
+- Strategy Pattern
+    Dit wordt gebruikt om de "input" om te zetten naar acties
+- Observer Pattern
+    Dit wordt gebruikt om de view te updaten als er iets gewijzigd wordt.
+- Composite Pattern
+    Dit wordt gebruikt om de GUI-componenten op te bouwen.
+
+![](https://d.pr/i/10SMs+)
