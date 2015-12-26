@@ -820,7 +820,7 @@ System.out.println(gumballMachine.turnCrank());
 System.out.println(gumballMachine);
 ```
 
-## 7. MVC Pattern
+# 7. MVC Pattern
 
 MVC is een combinatie van een paar patterns.
 
