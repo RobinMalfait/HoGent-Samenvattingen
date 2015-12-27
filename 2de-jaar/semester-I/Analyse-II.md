@@ -338,7 +338,7 @@ VB.: ![](https://d.pr/i/AwG2+)
         - **TIP 7:** Valideer, controleer neit of ...
             - Vermijd "if statements" ![](https://d.pr/i/xQOF+)
         - **TIP 8:** User laat systeem A systeem B aansturen
-            - Beschrijf _**geen** interacites met de GUI_ ("User hits fetch button")
+            - Beschrijf _**geen** interacties met de GUI_ ("User hits fetch button")
             - Mogelijke oplossing:
                 - User signaleert het systeem data op te halen van systeem B
                 - Systeem haalt achtergrondinfo op bij systeem B
