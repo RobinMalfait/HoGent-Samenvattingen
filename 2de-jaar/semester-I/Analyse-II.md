@@ -394,7 +394,7 @@ Wat is agile?
     - Gebaseerd op Agile Manifesto
 
 | &nbsp; | over | &nbsp; |
-| -----: | ---- | :----- |
+| -----: | :--: | :----- |
 | Individuen en interacties | <-> | Processen en tools |
 | Werkende software | <-> | Uitgebreide documentatie |
 | Samenwerking met de klant | <-> | Contract onderhandelingen |
