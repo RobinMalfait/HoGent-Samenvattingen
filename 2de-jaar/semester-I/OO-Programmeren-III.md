@@ -157,16 +157,38 @@ ArrayStoreException - indien het type van de array src niet in dest geplaatst ka
 NullPointerException - indien src of dest null is
 ```
 
-- Methode binarySearch van de klasse Arrays
+```java
+class Arrays
+{
+    // Zoekt in de opgegeven array a naar de waarde key volgens het binair zoek-algorithme. Geeft "de indexwaarde_in_geval_van_invoegen*-1 - 1" terug als de waarde niet gevonden wordt, in het andere geval de index van de waarde in de array.
+    static int binarySearch(byte[] a, byte key);
+    static int binarySearch(int[] a, int key);
+    static int binarySearch(double[] a, double key);
+    static int binarySearch(char[] a, char key);
+    static int binarySearch(byte[] a, byte key);
+    static int binarySearch(short[] a, short key);
+    static int binarySearch(long[] a, long key);
+    static int binarySearch(float[] a, float key);
+    static int binarySearch(Object[] a, Object key);
+    static <T> int binarySearch(T[] a, T key, Comparator<? super T> c);
 
-    `static int binarySearch(byte[] a, byte key)`
-    Zoekt in de opgegeven array a naar de waarde key volgens het binair zoek-algorithme.
-    Geeft "de indexwaarde_in_geval_van_invoegen*-1 -1" terug als de waarde niet gevonden wordt, in het andere geval de index van de waarde in de array.
 
-- Mogelijke Varianten:
-    - `static int binarySearch(int[] a, int key)`
-    - `static int binarySearch(double[] a, double key)`
-    - ... voor char, byte, short, long en float
-    - `static int binarySearch(Object[] a, Object key)`
-    - `static <T> int binarySearch(T[] a, T key, Comparator<? super T> c)`
+    // Geeft true terug indien de 2 opgegeven arrays van booleans gelijk zijn. 2 arrays zijn gelijk als ze dezelfde lengte hebben en de overeenkomstige paren van elementen uit de arrays dezelfde waarde hebben.
+    static boolean equals(boolean[] a, boolean[] a2);
+    static boolean equals(int[] a, int[] a2);
+    static boolean equals(char[] a, char[] a2);
+    static boolean equals(byte[] a, byte[] a2);
+    static boolean equals(short[] a, short[] a2);
+    static boolean equals(long[] a, long[] a2);
+    static boolean equals(float[] a, float[] a2);
+    static boolean equals(double[] a, double[] a2);
+    static boolean equals(Object[] a, Object[] a2);
 
+
+    // Geeft true terug indien de 2 opgegeven arrays "deeply" gelijk zijn. Deze methode is geschikt bij gebruik van geneste arrays van een bepaalde diepte.
+    static boolean deepEquals(Object[] a1, Object[] a2);
+
+
+
+}
+```
