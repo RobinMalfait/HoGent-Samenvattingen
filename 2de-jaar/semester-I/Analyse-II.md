@@ -58,7 +58,7 @@
 
 # 2. Use Cases
 
-## 2.1. Requirements
+## 2.1 Requirements
 
 Ieder systeem wordt ontwikkeld om een bepaalde reden:
 
@@ -210,7 +210,6 @@ Voorbeeld:
 - "Manage your energy"
 - KIS: Keep It Simple
 - Communicatie: duidelijkheid
-
 - Geef een globaal beeld van functies van het systeem (low-precision)
 - Het verhaal wordt voorgesteld door opdrachtgever(s)
 - Ieder schrijft eigen verhaal, ieder moet weten wat het systeem doet [groep]
@@ -347,8 +346,49 @@ VB.: ![](https://d.pr/i/AwG2+)
     - Het doel is bereikt op het einde
     - Een scenario mag eindigen met het bereiken van het doel of het verlaten van het scenario
 - Mogelijke **set van uitbreidingen**
+    - Afwijkingen t.o.v. het normale verloop
+    - Uitbreidingen eindigen ofwel in succes of maken dat de use case verlaten wordt
+    - Belangrijk: uitbreidingen niet zomaar naast je neerleggen
+        - Het normaal verloop is zeer goed gekend door het team
+        - Uitbreidingen vragen dikwijls kennis van "business rules"
+        - Soms aanleiding tot nieuwe use case
+        - Voorbeeld:
+            - stel dat het netwerk uitvalt , wat doen we dan ?
+            - Logging
+            - ok, als het netwerk opnieuw actief is ,wat moet er dan gebeuren ?
+            - ik vermoed dat we dan een nieuwe use case hebben "Systeem herstart na Netwerk fout". Van het systeem wordt een back-up genomen, je bekijkt de logging en je herbegint of beëindigt de transactie
+            - Ok, maar wat als logging corrupt is ?
+        - Brainstorming over alle mogelijke situaties
+        - Evalueer, elimineer en voeg samen
+        - Werk uit
+        - Noteer "wat het systeem ontdekt heeft, niet wat er gebeurd is"
+            - **Niet**: "Klant vergeet PINcode in te geven"
+            - **Wel**: "tijdslimiet overschreden bij ingave PINcode"
+        - Hoe noteren? ![](https://d.pr/i/1dymv+)
+        - Alternatieven vermelden is altijd goed
 
+![](https://d.pr/i/1fth1+)
 
+# 3. Scrum & Kanban
 
+## Ontwikkelstrategieën
 
+- Inleiding
+    - Waterfall
+    - Agile
+- Scrum
+- Kanban
 
+### Watervalmethode
+
+![](https://d.pr/i/BtZn+)
+
+### Agile
+
+Wat is agile?
+
+- Een filosofie
+- Een mentaliteitswijziging (van Command & Control naar Collaboration)
+- Geschiedenis
+    - Reactie op waterval
+    - Gebaseerd op Agile Manifesto
