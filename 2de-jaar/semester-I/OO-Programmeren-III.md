@@ -158,36 +158,87 @@ NullPointerException - indien src of dest null is
 ```
 
 ```java
-class Arrays
+public class Arrays
 {
-    // Zoekt in de opgegeven array a naar de waarde key volgens het binair zoek-algorithme. Geeft "de indexwaarde_in_geval_van_invoegen*-1 - 1" terug als de waarde niet gevonden wordt, in het andere geval de index van de waarde in de array.
+    /**
+     * binarySearch METHODE
+     */
+    // Zoekt in de opgegeven array a naar de waarde key volgens het binair zoek-algorithme.
+    // Geeft "de indexwaarde_in_geval_van_invoegen*-1 - 1" terug als de waarde niet gevonden wordt, in het andere geval de index van de waarde in de array.
     static int binarySearch(byte[] a, byte key);
-    static int binarySearch(int[] a, int key);
-    static int binarySearch(double[] a, double key);
+    static int binarySearch(byte[] a, byte key);
     static int binarySearch(char[] a, char key);
-    static int binarySearch(byte[] a, byte key);
-    static int binarySearch(short[] a, short key);
-    static int binarySearch(long[] a, long key);
+    static int binarySearch(double[] a, double key);
     static int binarySearch(float[] a, float key);
+    static int binarySearch(int[] a, int key);
+    static int binarySearch(long[] a, long key);
     static int binarySearch(Object[] a, Object key);
+    static int binarySearch(short[] a, short key);
     static <T> int binarySearch(T[] a, T key, Comparator<? super T> c);
 
 
-    // Geeft true terug indien de 2 opgegeven arrays van booleans gelijk zijn. 2 arrays zijn gelijk als ze dezelfde lengte hebben en de overeenkomstige paren van elementen uit de arrays dezelfde waarde hebben.
+    /**
+     * equals METHODE
+     */
+    // Geeft true terug indien de 2 opgegeven arrays van booleans gelijk zijn.
+    // 2 arrays zijn gelijk als ze dezelfde lengte hebben en de overeenkomstige paren van elementen uit de arrays dezelfde waarde hebben.
     static boolean equals(boolean[] a, boolean[] a2);
-    static boolean equals(int[] a, int[] a2);
-    static boolean equals(char[] a, char[] a2);
     static boolean equals(byte[] a, byte[] a2);
-    static boolean equals(short[] a, short[] a2);
-    static boolean equals(long[] a, long[] a2);
-    static boolean equals(float[] a, float[] a2);
+    static boolean equals(char[] a, char[] a2);
     static boolean equals(double[] a, double[] a2);
+    static boolean equals(float[] a, float[] a2);
+    static boolean equals(int[] a, int[] a2);
+    static boolean equals(long[] a, long[] a2);
     static boolean equals(Object[] a, Object[] a2);
+    static boolean equals(short[] a, short[] a2);
 
 
-    // Geeft true terug indien de 2 opgegeven arrays "deeply" gelijk zijn. Deze methode is geschikt bij gebruik van geneste arrays van een bepaalde diepte.
+    /**
+     * deepEquals METHODE
+     */
+    // Geeft true terug indien de 2 opgegeven arrays "deeply" gelijk zijn.
+    // Deze methode is geschikt bij gebruik van geneste arrays van een bepaalde diepte.
     static boolean deepEquals(Object[] a1, Object[] a2);
 
+
+    /**
+     * fill METHODE
+     */
+    // kent de integer-waarde val toe aan elk element van de array.
+    static void fill(int[] a, int val);
+
+    // Kent de integer-waarde val toe aan elk element van index "fromIndex" tot index "toIndex" van de array a.
+    static void fill(byte[] a, int fromIndex, int toIndex, byte val);
+    static void fill(char[] a, int fromIndex, int toIndex, char val);
+    static void fill(double[] a, int fromIndex, int toIndex, double val);
+    static void fill(float[] a, int fromIndex, int toIndex, float val);
+    static void fill(int[] a, int fromIndex, int toIndex, int val);
+    static void fill(long[] a, int fromIndex, int toIndex, long val);
+    static void fill(Object[] a, int fromIndex, int toIndex, Object val);
+    static void fill(short[] a, int fromIndex, int toIndex, short val);
+    // Throws:
+    // - IllegalArgumentException: fromIndex > toIndex
+    // - ArrayIndexOutOfBoundsException: fromIndex < 0 || toIndex > a.length
+
+    /**
+     * sort METHODE
+     */
+    // Sorteert de array a volgens oplopende numerieke waarde.
+    static void sort(int[] a);
+
+    // IllegalArgumentException: fromIndex > toIndex
+    // ArrayIndexOutOfBoundsException: fromIndex < 0 || toIndex > a.length
+    static void sort(byte[] a, int fromIndex, int toIndex);
+    static void sort(char[] a, int fromIndex, int toIndex);
+    static void sort(double[] a, int fromIndex, int toIndex);
+    static void sort(float[] a, int fromIndex, int toIndex);
+    static void sort(int[] a, int fromIndex, int toIndex);
+    static void sort(long[] a, int fromIndex, int toIndex);
+    static void sort(Object[] a)
+    static void sort(Object[] a, Comparator c);
+    static void sort(Object[] a, int fromIndex, int toIndex);
+    static void sort(short[] a, int fromIndex, int toIndex);
+    static <T> void sort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c);
 
 
 }
