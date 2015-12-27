@@ -186,8 +186,8 @@ Meetbare cireteria
 
 > Een Niet-Functionele requirement moet **SMART** zijn.
 
-| Letter | Voluit | W | Beschrijving |
-| ------ | ------ | - | ------------ |
+| Letter | Voluit | Vraag | Beschrijving |
+| ------ | ------ | ----- | ------------ |
 | S | Specifiek | WAT? | Ik weet precies wat ik wil bereiken. |
 | M | Meetbaar | WAARAAN? | Ik weet precies waaraan ik kan merken of het resultaat bereikt is. |
 | A | Acceptabel | WAAROM? | Ik weet waarom ik deze doelstelling wil bereiken. |
