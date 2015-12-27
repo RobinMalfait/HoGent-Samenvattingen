@@ -379,11 +379,11 @@ VB.: ![](https://d.pr/i/AwG2+)
 - Scrum
 - Kanban
 
-### Watervalmethode
+## Watervalmethode
 
-![](https://d.pr/i/BtZn+)
+![](https://d.pr/i/1iMMr+)
 
-### Agile
+## Agile
 
 Wat is agile?
 
@@ -392,3 +392,291 @@ Wat is agile?
 - Geschiedenis
     - Reactie op waterval
     - Gebaseerd op Agile Manifesto
+
+| &nbsp; | over | &nbsp; |
+| -----: | ---- | :----- |
+| Individuen en interacties | <-> | Processen en tools |
+| Werkende software | <-> | Uitgebreide documentatie |
+| Samenwerking met de klant | <-> | Contract onderhandelingen |
+| Antwoorden op wijzigingen | <-> | Volgen van een plan |
+
+**Principes achter Agile Manifesto**
+
+- Hoogste prioriteit: klant tevreden
+- Verwerlkom wijzigingen
+- Lever geregeld werkende software op
+- Business en ontwikkelaars werken dagelijks samen
+- Bouw producten rond gemotiveerde individuen
+- "Face-to-face" communicatie binnen team
+- Werkende software is de eerste meting van vooruitgang
+- Eenvoud is essentieel
+- Zelf organiserende teams
+- Zelf bespiegelende teams
+
+## Scrum
+
+- Scrum is geen...
+    - ...methodologie
+    - ...afgebakend en vast proces
+    - ...set van procedures
+- Scrum is open framework met eenvoudige regels
+- Regels gebaseerd op *CAS*
+    - _**C**_omplex _**A**_daptieve _**S**_ystemen (vb. school vissen)
+    - Doel: CAS evolueren naar intelligentie
+- Iteratief en incrementeel
+    - > Iteratief: het zal niet allemaal vanaf de eerste keer correct zijn
+    - > Incrementeel: verticaal in plaats van horizontaal bouwen
+
+### Scrum Regels
+
+- Werken in **gesloten iteraties** (geen scopewijzigingen)
+- Elke iteratie **productiewaardige software**
+- **Zelforganiserende** en **zelfreflecterende** teams
+- Alles is **geprioritiseerd**
+
+![](https://d.pr/i/1fAZt+)
+
+### Scrum in een notedop
+
+1. Verdeel de opdracht in stukjes
+2. Belangrijke opdrachten (€) eerst
+3. Bepaal de mijlpalen (sprints)
+
+![](https://d.pr/i/15b4b+)
+
+### Scrum Rollen:
+
+#### Product-owner (eigenaar)
+
+- Vertegenwoordigt de belanghebbende partijen
+    - Klant, eindgebruiker, ...
+- Één stem, liefst één persoon
+- Bepaalt
+    - Wat er gebouwd moet worden
+    - Wat prioritair is
+- Product-eigenaar doet commitment om het team met rust te laten tijdens sprint
+
+#### Scrum-master
+
+- Bewaakt het proces
+    - Scrumconcepten toepassen
+        - Zelforganiserende en zelfreflecterende teams
+        - Werken in gesloten iteraties (geen scopewijzigingen)
+        - Elke sprint productiewaardige software
+        - Alles is geprioritiseerd
+    - Kwaliteitscontrole
+        - Verantwoordelijk voor softwarekwaliteit (Bugs zijn niet normaal)
+        - Efficiëntie ~ kwaliteit (bewaakt grenzen: tijd: krijtlijnen, scope)
+- Zorgt voor continuous improvement
+    - Alles in vraag stellen
+    - Mensen uit te dagen
+    - Niet zelf met oplossingen te komen
+    - Eerst: brandjes blussen
+    - Later structureel verbeteren
+
+#### Wat doet de Scrum-master niet?
+
+- Taken bepalen
+- Taken toewijzen
+- Prioriteiten bepalen
+- Schattingen bepalen
+- Problemen oplossen
+- Verantwoordlijkheid nemen of ontvangen
+
+-> Wie wel? Het team
+
+#### Team
+
+- Typisch 5 à 9 mensen
+    - Hoe meer mensen hoe groter de communicatie overhead
+    - Indien groter team nodig; werken met meerdere teams
+- Leden zouden full-time aan het project moeten werken
+    - Uitzonderingen kunnen bestaan bij ondersteunende functies (vb.: systeembeheerders, ...)
+- Teams zijn zelforganiserend
+    - Leden brengen elk hun eigen achtergrond aan, maar zijn multidisciplinair, delen hun kennis en werken mee aan domeinen waar zij geen specialist op zijn
+
+### Wat is een sprint?
+
+- Scrum projecten worden uitgevoerd in een aantal "sprints"
+    - Analoog aan XP iteraties
+- Doel = **twee / drie weken**
+- Product wordt **ontworpen, geschreven en getest tijdens de sprint**
+
+![](https://d.pr/i/oHmw+)
+
+### Voorbereiding sprint
+
+- Aantal features of taken worden opgemaakt door Product-eigenaar en de klant
+- Oplijsting in een document (product backlog)
+- Uniek geprioriteers (dus niet in blokken)
+
+### Sprint planning deel 1
+
+- Ruwe inschatting van aantal items dat opgenomen zal worden tijdens volgende sprint
+- Inschatting door team, niet door Product-eigenaar
+- Product-eigenaar kan antwoordne op alle vragen van eht team
+    - Indien neit mogelijk -> team neemt item niet op
+- (Bepalen van een sprintdoel (deadlines))
+
+### Sprint planning deel 2
+
+- Backlog items worden opgesplits door team
+- Team is zelf-organiserend rond hoe het sprintdoel te bereiken
+- Geen managers
+    - Manager kent geen taken toe aan individuen
+    - Managers maken geen beslissingen voor het team
+- Sprint Backlog wordt gemaakt
+    - Taken van 4-16uur
+- (Bepalen van een sprintdoel)
+
+### Schattingen
+
+- Planning poker
+- Uren of punten?
+    - Sprint schatting en/of nieuwe teams: uren
+    - Backlog schatting: punten
+- Door mensen die het werk zullen gaan doen
+    - Niet door de mensen die het werk geven
+- Liefst verbale communicatie in plaats van gedetailleerde neergeschreven specificaties
+- Opgelet voor anchoring!
+
+### Anchoring
+
+![](https://d.pr/i/16OJM+)
+
+### Stand-up
+
+- Parameters:
+    - Dagelijks
+    - 15 minuten
+    - Stand-up = rechtstaan !
+    - Niet om problemen op te lossen
+- Drie vragen (ond het bord?)
+    - Wat deed je gisteren?
+    - Wat ga je vandaag doen?
+    - Welke obstakels liggen in je weg?
+
+- Waarom dagelijks?
+    - "Hoe kan een project een jaar te laat zijn?"
+        - "Een dag per keer"
+- Kan Stand-up vervangen worden door status rapporten via mail?
+    - <font color="red">**Neen**</font>
+        - Volledig team ziet elke dag volledig beeld
+        - Creëer sociale druk: doen wat je zegt
+        - Wanneer mensen niet elkaar face-to-face zien, zullen ze problemen op elkaar projecteren
+
+### Demo/Sprint review
+
+- Team stelt voor wat het bereikt heeft gedurende sprint: ptoentieel productie-waardige software
+- Typisch een demo van het product of van de onderliggende architectuur
+- Informeel
+    - 2-uur voorbereidingstijd
+- Deelnemers
+    - Klanten
+    - Management
+    - Product Eigenaars
+- Hoe valideren?
+    - Door testen opgesteld tijdens product planning
+- Wat is af?
+    - 0 known defects!
+    - Geeft nooit toe op kwaliteit
+    - Klaar voor IT of klaar voor Business?
+
+### Retrospective
+
+- Deelnemers
+    - Team
+    - Scrum Master
+    - Product-eigenaar (*optioneel*)
+- Vragen
+    - Wat ging goed gedurende laatste sprint?
+    - Wat kan verbeteren in de volgende sprint?
+- Resultaat
+    - Altijd acties bepalen
+    - Indien invloed op Product-eigenaar, toevoegen aan Product Backlog
+    - Opgelet: moeten business value hebben
+
+### Retrospective - tips
+
+- Geen beschuldigingen!
+- Gebruik nooit het woord: "JIJ"
+- Gebruik een "spreekstok"
+
+### Scrum - Documenten
+
+- Scrum heeft heel weinig documenten
+    - Product Backlog
+    - Sprint Backlog
+    - Burndown Statistieken
+- Kan gebeuren door een Excel spreadsheet
+- Meer geavanceerde / ingewikkelde tools bestaan
+    - Mingle
+    - Conchango (Scrumt for Team Foundation Server)
+    - Trello
+    - Scrumwise
+
+### Backlog
+
+- Een lijst van al het gewenste werk van het project
+    - Meestal een combinatie van
+        - Story-based werk ("Laat gebruiker zoeken en vervangen")
+        - Task-based werk ("Verbeter exception handling")
+- Lijst wordt geprioritiseerd door Product-eigenaar
+    - Typisch een Product Manager, Marketing, Interne Klant, enz...
+
+![](https://d.pr/i/11pBC+)
+
+### Sprint backlog
+
+- Werkdocument van het team
+- Opvolging van individuele taken
+- Invullen van wat nog te doen valt om zo te zien en te corrigeren om het doel te behalen - en dit iedere dag openieuw
+- Groot verschil met worksheets waarin na de feiten tijden worden ingevuld en worden vergeleken met de schatting
+- Gebruik een bord (story/tasks/work in progress/verify/done)
+
+### Burdown
+
+- Er worden taken afgewerkt, maar heel traag:
+
+    ![](https://d.pr/i/1237x+)
+
+- Er worden taken afgewerkt, niet genoeg
+
+    ![](https://d.pr/i/Oonu+)
+
+- Taken werden te snel afgewerkt
+
+    ![](https://d.pr/i/1eXwm+)
+
+### Sprint backlog - eerste meeting
+
+![](https://d.pr/i/1eHD4+)
+
+## Kanban
+
+- Geen rollen
+- Visueel ("Kan") Bord ("Ban")
+- Laagdrempelig
+- Aantal
+    - Bottle neck
+    - Beperken
+- Optimalisatie (Lean) - maximale waarde voor de klant te realiseren met zo min mogelijk verspillingen
+- Gebruikt in productomgeving / systeembeheer
+- Agile
+
+### Scenario 1 - one piece flow
+
+![](https://d.pr/i/rfWA+)
+
+### Scenario 2 - Deployment problem
+
+![](https://d.pr/i/10Zee+)
+
+
+![](http://d.pr/i/1kozK+)
+
+
+
+
+
+
