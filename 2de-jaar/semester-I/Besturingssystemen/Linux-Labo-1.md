@@ -1,6 +1,6 @@
-<!--
+---
 title: Besturingssystemen Labo 1
--->
+---
 
 # Nodige Commando's
 

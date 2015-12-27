@@ -1,4 +1,4 @@
-<!--
+---
 title: HoGent Samenvattingen
 description: |
     > Dit zijn wat samenvattingen voor toegepaste informatica aan de HoGent.
@@ -9,7 +9,7 @@ description: |
     >
     > Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 contributions: true
--->
+---
 
 ## 2de jaar
 

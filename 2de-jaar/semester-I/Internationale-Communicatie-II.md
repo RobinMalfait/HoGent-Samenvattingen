@@ -1,6 +1,6 @@
-<!--
+---
 title: Internationale Communicatie II
--->
+---
 
 # Français
 

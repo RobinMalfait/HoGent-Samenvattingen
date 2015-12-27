@@ -1,6 +1,6 @@
-<!--
+---
 title: OO Ontwerpen II
--->
+---
 
 > De enige constante die je altijd tegenkomt is **VERANDERING**
 

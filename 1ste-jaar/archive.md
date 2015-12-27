@@ -1,7 +1,7 @@
-<!--
-title: Gearchiveerd op 18 September 2015
+---
+title: "Gearchiveerd op 18 September 2015"
 description: "[Ga Terug](/samenvattingen)"
--->
+---
 
 ## 1ste jaar
 
