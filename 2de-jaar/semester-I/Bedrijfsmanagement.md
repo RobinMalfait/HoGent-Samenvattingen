@@ -49,7 +49,7 @@ title: Bedrijfsmanagement
 
 > Waardevermindering is het gevolg van technologische vooruitgang
 
----
+----
 
 > **!** ELD < TLD
 
