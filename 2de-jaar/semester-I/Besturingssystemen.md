@@ -1,4 +1,6 @@
-# Besturingssystemen
+---
+title: Besturingssystemen
+---
 
 # Werk Colleges
 

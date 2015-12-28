@@ -1,17 +1,19 @@
-# OO Programmeren II
+---
+title: OO Programmeren II
+---
 
-## Hoofdstuk 9
+# Hoofdstuk 9
 
 * [Oefening 1](H9/Hoofdstuk9_Oef1.zip)
 * [Oefening 2](H9/Hoofdstuk9_Oef2.zip)
 
-## Hoofdstuk 10
+# Hoofdstuk 10
 
 * [Oefening 1](H10/Hoofdstuk10_Oef1.zip)
 * [Oefening 2](H10/Hoofdstuk10_Oef2.zip)
 * [Oefening 3](H10/Hoofdstuk10_Oef3.zip)
 
-## Hoofdstuk 11
+# Hoofdstuk 11
 
 * [Oefening 1](H11/Hoofdstuk11_Oef1.zip)
 * [Oefening 1 Theorie](H11/Hoofdstuk11_Oef1_theorie.zip)
@@ -19,16 +21,16 @@
 * [Oefening 3 Theorie](H11/Hoofdstuk11_Oef3_theorie.zip)
 * [Oefening 4 Theorie](H11/Hoofdstuk11_Oef4_theorie.zip)
 
-## Hoofdstuk 12
+# Hoofdstuk 12
 
 * [Oefening Tip Calculator](H12/TipCalculator.zip)
 
-## Hoofdstuk 14
+# Hoofdstuk 14
 
 * [Oefening 2 versie 2](H14/Hoofdstuk14_Oef2_Versie2.zip)
 
 
-## Hoofdstuk 15
+# Hoofdstuk 15
 
 * [Oefening 1](H15/Hoofdstuk15_Oef1.zip)
 * [Oefening 2](H15/Hoofdstuk15_Oef2.zip)

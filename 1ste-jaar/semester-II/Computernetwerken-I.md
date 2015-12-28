@@ -1,4 +1,6 @@
-# Computernetwerken I
+---
+title: Computernetwerken I
+---
 
 # Hoofdstuk 1
 

@@ -1,6 +1,8 @@
-# Analyse I
+---
+title: Analyse I
+---
 
-## Kwaliteitsvolle ICT projecten opleveren
+# Kwaliteitsvolle ICT projecten opleveren
 
 - Tijd
 - Communicatie: Team-verband
@@ -18,13 +20,13 @@
 | Hardware                                   | &nbsp;                  |
 | Eisen v.d. klant wijzigen                  | &nbsp;                  |
 
-## Software ontwikkelingsproces
+# Software ontwikkelingsproces
 
 Een kader dat vastlegt hoe een softwareproject wordt aangepakt.
 
 Een methode om de activiteiten in verband met creatie, oplevering en onderhoud van softwaresystemen te organiseren.
 
-## Watervalmethode
+# Watervalmethode
 
 **Opeenvolgend process**
 
@@ -51,7 +53,7 @@ Simpel process (Voor kleinere software projecten)
 —> Per iteratie een milestone (= documentatie)
 
 
-## Rational Unified Proces (RUP)
+# Rational Unified Proces (RUP)
 
 **Iteratie:**
 
@@ -77,7 +79,7 @@ Simpel process (Voor kleinere software projecten)
 | customer collaboration       | &nbsp;   | contract negotiation        |
 | responding to change         | &nbsp;   | following a plan            |
 
-## OOA/D
+# OOA/D
 
 Object georiënteerde Analyse/Design
 
@@ -92,7 +94,7 @@ Object:
 
 > Use cases != object georiënteerde analyse/design (maar wordt gebruikt)
 
-## UML
+# UML
 
 Unified Modelling Language (Notatie wijze)
 
@@ -106,7 +108,7 @@ Unified Modelling Language (Notatie wijze)
 
 Dynamische levenslijnen
 
-## Use Case vs Verhaal
+# Use Case vs Verhaal
 
 verhaal:
 
@@ -131,7 +133,7 @@ Wat is een Use Case
 
 **Wat het doet** en niet hoe hij het doet
 
-## Voorbeeld van een use case:
+# Voorbeeld van een use case:
 (hoe het er uit moet zien)
 
 **Use Case:** Naam van de use case<br>

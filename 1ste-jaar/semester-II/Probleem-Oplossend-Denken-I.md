@@ -1,4 +1,6 @@
-# Probleem Oplossend Denken I
+---
+title: Probleem Oplossend Denken I
+---
 
 # 1 Inleiding
 
@@ -1908,7 +1910,15 @@ EINDE
 #### 7.2.2.1 Algoritme voor de constructor
 
 ```pascal
-List(I: n: geheel getal): /   * Preconditie: n is een natuurlijk getal.   * Postconditie: de array data van lengte n werd gealloceerd, het natuurlijk getalaantal werd ge¨ınitialiseerd.   * Gebruikt: /BEGIN    data <- nieuwe array[n]    aantal <- 0EINDE
+List(I: n: geheel getal): /
+   * Preconditie: n is een natuurlijk getal.
+   * Postconditie: de array data van lengte n werd gealloceerd, het natuurlijk getal
+aantal werd ge¨ınitialiseerd.
+   * Gebruikt: /
+BEGIN
+    data <- nieuwe array[n]
+    aantal <- 0
+EINDE
 ```
 
 #### 7.2.2.2 Algoritme ter controle of een lijst leeg is

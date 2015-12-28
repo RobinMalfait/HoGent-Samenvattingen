@@ -1,6 +1,8 @@
-# OO Programmeren II
+---
+title: OO Programmeren II
+---
 
-## OO Paradigm
+# OO Paradigm
 
 * Abstractie - "klas":
     - "domein"-klasse
@@ -44,7 +46,7 @@ final Student S = new Student(...);  // Adres
 `finalize()` methode, deze methode wordt aangeroepen door de garbage collector bij het verwijderen van een object.
 
 
-### Overerving / Polymorfisme
+## Overerving / Polymorfisme
 
 **Voorbeelden:**
 
@@ -99,7 +101,7 @@ for (Vorm vorm : vormen)
 
 > Door middel van `vormen[i] instanceof Cirkel` kan je perfect weten welke Subklasse je object is.
 
-### Casting
+## Casting
 
 ```java
 Vorm v = new Cirkel(); // (Automatic) Upcasting
@@ -111,16 +113,16 @@ Cirkel c = (Cirkel) v; // Downcasting
 >
 > Algemeen kan je **attributen**, **klassen** en **methodes** `final` declareren.
 
-## String / String Builder
+# String / String Builder
 
-### Character
+## Character
 
 ```java
 char kar = 'z'; // Enkele quotes ', 2 bytes
 z = 122 (opgeslagen als unicode)
 ```
 
-### String
+## String
 
 ```java
 String z = "Eddy Wally"; // Dubbele quotes ", anoniem String-obj
@@ -198,7 +200,7 @@ initialen = voornaam.substring(0, 1).concat(".").concat(achternaam.substring(0, 
 System.out.printf("%s", initialen);
 ```
 
-### String Builder
+## String Builder
 
 [StringBuilder API](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
 
@@ -237,7 +239,7 @@ StringBUilder builder = new StringBuilder(s);
 s = builder.toString();
 ```
 
-#### Palindroom
+### Palindroom
 
 ```java
 package domein;
@@ -291,11 +293,11 @@ public class MijnString
 
 > `StringBuffer` is de voorloper van `StringBuilder`
 
-## Klasse Character
+# Klasse Character
 
 [Character API](http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
 
-## Tokenizing Strings
+# Tokenizing Strings
 
 [StringTokenizer API](https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html)
 
@@ -346,7 +348,7 @@ zin
 
 ```
 
-### Split
+## Split
 
 ```java
 String s = "Dit is een zin";
@@ -355,7 +357,7 @@ String[] tokens = s.split(" ");
 String[] tokens2 = s.split("\\s"); // Reguliere Expressions
 ```
 
-## Reguliere Expressies
+# Reguliere Expressies
 
 > Een beschrijving van een patroon in een tekst
 
@@ -379,7 +381,7 @@ str.matches("[A-Z][a-zA-Z]*");
 // Beginnen met een hoofdletter, verder met gewone of hoofdletters zonder spaties of letters
 ```
 
-## Werken met bestanden
+# Werken met bestanden
 
 | Term        | Beschrijving                                       |
 | ----------- | -------------------------------------------------- |
@@ -408,9 +410,9 @@ De `moederklasse` van alle file exception is: `IOException`
 2. Bestand bewerken
 3. Bestand sluiten
 
-### Sequentiële bestanden
+## Sequentiële bestanden
 
-#### Tekstbestanden (= leesbaar buiten Java omgeving)
+### Tekstbestanden (= leesbaar buiten Java omgeving)
 
 ```java
 // SCHRIJVEN
@@ -439,10 +441,10 @@ public class CreateTextFile {
 
     public void addREcord(AccountRecord record) {
         try {
-            output.format("%d %s %s %.2f%n", 
-                record.getAccount(), 
-                record.getFirstName(), 
-                record.getLastName(), 
+            output.format("%d %s %s %.2f%n",
+                record.getAccount(),
+                record.getFirstName(),
+                record.getLastName(),
                 record.getBalance()
             );
         } catch(IOException e) {
@@ -490,7 +492,7 @@ try (Formatter out = new Formatter(bestand)) {
 }
 ```
 
-#### Geserialiseerde bestanden (= enkel bruikbaar binnen java)
+### Geserialiseerde bestanden (= enkel bruikbaar binnen java)
 
 -> domeinklasse
 
@@ -499,7 +501,7 @@ try (Formatter out = new Formatter(bestand)) {
 > Alle attributen met keyword `transient` worden niet geserialiseerd
 >
 > **ObjectOutputStream** & **ObjectInputStream**
-> 
+>
 > Data + type van attributen worden mee weggeschreven
 
 ```java
@@ -507,10 +509,10 @@ public class WriteObjects implements Serializable {
     // Openen
     File filename = new File("c:\\oef\\test.ser");
     ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename));
-    
+
     // Schrijven
     output.writeObject(/* data om te schrijven */);
-    
+
     // Sluiten
     output.close();
 }
@@ -519,23 +521,23 @@ public class WriteObjects implements Serializable {
 
 ```java
 public class ReadObjects implements Serializable {
-    
+
     // Lezen
     AccountRecord record = (AccountRecord) input.readObject();
-    List<AccountRecord> records = (List<AccountRecord>) input.readObject();    
- 
+    List<AccountRecord> records = (List<AccountRecord>) input.readObject();
+
     // Lezen per object
     while (true) {} // Gooit een EOFException bij het einde van het bestand
-    
+
     // Sluiten
     input.close();
 }
 ```
 
-### FileChooser
+## FileChooser
 
 > Toont een save file dialog waar je dan een naam kan aan geven.
-> 
+>
 > Dit kan gebruikt worden om te schrijven en om te lezen!
 
 

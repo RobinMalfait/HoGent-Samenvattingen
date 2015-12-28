@@ -1,4 +1,6 @@
-# Strategisch Management
+---
+title: Strategisch Management
+---
 
 # Hoofdstuk 1
 
@@ -609,7 +611,7 @@ Strategie -> Kritische kerntaken -> Personeel -> Budgettering -> Middelen
 ***
 
 > **Waarom is controle nu zo belangrijk?**
-> 
+>
 > De enige manier waarop managers kunnen weten of organisatiedoelen worden bereikt
 
 ## 2. Controle-instrumenten
@@ -624,10 +626,10 @@ Strategie -> Kritische kerntaken -> Personeel -> Budgettering -> Middelen
 - ...
 
 Financiële analyse
- 
+
  - Liquiditeit (Korte termijn)
  - Solvabiliteit (Lange termijn)
- - Rentabiliteit (Winstgevend genoeg?) 
+ - Rentabiliteit (Winstgevend genoeg?)
 
 **Niet-financiële controle:**
 
@@ -643,7 +645,7 @@ Financiële analyse
 
 > **KSF:** zaken die van cruciaal belang zijn om een strategie succesvol uit te kunnen voeren<br>
 > = datgene wat een organisatie vooruit brengt
-> 
+>
 > **KPI's:** Meetmethoden die managementdoelstellingen kwantificieren, zodat de uitvoering van de strategie
 
 VB.:
@@ -665,7 +667,7 @@ VB.:
 
 > De doelgroepen en marktsegmenten waarin men concurreert.
 
-Marktsegmenten: opdelen in `groepen`, klanten die dezelfde eisen hebben: 
+Marktsegmenten: opdelen in `groepen`, klanten die dezelfde eisen hebben:
 
 Voorbeeld: Wasmiddelen
 
@@ -730,7 +732,7 @@ Voorbeeld: Wasmiddelen
 
 ![](http://d.pr/i/63BV+)
 
-Cijfers omdraaien, vb: 
+Cijfers omdraaien, vb:
 
 - Ik heb 6 buizen van de 10
 - Ik ben er op 4 door van de 10
@@ -782,4 +784,4 @@ Bedrijf onderscheiden van ander bedrijf door gebruik te maken van internet:
 * Differentiator:
     * fundamenteel wetenschappelijk onderzoek
     * productontwikkeling
-    
+

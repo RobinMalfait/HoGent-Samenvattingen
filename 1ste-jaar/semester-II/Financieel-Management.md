@@ -1,4 +1,6 @@
-# Financieel Management
+---
+title: Financieel Management
+---
 
 # Deel 1 Basisbegrippen
 
