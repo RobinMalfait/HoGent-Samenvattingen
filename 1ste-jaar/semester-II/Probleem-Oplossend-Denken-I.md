@@ -471,7 +471,7 @@ S<sub>k</sub> = 1 + a + a<sup>2</sup> + a<sup>3</sup> + ... + a<sup>k</sup>
 
 a . S<sub>k</sub> = a + a<sup>2</sup> + a<sup>3</sup> + ... + a<sup>k</sup> + a<sup>k + 1</sup>
 
----
+----
 
 S<sub>k</sub> - a . S<sub>k</sub> = 1 - a<sup>k + 1</sup>
 
