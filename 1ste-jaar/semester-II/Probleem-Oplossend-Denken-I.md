@@ -14,7 +14,7 @@ title: Probleem Oplossend Denken I
 
 ### 1.1.1 De sequentiestructuur
 
----
+----
 
 ```pascal
 opdracht 1
@@ -35,7 +35,7 @@ RETOUR bodyMassIndex
 
 ### 1.1.2 De selectiestructuur
 
----
+----
 
 ```pascal
 ALS voorwaarde DAN
@@ -83,7 +83,7 @@ EINDE ALS
 
 ### 1.1.3 De iteratiestructuur
 
----
+----
 
 ```pascal
 ZOLANG iteratievoorwaarde DOE
@@ -550,7 +550,7 @@ T(n) = n + 1
 
 Wie weet het geheim? Iedereen want het wordt doorgegeven.
 
----
+----
 
 ```pascal
 Gegeven:        T(0) = 1
@@ -600,7 +600,7 @@ T(n) = 2 T(n - 1) + 1       als n ≥ 2
 
 Gok: (n) = 2<sup>n</sup>-1
 
----
+----
 
 ```pascal
 Gegeven:        T(1) = 1
@@ -1911,10 +1911,10 @@ EINDE
 
 ```pascal
 List(I: n: geheel getal): /
-   * Preconditie: n is een natuurlijk getal.
-   * Postconditie: de array data van lengte n werd gealloceerd, het natuurlijk getal
+    * Preconditie: n is een natuurlijk getal.
+    * Postconditie: de array data van lengte n werd gealloceerd, het natuurlijk getal
 aantal werd ge¨ınitialiseerd.
-   * Gebruikt: /
+    * Gebruikt: /
 BEGIN
     data <- nieuwe array[n]
     aantal <- 0
@@ -2321,7 +2321,7 @@ EINDE
 Voor de opbouw van het woordenboek met tweeletterwoorden was er nood aan een functie die alle sleutels afbeeldt op een positie (bucket) van een tabel. Aangezien het over een beperkt aantal sleutels ging, was het mogelijk om de tabel voor te stellen door een array.
 
 Wanneer alle mogelijke woorden van willekeurige lengte moeten opgenomen worden in het woordenboek dan wordt het aantal benodigde sleutels aanzienlijk groter.
-Stel dat het woord ‘hottentottententententoonstelling’, dat 33 letters telt, het langste op te nemen woord is. Dan moeten er, om alle mogelijke woorden te kunnen opnemen, 2633 sleutels worden voorzien. Werken met een array van dergelijke lengte is niet meer efficie ̈nt naar geheugengebruik toe.
+Stel dat het woord 'hottentottententententoonstelling', dat 33 letters telt, het langste op te nemen woord is. Dan moeten er, om alle mogelijke woorden te kunnen opnemen, 2633 sleutels worden voorzien. Werken met een array van dergelijke lengte is niet meer efficie ̈nt naar geheugengebruik toe.
 
 Een mogelijke oplossing is om bij aanvang een getal N te selecteren dat het maximum posities van de te gebruiken tabel, waarin alle waarden worden opgeslagen, aangeeft. Dit betekent dat de hashtabel in een array van lengte N opgeslagen wordt.
 
