@@ -269,6 +269,6 @@ Res = Opbrengst - Kost
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/kost_schuld.png)
 
----
+-------
 
 ![](/afbeeldingen/1ste-jaar/semester-II/Financieel-Management/belastingen.png)
