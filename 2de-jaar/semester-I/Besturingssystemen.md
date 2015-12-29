@@ -701,7 +701,7 @@ store linesentered
 
 > Dit is een vervelende situatie: de informatie in linesentered is fout!
 
-### 3.2.3 Wederzijdse uitsluiding
+### 3.2.3 Wederzijdse uitsluiting
 
 > De kritieke sectie van een proces is de code die naar gemeenschappelijke data verwijst
 >
