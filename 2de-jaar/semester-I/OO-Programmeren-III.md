@@ -268,10 +268,244 @@ public class Arrays
      * toString METHODE
      */
     // Geeft de stringrepresentatie van de inhoud van de array a terug.
-    //
+    // De elementen van de array worden tussen vierkante haakjes geplaatst, en gescheiden via ",". Geeft "null" terug indien a null is.
     public static String toString(boolean[] a);
+
+    /**
+     * deepToString METHODE
+     */
+    // Geeft de stringrepresentatie van de "diepe" inhoud van de array a terug. Deze methode wordt vooral gebruikt bij meerdimensionale arrays.
+    public static String deepToString(Object[] a);
 }
 ```
+
+## Interface collection en klasse collections.
+
+```java
+public interface Collection<E>
+{
+    // Adding
+    // Clearing
+    // Comparing
+    // Retaining objects
+}
+
+public interface Set<E> extends Collection<E> {}
+public interface List<E> extends Collection<E> {}
+public interface Queue<E> extends Collection<E> {}
+
+class Collections
+{
+    // Voorizet static methoden die collections manipuleren
+    // Polymorfisme wordt hierbij ondersteund
+}
+```
+
+## List Interface
+
+> Geordende Collection waarbij duplicaten toegelaten zijn: SEQUENCE
+
+- Index start van 0
+
+```java
+public interface List<E> extends Collection<E> {}
+
+/**
+ * Concrete Implementaties:
+ */
+public class ArrayList<E> implements List<E> {}     // Resizable-array implementatie
+public class LinkedList<E> implements List<E> {}    // linked-list implementatie
+public class Vector<E> implements List<E> {}        // zoals ArrayList maar synchronized
+```
+
+### Voorbeeld van ArrayList:
+
+```java
+import java.util.*;
+public class CollectionTest
+{
+    private static final String[] COLORS = { "MAGENTA", "RED", "WHITE", "BLUE", "CYAN" };
+    private static final String[] REMOVECOLORS = { "RED", "WHITE", "BLUE" };
+
+    public CollectionTest
+    {
+        List<String> list = new ArrayList<>();
+
+        // Opvullen van de ArrayList "list"
+        for (String color : COLLORS)
+        {
+            list.add(color);
+        }
+
+        // Je kan ook minder efficient opvullen met een for loop...
+        List<String> removeList = new ArrayList<>(Arrays.asList(REMOVECOLORS));
+
+        // Afdrukken van de array
+        // OUDE MANIER:
+        for (int count = 0; count < list.size(); count++)
+        {
+            System.out.printf("%s", list.get(count));
+        }
+
+        // Goede nieuwe manier:
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext())
+        {
+            System.out.printf("%s", iterator.next());
+        }
+
+        // Verwijder alle strings uit "list" die in "removeList" voorkomen
+        removeColors(list, removeList);
+
+        // Opnieuw Afdrukken
+        System.out.println("\n\nArrayList after calling removeColors: ");
+        printList(list);
+
+        public void printList(Collection<String> collection)
+        {
+            for (String color : collection)
+                System.out.printf("%s", color);
+            System.out.println();
+        }
+
+        // Verwijder alle strings uit "collection1" die in "collection2" voorkomen
+        private void removeColors(Collection<String> collection1, Collection<String> collection2)
+        {
+            Iterator<String> iterator = collection1.iterator();
+
+            while (iterator.hasNext())
+            {
+                if (collection2.contains(iterator.next()))
+                {
+                    iterator.remove(); // remove String object
+                }
+            }
+        }
+
+        public static void main(String args[])
+        {
+            new CollectionTest();
+        }
+    }
+}
+```
+
+### Voorbeeld: LinkedList
+
+```java
+import java.util.*;
+public class ListTest
+{
+    private static final String COLORS[] = { "black", "yellow", "green", "blue", "violet", "silver" };
+    private static final String COLORS2[] = { "gold", "white", "brown", "blue", "gray", "silver" };
+
+    // aanmaak en manipulatie van LinkedList objecten
+    public ListTest()
+    {
+        List<String> list1 = new LinkedList<>();
+
+        // Opvullen van de LinkedList "list1"
+        for (String color : COLORS)
+        {
+            list1.add(color);
+        }
+
+        // Opvullen list2 via constructor: efficienter
+        List<String> list2 = new LinkedList<>(Arrays.asList(COLORS2));
+
+        // 'plak' list2 achter list1
+        list1.addAll(list2);    // Concatenatie van lists
+        list2 = null;           // release resources
+
+        printCollection(list1);
+
+        convertToUppercaseStrings(list1);
+        printCollection(list1);
+
+        System.out.print("\nDeleting elements 4 to 6...");
+        removeItems(list1, 4, 7);
+        printCollection(list1);
+
+        printReversedList(list1);
+    }
+
+    public void printCollection(Collection<String> col)
+    {
+        // Java 7
+        for(String color : col)
+        {
+            System.out.printf("%s", color);
+        }
+        System.out.println();
+
+        // Java 8
+        Iterator<String> iterator = col.iterator();
+        while (iterator.hasNext())
+        {
+            System.out.printf("%s", iterator.next());
+        }
+        System.out.println();
+    }
+
+    private void convertToUppercaseStrings(List<String> list)
+    {
+        ListIterator<String> iterator = list.listIterator();
+
+        while (iterator.hasNext())
+        {
+            String color = iterator.next();
+            iterator.Set(color.toUpperCase());
+        }
+    }
+
+    private void removeItems(List<String> list, int start, int end)
+    {
+        list.subList(start, end).clear();
+    }
+
+    private void printReversedList(List<String> list)
+    {
+        // met ListIterator kan je zowel vooruit hasNext() & next() maar ook achteruit hasPrevious() & previous() itereren.
+        ListIterator<String> iterator = list.listIterator(list.size());
+
+        System.out.println("\nReversed List:");
+
+        // Print list in reverse order
+        while (iterator.hasPrevious())
+        {
+            System.out.printf("%s", iterator.previous());
+        }
+    }
+
+    public static void main(String args[])
+    {
+        new ListTest();
+    }
+}
+```
+
+## Klasse Vector - Klasse ArrayList
+
+De klasse `Vector<E>` is een verouderde klasse en wordt vervangen door de nieuwe klasse `ArrayList<E>`.<br>Klasse `ArrayList<E>` bevat bijna dezelfde methodes als de klasse `Vector<E>`. Een groot verschil is dat `ArrayList<E>` inet gesynchroniseerd is en een `Vector<E>` wel.
+
+Het Collections framework voorziet een aantal algoritmen (static methoden);
+
+- **List algoritmen:**
+    - sort
+    - binarySearch
+    - reverse
+    - shuffle
+    - fill
+    -copy
+- **Collection algoritmen:**
+    - min
+    - max
+    - addAll
+    - frequency
+    - disjoint
+
+
+
 
 
 
