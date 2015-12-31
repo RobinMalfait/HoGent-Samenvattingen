@@ -2,6 +2,108 @@
 title: Bedrijfsmanagement
 ---
 
+| Afkorting | Voluit |
+| --------- | ------ |
+| EH | Eenheid |
+| GS | Grondstof |
+| HB | Handboek (¯\_(ツ)_/¯) |
+| PM | Productiemiddelen |
+| TK | Totale Kosten |
+| TO | Totale Opbrengsten |
+| TW | Totale Winst |
+
+## 1. Kostenbegrippen
+## 1.1 Het begrip kosten
+## 1.2 De doeleinden van de kostenberekening
+
+> **KOSTEN** zijn de in geld uitgedrukte waarde van de opgeofferede productiemiddelen.
+>
+> (aanwending van PM) **KOSTEN** ≠ **UITGAVE** (uitgaande geldstroom)
+<br>
+> **TW = TO - TK**
+
+## 1.3 De standaarkostprijsberekening
+
+> **STANDAARDKOSTPRIJS** van een product is de som van de noodzakelijke (= niet vermijdbare) of toegestane kosten per EH product.
+
+- Standaarhoeveelheden PM (onderzoek of ervaring)
+- Standaardprijzen (VB.: de vermoedeleijke prijs van de grondstoffen)
+
+Waarom?
+
+- kostenbeheersing (voor- en nacalculatie) -> doelmatig werken
+- budgetteren (verkoop- en productieplan (taakstellende begroting))
+- prijsbepaling (grensprijs, winstmarge, ...)
+
+# 2. Kostensoorten
+
+**Kosten** zijn de in geld uitgedrukte waarde van opgeofferde productiemiddelen.
+
+Kosten = Prijs x Hoeveelheid
+
+**Different costs for different purposes**
+
+## Categorische indeling van de kosten:
+
+- Kosten van grond- en hulpstoffen
+- Kosten van arbeid
+- Kosten van duurzame productiemiddelen
+- Kosten van grond
+- Kosten van diensten en derden
+- Kosten van belastingen
+- rentekosten
+
+## 2.1 De kosten van grond- en hulpstoffen
+
+| Term | Uitleg |
+| ---- | –----- |
+| Grondstoffen | Worden verwerkt, d.w.Z. je vindt ze terug in het eindproduct. (VB.: katoen in een jeansbroek) |
+| Hulpstoffen | Zijn grondstoffen die worden gebruikt bij de vervaardiging van het eindproduct maar die geen deel uitmaken van het eindproduct. (VB.: Smeerolie voor een machine) |
+| Afval | De hoeveelheid grondstof die verloren gaat tijdens het productieproces |
+| Bijproduct | Afval dat aan een derde partij kan worden verkocht |
+
+**Uitval** ontstaat **na** het productieproces: de waarde van de, bij kwaliteitscontrole, afgekeurde producten.
+De kosten van zowel afval als uitval worden opgenomen in het bruto verbruik grondstoffen in de kostprijs.
+
+Een producent van houten meubels hanteert de volgende gegevens:
+
+* Om een tafel uit eikenhout te produceren, onstaat <font color="red">**10%**</font> afval.
+* Het afval heeft geen waarde.
+* In een eindproduct zit <font color="red">**9 kilogram**</font> grondstof.
+* De grondstofprijs is <font color="red">**€6 per kilogram**</font>.
+* Er worden <font color="red">**100 tafels**</font> geproduceerd.
+
+Gevraagd:
+a. Wat is het bruto verbruik grondstoffen?
+b. Wat zijn de totale grondstofkosten?
+
+### A) Bruto Verbruik
+
+```
+Eindproduct         100%
+- Afval              10%
+                    ----
+Aanwezig GS/product  90%          =    9kg.
+Brutoverbruik       100/90 x 9kg =   10kg.
+
+Voor 100 producten = 100 x 10kg  = 1000kg.
+
+Grondstofkosten:
+Voor 100 tafels:     1000kg x €6 = €6000
+```
+
+Het afval heeft in bovenstaand voorbeeld geen waarde, maar het kan zijn dat het afval aan een derde partij kan worden verkocht. Houtafval kan bijvoorbeeld weer dienen als openhaardhout. Dit wordt BIJPRODUCT genoemd.
+
+In het vorige vb. van de houten tafels wordt het afval verkocht voor € 0,50 per kg.
+
+Gevraagd:
+Wat zijn dan de grondstofkosten wanneer het bijproduct kan verkocht worden?
+
+De grondstofkosten om 100 tafels te produceren bedragen 1.000kg * €6 = €6.000
+Het afval (10% = 100kg) wordt verkocht voor 100kg * €0,50 = €50.
+Deze opbrengsten kunnen in mindering worden gebracht op de grondstofkosten, waarmee uiteindelijk de grondstofkosten voor 100 tafels komen te liggen op:
+€6.000 - €50 = €5950
+
 ## 2.2 De arbeidskosten
 
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
