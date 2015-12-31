@@ -104,6 +104,8 @@ Het afval (10% = 100kg) wordt verkocht voor 100kg * €0,50 = €50.
 Deze opbrengsten kunnen in mindering worden gebracht op de grondstofkosten, waarmee uiteindelijk de grondstofkosten voor 100 tafels komen te liggen op:
 €6.000 - €50 = €5950
 
+Voorbeeld afval: ![](https://d.pr/i/1588H+)
+
 ## 2.2 De arbeidskosten
 
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
@@ -117,6 +119,14 @@ Deze opbrengsten kunnen in mindering worden gebracht op de grondstofkosten, waar
 - Bijzondere bijdrage Sociale Zekerheid
 = Netowedden
 ```
+
+**Voorzieningen ten behoeve van de werknemers:**
+
+- opleiding
+- kantinekosten
+- reiskosten
+- diverse vergoedingen
+- ...
 
 3 Belongingssystemen te onderscheiden
 
