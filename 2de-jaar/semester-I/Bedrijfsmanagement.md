@@ -6,7 +6,7 @@ title: Bedrijfsmanagement
 | --------- | ------ |
 | EH | Eenheid |
 | GS | Grondstof |
-| HB | Handboek ¯\\_(ツ)_/¯ |
+| HB | Handboek `¯\_(ツ)_/¯` |
 | PM | Productiemiddelen |
 | TK | Totale Kosten |
 | TO | Totale Opbrengsten |
