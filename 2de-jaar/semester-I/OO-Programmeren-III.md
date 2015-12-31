@@ -532,7 +532,7 @@ Functioneel programmeren:
 
 **Wat** wil je in een taak uitvoeren (niet hoe).
 
-> **Interal** iteratie
+> **Internal** iteratie
 - Laat de bibliotheek de manier bepalen om over een collectie van elementen te itereren.
 - Internal iteratie is gemakkelijker voor parallelle uitvoering.
 
