@@ -2,15 +2,19 @@
 title: Bedrijfsmanagement
 ---
 
-| Afkorting | Voluit |
-| --------- | ------ |
-| EH | Eenheid |
-| GS | Grondstof |
-| HB | Handboek `¯\_(ツ)_/¯` |
-| PM | Productiemiddelen |
-| TK | Totale Kosten |
-| TO | Totale Opbrengsten |
-| TW | Totale Winst |
+| Afkorting | Voluit                     |
+| --------- | -------------------------- |
+| DPM       | Duurzaam Productie Middel  |
+| EH        | Eenheid                    |
+| ELD       | Economische Levensduur     |
+| GS        | Grondstof                  |
+| HB        | Handboek `¯\_(ツ)_/¯`      |
+| PM        | Productiemiddelen          |
+| RW        | Rest Waarde                |
+| TK        | Totale Kosten              |
+| TLD       | Technische Levensduur      |
+| TO        | Totale Opbrengsten         |
+| TW        | Totale Winst               |
 
 ## 1. Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -155,17 +159,32 @@ Voorbeeld afval: ![](https://d.pr/i/1588H+)
 - Transportmiddelen
 - Gebouwen
 
-**Technische levensuurd (TLD)**
+De kosten van een DPM worden per werkeenheid berekend en bestaan uit:
+
+| Kost | Uitleg |
+| :--- | :----- |
+| Afschrijvingskosten | Kosten van waardevermindering van het DPM |
+| Vermogenskosten | Rentekosten |
+| Complementaire kosten | Alle overige kosten van het DPM anders dan afschrijving en rente. Bijvoorbeeld onderhoud, energie, arbeid, ... |
+
+
+De levensduur van een DPm kan uitgedrukt worden in:
+
+**Technische levensduur (TLD)**
+
+Deze eindigt wanneer het DPM door **technisch falen** geen prestaties meer kan leveren.
 
 > Waardevermindering is het gevolg van het gebruik
 
 **Economische levensduur (ELD)**
 
+De periode waarin het DPM prestaties levert tegen de **laagste gemiddelde kosten**. (RENDABEL)
+
 > Waardevermindering is het gevolg van technologische vooruitgang
-
-----
-
+> ----
 > **!** ELD < TLD
+
+**ELD**: ![](https://d.pr/i/13D0C+)
 
 Bepaling jaarlijkse afschrijving:
 
