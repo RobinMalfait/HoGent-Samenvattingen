@@ -85,7 +85,7 @@ b. Wat zijn de totale grondstofkosten?
 Eindproduct         100%
 - Afval              10%
                     ----
-Aanwezig GS/product  90%          =    9kg.
+Aanwezig GS/product  90%         =    9kg.
 Brutoverbruik       100/90 x 9kg =   10kg.
 
 Voor 100 producten = 100 x 10kg  = 1000kg.
