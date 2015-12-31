@@ -504,14 +504,48 @@ Het Collections framework voorziet een aantal algoritmen (static methoden);
     - frequency
     - disjoint
 
+(Slide 21 (hfdst 16), will be continued ...)
 
 
+# Hoofdstuk 17: Lambda's en Stream
 
 
+Nu:
+
+**Hoe** wil je een taak uitvoeren?
+
+```java
+int sum = 0, values[];
+for(int counter = 0; counter < values.length; counter++)
+{
+    sum += values[counter];
+}
+```
+
+> **External** iteratie
+- Gebruik van een lus om te itereren over een collectie van elementen.
+- Vereist sequentiële benadering van de elementen.
+- Vereist veranderlijk variabelen (sum en counter).
 
 
+Functioneel programmeren:
 
+**Wat** wil je in een taak uitvoeren (niet hoe).
 
+> **Interal** iteratie
+- Laat de bibliotheek de manier bepalen om over een collectie van elementen te itereren.
+- Internal iteratie is gemakkelijker voor parallelle uitvoering.
+
+> Functioneel programmeren legt de klemtoon op immutability, het niet aanpassen van de aangesproken databron.
+
+| Interface | Description |
+| --------- | ----------- |
+| `BinaryOperator<T>` | Contains method `apply` that takes two `T` arguments, performs an operation on them (such as a calculation) and returns a value of type `T`. |
+| `Consumer<T>` | Contains method `accept` that takes a `T` argument and returns void. Performs a task with it's `T` arguments, such as outputting the object, invoking a method of the object, etc. |
+| `Function<T,R>` | Contains method `apply` that takes a `T` argument and returns a value of type `R`. Calls a method on the `T` argument and returns that method's result. |
+| `Predicate<T>` | Contains method `test` that takes a `T` argument and returns a `boolean`. Tests wheter the `T` argument satisfies a condition. |
+| `Supplier<T>` | Contains method `get` that takes no arguments and produces a value of type `T`. Often used to create a collection object in which a stream operation's results are place. |
+| `UnaryOperator<T>` | Contains method `get` that takes no arguments and returns a value of type `T`. |
 
 
 
