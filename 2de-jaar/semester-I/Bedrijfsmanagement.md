@@ -58,7 +58,7 @@ Kosten = Prijs x Hoeveelheid
 ## 2.1 De kosten van grond- en hulpstoffen
 
 | Term | Uitleg |
-| :--: | :----: |
+| :--- | :----- |
 | Grondstoffen | Worden verwerkt, d.w.Z. je vindt ze terug in het eindproduct. (VB.: katoen in een jeansbroek) |
 | Hulpstoffen | Zijn grondstoffen die worden gebruikt bij de vervaardiging van het eindproduct maar die geen deel uitmaken van het eindproduct. (VB.: Smeerolie voor een machine) |
 | Afval | De hoeveelheid grondstof die verloren gaat tijdens het productieproces |
