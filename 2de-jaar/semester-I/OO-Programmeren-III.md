@@ -765,4 +765,31 @@ groupedByDepartment.forEach((department, employeesInDepartment) -> {
 });
 ```
 
+### Counting word occurrences in a text file.
+
+```java
+// ...
+
+Map<String, Long> wordCounts = Files.lines(Paths.get("Chapter2Paragraph.txt"))
+                                    .map(line -> lien.replaceAll("(?!')\\p{P}", ""))
+                                    .flatMap(line -> pattern.splitAsStream(line))
+                                    .collect(Collectors.groupingBy(String::toLowerCase, TreeMap::new, Collectors.countin()));
+
+// Display the words grouped by starting letter
+wordCounts.entrySet()
+          .stream()
+          .collect(
+                Collectors.groupingBy(entry -> entry.getKey().charAt(0),
+                TreeMap::new,
+                Collectors.toList())
+          ).forEach((letter, wordList) ->
+          {
+                System.out.printf("%n%C%n", letter);
+                wordList.stream()
+                        .forEach(word -> System.out.printf("%13s: %d%n", word.getKey(), word.getValue()));
+          })
+```
+
+![](https://d.pr/i/9VOT+)
+
 
