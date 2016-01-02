@@ -512,11 +512,126 @@ Het Collections framework voorziet een aantal algoritmen (static methoden);
     - frequency
     - disjoint
 
-(Slide 21 (hfdst 16), will be continued ...)
+### 7.1 ALGORITME: sort
 
+```java
+private static final string SUITS[] = {"Hearts", "Diamond", "Clubs", "Spades"};
+
+List<String> list Arrays.asList(SUITS);
+
+// Ascending
+Collections.sort(list);
+System.out.printf("Sorted array elements: %n%s%n", list); // Sorted array elements: [Clubs, Diamonds, Hearts, Spades]
+
+// Descending
+Collections.sort(list, Collections.reverseOrder());
+```
+
+### 7.1 ALGORITME: shuffle
+
+```java
+class Card
+{
+    public static enum Face { Ace, Deuce, Three, Four, Five, Six, Seven, Eigh, Nine, Ten, Jack, Queen, King };
+    public static enum Suit { Clubs, Diamonds, Hearts, Spades };
+
+    private final Face face; // face of card
+    private final Suit suit; // suit of card
+
+    public Card(Face cardFace, Suit cardSuit)
+    {
+        this.face = cardFace;
+        this.suit = cardSuit;
+    }
+
+    public Face getFace() { return this.face; }
+    public Suit getSuit() { return this.suit; }
+
+    public String toString()
+    {
+        return String.format("%s of %s", this.face, this.suit);
+    }
+}
+
+public class DeckOfCards
+{
+    private List<Card> list; // list zal de speelkaarten bevatten
+
+    public DeckOfCards()
+    {
+        Card[] deck = new Card[52];
+        int count = 0; // Number of cards
+
+        for (Card.Suit suit : Card.Suit.values())
+        {
+            for (Card.Face face : Card.Face.values())
+            {
+                deck[count] = new Card(face, suit);
+                count++;
+            }
+        }
+
+        list = Arrays.asList(deck);
+        Collections.shuffle(list); // SHUFFLE IT :D
+    }
+}
+```
+
+### 7.3 ALGORITME: reverse, fill, copy, min, max
+
+```java
+// Copy List overschrijft de elementen van copyList: dupliceert de objectreferenties
+// Als er copyList.size() > list.size(): overige (laatste) elementen blijven ongewijzigd
+// Als er copyList.size() < list.size(): IndexOutOfBoundsException
+Collections.copy(copyList, list);
+
+// Fill list with 'R's
+Collections.fill(list, 'R');
+
+Collections.reverse(list); // Reverses the list
+
+Collections.max(someList); // Gets the highest value
+Collections.min(someList); // Gets the lowest value
+```
+
+### 7.4 ALGORITME: binarySearch
+
+**!** enkel op gesorteerde lijsten.
+
+Binary search geeft de index waarde terug van het item in de lijst. Wanneer dit getal negatief is kan je ineens de waarde berekenen waar dit object zou moeten zitten. `waarde * - 1 - 1`
+
+```java
+public class BinarySearchTest
+{
+    private static final String COLORS[] = { "red", "white", "yellow", "green", "pink" };
+    private List<String> list;
+
+    public class BinarySearchTest()
+    {
+        list = new ArrayList<>(Arrays.asList(COLORS));
+        Collections.sort(list);     // Sort the ArrayList, so that we can perform searches
+        System.out.printf("Sorted ArrayList: %s%n", list);
+
+        int result = Collections.binarySearch(list, "yellow"); // Gets the index of the "yellow" position
+        System.our.printf("yellow: %d%n", result);
+
+        result = Collections.binarySearch(list, "purple"); // Purple doesn't exist!
+        System.ut.printf("purple: %d%n", result);
+
+        /**
+         * Output:
+         */
+        // Sorted ArrayList: [green, pink, red, white, yellow]
+        // yellow: 4
+        // purple: -3
+
+        // -3 it is negative so we know it doesn't exist, now we can calculate where it would
+        // go when it gets inserted via result * - 1 - 1 = 2
+    }
+}
+```
 
 # Hoofdstuk 17: Lambda's en Stream
-
 
 Nu:
 
