@@ -59,6 +59,14 @@ class Node {
 
 # Hoofdstuk 16: GENERIC COLLECTIONS
 
+| Interface | Description |
+| --------- | ----------- |
+| Collection | The root interface in the collections hierarchy from which interfaces `Set`, `Queue` and `List` are derived. |
+| Set | A collection that does *not* contain duplicates. |
+| List | An ordered collection that *can* contain duplicate elements. |
+| Map | A collection that associates keys to values and *cannot* contain duplicate keys. Map does not derive from `Collection` |
+| Queue | Typically a *first-in, first-out* collection that models a *waiting line*, other orders van be specified. |
+
 ## Collections Framework
 
 > - Meest voorkomende datastructuren gestandaardiseerd en efficient geïmplementeerd.
@@ -613,12 +621,148 @@ Stream pipelines:
 | `anyMatch`  | Determines whether *any* stream elements matach a specified condition; immediately terminates processing of the stream pipeline if an element matches. |
 | `allMatch`  | Determinaes whether *all* of the elements in the stream match a specified condition. |
 
+### IntStream voorbeeld:
 
+```java
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
+public class IntStreamOperations
+{
+    public static void main(String[] args)
+    {
+        int[] values = {3, 10, 6, 1, 4, 8, 2, 5, 9, 7};
 
+        // Display original
+        System.out.print("Original values: ");
+        IntStream.of(values)
+                 .forEach(value -> System.out.printf("%d ", value));
+        System.out.println();
 
+        // Count, min, max, sum and average of the values
+        System.out.printf("%nCount: %d%n", IntStream.of(values).count());
+        System.out.printf("Min: %d%n", IntStream.of(values).min().getAsInt());
+        System.out.printf("Max: %d%n", IntStream.of(values).max().getAsInt());
+        System.out.printf("Sum: %d%n", IntStream.of(values).sum());
+        System.out.printf("Average: %d%n", IntStream.of(values).average().getAsDouble());
 
+        // sum of values with reduce method
+        System.out.printf("%nSum via reduce method: %d%n", IntStream.of(values).reduce(0, (x, y) -> x + y));
 
+        // Sum of squares of values with reduce method
+        System.out.printf("Sum of squares via reduces method: %d%n", IntStream.of(values).reduce(0, (x, y) -> x + y * y));
 
+        // Product of values with reduce method
+        System.out.printf("Product via reduce method: %d%n", IntStream.of(values).reduce(1, (x, y) -> x * y));
+
+        // ...
+    }
+}
+```
+
+## Stream<Integer> bewerkingen
+
+```java
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+// ...
+
+Arrays.stream(values)
+      .sorted()
+      .collect(Collectors.toList());
+
+// ...
+
+// Values greater than 4
+
+List<Integer> greaterThan4 = Arrays.stream(values)
+                                   .filter(value -> value > 4)
+                                   .collect(Collectors.toList());
+
+// Filter values greater than 4 then sort the results
+Arrays.stream(values)
+      .filter(value -> value > 4)
+      .sorted()
+      .collect(Collectors.toList());
+
+// ...
+```
+
+## Stream<String> bewerkingen
+
+```java
+import java.util.stream.Collectors;
+// ...
+
+Arrays.stream(strings)
+      .map(String::toUpperCase)     // Dit is een referentie naar de methode toUpperCase van de klasse String, deze methode wordt dan opgeroepen in de map methode.
+      .collect(Collectors.toList());
+```
+
+## Methodreferentie
+
+```java
+String objectName = new String();
+
+objectName::instanceMethodName  // Dit is een method referentie op een object
+ClassName::instanceMethodName   // Dit is een static method referentie van een klasse
+ClassName::new                  // Dit is een referentie voor de constructor
+```
+
+| Lambda | Description |
+| ------ | ----------- |
+| `String::toUpperCase` | Method reference for an instance method of a class. Creates a one-parameter lambda that invokes the instance method on the lambda's argument and returns the method's result. |
+| `System.out::println` | Method reference for an instance method that should be called on a specific object. Creates a one-parameter lambda that invokes the instance method on the specified object -- passing the lambda's argument to the instance method -- and returns the method's result. |
+| `Math::sqrt` | Method reference for a static method of a class. Creates a one-parameter lambda in which the lambda's argument is passed to the specified a static method and the lambda returns the method's result. |
+| `TreeMap::new` | Constructor reference. Creates a lambda that invokes the no-argument constructor of the specified class to create and initialize a new object of that class. |
+
+## Predicates
+
+```java
+Employee[] employees = {
+    new Employee("Jason", "Red", 5000, "IT"),
+    new Employee("Ashley", "Green", 7600, "IT"),
+    new Employee("Matthew", "Indigo", 6200, "Sales"),
+    new Employee("JaJamesson", "Blue", 4700, "Marketing"),
+};
+List<Employee> list = Arrays.asList(employees);
+Predicate<Employee> fourToSixThousand = e -> (e.getSalary() >= 4000 && e.getSalary() <= 6000);
+System.out.printf("%nEmployees earning $4000-$6000 per month sorted by salary:%n");
+
+list.stream()
+    .filter(fourToSixThousand) // Predicate
+    .sorted(Comparator.comparing(Employee::getSalary))
+    .forEach(System.out::println);
+```
+
+### Sorteren van Employees op basis van meerdere velden.
+
+```java
+// Functions for getting first and last names from an Employee
+Function<Employee, String> byFirstName = Employee::getFirstName;
+Function<Employee, String> byLastName = Employee::getLastName;
+
+// Comparator for comparing Employees by first name then last name
+Comparator<Employee> lastThenFirst = Comparator.comparing(byLastName).thenComparing(byFirstName);
+
+// Sort employees by last name, then first name
+list.stream()
+    .sorted(lastThenFirst)
+    .forEach(System.out::println);
+
+// Sort employees in descending order by last name, then first name
+list.stream()
+    .sorted(lastThenFirst.reversed())
+    .forEach(System.out::println);
+
+// Loop over Map
+Map<String, List<Employee>> groupedByDepartment = list.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+                         // (String,     List<Employee>       )
+groupedByDepartment.forEach((department, employeesInDepartment) -> {
+    System.out.println(department);
+    employeesInDepartment.forEach(employee -> System.out.printf("    %s%n", employee));
+});
+```
 
 
