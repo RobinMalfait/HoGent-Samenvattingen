@@ -790,6 +790,6 @@ wordCounts.entrySet()
           })
 ```
 
-![](https://d.pr/i/9VOT+)
+![](https://d.pr/i/1ifzq+)
 
 
