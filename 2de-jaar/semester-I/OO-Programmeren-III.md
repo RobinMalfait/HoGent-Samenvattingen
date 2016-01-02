@@ -547,6 +547,76 @@ Functioneel programmeren:
 | `Supplier<T>` | Contains method `get` that takes no arguments and produces a value of type `T`. Often used to create a collection object in which a stream operation's results are place. |
 | `UnaryOperator<T>` | Contains method `get` that takes no arguments and returns a value of type `T`. |
 
+## Lambda Expressies
+
+```java
+(int x, int y) -> { return x + y; }
+(x, y) -> x + y
+(x, y) -> { return x + y; }
+value -> System.out.printf("%d ", value)
+() -> System.out.println("Welcome to lambdas!")
+```
+
+## Streams
+
+Dit zijn objecten van:
+
+- Klassen die de interface `Stream` (from the package `java.util.stream`) implementeren.
+- één van de gespecialiseerde stream interfaces voor verwerking van `int`, `long` of `double` waarden.
+
+Stream pipelines:
+
+- Laat elementen een reeks van verwerkingsstappen doorlopen
+- Pipeline:
+    - Begint met een databron
+    - Voert meerdere **intermediate** operaties uit op de elementen van de databron en
+    - eindigt met een **terminal** operatie.
+- Wordt gevormd door geketende methode aanroepen.
+- Streams bewaren geen data
+    - Eenmaal een stream is uitgevoerd kan het niet worden herbruikt, omdat het geen kopij bijhoudt van de originele databron.
+- Intermediate (= tussentijdse) operatie
+    - Specificieert een taak op elementen van een stream en resulteert altijd in een nieuwe stream.
+    - Zijn lazy: worden pas uitgevoerd als een terminal operaite wordt aangeroepen.
+- Terminal (=eind) operatie:
+    - Start de verwerking van de stream pipeline's intermediate operaties
+    - Creëert een resultaat
+    - Zijn eager: voeren de gevraagde operatie uit wanneer ze worden aangeroepen
+
+
+**Intermediate Stream operations**:
+
+| Operation  | Explanation |
+| ---------- | ----------- |
+| `filter`   | Results in a stream containing only the elements that satisfy a condition. |
+| `distinct` | Results in a stream constraining only the unique elements. |
+| `limit`    | Results in a stream with the specified number of elements from the beginning of the original stream. |
+| `map`      | Results in a stream in which each element of the original stream is mapped to a new value (possibly of a different-type) -- e.g.: Mapping numeric values to the squares of the numeric values. The ew stream has the same number of elements as the original stream. |
+| `sorted`   | Results in a stream in which the elements are in sorted order. The new stream has the same number of elements as the original stream. |
+
+**Terminal Stream operations**:
+
+| Operation   | Explanation |
+| ----------- | ----------- |
+| `forEach`   | Performs processing on every element in a stream (e.g.: display each element) |
+| <font color="blue">Reduction Operations</font> | *Take all values in the stream and return a single value* |
+| `average`   | Calculates the *average* of the elements in a numeric stream. |
+| `count`     | Returns the *number of elements* in the stream. |
+| `max`       | Locates the *largest* value in a numeric stream. |
+| `min`       | Locates the *smallest* value in a numeric stream. |
+| `reduce`    | Reduces the elements of a collection to a *single value* using an associative accumulation function (e.g.: a lambda that adds two elements) |
+| <font color="blue">Mutable reduction operations</font> | *Create a container (such as a collection or StringBuilder* |
+| `collect`   | Creates a *new collection* of elements containing the results of the stream's prior operations. |
+| `toArray`   | Creates an *array* containing the results of the stream's prior operations. |
+| <font color="blue">Search Operations</font> | &nbsp; |
+| `findFirst` | Finds the *first* stream element based on the prior intermediate operations; immediately terminates processing of the stream pipeline once such an element is found. |
+| `findAny`   | Finds *any* stream element based on the prior intermediate operations; immediately terminates processing of the stream pipeline once such an element is found. |
+| `anyMatch`  | Determines whether *any* stream elements matach a specified condition; immediately terminates processing of the stream pipeline if an element matches. |
+| `allMatch`  | Determinaes whether *all* of the elements in the stream match a specified condition. |
+
+
+
+
+
 
 
 

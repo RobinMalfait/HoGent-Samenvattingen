@@ -15,6 +15,8 @@ title: Bedrijfsmanagement
 | TLD       | Technische Levensduur      |
 | TO        | Totale Opbrengsten         |
 | TW        | Totale Winst               |
+| Aw        | Aanschafwaarde             |
+
 
 ## 1. Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -200,6 +202,13 @@ Fiscaal aanvaarde methoden:
 
 - Lineaire afschrijvingsmethode (Elk jaar evenveel)
 
+![](https://d.pr/i/HH20+)
+
+De afschrijvingskosten kunnen als volgt worden berekend:
+
+- Bepaal de totale waardevermindering/afschrijvingskosten
+    - = Aanschafwaarde (Aw) - Restwaarde (Rw)
+
 ```
 Voorbeeld:
 
@@ -219,8 +228,6 @@ BEREKENING:
 ```
 
 - Degressieve afschrijgingsmethode
-
-Fiscaal niet aanvarde methoden: (NTK)
 
 > **3 Regels**
 >
