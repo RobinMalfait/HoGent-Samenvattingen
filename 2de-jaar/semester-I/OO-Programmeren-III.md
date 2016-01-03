@@ -1596,6 +1596,252 @@ emf.close();
 > - Mag geen final class zijn
 > - Mag geen ensted class zijn
 
+## Instance variabele van Entity class
+
+Bevat waarde die opgeslagen is in het record dat bij de entity hoort.
+
+![](https://d.pr/i/15cSL+)
+
+## Mapping informatie
+
+- Mapping informatie definieert:
+    - Welke klasse bij welke tabel hoort
+    - Welke instance variabele bij welke kolom hoort
+- Kan je schrijven
+    - Met @nnotations in de entity class
+    - In XML: META-INF/orm.xml
+- XML overschrijft @annotations
+
+```java
+@Entity
+// Verplicht bij iedere entity class
+
+@Table(name="NaamVanDeTableDieEntitiesBevat")
+// Verplicht als de naam van de tabel ≠ naam van de entity class
+
+@Id
+// Verplicht bij instance variabele die hoort bij primary key
+
+@Column(name="NaamVanDeBijhorendeKolom")
+// Verplicht als kolomnaam ≠ instance variable naam
+```
+
+Voorbeeld:
+
+```java
+@Entity
+@Table(name = "docenten")
+public class Docent
+{
+    @Id
+    @GeneratedValue(                        // Primary key is door database ingevuld
+        strategy = GenerationType.IDENTITY  // En is een autonummering
+    )
+    @Column(name = "DocentNr")              // DocentNr is kolom die hoort bij variabele id
+    private int id;
+    private String voornaam;                // Hoort automatisch bij kolom voornaam
+    private String familienaam;             // Hoort automatisch bij kolom familienaam
+    private BigDecimal wedde;               // Hoort automatisch bij kolom wedde
+}
+```
+
+```java
+@Temporal(TemporalType.DATE)
+// De kolom die bij een Date variabele hoort is van het type Date (enkel datum)
+
+@Temporal(TemporalType.TIME)
+// De kolom die bij een Date variabele hoort is van het type Time (enkel tijd)
+
+@Temporal(TemporalType.TIMESTAMP)
+// De kolom die bij en Date variabele hoort is van het type DateTime (datum en tijd)
+
+@Transient
+// De private variabele heeft geen bijbehorende kolom, wordt dus niet in de database opgeslagen.
+```
+
+### Relaties
+
+#### One-to-one - unidirectioneel
+
+![](https://d.pr/i/HN6B+)
+
+```java
+class Werknemer
+{
+    @Id
+    int id;
+
+    @OneToOne
+    ParkeerPlaats p;
+}
+
+class Parkeerplaats
+{
+    @id int id;
+}
+```
+
+#### One-to-one - bidirectioneel
+
+![](https://d.pr/i/1hoWL+)
+
+```java
+class Werknemer
+{
+    @Id
+    int id;
+
+    @OneToOne
+    ParkeerPlaats p;
+}
+
+class Parkeerplaats
+{
+    @id int id;
+
+    @OneToOne(mappedBy="p")
+    Werknemer w;
+}
+```
+
+#### One-to-one - bidirectioneel (2)
+
+![](https://d.pr/i/1hoWL+)
+
+```java
+class Werknemer
+{
+    @Id
+    int id;
+
+    @OneoOne(mappedBy="w")
+    ParkeerPlaats p;
+}
+
+class Parkeerplaats
+{
+    @id int id;
+
+    @OneToOne
+    Werknemer w;
+}
+```
+
+#### One-to-many - unidirectioneel
+
+![](https://d.pr/i/HIKY+)
+
+```java
+class Werknemer {
+    @Id int id;
+}
+
+class Department {
+    @id int id;
+
+    @OneToMany
+    List<Werknemer> w; // Dit gaat via een derde tabel: department_werknemer
+}
+```
+
+#### One-to-many / Many-to-one - bidirectioneel
+
+![](https://d.pr/i/17WaS+)
+
+```java
+class Werknemer {
+    @Id int id;
+
+    @ManyToOne
+    Department d;
+}
+
+class Department {
+    @id int id;
+
+    @OneToMany(mappedBy="d")
+    List<Werknemer> w;
+}
+```
+
+#### One-to-many / Many-to-one - bidirectioneel (2)
+
+![](https://d.pr/i/17WaS+)
+
+```java
+class Werknemer {
+    @Id int id;
+
+    @ManyToOne
+    @JoinTable
+    Department d;
+}
+
+class Department {
+    @id int id;
+
+    @OneToMany(mappedBy="d")
+    List<Werknemer> w;
+}
+```
+
+#### Many-to-many - unidirectioneel
+
+![](https://d.pr/i/10nUv+)
+
+```java
+class Werknemer {
+    @Id int id;
+
+    @ManyToMany
+    List<Project> p;
+}
+
+class Project {
+    @Id int id;
+}
+```
+
+#### Many-to-many - bidirectioneel
+
+![](https://d.pr/i/10nUv+)
+
+```java
+class Werknemer {
+    @Id int id;
+
+    @ManyToMany
+    List<Project> p;
+}
+
+class Project {
+    @Id int id;
+
+    @ManyToMany(mappedBy="p")
+    List<Werknemer> w;
+}
+```
+
+#### Many-to-many - bidirectioneel (2)
+
+![](https://d.pr/i/10nUv+)
+
+```java
+class Werknemer {
+    @Id int id;
+
+    @ManyToMany(mappedBy="w")
+    List<Project> p;
+}
+
+class Project {
+    @Id int id;
+
+    @ManyToMany
+    List<Werknemer> w;
+}
+```
+
 # Hoofdstuk 28: Netwerk TCP/UDP
 
 
