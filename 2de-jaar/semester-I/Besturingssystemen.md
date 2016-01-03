@@ -321,7 +321,7 @@ Opties:
 
 Opties:
 
-- -r: recursief, verwijdet een map inclusief bestanden en submappen
+- -r: recursief, verwijdert een map inclusief bestanden en submappen
 - -f: force, geeft geen waarschuwing
 - -v: verbose
 
