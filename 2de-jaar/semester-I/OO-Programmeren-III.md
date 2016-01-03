@@ -1468,9 +1468,135 @@ public class RunnableTester
     - In Java gebruik van **locks** voor synchronisatie
     - **Lock** interface (*java.util.concurrent.locks*).
     - Klasse **ReentrantLock** implementatie van Lock.
+- **Elk object heeft een monitor:** geeft maar één thread tegelijkertijd executierecht bij een synchronized statement op het object, 'obtaining the lock'. Andere threads komen in **waiting** toestand (**lock**). Als de lock wordt vrijgegeven, 'released', zal de monitor de thread met hoogste priority laten voortgaan in **runnable** state (**unlock**).
+- Een volledige methode kan **synchronized** zijn of je kan een synchronized block maken.
+- **Deadlock preventie**: als een thread de **wait** methode activeert, zorg dan dat een afzonderlijke thread de **notify** methode activeert voor terugkeer naar de **runnable** state.
+
+
+## Producer/Consumer relatie zonder synchronisatie
+
+![](https://d.pr/i/1lgKH+)
+
+```java
+public interface Buffer {
+    public void set(int value):
+    pulic int get();
+}
+
+import java.util.Random;
+public class Producer implements Runnable
+{
+    private static ThreadLocalRandom generator = ThreadLocalRandom.current();
+    private Buffer sharedLocation();
+
+    public Producer (Buffer shared)
+    {
+        sharedLocation = shared;
+    }
+
+    public void run()
+    {
+        int sum = 0;
+        for (int count = 1; count <= 10; count ++)
+        {
+            try {
+                Thread.sleep(generator.nextInt(3000));
+                sharedLocation.set(count);
+
+                sum += count;
+
+                System.out.printf("\t%2d%n", sum);
+            } catch(InterruptedException e) {
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.printf("%n%s%n%s%n", "Producer done producing.", "Terminating Producer.");
+    }
+}
+
+public class Consumer implements Runnable
+{
+    private static ThreadLocalRandom generator = ThreadLocalRandom.current();
+    private Buffer sharedLocation;
+
+    public Consumer(Buffer shared)
+    {
+        sharedLocation = shared;
+    }
+
+    public void run()
+    {
+        int sum = 0;
+        for (int count = 1; count <= 10; count++)
+        {
+            try {
+                Thread.sleep(generator.nextInt(3000));
+                sum += sharedLocation.get();
+                System.out.printf("\t\t\t%d%n", sum);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.printf("%n%s %d.%n%s%n", "Consumer read values totaling", sum, "Terminating Consumer");
+    }
+}
+
+// ...
+```
+
+(Slide 32, ...)
 
 # Hoofdstuk MVC
 # Hoofdstuk 29: JPA
+
+> Java Persistence API
+
+Entity manager via de factory:
+
+```java
+EntityManagerFactory emf = Persistense.createEntityManagerFactory("UnitName");
+EntityManager em = emf.createEntityManger();
+```
+
+Transacties:
+
+```java
+em.getTransaction().begin();
+// ...
+em.getTransaction().commit();
+```
+
+JPA afsluiten:
+
+```java
+em.close();
+emf.close();
+```
+
+## Associaties
+
+![](https://d.pr/i/14I5Q+)
+
+```java
+public class Campus {
+    private Set<Docent> docenten;
+}
+
+public class Docent {
+    private Campus campus;
+}
+```
+
+### Veel-op-veel associaties
+
+| RDBMS | OOP |
+| :---- | :-- |
+| Altijd tussentabel nodig | Tussentabel niet altijd nodig |
+| ![](https://d.pr/i/158JM+) | ![](https://d.pr/i/1hLnx+) |
+
 # Hoofdstuk 28: Netwerk TCP/UDP
 
 
