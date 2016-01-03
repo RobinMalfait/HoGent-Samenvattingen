@@ -1578,32 +1578,7 @@ emf.close();
 
 ## Associaties
 
-<table>
-    <tr>
-        <td>
-```java
-public class Campus {
-    private Set<Docent> docenten;
-}
-
-public class Docent {
-    private Campus campus;
-}
-```
-        </td>
-        <td>![](https://d.pr/i/14I5Q+)</td>
-    </tr>
-</table>
-
-```java
-public class Campus {
-    private Set<Docent> docenten;
-}
-
-public class Docent {
-    private Campus campus;
-}
-```
+![](https://d.pr/i/14I5Q+)
 
 ### Veel-op-veel associaties
 
