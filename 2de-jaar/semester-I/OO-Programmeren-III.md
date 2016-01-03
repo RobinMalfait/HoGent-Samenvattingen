@@ -631,6 +631,76 @@ public class BinarySearchTest
 }
 ```
 
+## 8. Klasse Stack
+
+- In een stack kunnen we de objecten plaatsen (`push()`) en objecten afhalen (`pop()`)
+- Stacks werken volgens het **LIFO-principe** (Last In, First Out), wat betekent dat het laatste object dat we op de stack hebben geplaatst (push()) het eerste is dat we met de methode pop() ontvangen.
+- De klasse Stack<E> **is een subklasse van Vector<E>**
+
+5 methoden:
+
+- `push`: Een object op de stack plaatsen.
+- `pop`: Een object van de stack afhalen.
+- `empty`: Geeft true terug indien de stack leeg is, anders false
+- `peek`: Geeft de referentie van het object terug dat bovenaan op de stack staat (= top van de stack). Eigenlijk hetzelfde als pop() maar niet van de stack verwijderen.
+- `search`: Geeft een geheel getal terug waarmee we aan de weet komen hoever onder in de stack het "object" zich bevindt.
+    - De top van de stack wordt als afstand één beschouwd.
+    - Indien het "object" niet voorkomt, dan geeft de methode -1 terug.
+
+```java
+import java.util.Stack;
+import java.util.EmptyStackException;
+
+public class StackTest
+{
+    public StackTest()
+    {
+        Stack<Number> stack = new Stack<>();
+
+        Long longNumber = 12L;
+        Integer intNumber = 34567;
+        Float floatNumber = 1.0F;
+        Double doubleNumber = 1234.5678;
+
+        stack.push(longNumber);
+        printStack(stack);
+        stack.push(intNumber);
+        printStack(stack);
+        stack.push(floatNumber);
+        printStack(stack);
+        stack.push(doubleNumber);
+        printStack(stack);
+
+        try {
+            Number removedObject = null;
+            while (true) {
+                removedObject = stack.pop();
+                System.out.printf("%s popped%n", removeObject);
+
+                printStack(stack);
+            }
+        } catch(EmptyStackException emptyStackException) {
+            emptyStackException.printStackTrace();
+        }
+    }
+
+    private void printStack(Stack<Number> stack)
+    {
+        if (stack.isEmpty()) {
+            System.out.print("stack is empty\n\n");
+        } else {
+            System.out.print("Stack contains: ");
+
+            for (Number number : stack) {
+                System.out.printf("%s ", number);
+            }
+
+            System.out.print("(top) \n\n");
+        }
+    }
+}
+```
+
 # Hoofdstuk 17: Lambda's en Stream
 
 Nu:
