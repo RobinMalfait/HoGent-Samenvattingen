@@ -1845,10 +1845,36 @@ class Project {
 ### Lazy Loading
 
 - Meerwaardige relaties gebruiken lazy loading.
-- Eeger loading is mogelijk met bijvoorbeeld:
+- Eager loading is mogelijk met bijvoorbeeld:
+
     ```java
     @OneToMany(fetch=FetchType.EAGER)
     ```
+
+### Embeddables
+
+- Klassen die geen entiteitklasse worden, kunnen als embeddable gebruikt worden.
+- Embeddable klassen geef je aan met `@Embeddable`
+- Voor attributen van een embeddable type is er de optionele annotatie `@Embedded`.
+- Een embeddable object heeft geen eigen identiteit en krijgt geen eigen tabel.
+- De attributen van een embeddable komen terecht in de tabel van de entiteit die eigenaar is van het embedded attribuut.
+- Deze relatie is vergelijkbaar met compositie in UML
+
+```java
+@Embeddable
+public class Address {
+    private String street;
+    private int postalCode;
+}
+
+@Entity
+public class User {
+    private String name;
+
+    @Embedded
+    private Address address;
+}
+```
 
 ## Overervering
 
@@ -1865,6 +1891,30 @@ class Project {
 > Gebruik bij voorkeur de joined werkwijze
 >
 > Voor grote overervingshierarchien is de single table werkwijze performanter maar minder flexibel
+
+### Cascade
+
+- CascadeType.PERSIST
+- CascadeType.MERGE
+- CascadeType.DETACH
+- CascadeType.REMOVE
+- CascadeType.REFRESH
+- CascadeType.ALL
+
+Vb.:
+
+```java
+@OneToMany(cascade=CascadeType.ALL)
+@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE})
+```
+
+#### Orphan Removal
+
+- @OneToOne & @OneToMany ondersteunen ook *orphan removal*:
+    `@OneToOne(orphanRemoval=true)
+- Dit zorgt er voro dat het object dat het 'kind' is van de relatie automatisch verwijderd wordt wanneer de relatie wordt verbroken.
+- Dit resulteert automatisch ook in een remove cascade.
+
 
 # Hoofdstuk 28: Netwerk TCP/UDP
 
