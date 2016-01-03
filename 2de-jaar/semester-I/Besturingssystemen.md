@@ -582,7 +582,7 @@ bevatten:
 
 ### 5.1. Round Robin scheduling (RR)
 
-Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het procs onderbreken en een volgend proces inladen.
+Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het proces onderbreken en een volgend proces inladen.
 
 ![](https://d.pr/i/15Nfe+)
 
