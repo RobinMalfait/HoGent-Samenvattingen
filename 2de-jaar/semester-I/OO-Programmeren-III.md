@@ -746,6 +746,8 @@ public class PriorityQueueTest
 - **HashSet<E>** is een implementatie-klasse van interface Set.
 - **TeeSet<E>** is een implementatie-klasse van interface SortedSet.
 
+(Slide 70 ...)
+
 # Hoofdstuk 17: Lambda's en Stream
 
 Nu:
@@ -1022,4 +1024,198 @@ wordCounts.entrySet()
 
 ![](https://d.pr/i/1ifzq+)
 
+# Hoofdstuk 20: Generics
 
+Door generiek te programmeren moet je geen method overloading doen, dit wilt zeggen dat je maar 1 methode moet schrijven, ipv vele methodes per data type.
+
+```java
+/**
+ * Deze methode kunnen we nu gebruiken om een array van booleans, integers, doubles, strings, ... af te drukken
+ */
+public static <E> void printArray(E[] inputArray)
+{
+    Arrays.stream(inputArray).forEach(element -> System.out.printf("%s ", element));
+}
+```
+
+Wanneer je een tweede parameter zou meegeven dat een ander type is, kan je dit als volgt doen:
+
+```java
+public static <E, W> void voorbeeld(E[] anArray, W waarde)
+{
+    // ...
+}
+```
+
+Wanneer dit hetzelfde type is kan je het gewoon hergebruiken:
+
+```java
+public static <E> void printTwoArrays(E[] array1, E[] array2)
+{
+    // ...
+}
+```
+
+Wanneer je zeker wilt zijn dat het parameter type van een bepaalde implementatieklasse is, kan je het alsvolgt weergeven:
+
+```java
+public static void <T extends Comparable<T>> T maximum(T x, T y, T Z)
+{
+    // Java 7
+    T max = x; // Het eerste object is momenteel het grootste object.
+
+    if (y.compareTo(max) > 0) {
+        max = y; // Het object y is momenteel het grootste opbject.
+    }
+    if (z.compareTo(max) > 0) {
+        max = z; // Het object z is het grootste object.
+    }
+
+    // Java 8
+    T max = Arrays.asList(x, y, z).stream().max(T::compareTo).get();
+
+    return max;
+}
+
+// Het is een generieke methode waarvan het parameter type een implementatieklasse van Comparable<T> moet zijn.
+// De interface Comparable is zelf generiek.
+
+/**
+ * Nu kunnen we het als volgt gebruiken:
+ */
+
+public class MaximumApplicatie
+{
+    public static void main(String args[])
+    {
+        System.out.printf("Maximum of %d, %d and %d is %d%n%n", 3, 4, 5, Operation.maximum(3, 4, 5));
+        System.out.printf("Maximum of %.1f, %.1f and %.1f is %.1f%n%n", 6.6, 8.8, 7.7, Operation.maximum(6.6, 8.8, 7.7));
+        System.out.printf("Maximum of %s, %s and %s is %s%n%n", "pear", "apple", "orange", Operation.maximum("pear", "apple", "orange"));
+    }
+}
+```
+
+Output:
+
+```
+Maximum of 3, 4 and 5 is 5
+Maximum of 6.6, 8.8 and 7.7 is 8.8
+Maximum of pear, apple and orange is pear
+```
+
+## Generieke classe Stack
+
+```java
+public class Stack<E>
+{
+    private final int SIZE;
+    privat int top;
+    private E[] elements;
+
+    public Stack()
+    {
+        this(10);
+    }
+
+    public Stack(int s)
+    {
+        SIZE = s > 0 ? s : 10; // set size of stack
+        top = -1;
+        elements = (E[])new Object[SIZE];
+    }
+
+    public void push(E pushValue)
+    {
+        if (top == SIZE - 1) {
+            throw new FullStackException(String.format("Stack is full, cannot push %s", pushValue))
+        }
+
+        elements[++top] = pushValue;
+    }
+
+    public E pop()
+    {
+        if (top == -1) {
+            throw new EmptyStackException("Stack is empty, cannot pop");
+        }
+
+        return elements[top--];
+    }
+}
+
+public class FullStackException extends RuntimeException
+{
+    public FullStackException() {
+        this("Stack is full");
+    }
+
+    public FullStackException(String exception)
+    {
+        super(exception);
+    }
+}
+
+public class EmptyStackException extends RuntimeException
+{
+    public EmptyStackException() {
+        this("Stack is empty");
+    }
+
+    public EmptyStackException(String exception)
+    {
+        super(exception);
+    }
+}
+
+/**
+ * The application itself
+ */
+public class StackApplicatie
+{
+    private double[] doubleElements = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6};
+    private int[] integerElements = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+
+    private Stack<Double> doubleStack;
+    private Stack<Integer> integerStack;
+
+    public void testStacks()
+    {
+        doubleStack = new Stack<>(5);
+        integerStack = new Stack<>(10);
+    }
+}
+```
+
+## Raw types
+
+```java
+private Stack[] stack = new Stack[2]; // 2 Stacks, deze kunnen nog elke 'vorm' aannemen.
+
+// Opvullen
+
+stack[0] = new Stack<Double>(5); // Hier zeg je pas welk type het is
+stack[1] = new Stack<Integer>(10);
+```
+
+## Wildcards
+
+```java
+// Collection is generiek dus het kan 'elke' vorm aannemen, via deze manier zeggen we welke vorm het kan aannemen
+public static double sum(Collection<? ectends Number> list);
+
+Integer[] integers = {1, 2, 3, 4, 5};
+Collection<Integer> integerList = new ArrayList<>(Arrays.asList(integers));
+```
+
+## Overerving
+
+- Een generieke klassen kan erven van een niet-generieke klasse
+- Een generieke klasse kan erven van een generieke klasse
+- Een niet-generieke klasse kan erven van een generieke klasse, vb.: De klasse **Properties** erft van de klasse **Hashtabl<K,V>**
+- Een generieke methode in een subklasse kan een generieke methode van de superklasse overschrijven indien ze dezelfde header hebben.
+
+# Hoofdstuk 15: Files Deel 2
+# Hoofdstuk 23: Multithreading
+# Hoofdstuk MVC
+# Hoofdstuk 29: JPA
+# Hoofdstuk 28: Netwerk TCP/UDP
