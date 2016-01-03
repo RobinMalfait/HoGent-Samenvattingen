@@ -701,6 +701,48 @@ public class StackTest
 }
 ```
 
+## 9. interface Queue
+
+- In een queue kunnen we objecten plaatsen (`offer()`) en objecten afhalen (`poll()`).
+- Queues werken volgens het **FIFO-principe** (First In, First Out), wat betekent dat het eerste object dat we op de queue hebben geplaatst (offer()) het eerste is dat we met de methode poll() ontvangen.
+
+## 9. Klasse PriorityQueue
+
+- In een prioriteitenqueue kunnen we ojecten plaatsen (`offer()`) en objecten afhalen (`poll()`)
+
+    De objecten worden gesorteerd volgens de 'natuurlijke ordening' (methode compareTo() van interface Comparable)
+    `public PriorityQueue()`
+    of volgens een Comparator-object
+    `public PriorityQueue(int initialCapacity, Comparator<? super E> comparator)`
+
+```java
+import java.util.PriorityQueue;
+
+public class PriorityQueueTest
+{
+    public static void main(String args[])
+    {
+        PriorityQueue<Double> queue = new PriorityQueue<>();
+
+        // Insert elements to queue
+        queue.offer(3.2);
+        queue.offer(9.8);
+        queue.offer(5.4);
+
+        System.out.print("Polling from queue: ");
+
+        while (queue.size() > 0) {
+            System.out.printf("%.1f", queue.stack);
+            queue.poll();
+        }
+    }
+}
+```
+
+## 10. SET interface
+
+![](https://d.pr/i/16Alo+)
+
 # Hoofdstuk 17: Lambda's en Stream
 
 Nu:
