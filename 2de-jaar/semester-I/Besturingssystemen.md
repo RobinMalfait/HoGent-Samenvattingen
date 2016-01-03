@@ -396,7 +396,7 @@ Links:
         - Hoge Troughput (veel processen)
             - Lijkt het interessants
             - Maar geen rekening met procesgrootte
-            - => meest efficiënte systeem kan sommigep rocessen negeren
+            - => meest efficiënte systeem kan sommige processen negeren
             - => redelijkheid opgeofferd aan efficiëntie
 - **Responstijd**
     - Interactive gebruikers -> snelle respons
