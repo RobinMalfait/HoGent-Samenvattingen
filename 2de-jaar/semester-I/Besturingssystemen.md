@@ -610,7 +610,7 @@ De beste scheduling-methode is afhankelijk van de soorten processen in de ready-
 
 ### 5.4. Shortest-job-first-scheduling (SJF)
 
-Er zijn twee strategieën die ana korte processen een hoge prioriteit geven:
+Er zijn twee strategieën die aan korte processen een hoge prioriteit geven:
 
 - Shortest Remaining Job Next (SRJN) = preëmptieve versie van SJF
 - Shortest Job First (SJF) -> hier zal de scheduler van het proces met de kleinste lengte uitvoeren
@@ -619,7 +619,7 @@ Er zijn twee strategieën die ana korte processen een hoge prioriteit geven:
 
 ### 5.5 Starvation
 
-> Wanneer een heel lang proces nooit uitgevoerd zal worden, noemen we di starvation.
+> Wanneer een heel lang proces nooit uitgevoerd zal worden, noemen we dit starvation.
 
 Oplossingen:
 
