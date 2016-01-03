@@ -1460,6 +1460,28 @@ public class RunnableTester
 }
 ```
 
+## Thread synchronisatie
+
+- Meeredere threads kunnen een object delen, '**shared object**'
+- Wanneer meerdere threads het shared object kunnen wijzigen kunnen er problemen ontstaan:
+    - Mutual exclusion of thread **synchronisatie**
+    - In Java gebruik van **locks** voor synchronisatie
+    - **Lock** interface (*java.util.concurrent.locks*).
+    - Klasse **ReentrantLock** implementatie van Lock.
+
 # Hoofdstuk MVC
 # Hoofdstuk 29: JPA
 # Hoofdstuk 28: Netwerk TCP/UDP
+
+
+
+
+
+
+
+
+
+
+
+
+

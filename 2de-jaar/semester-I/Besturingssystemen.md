@@ -321,7 +321,7 @@ Opties:
 
 Opties:
 
-- -r: recursief, verwijdet een map inclusief bestanden en submappen
+- -r: recursief, verwijdert een map inclusief bestanden en submappen
 - -f: force, geeft geen waarschuwing
 - -v: verbose
 
@@ -396,14 +396,14 @@ Links:
         - Hoge Troughput (veel processen)
             - Lijkt het interessants
             - Maar geen rekening met procesgrootte
-            - => meest efficiënte systeem kan sommigep rocessen negeren
+            - => meest efficiënte systeem kan sommige processen negeren
             - => redelijkheid opgeofferd aan efficiëntie
 - **Responstijd**
     - Interactive gebruikers -> snelle respons
     - Batch-gebruikers -> redelijke responstijd
     - Snelle reactie op elk proces -> processen/tijdseenheid
         - Responstijd lijkt hetzelfde als doorvoersnelheid
-    - Dorovoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
+    - Doorvoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
         - lange processen worden niet beantwoord
 - **Consistentie**
     - Eisen gesteld aan systeem:
