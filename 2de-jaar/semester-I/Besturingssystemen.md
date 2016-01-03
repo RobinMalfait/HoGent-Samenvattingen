@@ -98,7 +98,7 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
     - Programmeertaal specifiek: VB.: JVM
     - emulator
 
-> **Virtuele machine monitor**: elke gebruker heeft een uniek beeld van de computeromgeving
+> **Virtuele machine monitor**: elke gebruiker heeft een uniek beeld van de computeromgeving
 
 A.d.h.v. virtuele machines kunnen <font color=red>verschillende besturingssystemen tegelijkertijd op 1 computer</font> bestaan.
 
