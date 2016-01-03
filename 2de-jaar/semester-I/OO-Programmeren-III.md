@@ -1587,6 +1587,15 @@ emf.close();
 | Altijd tussentabel nodig | Tussentabel niet altijd nodig |
 | ![](https://d.pr/i/158JM+) | ![](https://d.pr/i/1hLnx+) |
 
+## JPA Entity
+
+> **Entity** Java object met bijbehorend record in database.
+>
+> **Entity Class**: Java class die entity beschrijft
+> - Moet public of protected default constructor hebben
+> - Mag geen final class zijn
+> - Mag geen ensted class zijn
+
 # Hoofdstuk 28: Netwerk TCP/UDP
 
 
