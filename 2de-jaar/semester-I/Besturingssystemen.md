@@ -403,7 +403,7 @@ Links:
     - Batch-gebruikers -> redelijke responstijd
     - Snelle reactie op elk proces -> processen/tijdseenheid
         - Responstijd lijkt hetzelfde als doorvoersnelheid
-    - Dorovoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
+    - Doorvoersnelheid kan vergroot worden door enkel korte processen te behandelen en lange processen te negeren
         - lange processen worden niet beantwoord
 - **Consistentie**
     - Eisen gesteld aan systeem:
