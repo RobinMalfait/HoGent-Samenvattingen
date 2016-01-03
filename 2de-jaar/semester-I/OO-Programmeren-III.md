@@ -1372,6 +1372,94 @@ public class NioRekeningTest
 ```
 
 # Hoofdstuk 23: Multithreading
+
+Threads: delen van het programma die in concurrentie met elkaar gelijktijd in executie gaan.
+
+> Het is aangeraden om `ThreadLocalRandom` te gebruiken.
+
+Binnen threads is het efficiënter om gebruik te maken van de nieuwe klasse **ThreadLocalRandom**, om aan randomwaarden te geraken.
+Deze klasse heeft een static methode `current()`
+
+```java
+int x = ThreadLocalRandom.current().nextInt(2000);
+// x zal een waarde tussen 0 en 1999 toegekend krijgen.
+```
+
+Deze random wordt gebruikt in de Sleep methode van de thread:
+
+```java
+Thread.sleep(randomwaarde);
+```
+
+## Het maken en uitvoeren van een thread
+
+```java
+public class PrintTask implements Runnable // Dit is belangrijk
+{
+    private int sleepTime;
+    private String threadName;
+    private static Random generator = new Random(); // Dit kunnen we dus vervangen door de ThreadLocalRandom
+
+    public PrintTask(String name)
+    {
+        threadName = name;
+        sleepTime = generator.nextInt(5000); // Slapen tussen 0 & 5 seconden.
+    }
+
+    public void run() // Deze methode moet je implementeren omdat je Runnable implementeert
+    {
+        try {
+            System.out.printf("%s going to sleep for %d%n", threadName, sleepTime);
+
+            Thread.sleep(sleepTime);
+        } catch(InterruptedException e) {
+            exceptoin.printStackTrace();
+            Thread.currentThread().interrupt(); // Re-interrupt thread
+        }
+
+        System.out.printf("%d done sleeping%n", threadName);
+    }
+}
+
+public class ThreadTester
+{
+    public static void main(String args[])
+    {
+        Thread thread1 = new Thread(new PrintTask("thread1"));
+        Thread thread2 = new Thread(new PrintTask("thread2"));
+        Thread thread3 = new Thread(new PrintTask("thread3"));
+
+        System.out.println("Starting threads");
+
+        thread1.start(); // Plaats thread1 in Ready toestand
+        thread2.start(); // Plaats thread2 in Ready toestand
+        thread3.start(); // Plaats thread3 in Ready toestand
+
+        System.out.println("Threads started, main ends\n");
+    }
+}
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
+public class RunnableTester
+{
+    public static void main(String args[])
+    {
+        PrintTask task1 = new PrintTask("thread1");
+        PrintTask task2 = new PrintTask("thread2");
+        PrintTask task3 = new PrintTask("thread3");
+
+        ExecutorService threadExecutor = Executors.newFixedThreadPool(3);
+
+        threadExecutor.execute(task1);
+        threadExecutor.execute(task2);
+        threadExecutor.execute(task3);
+
+        threadExecutor.shutdown();
+    }
+}
+```
+
 # Hoofdstuk MVC
 # Hoofdstuk 29: JPA
 # Hoofdstuk 28: Netwerk TCP/UDP
