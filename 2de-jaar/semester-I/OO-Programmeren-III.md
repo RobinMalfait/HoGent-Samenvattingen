@@ -1842,6 +1842,30 @@ class Project {
 }
 ```
 
+### Lazy Loading
+
+- Meerwaardige relaties gebruiken lazy loading.
+- Eeger loading is mogelijk met bijvoorbeeld:
+    ```java
+    @OneToMany(fetch=FetchType.EAGER)
+    ```
+
+## Overervering
+
+```java
+@Inheritance(strategoy = InheritanceType.SINGLE_TYPE)
+// één tabel voor de volledige hierarchie
+
+@Inheritance(strategy = InheritanceType.JOINED)
+// één tabel per klasse in de hierarchie
+
+@InheritanceType(strategy = InheritanceType.TABLE_PER_CLASS)
+```
+
+> Gebruik bij voorkeur de joined werkwijze
+>
+> Voor grote overervingshierarchien is de single table werkwijze performanter maar minder flexibel
+
 # Hoofdstuk 28: Netwerk TCP/UDP
 
 
