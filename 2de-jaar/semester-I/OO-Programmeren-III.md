@@ -743,6 +743,9 @@ public class PriorityQueueTest
 
 ![](https://d.pr/i/16Alo+)
 
+- **HashSet<E>** is een implementatie-klasse van interface Set.
+- **TeeSet<E>** is een implementatie-klasse van interface SortedSet.
+
 # Hoofdstuk 17: Lambda's en Stream
 
 Nu:
