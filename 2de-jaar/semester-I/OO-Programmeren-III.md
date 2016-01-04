@@ -2,6 +2,8 @@
 title: OO Programmeren III
 ---
 
+Net ontdekt dat de slides beschikbaar zijn op examen, dus wie wilt, mag dit aanvullen, I'm not gonna do it!
+
 # Mini Herhaling
 
 ```java
@@ -1917,16 +1919,3 @@ Vb.:
 
 
 # Hoofdstuk 28: Netwerk TCP/UDP
-
-
-
-
-
-
-
-
-
-
-
-
-
