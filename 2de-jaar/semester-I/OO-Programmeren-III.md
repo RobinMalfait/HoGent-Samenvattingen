@@ -1913,7 +1913,7 @@ Vb.:
 #### Orphan Removal
 
 - @OneToOne & @OneToMany ondersteunen ook *orphan removal*:
-    `@OneToOne(orphanRemoval=true)
+    `@OneToOne(orphanRemoval=true)`
 - Dit zorgt er voro dat het object dat het 'kind' is van de relatie automatisch verwijderd wordt wanneer de relatie wordt verbroken.
 - Dit resulteert automatisch ook in een remove cascade.
 
