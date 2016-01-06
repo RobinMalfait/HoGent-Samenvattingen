@@ -208,6 +208,14 @@ De afschrijvingskosten kunnen als volgt worden berekend:
 
 - Bepaal de totale waardevermindering/afschrijvingskosten
     - = Aanschafwaarde (Aw) - Restwaarde (Rw)
+- Bepaal de jaarlijkse afschrijvingskosten
+    - = Aanschafwaarde (Aw) - Restaarde (Rw)
+        Economische levensduur (Eld)
+- Bepaal het afschrijvingspercentage
+    - = Jaarlijkse afschrijvingskosten x 100%
+        Aanschafwaarde (Aw)
+
+> Er wordt een **constante prestatie** door het DPM geleverd.
 
 ```
 Voorbeeld:
@@ -222,23 +230,37 @@ Bepaalde jaarlijkse afschrijving en het afschrijvingspercentage.
 BEREKENING:
 -----------
 
-(€2400.00 - €300.00) / 3 jaar = €700.00
-
+Totale afschrijvingskosten = Aw - Rw                = €2400.00 - €300.00 = €2100.00
+Jaarlijkse afhschrijvingskosten = (Aw - Rw) / Eld   = (€2400.00 - €300.00) / 3 jaar = €700.00
+Afschrijvingspercentage = (Afschr / (Aw - Rw))
+                        = € 700.00
+                          -------- = 33,33%
+                          €2100.00
 1/aantal jaren = 33,333333333%
 ```
 
 - Degressieve afschrijgingsmethode
 
+![](https://d.pr/i/nZBZ+)
+
 > **3 Regels**
 >
-> - Verdubbeld t.o.v. het tarief van ene lineaire afschrijving
-> - 40% van de aanschaffingswaarde
+> - Het afschrijvingstarief wordt: **Verdubbeld t.o.v. het tarief van een lineaire afschrijving** Dit tarief wordt elk jaar toegepast op het bedrag dat nog dient afgeschreven te worden.
+> - Standaard is het maximale tarief van **40% van de aanschaffingswaarde** (Door de Belgische Wetgeving opgelegde maximale tarief).
 > - Automatische overgang van degressief naar lineair als deze laatste methode een hoger bedrag heeft
 
+
 ```
-Jaar 1 = Aanschaffingswaarde (AW) - Restwaarde (RW)
-Jaar 2 = Boekwaarde (BW) - RW
-...
+Voorbeeld:
+
+Een machine van 1.000 euro dient op 4 jaren afgeschreven te worden.
+In geval van een lineaire afschrijving is het tarief 25 % en automatische overgang van degressief naar lineair.
+
+
+Jaar 1 = Aanschaffingswaarde (AW) - Restwaarde (RW)         = €400.00 (40% van €1000.00 ipv 50%)
+Jaar 2 = Boekwaarde (BW) - RW                               = €300.00 (50% van €600.00 het resterend bedrag)
+Jaar 3 = €250.00 (Het bedrag dat volgens de lineaire methode berekend wordt) ipv €150.00 (dit is 50% van het af te schrijven saldo van €300.00 dat volgens degressieve methode berekend wordt)
+Jaar 4 = €50.00 (Dit is het af te schrijven saldo)
 ```
 
 ```
@@ -288,23 +310,6 @@ Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
 
 - Kostprijsneutrale belastingen
 
-### Invoerrechten (ter informatie)
-
-#### Tarifaire Belemmeringen
-
-= invoerrechten, specifieke rechten (VB.: per ton rijst van china 20% invoerrecht)
-
-- Specifieke rechten
-- Ad-valorem rechten (Waarde van wat ingevoerd wordt)
-- Exportsubsidies
-
-#### Niet-tarifaire Belemmeringen
-
-- Importquota of contingenten (VB.: Maximum X aantal ton van kledij van china)
-- Economische boycot
-- Embargo
-- Invoeren technische en/of administratieve voorschriften (certificaat)
-
 ## 2.7 De rentekosten
 
 Onderneming:
@@ -314,6 +319,12 @@ Onderneming:
     - Eigen Vermogen (Niet opeisbaar)
     - Vreemd Vermogen (Wel opeisbaar)
 - Activiteiten
+
+![](https://d.pr/i/1ko0V+)
+
+| Activa | Passiva |
+| ------ | ------- |
+| Vorderingen op klanten + bezittingen | Hoe heb ik al deze aanwendingen van vermogen/activa gefinancieerd?<br><br>- Inbreng van de eigenaar <br>-Investeringskrediet of andere leningen <br>- Schuld aan de leveranciers
 
 # 3. Constanten en variabele kosten
 
