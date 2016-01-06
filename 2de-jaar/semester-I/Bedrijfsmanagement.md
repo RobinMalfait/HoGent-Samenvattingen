@@ -4,9 +4,12 @@ title: Bedrijfsmanagement
 
 | Afkorting | Voluit                     |
 | --------- | -------------------------- |
+| Aw        | Aanschafwaarde             |
+| CK        | Constante Kosten           |
 | DPM       | Duurzaam Productie Middel  |
 | EH        | Eenheid                    |
 | ELD       | Economische Levensduur     |
+| FK        | Vaste kosten / Fixed Costs |
 | GS        | Grondstof                  |
 | HB        | Handboek `¯\_(ツ)_/¯`      |
 | PM        | Productiemiddelen          |
@@ -15,8 +18,7 @@ title: Bedrijfsmanagement
 | TLD       | Technische Levensduur      |
 | TO        | Totale Opbrengsten         |
 | TW        | Totale Winst               |
-| Aw        | Aanschafwaarde             |
-
+| VK        | Variabele Kosten           |
 
 ## 1. Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -324,7 +326,7 @@ Onderneming:
 
 | Activa | Passiva |
 | ------ | ------- |
-| Vorderingen op klanten + bezittingen | Hoe heb ik al deze aanwendingen van vermogen/activa gefinancieerd?<br><br>- Inbreng van de eigenaar <br>-Investeringskrediet of andere leningen <br>- Schuld aan de leveranciers
+| Vorderingen op klanten + bezittingen | Hoe heb ik al deze aanwendingen van vermogen/activa gefinancieerd?<br><br>- Inbreng van de eigenaar<br>- Investeringskrediet of andere leningen<br>- Schuld aan de leveranciers
 
 # 3. Constanten en variabele kosten
 
@@ -333,7 +335,17 @@ Onderneming:
 
 ## 3.1 De totale constante kosten
 
-> Constante (of vaste) kosten van een onderneming zijn de kosten die structureel karakter hebben en die binnen bepaalde grenzen <font color=red>niet reageren op veranderingen in de productieomvang</font>
+> Constante (of vaste) kosten van een onderneming zijn de kosten die structureel karakter hebben en die binnen bepaalde grenzen <font color=red>niet reageren op veranderingen in de productieomvang/bedrijfsdrukte</font>
+
+Voorbeelden:
+
+- Huur
+- Afschrijvingen
+- Salarissen van personeel in vaste dienst
+- Onderhoudscontracten
+- Verzekeringspremies
+
+![](https://d.pr/i/1k61Y+)
 
 Dit kan omhoog gaan door:
 
@@ -341,8 +353,9 @@ Dit kan omhoog gaan door:
 
 ## 3.2 De totale variabele kosten
 
-
 > Variabele kosten <font color=red>variëren als gevolg van veranderingen in de productieomvang</font>
+
+Bij toename van de productieomvang zullen de totale variabele kosten stijgen, bij afname van de productieomvang zullen de totale variabele kosten dalen.
 
 Voorbeelden:
 
@@ -351,9 +364,16 @@ Voorbeelden:
 - kosten van verpakking
 - transportkosten
 
-> Er kan verschil zijn in de mate waarop de totale variabele kosten reageren op de productieomvang
+> Er kan verschil zijn in de mate waarop de totale variabele kosten reageren op de productieomvang: <font color="red">de variabiliteit van de kosten</font>
+
+- Proportioneel (rechtevenredig) variabele kosten.
+
+    ![](https://d.pr/i/13Emz+)
 
 - Progresief variabele kosten (Meer dan everedig toenemen door overwerk)
+
+    ![](https://d.pr/i/1jss5+)
+
 - Degressief variabele kosten (Minder dan verdubbelen)
 - Trapsgewijs variabele kosten (Transport, bestelwagen per X tijd)
 
