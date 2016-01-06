@@ -477,6 +477,7 @@ Grafische uitwerking van de tabel:
 ### Oefening:
 
 Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  volkomen concurrentievoorwaarden en streeft naar winstmaximalisatie.
+
 | Key | Value |
 | :-: | :---: |
 | MK  | Marginale Kosten |
