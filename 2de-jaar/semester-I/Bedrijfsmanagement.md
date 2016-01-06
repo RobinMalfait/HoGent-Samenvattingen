@@ -466,14 +466,7 @@ Grafische uitwerking van de tabel:
 
 | Afbeelding | Conclusies |
 | :--------: | :--------: |
-| ![](https://d.pr/i/11NVT+) | - De GCK dalen voortdurend.<br>
-- GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.<br>
-- -> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.<br>
-- -> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.<br>
-- GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.<br>
-- MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.<br>
-- MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.<br> |
-
+| ![](https://d.pr/i/11NVT+) | - De GCK dalen voortdurend.<br>- GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.<br>- -> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.<br>- -> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.<br>- GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.<br>- MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.<br>- MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.<br> |
 ### Oefening:
 
 Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  volkomen concurrentievoorwaarden en streeft naar winstmaximalisatie.
