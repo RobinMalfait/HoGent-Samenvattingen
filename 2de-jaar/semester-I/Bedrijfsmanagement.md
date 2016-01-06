@@ -370,12 +370,31 @@ Voorbeelden:
 
     ![](https://d.pr/i/13Emz+)
 
+    > Vb. Hoeveelheid grondstof (indien er geen hoeveelheidskorting is)
+    >
+    > Een extra eenheid produceren kost exact het dubbele van de voorgaande eenheid.
+
+
 - Progresief variabele kosten (Meer dan everedig toenemen door overwerk)
 
     ![](https://d.pr/i/1jss5+)
 
+    > **Progressief** variabele kosten variëren **in verhouding sterker** met de productieomvang, bijvoorbeeld bij een hoge bezettingsgraad zullen de kosten van arbeid sterker stijgen door extra betaling van overwerk
+
 - Degressief variabele kosten (Minder dan verdubbelen)
+
+    ![](https://d.pr/i/A1kD+)
+
+    > **Degressief** variabele kosten variëren **in verhouding minder sterk** met de productieomvang, bijvoorbeeld bij hoeveelheidkortingen bij inkoop en schaalvoordelen.
+
 - Trapsgewijs variabele kosten (Transport, bestelwagen per X tijd)
+
+    ![](https://d.pr/i/1eCAl+)
+
+    > Dit staat niet in het handboek maar is wel te kennen!
+    >
+    > Bijvoorbeeld: een vrachtwagen laten rijden kost 1 500 euro, een aanhanger aan deze vrachtwagen kost  1 000 euro extra. Een tweede aanhanger kost nog eens 1 000 euro extra enz. tot er geen extra aanhangwagens meer kunnen aangehangen worden en er een nieuwe vrachtwagen dient te rijden.
+
 
 ## 3.3 De totale kosten
 
