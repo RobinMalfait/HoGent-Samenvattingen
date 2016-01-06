@@ -11,11 +11,14 @@ title: Bedrijfsmanagement
 | ELD       | Economische Levensduur      |
 | FK        | Vaste kosten / Fixed Costs  |
 | GCK       | Gemiddelde constante kosten |
+| GO        | Gemiddelde Opbrengsten      |
 | GS        | Grondstof                   |
 | GTK       | Gemiddelde totale kosten    |
 | GVK       | Gemiddelde variabele kosten |
 | HB        | Handboek `¯\_(ツ)_/¯`       |
 | MK        | Marginale kosten            |
+| MO        | Marginale Opbrengsten       |
+| P         | Prijs                       |
 | PM        | Productiemiddelen           |
 | RW        | Rest Waarde                 |
 | TCK       | Totale Constante Kosten     |
@@ -457,5 +460,51 @@ Voorbeeld:
 
 ### Oefening:
 
-![](https://d.pr/i/11SIc+)
+![](https://d.pr/i/1dV6S+)
+
+Grafische uitwerking van de tabel:
+
+![](https://d.pr/i/11NVT+)
+
+++CONCLUSIES:++
+
+- De GCK dalen voortdurend.
+- GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.
+- -> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.
+- -> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.
+- GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.
+- MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.
+- MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.
+
+### Oefening:
+
+Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  volkomen concurrentievoorwaarden en streeft naar winstmaximalisatie.
+| Key | Value |
+| :-: | :---: |
+| MK  | Marginale Kosten |
+| GTK | Gemiddelde Totale Kosten |
+| GVK | Gemiddelde variabele kosten |
+| GO  | Gemiddelde Opbrengsten |
+| MO  | Marginale Opbrengsten |
+| P   | Prijs |
+
+![](https://d.pr/i/1cZFP+)
+
+1. Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
+
+    <font color="red">**Q = 90**</font>
+
+    > Snijpunt met **MK**
+
+2. Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
+
+    <font color="red">**Q = 53**</font>
+
+    > Snijpunt met **GTK**
+
+3. Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
+
+    <font color="red">**Q = 80**</font>
+
+    > Snijpunt van **MK** en **GTK**
 
