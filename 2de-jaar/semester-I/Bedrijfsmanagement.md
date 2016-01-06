@@ -770,3 +770,45 @@ Men gaat op zoek naar de zogenaamde 'cost drivers' van een product.
 
 ![](https://d.pr/i/1aty8+)
 
+# Hoofdstuk 5: Standaardkostprijs en kostenbeheersing
+
+**Management accounting** houdt zich bezig met het verschaffen van informatie die *intern* gericht is. Deze informatie is noodzakelijk om als organisatie de juiste beleidsbeslissingen te kunnen nemen.
+
+Om dit te bereiken dienen de kosten beheerst te worden om vervolgens via de opbrengsten winst te genereren.
+
+Om de winst zo hoog mogelijk te krijgen, dienen de bedrijfsactiviteiten vervolgens zo goed mogelijk te verlopen.
+
+## 5.1 Functies bedrijfsbudget
+
+Een budget is een financiële vertaling van de plannen van een onderneming om TARGETS te halen. -> MEERJARENPLAN
+
+Het budget heeft ook een taakstellend karakter en geeft MACHTIGING aan de bevoegde bepaalde uitgaven te doen.
+
+Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd en is essentieel voor de activiteiten ‘planning en control’.
+
+- **Planning**. Het stellen van budgetten levert automatisch een planningstructuur op.
+- **Coördinatie en communicatie**. Deze zorgen ervoor dat er een overlapping tot stand komt tussen de planningsactiviteiten.
+- **Taakstelling en autorisatie**. Een budgetverantwoordelijkheid en -bevoegdheid (autorisatie) wordt toebedeeld aan een persoon in de onderneming om uitvoer te geven aan activiteiten.
+- **Motivatie**. Een budget kan motiverend werken door de verantwoordelijkheden over budgetten op een lager niveau door te trekken.
+- **Evaluatie**. Het budget dient als een evaluatiemiddel om achteraf na te gaan hoe de planning van de activiteiten verlopen is. (VERSCHILLENANALYSE)
+- VERSCHILLENANALYSE: verschillen kunnen zowel het gevolg zijn van prijswijzigingen en van efficiëntieverschillen
+
+# 5.2 Diverse stappen bij het budgetteren
+
+![](https://d.pr/i/17Zim+)
+
+1. ramen van de verkopen (GERAAMDE OMZET) van het volgende jaar obv heel wat interne en externe informatie.
+2. Geraamde omzet volgend BJ en geraamde productie -> nood aan VASTE ACTIVA (vervangingsinvesteringen en uitbereidingsinvesteringen)
+3. obv geraamde omzet -> nodige AANKOPEN (grondstoffen of handelsgoederen) rekeninghoudend met de VOORRAAD alsook de niet grondstofkosten/handelsgoederen
+4. obv het verkoopbudget  -> INKOMSTENSTROOM over het jaar -> bepalen tekorten aan liquides en opvangen van deze tekorten
+5. Samenbundelen alle deelbudgetten tot een MASTERBUDGET -> KOSTEN en OPBRENGSTEN komend jaar
+6. JAARREKENING
+
+## 5.3 Systemen van kostenbudgettering
+
+- Vaste budgettering
+- Variabele budgettering
+- Gemengde budgettering
+- Flexibele budgettering
+
+> Hangt samen met de **kostensoorten**
