@@ -457,19 +457,5 @@ Voorbeeld:
 
 ### Oefening:
 
-De vetgedrukte waarden zijn gegeven.
-
-| Productie (x EH) | TCk       | TVK       | TK        | GCK       | GVK       | GTK       | MK/EH     |
-| ---------------: | --------: | --------: | --------: | --------: | --------: | --------: | --------: |
-| 0                | &nbsp;    | -         | 0         | -         | -         | -         | &nbsp;    |
-| &nbsp;           | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| 8                | &nbsp;    | **100**   | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| &nbsp;           | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| 18               | &nbsp;    | &nbsp;    | &nbsp;    | **6,94**  | **11,11** | &nbsp;    | &nbsp;    |
-| &nbsp;           | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| 32               | &nbsp;    | &nbsp;    | **425**   | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| &nbsp;           | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    |
-| 48               | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | **10,94** | &nbsp;    |
-| &nbsp;           | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | &nbsp;    | **5**     |
-
+![](https://d.pr/i/11SIc+)
 
