@@ -187,7 +187,7 @@ Deze eindigt wanneer het DPM door **technisch falen** geen prestaties meer kan l
 De periode waarin het DPM prestaties levert tegen de **laagste gemiddelde kosten**. (RENDABEL)
 
 > Waardevermindering is het gevolg van technologische vooruitgang
-> ----
+> <hr>
 > **!** ELD < TLD
 
 **ELD**: ![](https://d.pr/i/13D0C+)
