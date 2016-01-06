@@ -465,7 +465,7 @@ Voorbeeld:
 Grafische uitwerking van de tabel:
 
 | Afbeelding | Conclusies |
-| ---------- | –--------- |
+| :--------: | :--------: |
 | ![](https://d.pr/i/11NVT+) | - De GCK dalen voortdurend.<br>
 - GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.<br>
 - -> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.<br>
