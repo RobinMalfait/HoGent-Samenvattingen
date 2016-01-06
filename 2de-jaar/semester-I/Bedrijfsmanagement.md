@@ -2,25 +2,29 @@
 title: Bedrijfsmanagement
 ---
 
-| Afkorting | Voluit                     |
-| --------- | -------------------------- |
-| Aw        | Aanschafwaarde             |
-| CK        | Constante Kosten           |
-| DPM       | Duurzaam Productie Middel  |
-| EH        | Eenheid                    |
-| ELD       | Economische Levensduur     |
-| FK        | Vaste kosten / Fixed Costs |
-| GS        | Grondstof                  |
-| HB        | Handboek `¯\_(ツ)_/¯`      |
-| PM        | Productiemiddelen          |
-| RW        | Rest Waarde                |
-| TCK       | Totale Constante Kosten    |
-| TK        | Totale Kosten              |
-| TLD       | Technische Levensduur      |
-| TO        | Totale Opbrengsten         |
-| TVK       | Totale Variabele Kosten    |
-| TW        | Totale Winst               |
-| VK        | Variabele Kosten           |
+| Afkorting | Voluit                      |
+| --------- | --------------------------- |
+| Aw        | Aanschafwaarde              |
+| CK        | Constante Kosten            |
+| DPM       | Duurzaam Productie Middel   |
+| EH        | Eenheid                     |
+| ELD       | Economische Levensduur      |
+| FK        | Vaste kosten / Fixed Costs  |
+| GCK       | Gemiddelde constante kosten |
+| GS        | Grondstof                   |
+| GTK       | Gemiddelde totale kosten    |
+| GVK       | Gemiddelde variabele kosten |
+| HB        | Handboek `¯\_(ツ)_/¯`       |
+| MK        | Marginale kosten            |
+| PM        | Productiemiddelen           |
+| RW        | Rest Waarde                 |
+| TCK       | Totale Constante Kosten     |
+| TK        | Totale Kosten               |
+| TLD       | Technische Levensduur       |
+| TO        | Totale Opbrengsten          |
+| TVK       | Totale Variabele Kosten     |
+| TW        | Totale Winst                |
+| VK        | Variabele Kosten            |
 
 ## 1. Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -416,7 +420,39 @@ Voorbeeld:
 
 ## 3.4 De gemiddelde en marginale kosten
 
+- Gemiddelde constante kosten = GCK
 
+    ```
+      TCK
+    = ---
+       Q
+    ```
+
+- Gemiddelde variabele kosten = GVK
+
+    ```
+      TVK
+    = ---
+       Q
+    ```
+
+- Gemiddelde totale kosten = GTK
+
+    ```
+      (GCK + GVK) of (TK)
+    = -------------------
+            Q
+    ```
+
+- Marginale kosten = MK
+
+    = De extrakosten die ontstaan door de productie met 1 EH uit te breiden
+
+    ```
+       ΔTK    ΔTVK
+    = ---- of ----
+       ΔQ       ΔQ
+    ```
 
 
 
