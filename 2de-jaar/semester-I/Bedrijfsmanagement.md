@@ -660,23 +660,113 @@ Wat wordt nu de kostprijs van een portie patat, een kroket en een frikadel?
 Een portie frietjes kost dan:
 
   Directe kosten                             €0,25
-  Opslag indirecte kosten; 60% * €0,25 =     €0,15
-  ------------------------------------------------
+  Opslag indirecte kosten; 60% * €0,25 =     €0,15 +
+  --------------------------------------------------
   Kostprijs van 1 portie frietjes =          €0,40
 
 
 Een portie kroketten kost dan:
 
   Directe kosten                             €0,20
-  Opslag indirecte kosten; 60% * €0,20 =     €0,12
-  ------------------------------------------------
+  Opslag indirecte kosten; 60% * €0,20 =     €0,12 +
+  --------------------------------------------------
   Kostprijs van 1 portie kroketten =         €0,32
 
 Een portie frikadellen kost dan:
 
   Directe kosten                             €0,30
-  Opslag indirecte kosten; 60% * €0,30 =     €0,18
-  ------------------------------------------------
+  Opslag indirecte kosten; 60% * €0,30 =     €0,18 +
+  --------------------------------------------------
   Kostprijs van 1 portie frikadellen =       €0,48
+```
+
+#### Voorbeeld verfijnde opslagmethodiek
+
+Van loodgietersbedrijf Caluwé zijn de volgende gegevens bekend:
+
+- Direct materiaalverbruik    € 400.000.
+- Directe loonkosten          € 600.000.
+- Indirect kosten             € 200.000.
+
+De indirecte kosten zijn als volgt te verdelen:
+
+- €100.000,00 hangt samen met het directe materiaalverbruik.
+- € 60.000,00 hangt samen met de directe loonkosten.
+- € 40.000,00 zijn overige indirecte kosten.
+
+Wat zijn de opslagpercentages?
 
 ```
+Opslagpercentages:
+
+    Opslagpercentage op materiaalverbruik:
+    €100.000,00 / €400.000,00 * 100% = 25%
+
+    Opslagpercentage op loonkosten:
+    €60.000,00 / €600.000,00 * 100% = 10%
+
+    Opslagpercentage op totale directe kosten:
+    €40.000,00 / €1.000.000,00 * 100% = 40%
+
+Wat wordt de kostprijs van een klus met €400,00 materiaal kosten en €200,00 aan loonkosten?
+
+Kostprijs van een klus:
+
+    Materiaal                                     €400,00
+    Loon                                          €200,00 +
+    -------------------------------------------------------
+    Totaal directe kosten                         €600,00
+
+    Opslag materiaal =            25% * €400,00 = €100,00
+    Opslag loon =                 10% * €200,00 = € 20,00 +
+    Opslag totale directe kosten = 4% * €600,00 = € 24,00 +
+    -------------------------------------------------------
+    Totale indirecte kosten =                     €144,00
+
+Kostprijs van de klus:
+
+Totale directe kosten + totale indirecte kosten:
+              €600,00 + €144,00
+            + -----------------
+            = €744,00
+```
+
+### 4.2.4 Kostenplaatsen- of productiecentramethode
+
+> Kostendragers (producten die de onderneming produceert)
+
+Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
+
+> Een **kostenplaats of productiecentrum** is een verzameling van alle indirecte kosten die met de uitoefening van een bepaalde *functie* in de onderneming samenhangen.
+
+3 Soorten kostenplaatsen:
+
+- Hulpkostenplaatsen
+- Zelfstandige kostenplaatsen
+- Laatste of hoofdkostenplaatsen
+
+Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
+
+1. Stap 1:
+    Verdeling van alle indirecte kosten aan kostenplaatsen. Smanestelling van alle indirecte kosten per kostenplaats.
+2. Stap 2:
+    Doorbelasting van de indirecte kosten toegerekend aan de hulpkostenplaatsen en zelfstandige kostenplaatsen aan de hoofdkostenplaatsen.
+
+    - Hulpkostenplaatsen
+    - Zelfstandige kostenplaatsen
+    - Laatste of hoofdkostenplaatsen
+3. Stap 3:
+    Doorbelasting kosten HOOFDKOSTENPLAATSEN -> KOSTENDRAGERS
+
+![](https://d.pr/i/1cpYF+)
+
+### 4.2.5 Activity-based costing
+
+Bij activity based costing wordt per product gekeken of er een **oorzakelijk verband** bestaat met de activiteiten in de waardeketen van de onderneming die nodig zijn voor de fabricage en verkoop.
+
+Men gaat op zoek naar de zogenaamde 'cost drivers' van een product.
+
+> Welke activiteiten zijn nodig voor de fabricage en verkoop van een bepaald product?
+
+![](https://d.pr/i/1aty8+)
+
