@@ -14,9 +14,11 @@ title: Bedrijfsmanagement
 | HB        | Handboek `¯\_(ツ)_/¯`      |
 | PM        | Productiemiddelen          |
 | RW        | Rest Waarde                |
+| TCK       | Totale Constante Kosten    |
 | TK        | Totale Kosten              |
 | TLD       | Technische Levensduur      |
 | TO        | Totale Opbrengsten         |
+| TVK       | Totale Variabele Kosten    |
 | TW        | Totale Winst               |
 | VK        | Variabele Kosten           |
 
@@ -399,3 +401,25 @@ Voorbeelden:
 ## 3.3 De totale kosten
 
 = totale vaste kosten + totale variabele kosten
+
+Voorbeeld:
+
+| Bedrijfsdrukte (* EH) | TCK (* mln EUR) | TVK (* mln EUR) | TK (* mln EURO) = TCK + TVK |
+| --------------------- | --------------- | --------------- | --------------------------- |
+| 0                     | 1               | 0,0             | 1                           |
+| 1000                  | 1               | 1,7             | 2,7                         |
+| 2000                  | 1               | 3,0             | 4,0                         |
+| 3000                  | 1               | 4,0             | 5,0                         |
+| 4000                  | 1               | 5,0             | 6,0                         |
+| 5000                  | 1               | 6,4             | 7,4                         |
+| 6000                  | 1               | 9,0             | 10,0                        |
+
+
+
+
+
+
+
+
+
+
