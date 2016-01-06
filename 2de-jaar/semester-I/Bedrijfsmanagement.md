@@ -357,10 +357,6 @@ Voorbeelden:
 
 ![](https://d.pr/i/1k61Y+)
 
-Dit kan omhoog gaan door:
-
-- Prijs Stijging
-
 ## 3.2 De totale variabele kosten
 
 > Variabele kosten <font color=red>variëren als gevolg van veranderingen in de productieomvang</font>
@@ -531,3 +527,156 @@ Oorzaken:
 - Economscihe noodzakelijke onvermijdbare reserve-overcapaciteit
 
 # Hoofdstuk 4: Directe en Indirecte kosten
+
+## 4.1 Het begrip directe en indirecte kosten
+
+- **Directe kosten** zijn de kosten die toegeschreven kunnen worden aan het maken van een *specifiek product*, zoals grondstofkosten en directe arbeidskosten.
+- **Indirecte kosten** ook wel *overheadkosten* genoemd, zijn *kosten die gemaakt worden ten behoeve van de totale productie* (niet per product aanwijsbaar), zoals kosten van management, administratie, ICT-beheer en dergelijke.
+
+| &nbsp; | DIRECTE KOSTEN | INDIRECTE KOSTEN |
+| ------ | -------------- | ---------------- |
+| variabele kosten | grondstofkosten | kosten van de indirecte materialen |
+| vaste kosten | kosten van machines die uitsluitend voor 1 product worden gebruikt | salaris administratief personeel |
+
+VOORBEELDEN
+
+- Directe lonen, wanneer de arbeidstijd per product bekend is
+    Variabele directe kosten
+- Lonen van arbeiders, wanneer de tijdsbesteding per product niet gemeten wordt
+    Variabele indirecte kosten
+- Specifieke beheerkosten
+    Vaste directe kosten
+- Afschrijving (over een vastgestelde levensduur) van een machine waarop 1 type product gemaakt wordt
+    Vaste directe kosten
+- Salaris algemene leiding
+    Vaste indirecte kosten
+
+## 4.2 Verbijzonderingmethoden
+
+> **INTEGRALE KP -> toerekenen INDIRECTE KOSTEN**
+
+5 verschillende verrekeningsmethoden:
+
+- Delingscalculatie
+- Equivalentiecijfer
+- Toeslagcalculatie
+- Kostenplaatsenmethode (enkel theorie, geen oefeningen)
+- ABC (Activity-base costing) (enkel theorie, geen oefeningen)
+
+### 4.2.1 Delingscalculatie
+
+```
+Totale kosten
+---------------------- = KP/EH
+Totale productieomvang
+```
+
+Conjunctuurversterkend:
+
+```
+TCK (bij normale bezetting) + TVK (bij normale bezetting)
+---------------------------------------------------------
+                    Normale Bezetting
+```
+
+### 4.2.2 Equivalentiecijfermethode
+
+| Product | Normale productie / maand | Proportioneel directe standaardkosten / EH (*EUR) | Verhouding indirecte kosten / EH |
+| ------- | ------------------------- | ------------------------------------------------- | -------------------------------- |
+| A       | 5000                      | 0,75                                              | 1                                |
+| B       | 3000                      | 1,00                                              | 3                                |
+| C       | 2000                      | 0,50                                              | 4                                |
+
+Totale indirecte kosten / maand = €16.500,00
+
+Gevraagd: Standaardkostprijs per EH van A, B en C
+
+```
+5000 EH A zijn equivalent aan               =  5000 EH A
+3000 EH B zijn equivalent aan               =  9000 EH A
+2000 EH C zijn equivalent aan               =  8000 EH A
+--------------------------------------------------------
+Totale normale productie is equivalent aan    22000 EH A
+
+
+
+De toerekening van de indirecte kosten is als volgt:
+
+                                   16500 EUR
+Per EH A zijn de indirecte kosten  ----------  = 0,75 EUR
+                                   22000 EH A
+
+Per EH B zijn de indirecte kosten 3 * 0,75 EUR = 2,25 EUR
+Per EH B zijn de indirecte kosten 4 * 0,75 EUR = 3,00 EUR
+
+
+De directe kosten zijn proportioneel variabel, de KP is te berekenen als:
+
+KP/EH A = 0,75 EUR + 0,75 EUR = 1,50 EUR
+KP/EH B = 2,25 EUR + 1,00 EUR = 3,25 EUR
+KP/EH C = 3,00 EUR + 0,50 EUR = 3,50 EUR
+```
+
+### 4.2.3 Opslagmethoden
+
+De indirecte kosten worden uitgedrukt als percentage van de directe kosten (grondstofkosten, arbeidskosten of totale directe kosten).
+
+- Enkelvoudige opslagmethode:
+
+    Bij deze methode, ook wel primitieve opslagmethode genoemd, worden de indirecte kosten verbijzonderd (toegedeeld) door middel van **één opslagpercentage**.
+
+- Verfijnde opslagmethode:
+
+    Bij de verfijnde opslagmethode worden de indirecte kosten verder verbijzonderd (toegedeeld) naar de oorzaak die tot de kosten heeft geleid. **(meerdere opslagpercentages)**
+
+#### Voorbeeld enkelvoudige opslagmethodiek
+
+Van een frituur zijn de volgende gegevens bekend:
+- In een jaar zijn 20.000 kroketten, 10.000 frikadellen en 50.000 porties frietjes verkocht.
+- Een kroket wordt ingekocht voor €0,20 en een frikadel voor € 0,30.
+- De aardappelkosten voor een portie friet zijn €0,25.
+- De huur van de frituur bedraagt €6.000 per jaar en de frituur- en overige kosten zijn samen €5.700.
+
+Het enkelvoudige opslagpercentage wordt berekend over **de directe grondstofkosten.**
+
+Wat wordt het opslagpercentage indirecte kosten?
+
+```
+Grondstofverbruik per jaar
+
+    Friet             €12.500,00
+    Kroketten         € 4.000,00
+    Frikadellen       € 3.000,00
+    ----------------------------
+    Totaal            €19.500,00 = directe kosten
+
+Indirecte kosten  €11.700,00  (Huur van frituur + frituurkosten + overige kosten: €6.000,00 + €5.700,00)
+
+Opslagpercentage voor indirecte kosten op de directe grondstofkosten:
+    €11.700,00 / €19.500 x 100% = 60%
+
+Wat wordt nu de kostprijs van een portie patat, een kroket en een frikadel?
+
+Een portie frietjes kost dan:
+
+  Directe kosten                             €0,25
+  Opslag indirecte kosten; 60% * €0,25 =     €0,15
+  ------------------------------------------------
+  Kostprijs van 1 portie frietjes =          €0,40
+
+
+Een portie kroketten kost dan:
+
+  Directe kosten                             €0,20
+  Opslag indirecte kosten; 60% * €0,20 =     €0,12
+  ------------------------------------------------
+  Kostprijs van 1 portie kroketten =         €0,32
+
+Een portie frikadellen kost dan:
+
+  Directe kosten                             €0,30
+  Opslag indirecte kosten; 60% * €0,30 =     €0,18
+  ------------------------------------------------
+  Kostprijs van 1 portie frikadellen =       €0,48
+
+```
