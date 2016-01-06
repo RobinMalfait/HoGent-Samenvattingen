@@ -791,7 +791,7 @@ Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd 
 - **Taakstelling en autorisatie**. Een budgetverantwoordelijkheid en -bevoegdheid (autorisatie) wordt toebedeeld aan een persoon in de onderneming om uitvoer te geven aan activiteiten.
 - **Motivatie**. Een budget kan motiverend werken door de verantwoordelijkheden over budgetten op een lager niveau door te trekken.
 - **Evaluatie**. Het budget dient als een evaluatiemiddel om achteraf na te gaan hoe de planning van de activiteiten verlopen is. (VERSCHILLENANALYSE)
-- VERSCHILLENANALYSE: verschillen kunnen zowel het gevolg zijn van prijswijzigingen en van efficiëntieverschillen
+- **VERSCHILLENANALYSE**: verschillen kunnen zowel het gevolg zijn van prijswijzigingen en van efficiëntieverschillen
 
 # 5.2 Diverse stappen bij het budgetteren
 
