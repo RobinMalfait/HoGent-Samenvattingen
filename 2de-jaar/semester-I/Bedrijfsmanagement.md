@@ -16,6 +16,7 @@ title: Bedrijfsmanagement
 | GTK       | Gemiddelde totale kosten    |
 | GVK       | Gemiddelde variabele kosten |
 | HB        | Handboek `¯\_(ツ)_/¯`       |
+| KP        | Kostprijs                   |
 | MK        | Marginale kosten            |
 | MO        | Marginale Opbrengsten       |
 | P         | Prijs                       |
@@ -29,7 +30,7 @@ title: Bedrijfsmanagement
 | TW        | Totale Winst                |
 | VK        | Variabele Kosten            |
 
-## 1. Kostenbegrippen
+# Hoofdstuk 1: Kostenbegrippen
 ## 1.1 Het begrip kosten
 ## 1.2 De doeleinden van de kostenberekening
 
@@ -52,7 +53,7 @@ Waarom?
 - budgetteren (verkoop- en productieplan (taakstellende begroting))
 - prijsbepaling (grensprijs, winstmarge, ...)
 
-# 2 Kostensoorten
+# Hoofdstuk 2: Kostensoorten
 
 **Kosten** zijn de in geld uitgedrukte waarde van opgeofferde productiemiddelen.
 
@@ -337,7 +338,7 @@ Onderneming:
 | ------ | ------- |
 | Vorderingen op klanten + bezittingen | Hoe heb ik al deze aanwendingen van vermogen/activa gefinancieerd?<br><br>- Inbreng van de eigenaar<br>- Investeringskrediet of andere leningen<br>- Schuld aan de leveranciers
 
-# 3 Constanten en variabele kosten
+# Hoofdstuk 3: Constanten en variabele kosten
 
 - Contante kosten (CK) of vaste kosten/fixed costs (FK)
 - Variabele Kosten (VK)
@@ -458,7 +459,7 @@ Voorbeeld:
     ```
 ![](https://d.pr/i/11Rz6+)
 
-### Oefening:
+### Oefening 1:
 
 ![](https://d.pr/i/1dV6S+)
 
@@ -467,7 +468,8 @@ Grafische uitwerking van de tabel:
 | Afbeelding | Conclusies |
 | :--------: | :--------- |
 | ![](https://d.pr/i/11NVT+) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
-### Oefening:
+
+### Oefening 2:
 
 Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  volkomen concurrentievoorwaarden en streeft naar winstmaximalisatie.
 
@@ -483,20 +485,49 @@ Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  vol
 ![](https://d.pr/i/1cZFP+)
 
 1. Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
-
     <font color="red">**Q = 90**</font>
-
     > Snijpunt met **MK**
 
 2. Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
-
     <font color="red">**Q = 53**</font>
-
     > Snijpunt met **GTK**
 
 3. Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
-
     <font color="red">**Q = 80**</font>
-
     > Snijpunt van **MK** en **GTK**
 
+## 3.5 De semivariabele kosten (= gemengde kosten)
+
+Dit zijn kosten die voor een deel vaste kosten zijn en voor een deel variabel zijn.
+
+Voorbeelden:
+
+- Telefoonkosten: vast recht (abonnementsgeld) en tevens een tarief per gesprekseenheid
+- Arbeidskosten van wie het loon berekend wordt volgens een premiestelsel, waarbij een vaste vergoeding geldt en een premie die afhankelijk is van dep prestaties.
+
+![](https://d.pr/i/1ibv5+)
+
+## 3.6 Constante en variabele kosten en standaardkostprijs
+
+KP / EH -> afhankelijk van de gerealiseerde productie
+
+> **Normale Bezetting:** de mate waarin de rationele capaciteit in de loop van de jaren zal worden benut.  De normale bezetting wordt verstaan de gemiddelde benutting van de capaciteit die voor de eerstkomende jaren wordt verwacht, gebaseerd op de geschatte afzet in die jaren.
+
+```
+Rationele Capaciteit = werkelijke capaciteit - irrationele capaciteit
+
+                     TCK (bij normale bezetting) + TVK (bij normale bzetting)
+Standaardkostprijs = --------------------------------------------------------
+                                        Normale Bezetting
+```
+
+> Normale bezetting < Rationele Capaciteit = **rationele overcapaciteit**
+
+Oorzaken:
+
+- Technische onvermijdelijke overcapaciteit wegens:
+    - Seizoensschommelingen
+    - Ondeelbaarheid van productiemiddellen (batch)
+- Economscihe noodzakelijke onvermijdbare reserve-overcapaciteit
+
+# Hoofdstuk 4: Directe en Indirecte kosten
