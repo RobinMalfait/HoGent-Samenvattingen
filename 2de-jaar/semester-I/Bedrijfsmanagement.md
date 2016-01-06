@@ -453,10 +453,16 @@ Voorbeeld:
     = ---- of ----
        ΔQ       ΔQ
     ```
+![](https://d.pr/i/11Rz6+)
 
+### Oefening:
 
-
-
-
+| Productie (x EH) | TCk    | TVK    | TK     | GCK    | GVK    | GTK    | MK/EH  |
+| ---------------: | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 0                | &nbsp; | -      | -      | -      | -      | -      | &nbsp; |
+| &nbsp;           | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| 8                | &nbsp; | 100    | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| &nbsp;           | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| 18               | &nbsp; | &nbsp; | &nbsp; | 6,94   | 11,11  | &nbsp; | &nbsp; |
 
 
