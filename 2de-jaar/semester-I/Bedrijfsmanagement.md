@@ -45,7 +45,7 @@ Waarom?
 - budgetteren (verkoop- en productieplan (taakstellende begroting))
 - prijsbepaling (grensprijs, winstmarge, ...)
 
-# 2. Kostensoorten
+# 2 Kostensoorten
 
 **Kosten** zijn de in geld uitgedrukte waarde van opgeofferde productiemiddelen.
 
@@ -330,7 +330,7 @@ Onderneming:
 | ------ | ------- |
 | Vorderingen op klanten + bezittingen | Hoe heb ik al deze aanwendingen van vermogen/activa gefinancieerd?<br><br>- Inbreng van de eigenaar<br>- Investeringskrediet of andere leningen<br>- Schuld aan de leveranciers
 
-# 3. Constanten en variabele kosten
+# 3 Constanten en variabele kosten
 
 - Contante kosten (CK) of vaste kosten/fixed costs (FK)
 - Variabele Kosten (VK)
@@ -405,7 +405,7 @@ Voorbeelden:
 Voorbeeld:
 
 | Bedrijfsdrukte (* EH) | TCK (* mln EUR) | TVK (* mln EUR) | TK (* mln EURO) = TCK + TVK |
-| --------------------- | --------------- | --------------- | --------------------------- |
+| :-------------------: | :-------------: | :-------------: | :-------------------------: |
 | 0                     | 1               | 0,0             | 1                           |
 | 1000                  | 1               | 1,7             | 2,7                         |
 | 2000                  | 1               | 3,0             | 4,0                         |
@@ -414,6 +414,7 @@ Voorbeeld:
 | 5000                  | 1               | 6,4             | 7,4                         |
 | 6000                  | 1               | 9,0             | 10,0                        |
 
+## 3.4 De gemiddelde en marginale kosten
 
 
 
