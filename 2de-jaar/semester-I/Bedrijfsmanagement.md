@@ -641,7 +641,7 @@ Het enkelvoudige opslagpercentage wordt berekend over **de directe grondstofkost
 
 Wat wordt het opslagpercentage indirecte kosten?
 
-<pre>
+```
 Grondstofverbruik per jaar
 
     Friet             €12.500,00
@@ -679,4 +679,4 @@ Een portie frikadellen kost dan:
   ------------------------------------------------
   Kostprijs van 1 portie frikadellen =       €0,48
 
-</pre>
+```
