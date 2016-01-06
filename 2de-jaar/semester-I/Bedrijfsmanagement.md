@@ -4,6 +4,7 @@ title: Bedrijfsmanagement
 
 | Afkorting | Voluit                      |
 | --------- | --------------------------- |
+| AKP       | Aankoopprijs                |
 | Aw        | Aanschafwaarde              |
 | CK        | Constante Kosten            |
 | DPM       | Duurzaam Productie Middel   |
@@ -29,6 +30,7 @@ title: Bedrijfsmanagement
 | TVK       | Totale Variabele Kosten     |
 | TW        | Totale Winst                |
 | VK        | Variabele Kosten            |
+| VKP       | Verkoopprijs                |
 
 # Hoofdstuk 1: Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -455,7 +457,7 @@ Voorbeeld:
     ```
 ![](https://d.pr/i/11Rz6+)
 
-### Oefening 1:
+### 3.4.1 Oefening
 
 ![](https://d.pr/i/1dV6S+)
 
@@ -465,7 +467,7 @@ Grafische uitwerking van de tabel:
 | :--------: | :--------- |
 | ![](https://d.pr/i/11NVT+) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
 
-### Oefening 2:
+### 3.4.2 Oefening
 
 Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  volkomen concurrentievoorwaarden en streeft naar winstmaximalisatie.
 
@@ -812,3 +814,102 @@ Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd 
 - Flexibele budgettering
 
 > Hangt samen met de **kostensoorten**
+
+# Hoofdstuk 6: Direct costing en het verkoop- en productieplan
+
+## 6.1 Standaardkostprijs en verkoopplan
+
+DOEL kotenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
+
+- Standaard-KP -> <font color="red">**MINIMUM VKP**</font>
+
+    - seizoensinvloedne -> TIJDELIJK: VKP < standaard-KP
+    - standaard-KP -> afzetten normale hoeveelheid
+    - opslag taakstellingsrisico -> algemeen BUDGETRISICO
+
+- Standaard-KP -> <font color="red">**MAXIMUM VKP**</font> (monopolie)
+
+## 6.3 De breakevenanalyse
+
+Bedrijven willen vaak weten welke afzet gehaald moet worden om uit de kosten te komen.
+
+De afzet waarbij dat het geval is noemen we de <font color="red">Break-evenafzet</font>
+
+Break evenafzet is de minimumafzet waarbij de totale kosten en inkomsten aan elkaar gelijk zijn.
+
+> TO = TK
+
+De onderneming draait geen verlies, maar ook (nog) geen winst.
+
+Voor het berekenen van de break-evenafzet wordt gebruik gemaakt van de **dekkingsbijdrage** (ofwel *contributiemarge* genoemd) voor de dekking van de constante kosten.
+
+```
+Dekkingsbijdrage = Verkoopprijs ÷ Variabele kosten
+```
+
+De break-evenanalyse gaat dan ook uit van **Direct Costing**!
+
+Enkele assumpties:
+
+- Er is sprake van homogene productie (8.3.1)
+- Er wordt uitgegaan van proportioneel variabele kosten (8.3.2)
+- Er wordt uitgegaan van gelijkblijvende TCK (8.3.3)
+- Er wordt uitgegaan van een gelijkblijvende prijs per EH (8.3.4)
+
+```
+BEREKENING
+
+Totale Opbrengsten          = Totale Kosten
+    (p * Q)                 = (v * Q) + TCK
+         (p * Q) - (v * Q)  = TCK
+                Q(p - v)    = TCK
+                        Q   = TCK / (p - v)
+
+                           Constante kosten
+Break-evenafzet =   -------------------------------
+                    Verkoopprijs - Variabele Kosten
+```
+
+![](https://d.pr/i/173OH+)
+
+### 6.3.1 Oefening
+
+De onderneming "Jannemans Surfboards" produceert en verkoopt één type surfboard.
+
+```
+Gegeven:
+--------
+De verkoopprijs (p) is             €    625,00
+De constante kosten (TCK) bedragen €450.000,00
+De variabele kosten (v) zijn       €    250,00 per board
+
+Dus:
+p   = €    625,00
+TCK = €450.000,00
+v   = €    250,00
+
+Gevraagd:
+---------
+Bepaal de breakevenafzet (geen winst, geen verlies)
+
+Antwoord:
+---------
+Break-evenafzet = TCK / (p - v)
+                = €450.000,00 / (€625,00 - €250,00)
+                = 1200 eenheden (boards)
+```
+
+## 6.4 Uitbesteding
+
+> **Uitbesteding** is het als producent door derden laten maken van bepaalde producten of onderdelen die men voor de productie of verkoop nodig heeft.
+
+Soorten uitbesteding:
+
+- Specialisatie uitbesteding
+- Capaciteitsuitbesteding
+
+De **constante kosten** van het eigen bedrijf spelen voor de te nemen beslissing geen rol omdat deze kosten zowel bij niet als bij wel uitbesteding op het bedrijf drukken.
+
+## 6.5 Comerciële economie; Marktonderzoek
+
+Verkooppolitiek -> PRIJS + PLAATS + PROMOTIE + PRODUCT (+ PEOPLE)
