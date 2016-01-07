@@ -1060,4 +1060,63 @@ Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat d
 
 - Wat is een toekomstig kapitaal tegen rente uitgezet op dit moment waard?
 
-    Van één bedrag: CW =  K / (1 + i) n
+    Van één bedrag: `CW =  K / (1 + i) n`
+
+#### Eindwaarde
+
+![](https://d.pr/i/1bSqM+)
+
+#### Contante waarde
+
+> Cashflow komt vrij *aan het eind van het jaar*
+
+![](https://d.pr/i/1e2ub+)
+
+### 7.5.1 De terugverdientijdmethode (Pay-back periode)
+
+Periode waarin het initiële **investeringsbedrag** volledig is terugontvangen uit de **operationele cashflows**.
+
+We kunnen van een tweetal situaties uitgaan:
+
+1. Cashflows worden ontvangen aan het **einde** van het jaar.
+2. Cashflows worden gelijkmatig **gedurende** het jaar ontvangen.
+
+- **Voordelen**
+
+    - Eenvoudige en simpel toe te passen methode.
+    - Biedt snel inzicht bij de beoordeling van grote aantallen investeringsprojecten.
+    - Vanwege de kortetermijnhorizon wordt beter rekening gehouden met onzekerheden.
+
+- **Nadelen**
+
+    - Houdt geen rekening met de omvang van de cashflows na de terugverdientijd.
+    - Er wordt geen uitspraak gedaan over de rentabiliteit van het totale investeringsproject.
+
+#### Voorbeeld terugverdientijd
+
+Een project kent een investering (op t = 0) van €250.000,00
+
+Afschrijving is lineair in vijf jaar. Restwaarde €50.000,00
+
+Het verloop van de (extra operationele) cashflow in de komende vijf jaar wordt als volgt ingeschat:
+
+```
+Jaar 1      € 20.000,00
+Jaar 2      € 50.000,00
+Jaar 3      €100.000,00
+Jaar 4      €160.000,00
+Jaar 5      € 50.000,00
+```
+
+#### Uitwerking terugverdientijd
+
+```
+            |  Cashflow   | Cumulatief  |
+----------------------------------------
+Jaar 1      | € 20.000,00 | € 20.000,00 |
+Jaar 2      | € 50.000,00 | € 70.000,00 |
+Jaar 3      | €100.000,00 | €170.000,00 |
+Jaar 4      | €160.000,00 | €330.000,00 |
+Jaar 5      | € 50.000,00 | €380.000,00 |
+```
+
