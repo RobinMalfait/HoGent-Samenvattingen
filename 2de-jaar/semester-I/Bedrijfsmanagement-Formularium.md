@@ -383,9 +383,7 @@ E = K * (1 + i)^n
 
 ### Contante Waarde
 
-```
-CW = K / (1 + i)^n
-```
+`CW = K / (1 + i)^n`
 
 ### Gemiddelde Boekhoudkundige Rendabiliteit (GBR)
 
@@ -453,6 +451,6 @@ RW5 = restwaarde €50.000,00 + €75.000,00 = €125.000,00
 
 ### Solvabiliteit
 
-- Rentabiliteit van de omzet (NETTO) `= ((Netto bedrijfsresultaat van de omzet) / omzet) * 100`<br>
-- Rentabiliteit van het eigen vermogen (REV) (NETTO) `= ((Nettowinst (- verlies)) / eigen vermogen)) * 100`<br>
-- Rentabiliteit van het totale vermogen (RTV) (NETTO) `= ((Winst voor belastingen + kosten van schulden) / TV) * 100`<br>
+- Rentabiliteit van de omzet (NETTO) `= ((Netto bedrijfsresultaat van de omzet) / omzet) * 100`
+- Rentabiliteit van het eigen vermogen (REV) (NETTO) `= ((Nettowinst (- verlies)) / eigen vermogen)) * 100`
+- Rentabiliteit van het totale vermogen (RTV) (NETTO) `= ((Winst voor belastingen + kosten van schulden) / TV) * 100`
