@@ -5,7 +5,7 @@ title: Bedrijfsmanagement
 | Afkorting | Voluit                                   |
 | --------- | ---------------------------------------- |
 | AKP       | Aankoopprijs                             |
-| Aw        | Aanschafwaarde                           |
+| AW        | Aanschafwaarde                           |
 | CK        | Constante Kosten                         |
 | DPM       | Duurzaam Productie Middel                |
 | EH        | Eenheid                                  |
@@ -77,7 +77,7 @@ Kosten = Prijs x Hoeveelheid
 - Kosten van grond
 - Kosten van diensten en derden
 - Kosten van belastingen
-- rentekosten
+- Rentekosten
 
 ## 2.1 De kosten van grond- en hulpstoffen
 
@@ -137,7 +137,8 @@ Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
 
 ```
-Brutowedden + Werkgeversbijdrage R.S.Z.
+Brutowedden
++ Werkgeversbijdrage R.S.Z.
 - R.S.Z.-bijdrage werknemers
 = Belastbaarinkomen
 - Bedrijfsvoorheffing
@@ -240,9 +241,9 @@ De afschrijvingskosten kunnen als volgt worden berekend:
 - Bepaal het afschrijvingspercentage
 
     ```
-      Jaarlijkse Afschrijvingskosten * 100%
-    = -------------------------------------
-               Aanschafwaarde (AW)
+      Jaarlijkse Afschrijvingskosten
+    = ------------------------------- * 100%
+        Aanschafwaarde (AW)
     ```
 
 > Er wordt een **constante prestatie** door het DPM geleverd.
@@ -266,7 +267,7 @@ Afschrijvingspercentage = (Afschr / (Aw - Rw))
                         = € 700.00
                           -------- = 33,33%
                           €2100.00
-1/aantal jaren = 33,333333333%
+100/aantal jaren = 33,333333333%
 ```
 
 - Degressieve afschrijgingsmethode
@@ -283,7 +284,6 @@ Afschrijvingspercentage = (Afschr / (Aw - Rw))
 ```
 Voorbeeld:
 
-
 Een machine van €1000 dient op 4jaren afgeschreven te worden.
 In geval van een lineaire afschrijving is het tarief 25% en automatische overgang van degressief naar lineair.
 Restwaarde is €0.
@@ -292,11 +292,26 @@ Bepaal de jaarlijkse afschrijving
 
 Beschrijving:
 -------------
+AT = Afschrijftarief     = 25% * 2
+                         = 50% (Verdubbeling - Regel 2)
 
-Eerste jaar: af te schrijven bedrag = €400 (dit is 40% van €1000 i.p.v 50%)
-Tweede jaar: af te schrijven bedrag = €300 (dit is 50% van €600 euro, het resterend bedrag).
-Derde jaar: af te schrijven bedrag = €250 (het bedrag dat volgens de lineaire methode berekend wordt) i.p.v. €150 (dit is 50% van het af te schrijven saldo van €300 dat volgens de degressieve methode berekend wordt)
-Vierde jaar: af te schrijven bedrag = €50 (dit is het af te schrijven saldo)
+AK = Afschrijvingskosten = AW - RW
+                         = €1000,00 - €0,00
+                         = €1000,00
+
+Lineair vanaf 25% = €1000,00 * 25% = €250,00
+Maximum grens 40% = €1000,00 * 40% = €400,00
+
+Jaar 1: AK * AT = €500,00; €500,00 > €400,00;
+// DUS €400,00 afschrijven (€1000,00 - €400,00) = €600,00 (Boekwaarde = BW)
+
+Jaar 2: BW * AT = €600,00 * 50% = €300,00
+// DUS €300,00 afschrijven (€ 600,00 - €300,00) = €300,00 (BW)
+
+Jaar 3: BW * AT = €300,00 * 50% = €150,00; €150,00 < €250,00
+// DUS overschakelen naar linear en €250 Afschrijven (€300,00 - €250,00) = €50,00
+
+Jaar 4: = €50,00
 ```
 
 - Afschrijving met een vast percentage van de BW
@@ -717,7 +732,7 @@ Opslagpercentages:
     €60.000,00 / €600.000,00 * 100% = 10%
 
     Opslagpercentage op totale directe kosten:
-    €40.000,00 / €1.000.000,00 * 100% = 40%
+    €40.000,00 / €1.000.000,00 * 100% = 4%
 
 Wat wordt de kostprijs van een klus met €400,00 materiaal kosten en €200,00 aan loonkosten?
 
@@ -858,7 +873,7 @@ De onderneming draait geen verlies, maar ook (nog) geen winst.
 Voor het berekenen van de break-evenafzet wordt gebruik gemaakt van de **dekkingsbijdrage** (ofwel *contributiemarge* genoemd) voor de dekking van de constante kosten.
 
 ```
-Dekkingsbijdrage = Verkoopprijs ÷ Variabele kosten
+Dekkingsbijdrage = Verkoopprijs - Variabele kosten
 ```
 
 De break-evenanalyse gaat dan ook uit van **Direct Costing**!
@@ -1006,11 +1021,11 @@ Cashflow = netto ontvangsten    (ontvangsten - uitgaven)
 
 #### In vereenvoudigde vorm zit dit proces er zo uit:
 
-a. Inventariseer, analyseer en selecteer de investeringsprojecten die het beste aansluiten bij de bedrijfsstrategie.
-b. Stel de huidige en toekomstige **cashflows** van de beoogde investeringsprojecten vast en beoordeel de **haalbaarheid** en **rentabiliteit** van elk project.
-c. Breg de **risico's** die de uitvoering van de projecten met zich meebrengt in kaart door de kans en het effect te meten.
-d. Selecteer het investeringsproject(en) met de hoogste verwachte bijdrage aan de ondernemingsdoelstellingen en de (relatief) laagste risico's.
-e. Evalueer de lopende en beëindigde projecten regelmatig.
+- Inventariseer, analyseer en selecteer de investeringsprojecten die het beste aansluiten bij de bedrijfsstrategie.
+- Stel de huidige en toekomstige **cashflows** van de beoogde investeringsprojecten vast en beoordeel de **haalbaarheid** en **rentabiliteit** van elk project.
+- Breng de **risico's** die de uitvoering van de projecten met zich meebrengt in kaart door de kans en het effect te meten.
+- Selecteer het investeringsproject(en) met de hoogste verwachte bijdrage aan de ondernemingsdoelstellingen en de (relatief) laagste risico's.
+- Evalueer de lopende en beëindigde projecten regelmatig.
 
 ### Berekening Cashflow
 
@@ -1059,14 +1074,14 @@ Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat d
 
 - Wat is een kapitaal tegen rente uitgezet ná afloop waard?
 
-    Van één bedrag: `E = K x (1 + i) n`
+    Van één bedrag: `E = K x (1 + i)^n`
 
 
 **Contante waarde**
 
 - Wat is een toekomstig kapitaal tegen rente uitgezet op dit moment waard?
 
-    Van één bedrag: `CW =  K / (1 + i) n`
+    Van één bedrag: `CW =  K / (1 + i)^n`
 
 #### Eindwaarde
 
@@ -1135,9 +1150,9 @@ Jaar 5      | € 50.000,00 | €380.000,00 |
 - e jaarlijkste winst wordt berekend door de gegeven cashflows te corrigeren voor de afschrijvingen en de gegeven restwaarde.
 
 ```
-      Gemiddelde winst x 100%
-GBR = ------------------------
-       Gemiddelde investering
+      Gemiddelde winst
+GBR = ---------------------- * 100%
+      Gemiddelde investering
 ```
 
 - **Voordelen:**
