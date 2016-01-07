@@ -913,3 +913,141 @@ De **constante kosten** van het eigen bedrijf spelen voor de te nemen beslissing
 ## 6.5 Comerciële economie; Marktonderzoek
 
 Verkooppolitiek -> PRIJS + PLAATS + PROMOTIE + PRODUCT (+ PEOPLE)
+
+# Hoofdstuk 7: Investeringsvraagstukken
+
+## 7.1 Investeringen
+
+### 7.1.1 Wat is investeren?
+
+> **Investeren** is het uitgeven van geld om duurzame (en vlottende) activa aan te kopen.
+
+### 7.1.2 Soorten investeringen en investeringsbehoeften
+
+**Redenen** om te investeren:
+
+- Vervangingsinvesteringen
+- Uitbreidingsinvesteringen
+- Automatiseringsinvesteringen
+- Duurzame investeringen
+- R & D
+
+Bij investeringsselectie gaat het om de vragen:
+
+- Hoe bepalen we of een investering *rendabel* zal zijn?
+- Welke investering past binnen de *bedrijfsstrategie*?
+
+## 7.2 De optimale vestigingsplaats
+
+Uitbreidingsinvesteringen -> optimale vestigingsplaats?
+
+Totale productiekosten: laagst!
+
+## 7.3 De optimale bedrijfsgrootte of -capaciteit
+
+capaciteitsverandering
+
+-> NIET-EVENREDIGE verandering van de totale kosten
+
+#### Grootte-degressie?
+ Tot een bepaald punt zal de extra kost minder dan evenredig stijgen waarna de kost meer dan evenredig zal toenemen.
+
+ -> Uiteraard moet er een afzetmarkt zijn voor deze productiehoeveelheid!!
+
+## 7.4 De optimale gebruiksduur = ELD
+
+Economische Levensduur (ELD)
+
+![](https://d.pr/i/11sbH+)
+
+## 7.5 Rendement van de investeringen: selectiecriteria
+
+> Rangorde van aanvaardbare investeringsprojecten
+
+Verschillende methoden voor investeringsselectie:
+
+- Terugverdientijd (Pay back period (PBP))
+- Gemiddelde rendabiliteit (Return on investment (ROI))
+- NCW (netto contante waarde) (Net present value (NPV))
+
+### Cashflow
+
+Een investeringsproject is het geheel van investeringen in bij elkaar behorende duurzame en vlottende activa, gekenmerkt door:
+
+Cashflow = netto ontvangsten    (ontvangsten - uitgaven)
+
+### Waarin investeren?
+
+- **Vaste activa**
+
+    Gebouwen, machines, transportmiddelen, gereedschappen, inventaris, ICT en immateriële activa (goodwill, octrooien, concessies).
+
+- **Werkkapitaal**
+
+    Voorraden grondstoffen, halfabricaten, debiteuren, crediteuren, kortlopende schulden.
+
+- **Aanloopkosten**
+
+    Verbouwingen, transportkosten, installatiekosten, training & opleiding, ...
+
+#### In vereenvoudigde vorm zit dit proces er zo uit:
+
+a. Inventariseer, analyseer en selecteer de investeringsprojecten die het beste aansluiten bij de bedrijfsstrategie.
+b. Stel de huidige en toekomstige **cashflows** van de beoogde investeringsprojecten vast en beoordeel de **haalbaarheid** en **rentabiliteit** van elk project.
+c. Breg de **risico's** die de uitvoering van de projecten met zich meebrengt in kaart door de kans en het effect te meten.
+d. Selecteer het investeringsproject(en) met de hoogste verwachte bijdrage aan de ondernemingsdoelstellingen en de (relatief) laagste risico's.
+e. Evalueer de lopende en beëindigde projecten regelmatig.
+
+### Berekening Cashflow
+
+```
+  Omzet
+- Kosten                             (waaronder afschrijvingen)
+-----------------------------------
+= Winst voor aftrek belasting
+- Belasting
+-----------------------------------
+= Winst na aftrek belasting
++ Afschrijvingen                     (kosten, geen uitgaven!)
+- Investeringen
++ Desinvesteringen (verkopen DPM)
++ Mutatie netto werkkapitaal
+------------------------------------
+= Cashflow
+```
+
+### Bepaling cashflows
+
+- **Bij aanvang project:**
+
+    Cashflow *initieel* = - investeringen
+
+- **Gedurende looptijd project:**
+
+    Cashflow *operationeel* = periodewinst + afschrijvingen
+
+- **In het laatste jaar project:**
+
+    Cashflow *finaal* = periodewinst + afschrijvingen + desinvesteringen
+
+### Tijdsvoorkeur
+
+Tijdvoorkeur of tijdswaarde van cashflows stelt dat **toekomstige** bedragen een lagere tijdswaarde hebben dan **huidige** bedragen.
+
+    € 1.000 nu is meer waard dan € 1.000 over 5 jaar!
+
+Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat deze in de toekomst meer waard zijn.
+
+
+### Samengestelde intrest
+
+**Eindwaarde**
+
+    Wat is een kapitaal tegen rente uitgezet ná afloop waard?
+    Van één bedrag: E = K x (1 + i) n
+
+
+**Contante waarde**
+
+    Wat is een toekomstig kapitaal tegen rente uitgezet op dit moment waard?
+    Van één bedrag: CW =  K / (1 + i) n
