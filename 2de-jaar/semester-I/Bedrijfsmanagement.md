@@ -752,19 +752,16 @@ Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
 Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
-- Stap 1:
-
+- **Stap 1:**
     Verdeling van alle indirecte kosten aan kostenplaatsen. Smanestelling van alle indirecte kosten per kostenplaats.
-- Stap 2:
-
+- **Stap 2:**
     Doorbelasting van de indirecte kosten toegerekend aan de hulpkostenplaatsen en zelfstandige kostenplaatsen aan de hoofdkostenplaatsen.
 
     - Hulpkostenplaatsen
     - Zelfstandige kostenplaatsen
     - Laatste of hoofdkostenplaatsen
 
-- Stap 3:
-
+- **Stap 3:**
     Doorbelasting kosten HOOFDKOSTENPLAATSEN -> KOSTENDRAGERS
 
 ![](https://d.pr/i/1cpYF+)
