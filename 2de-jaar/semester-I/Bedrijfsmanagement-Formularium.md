@@ -2,13 +2,13 @@
 title: Bedrijfsmanagement Formularium
 ---
 
-## Kosten
+### Kosten
 
 ```
 Kosten = Prijs * Hoeveelheid
 ```
 
-## Kosten van grond- en hulpstoffen
+### Kosten van grond- en hulpstoffen
 
 Een producent van houten meubels hanteert de volgende gegevens:
 
@@ -35,7 +35,7 @@ Grondstofkosten:
 Voor 100 tafels:     1000kg x €6 = €6000
 ```
 
-## Arbeidskosten
+### Arbeidskosten
 
 ```
   Brutowedden
@@ -49,13 +49,13 @@ Voor 100 tafels:     1000kg x €6 = €6000
 = Netowedden
 ```
 
-## De totale afschrijvingskosten
+### De totale afschrijvingskosten
 
 ```
 = Aanschafwaarde (AW) - Restwaarde (RW)
 ```
 
-## De jaarlijkse aschrijvingskosten
+### De jaarlijkse aschrijvingskosten
 
 ```
   Aanschafwaarde (AW) - Restwaarde (RW)
@@ -63,7 +63,7 @@ Voor 100 tafels:     1000kg x €6 = €6000
        Economische Levensduur (ELD)
 ```
 
-## Het afschrijvingspercentage
+### Het afschrijvingspercentage
 
 ```
   Jaarlijkse Afschrijvingskosten
@@ -77,7 +77,7 @@ of
 = 100 / (Aantal Jaren)
 ```
 
-## Degressieve Afschrijvingsmethode
+### Degressieve Afschrijvingsmethode
 
 ```
 Voorbeeld:
@@ -112,15 +112,15 @@ Jaar 3: BW * AT = €300,00 * 50% = €150,00; €150,00 < €250,00
 Jaar 4: = €50,00
 ```
 
-## De totale kosten
+### De totale kosten
 
 ```
 = TCK + TVK
 ```
 
-## De gemiddelde marginale kosten
+### De gemiddelde marginale kosten
 
-### Gemiddelde constante kosten (GCK)
+#### Gemiddelde constante kosten (GCK)
 
 ```
   TCK
@@ -128,7 +128,7 @@ Jaar 4: = €50,00
    Q
 ```
 
-### Gemiddelde variabele kosten = GVK
+#### Gemiddelde variabele kosten = GVK
 
 ```
   TVK
@@ -136,7 +136,7 @@ Jaar 4: = €50,00
    Q
 ```
 
-### Gemiddelde totale kosten = GTK
+#### Gemiddelde totale kosten = GTK
 
 ```
   (GCK + GVK) of (TK)
@@ -144,7 +144,7 @@ Jaar 4: = €50,00
         Q
 ```
 
-### Marginale kosten = MK
+#### Marginale kosten = MK
 
 ```
    ΔTK    ΔTVK
@@ -152,15 +152,15 @@ Jaar 4: = €50,00
    ΔQ       ΔQ
 ```
 
-## Constante & Variabele kosten & Standaardkostprijs
+### Constante & Variabele kosten & Standaardkostprijs
 
-### Rationele Capaciteit
+#### Rationele Capaciteit
 
 ```
 Rationele Capaciteit = werkelijke capaciteit - irrationele capaciteit
 ```
 
-### Standaardkostprijs
+#### Standaardkostprijs
 
 TCK en TVK bij normale bezetting
 
@@ -170,7 +170,7 @@ Standaardkostprijs = -----------------
                      Normale Bezetting
 ```
 
-## Delingscalculatie
+### Delingscalculatie
 
 ```
 Totale kosten
@@ -178,7 +178,7 @@ Totale kosten
 Totale productieomvang
 ```
 
-## Equivalentiecijfermethode
+### Equivalentiecijfermethode
 
 | Product | Normale productie / maand | Proportioneel directe standaardkosten / EH (*EUR) | Verhouding indirecte kosten / EH |
 | ------- | ------------------------- | ------------------------------------------------- | -------------------------------- |
@@ -216,7 +216,7 @@ KP/EH B = 2,25 EUR + 1,00 EUR = 3,25 EUR
 KP/EH C = 3,00 EUR + 0,50 EUR = 3,50 EUR
 ```
 
-## Enkelvoudige opslagmethodiek
+### Enkelvoudige opslagmethodiek
 
 Van een frituur zijn de volgende gegevens bekend:
 - In een jaar zijn 20.000 kroketten, 10.000 frikadellen en 50.000 porties frietjes verkocht.
@@ -267,7 +267,7 @@ Een portie frikadellen kost dan:
   Kostprijs van 1 portie frikadellen =       €0,48
 ```
 
-## Verfijnde opslagmethodiek
+### Verfijnde opslagmethodiek
 
 Van loodgietersbedrijf Caluwé zijn de volgende gegevens bekend:
 
@@ -318,15 +318,15 @@ Totale directe kosten + totale indirecte kosten:
             = €744,00
 ```
 
-## Breakevenanalyse
+### Breakevenanalyse
 
-### Dekkingsbijdrage (contributiemarge)
+#### Dekkingsbijdrage (contributiemarge)
 
 ```
 Dekkingsbijdrage = Verkoopprijs - Variabele Kosten
 ```
 
-### Break-evenafzet
+#### Break-evenafzet
 
 ```
                            Constante kosten
@@ -351,7 +351,7 @@ Break-evenafzet = TCK / (p - v)
 // Waarbij v = variabele kosten
 ```
 
-## Berekening Cashflow
+### Berekening Cashflow
 
 ```
   Omzet
@@ -369,7 +369,7 @@ Break-evenafzet = TCK / (p - v)
 = Cashflow
 ```
 
-## Eindwaarde
+### Eindwaarde
 
 
 ```
@@ -381,13 +381,13 @@ E = K * (1 + i)^n
 // n = aantal jaar
 ```
 
-## Contante Waarde
+### Contante Waarde
 
 ```
 CW = K / (1 + i)^n
 ```
 
-## Gemiddelde Boekhoudkundige Rendabiliteit (GBR)
+### Gemiddelde Boekhoudkundige Rendabiliteit (GBR)
 
 ```
       Gemiddelde winst
@@ -413,7 +413,7 @@ Jaar 5      € 50.000,00
 De discontovoet is 10% op jaarbasis.
 ```
 
-### Uitwerking GBR
+#### Uitwerking GBR
 
 ```
            Gemiddelde winst
@@ -432,66 +432,76 @@ RW5 = restwaarde €50.000,00 + €75.000,00 = €125.000,00
 - **Gemiddelde investering**: (l0 + RW5) / 2 = (€325.000,00 + €125.000,00) / 2 = €225.000,00
 - **GBR** = €36.000,00 / €225.000,00 x 100% = 16,0%
 
-## RATIO'S
+### RATIO'S
 
-### Liquiditeit
+#### Liquiditeit
 
+Current Ratio (CR) Norm >= 1
 ```
-Current Ratio (CR)                                          Norm >= 1
 = vlottende activa / kort vreemd vermogen
+```
 
-
-Quick Ratio (QR)                                            Norm >= 1
+Quick Ratio (QR) Norm >= 1
+```
 = (vlottende activa - voorraden) / kort vreemd vermogen
+```
 
-
-Netto Werkkapitaal (NWK)                                    Norm >= 0
+Netto Werkkapitaal (NWK) Norm >= 0
+```
 = vlottende activa - kort vreemd vermogen
-of
+// of
 = EV + VV op lange termijn - vaste activa
 ```
 
-### Efficiëntieratio's
+#### Efficiëntieratio's
 
-```
 Voorraadrotatie (RV)
+```
 = omzet / gemiddelde voorraad
+```
 
 Opgelet: In de jaarrekening zijn de vorraden tegen inkoopprijs gewaardeerd, en de omzet tegen verkoopprijs. Dit lossen we op door:
 Beginvoorraad + inkopen - eindvoorraad = omzet tegen inoopprijs
 
 
 Aantal dagen VR (DV)
+```
 = 365 / RV
-
+```
 
 Rotatie klantenkrediet (RK)
+```
 = omzet (incl. BTW) / gemiddelde handelsvorderingen
-
+```
 
 Aantal dagen klantenkrediet (DKK)
+```
 = 365 / RK
-
+```
 
 Leveranciersrotatie (RL)
+```
 = aankopen (incl. BTW) / gemiddelde handelsschuld
-
+```
 
 Aantal dagen leverancierskrediet (DLK)
+```
 = 365 / RL
 ```
 
-## Solvabiliteit
+### Solvabiliteit
 
-```
 Rentabiliteit van de omzet (NETTO)
+```
 = ((Netto bedrijfsresultaat van de omzet) / omzet) * 100
-
+```
 
 Rentabiliteit van het eigen vermogen (REV) (NETTO)
+```
 = ((Nettowinst (- verlies)) / eigen vermogen)) * 100
-
+```
 
 Rentabiliteit van het totale vermogen (RTV) (NETTO)
+```
 = ((Winst voor belastingen + kosten van schulden) / TV) * 100
 ```
