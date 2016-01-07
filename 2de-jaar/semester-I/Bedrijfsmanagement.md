@@ -750,14 +750,18 @@ Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
 1. Stap 1:
+
     Verdeling van alle indirecte kosten aan kostenplaatsen. Smanestelling van alle indirecte kosten per kostenplaats.
 2. Stap 2:
+
     Doorbelasting van de indirecte kosten toegerekend aan de hulpkostenplaatsen en zelfstandige kostenplaatsen aan de hoofdkostenplaatsen.
 
     - Hulpkostenplaatsen
     - Zelfstandige kostenplaatsen
     - Laatste of hoofdkostenplaatsen
+
 3. Stap 3:
+
     Doorbelasting kosten HOOFDKOSTENPLAATSEN -> KOSTENDRAGERS
 
 ![](https://d.pr/i/1cpYF+)
@@ -1034,7 +1038,7 @@ e. Evalueer de lopende en beëindigde projecten regelmatig.
 
 Tijdvoorkeur of tijdswaarde van cashflows stelt dat **toekomstige** bedragen een lagere tijdswaarde hebben dan **huidige** bedragen.
 
-    € 1.000 nu is meer waard dan € 1.000 over 5 jaar!
+- €1.000 nu is meer waard dan €1.000 over 5 jaar!
 
 Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat deze in de toekomst meer waard zijn.
 
@@ -1043,11 +1047,13 @@ Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat d
 
 **Eindwaarde**
 
-    Wat is een kapitaal tegen rente uitgezet ná afloop waard?
-    Van één bedrag: E = K x (1 + i) n
+- Wat is een kapitaal tegen rente uitgezet ná afloop waard?
+
+    Van één bedrag: `E = K x (1 + i) n`
 
 
 **Contante waarde**
 
-    Wat is een toekomstig kapitaal tegen rente uitgezet op dit moment waard?
+- Wat is een toekomstig kapitaal tegen rente uitgezet op dit moment waard?
+
     Van één bedrag: CW =  K / (1 + i) n
