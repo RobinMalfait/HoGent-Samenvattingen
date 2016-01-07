@@ -16,7 +16,7 @@ Gedrag van objecten.
 
 ## 1.2. UML Diagram
 
-![](https://d.pr/i/ywLl+)
+![](https://robinmalfait.com/afbeeldingen/droplr/ywLl.png)
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden komen...)
 
@@ -174,7 +174,7 @@ Creëren van klassen.
 
 ## 2.2. UML DIAGRAM
 
-![](https://d.pr/i/wBun+)
+![](https://robinmalfait.com/afbeeldingen/droplr/wBun.png)
 
 ## 2.3. CODE
 
@@ -244,7 +244,7 @@ Niet duidelijk? Schrijf maar iets in de comments of verwittig me :)
 
 ## 3.2. UML DIAGRAM
 
-![](https://d.pr/i/p59T+)
+![](https://robinmalfait.com/afbeeldingen/droplr/p59T.png)
 
 ## 3.3. OCP (Open Closed Principle)
 
@@ -326,7 +326,7 @@ Gedrag van objecten.
 
 ## 4.2. UML DIAGRAM
 
-![](https://d.pr/i/142OW+)
+![](https://robinmalfait.com/afbeeldingen/droplr/142OW.png)
 
 ## 4.3. De kracht van zwakke koppeling
 
@@ -472,7 +472,7 @@ Structuur van objecten
 
 ## 5.2. UML DIAGRAM
 
-![](https://d.pr/i/13fyo+)
+![](https://robinmalfait.com/afbeeldingen/droplr/13fyo.png)
 
 ## 5.3. Het principe van Kennisabastractie
 
@@ -553,13 +553,13 @@ Gedrag van objecten
 
 ## 6.2. UML DIAGRAM
 
-![](https://d.pr/i/1djSq+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1djSq.png)
 
 ## 6.3. STATE MACHINE DIAGRAM
 
 Voorbeeld van een state machine diagram:
 
-![](https://d.pr/i/1c575+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1c575.png)
 
 ## 6.4. CODE
 
@@ -837,4 +837,4 @@ MVC is een combinatie van een paar patterns.
     Dit wordt gebruikt om de GUI-componenten op te bouwen.
 
 
-![](https://d.pr/i/10SMs+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10SMs.png)

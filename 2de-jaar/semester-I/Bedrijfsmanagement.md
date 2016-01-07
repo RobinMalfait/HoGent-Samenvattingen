@@ -130,7 +130,7 @@ Het afval (10% = 100kg) wordt verkocht voor 100kg * €0,50 = €50.
 Deze opbrengsten kunnen in mindering worden gebracht op de grondstofkosten, waarmee uiteindelijk de grondstofkosten voor 100 tafels komen te liggen op:
 €6.000 - €50 = €5950
 
-Voorbeeld afval: ![](https://d.pr/i/1588H+)
+Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 
 ## 2.2 De arbeidskosten
 
@@ -204,7 +204,7 @@ De periode waarin het DPM prestaties levert tegen de **laagste gemiddelde kosten
 > <hr>
 > **!** ELD < TLD
 
-**ELD**: ![](https://d.pr/i/13D0C+)
+**ELD**: ![](https://robinmalfait.com/afbeeldingen/droplr/13D0C.png)
 
 Bepaling jaarlijkse afschrijving:
 
@@ -220,7 +220,7 @@ Fiscaal aanvaarde methoden:
 
 - Lineaire afschrijvingsmethode (Elk jaar evenveel)
 
-![](https://d.pr/i/HH20+)
+![](https://robinmalfait.com/afbeeldingen/droplr/HH20.png)
 
 De afschrijvingskosten kunnen als volgt worden berekend:
 
@@ -259,7 +259,7 @@ Afschrijvingspercentage = (Afschr / (Aw - Rw))
 
 - Degressieve afschrijgingsmethode
 
-![](https://d.pr/i/nZBZ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/nZBZ.png)
 
 > **3 Regels**
 >
@@ -338,7 +338,7 @@ Onderneming:
     - Vreemd Vermogen (Wel opeisbaar)
 - Activiteiten
 
-![](https://d.pr/i/1ko0V+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1ko0V.png)
 
 | Activa | Passiva |
 | ------ | ------- |
@@ -361,7 +361,7 @@ Voorbeelden:
 - Onderhoudscontracten
 - Verzekeringspremies
 
-![](https://d.pr/i/1k61Y+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1k61Y.png)
 
 ## 3.2 De totale variabele kosten
 
@@ -380,7 +380,7 @@ Voorbeelden:
 
 - Proportioneel (rechtevenredig) variabele kosten.
 
-    ![](https://d.pr/i/13Emz+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/13Emz.png)
 
     > Vb. Hoeveelheid grondstof (indien er geen hoeveelheidskorting is)
     >
@@ -389,19 +389,19 @@ Voorbeelden:
 
 - Progresief variabele kosten (Meer dan everedig toenemen door overwerk)
 
-    ![](https://d.pr/i/1jss5+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1jss5.png)
 
     > **Progressief** variabele kosten variëren **in verhouding sterker** met de productieomvang, bijvoorbeeld bij een hoge bezettingsgraad zullen de kosten van arbeid sterker stijgen door extra betaling van overwerk
 
 - Degressief variabele kosten (Minder dan verdubbelen)
 
-    ![](https://d.pr/i/A1kD+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/A1kD.png)
 
     > **Degressief** variabele kosten variëren **in verhouding minder sterk** met de productieomvang, bijvoorbeeld bij hoeveelheidkortingen bij inkoop en schaalvoordelen.
 
 - Trapsgewijs variabele kosten (Transport, bestelwagen per X tijd)
 
-    ![](https://d.pr/i/1eCAl+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1eCAl.png)
 
     > Dit staat niet in het handboek maar is wel te kennen!
     >
@@ -459,17 +459,17 @@ Voorbeeld:
     = ---- of ----
        ΔQ       ΔQ
     ```
-![](https://d.pr/i/11Rz6+)
+![](https://robinmalfait.com/afbeeldingen/droplr/11Rz6.png)
 
 ### 3.4.1 Oefening
 
-![](https://d.pr/i/1dV6S+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1dV6S.png)
 
 Grafische uitwerking van de tabel:
 
 | Afbeelding | Conclusies |
 | :--------: | :--------- |
-| ![](https://d.pr/i/11NVT+) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/11NVT.png) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
 
 ### 3.4.2 Oefening
 
@@ -484,7 +484,7 @@ Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  vol
 | MO  | Marginale Opbrengsten |
 | P   | Prijs |
 
-![](https://d.pr/i/1cZFP+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1cZFP.png)
 
 - Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
 
@@ -510,7 +510,7 @@ Voorbeelden:
 - Telefoonkosten: vast recht (abonnementsgeld) en tevens een tarief per gesprekseenheid
 - Arbeidskosten van wie het loon berekend wordt volgens een premiestelsel, waarbij een vaste vergoeding geldt en een premie die afhankelijk is van dep prestaties.
 
-![](https://d.pr/i/1ibv5+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1ibv5.png)
 
 ## 3.6 Constante en variabele kosten en standaardkostprijs
 
@@ -772,7 +772,7 @@ Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
     Doorbelasting kosten HOOFDKOSTENPLAATSEN -> KOSTENDRAGERS
 
-![](https://d.pr/i/1cpYF+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1cpYF.png)
 
 ### 4.2.5 Activity-based costing
 
@@ -782,7 +782,7 @@ Men gaat op zoek naar de zogenaamde 'cost drivers' van een product.
 
 > Welke activiteiten zijn nodig voor de fabricage en verkoop van een bepaald product?
 
-![](https://d.pr/i/1aty8+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1aty8.png)
 
 # Hoofdstuk 5: Standaardkostprijs en kostenbeheersing
 
@@ -809,7 +809,7 @@ Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd 
 
 # 5.2 Diverse stappen bij het budgetteren
 
-![](https://d.pr/i/17Zim+)
+![](https://robinmalfait.com/afbeeldingen/droplr/17Zim.png)
 
 1. ramen van de verkopen (GERAAMDE OMZET) van het volgende jaar obv heel wat interne en externe informatie.
 2. Geraamde omzet volgend BJ en geraamde productie -> nood aan VASTE ACTIVA (vervangingsinvesteringen en uitbereidingsinvesteringen)
@@ -882,7 +882,7 @@ Break-evenafzet =   -------------------------------
                     Verkoopprijs - Variabele Kosten
 ```
 
-![](https://d.pr/i/173OH+)
+![](https://robinmalfait.com/afbeeldingen/droplr/173OH.png)
 
 ### 6.3.1 Oefening
 
@@ -970,7 +970,7 @@ capaciteitsverandering
 
 Economische Levensduur (ELD)
 
-![](https://d.pr/i/11sbH+)
+![](https://robinmalfait.com/afbeeldingen/droplr/11sbH.png)
 
 ## 7.5 Rendement van de investeringen: selectiecriteria
 
@@ -1068,13 +1068,13 @@ Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat d
 
 #### Eindwaarde
 
-![](https://d.pr/i/1bSqM+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1bSqM.png)
 
 #### Contante waarde
 
 > Cashflow komt vrij *aan het eind van het jaar*
 
-![](https://d.pr/i/1e2ub+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1e2ub.png)
 
 ### 7.5.1 De terugverdientijdmethode (Pay-back periode)
 

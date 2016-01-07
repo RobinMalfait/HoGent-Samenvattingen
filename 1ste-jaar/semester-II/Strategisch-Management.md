@@ -730,7 +730,7 @@ Voorbeeld: Wasmiddelen
 
 ## Vergelijking tussen de twee zienswijzen
 
-![](http://d.pr/i/63BV+)
+![](https://robinmalfait.com/afbeeldingen/droplr/63BV.png)
 
 Cijfers omdraaien, vb:
 

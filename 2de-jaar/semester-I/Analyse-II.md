@@ -8,7 +8,7 @@ title: Analyse II
 
 > Voldoet aan alle eisen.
 
-![](https://d.pr/i/1hwnp+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hwnp.png)
 
 - Voldoet: TESTEN
 - Alle: FR+NFR
@@ -268,7 +268,7 @@ VB.: Ik wil een verkoopscontract binnenhalen. Om dat te doen moet ik met de mana
 
 VB.: Ik wil de tab-toets vinden zo dat ik de cursor kan plaatsen in het adresveld, zo kan ik mijn adres ingeven, zodat ik mijn persoonlijke gegevens kan ingeven in het pakket. Zo kan ik een aanvraag indienen voor een autoverzekering, zo kan ik mijn auto verzekeren, dan kan ik met mijn auto rijden
 
-![](https://d.pr/i/1iPNo+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1iPNo.png)
 
 1. **Hoe**? (*Lower Lever*)
 2. **Wat** wil de primary actor? (*User's goal*)
@@ -298,7 +298,7 @@ Voorbeeld 2:
 - Controle in de use case kan niet meer!
 - In vele gevallen geeft de preconditie aan dat een andere use case reeds uitgevoerd is
 
-VB.: ![](https://d.pr/i/AwG2+)
+VB.: ![](https://robinmalfait.com/afbeeldingen/droplr/AwG2.png)
 
 #### Body
 
@@ -329,7 +329,7 @@ VB.: ![](https://d.pr/i/AwG2+)
             - Beschrijf <font color="red">**geen** interacties met de GUI</font>
             - De dialoog die wordt beschreven is een veronderstelling van het ontwerp van de GUI
             - Functionele eisen
-            - Voorbeeld: ![](https://d.pr/i/1bL8x+)
+            - Voorbeeld: ![](https://robinmalfait.com/afbeeldingen/droplr/1bL8x.png)
         - **TIP 6:** Aanvaardbare set van actiestappen
             - Een transactie bestaat uit 4 delen
                 1. Vraag en data
@@ -337,7 +337,7 @@ VB.: ![](https://d.pr/i/AwG2+)
                 3. Wijziging
                 4. Resultaat
         - **TIP 7:** Valideer, controleer neit of ...
-            - Vermijd "if statements" ![](https://d.pr/i/xQOF+)
+            - Vermijd "if statements" ![](https://robinmalfait.com/afbeeldingen/droplr/xQOF.png)
         - **TIP 8:** User laat systeem A systeem B aansturen
             - Beschrijf _**geen** interacties met de GUI_ ("User hits fetch button")
             - Mogelijke oplossing:
@@ -366,10 +366,10 @@ VB.: ![](https://d.pr/i/AwG2+)
         - Noteer "wat het systeem ontdekt heeft, niet wat er gebeurd is"
             - **Niet**: "Klant vergeet PINcode in te geven"
             - **Wel**: "tijdslimiet overschreden bij ingave PINcode"
-        - Hoe noteren? ![](https://d.pr/i/1dymv+)
+        - Hoe noteren? ![](https://robinmalfait.com/afbeeldingen/droplr/1dymv.png)
         - Alternatieven vermelden is altijd goed
 
-![](https://d.pr/i/1fth1+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1fth1.png)
 
 # 3. Scrum & Kanban
 
@@ -383,7 +383,7 @@ VB.: ![](https://d.pr/i/AwG2+)
 
 ## Watervalmethode
 
-![](https://d.pr/i/1iMMr+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1iMMr.png)
 
 ## Agile
 
@@ -436,7 +436,7 @@ Wat is agile?
 - **Zelforganiserende** en **zelfreflecterende** teams
 - Alles is **geprioritiseerd**
 
-![](https://d.pr/i/1fAZt+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1fAZt.png)
 
 ### Scrum in een notedop
 
@@ -444,7 +444,7 @@ Wat is agile?
 2. Belangrijke opdrachten (€) eerst
 3. Bepaal de mijlpalen (sprints)
 
-![](https://d.pr/i/15b4b+)
+![](https://robinmalfait.com/afbeeldingen/droplr/15b4b.png)
 
 ### Scrum Rollen:
 
@@ -504,7 +504,7 @@ Wat is agile?
 - Doel = **twee / drie weken**
 - Product wordt **ontworpen, geschreven en getest tijdens de sprint**
 
-![](https://d.pr/i/oHmw+)
+![](https://robinmalfait.com/afbeeldingen/droplr/oHmw.png)
 
 ### Voorbereiding sprint
 
@@ -544,7 +544,7 @@ Wat is agile?
 
 ### Anchoring
 
-![](https://d.pr/i/16OJM+)
+![](https://robinmalfait.com/afbeeldingen/droplr/16OJM.png)
 
 ### Stand-up
 
@@ -626,7 +626,7 @@ Wat is agile?
 - Lijst wordt geprioritiseerd door Product-eigenaar
     - Typisch een Product Manager, Marketing, Interne Klant, enz...
 
-![](https://d.pr/i/11pBC+)
+![](https://robinmalfait.com/afbeeldingen/droplr/11pBC.png)
 
 ### Sprint backlog
 
@@ -640,19 +640,19 @@ Wat is agile?
 
 - Er worden taken afgewerkt, maar heel traag:
 
-    ![](https://d.pr/i/1237x+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1237x.png)
 
 - Er worden taken afgewerkt, niet genoeg
 
-    ![](https://d.pr/i/Oonu+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/Oonu.png)
 
 - Taken werden te snel afgewerkt
 
-    ![](https://d.pr/i/1eXwm+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1eXwm.png)
 
 ### Sprint backlog - eerste meeting
 
-![](https://d.pr/i/1eHD4+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1eHD4.png)
 
 ## Kanban
 
@@ -668,14 +668,14 @@ Wat is agile?
 
 ### Scenario 1 - one piece flow
 
-![](https://d.pr/i/rfWA+)
+![](https://robinmalfait.com/afbeeldingen/droplr/rfWA.png)
 
 ### Scenario 2 - Deployment problem
 
-![](https://d.pr/i/10Zee+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10Zee.png)
 
 
-![](http://d.pr/i/1kozK+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1kozK.png)
 
 
 

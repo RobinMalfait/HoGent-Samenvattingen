@@ -87,7 +87,7 @@ class Node {
         - `Map<K, V>`
         - `Queue<E>`
 
-![](https://d.pr/i/13zq2+)
+![](https://robinmalfait.com/afbeeldingen/droplr/13zq2.png)
 
 ### Interfaces
 
@@ -743,7 +743,7 @@ public class PriorityQueueTest
 
 ## 10. SET interface
 
-![](https://d.pr/i/16Alo+)
+![](https://robinmalfait.com/afbeeldingen/droplr/16Alo.png)
 
 - **HashSet<E>** is een implementatie-klasse van interface Set.
 - **TeeSet<E>** is een implementatie-klasse van interface SortedSet.
@@ -1024,7 +1024,7 @@ wordCounts.entrySet()
           })
 ```
 
-![](https://d.pr/i/1ifzq+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1ifzq.png)
 
 # Hoofdstuk 20: Generics
 
@@ -1477,7 +1477,7 @@ public class RunnableTester
 
 ## Producer/Consumer relatie zonder synchronisatie
 
-![](https://d.pr/i/1lgKH+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1lgKH.png)
 
 ```java
 public interface Buffer {
@@ -1580,14 +1580,14 @@ emf.close();
 
 ## Associaties
 
-![](https://d.pr/i/14I5Q+)
+![](https://robinmalfait.com/afbeeldingen/droplr/14I5Q.png)
 
 ### Veel-op-veel associaties
 
 | RDBMS | OOP |
 | :---- | :-- |
 | Altijd tussentabel nodig | Tussentabel niet altijd nodig |
-| ![](https://d.pr/i/158JM+) | ![](https://d.pr/i/1hLnx+) |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/158JM.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/1hLnx.png) |
 
 ## JPA Entity
 
@@ -1602,7 +1602,7 @@ emf.close();
 
 Bevat waarde die opgeslagen is in het record dat bij de entity hoort.
 
-![](https://d.pr/i/15cSL+)
+![](https://robinmalfait.com/afbeeldingen/droplr/15cSL.png)
 
 ## Mapping informatie
 
@@ -1665,7 +1665,7 @@ public class Docent
 
 #### One-to-one - unidirectioneel
 
-![](https://d.pr/i/HN6B+)
+![](https://robinmalfait.com/afbeeldingen/droplr/HN6B.png)
 
 ```java
 class Werknemer
@@ -1685,7 +1685,7 @@ class Parkeerplaats
 
 #### One-to-one - bidirectioneel
 
-![](https://d.pr/i/1hoWL+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hoWL.png)
 
 ```java
 class Werknemer
@@ -1708,7 +1708,7 @@ class Parkeerplaats
 
 #### One-to-one - bidirectioneel (2)
 
-![](https://d.pr/i/1hoWL+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hoWL.png)
 
 ```java
 class Werknemer
@@ -1731,7 +1731,7 @@ class Parkeerplaats
 
 #### One-to-many - unidirectioneel
 
-![](https://d.pr/i/HIKY+)
+![](https://robinmalfait.com/afbeeldingen/droplr/HIKY.png)
 
 ```java
 class Werknemer {
@@ -1748,7 +1748,7 @@ class Department {
 
 #### One-to-many / Many-to-one - bidirectioneel
 
-![](https://d.pr/i/17WaS+)
+![](https://robinmalfait.com/afbeeldingen/droplr/17WaS.png)
 
 ```java
 class Werknemer {
@@ -1768,7 +1768,7 @@ class Department {
 
 #### One-to-many / Many-to-one - bidirectioneel (2)
 
-![](https://d.pr/i/17WaS+)
+![](https://robinmalfait.com/afbeeldingen/droplr/17WaS.png)
 
 ```java
 class Werknemer {
@@ -1789,7 +1789,7 @@ class Department {
 
 #### Many-to-many - unidirectioneel
 
-![](https://d.pr/i/10nUv+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10nUv.png)
 
 ```java
 class Werknemer {
@@ -1806,7 +1806,7 @@ class Project {
 
 #### Many-to-many - bidirectioneel
 
-![](https://d.pr/i/10nUv+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10nUv.png)
 
 ```java
 class Werknemer {
@@ -1826,7 +1826,7 @@ class Project {
 
 #### Many-to-many - bidirectioneel (2)
 
-![](https://d.pr/i/10nUv+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10nUv.png)
 
 ```java
 class Werknemer {

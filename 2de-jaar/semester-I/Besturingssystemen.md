@@ -53,7 +53,7 @@ title: Besturingssystemen
 
 De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 
-![](https://d.pr/i/AK2Z+)
+![](https://robinmalfait.com/afbeeldingen/droplr/AK2Z.png)
 
 ### 3.2. Multitasking (single-user)
 
@@ -62,7 +62,7 @@ De gebruiker kan alle 100% gebruiken van de CPU, maar met 1 programma
 - Synchronisatie problemen
 - RAM is niet oneindig
 
-![](https://d.pr/i/10Y6l+)
+![](https://robinmalfait.com/afbeeldingen/droplr/10Y6l.png)
 
 ### 3.3. Multi-user-systemen
 
@@ -88,7 +88,7 @@ Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankun
 - **Real-time programma's** respons in een beperkte tijd
     - VB.: Zelfrijdende auto van google, wanneer er een voetganger gedetecteerd wordt, moet hij instant remmen en niet na 10 seconden pas.
 
-![](https://d.pr/i/1kTA4+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1kTA4.png)
 
 ### 3.4. Virtuele Machines
 
@@ -116,7 +116,7 @@ Elk programmatje heeft 1 of meerdere processen.
 
 > **Process**: een of meerdere reeksenopdrachten die door een besturingsprogramma worden beschouwd als een werkeenheid
 
-![](https://d.pr/i/1gNBE+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1gNBE.png)
 
 ### 4.3. Resources
 
@@ -128,7 +128,7 @@ Een process spreekt een resource (bron) aan:
 - CPU
 - bestanden
 
-![](https://d.pr/i/1eK3w+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1eK3w.png)
 
 Een OS moet
 
@@ -195,7 +195,7 @@ Een inode wordt geindentificeerd via een *inodenummer*
     - `ls -i`
     - `stat`
 
-![](https://d.pr/i/1lFa3+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1lFa3.png)
 
 #### 5.2.1 Oriëntatie in het bestandssysteem
 
@@ -458,11 +458,11 @@ Links:
 
 Instructiecyclus zonder onderbrekingen
 
-![](https://d.pr/i/16GWm+)
+![](https://robinmalfait.com/afbeeldingen/droplr/16GWm.png)
 
 Instructiecyclus met onderbrekingen
 
-![](https://d.pr/i/12e7r+)
+![](https://robinmalfait.com/afbeeldingen/droplr/12e7r.png)
 
 | &nbsp; | MEM |
 | ------ | --- |
@@ -492,7 +492,7 @@ Instructiecyclus met onderbrekingen
 
 -> het adres 902 wordt overschreven met 0003
 
-![](https://d.pr/i/L15G+)
+![](https://robinmalfait.com/afbeeldingen/droplr/L15G.png)
 
 ## 4. Systeembeeld van een proces
 
@@ -516,7 +516,7 @@ Instructiecyclus met onderbrekingen
 - Toestandsovergangen
     - Pijlen in procestoestandsdiagram
 
-![](https://d.pr/i/13Glg+)
+![](https://robinmalfait.com/afbeeldingen/droplr/13Glg.png)
 
 ### -> Procestoestanden
 
@@ -553,7 +553,7 @@ bevatten:
 
 ### Niveaus van scheduling
 
-![](https://d.pr/i/1dXSt+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1dXSt.png)
 
 - High-level (lange termijn, weinig)
     - 1, 2, 7
@@ -584,21 +584,21 @@ bevatten:
 
 Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het proces onderbreken en een volgend proces inladen.
 
-![](https://d.pr/i/15Nfe+)
+![](https://robinmalfait.com/afbeeldingen/droplr/15Nfe.png)
 
-![](https://d.pr/i/1bsKh+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1bsKh.png)
 
 ### 5.2. First-in-First-out*$ scheduling (FIFO) of First-come-first-served-scheduling (FCFS)
 
 Wanneer een proces als eerste de CPU vraagt zal hij die ook krijgen, waarbij de andere processen die erna komen zullen moeten wachten.
 
-![](https://d.pr/i/1hJUS+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hJUS.png)
 
 Een FIFO-scheduler kan deel uitmaken van een ingewikkeldere methode zoals bijvoorbeeld bij system die zowel batch-gebruikers als interactieve gebruikers hebben.
 
 Een manier om hybride methode van scheduling te implementeren is met *batch-partities* (= virtuele geheugenconstructie die 1 batch-proces bevat)
 
-![](https://d.pr/i/1anIs+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1anIs.png)
 
 ### 5.3. Multilevel feedback queues (MFQ)
 
@@ -606,7 +606,7 @@ Hierbij lijkt de scheduling-methode op Round-Robin als er veel I/O-activiteit is
 
 De beste scheduling-methode is afhankelijk van de soorten processen in de ready-toestan en het MFQ is gevoelig voor wijzigingen in de activiteiten (**adaptieve methode**)
 
-![](https://d.pr/i/1bAy8+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1bAy8.png)
 
 ### 5.4. Shortest-job-first-scheduling (SJF)
 
@@ -615,7 +615,7 @@ Er zijn twee strategieën die aan korte processen een hoge prioriteit geven:
 - Shortest Remaining Job Next (SRJN) = preëmptieve versie van SJF
 - Shortest Job First (SJF) -> hier zal de scheduler van het proces met de kleinste lengte uitvoeren
 
-![](https://d.pr/i/1ecG+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1ecG.png)
 
 ### 5.5 Starvation
 
@@ -871,7 +871,7 @@ void main()
 
 ## 3.7 Semaforen
 
-![](https://d.pr/i/1hQt3+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hQt3.png)
 
 > een integer-variabele die door slechts 2 primitieve operaties kan worden veranderd.
 
@@ -1037,7 +1037,7 @@ semafoor**.
 
 Voorbeeld van een sterke semafoor:
 
-![](https://d.pr/i/1cXb4+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1cXb4.png)
 
 **Het algoritme van wederzijdse uitsluiting:**
 
@@ -1063,7 +1063,7 @@ void main()
 
 Mogelijke volgorde van 3 processen die voor de wederzijdse uitsluiting de aanpak van bovenstaande code gebruiken:
 
-![](https://d.pr/i/1fPBP+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1fPBP.png)
 
 > **!** Sterke semaforen garanderen de afwezigheid van starvation, zwakke semaforen doen dit niet!!!
 
@@ -1151,7 +1151,7 @@ Het probleem is nu om de filosofen zodanige instructies te geven dat ze niet zul
 
 Dit soort problemen zijn in het algemeen niet zo eenvoudig op te lossen.
 
-![](https://d.pr/i/17VrF+)
+![](https://robinmalfait.com/afbeeldingen/droplr/17VrF.png)
 
 Stel bijvoorbeeld dat elke denker als filosofie heeft: ik pak een vork zo gauw ik kan, als beide beschikbaar zijn eerst de linkervork; zo gauw ik beide vorken heb eet ik wat; dan leg ik de vorken weer neer.
 
@@ -1215,7 +1215,7 @@ Soorten Synchronisatie
 
 * Blokkerende zender, niet blokkerende ontvanger
 
-![](https://d.pr/i/1e223+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1e223.png)
 
 ## 3.9 Monitoren
 
@@ -1225,7 +1225,7 @@ Het kan echter moeilijk zijn een correct programma te maken met semaforen. De mo
 
 De monitor is een constructie in een programmeertaal die een functionaliteit biedt die vergelijkbaar is met die van semaforen, maar die gemakkelijker te besturen is.
 
-![](https://d.pr/i/UpMf+)
+![](https://robinmalfait.com/afbeeldingen/droplr/UpMf.png)
 
 Een monitor is een constructie die code kan bevatten die naar gemeenschappelijke gebruikte data verwijst. Oppervlakkig gezien lijkt het een verzameling datatypen, datastructuren en procedures, onder de monitor heading. Maar een monitor is veel meer
 
@@ -1254,7 +1254,7 @@ Een deadlock of een impassetoestand treedt op wanneer 2 of meer processen voor o
 - gebruik één of ander protocol (afspraak) om te garanderen dat het systeem nooit in een deadlock-situatie zal komen;
 - laat toe dat het systeem in een deadlock-situatie geraakt en los deze dan op
 
-![](https://d.pr/i/1kUJ2+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1kUJ2.png)
 
 Aspecten van deadlock:
 
@@ -1323,7 +1323,7 @@ Om een onderscheid te maken tussen de 2 concepten, wordt de eenheid voor de verd
 
 Multithreadingverwijst naar de mogelijkheid van een besturingssysteem binnen een proces meerdere threadsof draden te gebruiken voor de uitvoering. De traditionele benadering met één uitvoeringsthread per proces, waarin het concept thread in feite niet bestaat, wordt ook wel een benadering met één thread genoemd.
 
-![](https://d.pr/i/173QP+)
+![](https://robinmalfait.com/afbeeldingen/droplr/173QP.png)
 
 In een omgeving met multithreadingwordt een proces gedefinieerd als beveiligings-en brontoewijzingseenheid.
 
@@ -1332,7 +1332,7 @@ Het volgende is verbonden met processen:
 - een **virtuele adresruimte**, die het procesbeeld bevat
 - **beveiligde toegang** tot processors, andere processen (voor de communicatie tussen processen), bestanden en I/O bronnen (apparaten en kanalen)
 
-![](https://d.pr/i/160FL+)
+![](https://robinmalfait.com/afbeeldingen/droplr/160FL.png)
 
 Binnen een proces kunnen er een of meer threadszijn, elk met het volgende:
 
@@ -1350,7 +1350,7 @@ Threadsverbeteren ook de efficiëntie van de communicatie tussen verschillende a
 
 Net zoals processen hebben threadsuitvoeringsstoestandenen kunnen ze met elkaar worden gesynchroniseerd.
 
-![](https://d.pr/i/1jrg8+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1jrg8.png)
 
 1. Spawn
 2. Unblock
@@ -1414,7 +1414,7 @@ Een process opstarten in background:
 
 `tree / > boomStructuur.txt &`, het **&** teken zorgt voor de background job
 
-![](https://d.pr/i/18GKH+)
+![](https://robinmalfait.com/afbeeldingen/droplr/18GKH.png)
 
 **PID**: Process identification - proces volgnummer.
 
@@ -1442,7 +1442,7 @@ Elk process heeft een **aantal vaste eigenschappen**:
 | het procesidentificatienummer. | het terminal type en nummer waaraan het proces verbonden is. Wij gebruiken pts, pseudo-terminals, in tegenstelling tot echte terminals waarbij je een toetsenbord en een scherm hebt, waarmee je niets anders kan doen dan 1 enkele shellopenen, in een tekstuele omgeving (te vergelijken met DOS vroeger). Pseudo-terminalszijn terminal vensters in een grafische omgeving, of verbindingen vanopeen netwerk. | een relatieve indicatie van de tijd die het aantal processorcycli dat het processal verbruikt heeft. Gewone processen van gebruikers verbruiken slechts een klein deel van de totale processorkracht. | de naam van het commando. |
 
 (Deze screenshot is genomen op een mac, dus kan iets anders zijn)
-![](https://d.pr/i/18w9v+)
+![](https://robinmalfait.com/afbeeldingen/droplr/18w9v.png)
 
 ### Uitgebreide Informatie
 
@@ -1453,7 +1453,7 @@ Elk process heeft een **aantal vaste eigenschappen**:
 | de naam van de gebruiker die het proces opstartte | het procesidentificatienummer. | procesidentificatienummer van het *parent process, het proces dat dit proces opstartte*. | de terminal waaraan het proces verbonden is, "?" wil zeggen dat het proces niet aan een terminal verbonden is. | de naam van het commando. |
 
 (Deze screenshot is genomen op een mac, dus kan iets anders zijn)
-![](https://d.pr/i/12GZH+)
+![](https://robinmalfait.com/afbeeldingen/droplr/12GZH.png)
 
 `top` commando:
 
@@ -1476,7 +1476,7 @@ Gebruik van het geheugen: alle programma's die actief zijn, nemen een plaatsje i
 
 Gebruik van de swap space (het virtuele geheugen): als er teveel programma's draaien, wordt alle beschikbare plaats in het geheugen opgevuld. Een speciale plek op de harde schijf wordt dan gebruikt als extra geheugen.
 
-![](https://d.pr/i/13iFZ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/13iFZ.png)
 
 `pstree` commando: Samenhang van processen
 
@@ -1538,7 +1538,7 @@ Dit instrueert het proces om af te handelen waar het mee bezig is volgens de pro
 5. Als ook dat niet helpt, zit er niet veel anders op dan het sterkste signaal te sturen, een SIGKILL, met **kill -9**.
 6. Kijk in elk geval altijd na met **ps** of het stoppen gelukt is.
 
-![](https://d.pr/i/1fxX6+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1fxX6.png)
 
 **Het `xkill` commando**
 
@@ -1605,7 +1605,7 @@ Het geheel wordt **fork-and-exec** genoemd.
 
 **Een proces aanmaken `fork-and-exec`**
 
-![](https://d.pr/i/1aExM+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1aExM.png)
 
 **De rol van `systemd`**
 
@@ -1792,7 +1792,7 @@ echo "De tweede naam is ${naam2}"
 echo
 ```
 
-Output: ![](https://d.pr/i/1azML+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/1azML.png)
 
 ### Positionele parameters:
 
@@ -1813,7 +1813,7 @@ echo "De negende parammeter is " $9
 echo
 ```
 
-Output: ![](https://d.pr/i/tbE9+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/tbE9.png)
 
 Je kan met het commando `shift` de positie van de parameter naar links opschuiven.
 
@@ -1835,7 +1835,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 ```
 
-Output: ![](https://d.pr/i/10ROd+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/10ROd.png)
 
 Met het commando `set` kan je nieuwe parameters instellen:
 
@@ -1857,7 +1857,7 @@ set ${x}
 echo "Nieuwe parameters ($#): $@"
 ```
 
-Output: ![](https://d.pr/i/1hSeV+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/1hSeV.png)
 
 ### Speciale Parameters:
 
@@ -1892,7 +1892,7 @@ thatsMe=$(whoami)
 echo "Ik ben" $thatsMe
 ```
 
-Output: ![](https://d.pr/i/TwoQ+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/TwoQ.png)
 
 ## Reguliere Expressies
 
@@ -1968,7 +1968,7 @@ kukeleku, kukeleku
 alle eitjes zijn voor u.
 ```
 
-Output: ![](https://d.pr/i/17oHe+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/17oHe.png)
 
 #### Substitutieopdrachten
 
@@ -1983,9 +1983,9 @@ Opties:
 
 Voorbeelden:
 
-![](https://d.pr/i/wbED+)
-![](https://d.pr/i/1aIQR+)
-![](https://d.pr/i/16zZJ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/wbED.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/1aIQR.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/16zZJ.png)
 
 ## Flow Control
 
@@ -2019,7 +2019,7 @@ then
 fi
 ```
 
-Output: ![](https://d.pr/i/17Ayi+)
+Output: ![](https://robinmalfait.com/afbeeldingen/droplr/17Ayi.png)
 
 Met het commando `test` wordt een expressie geëvalueerd:
 
