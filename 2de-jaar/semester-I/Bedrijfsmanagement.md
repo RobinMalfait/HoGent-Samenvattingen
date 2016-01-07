@@ -483,14 +483,17 @@ Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  vol
 ![](https://d.pr/i/1cZFP+)
 
 1. Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
+
     <font color="red">**Q = 90**</font>
     > Snijpunt met **MK**
 
 2. Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
+
     <font color="red">**Q = 53**</font>
     > Snijpunt met **GTK**
 
 3. Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
+
     <font color="red">**Q = 80**</font>
     > Snijpunt van **MK** en **GTK**
 
