@@ -482,17 +482,17 @@ Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  vol
 
 ![](https://d.pr/i/1cZFP+)
 
-1. Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
+- Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
 
     <font color="red">**Q = 90**</font>
     > Snijpunt met **MK**
 
-2. Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
+- Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
 
     <font color="red">**Q = 53**</font>
     > Snijpunt met **GTK**
 
-3. Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
+- Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
 
     <font color="red">**Q = 80**</font>
     > Snijpunt van **MK** en **GTK**
@@ -752,10 +752,10 @@ Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
 Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
 
-1. Stap 1:
+- Stap 1:
 
     Verdeling van alle indirecte kosten aan kostenplaatsen. Smanestelling van alle indirecte kosten per kostenplaats.
-2. Stap 2:
+- Stap 2:
 
     Doorbelasting van de indirecte kosten toegerekend aan de hulpkostenplaatsen en zelfstandige kostenplaatsen aan de hoofdkostenplaatsen.
 
@@ -763,7 +763,7 @@ Toedeling indirecte kosten op basis van kostenplaatsen of productiecentra.
     - Zelfstandige kostenplaatsen
     - Laatste of hoofdkostenplaatsen
 
-3. Stap 3:
+- Stap 3:
 
     Doorbelasting kosten HOOFDKOSTENPLAATSEN -> KOSTENDRAGERS
 
