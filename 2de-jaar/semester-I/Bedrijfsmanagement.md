@@ -283,17 +283,7 @@ Afschrijvingspercentage = (Afschr / (Aw - Rw))
 ```
 Voorbeeld:
 
-Een machine van 1.000 euro dient op 4 jaren afgeschreven te worden.
-In geval van een lineaire afschrijving is het tarief 25 % en automatische overgang van degressief naar lineair.
 
-
-Jaar 1 = Aanschaffingswaarde (AW) - Restwaarde (RW)         = €400.00 (40% van €1000.00 ipv 50%)
-Jaar 2 = Boekwaarde (BW) - RW                               = €300.00 (50% van €600.00 het resterend bedrag)
-Jaar 3 = €250.00 (Het bedrag dat volgens de lineaire methode berekend wordt) ipv €150.00 (dit is 50% van het af te schrijven saldo van €300.00 dat volgens degressieve methode berekend wordt)
-Jaar 4 = €50.00 (Dit is het af te schrijven saldo)
-```
-
-```
 Een machine van €1000 dient op 4jaren afgeschreven te worden.
 In geval van een lineaire afschrijving is het tarief 25% en automatische overgang van degressief naar lineair.
 Restwaarde is €0.
