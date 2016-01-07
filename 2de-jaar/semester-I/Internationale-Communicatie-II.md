@@ -2,8 +2,6 @@
 title: Internationale Communicatie II
 ---
 
-# Français
-
 ## Presentation
 
 - Intro

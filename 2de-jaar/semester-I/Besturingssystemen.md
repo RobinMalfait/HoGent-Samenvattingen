@@ -2,7 +2,7 @@
 title: Besturingssystemen
 ---
 
-# Werk Colleges
+**Werk Colleges**
 
 - [Linux Werkcollege](/2de-jaar/semester-I/Besturingssystemen/Linux.md)
 

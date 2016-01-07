@@ -135,10 +135,9 @@ Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 ## 2.2 De arbeidskosten
 
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
->
-> Brutowedden + Werkgeversbijdrage R.S.Z.
 
 ```
+Brutowedden + Werkgeversbijdrage R.S.Z.
 - R.S.Z.-bijdrage werknemers
 = Belastbaarinkomen
 - Bedrijfsvoorheffing
@@ -225,20 +224,33 @@ Fiscaal aanvaarde methoden:
 De afschrijvingskosten kunnen als volgt worden berekend:
 
 - Bepaal de totale waardevermindering/afschrijvingskosten
-    - = Aanschafwaarde (Aw) - Restwaarde (Rw)
+
+    ```
+    = Aanschafwaarde (AW) - Restwaarde (RW)
+    ```
+
 - Bepaal de jaarlijkse afschrijvingskosten
-    - = Aanschafwaarde (Aw) - Restaarde (Rw)
-        Economische levensduur (Eld)
+
+    ```
+      Aanschafwaarde (AW) - Restwaarde (RW)
+    = -------------------------------------
+           Economische Levensduur (ELD)
+    ```
+
 - Bepaal het afschrijvingspercentage
-    - = Jaarlijkse afschrijvingskosten x 100%
-        Aanschafwaarde (Aw)
+
+    ```
+      Jaarlijkse Afschrijvingskosten * 100%
+    = -------------------------------------
+               Aanschafwaarde (AW)
+    ```
 
 > Er wordt een **constante prestatie** door het DPM geleverd.
 
 ```
 Voorbeeld:
 
-Een klein assurantiekantoor heeft dire computers met een totale aanschafwaarde van €2.400.
+Een klein assurantiekantoor heeft drie computers met een totale aanschafwaarde van €2.400.
 De economische levensduur van de computers is drie jaar (wettelijk bepaald).
 
 De restwaarde na drie jaar is €300
