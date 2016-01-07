@@ -413,7 +413,7 @@ Jaar 5      € 50.000,00
 De discontovoet is 10% op jaarbasis.
 ```
 
-#### Uitwerking GBR
+### Uitwerking GBR
 
 ```
            Gemiddelde winst
