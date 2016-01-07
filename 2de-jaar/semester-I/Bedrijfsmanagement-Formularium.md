@@ -436,72 +436,23 @@ RW5 = restwaarde €50.000,00 + €75.000,00 = €125.000,00
 
 #### Liquiditeit
 
-Current Ratio (CR) Norm >= 1
-```
-= vlottende activa / kort vreemd vermogen
-```
-
-Quick Ratio (QR) Norm >= 1
-```
-= (vlottende activa - voorraden) / kort vreemd vermogen
-```
-
-Netto Werkkapitaal (NWK) Norm >= 0
-```
-= vlottende activa - kort vreemd vermogen
-// of
-= EV + VV op lange termijn - vaste activa
-```
+- Current Ratio (CR) Norm >= 1 `= vlottende activa / kort vreemd vermogen`
+- Quick Ratio (QR) Norm >= 1 `= (vlottende activa - voorraden) / kort vreemd vermogen`
+- Netto Werkkapitaal (NWK) Norm >= 0 `= vlottende activa - kort vreemd vermogen` of `= EV + VV op lange termijn - vaste activa`
 
 #### Efficiëntieratio's
 
-Voorraadrotatie (RV)
-```
-= omzet / gemiddelde voorraad
-```
-
-Opgelet: In de jaarrekening zijn de vorraden tegen inkoopprijs gewaardeerd, en de omzet tegen verkoopprijs. Dit lossen we op door:
-Beginvoorraad + inkopen - eindvoorraad = omzet tegen inoopprijs
-
-
-Aantal dagen VR (DV)
-```
-= 365 / RV
-```
-
-Rotatie klantenkrediet (RK)
-```
-= omzet (incl. BTW) / gemiddelde handelsvorderingen
-```
-
-Aantal dagen klantenkrediet (DKK)
-```
-= 365 / RK
-```
-
-Leveranciersrotatie (RL)
-```
-= aankopen (incl. BTW) / gemiddelde handelsschuld
-```
-
-Aantal dagen leverancierskrediet (DLK)
-```
-= 365 / RL
-```
+- Voorraadrotatie (RV) `= omzet / gemiddelde voorraad`
+    - Opgelet: In de jaarrekening zijn de vorraden tegen inkoopprijs gewaardeerd, en de omzet tegen verkoopprijs. Dit lossen we op door:
+        `Beginvoorraad + inkopen - eindvoorraad = omzet tegen inoopprijs`
+- Aantal dagen VR (DV) `= 365 / RV`
+- Rotatie klantenkrediet (RK) `= omzet (incl. BTW) / gemiddelde handelsvorderingen`
+- Aantal dagen klantenkrediet (DKK) `= 365 / RK`
+- Leveranciersrotatie (RL) `= aankopen (incl. BTW) / gemiddelde handelsschuld`
+- Aantal dagen leverancierskrediet (DLK) `= 365 / RL`
 
 ### Solvabiliteit
 
-Rentabiliteit van de omzet (NETTO)
-```
-= ((Netto bedrijfsresultaat van de omzet) / omzet) * 100
-```
-
-Rentabiliteit van het eigen vermogen (REV) (NETTO)
-```
-= ((Nettowinst (- verlies)) / eigen vermogen)) * 100
-```
-
-Rentabiliteit van het totale vermogen (RTV) (NETTO)
-```
-= ((Winst voor belastingen + kosten van schulden) / TV) * 100
-```
+- Rentabiliteit van de omzet (NETTO) `= ((Netto bedrijfsresultaat van de omzet) / omzet) * 100`
+- Rentabiliteit van het eigen vermogen (REV) (NETTO) `= ((Nettowinst (- verlies)) / eigen vermogen)) * 100`
+- Rentabiliteit van het totale vermogen (RTV) (NETTO) `= ((Winst voor belastingen + kosten van schulden) / TV) * 100`
