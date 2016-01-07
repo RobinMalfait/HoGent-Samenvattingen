@@ -2,35 +2,39 @@
 title: Bedrijfsmanagement
 ---
 
-| Afkorting | Voluit                      |
-| --------- | --------------------------- |
-| AKP       | Aankoopprijs                |
-| Aw        | Aanschafwaarde              |
-| CK        | Constante Kosten            |
-| DPM       | Duurzaam Productie Middel   |
-| EH        | Eenheid                     |
-| ELD       | Economische Levensduur      |
-| FK        | Vaste kosten / Fixed Costs  |
-| GCK       | Gemiddelde constante kosten |
-| GO        | Gemiddelde Opbrengsten      |
-| GS        | Grondstof                   |
-| GTK       | Gemiddelde totale kosten    |
-| GVK       | Gemiddelde variabele kosten |
-| HB        | Handboek `¯\_(ツ)_/¯`       |
-| KP        | Kostprijs                   |
-| MK        | Marginale kosten            |
-| MO        | Marginale Opbrengsten       |
-| P         | Prijs                       |
-| PM        | Productiemiddelen           |
-| RW        | Rest Waarde                 |
-| TCK       | Totale Constante Kosten     |
-| TK        | Totale Kosten               |
-| TLD       | Technische Levensduur       |
-| TO        | Totale Opbrengsten          |
-| TVK       | Totale Variabele Kosten     |
-| TW        | Totale Winst                |
-| VK        | Variabele Kosten            |
-| VKP       | Verkoopprijs                |
+| Afkorting | Voluit                                   |
+| --------- | ---------------------------------------- |
+| AKP       | Aankoopprijs                             |
+| Aw        | Aanschafwaarde                           |
+| CK        | Constante Kosten                         |
+| DPM       | Duurzaam Productie Middel                |
+| EH        | Eenheid                                  |
+| ELD       | Economische Levensduur                   |
+| FK        | Vaste kosten / Fixed Costs               |
+| GBR       | Gemiddelde Boekhoudkundige Rentabiliteit |
+| GCK       | Gemiddelde constante kosten              |
+| GO        | Gemiddelde Opbrengsten                   |
+| GS        | Grondstof                                |
+| GTK       | Gemiddelde totale kosten                 |
+| GVK       | Gemiddelde variabele kosten              |
+| HB        | Handboek `¯\_(ツ)_/¯`                    |
+| KP        | Kostprijs                                |
+| MK        | Marginale kosten                         |
+| MO        | Marginale Opbrengsten                    |
+| NCW       | Netto Contante Waarde (NPV)              |
+| NPV       | Net Present Value                        |
+| P         | Prijs                                    |
+| PM        | Productiemiddelen                        |
+| RW        | Rest Waarde                              |
+| TCK       | Totale Constante Kosten                  |
+| TK        | Totale Kosten                            |
+| TLD       | Technische Levensduur                    |
+| TO        | Totale Opbrengsten                       |
+| TVK       | Totale Variabele Kosten                  |
+| TVT       | Terugverdientijd                         |
+| TW        | Totale Winst                             |
+| VK        | Variabele Kosten                         |
+| VKP       | Verkoopprijs                             |
 
 # Hoofdstuk 1: Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -1120,3 +1124,143 @@ Jaar 4      | €160.000,00 | €330.000,00 |
 Jaar 5      | € 50.000,00 | €380.000,00 |
 ```
 
+- Indien de cashflows aan het eind van het jaar worden verkregen is de TVT van de €250.000,00 daarom **4 jaar.**
+- Indien de cashflows gelijkmatig gedurende het jaar worden verkregen is de TVT van de €250.000,00 daarom **3,5 jaar** namelijk: `3 jaar + (80.000,00 / 160.000,00) x 1 jaar`
+
+### 7.5.2 De gemiddelde rendementsmethode (GBR) (return on investment)
+
+- De gemidelde jaarlijkste **winst** wordt gerelateerd aan het gemiddeld in het project geïnvesteerde vermogen.
+- e jaarlijkste winst wordt berekend door de gegeven cashflows te corrigeren voor de afschrijvingen en de gegeven restwaarde.
+
+```
+      Gemiddelde winst x 100%
+GBR = ------------------------
+       Gemiddelde investering
+```
+
+- **Voordelen:**
+
+    - Houdt rekening met **alle nettowinsten**.
+    - Geeft een helder beeld over de **rentabiliteit** van een investeringsproject.
+    - Is **eenvoudig** toe te passen.
+
+- **Nadelen:**
+
+    - Houdt **geen** rekening met de tijdvoorkeur van geld en de volgorde waarin de nettowinsten worden ontvangen.
+
+#### Voorbeeld GBR
+
+Een project kent een investering (op t = 0) van € 250.000.
+
+Afschrijving is lineair in vijf jaar. Restwaarde € 50.000.
+
+Op t = 0 tevens een investering in werkkapitaal € 75.000. Deze vallen vrij aan het einde van het vijfde jaar.
+
+Het verloop van de (extra operationele) cashflow in de komende vijf jaar wordt als volgt ingeschat:
+
+```
+Jaar 1      € 20.000,00
+Jaar 2      € 50.000,00
+Jaar 3      €100.000,00
+Jaar 4      €160.000,00
+Jaar 5      € 50.000,00
+
+De discontovoet is 10% op jaarbasis.
+```
+
+#### Uitwerking GBR
+
+```
+           Gemiddelde winst
+
+Cumulatieve cashflow jaar 5     €380.000,00
+- totale afschrijving           €200.000,00
+-------------------------------------------
+Totale nettowinst               €180.000,00 / 5 jaar
+Gemiddelde winst                € 36.000,00
+
+
+l0 is de begininvestering van €250.000,00 + €75.000,00 (Werkkapitaal) = €325.000,00
+RW5 = restwaarde €50.000,00 + €75.000,00 = €125.000,00
+```
+
+- **Gemiddelde investering**: (l0 + RW5) / 2 = (€325.000,00 + €125.000,00) / 2 = €225.000,00
+- **GBR** = €36.000,00 / €225.000,00 x 100% = 16,0%
+
+> *Conclusie*:
+> De gemiddelde boekhoudkundige rentabiliteit is goed; deze ligt duidelijk boven de discontovoet van 10%. Het project is financieel gezien aantrekkelijk.
+
+
+### 7.5.3 De methode voro de netto contante waarde (= net present value)
+
+- Berekent de contante waarde van:
+
+    Alle verwachte cashflows - oorspronkelijke investeringsbedraf (CF0)
+
+Als rentevoet voor het disconteren van de cashflows wordt de vermogenskostenvoet van de onderneming gebruikt.
+
+De vermogenskostenvoet is de rente waartegen de ondernming extra vreemd vermogen kan aantrekken.
+
+- Wanneer de `NCW > 0` is hetp roject financieel gezien aanvaardbaar
+
+
+- **Voordelen:**
+    - De netto-contante-waardemethode houdt rekening met **alle cashflows** gedurende het investeringsproject.
+    - De methode houdt rekening met **tijdvoorkeur** van geld door het contant maken van de cashflows.
+- **Nadelen:**
+    - Deze methode meet niet de werkelijke **rentabiliteit** van een investeringsproject maar toetst of het project minimaal voldoet aan de vooraf vastgestelde discontovoet.
+
+#### Voorbeeld NCW
+
+Een project kent een investering (op t = 0) van € 250.000.
+
+Afschrijving is lineair in vijf jaar. Restwaarde € 50.000.
+
+Op t = 0 tevens een investering in werkkapitaal € 75.000. Deze vallen vrij aan het einde van het vijfde jaar.
+
+Het verloop van de (extra operationele) cashflow in de komende vijf jaar wordt als volgt ingeschat:
+
+```
+Jaar 1      € 20.000,00
+Jaar 2      € 50.000,00
+Jaar 3      €100.000,00
+Jaar 4      €160.000,00
+Jaar 5      € 50.000,00
+
+De discontovoet is 10% op jaarbasis.
+```
+
+#### Uitwerking NCW
+
+Berekening van NCW bij een discontovoet van 10%
+
+```
+          Cashflow                    Contante waarde
+-----------------------------------------------------
+Jaar 1    €  20.000,00 / (1,10)^1     €  18.181,82
+Jaar 2    €  50.000,00 / (1.10)^2     €  41.322,31
+Jaar 3    € 100.000,00 / (1.10)^3     €  75.131,48
+Jaar 4    € 160.000,00 / (1.10)^4     € 109.282,15
+Jaar 5    € 175.000,00 / (1.10)^5     € 108.661,23
+
+
+P.S.: €175.000,00 = €50.000,00 + €50.000,00 + €75.000,00
+-> In jaar 5 komt de RW van €50.000,00 en de investering in werkkapitaal er bij!
+
+                      Subtotaal: €352.578,99
+- totale investering tijdstip 0: €325.000,00
+--------------------------------------------
+                               = € 27.578,99
+
+Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
+```
+
+### Beoordeling investeringsprojecten
+
+> **Verschillende scenario's** (realistisch, optimistisch en pessimistisch)
+
+- **Passendheid**: sluit de investering voldoende aan bij de ondernemingsstrategie en de ondernemingsdoelen?
+- **Haalbaar**: is de investering haalbaar vanuit verschillende invalshoeken zoals financierbaarheid en organisatorische, economische, technische, sociale, juridische en duurzaamheidaspecten?
+- **Acceptabel**: hoe groot zijn de risico's voor de onderneming als de investering niet het gewenste rendement gaat opbrengen?
+
+> RISICO'S -> Vermijden - overdragen / Verzekeren - beheersen
