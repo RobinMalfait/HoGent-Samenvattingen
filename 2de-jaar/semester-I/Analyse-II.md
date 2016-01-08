@@ -196,7 +196,8 @@ Meetbare criteria
 Voorbeeld:
 
 | NFR             | Usability & Humanity |
-| --------------: | Gebruiksvriendelijk |
+| --------------: | -------------------- |
+| Indicator       | Gebruiksvriendelijk  |
 | Meetvoorschrift | Vijf klanten zoeken een van tevoren opgegeven boek, plaatsen die in hun winkelmandje en vervolledigen de bestelling door opgave van verzendadres en betaalmiddel. |
 | Norm            | De tijd die nodig is om een boek te zoeken en de bestelling hiervan af te ronden, bedraagt hoogstens 3 minuten. |
 
@@ -263,13 +264,21 @@ Tips:
 
 #### Elementair business proces
 
-VB.: Ik wil een verkoopscontract binnenhalen. Om dat te doen moet ik met de manager gaan lunchen. Om dat te doen moet ik geld halen van de rekening. Om dat te doen moet ik mij kenbaar maken . Om dat te doen moet ik mijn bankkaart hebben en moet mijn bankkaart ingelezen worden. Om dat te doen moet ik ….
+VB.: Ik wil een verkoopscontract binnenhalen.
+Om dat te doen moet ik met de manager gaan lunchen.
+Om dat te doen moet ik geld halen van de rekening.
+Om dat te doen moet ik mij kenbaar maken.
+Om dat te doen moet ik mijn bankkaart hebben en moet mijn bankkaart ingelezen worden.
+Om dat te doen moet ik ...
 
-VB.: Ik wil de tab-toets vinden zo dat ik de cursor kan plaatsen in het adresveld, zo kan ik mijn adres ingeven, zodat ik mijn persoonlijke gegevens kan ingeven in het pakket. Zo kan ik een aanvraag indienen voor een autoverzekering, zo kan ik mijn auto verzekeren, dan kan ik met mijn auto rijden
+VB.: Ik wil de tab-toets vinden zo dat ik de cursor kan plaatsen in het adresveld,
+zo kan ik mijn adres ingeven, zodat ik mijn persoonlijke gegevens kan ingeven in het pakket.
+Zo kan ik een aanvraag indienen voor een autoverzekering,
+zo kan ik mijn auto verzekeren, dan kan ik met mijn auto rijden
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1iPNo.png)
 
-1. **Hoe**? (*Lower Lever*)
+1. **Hoe**? (*Lower Level*)
 2. **Wat** wil de primary actor? (*User's goal*)
 3. **Waarom** doet de primary actor dit? (*Higher level*)
 
@@ -301,7 +310,7 @@ VB.: ![](https://robinmalfait.com/afbeeldingen/droplr/AwG2.png)
 
 #### Body
 
-- **Normala verloop:** Top-to-bottom beschrijving van een eenvoudige (meest voorkomende) situatie waarbij het doel van de Primary Actor gerealiseerd wodt.
+- **Normaal verloop:** Top-to-bottom beschrijving van een eenvoudige (meest voorkomende) situatie waarbij het doel van de Primary Actor gerealiseerd wordt.
 - **Alternatieve wegen** zijn uitbreidingen hierop
 
 #### Structuur (normaal verlop / uitbreidingen)
@@ -335,7 +344,7 @@ VB.: ![](https://robinmalfait.com/afbeeldingen/droplr/AwG2.png)
                 2. Validatie
                 3. Wijziging
                 4. Resultaat
-        - **TIP 7:** Valideer, controleer neit of ...
+        - **TIP 7:** Valideer, controleer niet of ...
             - Vermijd "if statements" ![](https://robinmalfait.com/afbeeldingen/droplr/xQOF.png)
         - **TIP 8:** User laat systeem A systeem B aansturen
             - Beschrijf _**geen** interacties met de GUI_ ("User hits fetch button")
@@ -516,7 +525,7 @@ Wat is agile?
 - Ruwe inschatting van aantal items dat opgenomen zal worden tijdens volgende sprint
 - Inschatting door team, niet door Product-eigenaar
 - Product-eigenaar kan antwoordne op alle vragen van eht team
-    - Indien neit mogelijk -> team neemt item niet op
+    - Indien niet mogelijk -> team neemt item niet op
 - (Bepalen van een sprintdoel (deadlines))
 
 ### Sprint planning deel 2
