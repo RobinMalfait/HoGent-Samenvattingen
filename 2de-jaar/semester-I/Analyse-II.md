@@ -201,7 +201,7 @@ Voorbeeld:
 | Meetvoorschrift | Vijf klanten zoeken een van tevoren opgegeven boek, plaatsen die in hun winkelmandje en vervolledigen de bestelling door opgave van verzendadres en betaalmiddel. |
 | Norm            | De tijd die nodig is om een boek te zoeken en de bestelling hiervan af te ronden, bedraagt hoogstens 3 minuten. |
 
-### 2.4.1 Functionele Requirements
+### 2.4.2 Functionele Requirements
 
 - Het vastleggen en éénduidig definiëren van de functionaliteit (taak van de functioneel ontwerper)
 - Volgens "best practices" en/of gestructureerde methoden
