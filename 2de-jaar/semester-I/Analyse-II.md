@@ -4,7 +4,7 @@ title: Analyse II
 
 # 1. Inleiding
 
-## Kwaliteitsvollen ICT Projecten Opleveren
+## Kwaliteitsvolle ICT Projecten Opleveren
 
 > Voldoet aan alle eisen.
 
@@ -37,7 +37,7 @@ title: Analyse II
     - Geld
     - Money
     - Analisten
-    - Ontwerpen
+    - Ontwerpers
     - Programmeurs
 
 ### Realiteit:
@@ -45,14 +45,13 @@ title: Analyse II
 - 1994: +50% faalt
 - Nu, door agile: +40% is succesvol
 
-#### Het plaatje dat boven elke ICT'ers zijn bed moet hangen
+#### Het plaatje dat boven elke ICT'er zijn bed moet hangen
 
-![](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fdeceth.com%2Fwp-content%2Fuploads%2F2010%2F03%2Frequirements_tree_swing.png&f=1)
+![](https://robinmalfait.com/afbeeldingen/droplr/1hFt.png)
 
 > **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een functionele requirement detecteren + use case uitschrijven
 >
-> **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een niet-functionele requirement detecteren
-
+> **! Examen Vraag**: Je krijgt een verhaal, en in dat verhaal een niet-functionele requirement detecteren + uitschrijven
 
 ### Pareto Regel
 
@@ -69,7 +68,7 @@ Ieder systeem wordt ontwikkeld om een bepaalde reden:
 - Beter benutten van commerciële mogelijkheden
 - Verhogen van de servicegraad
 
-> Vooraf eisen helder en éénduidig formuleren
+> Vooraf de eisen helder en éénduidig formuleren
 >
 > = business case
 
@@ -87,13 +86,13 @@ Voorbeelden:
 
 - **Business- to- consumer internetsite (grote heterogene groep gebruikers)**
 
-    KSF: gemak waarmee de gebruiiker het gewenste product kan bereiken
+    KSF: gemak waarmee de gebruiker het gewenste product kan bereiken
     KSF: begrijpbaarheid, zelfverklarend
 
 - **Boekhoudpakket (beperkte groep van zeer professionele gebruikers)**
 
     KSF: traceerbaarheid
-    Zelfverklared is minder
+    Zelfverklarend is minder belangrijk
 
 - **Grote batchgeoriënteerde administratieve systemen**
 
@@ -115,26 +114,26 @@ Vb.:
 **KSF**: klanten direct helpen aan de telefoon
 
 ```
-Meetbare cireteria
+Meetbare criteria
 
 * De klantengegevens met behulp van een klantnr of NAW-gegevens binnen de 2 sec. op het scherm tonen
 * Alle wijzigingen van toegestane elementen gebeuren online
-* De effecten van deze online wijzigigen binnen de 2 sec weergeven op het scherm
+* De effecten van deze online wijzigingen binnen de 2 sec wergeven op het scherm
 ```
 
 Vb. (2):
 
-**KSF**: Bij invoer van gegevens wordt geconrtoleerd op juistheid en volledigheid
+**KSF**: Bij invoer van gegevens wordt gecontroleerd op juistheid en volledigheid
 
 ```
-Meetbare cireteria
+Meetbare criteria
 
-* Van ieder veld wordt bepaald wat de mogelijke syntax van de invoer is (@: e-mail), invoercontorle op elk veld
+* Van ieder veld wordt bepaald wat de mogelijke syntax van de invoer is (@: e-mail), invoercontrole op elk veld
 ```
 
 ## 2.4 Soorten Requirements
 
-- Niet-functionele requirements
+- Niet-functionele Requirements
 - Functionele Requirements
 
 ### 2.4.1 Niet-Functionele Requirements
@@ -145,7 +144,7 @@ Meetbare cireteria
 
 - Usability & Humanity Requirements
 
-    VB.: Is het bruikbaar voor slechtzienden of andere problemen?
+    VB.: Is het bruikbaar voor slechtzienden of voor mensen met andere problemen?
     Accessibility is zeer belangrijk (UX Design)
 
 - Performance Requirements
@@ -154,11 +153,11 @@ Meetbare cireteria
 
 - Operationele en Omgevingsrequirements
 
-    VB.: De bankautomaat moet bruikbaar zijn bij laaghangende zon, pal op het scherm
+    VB.: De bankautomaat moet bruikbaar zijn bij laaghangende zon pal op het scherm
 
     -> Beperkingen opleggen aan te gebruiken kleuren.
 
-- Onderhouds-Requirements
+- Onderhouds Requirements
 
     VB.: Systeem-updates moeten automatisch kunnen verlopen, zonder dat de gebruiker iets moet doen.
 
@@ -178,11 +177,11 @@ Meetbare cireteria
 
 **Sjabloon niet-functionele requirements:**
 
-| NFR | Categorie NFR |
-| --: | ------------- |
-| Indicator | De naam van de NFR. |
-| Meetvoorschrift | De wijze waarop de NFR gemeten kan worden. |
-| Norm | De norm waaraan de NFR moet voldoen (= wat je verwacht als resultaat van de meting). |
+| NFR             | Categorie NFR                                                                        |
+| --------------: | ------------------------------------------------------------------------------------ |
+| Indicator       | De naam van de NFR.                                                                  |
+| Meetvoorschrift | De wijze waarop de NFR gemeten kan worden.                                           |
+| Norm            | De norm waaraan de NFR moet voldoen (= wat je verwacht als resultaat van de meting). |
 
 > Een Niet-Functionele requirement moet **SMART** zijn.
 
@@ -196,14 +195,14 @@ Meetbare cireteria
 
 Voorbeeld:
 
-| NFR | Usability & Humanity |
-| --: | Gebruiksvriendelijk |
+| NFR             | Usability & Humanity |
+| --------------: | Gebruiksvriendelijk |
 | Meetvoorschrift | Vijf klanten zoeken een van tevoren opgegeven boek, plaatsen die in hun winkelmandje en vervolledigen de bestelling door opgave van verzendadres en betaalmiddel. |
-| Norm | De tijd dat nodig is om een boek te zoeken en de bestelling hiervan af te ronden, bedraagt hoogstens 3 minuten. |
+| Norm            | De tijd die nodig is om een boek te zoeken en de bestelling hiervan af te ronden, bedraagt hoogstens 3 minuten. |
 
 ### 2.4.1 Functionele Requirements
 
-- Het vastleggen en éénduidig definiëren va nde functionaliteit (taak van de functioneel ontwerpen)
+- Het vastleggen en éénduidig definiëren van de functionaliteit (taak van de functioneel ontwerper)
 - Volgens "best practices" en/of gestructureerde methoden
 
 #### Use Cases:
