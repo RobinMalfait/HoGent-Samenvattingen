@@ -21,7 +21,7 @@ title: Analyse II
 - **Functionele Requiremenets**
     - Use Case
 - **Niet-functionele Requirements**
-    - Meetvoorschriften (moeten SMART zijn)
+    - Meetvoorschriften
     - Normen
     - Kritische Succes Factoren (KSF)
 
@@ -129,7 +129,7 @@ Meetbare criteria
 
 * De klantengegevens met behulp van een klantnr of NAW-gegevens binnen de 2 sec. op het scherm tonen
 * Alle wijzigingen van toegestane elementen gebeuren online
-* De effecten van deze online wijzigingen binnen de 2 sec weergeven op het scherm
+* De effecten van deze online wijzigingen binnen de 2 sec wergeven op het scherm
 ```
 
 Vb. (2):
@@ -168,7 +168,7 @@ Meetbare criteria
 
     -> Beperkingen opleggen aan te gebruiken kleuren.
 
-- Onderhoudsrequirements
+- Onderhouds Requirements
 
     VB.: Systeem-updates moeten automatisch kunnen verlopen, zonder dat de gebruiker iets moet doen.
 
@@ -374,10 +374,10 @@ VB.: ![](https://robinmalfait.com/afbeeldingen/droplr/AwG2.png)
         - Uitbreidingen vragen dikwijls kennis van "business rules"
         - Soms aanleiding tot nieuwe use case
         - Voorbeeld:
-            - Stel dat het netwerk uitvalt, wat doen we dan ?
+            - stel dat het netwerk uitvalt , wat doen we dan ?
             - Logging
-            - Ok, als het netwerk opnieuw actief is ,wat moet er dan gebeuren ?
-            - Ik vermoed dat we dan een nieuwe use case hebben "Systeem herstart na Netwerk fout". Van het systeem wordt een back-up genomen, je bekijkt de logging en je herbegint of beëindigt de transactie
+            - ok, als het netwerk opnieuw actief is ,wat moet er dan gebeuren ?
+            - ik vermoed dat we dan een nieuwe use case hebben "Systeem herstart na Netwerk fout". Van het systeem wordt een back-up genomen, je bekijkt de logging en je herbegint of beëindigt de transactie
             - Ok, maar wat als logging corrupt is ?
         - Brainstorming over alle mogelijke situaties
         - Evalueer, elimineer en voeg samen
@@ -430,7 +430,7 @@ Wat is agile?
 **Principes achter Agile Manifesto**
 
 - Hoogste prioriteit: klant tevreden
-- Verwelkom wijzigingen
+- Verwerlkom wijzigingen
 - Lever geregeld werkende software op
 - Business en ontwikkelaars werken dagelijks samen
 - Bouw producten rond gemotiveerde individuen
@@ -448,24 +448,22 @@ Wat is agile?
     - ...set van procedures
 - Scrum is open framework met eenvoudige regels
 - Regels gebaseerd op *CAS*
-    - ***C***omplex ***A***daptieve ***S***ystemen (vb. school vissen)
+    - _**C**_omplex _**A**_daptieve _**S**_ystemen (vb. school vissen)
     - Doel: CAS evolueren naar intelligentie
 - Iteratief en incrementeel
-
-    > **Iteratief**: het zal niet allemaal vanaf de eerste keer correct zijn
-    >
-    > **Incrementeel**: verticaal in plaats van horizontaal bouwen
+    - > Iteratief: het zal niet allemaal vanaf de eerste keer correct zijn
+    - > Incrementeel: verticaal in plaats van horizontaal bouwen
 
 ### Scrum Regels
 
 - Werken in **gesloten iteraties** (geen scopewijzigingen)
 - Elke iteratie **productiewaardige software**
-- **zelforganiserende** en **zelfreflecterende** teams
+- **Zelforganiserende** en **zelfreflecterende** teams
 - Alles is **geprioritiseerd**
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1fAZt.png)
 
-### Scrum in een notendop
+### Scrum in een notedop
 
 1. Verdeel de opdracht in stukjes
 2. Belangrijke opdrachten (€) eerst
@@ -511,7 +509,7 @@ Wat is agile?
 - Prioriteiten bepalen
 - Schattingen bepalen
 - Problemen oplossen
-- Verantwoordelijkheid nemen of ontvangen
+- Verantwoordlijkheid nemen of ontvangen
 
 -> Wie wel? Het team
 
@@ -531,6 +529,7 @@ Wat is agile?
     - Analoog aan XP iteraties
 - Doel = **twee / drie weken**
 - Product wordt **ontworpen, geschreven en getest tijdens de sprint**
+- Na elke sprint: productiewaardige Software
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/oHmw.png)
 
@@ -538,7 +537,7 @@ Wat is agile?
 
 - Aantal features of taken worden opgemaakt door Product-eigenaar en de klant
 - Oplijsting in een document (product backlog)
-- Uniek geprioritiseerd (dus niet in blokken)
+- Uniek geprioriteers (dus niet in blokken)
 
 ### Sprint planning deel 1
 
@@ -550,7 +549,7 @@ Wat is agile?
 
 ### Sprint planning deel 2
 
-- Backlog items worden opgesplitst door team
+- Backlog items worden opgesplits door team
 - Team is zelf-organiserend rond hoe het sprintdoel te bereiken
 - Geen managers
     - Manager kent geen taken toe aan individuen
@@ -581,7 +580,7 @@ Wat is agile?
     - 15 minuten
     - Stand-up = rechtstaan !
     - Niet om problemen op te lossen
-- Drie vragen (rond het bord?)
+- Drie vragen (ond het bord?)
     - Wat deed je gisteren?
     - Wat ga je vandaag doen?
     - Welke obstakels liggen in je weg?
@@ -597,7 +596,7 @@ Wat is agile?
 
 ### Demo/Sprint review
 
-- Team stelt voor wat het bereikt heeft gedurende sprint: potentieel productie-waardige software
+- Team stelt voor wat het bereikt heeft gedurende sprint: ptoentieel productie-waardige software
 - Typisch een demo van het product of van de onderliggende architectuur
 - Informeel
     - 2-uur voorbereidingstijd
@@ -664,7 +663,7 @@ Wat is agile?
 - Groot verschil met worksheets waarin na de feiten tijden worden ingevuld en worden vergeleken met de schatting
 - Gebruik een bord (story/tasks/work in progress/verify/done)
 
-### Burndown
+### Burdown
 
 - Er worden taken afgewerkt, maar heel traag:
 
