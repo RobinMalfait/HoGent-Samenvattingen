@@ -427,7 +427,7 @@ Wat is agile?
 | Samenwerking met de klant | <-> | Contract onderhandelingen |
 | Antwoorden op wijzigingen | <-> | Volgen van een plan |
 
-Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, hechten wij méér waarde aan wat aan de linkerzijde wordt genoemd.
+Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, hechten wij méér waarde aan wat aan de linkerzijde wordt genoemd.
 
 **Principes achter Agile Manifesto**
 
@@ -490,6 +490,7 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
 - Verantwoordelijk voor het bijhouden van de Product Backlog
 
 #### Scrum-master
+
 - Verantwoordelijk voor het Scrum proces. Niet voor de 'software'.
 - Bewaakt het proces
     - Scrumconcepten toepassen ( = de scrumregels)
@@ -566,7 +567,7 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
 ### Schattingen
 
 - Planning poker
-Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door middel van kaarten aan hoeveel werk een Backlogitem inhoud. 
+Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door middel van kaarten aan hoeveel werk een Backlogitem inhoud.
 - Uren of punten?
     - Sprint schatting en/of nieuwe teams: uren
     - Backlog schatting: punten
@@ -617,7 +618,7 @@ Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door
     - Klaar voor IT of klaar voor Business?
 
 ### Retrospective
-Een Sprint wordt afgesloten met retrospective. 
+Een Sprint wordt afgesloten met retrospective.
 De evaluatie is bedoeld om te leren van wat goed en fout ging met als doel om als team nog beter te worden.
 - Deelnemers
     - Team
