@@ -448,7 +448,7 @@ Wat is agile?
     - ...set van procedures
 - Scrum is open framework met eenvoudige regels
 - Regels gebaseerd op *CAS*
-    - _**C**_omplex _**A**_daptieve _**S**_ystemen (vb. school vissen)
+    - ***C***omplex ***A***daptieve ***S***ystemen (vb. school vissen)
     - Doel: CAS evolueren naar intelligentie
 - Iteratief en incrementeel
     - > Iteratief: het zal niet allemaal vanaf de eerste keer correct zijn
