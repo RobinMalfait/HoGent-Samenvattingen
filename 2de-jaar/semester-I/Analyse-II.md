@@ -129,7 +129,7 @@ Meetbare criteria
 
 * De klantengegevens met behulp van een klantnr of NAW-gegevens binnen de 2 sec. op het scherm tonen
 * Alle wijzigingen van toegestane elementen gebeuren online
-* De effecten van deze online wijzigingen binnen de 2 sec wergeven op het scherm
+* De effecten van deze online wijzigingen binnen de 2 sec weergeven op het scherm
 ```
 
 Vb. (2):
