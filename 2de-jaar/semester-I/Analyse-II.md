@@ -427,6 +427,8 @@ Wat is agile?
 | Samenwerking met de klant | <-> | Contract onderhandelingen |
 | Antwoorden op wijzigingen | <-> | Volgen van een plan |
 
+Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, hechten wij méér waarde aan wat aan de linkerzijde wordt genoemd.
+
 **Principes achter Agile Manifesto**
 
 - Hoogste prioriteit: klant tevreden
