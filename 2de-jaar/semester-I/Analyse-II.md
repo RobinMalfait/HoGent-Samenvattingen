@@ -470,6 +470,7 @@ Wat is agile?
 1. Verdeel de opdracht in stukjes
 2. Belangrijke opdrachten (€) eerst
 3. Bepaal de mijlpalen (sprints)
+4. Werk in teams
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/15b4b.png)
 
@@ -488,7 +489,7 @@ Wat is agile?
 #### Scrum-master
 
 - Bewaakt het proces
-    - Scrumconcepten toepassen
+    - Scrumconcepten toepassen ( = de scrumregels)
         - Zelforganiserende en zelfreflecterende teams
         - Werken in gesloten iteraties (geen scopewijzigingen)
         - Elke sprint productiewaardige software
