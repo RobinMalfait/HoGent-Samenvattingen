@@ -535,7 +535,7 @@ Wat is agile?
 
 - Aantal features of taken worden opgemaakt door Product-eigenaar en de klant
 - Oplijsting in een document (product backlog)
-- Uniek geprioriteerd (dus niet in blokken)
+- Uniek geprioritiseerd (dus niet in blokken)
 
 ### Sprint planning deel 1
 
