@@ -168,7 +168,7 @@ Meetbare criteria
 
     -> Beperkingen opleggen aan te gebruiken kleuren.
 
-- Onderhouds Requirements
+- Onderhoudsrequirements
 
     VB.: Systeem-updates moeten automatisch kunnen verlopen, zonder dat de gebruiker iets moet doen.
 
