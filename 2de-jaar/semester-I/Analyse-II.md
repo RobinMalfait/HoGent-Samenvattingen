@@ -567,7 +567,7 @@ Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, h
 ### Schattingen
 
 - Planning poker
-Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door middel van kaarten aan hoeveel werk een Backlogitem inhoud.
+    Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door middel van kaarten aan hoeveel werk een Backlogitem inhoud.
 - Uren of punten?
     - Sprint schatting en/of nieuwe teams: uren
     - Backlog schatting: punten
