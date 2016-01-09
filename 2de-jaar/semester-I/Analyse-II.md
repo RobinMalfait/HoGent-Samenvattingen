@@ -37,7 +37,6 @@ De opdrachtgever waakt over budget, tijd. De gebruiker zal ermee moeten werken.
 - **Resources**
     - Business Experts
     - Geld
-    - Money
     - Analisten
     - Ontwerpers
     - Programmeurs
