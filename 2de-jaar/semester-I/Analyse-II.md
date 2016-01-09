@@ -451,8 +451,10 @@ Wat is agile?
     - ***C***omplex ***A***daptieve ***S***ystemen (vb. school vissen)
     - Doel: CAS evolueren naar intelligentie
 - Iteratief en incrementeel
-    - > Iteratief: het zal niet allemaal vanaf de eerste keer correct zijn
-    - > Incrementeel: verticaal in plaats van horizontaal bouwen
+
+    > **Iteratief**: het zal niet allemaal vanaf de eerste keer correct zijn
+    >
+    > **Incrementeel**: verticaal in plaats van horizontaal bouwen
 
 ### Scrum Regels
 
