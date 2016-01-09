@@ -215,7 +215,7 @@ Voorbeeld:
 ### 2.4.2 Functionele Requirements
 
 - Het vastleggen en éénduidig definiëren van de functionaliteit (taak van de functioneel ontwerper)
-- Volgens "best practices" en/of gestructureerde methoden
+- Volgens "best practices" en/of gestructureerde methoden -> Use Cases
 
 #### Use Cases:
 
@@ -387,6 +387,12 @@ VB.: ![](https://robinmalfait.com/afbeeldingen/droplr/AwG2.png)
             - **Wel**: "tijdslimiet overschreden bij ingave PINcode"
         - Hoe noteren? ![](https://robinmalfait.com/afbeeldingen/droplr/1dymv.png)
         - Alternatieven vermelden is altijd goed
+
+#### Veel voorkomende fouten
+- Geen systeem
+- Primary actor ontbreekt
+- GUI details
+- Teveel kleine stapjes
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1fth1.png)
 
