@@ -34,6 +34,8 @@ RegExp.prototype.execAll = function(string) {
     return matches;
 }
 
+var fixes = 0;
+
 var app = {
     readdir: function(path) {
         fs.readdir(path, function(err, files) {
@@ -65,8 +67,10 @@ var app = {
                     if (err) {
                         console.error("Error: OEPS");
                     } else {
-                        contents = contents.replace(match[0], "![](" + (NEW_IMAGE_LINK.replace('{0}', match[3])) + ")");
+                        var fix = "![](" + (NEW_IMAGE_LINK.replace('{0}', match[3])) + ")"
+                        contents = contents.replace(match[0], fix);
                         fs.writeFileSync(path, contents, 'utf8');
+                        console.log("Fixing: " + match[0] + " to " + fix);
                     }
                 });
             });

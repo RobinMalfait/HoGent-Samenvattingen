@@ -711,8 +711,18 @@ Via een burndownchart wordt de dagelijkse vooruitgang van een sprint weergegeven
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1kozK.png)
 
+# Presentatie/Lezing - Prototyping
 
+> **MVP**: Minimum Viable Product
 
+Het minimaal werkbare product. Het allerkleinste, meest minimale, snelst te creëren product dat - en daar gaat het om - je meest urgente vraag beantwoordt: Waar heeft je klant behoefte aan?
 
+> "Prototyping aims to define, shape and ultimately create software to such an extent that it can be demonstrated, tested and validated."
+>
+> "By prototyping a software product we take away assumptions we make about our product"
 
+![](https://robinmalfait.com/afbeeldingen/droplr/16Wil.png)
 
+## The LLAVA Matrix
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1hiJK.png)
