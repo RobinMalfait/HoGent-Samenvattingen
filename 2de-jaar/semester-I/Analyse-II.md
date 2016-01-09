@@ -487,7 +487,7 @@ Wat is agile?
 #### Scrum-master
 
 - Bewaakt het proces
-    - Scrumconcepten toepassen
+    - Scrumconcepten toepassen ( = de scrumregels)
         - Zelforganiserende en zelfreflecterende teams
         - Werken in gesloten iteraties (geen scopewijzigingen)
         - Elke sprint productiewaardige software
