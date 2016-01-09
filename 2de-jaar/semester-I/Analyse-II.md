@@ -487,9 +487,10 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
     - Wat er gebouwd moet worden
     - Wat prioritair is
 - Product-eigenaar doet commitment om het team met rust te laten tijdens sprint
+- Verantwoordelijk voor het bijhouden van de Product Backlog
 
 #### Scrum-master
-
+- Verantwoordelijk voor het Scrum proces. Niet voor de 'software'.
 - Bewaakt het proces
     - Scrumconcepten toepassen ( = de scrumregels)
         - Zelforganiserende en zelfreflecterende teams
@@ -525,7 +526,7 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
 - Leden zouden full-time aan het project moeten werken
     - Uitzonderingen kunnen bestaan bij ondersteunende functies (vb.: systeembeheerders, ...)
 - Teams zijn zelforganiserend
-    - Leden brengen elk hun eigen achtergrond aan, maar zijn multidisciplinair, delen hun kennis en werken mee aan domeinen waar zij geen specialist op zijn
+    - Leden brengen elk hun eigen achtergrond aan, maar zijn multidisciplinair, delen hun kennis en werken mee aan domeinen waar zij geen specialist op zijn. Het team is zelfstandig in staat om alle taken van ontwerp, realisatie, testen t.e.m. de oplevering te verzorgen.
 
 ### Wat is een sprint?
 
@@ -558,12 +559,14 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
     - Manager kent geen taken toe aan individuen
     - Managers maken geen beslissingen voor het team
 - Sprint Backlog wordt gemaakt
+	- = een verzameling van Product Backlog items die geselecteerd zijn voor de Sprint.
     - Taken van 4-16uur
 - (Bepalen van een sprintdoel)
 
 ### Schattingen
 
 - Planning poker
+Inschatten van de ontwikkeltijd van een product Backlogitem. Iedereen geeft door middel van kaarten aan hoeveel werk een Backlogitem inhoud. 
 - Uren of punten?
     - Sprint schatting en/of nieuwe teams: uren
     - Backlog schatting: punten
@@ -577,11 +580,10 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
 ![](https://robinmalfait.com/afbeeldingen/droplr/16OJM.png)
 
 ### Stand-up
-
 - Parameters:
     - Dagelijks
     - 15 minuten
-    - Stand-up = rechtstaan !
+    - Stand-up = rechtstaan ! (Om de meeting kort en effectief te houden)
     - Niet om problemen op te lossen
 - Drie vragen (rond het bord?)
     - Wat deed je gisteren?
@@ -615,7 +617,8 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
     - Klaar voor IT of klaar voor Business?
 
 ### Retrospective
-
+Een Sprint wordt afgesloten met retrospective. 
+De evaluatie is bedoeld om te leren van wat goed en fout ging met als doel om als team nog beter te worden.
 - Deelnemers
     - Team
     - Scrum Master
@@ -667,6 +670,7 @@ Hoewel wij waardering hebben voor al hegeen aan de rechterkaant staat vermeld, h
 - Gebruik een bord (story/tasks/work in progress/verify/done)
 
 ### Burndown
+Via een burndownchart wordt de dagelijkse vooruitgang van een sprint weergegeven.
 
 - Er worden taken afgewerkt, maar heel traag:
 
