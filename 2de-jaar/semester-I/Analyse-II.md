@@ -21,7 +21,7 @@ title: Analyse II
 - **Functionele Requiremenets**
     - Use Case
 - **Niet-functionele Requirements**
-    - Meetvoorschriften
+    - Meetvoorschriften (moeten SMART zijn)
     - Normen
     - Kritische Succes Factoren (KSF)
 
