@@ -26,6 +26,8 @@ title: Analyse II
     - Kritische Succes Factoren (KSF)
 
 ### Projecten:
+Een project wordt gerealiseerd binnen een bepaald budget, tijd, team.
+De opdrachtgever waakt over budget, tijd. De gebruiker zal ermee moeten werken.
 
 - **Agile**
     - Scrum
@@ -74,13 +76,17 @@ Ieder systeem wordt ontwikkeld om een bepaalde reden:
 
 Vooraf eisen helder en éénduidig formuleren:
 
-- Identificeren van stakeholders
+- Identificeren van stakeholders (vb. alle gebruikers, medewerkers, ICT'ers, boekhouding)
 - Formuleren van KSF (Kritische Succesfactoren)
 - Formuleren van meetbare acceptatiecriteria
 
+Iedere applicatie ontwikkeld met 1 doel:
+- Winst maken
+
+
 ## 2.2 Requirements-KSF
 
-Formuleren kritische succesfactoren (KSF)
+Formuleren kritische succesfactoren (KSF) = redelijk abstract
 
 Voorbeelden:
 
@@ -101,6 +107,11 @@ Voorbeelden:
 - **PC-applicatie**
 
     KSF: werkbaar onder verschillende systeemsoftware
+
+- **Webshop**
+
+    KSF: snel, betrouwbaar, veilig
+
 
 ## 2.3 Requirements: Meetbare acceptatiecriteria
 
