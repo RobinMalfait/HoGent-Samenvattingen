@@ -164,7 +164,9 @@ namespace DienstenCheques.Tests.Controllers {
             DummyContext context = new DummyContext();
             mockGebruikersRepository = new Mock<IGebruikersRepository>();
             jan = context.Jan;
-            controller = new BestellingenController(mockGebruikersRepository.Object);
+            controller = new BestellingenController(
+                mockGebruikersRepository.Object
+            );
             model = new NieuweBestellingViewModel(9.0M) {
                 Elektronisch = true,
                 AantalCheques = 20,
