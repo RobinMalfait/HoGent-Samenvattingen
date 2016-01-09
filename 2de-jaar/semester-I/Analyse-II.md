@@ -26,6 +26,8 @@ title: Analyse II
     - Kritische Succes Factoren (KSF)
 
 ### Projecten:
+Een project wordt gerealiseerd binnen een bepaald budget, tijd, team.
+De opdrachtgever waakt over budget, tijd. De gebruiker zal ermee moeten werken.
 
 - **Agile**
     - Scrum
