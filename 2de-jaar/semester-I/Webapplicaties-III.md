@@ -2,7 +2,7 @@
 title: Webapplicaties III
 ---
 
-# 1. DienstenCheques
+# 1. DienstenCheques Project
 
 ## 1.1 Structuur
 
@@ -606,7 +606,7 @@ namespace DienstenCheques.Tests.Models {
 }
 ```
 
-#### 1.3.2.2. GebruikerTest.cs
+#### 1.3.2.3. GebruikerTest.cs
 
 ```cs
 using System;
