@@ -723,40 +723,115 @@ Het minimaal werkbare product. Het allerkleinste, meest minimale, snelst te cre�
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/16Wil.png)
 
-## The LLAVA Matrix
+## Concept Phase - (The fuzzy bit)
+
+### Goal validation & orientation - Why
+
+The process of making sure you have the complete picture of the task at hand
+
+- Who is the customer
+- Who is the user & end-user
+- Who are other stakeholders
+- In what context will the app be used
+- Are there any technological requirements clear from the start?
+
+### Goal validation & orientation - How
+
+- In depth session with your product owner or customer
+- We try to have all parties directly involved in the project at the table
+- A structured output helps to process your input down the line
+- Gather a “State of the Art” on all subjects involved
+    - Show you understand the context
+    - Prevent having to re-invent the wheel
+
+#### The LLAVA Matrix
 
 > **L**iving **L**ab **A**ssumption **Va**lidation Matrix
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1hiJK.png)
 
-## Requirements Analysis - Why
+#### The LLAVA Matrix - Benefits
+
+![](https://robinmalfait.com/afbeeldingen/droplr/ungZ.png)
+
+#### Lean Innovation Process
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1b66t.png)
+
+### Goal validation & orientation - Validate
+
+- Face-to-face interviews with ALL stakeholders
+- Focus group interviews, street interviews, surveys
+- Don’t always take the product owner’s word
+- Go out yourself
+- Find good ‘proxies’ if you need to
+
+> “Get a 360° picture of your challenge and return to it at every step of the way“
+
+### Use Case Definition - Why
+
+Transforming the task at hand in a structured description of what needs to be supported by your technology
+
+- Who are your users
+- What different roles are there
+- What functionality needs to be offered to each role
+- Determines scope
+- Starts out at a high level and gets refined and adjusted as you go
+
+### Use Case Definition - How
+
+- Define user roles
+- Create personae
+- Describe what each needs to be able to do in the system
+- In complex scenario’s describe the full offlineand online process for clarity
+
+#### User personae
+
+- They reflect patterns observed in research
+- Are realistic, not idealized
+- Help you understand users’
+    - Context
+    - Behaviors
+    - Attitudes
+    - Needs
+    - Challenges/pain points
+    - Goals and motivations
+
+### Use Case Definition - Validate
+
+- Face-to-face interview or focus group interview with each of your user roles
+- Feedback by product owner at start and end
+
+> “The Use Case diagram is the easiest of all your output to change and update, so keep it actual. It is your bible.“
+
+### Requirements Analysis - Why
 
 Analyse and formalise what needs to be done to realize the use-cases you have defined
 
 - Use cases define what users need to be able to do when interacting with the system
 - Requirements analysis goes beyond this by describing **how** this should be translated into a digital form
 
-## Requirements Analysis - How
+### Requirements Analysis - How
 
 - Describe use case tasks in more detail
 - Define and answer questions that pop up when doing so
 - Describe functional (the what) and nonfunctional (the how) requirements
 
-## Requirements Analysis - Output
+### Requirements Analysis - Output
 
 - Requirements document
 - User stories in a backlog
 - Depends on the formality of the process and the needs of the (technical) partners involved
 - When writing a requirements document, consider its intended use and lifetime
 
-## Requirements Analysis - Validate
+### Requirements Analysis - Validate
 
 - Feedback by product owner at start and end
 - Feedback by technical partners involved
 
 > “Requirements analysis often triggers a reflective process that impacts the Use Case. Update your Use Case accordingly.“
 
-## MVP Definition - WHy
+### MVP Definition - WHy
 
 Limit the scope of your first round of design and development work to those parts of the application you are **100% sure** of to be needed to prove the value of the product.
 
@@ -764,7 +839,7 @@ Limit the scope of your first round of design and development work to those part
 - Needs change the moment users are faced with reality
 - External factors change during the design and development project
 
-## MVP Definition - How
+### MVP Definition - How
 
 - Start with a full use case diagram
 - Determine which parts of the use case are needed to solve the primary needs of your most important users
@@ -773,18 +848,20 @@ Limit the scope of your first round of design and development work to those part
 - Consider the ‘P’ (prototype vs product)
 - Be brave
 
-## MVP Definition - Output
+### MVP Definition - Output
 
 - An MVP Use Case Diagram
 - An MVP Stories Backlog
 
-## MVP Definition - Validate
+### MVP Definition - Validate
 
 - Feedback by product owner at start and end
 - Feedback by most important users
 - Survey based on use case is a useful method but extend with interviews if possible
 
-## Application Flow Definition - Why
+## Design Phase (The creative bit)
+
+### Application Flow Definition - Why
 
 Before anything else, take each functionality in the use case and describe the user journey from start to end
 
@@ -792,7 +869,7 @@ Before anything else, take each functionality in the use case and describe the u
 - Schematics are easy to make and take much less effort
 - A flow diagram is the ideal way to prevent any misunderstandings between you and other stakeholders
 
-## Application Flow Definition - How
+### Application Flow Definition - How
 
 - Start with your MVP use case diagram
 - Don't do this alone. Do this in a workshop setting with, at the very least, your product owner.
@@ -800,19 +877,19 @@ Before anything else, take each functionality in the use case and describe the u
 - Make sure to include all possible cases and even edge cases
 - Adjust the Use Case diagram and MVP definition if new insights pop up
 
-## Application Flow Definition - Output
+### Application Flow Definition - Output
 
 - Flow diagrams or user journey diagrams
 - An updated Use case diagram and MVP definition
 
-## Application Flow Definition - Validate
+### Application Flow Definition - Validate
 
 - Feedback by product owner during the process of defining the flows and at the end
 - Feedback by the users involved
 
 > “Flow diagrams are probably the last 'cheap' phase of the entire process, so **_make it count_**“
 
-## Wireframes and Mockups - Why
+### Wireframes and Mockups - Why
 
 Your first step towards making the application tangible (Tastbaar).
 
@@ -821,7 +898,7 @@ Your first step towards making the application tangible (Tastbaar).
 - Designers will need these to base their work off
 - Helps you to fit the use case into the chosen platform with all its design boundaries and adjust accordingly
 
-## Wireframes and Mockups - How
+### Wireframes and Mockups - How
 
 - **Low fidelity**
     - Pen & Paper, Whiteboard
@@ -857,7 +934,7 @@ Your first step towards making the application tangible (Tastbaar).
     | :---------: | :---------: |
     | ![](https://robinmalfait.com/afbeeldingen/droplr/19Ih9.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/RcJL.png) |
 
-## Wireframes and Mockups - Validate
+### Wireframes and Mockups - Validate
 
 - Get feedback from all stakeholders
 - Depending on fidelity
@@ -870,3 +947,52 @@ Your first step towards making the application tangible (Tastbaar).
 - “Wizard of Oz” sessions online
 
 > “Pick what you want to get out of wireframing and pick a tool you are **comfortable** in to ensure you can **iterate quickly**“
+
+### Architecture Design - Why
+
+Imagine both information architecture as well as infrastructure beforehand and analyse the implications to the application in the long term
+
+- Discuss with technically minded stakeholders or partners to ensure the system answers to the needs of all involved now and if possible in the future
+- How do the components of the system interact with each other and external systems?
+
+### Architecture Design - How
+
+- Everything from high level diagrams to data models plus a first look of the infrastructure needed and the components hosted on it
+- We most often focus on determining the highest level concepts and models needed in the application and discuss the implication of their format and relation to each other
+
+![](https://robinmalfait.com/afbeeldingen/droplr/12n3f.png)
+
+## Development Phase (The fun bit)
+
+### Functional Prototype Development - Why
+
+Because the sooner a potential user can test a working mechanism, the better the quality of your end result
+
+- Some things can simply not be tested via diagrams or wireframes
+- When developing you make many small assumptions or decisions that add up. So validate away.
+- Bugs, bugs, bugs
+
+### Functional Prototype Development - How
+
+- Methodology
+    - SCRUM with a variable cycle length
+        - Backlog grooming to integrate user feedback
+        - Story dialogs to clarify any questions regarding stories
+        - Spikes
+    - Lean UX
+        - Fast user involvement
+        - Brainstorming with the full range of stakeholders
+- Usability Tests
+    - Weekly tests for smaller updates and functionality or at least every SCRUM cycle
+    - Full scale usability tests
+    - Representative users
+    - Fresh users
+
+    ![](https://d.pr/i/11gXY+a)
+
+### Functional Prototype Development - Validate
+
+- Mini Field trials - Having the application tested in a real life setting
+    - Field trials evaluate and validate many things usability tests cannot
+    - Onboarding, retention, frequency of user, effort of 'running' the application
+    - Combine survey data with log data
