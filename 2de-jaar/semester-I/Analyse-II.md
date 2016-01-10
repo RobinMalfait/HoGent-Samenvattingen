@@ -717,9 +717,9 @@ Via een burndownchart wordt de dagelijkse vooruitgang van een sprint weergegeven
 
 Het minimaal werkbare product. Het allerkleinste, meest minimale, snelst te creëren product dat - en daar gaat het om - je meest urgente vraag beantwoordt: Waar heeft je klant behoefte aan?
 
-> "Prototyping aims to define, shape and ultimately create software to such an extent that it can be demonstrated, tested and validated."
+> “Prototyping aims to define, shape and ultimately create software to such an extent that it can be demonstrated, tested and validated.“
 >
-> "By prototyping a software product we take away assumptions we make about our product"
+> “By prototyping a software product we take away assumptions we make about our product“
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/16Wil.png)
 
@@ -728,3 +728,145 @@ Het minimaal werkbare product. Het allerkleinste, meest minimale, snelst te cre�
 > **L**iving **L**ab **A**ssumption **Va**lidation Matrix
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1hiJK.png)
+
+## Requirements Analysis - Why
+
+Analyse and formalise what needs to be done to realize the use-cases you have defined
+
+- Use cases define what users need to be able to do when interacting with the system
+- Requirements analysis goes beyond this by describing **how** this should be translated into a digital form
+
+## Requirements Analysis - How
+
+- Describe use case tasks in more detail
+- Define and answer questions that pop up when doing so
+- Describe functional (the what) and nonfunctional (the how) requirements
+
+## Requirements Analysis - Output
+
+- Requirements document
+- User stories in a backlog
+- Depends on the formality of the process and the needs of the (technical) partners involved
+- When writing a requirements document, consider its intended use and lifetime
+
+## Requirements Analysis - Validate
+
+- Feedback by product owner at start and end
+- Feedback by technical partners involved
+
+> “Requirements analysis often triggers a reflective process that impacts the Use Case. Update your Use Case accordingly.“
+
+## MVP Definition - WHy
+
+Limit the scope of your first round of design and development work to those parts of the application you are **100% sure** of to be needed to prove the value of the product.
+
+- *No single app survives first contact with its users*
+- Needs change the moment users are faced with reality
+- External factors change during the design and development project
+
+## MVP Definition - How
+
+- Start with a full use case diagram
+- Determine which parts of the use case are needed to solve the primary needs of your most important users
+- Put aside everything else
+- Rather have 10 smaller cycles than 1 large one
+- Consider the ‘P’ (prototype vs product)
+- Be brave
+
+## MVP Definition - Output
+
+- An MVP Use Case Diagram
+- An MVP Stories Backlog
+
+## MVP Definition - Validate
+
+- Feedback by product owner at start and end
+- Feedback by most important users
+- Survey based on use case is a useful method but extend with interviews if possible
+
+## Application Flow Definition - Why
+
+Before anything else, take each functionality in the use case and describe the user journey from start to end
+
+- Design work takes time and effort
+- Schematics are easy to make and take much less effort
+- A flow diagram is the ideal way to prevent any misunderstandings between you and other stakeholders
+
+## Application Flow Definition - How
+
+- Start with your MVP use case diagram
+- Don't do this alone. Do this in a workshop setting with, at the very least, your product owner.
+- For every functionality describe in a flow diagram the steps the user takes when using the functionality
+- Make sure to include all possible cases and even edge cases
+- Adjust the Use Case diagram and MVP definition if new insights pop up
+
+## Application Flow Definition - Output
+
+- Flow diagrams or user journey diagrams
+- An updated Use case diagram and MVP definition
+
+## Application Flow Definition - Validate
+
+- Feedback by product owner during the process of defining the flows and at the end
+- Feedback by the users involved
+
+> “Flow diagrams are probably the last 'cheap' phase of the entire process, so **_make it count_**“
+
+## Wireframes and Mockups - Why
+
+Your first step towards making the application tangible (Tastbaar).
+
+- Potential users can only go so far in ‘picturing’ use case descriptions
+- Your first true testing material
+- Designers will need these to base their work off
+- Helps you to fit the use case into the chosen platform with all its design boundaries and adjust accordingly
+
+## Wireframes and Mockups - How
+
+- **Low fidelity**
+    - Pen & Paper, Whiteboard
+    - Balsamiq, Powerpoint, ...
+
+        ![](https://robinmalfait.com/afbeeldingen/droplr/4YhP.png)
+
+    - Quick to make
+    - Fake data (lorem ipsum) = fast
+    - *Abstract* forms to represent content
+        - Great to evaluate possible UI strategies in the absence of a final design
+        - Less great for users to make sense without proper context
+- **High fidelity**
+    - Represents a possible design
+        - So expect feedback on this
+    - Lots of great free templates and UI libraries around
+    - Doesn't lock in design decisions
+    - Use dedicated tools (like Axure, UXPin) or design programs (like Photoshop, Sketch)
+    - Often the last step before it goes to the dev team
+
+    | Voorbeeld 1 | Voorbeeld 2 | Voorbeeld 3 |
+    | :---------: | :---------: | :---------: |
+    | ![](https://robinmalfait.com/afbeeldingen/droplr/1lfPa.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/K1CH.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/12rgt.png) |
+
+- **Interactive Mockups**
+    - A user can navigate through the screens as if the product was already built
+    - Conveys the flow of the applicatoin to the end user
+    - Usable in usability testing
+    - Tools like AXURE even allow for advanced business logic
+    - Tesable by end users if made with actual content
+
+    | Voorbeeld 1 | Voorbeeld 2 |
+    | :---------: | :---------: |
+    | ![](https://robinmalfait.com/afbeeldingen/droplr/19Ih9.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/RcJL.png) |
+
+## Wireframes and Mockups - Validate
+
+- Get feedback from all stakeholders
+- Depending on fidelity
+- Feedback can be gathered online
+- Proper context may be needed
+- “Paper prototyping” sessions
+
+    ![](https://robinmalfait.com/afbeeldingen/droplr/136i0.png)
+
+- “Wizard of Oz” sessions online
+
+> “Pick what you want to get out of wireframing and pick a tool you are **comfortable** in to ensure you can **iterate quickly**“
