@@ -988,7 +988,7 @@ Because the sooner a potential user can test a working mechanism, the better the
     - Representative users
     - Fresh users
 
-    ![](https://d.pr/i/11gXY+a)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/11gXY.png)
 
 ### Functional Prototype Development - Validate
 
