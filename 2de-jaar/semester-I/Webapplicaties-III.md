@@ -2,6 +2,8 @@
 title: Webapplicaties III
 ---
 
+> DIT IS NOG NIET VOLLEDIG, I DARE YOU TO PRINT IT ALREADY!
+
 # 1. DienstenCheques Project
 
 ## 1.1 Structuur
