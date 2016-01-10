@@ -184,23 +184,61 @@ namespace DienstenCheques.Tests.Controllers {
         [TestMethod]
         public void Index6MaandenRetourneertModel() {
             ViewResult result = controller.Index(jan) as ViewResult;
-            BestellingenViewModel bestellingenViewModel = ((BestellingenViewModel) result.Model);
+            BestellingenViewModel bestellingenViewModel = (
+                (BestellingenViewModel) result.Model
+            );
 
-            Assert.AreEqual(1, bestellingenViewModel.AantalBeschikbareCheques);
-            Assert.AreEqual(8, bestellingenViewModel.AantalOpenstaandePrestatieUren);
-            Assert.AreEqual(1, bestellingenViewModel.Bestellingen.Count());
-            Assert.AreEqual(DateTime.Today.AddMonths(-4), bestellingenViewModel.Bestellingen.ToArray()[0].CreatieDatum);
+            Assert.AreEqual(
+                1,
+                bestellingenViewModel.AantalBeschikbareCheques
+            );
+
+            Assert.AreEqual(
+                8,
+                bestellingenViewModel.AantalOpenstaandePrestatieUren
+            );
+
+            Assert.AreEqual(
+                1,
+                bestellingenViewModel.Bestellingen.Count()
+            );
+
+            Assert.AreEqual(
+                DateTime.Today.AddMonths(-4),
+                bestellingenViewModel.Bestellingen
+                                     .ToArray()[0]
+                                     .CreatieDatum
+            );
         }
 
         [TestMethod]
         public void Index12MaandenRetourneertModel() {
             ViewResult result = controller.Index(jan, 12) as ViewResult;
-            BestellingenViewModel bestellingenViewModel = ((BestellingenViewModel) result.Model);
+            BestellingenViewModel bestellingenViewModel = (
+                (BestellingenViewModel) result.Model
+            );
 
-            Assert.AreEqual(1, bestellingenViewModel.AantalBeschikbareCheques);
-            Assert.AreEqual(8, bestellingenViewModel.AantalOpenstaandePrestatieUren);
-            Assert.AreEqual(3, bestellingenViewModel.Bestellingen.Count());
-            Assert.AreEqual(DateTime.Today.AddMonths(-12), bestellingenViewModel.Bestellingen.Last().CreatieDatum);
+            Assert.AreEqual(
+                1,
+                bestellingenViewModel.AantalBeschikbareCheques
+            );
+
+            Assert.AreEqual(
+                8,
+                bestellingenViewModel.AantalOpenstaandePrestatieUren
+            );
+
+            Assert.AreEqual(
+                3,
+                bestellingenViewModel.Bestellingen.Count()
+            );
+
+            Assert.AreEqual(
+                DateTime.Today.AddMonths(-12),
+                bestellingenViewModel.Bestellingen
+                                     .Last()
+                                     .CreatieDatum
+            );
         }
         #endregion
 
@@ -208,11 +246,15 @@ namespace DienstenCheques.Tests.Controllers {
         [TestMethod]
         public void NieuwReturnsNieuweBestellingViewModel() {
             ViewResult result = controller.Nieuw(jan) as ViewResult;
-            NieuweBestellingViewModel nieuweBestellingViewModel = result.Model as NieuweBestellingViewModel;
+            NieuweBestellingViewModel nieuweBestellingViewModel =
+                result.Model as NieuweBestellingViewModel;
 
             Assert.AreEqual(20, nieuweBestellingViewModel.AantalCheques);
             Assert.AreEqual(9.0M, nieuweBestellingViewModel.Zichtwaarde);
-            Assert.AreEqual(DateTime.Today, nieuweBestellingViewModel.DebiteerDatum);
+            Assert.AreEqual(
+                DateTime.Today,
+                nieuweBestellingViewModel.DebiteerDatum
+            );
             Assert.IsTrue(nieuweBestellingViewModel.Elektronisch);
         }
         #endregion
@@ -220,7 +262,8 @@ namespace DienstenCheques.Tests.Controllers {
         #region HttpPost Nieuw
         [TestMethod]
         public void NieuwPostReturnsToIndexWhenUpdateSuccessfull() {
-            RedirectToRouteResult result = controller.Nieuw(jan, model) as RedirectToRouteResult;
+            RedirectToRouteResult result =
+                controller.Nieuw(jan, model) as RedirectToRouteResult;
 
             Assert.AreEqual("Index", result.RouteValues["action"]);
         }
@@ -232,7 +275,10 @@ namespace DienstenCheques.Tests.Controllers {
 
             Assert.AreEqual(aantal+1, jan.Bestellingen.Count);
 
-            mockGebruikersRepository.Verify(m => m.SaveChanges(), Times.Once());
+            mockGebruikersRepository.Verify(
+                m => m.SaveChanges(),
+                Times.Once()
+            );
         }
 
         [TestMethod]
@@ -241,16 +287,26 @@ namespace DienstenCheques.Tests.Controllers {
 
             Assert.AreEqual(3, jan.Bestellingen.Count);
 
-            mockGebruikersRepository.Verify(m => m.SaveChanges(), Times.Never);
+            mockGebruikersRepository.Verify(
+                m => m.SaveChanges(),
+                Times.Never
+            );
         }
 
         [TestMethod]
         public void NieuwPostRetourneertViewBijFout() {
-            ViewResult result =  controller.Nieuw(jan, modelMetFout) as ViewResult;
-            NieuweBestellingViewModel nieuweBestellingViewModel = ((NieuweBestellingViewModel)result.Model);
+            ViewResult result =  controller.Nieuw(
+                jan, modelMetFout
+            ) as ViewResult;
+
+            NieuweBestellingViewModel nieuweBestellingViewModel =
+                ((NieuweBestellingViewModel)result.Model);
 
             Assert.AreEqual(70, nieuweBestellingViewModel.AantalCheques);
-            Assert.AreEqual(DateTime.Today, nieuweBestellingViewModel.DebiteerDatum);
+            Assert.AreEqual(
+                DateTime.Today,
+                nieuweBestellingViewModel.DebiteerDatum
+            );
             Assert.AreEqual(true, nieuweBestellingViewModel.Elektronisch);
             Assert.AreEqual(9.0M, nieuweBestellingViewModel.Zichtwaarde);
         }
@@ -277,7 +333,9 @@ namespace DienstenCheques.Tests.Controllers {
         public Gebruiker Tine { get; set; }
 
         public DummyContext() {
-            Onderneming onderneming = new Onderneming() { Naam = "Hogeschool Gent" };
+            Onderneming onderneming = new Onderneming() {
+                Naam = "Hogeschool Gent"
+            };
 
             //Nog 2 openstaande prestaties, 1 cheque over
             Jan = new Gebruiker() {
@@ -310,11 +368,18 @@ namespace DienstenCheques.Tests.Controllers {
                     Elektronisch = true
                 };
 
-                b.StelDatumsIn(DateTime.Today.AddMonths(-4 * i), DateTime.Today.AddMonths(-4 * i));
+                b.StelDatumsIn(
+                    DateTime.Today.AddMonths(-4 * i),
+                    DateTime.Today.AddMonths(-4 * i)
+                );
                 Jan.Bestellingen.Add(b);
 
                 for (int j = 1; j <= 15; j++) {
-                    DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-4 * i));
+                    DienstenCheque d = new DienstenCheque(
+                        true,
+                        DateTime.Today.AddMonths(-4 * i)
+                    );
+
                     if (p < 11) {
                         d.Prestatie = Jan.GetPrestatie(p);
                         d.GebruiksDatum = d.Prestatie.DatumPrestatie;
@@ -331,7 +396,8 @@ namespace DienstenCheques.Tests.Controllers {
                 }
             }
 
-            //alle cheques zijn toegewezen aan prestaties, geen openstaande prestaties meer
+            // Alle cheques zijn toegewezen aan prestaties,
+            // geen openstaande prestaties meer
             An = new Gebruiker() {
                 GebruikersNummer = "1000000001",
                 Naam = "Pieters",
@@ -339,8 +405,14 @@ namespace DienstenCheques.Tests.Controllers {
                 Email = "an.pieters@hogent.be"
             };
 
-            Bestelling anBestelling = new Bestelling() { AantalAangekochteCheques = 20, Elektronisch = true };
-            anBestelling.StelDatumsIn(DateTime.Today.AddMonths(-1), DateTime.Today.AddMonths(-1));
+            Bestelling anBestelling = new Bestelling() {
+                AantalAangekochteCheques = 20,
+                Elektronisch = true
+            };
+            anBestelling.StelDatumsIn(
+                DateTime.Today.AddMonths(-1),
+                DateTime.Today.AddMonths(-1)
+            );
             An.Bestellingen.Add(anBestelling);
 
             for (int i = 4; i > 0; i--) {
@@ -354,7 +426,10 @@ namespace DienstenCheques.Tests.Controllers {
             }
 
             for (int j = 0; j <= 19; j++) {
-                DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-1));
+                DienstenCheque d = new DienstenCheque(
+                    true,
+                    DateTime.Today.AddMonths(-1)
+                );
                 d.Prestatie = An.GetPrestatie(j / 5);
                 d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                 An.Portefeuille.Add(d);
@@ -368,8 +443,14 @@ namespace DienstenCheques.Tests.Controllers {
                 Email = "tine.pieters@hogent.be"
             };
 
-            Bestelling tineBestelling = new Bestelling() { AantalAangekochteCheques = 6, Elektronisch = true };
-            tineBestelling.StelDatumsIn(DateTime.Today.AddMonths(-1), DateTime.Today.AddMonths(-1));
+            Bestelling tineBestelling = new Bestelling() {
+                AantalAangekochteCheques = 6,
+                Elektronisch = true
+            };
+            tineBestelling.StelDatumsIn(
+                DateTime.Today.AddMonths(-1),
+                DateTime.Today.AddMonths(-1)
+            );
             Tine.Bestellingen.Add(tineBestelling);
             Tine.Prestaties.Add(new Prestatie() {
                 AantalUren = 4,
@@ -380,7 +461,10 @@ namespace DienstenCheques.Tests.Controllers {
             });
 
             for (int j = 1; j <= 6; j++) {
-                DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-1));
+                DienstenCheque d = new DienstenCheque(
+                    true,
+                    DateTime.Today.AddMonths(-1)
+                );
 
                 if (j < 5) {
                     d.Prestatie = Tine.GetPrestatie(0);
@@ -432,7 +516,10 @@ namespace DienstenCheques.Tests.Controllers {
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual(
+                "Your application description page.",
+                result.ViewBag.Message
+            );
         }
 
         [TestMethod]
@@ -479,7 +566,11 @@ namespace DienstenCheques.Tests.Models {
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void BestellingAanmakenDebiteerDatumFoutief() {
-            Bestelling b = new Bestelling(-10, true, DateTime.Today.AddMonths(2));
+            Bestelling b = new Bestelling(
+                -10,
+                true,
+                DateTime.Today.AddMonths(2)
+            );
         }
 
         [TestMethod]
@@ -554,7 +645,10 @@ namespace DienstenCheques.Tests.Models {
         [TestMethod]
         public void AddBestellingPastBeschikbareDienstenChequesAan() {
             context.Jan.AddBestelling(20, true, DateTime.Today);
-            Assert.AreEqual(13, context.Jan.AantalBeschikbareElektronischeCheques);
+            Assert.AreEqual(
+                13,
+                context.Jan.AantalBeschikbareElektronischeCheques
+            );
         }
     }
 }
