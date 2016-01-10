@@ -459,6 +459,10 @@ Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, h
 
 ### Scrum Regels
 
+> **Werkende Software**: Voldoet aan de Functionele Vereisten (FR)
+>
+> **Productie Waardige Software**: Voeldet aan de Functionele Vereisten + Niet Functionele Vereisten (FR+NFR)
+
 - Werken in **gesloten iteraties** (geen scopewijzigingen)
 - Elke iteratie **productiewaardige software**
 - **zelforganiserende** en **zelfreflecterende** teams
@@ -579,7 +583,8 @@ Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, h
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/16OJM.png)
 
-### Stand-up
+### Stand-up (Daily Scrum)
+
 - Parameters:
     - Dagelijks
     - 15 minuten
@@ -605,10 +610,10 @@ Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, h
 - Typisch een demo van het product of van de onderliggende architectuur
 - Informeel
     - 2-uur voorbereidingstijd
-- Deelnemers
+- Deelnemers (Stakeholders)
     - Klanten
     - Management
-    - Product Eigenaars
+    - Product Eigenaar
 - Hoe valideren?
     - Door testen opgesteld tijdens product planning
 - Wat is af?
@@ -617,8 +622,10 @@ Hoewel wij waardering hebben voor al hetgeen aan de rechterkant staat vermeld, h
     - Klaar voor IT of klaar voor Business?
 
 ### Retrospective
+
 Een Sprint wordt afgesloten met retrospective.
 De evaluatie is bedoeld om te leren van wat goed en fout ging met als doel om als team nog beter te worden.
+
 - Deelnemers
     - Team
     - Scrum Master
