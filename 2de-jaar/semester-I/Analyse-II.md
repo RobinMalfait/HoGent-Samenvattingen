@@ -725,4 +725,6 @@ Het minimaal werkbare product. Het allerkleinste, meest minimale, snelst te creÃ
 
 ## The LLAVA Matrix
 
+> **L**iving **L**ab **A**ssumption **Va**lidation Matrix
+
 ![](https://robinmalfait.com/afbeeldingen/droplr/1hiJK.png)
