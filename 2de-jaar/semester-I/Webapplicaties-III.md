@@ -2,13 +2,13 @@
 title: Webapplicaties III
 ---
 
-# DienstenCheques
+# 1. DienstenCheques
 
-## Structuur
+## 1.1 Structuur
 
 Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voor ons staan er in.
 
-### DienstenCheques
+### 1.1.1 DienstenCheques
 
 ```
 .
@@ -118,7 +118,7 @@ Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voo
     └── glyphicons-halflings-regular.woff
 ```
 
-### DienstenCheques.Tests
+### 1.1.2 DienstenCheques.Tests
 
 ```
 .
@@ -132,13 +132,13 @@ Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voo
     └── GebruikerTest.cs
 ```
 
-## DienstenCheques
+## 1.2. DienstenCheques
 
-## DienstenCheques.Tests
+## 1.3. DienstenCheques.Tests
 
-### Controllers
+### 1.3.1. Controllers
 
-#### BestellingenControllerTest.cs
+#### 1.3.1.1. BestellingenControllerTest.cs
 
 ```cs
 using System;
@@ -316,7 +316,7 @@ namespace DienstenCheques.Tests.Controllers {
 
 ```
 
-#### DummyContext.cs
+#### 1.3.1.2. DummyContext.cs
 
 ```cs
 using System;
@@ -480,7 +480,7 @@ namespace DienstenCheques.Tests.Controllers {
 
 ```
 
-#### HomeControllerTest.cs
+#### 1.3.1.3. HomeControllerTest.cs
 
 ```cs
 using System;
@@ -537,9 +537,9 @@ namespace DienstenCheques.Tests.Controllers {
 }
 ```
 
-### Models
+### 1.3.2. Models
 
-#### BestellingTest.cs
+#### 1.3.2.1. BestellingTest.cs
 
 ```cs
 using System;
@@ -582,7 +582,7 @@ namespace DienstenCheques.Tests.Models {
 }
 ```
 
-#### DienstenChequeTest.cs
+#### 1.3.2.2. DienstenChequeTest.cs
 
 ```cs
 using System;
@@ -606,7 +606,7 @@ namespace DienstenCheques.Tests.Models {
 }
 ```
 
-#### GebruikerTest.cs
+#### 1.3.2.2. GebruikerTest.cs
 
 ```cs
 using System;
