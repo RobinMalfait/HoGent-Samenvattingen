@@ -926,9 +926,9 @@ Your first step towards making the application tangible (Tastbaar).
     - Use dedicated tools (like Axure, UXPin) or design programs (like Photoshop, Sketch)
     - Often the last step before it goes to the dev team
 
-    | Voorbeeld 1 | Voorbeeld 2 | Voorbeeld 3 |
-    | :---------: | :---------: | :---------: |
-    | ![](https://robinmalfait.com/afbeeldingen/droplr/1lfPa.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/K1CH.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/12rgt.png) |
+    | Voorbeeld 1 | Voorbeeld 2 |
+    | :---------: | :---------: |
+    | ![](https://robinmalfait.com/afbeeldingen/droplr/1lfPa.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/K1CH.png) |
 
 - **Interactive Mockups**
     - A user can navigate through the screens as if the product was already built
