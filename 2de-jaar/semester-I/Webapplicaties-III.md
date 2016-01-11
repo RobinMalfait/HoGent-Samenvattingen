@@ -4,6 +4,8 @@ title: Webapplicaties III
 
 # 1 DienstenCheques Project
 
+Alle "using" statements zijn weggelaten om hopelijk plaats te besparen tijdens het printen...
+
 ## 1.1 Structuur
 
 Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voor ons staan er in.
@@ -132,9 +134,6 @@ Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voo
 #### 1.2.1.1 BundleConfig.cs
 
 ```cs
-using System.Web;
-using System.Web.Optimization;
-
 namespace DienstenCheques {
     public class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
@@ -163,8 +162,6 @@ namespace DienstenCheques {
 #### 1.2.1.2 FilterConfig.cs
 
 ```cs
-using System.Web;
-using System.Web.Mvc;
 namespace DienstenCheques {
     public class FilterConfig {
         public static void RegisterGlobalFilters(
@@ -177,16 +174,6 @@ namespace DienstenCheques {
 #### 1.2.1.3 IdentityConfig.cs
 
 ```cs
-using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using DienstenCheques.Models.DAL;
-using DienstenCheques.Models.Domain;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
 namespace DienstenCheques {
     public class EmailService : IIdentityMessageService {
         public Task SendAsync(IdentityMessage message) {
@@ -307,11 +294,6 @@ namespace DienstenCheques {
 
 ```cs
 namespace DienstenCheques.App_Start {
-    using System;
-    using System.Web;
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-    using Ninject;
-    using Ninject.Web.Common;
     public static class NinjectWebCommon {
         private static readonly Bootstrapper bootstrapper =
             new Bootstrapper();
@@ -362,12 +344,6 @@ namespace DienstenCheques.App_Start {
 #### 1.2.1.5 RouteConfig.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
 namespace DienstenCheques {
     public class RouteConfig {
         public static void RegisterRoutes(RouteCollection routes) {
@@ -389,17 +365,6 @@ namespace DienstenCheques {
 #### 1.2.1.6 Startup.Auth.cs
 
 ```cs
-using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
-using Owin;
-using DienstenCheques.Models;
-using DienstenCheques.Models.DAL;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques
 {
     public partial class Startup
@@ -471,19 +436,6 @@ Dit zijn de css files.
 #### 1.2.3.1 AccountController.cs
 
 ```cs
-using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using DienstenCheques.Models;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Controllers
 {
     [Authorize]
@@ -962,12 +914,6 @@ namespace DienstenCheques.Controllers
 #### 1.2.3.2 BestellingenController.cs
 
 ```cs
-using System;
-using System.Linq;
-using System.Web.Mvc;
-using DienstenCheques.Models.Domain;
-using DienstenCheques.ViewModels.BestellingenViewModels;
-
 namespace DienstenCheques.Controllers
 {
     [Authorize(Roles = "customer")]
@@ -1031,12 +977,6 @@ namespace DienstenCheques.Controllers
 #### 1.2.3.3 HomeController.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
 namespace DienstenCheques.Controllers
 {
     public class HomeController : Controller
@@ -1066,16 +1006,6 @@ namespace DienstenCheques.Controllers
 #### 1.2.3.4 ManageController.cs
 
 ```cs
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using DienstenCheques.Models;
-
 namespace DienstenCheques.Controllers
 {
     [Authorize]
@@ -1458,18 +1388,6 @@ namespace DienstenCheques.Controllers
 ### 1.2.4 Global.asax.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using DienstenCheques.Infrastructure;
-using DienstenCheques.Models.DAL;
-using DienstenCheques.Models.Domain;
-using Microsoft.CSharp.RuntimeBinder;
-
 namespace DienstenCheques
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -1495,9 +1413,6 @@ namespace DienstenCheques
 #### 1.2.5.1 GebruikerModelBinder.cs
 
 ```cs
-using System.Web.Mvc;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Infrastructure
 {
     public class GebruikerModelBinder : IModelBinder
@@ -1526,9 +1441,6 @@ namespace DienstenCheques.Infrastructure
 ###### 1.2.6.1.1 BestellingMapper.cs
 
 ```cs
-using System.Data.Entity.ModelConfiguration;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Models.DAL.Mapper
 {
     public class BestellingMapper : EntityTypeConfiguration<Bestelling>
@@ -1546,9 +1458,6 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.2 DienstenChequeMapper.cs
 
 ```cs
-using System.Data.Entity.ModelConfiguration;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Models.DAL.Mapper
 {
     public class DienstenChequeMapper : EntityTypeConfiguration<DienstenCheque>
@@ -1570,9 +1479,6 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.3 GebruikerMapper.cs
 
 ```cs
-using System.Data.Entity.ModelConfiguration;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Models.DAL.Mapper
 {
     public class GebruikerMapper : EntityTypeConfiguration<Gebruiker>
@@ -1601,10 +1507,6 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.4 PrestatieMapper.cs
 
 ```cs
-using System.Data.Entity.ModelConfiguration;
-using DienstenCheques.Models.Domain;
-
-
 namespace DienstenCheques.Models.DAL.Mapper
 {
     public class PrestatieMapper : EntityTypeConfiguration<Prestatie>
@@ -1628,14 +1530,6 @@ namespace DienstenCheques.Models.DAL.Mapper
 ##### 1.2.6.1.2 DienstenChequesContext.cs
 
 ```cs
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Reflection;
-using System.Data.Entity;
-using System.Web.Mvc;
-using DienstenCheques.Models.Domain;
-using Microsoft.AspNet.Identity.EntityFramework;
-
-
 namespace DienstenCheques.Models.DAL
 {
     public class DienstenChequesContext : IdentityDbContext<ApplicationUser>
@@ -1673,13 +1567,6 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.1.3 DienstenChequesInitializer.cs
 
 ```cs
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Validation;
-using DienstenCheques.Models.Domain;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-
 namespace DienstenCheques.Models.DAL
 {
     public class DienstenChequesInitializer : DropCreateDatabaseAlways<DienstenChequesContext>
@@ -1840,10 +1727,6 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.1.4 GebruikersRepository.cs
 
 ```cs
-using System.Data.Entity;
-using System.Linq;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Models.DAL
 {
     public class GebruikersRepository : IGebruikersRepository
@@ -1881,11 +1764,6 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.2.1 ApplicationUser.cs
 
 ```cs
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-
 namespace DienstenCheques.Models.Domain
 {
     public class ApplicationUser : IdentityUser
@@ -1904,8 +1782,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.2 Bestelling.cs
 
 ```cs
-using System;
-
 namespace DienstenCheques.Models.Domain
 {
     public class Bestelling
@@ -1968,9 +1844,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.3 DienstenCheque.cs
 
 ```cs
-
-using System;
-
 namespace DienstenCheques.Models.Domain
 {
     public class DienstenCheque
@@ -2009,10 +1882,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.4 Gebruiker.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace DienstenCheques.Models.Domain
 {
     public class Gebruiker
@@ -2119,8 +1988,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.5 IGebruikersRepository.cs
 
 ```cs
-using System.Linq;
-
 namespace DienstenCheques.Models.Domain
 {
     public interface IGebruikersRepository
@@ -2156,9 +2023,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.7 Prestatie.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-
 namespace DienstenCheques.Models.Domain
 {
    public class Prestatie
@@ -2181,7 +2045,6 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.8 PrestatieType.cs
 
 ```cs
-using System;
 namespace DienstenCheques.Models.Domain
 {
     public enum PrestatieType
@@ -2196,9 +2059,6 @@ namespace DienstenCheques.Models.Domain
 #### 1.2.6.3 AccountViewModels.cs
 
 ```cs
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
 namespace DienstenCheques.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -2313,11 +2173,6 @@ namespace DienstenCheques.Models
 #### 1.2.6.4 ManageViewModels.cs
 
 ```cs
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-
 namespace DienstenCheques.Models
 {
     public class IndexViewModel
@@ -2424,9 +2279,6 @@ $(function() {
 ### 1.2.8 Startup.cs
 
 ```cs
-using Microsoft.Owin;
-using Owin;
-
 [assembly: OwinStartupAttribute(typeof(DienstenCheques.Startup))]
 namespace DienstenCheques
 {
@@ -2445,14 +2297,6 @@ namespace DienstenCheques
 #### 1.2.9.1 BestellingenViewModels.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.ViewModels.BestellingenViewModels
 {
     public class BestellingenViewModel
@@ -3758,15 +3602,6 @@ else
 #### 1.3.1.1 BestellingenControllerTest.cs
 
 ```cs
-using System;
-using System.Linq;
-using System.Web.Mvc;
-using DienstenCheques.Controllers;
-using DienstenCheques.Models.Domain;
-using DienstenCheques.ViewModels.BestellingenViewModels;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-
 namespace DienstenCheques.Tests.Controllers {
     [TestClass]
     public class BestellingenControllerTest {
@@ -3936,13 +3771,6 @@ namespace DienstenCheques.Tests.Controllers {
 #### 1.3.1.2 DummyContext.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DienstenCheques.Models.Domain;
-
 namespace DienstenCheques.Tests.Controllers {
     class DummyContext {
         public Gebruiker Jan { get; set; }
@@ -4099,15 +3927,6 @@ namespace DienstenCheques.Tests.Controllers {
 #### 1.3.1.3 HomeControllerTest.cs
 
 ```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DienstenCheques;
-using DienstenCheques.Controllers;
-
 namespace DienstenCheques.Tests.Controllers {
     [TestClass]
     public class HomeControllerTest {
@@ -4158,10 +3977,6 @@ namespace DienstenCheques.Tests.Controllers {
 #### 1.3.2.1 BestellingTest.cs
 
 ```cs
-using System;
-using DienstenCheques.Models.Domain;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace DienstenCheques.Tests.Models {
     [TestClass]
     public class BestellingTest {
@@ -4201,10 +4016,6 @@ namespace DienstenCheques.Tests.Models {
 #### 1.3.2.2 DienstenChequeTest.cs
 
 ```cs
-using System;
-using DienstenCheques.Models.Domain;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace DienstenCheques.Tests.Models {
     [TestClass]
     public class DienstenChequeTest {
@@ -4225,10 +4036,6 @@ namespace DienstenCheques.Tests.Models {
 #### 1.3.2.3 GebruikerTest.cs
 
 ```cs
-using System;
-using DienstenCheques.Tests.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace DienstenCheques.Tests.Models {
     [TestClass]
     public class GebruikerTest {
