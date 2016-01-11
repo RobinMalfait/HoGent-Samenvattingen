@@ -801,26 +801,15 @@ namespace DienstenCheques.Controllers {
 #### 1.2.3.3 HomeController.cs
 
 ```cs
-namespace DienstenCheques.Controllers
-{
-    public class HomeController : Controller
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
+namespace DienstenCheques.Controllers {
+    public class HomeController : Controller {
+        public ActionResult Index() { return View(); }
+        public ActionResult About() {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
-
-        public ActionResult Contact()
-        {
+        public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
@@ -830,52 +819,34 @@ namespace DienstenCheques.Controllers
 #### 1.2.3.4 ManageController.cs
 
 ```cs
-namespace DienstenCheques.Controllers
-{
+namespace DienstenCheques.Controllers {
     [Authorize]
-    public class ManageController : Controller
-    {
+    public class ManageController : Controller {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public ManageController()
-        {
-        }
-
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
+        public ManageController() { }
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager) {
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
+        public ApplicationSignInManager SignInManager {
+            get {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set
-            {
+            private set {
                 _signInManager = value;
             }
         }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
+        public ApplicationUserManager UserManager {
+            get {
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
-            private set
-            {
+            private set {
                 _userManager = value;
             }
         }
-
-        //
         // GET: /Manage/Index
-        public async Task<ActionResult> Index(ManageMessageId? message)
-        {
+        public async Task<ActionResult> Index(ManageMessageId? message) {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
@@ -884,10 +855,8 @@ namespace DienstenCheques.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
-
             var userId = User.Identity.GetUserId();
-            var model = new IndexViewModel
-            {
+            var model = new IndexViewModel {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
@@ -896,54 +865,36 @@ namespace DienstenCheques.Controllers
             };
             return View(model);
         }
-
-        //
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
-        {
+        public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey) {
             ManageMessageId? message;
             var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
-            if (result.Succeeded)
-            {
+            if (result.Succeeded) {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
+                if (user != null) {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
                 message = ManageMessageId.RemoveLoginSuccess;
-            }
-            else
-            {
+            } else {
                 message = ManageMessageId.Error;
             }
             return RedirectToAction("ManageLogins", new { Message = message });
         }
-
-        //
         // GET: /Manage/AddPhoneNumber
-        public ActionResult AddPhoneNumber()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult AddPhoneNumber() { return View(); }
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> AddPhoneNumber(AddPhoneNumberViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<ActionResult> AddPhoneNumber(AddPhoneNumberViewModel model) {
+            if ( ! ModelState.IsValid) {
                 return View(model);
             }
             // Generate the token and send it
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), model.Number);
-            if (UserManager.SmsService != null)
-            {
-                var message = new IdentityMessage
-                {
+            if (UserManager.SmsService != null) {
+                var message = new IdentityMessage {
                     Destination = model.Number,
                     Body = "Your security code is: " + code
                 };
@@ -951,62 +902,45 @@ namespace DienstenCheques.Controllers
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
-
-        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> EnableTwoFactorAuthentication()
-        {
+        public async Task<ActionResult> EnableTwoFactorAuthentication() {
             await UserManager.SetTwoFactorEnabledAsync(User.Identity.GetUserId(), true);
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            if (user != null)
-            {
+            if (user != null) {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
             return RedirectToAction("Index", "Manage");
         }
-
-        //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DisableTwoFactorAuthentication()
-        {
+        public async Task<ActionResult> DisableTwoFactorAuthentication() {
             await UserManager.SetTwoFactorEnabledAsync(User.Identity.GetUserId(), false);
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            if (user != null)
-            {
+            if (user != null) {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
             return RedirectToAction("Index", "Manage");
         }
-
-        //
         // GET: /Manage/VerifyPhoneNumber
-        public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
-        {
+        public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber) {
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
             // Send an SMS through the SMS provider to verify the phone number
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
-
-        //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<ActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel model) {
+            if ( ! ModelState.IsValid) {
                 return View(model);
             }
             var result = await UserManager.ChangePhoneNumberAsync(User.Identity.GetUserId(), model.PhoneNumber, model.Code);
-            if (result.Succeeded)
-            {
+            if (result.Succeeded) {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
+                if (user != null) {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
@@ -1015,47 +949,31 @@ namespace DienstenCheques.Controllers
             ModelState.AddModelError("", "Failed to verify phone");
             return View(model);
         }
-
-        //
         // GET: /Manage/RemovePhoneNumber
-        public async Task<ActionResult> RemovePhoneNumber()
-        {
+        public async Task<ActionResult> RemovePhoneNumber() {
             var result = await UserManager.SetPhoneNumberAsync(User.Identity.GetUserId(), null);
-            if (!result.Succeeded)
-            {
+            if (!result.Succeeded) {
                 return RedirectToAction("Index", new { Message = ManageMessageId.Error });
             }
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            if (user != null)
-            {
+            if (user != null) {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
-
-        //
         // GET: /Manage/ChangePassword
-        public ActionResult ChangePassword()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult ChangePassword() { return View(); }
         // POST: /Manage/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model) {
+            if (!ModelState.IsValid) {
                 return View(model);
             }
             var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
-            if (result.Succeeded)
-            {
+            if (result.Succeeded) {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
+                if (user != null) {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
@@ -1063,138 +981,95 @@ namespace DienstenCheques.Controllers
             AddErrors(result);
             return View(model);
         }
-
-        //
         // GET: /Manage/SetPassword
-        public ActionResult SetPassword()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult SetPassword() { return View(); }
         // POST: /Manage/SetPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<ActionResult> SetPassword(SetPasswordViewModel model) {
+            if (ModelState.IsValid) {
                 var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
-                if (result.Succeeded)
-                {
+                if (result.Succeeded) {
                     var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                    if (user != null)
-                    {
+                    if (user != null) {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     }
                     return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        //
         // GET: /Manage/ManageLogins
-        public async Task<ActionResult> ManageLogins(ManageMessageId? message)
-        {
+        public async Task<ActionResult> ManageLogins(ManageMessageId? message) {
             ViewBag.StatusMessage =
                 message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : "";
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            if (user == null)
-            {
+            if (user == null) {
                 return View("Error");
             }
             var userLogins = await UserManager.GetLoginsAsync(User.Identity.GetUserId());
             var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes().Where(auth => userLogins.All(ul => auth.AuthenticationType != ul.LoginProvider)).ToList();
             ViewBag.ShowRemoveButton = user.PasswordHash != null || userLogins.Count > 1;
-            return View(new ManageLoginsViewModel
-            {
+            return View(new ManageLoginsViewModel {
                 CurrentLogins = userLogins,
                 OtherLogins = otherLogins
             });
         }
-
-        //
         // POST: /Manage/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LinkLogin(string provider)
-        {
+        public ActionResult LinkLogin(string provider) {
             // Request a redirect to the external login provider to link a login for the current user
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
-
-        //
         // GET: /Manage/LinkLoginCallback
-        public async Task<ActionResult> LinkLoginCallback()
-        {
+        public async Task<ActionResult> LinkLoginCallback() {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
-            if (loginInfo == null)
-            {
+            if (loginInfo == null) {
                 return RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
             }
             var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && _userManager != null)
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && _userManager != null) {
                 _userManager.Dispose();
                 _userManager = null;
             }
-
             base.Dispose(disposing);
         }
-
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
-
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
+        private IAuthenticationManager AuthenticationManager {
+            get {
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-
-        private void AddErrors(IdentityResult result)
-        {
-            foreach (var error in result.Errors)
-            {
+        private void AddErrors(IdentityResult result) {
+            foreach (var error in result.Errors) {
                 ModelState.AddModelError("", error);
             }
         }
-
-        private bool HasPassword()
-        {
+        private bool HasPassword() {
             var user = UserManager.FindById(User.Identity.GetUserId());
-            if (user != null)
-            {
+            if (user != null) {
                 return user.PasswordHash != null;
             }
             return false;
         }
-
-        private bool HasPhoneNumber()
-        {
+        private bool HasPhoneNumber() {
             var user = UserManager.FindById(User.Identity.GetUserId());
-            if (user != null)
-            {
+            if (user != null) {
                 return user.PhoneNumber != null;
             }
             return false;
         }
-
-        public enum ManageMessageId
-        {
+        public enum ManageMessageId {
             AddPhoneSuccess,
             ChangePasswordSuccess,
             SetTwoFactorSuccess,
@@ -1203,8 +1078,7 @@ namespace DienstenCheques.Controllers
             RemovePhoneSuccess,
             Error
         }
-
-#endregion
+        #endregion
     }
 }
 ```
@@ -1212,21 +1086,16 @@ namespace DienstenCheques.Controllers
 ### 1.2.4 Global.asax.cs
 
 ```cs
-namespace DienstenCheques
-{
-    public class MvcApplication : System.Web.HttpApplication
-    {
-        protected void Application_Start()
-        {
+namespace DienstenCheques {
+    public class MvcApplication : System.Web.HttpApplication {
+        protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             ModelBinders.Binders.Add(typeof(Gebruiker), new GebruikerModelBinder());
-
-           DienstenChequesContext db = new DienstenChequesContext();
-           db.Database.Initialize(true);
+            DienstenChequesContext db = new DienstenChequesContext();
+            db.Database.Initialize(true);
         }
     }
 }
@@ -1237,18 +1106,13 @@ namespace DienstenCheques
 #### 1.2.5.1 GebruikerModelBinder.cs
 
 ```cs
-namespace DienstenCheques.Infrastructure
-{
-    public class GebruikerModelBinder : IModelBinder
-    {
-        public object  BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
-        {
-
-          if (controllerContext.HttpContext.User.Identity.IsAuthenticated)
-            {
+namespace DienstenCheques.Infrastructure {
+    public class GebruikerModelBinder : IModelBinder {
+        public object  BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext) {
+            if (controllerContext.HttpContext.User.Identity.IsAuthenticated) {
                 IGebruikersRepository repos = (IGebruikersRepository)DependencyResolver.Current.GetService(typeof(IGebruikersRepository));
-               // return repos.FindBy("1000000000");
-               return repos.FindByEmail(controllerContext.HttpContext.User.Identity.Name);
+                // return repos.FindBy("1000000000");
+                return repos.FindByEmail(controllerContext.HttpContext.User.Identity.Name);
             }
            return null;
         }
@@ -1265,16 +1129,12 @@ namespace DienstenCheques.Infrastructure
 ###### 1.2.6.1.1 BestellingMapper.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL.Mapper
-{
-    public class BestellingMapper : EntityTypeConfiguration<Bestelling>
-    {
-        public BestellingMapper()
-        {
+namespace DienstenCheques.Models.DAL.Mapper {
+    public class BestellingMapper : EntityTypeConfiguration<Bestelling> {
+        public BestellingMapper() {
             //Table
             ToTable("Bestelling");
         }
-
     }
 }
 ```
@@ -1282,20 +1142,15 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.2 DienstenChequeMapper.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL.Mapper
-{
-    public class DienstenChequeMapper : EntityTypeConfiguration<DienstenCheque>
-    {
-        public DienstenChequeMapper()
-        {
+namespace DienstenCheques.Models.DAL.Mapper {
+    public class DienstenChequeMapper : EntityTypeConfiguration<DienstenCheque> {
+        public DienstenChequeMapper() {
             //Table
             ToTable("DienstenCheque");
             HasKey(t => t.DienstenChequeNummer);
-
             //relationships
             HasOptional(t => t.Prestatie).WithMany().Map(t => t.MapKey("PrestatieId")).WillCascadeOnDelete(false);
         }
-
     }
 }
 ```
@@ -1303,12 +1158,9 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.3 GebruikerMapper.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL.Mapper
-{
-    public class GebruikerMapper : EntityTypeConfiguration<Gebruiker>
-    {
-        public GebruikerMapper()
-        {
+namespace DienstenCheques.Models.DAL.Mapper {
+    public class GebruikerMapper : EntityTypeConfiguration<Gebruiker> {
+        public GebruikerMapper() {
             ToTable("Gebruiker");
             //Properties
             HasKey(t => t.GebruikersNummer);
@@ -1331,21 +1183,16 @@ namespace DienstenCheques.Models.DAL.Mapper
 ###### 1.2.6.1.4 PrestatieMapper.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL.Mapper
-{
-    public class PrestatieMapper : EntityTypeConfiguration<Prestatie>
-    {
-        public PrestatieMapper()
-        {
+namespace DienstenCheques.Models.DAL.Mapper {
+    public class PrestatieMapper : EntityTypeConfiguration<Prestatie> {
+        public PrestatieMapper() {
             //Table
             ToTable("Prestatie");
-
             //Relationships
             HasRequired(t => t.Onderneming)
                .WithMany()
                .Map(m => m.MapKey("OndernemingId"))
                .WillCascadeOnDelete(false);
-
         }
     }
 }
@@ -1354,36 +1201,23 @@ namespace DienstenCheques.Models.DAL.Mapper
 ##### 1.2.6.1.2 DienstenChequesContext.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL
-{
-    public class DienstenChequesContext : IdentityDbContext<ApplicationUser>
-    {
-        public DienstenChequesContext() : base("DienstenCheques")
-        {
-        }
-
+namespace DienstenCheques.Models.DAL {
+    public class DienstenChequesContext : IdentityDbContext<ApplicationUser> {
+        public DienstenChequesContext() : base("DienstenCheques") { }
         public DbSet<Gebruiker> Gebruikers { get; set; }
         public DbSet<Onderneming> Ondernemingen { get; set; }
-
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
         }
-
-
-        public static DienstenChequesContext Create()
-        {
+        public static DienstenChequesContext Create() {
             return DependencyResolver.Current.GetService<DienstenChequesContext>();
         }
-
         //static DienstenChequesContext()
         //{
         //    Database.SetInitializer<DienstenChequesContext>(new DienstenChequesInitializer());
         //}
-
     }
 }
 ```
@@ -1391,30 +1225,22 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.1.3 DienstenChequesInitializer.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL
-{
-    public class DienstenChequesInitializer : DropCreateDatabaseAlways<DienstenChequesContext>
-    {
-        protected override void Seed(DienstenChequesContext context)
-        {
-            try
-            {
+namespace DienstenCheques.Models.DAL {
+    public class DienstenChequesInitializer : DropCreateDatabaseAlways<DienstenChequesContext> {
+        protected override void Seed(DienstenChequesContext context) {
+            try {
                 CreateRoles(context);
                 Onderneming onderneming = new Onderneming() { Naam = "Hogeschool Gent" };
                 context.Ondernemingen.Add(onderneming);
-
                 //onvoldoende cheques beschikbaar, nog 2 openstaande prestatie waarvoor 7 cheques nodig
-                Gebruiker jan = new Gebruiker()
-                {
+                Gebruiker jan = new Gebruiker() {
                     GebruikersNummer = "1000000000",
                     Naam = "Peeters",
                     Voornaam = "Jan",
                     Email = "jan.peeters@hogent.be"
                 };
-                for (int i = 12; i >= 0; i--)
-                {
-                    Prestatie pres = new Prestatie()
-                    {
+                for (int i = 12; i >= 0; i--) {
+                    Prestatie pres = new Prestatie() {
                         AantalUren = 4,
                         DatumPrestatie = DateTime.Today.AddMonths(-i),
                         PrestatieType = PrestatieType.Schoonmaken,
@@ -1427,39 +1253,31 @@ namespace DienstenCheques.Models.DAL
                 jan.GetPrestatie(12).Betaald = false;
                 int p = 0;
                 int pi = 0;
-                for (int i = 3; i > 0; i--)
-                {
-                    Bestelling b = new Bestelling()
-                    {
+                for (int i = 3; i > 0; i--) {
+                    Bestelling b = new Bestelling() {
                         AantalAangekochteCheques = 15,
                         Elektronisch = true
                     };
                     b.StelDatumsIn(DateTime.Today.AddMonths(-4 * i), DateTime.Today.AddMonths(-4 * i));
                     jan.Bestellingen.Add(b);
-                    for (int j = 1; j <= 15; j++)
-                    {
+                    for (int j = 1; j <= 15; j++) {
                         DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-4 * i));
-                        if (p < 11)
-                        {
+                        if (p < 11) {
                             d.Prestatie = jan.GetPrestatie(p);
                             d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                         }
                         jan.Portefeuille.Add(d);
                         if (pi < 3)
                             pi++;
-                        else
-                        {
+                        else {
                             pi = 0;
                             p++;
                         }
                     }
                 }
-
                 context.Gebruikers.Add(jan);
                 ApplicationUser user1 = new ApplicationUser { UserName = jan.Email, Email = jan.Email };
                 CreateAccount(user1, context);
-
-
                 //alle cheques zijn toegewezen aan prestaties, geen openstaande prestatie meer
                 Gebruiker an = new Gebruiker() { GebruikersNummer = "1000000001", Naam = "Pieters", Voornaam = "An", Email = "an.pieters@hogent.be" };
                 Bestelling anBestelling = new Bestelling() { AantalAangekochteCheques = 20, Elektronisch = true };
@@ -1467,8 +1285,7 @@ namespace DienstenCheques.Models.DAL
                 an.Bestellingen.Add(anBestelling);
                 for (int i = 4; i > 0; i--)
                     an.Prestaties.Add(new Prestatie() { AantalUren = 5, DatumPrestatie = DateTime.Today.AddMonths(-i), PrestatieType = PrestatieType.Schoonmaken, Onderneming = onderneming, Betaald = true });
-                for (int j = 0; j <= 19; j++)
-                {
+                for (int j = 0; j <= 19; j++) {
                     DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-1));
                     d.Prestatie = an.GetPrestatie(j / 5);
                     d.GebruiksDatum = d.Prestatie.DatumPrestatie;
@@ -1477,18 +1294,15 @@ namespace DienstenCheques.Models.DAL
                 context.Gebruikers.Add(an);
                 ApplicationUser user2 = new ApplicationUser { UserName = an.Email, Email = an.Email };
                 CreateAccount(user2, context);
-
                 //nog 2 cheques niet gebruikt, geen openstaande prestaties
                 Gebruiker tine = new Gebruiker() { GebruikersNummer = "1000000002", Naam = "Pieters", Voornaam = "Tine", Email = "tine.pieters@hogent.be" };
                 Bestelling tineBestelling = new Bestelling() { AantalAangekochteCheques = 6, Elektronisch = true };
                 tineBestelling.StelDatumsIn(DateTime.Today.AddMonths(-1), DateTime.Today.AddMonths(-1));
                 tine.Bestellingen.Add(tineBestelling);
                 tine.Prestaties.Add(new Prestatie() { AantalUren = 4, DatumPrestatie = DateTime.Today.AddDays(-10), PrestatieType = PrestatieType.Schoonmaken, Onderneming = onderneming, Betaald = true });
-                for (int j = 1; j <= 6; j++)
-                {
+                for (int j = 1; j <= 6; j++) {
                     DienstenCheque d = new DienstenCheque(true, DateTime.Today.AddMonths(-1));
-                    if (j < 5)
-                    {
+                    if (j < 5) {
                         d.Prestatie = tine.GetPrestatie(0);
                         d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                     }
@@ -1497,53 +1311,38 @@ namespace DienstenCheques.Models.DAL
                 context.Gebruikers.Add(tine);
                 ApplicationUser user3 = new ApplicationUser { UserName = tine.Email, Email = tine.Email };
                 CreateAccount(user3, context);
-
+                // Belangrijk!
                 context.SaveChanges();
-
                 //    InitializeIdentityAndRolesForEF(context, "user", context.Gebruikers.Select(g => g.Email));
-            }
-
-            catch (DbEntityValidationException e)
-            {
+            } catch (DbEntityValidationException e) {
                 string s = "Fout creatie database ";
-                foreach (var eve in e.EntityValidationErrors)
-                {
+                foreach (var eve in e.EntityValidationErrors) {
                     s += String.Format("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
                          eve.Entry.Entity.GetType().Name, eve.Entry.GetValidationResult());
-                    foreach (var ve in eve.ValidationErrors)
-                    {
+                    foreach (var ve in eve.ValidationErrors) {
                         s += String.Format("- Property: \"{0}\", Error: \"{1}\"",
                             ve.PropertyName, ve.ErrorMessage);
                     }
                 }
                 throw new Exception(s);
             }
-
         }
-
-        private void CreateAccount(ApplicationUser user, DienstenChequesContext context)
-        {
+        private void CreateAccount(ApplicationUser user, DienstenChequesContext context) {
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
             var roleStore = new RoleStore<IdentityRole>(context);
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             var role = roleManager.FindByName("customer");
-
             userManager.Create(user, "P@ssword1");
             userManager.SetLockoutEnabled(user.Id, false);
             userManager.AddToRole(user.Id, role.Name);
         }
-
-
-        private void CreateRoles(DienstenChequesContext context)
-        {
+        private void CreateRoles(DienstenChequesContext context) {
             var roleStore = new RoleStore<IdentityRole>(context);
             var roleManager = new RoleManager<IdentityRole>(roleStore);
-
             var role = new IdentityRole("customer");
             roleManager.Create(role);
         }
-
     }
 }
 ```
@@ -1551,32 +1350,24 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.1.4 GebruikersRepository.cs
 
 ```cs
-namespace DienstenCheques.Models.DAL
-{
-    public class GebruikersRepository : IGebruikersRepository
-    {
+namespace DienstenCheques.Models.DAL {
+    public class GebruikersRepository : IGebruikersRepository {
         private DienstenChequesContext context;
         private DbSet<Gebruiker> gebruikers;
-
-        public GebruikersRepository(DienstenChequesContext context)
-        {
+        public GebruikersRepository(DienstenChequesContext context) {
             this.context = context;
             gebruikers = context.Gebruikers;
         }
-        public Gebruiker FindBy(string gebruikersNummer)
-        {
+        public Gebruiker FindBy(string gebruikersNummer) {
             return gebruikers.Find(gebruikersNummer);
         }
-        public Gebruiker FindByEmail(string email)
-        {
+        public Gebruiker FindByEmail(string email) {
             return gebruikers.FirstOrDefault(g => g.Email == email);
         }
-        public IQueryable<Gebruiker> FindAll()
-        {
+        public IQueryable<Gebruiker> FindAll() {
             return gebruikers;
         }
-        public void SaveChanges()
-        {
+        public void SaveChanges() {
              context.SaveChanges();
         }
     }
@@ -1588,12 +1379,9 @@ namespace DienstenCheques.Models.DAL
 ##### 1.2.6.2.1 ApplicationUser.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public class ApplicationUser : IdentityUser
-    {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-        {
+namespace DienstenCheques.Models.Domain {
+    public class ApplicationUser : IdentityUser {
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager) {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
@@ -1606,55 +1394,39 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.2 Bestelling.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public class Bestelling
-    {
+namespace DienstenCheques.Models.Domain {
+    public class Bestelling {
         #region "Attributes and Properties"
-
         private int aantalAangekochteCheques;
-
         public static decimal BEDRAGCHEQUE = 9.0M;
         public int BestellingId { get; private set; }
         public DateTime CreatieDatum { get; private set; }
         public DateTime DebiteerDatum { get; private set; }
-
-        public int AantalAangekochteCheques
-        {
+        public int AantalAangekochteCheques {
             get { return aantalAangekochteCheques; }
-            set
-            {
+            set {
                 if (value <= 0 || value > 50)
                     throw new ArgumentException("U kan maximaal 50 dienstencheques bestellen");
                 aantalAangekochteCheques = value;
             }
         }
         public bool Elektronisch { get; set; }
-        public decimal TotaalBedrag
-        {
+        public decimal TotaalBedrag {
             get { return AantalAangekochteCheques * BEDRAGCHEQUE; }
         }
         #endregion
-
         #region "Constructors"
-        public Bestelling()
-        {
+        public Bestelling() {
             StelDatumsIn(DateTime.Today, DateTime.Today);
         }
-
-        public Bestelling(int aantal, bool elektronisch, DateTime debiteerDatum)
-            : this()
-        {
+        public Bestelling(int aantal, bool elektronisch, DateTime debiteerDatum) : this() {
             AantalAangekochteCheques = aantal;
             Elektronisch = elektronisch;
             StelDatumsIn(DateTime.Today, debiteerDatum);
         }
         #endregion
-
         #region "methods"
-
-        public void StelDatumsIn(DateTime creatieDatum, DateTime debiteerDatum)
-        {
+        public void StelDatumsIn(DateTime creatieDatum, DateTime debiteerDatum) {
             if ( creatieDatum.Date > debiteerDatum.Date  || debiteerDatum.Date > creatieDatum.AddMonths(1).Date)
                 throw new ArgumentException("Debiteerdatum maximaal 1 maand na bestelling");
             CreatieDatum = creatieDatum;
@@ -1668,36 +1440,22 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.3 DienstenCheque.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public class DienstenCheque
-    {
+namespace DienstenCheques.Models.Domain {
+    public class DienstenCheque {
         #region "Properties"
         public int DienstenChequeNummer { get; set; }
         public virtual Prestatie Prestatie { get; set; }
         public DateTime? GebruiksDatum { get; set; }
         public DateTime CreatieDatum { get; private set; }
         public bool Elektronisch { get; private set; }
-
         #endregion
-
-
         #region "Constructors"
-        public DienstenCheque()
-        {
-
-        }
-
-        public DienstenCheque(bool elektronisch, DateTime creatieDatum)
-            : this()
-        {
+        public DienstenCheque() { }
+        public DienstenCheque(bool elektronisch, DateTime creatieDatum) : this() {
             Elektronisch = elektronisch;
             CreatieDatum = creatieDatum;
         }
-
-        public DienstenCheque(bool elektronisch) : this(elektronisch, DateTime.Today)
-        {
-        }
+        public DienstenCheque(bool elektronisch) : this(elektronisch, DateTime.Today) { }
         #endregion
     }
 }
@@ -1706,102 +1464,74 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.4 Gebruiker.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public class Gebruiker
-    {
-
+namespace DienstenCheques.Models.Domain {
+    public class Gebruiker {
         #region Properties
         public string GebruikersNummer { get; set; }
         public String Naam { get; set; }
         public String Voornaam { get; set; }
         public String Email { get; set; }
-
         public virtual ICollection<Bestelling> Bestellingen { get; set; }
         public virtual ICollection<DienstenCheque> Portefeuille { get; set; }
         public virtual ICollection<Prestatie> Prestaties { get; set; }
-        public int AantalOpenstaandePrestatieUren
-        {
+        public int AantalOpenstaandePrestatieUren {
             get { return GetOpenstaandePrestaties().Sum(p=>p.AantalUren); }
         }
-
-        public int AantalBeschikbareElektronischeCheques
-        {
+        public int AantalBeschikbareElektronischeCheques {
             get { return GetBeschikbareElektronischeDienstenCheques().Count(); }
         }
-
         #endregion
-
         #region Constructors
-        public Gebruiker()
-        {
+        public Gebruiker() {
             Bestellingen = new List<Bestelling>();
             Prestaties = new List<Prestatie>();
             Portefeuille = new List<DienstenCheque>();
         }
         #endregion
-
         #region Methods
-        private IEnumerable<Prestatie> GetOpenstaandePrestaties()
-        {
+        private IEnumerable<Prestatie> GetOpenstaandePrestaties() {
             return Prestaties.Where(p => !p.Betaald);
         }
-        private IEnumerable<DienstenCheque> GetBeschikbareElektronischeDienstenCheques()
-        {
+        private IEnumerable<DienstenCheque> GetBeschikbareElektronischeDienstenCheques() {
             return Portefeuille
                 .Where(c => c.Elektronisch && !c.GebruiksDatum.HasValue)
                 //.Where(c=>c.Elektronisch && c.Prestatie==null)
                 .OrderBy(c => c.CreatieDatum);
         }
-
-        private int GetAantalBesteldeCheques(int jaar)
-        {
+        private int GetAantalBesteldeCheques(int jaar) {
             return Bestellingen.Where(b => b.CreatieDatum.Year == jaar)
                 .Sum(b => b.AantalAangekochteCheques);
         }
-
-        public IEnumerable<Bestelling> GetBestellingen(int aantalMaanden)
-        {
+        public IEnumerable<Bestelling> GetBestellingen(int aantalMaanden) {
             return Bestellingen.Where(b => (DateTime.Today.AddMonths(-aantalMaanden) <= b.CreatieDatum)).OrderByDescending(b=>b.CreatieDatum);
         }
-
-        private void BetaalPrestatie(Prestatie p)
-        {
-            if (!p.Betaald && AantalBeschikbareElektronischeCheques >= p.AantalUren)
-            {
+        private void BetaalPrestatie(Prestatie p) {
+            if (!p.Betaald && AantalBeschikbareElektronischeCheques >= p.AantalUren) {
                 IList<DienstenCheque> openstaandeCheques =
                     GetBeschikbareElektronischeDienstenCheques().ToList();
-                for (int i = 0; i < p.AantalUren; i++)
-                {
+                for (int i = 0; i < p.AantalUren; i++) {
                     openstaandeCheques[i].Prestatie = p;
                     openstaandeCheques[i].GebruiksDatum = DateTime.Today;
                 }
                 p.Betaald = true;
             }
         }
-
-        public Bestelling AddBestelling(int aantalCheques, bool elektronisch, DateTime debiteerDatum)
-        {
-
+        public Bestelling AddBestelling(int aantalCheques, bool elektronisch, DateTime debiteerDatum) {
             Bestelling b = new Bestelling(aantalCheques, elektronisch, debiteerDatum);
             if (GetAantalBesteldeCheques(b.CreatieDatum.Year) + aantalCheques > 500)
                 throw new ArgumentException("Je hebt de grens van 500 checques bereikt");
             Bestellingen.Add(b);
-            if (elektronisch)
-            {
+            if (elektronisch) {
                 for (int i = 0; i < aantalCheques; i++)
                     Portefeuille.Add(new DienstenCheque(elektronisch));
                 IEnumerable<Prestatie> nietBetaaldePrestaties = GetOpenstaandePrestaties();
-                foreach (Prestatie p in nietBetaaldePrestaties)
-                {
+                foreach (Prestatie p in nietBetaaldePrestaties) {
                     BetaalPrestatie(p);
                 }
             }
             return b;
         }
-
-        public Prestatie GetPrestatie(int index)
-        {
+        public Prestatie GetPrestatie(int index) {
             return Prestaties.ToList()[index];
         }
         #endregion
@@ -1812,10 +1542,8 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.5 IGebruikersRepository.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public interface IGebruikersRepository
-    {
+namespace DienstenCheques.Models.Domain {
+    public interface IGebruikersRepository {
         Gebruiker FindBy(string gebruikersNummer);
         Gebruiker FindByEmail(string email);
         IQueryable<Gebruiker> FindAll();
@@ -1828,18 +1556,12 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.6 Onderneming.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public class Onderneming
-    {
-
+namespace DienstenCheques.Models.Domain {
+    public class Onderneming {
         #region "Properties"
-
         public int OndernemingId { get; set; }
         public string Naam { get; set; }
-
         #endregion
-
     }
 }
 ```
@@ -1847,32 +1569,25 @@ namespace DienstenCheques.Models.Domain
 ##### 1.2.6.2.7 Prestatie.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-   public class Prestatie
-    {
+namespace DienstenCheques.Models.Domain {
+   public class Prestatie {
        #region "Properties"
-
        public int PrestatieId { get; set; }
        public int AantalUren { get; set; }
        public PrestatieType PrestatieType { get; set; }
        public virtual Onderneming Onderneming { get; set; }
        public bool Betaald { get; set; }
        public DateTime DatumPrestatie { get; set; }
-
        #endregion
-
-       }
+    }
 }
 ```
 
 ##### 1.2.6.2.8 PrestatieType.cs
 
 ```cs
-namespace DienstenCheques.Models.Domain
-{
-    public enum PrestatieType
-    {
+namespace DienstenCheques.Models.Domain {
+    public enum PrestatieType {
         Schoonmaken,
         WassenEnStrijken,
         BereidenMaaltijden
@@ -1883,109 +1598,81 @@ namespace DienstenCheques.Models.Domain
 #### 1.2.6.3 AccountViewModels.cs
 
 ```cs
-namespace DienstenCheques.Models
-{
-    public class ExternalLoginConfirmationViewModel
-    {
+namespace DienstenCheques.Models {
+    public class ExternalLoginConfirmationViewModel {
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-
-    public class ExternalLoginListViewModel
-    {
+    public class ExternalLoginListViewModel {
         public string ReturnUrl { get; set; }
     }
-
-    public class SendCodeViewModel
-    {
+    public class SendCodeViewModel {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
         public string ReturnUrl { get; set; }
         public bool RememberMe { get; set; }
     }
-
-    public class VerifyCodeViewModel
-    {
+    public class VerifyCodeViewModel {
         [Required]
         public string Provider { get; set; }
-
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
-
         [Display(Name = "Remember this browser?")]
         public bool RememberBrowser { get; set; }
-
         public bool RememberMe { get; set; }
     }
-
-    public class ForgotViewModel
-    {
+    public class ForgotViewModel {
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-
-    public class LoginViewModel
-    {
+    public class LoginViewModel {
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
-
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Wachtwoord")]
         public string Password { get; set; }
-
         [Display(Name = "Onthou me?")]
         public bool RememberMe { get; set; }
     }
-
-    public class RegisterViewModel
-    {
+    public class RegisterViewModel {
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
-    public class ResetPasswordViewModel
-    {
+    public class ResetPasswordViewModel {
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
         public string Code { get; set; }
     }
-
-    public class ForgotPasswordViewModel
-    {
+    public class ForgotPasswordViewModel {
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -1997,83 +1684,63 @@ namespace DienstenCheques.Models
 #### 1.2.6.4 ManageViewModels.cs
 
 ```cs
-namespace DienstenCheques.Models
-{
-    public class IndexViewModel
-    {
+namespace DienstenCheques.Models {
+    public class IndexViewModel {
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
     }
-
-    public class ManageLoginsViewModel
-    {
+    public class ManageLoginsViewModel {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
     }
-
-    public class FactorViewModel
-    {
+    public class FactorViewModel {
         public string Purpose { get; set; }
     }
-
-    public class SetPasswordViewModel
-    {
+    public class SetPasswordViewModel {
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
         public string NewPassword { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
-    public class ChangePasswordViewModel
-    {
+    public class ChangePasswordViewModel {
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
         public string OldPassword { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
         public string NewPassword { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
-    public class AddPhoneNumberViewModel
-    {
+    public class AddPhoneNumberViewModel {
         [Required]
         [Phone]
         [Display(Name = "Phone Number")]
         public string Number { get; set; }
     }
-
-    public class VerifyPhoneNumberViewModel
-    {
+    public class VerifyPhoneNumberViewModel {
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
-
         [Required]
         [Phone]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
     }
-
-    public class ConfigureTwoFactorViewModel
-    {
+    public class ConfigureTwoFactorViewModel {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
@@ -2095,21 +1762,16 @@ var bestellingenView = {
     }
 }
 
-$(function() {
-    bestellingenView.init();
-});
+$(function() { bestellingenView.init(); });
 ```
 
 ### 1.2.8 Startup.cs
 
 ```cs
 [assembly: OwinStartupAttribute(typeof(DienstenCheques.Startup))]
-namespace DienstenCheques
-{
-    public partial class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
+namespace DienstenCheques {
+    public partial class Startup {
+        public void Configuration(IAppBuilder app) {
             ConfigureAuth(app);
         }
     }
@@ -2121,10 +1783,8 @@ namespace DienstenCheques
 #### 1.2.9.1 BestellingenViewModels.cs
 
 ```cs
-namespace DienstenCheques.ViewModels.BestellingenViewModels
-{
-    public class BestellingenViewModel
-    {
+namespace DienstenCheques.ViewModels.BestellingenViewModels {
+    public class BestellingenViewModel {
         public IEnumerable<BestellingViewModel> Bestellingen { get;  set; }
         [Display(Name="Aantal beschikbare cheques")]
         public int AantalBeschikbareCheques { get; set; }
@@ -2133,8 +1793,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels
         public SelectList AantalMaandenKeuzeList { get; private set; }
         [Display(Name="Periode overzicht bestellingen")]
         public int AantalMaanden { get; set; }
-        public BestellingenViewModel()
-        {
+        public BestellingenViewModel() {
             int[] maanden = new int[] {1, 2, 3, 6, 12, 18, 24};
             List<SelectListItem> items  = new List<SelectListItem>();
             foreach (int maand in maanden)
@@ -2142,7 +1801,6 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels
             AantalMaandenKeuzeList = new SelectList(items, "Value", "Text");
         }
     }
-
     public class BestellingViewModel
     {
         [Display(Name = "Referentie")]
@@ -2156,9 +1814,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels
         public decimal Zichtwaarde { get; set; }
         [Display(Name = "Totaal bedrag")]
         public decimal TotaalBedrag { get; set; }
-
-        public BestellingViewModel(Bestelling bestelling)
-        {
+        public BestellingViewModel(Bestelling bestelling) {
             BestellingId = bestelling.BestellingId;
             CreatieDatum = bestelling.CreatieDatum;
             Elektronisch = bestelling.Elektronisch;
@@ -2167,36 +1823,25 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels
             TotaalBedrag = bestelling.TotaalBedrag;
         }
     }
-
-    public class NieuweBestellingViewModel
-    {
+    public class NieuweBestellingViewModel {
        public bool Elektronisch { get;  set; }
-
         [Required(ErrorMessage = "{0} is verplicht")]
         [Display(Name = "Aantal dienstencheques")]
         [Range(1, 50, ErrorMessage = "U kan maximaal 50 dienstencheques bestellen")]
         public int AantalCheques { get;  set; }
-
         [Required(ErrorMessage = "{0} is verplicht")]
         [DataType(DataType.Date)]
         [Display(Name = "Datum debitering")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DebiteerDatum { get; set; }
-
         public decimal Zichtwaarde { get; set; }
-        public NieuweBestellingViewModel(decimal zichtwaarde)
-        {
+        public NieuweBestellingViewModel(decimal zichtwaarde) {
             DebiteerDatum = DateTime.Today;
             Elektronisch = true;
             AantalCheques = 20;
             Zichtwaarde = zichtwaarde;
         }
-
-        public NieuweBestellingViewModel() : this(0)
-        {
-
-        }
-
+        public NieuweBestellingViewModel() : this(0){ }
     }
 }
 ```
@@ -3434,7 +3079,6 @@ namespace DienstenCheques.Tests.Controllers {
         private Mock<IGebruikersRepository> mockGebruikersRepository;
         private NieuweBestellingViewModel model;
         private NieuweBestellingViewModel modelMetFout;
-
         [TestInitialize]
         public void SetUpContext() {
             DummyContext context = new DummyContext();
@@ -3448,14 +3092,12 @@ namespace DienstenCheques.Tests.Controllers {
                 AantalCheques = 20,
                 DebiteerDatum = DateTime.Today
             };
-
             modelMetFout = new NieuweBestellingViewModel(9.0M) {
                 Elektronisch = true,
                 AantalCheques = 70,
                 DebiteerDatum = DateTime.Today
             };
         }
-
         #region "Index"
         [TestMethod]
         public void Index6MaandenRetourneertModel() {
@@ -3463,22 +3105,18 @@ namespace DienstenCheques.Tests.Controllers {
             BestellingenViewModel bestellingenViewModel = (
                 (BestellingenViewModel) result.Model
             );
-
             Assert.AreEqual(
                 1,
                 bestellingenViewModel.AantalBeschikbareCheques
             );
-
             Assert.AreEqual(
                 8,
                 bestellingenViewModel.AantalOpenstaandePrestatieUren
             );
-
             Assert.AreEqual(
                 1,
                 bestellingenViewModel.Bestellingen.Count()
             );
-
             Assert.AreEqual(
                 DateTime.Today.AddMonths(-4),
                 bestellingenViewModel.Bestellingen
@@ -3486,29 +3124,24 @@ namespace DienstenCheques.Tests.Controllers {
                                      .CreatieDatum
             );
         }
-
         [TestMethod]
         public void Index12MaandenRetourneertModel() {
             ViewResult result = controller.Index(jan, 12) as ViewResult;
             BestellingenViewModel bestellingenViewModel = (
                 (BestellingenViewModel) result.Model
             );
-
             Assert.AreEqual(
                 1,
                 bestellingenViewModel.AantalBeschikbareCheques
             );
-
             Assert.AreEqual(
                 8,
                 bestellingenViewModel.AantalOpenstaandePrestatieUren
             );
-
             Assert.AreEqual(
                 3,
                 bestellingenViewModel.Bestellingen.Count()
             );
-
             Assert.AreEqual(
                 DateTime.Today.AddMonths(-12),
                 bestellingenViewModel.Bestellingen
@@ -3517,14 +3150,12 @@ namespace DienstenCheques.Tests.Controllers {
             );
         }
         #endregion
-
         #region Nieuw
         [TestMethod]
         public void NieuwReturnsNieuweBestellingViewModel() {
             ViewResult result = controller.Nieuw(jan) as ViewResult;
             NieuweBestellingViewModel nieuweBestellingViewModel =
                 result.Model as NieuweBestellingViewModel;
-
             Assert.AreEqual(20, nieuweBestellingViewModel.AantalCheques);
             Assert.AreEqual(9.0M, nieuweBestellingViewModel.Zichtwaarde);
             Assert.AreEqual(
@@ -3534,50 +3165,39 @@ namespace DienstenCheques.Tests.Controllers {
             Assert.IsTrue(nieuweBestellingViewModel.Elektronisch);
         }
         #endregion
-
         #region HttpPost Nieuw
         [TestMethod]
         public void NieuwPostReturnsToIndexWhenUpdateSuccessfull() {
             RedirectToRouteResult result =
                 controller.Nieuw(jan, model) as RedirectToRouteResult;
-
             Assert.AreEqual("Index", result.RouteValues["action"]);
         }
-
         [TestMethod]
         public void NieuwPostVoegtBestellingToe() {
             int aantal = jan.Bestellingen.Count;
             controller.Nieuw(jan, model);
-
             Assert.AreEqual(aantal+1, jan.Bestellingen.Count);
-
             mockGebruikersRepository.Verify(
                 m => m.SaveChanges(),
                 Times.Once()
             );
         }
-
         [TestMethod]
         public void NieuwPostVoegtBestellingNietToeBijFout() {
             controller.Nieuw(jan, modelMetFout);
-
             Assert.AreEqual(3, jan.Bestellingen.Count);
-
             mockGebruikersRepository.Verify(
                 m => m.SaveChanges(),
                 Times.Never
             );
         }
-
         [TestMethod]
         public void NieuwPostRetourneertViewBijFout() {
             ViewResult result =  controller.Nieuw(
                 jan, modelMetFout
             ) as ViewResult;
-
             NieuweBestellingViewModel nieuweBestellingViewModel =
                 ((NieuweBestellingViewModel)result.Model);
-
             Assert.AreEqual(70, nieuweBestellingViewModel.AantalCheques);
             Assert.AreEqual(
                 DateTime.Today,
@@ -3600,12 +3220,10 @@ namespace DienstenCheques.Tests.Controllers {
         public Gebruiker Jan { get; set; }
         public Gebruiker An { get; set; }
         public Gebruiker Tine { get; set; }
-
         public DummyContext() {
             Onderneming onderneming = new Onderneming() {
                 Naam = "Hogeschool Gent"
             };
-
             //Nog 2 openstaande prestaties, 1 cheque over
             Jan = new Gebruiker() {
                 GebruikersNummer = "1000000000",
@@ -3613,7 +3231,6 @@ namespace DienstenCheques.Tests.Controllers {
                 Voornaam = "Jan",
                 Email = "jan.peeters@hogent.be"
             };
-
             for (int i = 12; i >= 0; i--) {
                 Prestatie pres = new Prestatie() {
                     AantalUren = 4,
@@ -3622,13 +3239,10 @@ namespace DienstenCheques.Tests.Controllers {
                     Onderneming = onderneming,
                     Betaald = true
                 };
-
                 Jan.Prestaties.Add(pres);
             }
-
             Jan.GetPrestatie(11).Betaald = false;
             Jan.GetPrestatie(12).Betaald = false;
-
             int p = 0;
             int pi = 0;
             for (int i = 3; i > 0; i--) {
@@ -3636,26 +3250,21 @@ namespace DienstenCheques.Tests.Controllers {
                     AantalAangekochteCheques = 15,
                     Elektronisch = true
                 };
-
                 b.StelDatumsIn(
                     DateTime.Today.AddMonths(-4 * i),
                     DateTime.Today.AddMonths(-4 * i)
                 );
                 Jan.Bestellingen.Add(b);
-
                 for (int j = 1; j <= 15; j++) {
                     DienstenCheque d = new DienstenCheque(
                         true,
                         DateTime.Today.AddMonths(-4 * i)
                     );
-
                     if (p < 11) {
                         d.Prestatie = Jan.GetPrestatie(p);
                         d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                     }
-
                     Jan.Portefeuille.Add(d);
-
                     if (pi < 3) {
                         pi++;
                     } else {
@@ -3664,7 +3273,6 @@ namespace DienstenCheques.Tests.Controllers {
                     }
                 }
             }
-
             // Alle cheques zijn toegewezen aan prestaties,
             // geen openstaande prestaties meer
             An = new Gebruiker() {
@@ -3673,7 +3281,6 @@ namespace DienstenCheques.Tests.Controllers {
                 Voornaam = "An",
                 Email = "an.pieters@hogent.be"
             };
-
             Bestelling anBestelling = new Bestelling() {
                 AantalAangekochteCheques = 20,
                 Elektronisch = true
@@ -3683,7 +3290,6 @@ namespace DienstenCheques.Tests.Controllers {
                 DateTime.Today.AddMonths(-1)
             );
             An.Bestellingen.Add(anBestelling);
-
             for (int i = 4; i > 0; i--) {
                 An.Prestaties.Add(new Prestatie() {
                     AantalUren = 5,
@@ -3693,7 +3299,6 @@ namespace DienstenCheques.Tests.Controllers {
                     Betaald = true
                 });
             }
-
             for (int j = 0; j <= 19; j++) {
                 DienstenCheque d = new DienstenCheque(
                     true,
@@ -3703,7 +3308,6 @@ namespace DienstenCheques.Tests.Controllers {
                 d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                 An.Portefeuille.Add(d);
             }
-
             //nog 2 cheques niet gebruikt, geen openstaande prestaties
             Tine = new Gebruiker() {
                 GebruikersNummer = "1000000002",
@@ -3711,7 +3315,6 @@ namespace DienstenCheques.Tests.Controllers {
                 Voornaam = "Tine",
                 Email = "tine.pieters@hogent.be"
             };
-
             Bestelling tineBestelling = new Bestelling() {
                 AantalAangekochteCheques = 6,
                 Elektronisch = true
@@ -3728,21 +3331,17 @@ namespace DienstenCheques.Tests.Controllers {
                 Onderneming = onderneming,
                 Betaald = true
             });
-
             for (int j = 1; j <= 6; j++) {
                 DienstenCheque d = new DienstenCheque(
                     true,
                     DateTime.Today.AddMonths(-1)
                 );
-
                 if (j < 5) {
                     d.Prestatie = Tine.GetPrestatie(0);
                     d.GebruiksDatum = d.Prestatie.DatumPrestatie;
                 }
-
                 Tine.Portefeuille.Add(d);
             }
-
         }
     }
 }
@@ -3758,37 +3357,29 @@ namespace DienstenCheques.Tests.Controllers {
         public void Index() {
             // Arrange
             HomeController controller = new HomeController();
-
             // Act
             ViewResult result = controller.Index() as ViewResult;
-
             // Assert
             Assert.IsNotNull(result);
         }
-
         [TestMethod]
         public void About() {
             // Arrange
             HomeController controller = new HomeController();
-
             // Act
             ViewResult result = controller.About() as ViewResult;
-
             // Assert
             Assert.AreEqual(
                 "Your application description page.",
                 result.ViewBag.Message
             );
         }
-
         [TestMethod]
         public void Contact() {
             // Arrange
             HomeController controller = new HomeController();
-
             // Act
             ViewResult result = controller.Contact() as ViewResult;
-
             // Assert
             Assert.IsNotNull(result);
         }
@@ -3811,13 +3402,11 @@ namespace DienstenCheques.Tests.Models {
             Assert.IsTrue(b.Elektronisch);
             Assert.AreEqual(DateTime.Today, b.CreatieDatum);
         }
-
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void BestellingAanmakenAantalFoutief() {
             Bestelling b = new Bestelling(70, true, DateTime.Today);
         }
-
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void BestellingAanmakenDebiteerDatumFoutief() {
@@ -3827,7 +3416,6 @@ namespace DienstenCheques.Tests.Models {
                 DateTime.Today.AddMonths(2)
             );
         }
-
         [TestMethod]
         public void TotaalBedrag() {
             Bestelling b = new Bestelling(10, true, DateTime.Today);
@@ -3846,13 +3434,11 @@ namespace DienstenCheques.Tests.Models {
         [TestMethod]
         public void DienstenChequeAanmakenSlaagt() {
             DienstenCheque dc = new DienstenCheque(true);
-
             Assert.IsTrue(dc.Elektronisch);
             Assert.AreEqual(DateTime.Today, dc.CreatieDatum);
             Assert.IsNull(dc.Prestatie);
             Assert.IsNull(dc.GebruiksDatum);
         }
-
     }
 }
 ```
@@ -3864,31 +3450,26 @@ namespace DienstenCheques.Tests.Models {
     [TestClass]
     public class GebruikerTest {
         DummyContext context;
-
         [TestInitialize]
         public void Initialize() {
             context = new DummyContext();
         }
-
         [TestMethod]
         public void AddBestellingVoegtBestellingToe() {
             context.Jan.AddBestelling(20, true, DateTime.Today);
             Assert.AreEqual(4, context.Jan.Bestellingen.Count);
         }
-
         [TestMethod]
         public void AddBestellingVoegtDienstenChequesToeAanPortefeuille() {
             int aantal = context.Jan.Portefeuille.Count;
             context.Jan.AddBestelling(20, true, DateTime.Today);
             Assert.AreEqual(aantal+20,context.Jan.Portefeuille.Count);
         }
-
         [TestMethod]
         public void AddBestellingPastOpenstaandePrestatiesAan() {
             context.Jan.AddBestelling(20, true, DateTime.Today);
             Assert.AreEqual(0, context.Jan.AantalOpenstaandePrestatieUren);
         }
-
         [TestMethod]
         public void AddBestellingPastBeschikbareDienstenChequesAan() {
             context.Jan.AddBestelling(20, true, DateTime.Today);
