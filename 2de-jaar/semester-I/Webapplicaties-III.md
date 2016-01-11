@@ -2,8 +2,6 @@
 title: Webapplicaties III
 ---
 
-> DIT IS NOG NIET VOLLEDIG, I DARE YOU TO PRINT IT ALREADY!
-
 # 1 DienstenCheques Project
 
 ## 1.1 Structuur
@@ -137,31 +135,23 @@ Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voo
 using System.Web;
 using System.Web.Optimization;
 
-namespace DienstenCheques
-{
-    public class BundleConfig
-    {
+namespace DienstenCheques {
+    public class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
-        public static void RegisterBundles(BundleCollection bundles)
-        {
+        public static void RegisterBundles(BundleCollection bundles) {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
-
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
-
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
              "~/Scripts/bestellingen.js"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -175,18 +165,13 @@ namespace DienstenCheques
 ```cs
 using System.Web;
 using System.Web.Mvc;
-
-namespace DienstenCheques
-{
-    public class FilterConfig
-    {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-        {
-            filters.Add(new HandleErrorAttribute());
-        }
+namespace DienstenCheques {
+    public class FilterConfig {
+        public static void RegisterGlobalFilters(
+            GlobalFilterCollection filters
+        ) { filters.Add(new HandleErrorAttribute()); }
     }
 }
-
 ```
 
 #### 1.2.1.3 IdentityConfig.cs
@@ -202,191 +187,171 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-
-namespace DienstenCheques
-{
-
-    public class EmailService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
+namespace DienstenCheques {
+    public class EmailService : IIdentityMessageService {
+        public Task SendAsync(IdentityMessage message) {
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
     }
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
+    public class SmsService : IIdentityMessageService{
+        public Task SendAsync(IdentityMessage message) {
             // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
         }
     }
-
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-    public class ApplicationUserManager : UserManager<ApplicationUser>
-    {
-        public ApplicationUserManager(IUserStore<ApplicationUser> store)
-            : base(store)
-        {
-        }
-
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
-        {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<DienstenChequesContext>()));
+    // Configure the application user manager used in this application.
+    // UserManager is defined in ASP.NET Identity and is used by the application.
+    public class ApplicationUserManager : UserManager<ApplicationUser> {
+        public ApplicationUserManager(
+            IUserStore<ApplicationUser> store
+        ) : base(store) {}
+        public static ApplicationUserManager Create(
+            IdentityFactoryOptions<ApplicationUserManager> options,
+            IOwinContext context) {
+            var manager = new ApplicationUserManager(
+                new UserStore<ApplicationUser>(
+                    context.Get<DienstenChequesContext>()
+                )
+            );
             // Configure validation logic for usernames
-            manager.UserValidator = new UserValidator<ApplicationUser>(manager)
-            {
+            manager.UserValidator = new UserValidator<ApplicationUser>(
+                manager
+            ) {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
-
             // Configure validation logic for passwords
-            manager.PasswordValidator = new PasswordValidator
-            {
+            manager.PasswordValidator = new PasswordValidator {
                 RequiredLength = 6,
                 RequireNonLetterOrDigit = true,
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
-
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
-
-            // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
+            // Register two factor authentication providers.
+            // Phone, Emails as a step of receiving a code for verifying
             // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
-            manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<ApplicationUser>
-            {
-                Subject = "Security Code",
-                BodyFormat = "Your security code is {0}"
-            });
+            manager.RegisterTwoFactorProvider(
+                "Phone Code",
+                new PhoneNumberTokenProvider<ApplicationUser> {
+                    MessageFormat = "Your security code is {0}"
+                }
+            );
+            manager.RegisterTwoFactorProvider(
+                "Email Code",
+                new EmailTokenProvider<ApplicationUser> {
+                    Subject = "Security Code",
+                    BodyFormat = "Your security code is {0}"
+                }
+            );
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
-            if (dataProtectionProvider != null)
-            {
+            if (dataProtectionProvider != null) {
                 manager.UserTokenProvider =
-                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                    new DataProtectorTokenProvider<ApplicationUser>(
+                        dataProtectionProvider.Create("ASP.NET Identity")
+                    );
             }
             return manager;
         }
     }
-
-    // Configure the application sign-in manager which is used in this application.
-    public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
-    {
-        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
-            : base(userManager, authenticationManager)
-        {
+    // Configure the application sign-in manager
+    public class ApplicationSignInManager : SignInManager<
+        ApplicationUser, string
+    > {
+        public ApplicationSignInManager(
+            ApplicationUserManager userManager,
+            IAuthenticationManager authenticationManager
+        ) : base(userManager, authenticationManager) { }
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(
+            ApplicationUser user
+        ) {
+            return user.GenerateUserIdentityAsync(
+                (ApplicationUserManager)UserManager
+            );
         }
-
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
-        {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-        }
-
-        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
-        {
-            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        public static ApplicationSignInManager Create(
+            IdentityFactoryOptions<ApplicationSignInManager> options,
+            IOwinContext context
+        ) {
+            return new ApplicationSignInManager(
+                context.GetUserManager<ApplicationUserManager>(),
+                context.Authentication
+            );
         }
     }
-
-    public class ApplicationRoleManager : RoleManager<IdentityRole>
-    {
-        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
-            : base(roleStore)
-        {
-        }
-
+    public class ApplicationRoleManager : RoleManager<IdentityRole> {
+        public ApplicationRoleManager(
+            IRoleStore<IdentityRole, string> roleStore
+        ) : base(roleStore) { }
         public static ApplicationRoleManager Create(
             IdentityFactoryOptions<ApplicationRoleManager> options,
-            IOwinContext context)
-        {
-            return new ApplicationRoleManager(new
-          RoleStore<IdentityRole>(context.Get<DienstenChequesContext>()));
+            IOwinContext context) {
+            return new ApplicationRoleManager(
+                new RoleStore<IdentityRole>(
+                    context.Get<DienstenChequesContext>()
+                )
+            );
         }
     }
-
 }
 ```
 
 #### 1.2.1.4 NinjectWebCommon.cs
 
 ```cs
-using DienstenCheques.Models.DAL;
-using DienstenCheques.Models.Domain;
-
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(DienstenCheques.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(DienstenCheques.App_Start.NinjectWebCommon), "Stop")]
-
-namespace DienstenCheques.App_Start
-{
+namespace DienstenCheques.App_Start {
     using System;
     using System.Web;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
-
-    public static class NinjectWebCommon
-    {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
-
+    public static class NinjectWebCommon {
+        private static readonly Bootstrapper bootstrapper =
+            new Bootstrapper();
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start()
-        {
-            DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
-            DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
+        public static void Start() {
+            DynamicModuleUtility.RegisterModule(
+                typeof(OnePerRequestHttpModule));
+            DynamicModuleUtility.RegisterModule(
+                typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-
         /// <summary>
         /// Stops the application.
         /// </summary>
-        public static void Stop()
-        {
+        public static void Stop() {
             bootstrapper.ShutDown();
         }
-
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
         /// <returns>The created kernel.</returns>
-        private static IKernel CreateKernel()
-        {
+        private static IKernel CreateKernel() {
             var kernel = new StandardKernel();
-            try
-            {
-                kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-                kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
+            try {
+                kernel.Bind<Func<IKernel>>().ToMethod(
+                    ctx => () => new Bootstrapper().Kernel);
+                kernel.Bind<IHttpModule>()
+                    .To<HttpApplicationInitializationHttpModule>();
                 RegisterServices(kernel);
                 return kernel;
             }
-            catch
-            {
-                kernel.Dispose();
-                throw;
-            }
+            catch { kernel.Dispose(); throw; }
         }
-
         /// <summary>
         /// Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        private static void RegisterServices(IKernel kernel)
-        {
+        private static void RegisterServices(IKernel kernel) {
             kernel.Bind<DienstenChequesContext>().ToSelf().InRequestScope();
             kernel.Bind<IGebruikersRepository>().To<GebruikersRepository>().InRequestScope();
         }
@@ -403,19 +368,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-
-namespace DienstenCheques
-{
-    public class RouteConfig
-    {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
+namespace DienstenCheques {
+    public class RouteConfig {
+        public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new {
+                    controller = "Home",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
             );
         }
     }
