@@ -626,36 +626,24 @@ namespace DienstenCheques.Controllers {
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendCode(SendCodeViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
+        public async Task<ActionResult> SendCode(SendCodeViewModel model) {
+            if ( ! ModelState.IsValid) { return View(); }
             // Generate the token and send it
-            if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
-            {
+            if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider)) {
                 return View("Error");
             }
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
-
-        //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
-        public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
-        {
+        public async Task<ActionResult> ExternalLoginCallback(string returnUrl) {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
-            if (loginInfo == null)
-            {
+            if (loginInfo == null) {
                 return RedirectToAction("Login");
             }
-
             // Sign in the user with this external login provider if the user already has a login
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
-            switch (result)
-            {
+            switch (result) {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
@@ -670,135 +658,90 @@ namespace DienstenCheques.Controllers {
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
-
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
-        {
-            if (User.Identity.IsAuthenticated)
-            {
+        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl) {
+            if (User.Identity.IsAuthenticated) {
                 return RedirectToAction("Index", "Manage");
             }
-
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 // Get the information about the user from the external login provider
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
-                if (info == null)
-                {
-                    return View("ExternalLoginFailure");
-                }
+                if (info == null) { return View("ExternalLoginFailure"); }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
-                if (result.Succeeded)
-                {
+                if (result.Succeeded) {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
-                    if (result.Succeeded)
-                    {
+                    if (result.Succeeded) {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
                 }
                 AddErrors(result);
             }
-
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
         }
-
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
-        {
+        public ActionResult LogOff() {
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
-
-        //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
-        public ActionResult ExternalLoginFailure()
-        {
+        public ActionResult ExternalLoginFailure() {
             return View();
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (_userManager != null)
-                {
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                if (_userManager != null) {
                     _userManager.Dispose();
                     _userManager = null;
                 }
-
-                if (_signInManager != null)
-                {
+                if (_signInManager != null) {
                     _signInManager.Dispose();
                     _signInManager = null;
                 }
             }
-
             base.Dispose(disposing);
         }
-
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
-
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
+        private IAuthenticationManager AuthenticationManage) {
+            get {
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-
-        private void AddErrors(IdentityResult result)
-        {
-            foreach (var error in result.Errors)
-            {
+        private void AddErrors(IdentityResult result) {
+            foreach (var error in result.Errors) {
                 ModelState.AddModelError("", error);
             }
         }
-
-        private ActionResult RedirectToLocal(string returnUrl)
-        {
-            if (Url.IsLocalUrl(returnUrl))
-            {
+        private ActionResult RedirectToLocal(string returnUrl) {
+            if (Url.IsLocalUrl(returnUrl)) {
                 return Redirect(returnUrl);
             }
             return RedirectToAction("Index", "Home");
         }
-
-        internal class ChallengeResult : HttpUnauthorizedResult
-        {
+        internal class ChallengeResult : HttpUnauthorizedResult {
             public ChallengeResult(string provider, string redirectUri)
-                : this(provider, redirectUri, null)
-            {
-            }
-
-            public ChallengeResult(string provider, string redirectUri, string userId)
-            {
+                : this(provider, redirectUri, null) { }
+            public ChallengeResult(string provider, string redirectUri, string userId) {
                 LoginProvider = provider;
                 RedirectUri = redirectUri;
                 UserId = userId;
             }
-
             public string LoginProvider { get; set; }
             public string RedirectUri { get; set; }
             public string UserId { get; set; }
-
-            public override void ExecuteResult(ControllerContext context)
-            {
+            public override void ExecuteResult(ControllerContext context) {
                 var properties = new AuthenticationProperties { RedirectUri = RedirectUri };
-                if (UserId != null)
-                {
+                if (UserId != null) {
                     properties.Dictionary[XsrfKey] = UserId;
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
@@ -812,24 +755,16 @@ namespace DienstenCheques.Controllers {
 #### 1.2.3.2 BestellingenController.cs
 
 ```cs
-namespace DienstenCheques.Controllers
-{
+namespace DienstenCheques.Controllers {
     [Authorize(Roles = "customer")]
-    public class BestellingenController : Controller
-    {
-
+    public class BestellingenController : Controller {
         private IGebruikersRepository gebruikersRepository;
-
-        public BestellingenController(IGebruikersRepository gebruikersRepository)
-        {
+        public BestellingenController(IGebruikersRepository gebruikersRepository) {
             this.gebruikersRepository = gebruikersRepository;
         }
-
         // GET: Bestellingen
-        public ActionResult Index(Gebruiker gebruiker, int aantalMaanden=6)
-        {
-            BestellingenViewModel vm = new BestellingenViewModel()
-            {
+        public ActionResult Index(Gebruiker gebruiker, int aantalMaanden=6) {
+            BestellingenViewModel vm = new BestellingenViewModel() {
                 Bestellingen = gebruiker.GetBestellingen(aantalMaanden)
                     .Select(b => new BestellingViewModel(b)),
                 AantalBeschikbareCheques = gebruiker.AantalBeschikbareElektronischeCheques,
@@ -840,33 +775,24 @@ namespace DienstenCheques.Controllers
                 return PartialView("Bestelling", vm.Bestellingen);
             return View(vm);
         }
-
-        public ActionResult Nieuw(Gebruiker gebruiker)
-        {
+        public ActionResult Nieuw(Gebruiker gebruiker) {
             NieuweBestellingViewModel vm = new NieuweBestellingViewModel(Bestelling.BEDRAGCHEQUE);
             return View(vm);
         }
-
         [HttpPost]
-        public ActionResult Nieuw(Gebruiker gebruiker, NieuweBestellingViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
+        public ActionResult Nieuw(Gebruiker gebruiker, NieuweBestellingViewModel model) {
+            if (ModelState.IsValid) {
+                try{
                     Bestelling b = gebruiker.AddBestelling(model.AantalCheques, model.Elektronisch, model.DebiteerDatum);
                     gebruikersRepository.SaveChanges();
                     TempData["message"] = $"Uw bestelling voor een totaalbedrag van {b.TotaalBedrag:C} werd gecreëerd";
                     return  RedirectToAction("Index");
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     ModelState.AddModelError("", ex.Message);
                 }
             }
             model.Zichtwaarde = Bestelling.BEDRAGCHEQUE;
             return View(model);
-
         }
     }
 }
