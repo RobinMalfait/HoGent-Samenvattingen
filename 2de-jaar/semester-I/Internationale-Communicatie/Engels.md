@@ -184,7 +184,7 @@ title: Engels
 | Quantum encryption | It is the security involved in quantum teleportation. No time passes so there is no time to attack a stream of data | Kwantumencryptie |
 | NIST | National Institute of Standards and Technology | National Institute of Standards and Technology |
 | Feasible | Possible, doable | Uitvoerbaar |
-| Spooled fiber | ![](http://d.pr/i/AWWM+) | Een spoel van fibre kabel |
+| Spooled fiber | ![](https://robinmalfait.com/afbeeldingen/droplr/AWWM.png) | Een spoel van fibre kabel |
 | Superconducting nanowires | Wires that are very tiny and can carry data | Super geleidende nano kabels |
 | Qubit | A quantum bit, A bit that can be in a superposition (quantum state) | Een bit in superpositie |
 | Superposition | The special thing about quantum states is that they allow the system to be in a few states simultaneously; that's called a quantum superposition | Super positie |
