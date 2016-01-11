@@ -136,21 +136,11 @@ Dit is de mappen structuur van het project, enkel de belangrijkste bestanden voo
 ```cs
 namespace DienstenCheques {
     public class BundleConfig {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles) {
+            // Dit kan je toepassen voor alle files die je nodig hebt
+            // In include, kan je meerdere items plaatsen
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
-             "~/Scripts/bestellingen.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -365,59 +355,50 @@ namespace DienstenCheques {
 #### 1.2.1.6 Startup.Auth.cs
 
 ```cs
-namespace DienstenCheques
-{
-    public partial class Startup
-    {
-        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
-        public void ConfigureAuth(IAppBuilder app)
-        {
+namespace DienstenCheques {
+    public partial class Startup {
+        // Info: http://go.microsoft.com/fwlink/?LinkId=301864
+        public void ConfigureAuth(IAppBuilder app) {
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(DienstenChequesContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
-
-            // Enable the application to use a cookie to store information for the signed in user
-            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
-            // Configure the sign in cookie
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+            app.CreatePerOwinContext<ApplicationUserManager>(
+                ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationSignInManager>(
+                ApplicationSignInManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(
+                ApplicationRoleManager.Create);
+            app.UseCookieAuthentication(new CookieAuthenticationOptions {
+                AuthenticationType =
+                    DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
-                Provider = new CookieAuthenticationProvider
-                {
-                    // Enables the application to validate the security stamp when the user logs in.
-                    // This is a security feature which is used when you change a password or add an external login to your account.
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-                        validateInterval: TimeSpan.FromMinutes(30),
-                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+                Provider = new CookieAuthenticationProvider {
+                    OnValidateIdentity = SecurityStampValidator
+                        .OnValidateIdentity<
+                            ApplicationUserManager, ApplicationUser>(
+                            validateInterval: TimeSpan.FromMinutes(30),
+                            regenerateIdentity: (manager, user) =>
+                                user.GenerateUserIdentityAsync(manager) )
                 }
             });
-            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
-
-            // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
-            app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
-
-            // Enables the application to remember the second login verification factor such as phone or email.
-            // Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
-            // This is similar to the RememberMe option when you log in.
-            app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
-
-            // Uncomment the following lines to enable logging in with third party login providers
+            app.UseExternalSignInCookie(
+                DefaultAuthenticationTypes.ExternalCookie);
+            app.UseTwoFactorSignInCookie(
+                DefaultAuthenticationTypes.TwoFactorCookie,
+                TimeSpan.FromMinutes(5));
+            app.UseTwoFactorRememberBrowserCookie(
+                DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            // Third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");
-
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
             //app.UseFacebookAuthentication(
             //   appId: "",
             //   appSecret: "");
-
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //app.UseGoogleAuthentication(
+            // new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
             //    ClientSecret = ""
@@ -436,119 +417,93 @@ Dit zijn de css files.
 #### 1.2.3.1 AccountController.cs
 
 ```cs
-namespace DienstenCheques.Controllers
-{
+namespace DienstenCheques.Controllers {
     [Authorize]
-    public class AccountController : Controller
-    {
+    public class AccountController : Controller {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public AccountController()
-        {
-        }
-
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
+        public AccountController() { }
+        public AccountController(ApplicationUserManager userManager,
+            ApplicationSignInManager signInManager) {
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+        public ApplicationSignInManager SignInManager {
+            get {
+                return _signInManager
+                    ?? HttpContext.GetOwinContext().Get<
+                        ApplicationSignInManager>();
             }
-            private set
-            {
-                _signInManager = value;
-            }
+            private set { _signInManager = value; }
         }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        public ApplicationUserManager UserManager {
+            get {
+                return _userManager
+                    ?? HttpContext.GetOwinContext().GetUserManager<
+                        ApplicationUserManager>();
             }
-            private set
-            {
-                _userManager = value;
-            }
+            private set { _userManager = value; }
         }
-
-        //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
-        {
+        public ActionResult Login(string returnUrl) {
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<ActionResult> Login(
+            LoginViewModel model, string returnUrl) {
+            if ( ! ModelState.IsValid) { // Zeer belangrijke validatie stap
                 return View(model);
             }
-
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
-            {
+            switch (result) {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return RedirectToAction("SendCode", new {
+                        ReturnUrl = returnUrl,
+                        RememberMe = model.RememberMe
+                    });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
         }
-
-        //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
-        public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
-        {
-            // Require that the user has already logged in via username/password or external login
-            if (!await SignInManager.HasBeenVerifiedAsync())
-            {
+        public async Task<ActionResult> VerifyCode(
+            string provider, string returnUrl, bool rememberMe) {
+            // Require that the user has already logged in
+            // via username/password or external login
+            if ( ! await SignInManager.HasBeenVerifiedAsync())
                 return View("Error");
-            }
-            return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
+            return View(new VerifyCodeViewModel {
+                Provider = provider,
+                ReturnUrl = returnUrl,
+                RememberMe = rememberMe
+            });
         }
-
-        //
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
+        public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model) {
+            if (!ModelState.IsValid) { return View(model); }
             // The following code protects for brute force attacks against the two factor codes.
             // If a user enters incorrect codes for a specified amount of time then the user account
             // will be locked out for a specified amount of time.
             // You can configure the account lockout settings in IdentityConfig
             var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
-            switch (result)
-            {
+            switch (result) {
                 case SignInStatus.Success:
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
@@ -559,82 +514,52 @@ namespace DienstenCheques.Controllers
                     return View(model);
             }
         }
-
-        //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult Register() { return View(); }
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<ActionResult> Register(RegisterViewModel model) {
+            if (ModelState.IsValid) {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
+                if (result.Succeeded) {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string userId, string code)
-        {
-            if (userId == null || code == null)
-            {
-                return View("Error");
-            }
+        public async Task<ActionResult> ConfirmEmail(string userId, string code) {
+            if (userId == null || code == null) { return View("Error"); }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
-
-        //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult ForgotPassword() { return View(); }
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model) {
+            if (ModelState.IsValid) {
                 var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
-                {
+                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id))) {
                     // Don't reveal that the user does not exist or is not confirmed
                     return View("ForgotPasswordConfirmation");
                 }
-
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
@@ -642,88 +567,61 @@ namespace DienstenCheques.Controllers
                 // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
                 // return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ForgotPasswordConfirmation()
-        {
-            return View();
-        }
-
-        //
+        public ActionResult ForgotPasswordConfirmation() { return View(); }
         // GET: /Account/ResetPassword
         [AllowAnonymous]
-        public ActionResult ResetPassword(string code)
-        {
+        public ActionResult ResetPassword(string code) {
             return code == null ? View("Error") : View();
         }
-
-        //
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
+        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model) {
+            if ( ! ModelState.IsValid) {
                 return View(model);
             }
             var user = await UserManager.FindByNameAsync(model.Email);
-            if (user == null)
-            {
+            if (user == null) {
                 // Don't reveal that the user does not exist
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
-            if (result.Succeeded)
-            {
+            if (result.Succeeded) {
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             AddErrors(result);
             return View();
         }
-
-        //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ResetPasswordConfirmation()
-        {
+        public ActionResult ResetPasswordConfirmation() {
             return View();
         }
-
-        //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
-        {
+        public ActionResult ExternalLogin(string provider, string returnUrl) {
             // Request a redirect to the external login provider
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
-
-        //
         // GET: /Account/SendCode
         [AllowAnonymous]
-        public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
-        {
+        public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe) {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
-            if (userId == null)
-            {
+            if (userId == null) {
                 return View("Error");
             }
             var userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
-
-        //
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
