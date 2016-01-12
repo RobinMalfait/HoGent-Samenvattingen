@@ -10,7 +10,7 @@ title: Engels
 | ------------ | ----------- | ---------- |
 | Arid         | Dry, barren  | Dor |
 | On the cusp  | A point of transition between two different states | Op de rand |
-| Predicament  | A difficult, unpleasant, or embarrassing situation | Moeilijke positie |
+| Predicament  | A difficult, unpleasant, or embarrassing situation | Moeilijke positie/situatie |
 | To propagate | Transmit in a particular direction or through a medium | Voortplanten |
 | Aberration   | A departure from what is normal, typically an unwelcome one | Afwijking |
 | Reticent     | Not revealing one's thoughts or feelings readily | Terughoudend |
@@ -66,7 +66,7 @@ title: Engels
 | Spindly | Long or tall and thin | Spichtig |
 | Denizen | A person, animal, or plant that lives or is found in a particular place | Bewoner |
 | Ubiquitous | Present, appearing, or found everywhere | Alomtegenwoordig |
-| At someone's back and call | Always having to be ready to obey someone's orders immediately | Iemand op zijn wenken bedienen |
+| At someone's beck and call | Always having to be ready to obey someone's orders immediately | Iemand op zijn wenken bedienen |
 | Abacus | A simple device for calculating, consisting of a frame with rows of wires or grooves along which beads are slid | Telraam |
 
 ## Technology and Medicine
