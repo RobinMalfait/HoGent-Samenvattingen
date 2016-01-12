@@ -20,7 +20,7 @@ title: Engels
 | Insurgency | An active revolt or uprising | Opstand |
 | Think-tank | A body of experts providing advice and ideas | Denktank |
 | Incendiary | Designed to cause fires | Brandstichtend |
-| Ballistics | Science of mechanics that deals with launching | Terughoudend |
+| Ballistics | Science of mechanics that deals with launching | Ballistiek |
 | To cope | Deal effectively with something | Rekening houden met |
 | To impart | To give | Geven |
 | En masse | In a group, all together | Massaal (veel mensen) |
@@ -145,7 +145,7 @@ title: Engels
 | Bleak | Not encouraging or giving any reason to have hope | Somber |
 | Obscurity | The state in which somebody is not well known or has been forgotten | Onbekendheid |
 | Prominent | Important or well known | Uitstekend, voortreffelijk  |
-| To monitor | To continually collect data | Bemonsteren |
+| To monitor | To continually collect data | Bezaken, toezicht houden |
 | Watchdogs | An institution that monitors companies either legally or on their ethical behavior | Waakhond |
 | Special interest group | A group of experts with a mutual interest in a certain subject, wanting to expand the knowledge about the subject | Focus groep  |
 | To authenticate | To verify, to make sure something is real | Veriefiëren  |
