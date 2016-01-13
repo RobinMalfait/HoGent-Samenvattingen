@@ -341,6 +341,82 @@ System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
 System.out.println(kerstBoomMetSlinger.versier());
 ```
 
+## 3.5. CODE ALTERNATIEF
+
+```java
+public interface Versiering // Component
+{
+    public String versier();
+}
+
+public class Kerstboom implements Versiering // Concrete Component
+{
+    public String versier()
+    {
+        return "Kerstboom";
+    }
+}
+
+public abstract class Decoratie implements Versiering  // Decorator
+{
+	private Versiering versiering;
+    
+    public Decoratie(Versiering versiering) 
+    {
+    	this.versiering = versiering;
+    }
+    
+    @Override
+    public String versier() 
+    {
+    	return versiering.versier();
+    }
+}
+
+public class KerstBal extends Decoratie // Concrete Decorator
+{
+    
+    private int aantal;
+
+    public KerstBal(int aantal, Versiering versiering)
+    {
+    	super(versiering);
+        this.aantal = aantal;
+    }
+
+    public String versier()
+    {
+        return super.versier() + ', met ' + aantal + ' kerstballen';
+    }
+}
+
+public class KerstSlinger extends Decoratie // Concrete Decorator
+{
+    public KerstSlinger(Versiering versiering)
+    {
+        super(versiering);
+    }
+
+    public String versier()
+    {
+        return super.versier() + ', met een slinger';
+    }
+}
+
+/**
+ * Objecten
+ */
+Versiering kerstBoom = new KerstBoom();
+Versiering kerstBoomMetBallen = new KerstBal(10, new KerstBoom());
+Versiering kerstBoomMetBallenEnEenSlinger = new KerstBal(10, new KerstSlinger(new KerstBoom()));
+Versiering kerstBoomMetSlinger = new KerstSlinger(new KerstBoom());
+
+System.out.println(kerstBoom.versier());
+System.out.println(kerstBoomMetBallen.versier());
+System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
+System.out.println(kerstBoomMetSlinger.versier());
+/**
+```
 # 4. Observer Pattern
 
 Gedrag van objecten.
