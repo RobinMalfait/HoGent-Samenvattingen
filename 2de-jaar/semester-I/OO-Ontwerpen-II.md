@@ -6,7 +6,6 @@ title: OO Ontwerpen II
 Iemand heeft onze problemen al opgelost. We leren waarom en hoe we de kennis en ervaring kunnen inzetten van andere ontwikkelaars die dezelfde weg bij het ontwerpprobleem hebben afgelegd en de trip hebben overleefd.
 
 - De beste manier om patterns te gebruiken is ze uit het hoofd te leren, om vervolgens de plaatsen waar we ze kunnen toepassen te herkennen in onze ontwerpen en in bestaande applicaties.
-
 - We krijgen hergebruik van ervaring
 
 > De enige constante die je altijd tegenkomt is **VERANDERING**
@@ -256,13 +255,6 @@ store.orderPizza("cheese");
 
 Voorbeeld in de cursus: Koffie
 
-Ik ga het voorbeeld nemen van een kerstboom, het is toch kerst voor iedereen, niet waar?
-
-Structuur van objecten.
-
-Decorators kunnen gebruik maken van een interface als component (Zie Code) of van een Abtracte Klasse van een Component (Zie UML DIAGRAM).
-Niet duidelijk? Schrijf maar iets in de comments of verwittig me :)
-
 ## 3.1. DEFINITIE
 
 > Het **Decorator Pattern** kent dynamisch additionele verantwoordelijkheden toe aan een object. Decorators bieden een flexibel alternatief voor het gebruik van subklassen om functionaliteiten uit te breiden.
@@ -360,14 +352,14 @@ public class Kerstboom implements Versiering // Concrete Component
 public abstract class Decoratie implements Versiering  // Decorator
 {
 	private Versiering versiering;
-    
-    public Decoratie(Versiering versiering) 
+
+    public Decoratie(Versiering versiering)
     {
     	this.versiering = versiering;
     }
-    
+
     @Override
-    public String versier() 
+    public String versier()
     {
     	return versiering.versier();
     }
@@ -375,7 +367,7 @@ public abstract class Decoratie implements Versiering  // Decorator
 
 public class KerstBal extends Decoratie // Concrete Decorator
 {
-    
+
     private int aantal;
 
     public KerstBal(int aantal, Versiering versiering)
@@ -575,7 +567,7 @@ Structuur van objecten
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/13fyo.png)
 
-## 5.3. Het principe van Kennisabastractie
+## 5.3. Het principe van Kennisabstractie
 
 > Praat alleen met je directe vrienden. Hoe minder je weet hoe beter.
 
