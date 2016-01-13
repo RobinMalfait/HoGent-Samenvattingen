@@ -185,11 +185,21 @@ Creëren van klassen.
 
 ## 2.1. DEFINITIE
 
-> We nemen de code voor de creatie op en verplaatsen deze naar een ander object at alleen maar het maken van pizza's als taak zal hebben. Dit object noemen we **Factory**.
+> We nemen de code voor de creatie op en verplaatsen deze naar een ander object dat alleen maar het maken van pizza's als taak zal hebben. Dit object noemen we **Factory**.
+
+>Wanneer een methode, een klasse retourneert uit verschillende klassen, met een gelijkaardige superklasse.
 
 ## 2.2. UML DIAGRAM
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/wBun.png)
+
+De Client van de Factory gaat naar de Factory om een instantie van een product te maken.
+
+In de Factory bevindt zich een methode, de creatie-methode.
+Die creatie-methode bevat vaak een parameter, zoals een type (String), waarvan de factory een instantie zal maken.
+
+Daarna geeft de Factory de aangemaakte instantie terug aan de Client.
+De client kan nu allerlei bewerkingen op deze instantie uitvoeren.
 
 ## 2.3. CODE
 
