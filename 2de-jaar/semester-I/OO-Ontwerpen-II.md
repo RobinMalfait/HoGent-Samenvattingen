@@ -295,6 +295,54 @@ public class Kerstboom implements Versiering // Concrete Component
     }
 }
 
+public class KerstBal implements Versiering // Decorators
+{
+    private Versiering versiering;
+    private int aantal;
+
+    public KerstBal(int aantal, Versiering versiering)
+    {
+        this.aantal = aantal;
+        this.versiering = versiering;
+    }
+
+    public String versier()
+    {
+        return versiering.versier() + ', met ' + aantal + ' kerstballen';
+    }
+}
+
+public class KerstSlinger implements Versiering // Decorators
+{
+    private Versiering versiering;
+
+    public KerstSlinger(Versiering versiering)
+    {
+        this.versiering = versiering;
+    }
+
+    public String versier()
+    {
+        return versiering.versier() + ', met een slinger';
+    }
+}
+
+## 3.4. CODE 2
+
+```java
+public interface Versiering // Component
+{
+    public String versier();
+}
+
+public class Kerstboom implements Versiering // Concrete Component
+{
+    public String versier()
+    {
+        return "Kerstboom";
+    }
+}
+
 public abstract class Decoratie implements Versiering  // Decorator
 {
 	private Versiering versiering;
@@ -341,6 +389,18 @@ public class KerstSlinger extends Decoratie // Concrete Decorator
     }
 }
 
+/**
+ * Objecten
+ */
+Versiering kerstBoom = new KerstBoom();
+Versiering kerstBoomMetBallen = new KerstBal(10, new KerstBoom());
+Versiering kerstBoomMetBallenEnEenSlinger = new KerstBal(10, new KerstSlinger(new KerstBoom()));
+Versiering kerstBoomMetSlinger = new KerstSlinger(new KerstBoom());
+
+System.out.println(kerstBoom.versier());
+System.out.println(kerstBoomMetBallen.versier());
+System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
+System.out.println(kerstBoomMetSlinger.versier());
 /**
  * Objecten
  */
