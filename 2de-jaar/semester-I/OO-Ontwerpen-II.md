@@ -279,7 +279,7 @@ Dit is een van de principes van de **SOLID** principles.
 
 Ons doel is dat klassen eenvoudig uitgebreid kunnen worden om nieuw gedrag te incorporeren zonder de bestaande code te wijzigen. Hoe we dat gaan bereiken?
 
-## 3.4. CODE
+## 3.4. CODE (Interface manier)
 
 ```java
 public interface Versiering // Component
@@ -341,7 +341,7 @@ System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
 System.out.println(kerstBoomMetSlinger.versier());
 ```
 
-## 3.5. CODE ALTERNATIEF
+## 3.5. CODE (Abstracte manier)
 
 ```java
 public interface Versiering // Component
