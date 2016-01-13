@@ -295,35 +295,49 @@ public class Kerstboom implements Versiering // Concrete Component
     }
 }
 
-public class KerstBal implements Versiering // Decorators
+public abstract class Decoratie implements Versiering  // Decorator
 {
-    private Versiering versiering;
+	private Versiering versiering;
+    
+    public Decoratie(Versiering versiering) 
+    {
+    	this.versiering = versiering;
+    }
+    
+    @Override
+    public String versier() 
+    {
+    	return versiering.versier();
+    }
+}
+
+public class KerstBal extends Decoratie // Concrete Decorator
+{
+    
     private int aantal;
 
     public KerstBal(int aantal, Versiering versiering)
     {
+    	super(versiering);
         this.aantal = aantal;
-        this.versiering = versiering;
     }
 
     public String versier()
     {
-        return versiering.versier() + ', met ' + aantal + ' kerstballen';
+        return super.versier() + ', met ' + aantal + ' kerstballen';
     }
 }
 
-public class KerstSlinger implements Versiering // Decorators
+public class KerstSlinger extends Decoratie // Concrete Decorator
 {
-    private Versiering versiering;
-
     public KerstSlinger(Versiering versiering)
     {
-        this.versiering = versiering;
+        super(versiering);
     }
 
     public String versier()
     {
-        return versiering.versier() + ', met een slinger';
+        return super.versier() + ', met een slinger';
     }
 }
 
