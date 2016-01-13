@@ -2,7 +2,22 @@
 title: OO Ontwerpen II
 ---
 
+# Design patterns
+Iemand heeft onze problemen al opgelost. We leren waarom en hoe we de kennis en ervaring kunnen inzetten van andere ontwikkelaars die dezelfde weg bij het ontwerpprobleem hebben afgelegd en de trip hebben overleefd.
+
+- De beste manier om patterns te gebruiken is ze uit het hoofd te leren, om vervolgens de plaatsen waar we ze kunnen toepassen te herkennen in onze ontwerpen en in bestaande applicaties.
+
+- We krijgen hergebruik van ervaring
+
 > De enige constante die je altijd tegenkomt is **VERANDERING**
+
+**Soorten patterns:**
+- Strategy Pattern
+- Simple Factory
+- Decorator Pattern
+- Observer Pattern
+- Façade Pattern
+- State Pattern
 
 # 1. Strategy Pattern
 
