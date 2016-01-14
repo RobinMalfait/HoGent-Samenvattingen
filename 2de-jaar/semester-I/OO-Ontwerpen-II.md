@@ -408,7 +408,6 @@ System.out.println(kerstBoom.versier());
 System.out.println(kerstBoomMetBallen.versier());
 System.out.println(kerstBoomMetBallenEnEenSlinger.versier());
 System.out.println(kerstBoomMetSlinger.versier());
-/**
 ```
 # 4. Observer Pattern
 
