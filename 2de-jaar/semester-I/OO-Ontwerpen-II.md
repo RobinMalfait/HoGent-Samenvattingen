@@ -17,6 +17,7 @@ Iemand heeft onze problemen al opgelost. We leren waarom en hoe we de kennis en 
 - Observer Pattern
 - Façade Pattern
 - State Pattern
+- MVC Pattern
 
 # 1. Strategy Pattern
 
@@ -565,7 +566,7 @@ Structuur van objecten
 
 ## 5.2. UML DIAGRAM
 
-![](https://robinmalfait.com/afbeeldingen/droplr/13fyo.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/17ZMg.png)
 
 ## 5.3. Het principe van Kennisabstractie
 
