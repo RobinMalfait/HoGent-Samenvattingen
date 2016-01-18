@@ -140,10 +140,10 @@ namespace DienstenCheques {
             // Dit kan je toepassen voor alle files die je nodig hebt
             // In include, kan je meerdere items plaatsen
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+              "~/Content/bootstrap.css",
+              "~/Content/site.css"));
         }
     }
 }
@@ -156,7 +156,9 @@ namespace DienstenCheques {
     public class FilterConfig {
         public static void RegisterGlobalFilters(
             GlobalFilterCollection filters
-        ) { filters.Add(new HandleErrorAttribute()); }
+        ) {
+            filters.Add(new HandleErrorAttribute());
+        }
     }
 }
 ```
@@ -167,38 +169,31 @@ namespace DienstenCheques {
 namespace DienstenCheques {
     public class EmailService : IIdentityMessageService {
         public Task SendAsync(IdentityMessage message) {
-            // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
     }
     public class SmsService : IIdentityMessageService{
         public Task SendAsync(IdentityMessage message) {
-            // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
         }
     }
-    // Configure the application user manager used in this application.
-    // UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser> {
         public ApplicationUserManager(
             IUserStore<ApplicationUser> store
-        ) : base(store) {}
-        public static ApplicationUserManager Create(
-            IdentityFactoryOptions<ApplicationUserManager> options,
-            IOwinContext context) {
+        ) : base(store) { }
+
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) {
             var manager = new ApplicationUserManager(
                 new UserStore<ApplicationUser>(
                     context.Get<DienstenChequesContext>()
                 )
             );
-            // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(
                 manager
             ) {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
-            // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator {
                 RequiredLength = 6,
                 RequireNonLetterOrDigit = true,
@@ -206,28 +201,16 @@ namespace DienstenCheques {
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
-            // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
-            // Register two factor authentication providers.
-            // Phone, Emails as a step of receiving a code for verifying
-            // You can write your own provider and plug it in here.
             manager.RegisterTwoFactorProvider(
                 "Phone Code",
                 new PhoneNumberTokenProvider<ApplicationUser> {
                     MessageFormat = "Your security code is {0}"
                 }
-            );
-            manager.RegisterTwoFactorProvider(
-                "Email Code",
-                new EmailTokenProvider<ApplicationUser> {
-                    Subject = "Security Code",
-                    BodyFormat = "Your security code is {0}"
-                }
-            );
-            manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
+            ); // Kan ook voor "Email Code" met een Subject & BodyFormat
+            manager.SmsService = new SmsService(); // EmailService
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null) {
                 manager.UserTokenProvider =
@@ -239,9 +222,7 @@ namespace DienstenCheques {
         }
     }
     // Configure the application sign-in manager
-    public class ApplicationSignInManager : SignInManager<
-        ApplicationUser, string
-    > {
+    public class ApplicationSignInManager : SignInManager<ApplicationUser, string> {
         public ApplicationSignInManager(
             ApplicationUserManager userManager,
             IAuthenticationManager authenticationManager
@@ -357,52 +338,28 @@ namespace DienstenCheques {
 ```cs
 namespace DienstenCheques {
     public partial class Startup {
-        // Info: http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app) {
-            // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(DienstenChequesContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(
-                ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(
-                ApplicationSignInManager.Create);
-            app.CreatePerOwinContext<ApplicationRoleManager>(
-                ApplicationRoleManager.Create);
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions {
                 AuthenticationType =
                     DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider {
-                    OnValidateIdentity = SecurityStampValidator
-                        .OnValidateIdentity<
-                            ApplicationUserManager, ApplicationUser>(
-                            validateInterval: TimeSpan.FromMinutes(30),
-                            regenerateIdentity: (manager, user) =>
-                                user.GenerateUserIdentityAsync(manager) )
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(validateInterval: TimeSpan.FromMinutes(30), regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
-            app.UseExternalSignInCookie(
-                DefaultAuthenticationTypes.ExternalCookie);
-            app.UseTwoFactorSignInCookie(
-                DefaultAuthenticationTypes.TwoFactorCookie,
-                TimeSpan.FromMinutes(5));
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
             app.UseTwoFactorRememberBrowserCookie(
                 DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
             // Third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-            //app.UseGoogleAuthentication(
-            // new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
         }
     }
 }
@@ -428,6 +385,7 @@ namespace DienstenCheques.Controllers {
             UserManager = userManager;
             SignInManager = signInManager;
         }
+        // Zelfde voor ApplicationUserManager
         public ApplicationSignInManager SignInManager {
             get {
                 return _signInManager
@@ -436,14 +394,7 @@ namespace DienstenCheques.Controllers {
             }
             private set { _signInManager = value; }
         }
-        public ApplicationUserManager UserManager {
-            get {
-                return _userManager
-                    ?? HttpContext.GetOwinContext().GetUserManager<
-                        ApplicationUserManager>();
-            }
-            private set { _userManager = value; }
-        }
+
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl) {
@@ -459,8 +410,7 @@ namespace DienstenCheques.Controllers {
             if ( ! ModelState.IsValid) { // Zeer belangrijke validatie stap
                 return View(model);
             }
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            // To enable password failures change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result) {
                 case SignInStatus.Success:
@@ -1169,11 +1119,17 @@ namespace DienstenCheques.Models.DAL.Mapper {
             Property(t => t.Voornaam).IsRequired().HasMaxLength(100);
             Property(t=>t.Email).IsRequired().HasMaxLength(100);
             //Relationships
-            HasMany(t => t.Bestellingen).WithRequired().Map(m => m.MapKey("GebruikersNummer"))
+            HasMany(t => t.Bestellingen)
+                .WithRequired()
+                .Map(m => m.MapKey("GebruikersNummer"))
                 .WillCascadeOnDelete(false);
-             HasMany(t => t.Prestaties).WithRequired().Map(m => m.MapKey("GebruikersNummer"))
+             HasMany(t => t.Prestaties)
+                .WithRequired()
+                .Map(m => m.MapKey("GebruikersNummer"))
                 .WillCascadeOnDelete(false);
-             HasMany(t => t.Portefeuille).WithRequired().Map(m => m.MapKey("GebruikersNummer"))
+             HasMany(t => t.Portefeuille)
+                .WithRequired()
+                .Map(m => m.MapKey("GebruikersNummer"))
             .WillCascadeOnDelete(false);
         }
     }
