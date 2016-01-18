@@ -1802,11 +1802,11 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-### 1.2.9 Views
+### 1.2.10 Views
 
-#### 1.2.9.1 Account
+#### 1.2.10.1 Account
 
-##### 1.2.9.1.1 ConfirmEmail.cshtml
+##### 1.2.10.1.1 ConfirmEmail.cshtml
 
 ```html
 @{
@@ -1821,7 +1821,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </div>
 ```
 
-##### 1.2.9.1.2 ExternalLoginConfirmation.cshtml
+##### 1.2.10.1.2 ExternalLoginConfirmation.cshtml
 
 ```html
 @model DienstenCheques.Models.ExternalLoginConfirmationViewModel
@@ -1862,7 +1862,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.3 ExternalLoginFailure.cshtml
+##### 1.2.10.1.3 ExternalLoginFailure.cshtml
 
 ```html
 @{
@@ -1875,7 +1875,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </hgroup>
 ```
 
-##### 1.2.9.1.4 ForgotPassword.cshtml
+##### 1.2.10.1.4 ForgotPassword.cshtml
 
 ```html
 @model DienstenCheques.Models.ForgotPasswordViewModel
@@ -1909,7 +1909,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.5 ForgotPasswordConfirmation.cshtml
+##### 1.2.10.1.5 ForgotPasswordConfirmation.cshtml
 
 ```html
 @{
@@ -1926,7 +1926,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </div>
 ```
 
-##### 1.2.9.1.6 Login.cshtml
+##### 1.2.10.1.6 Login.cshtml
 
 ```html
 @using DienstenCheques.Models
@@ -1994,7 +1994,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.7 Register.cshtml
+##### 1.2.10.1.7 Register.cshtml
 
 ```html
 @model DienstenCheques.Models.RegisterViewModel
@@ -2040,7 +2040,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.8 ResetPassword.cshtml
+##### 1.2.10.1.8 ResetPassword.cshtml
 
 ```html
 @model DienstenCheques.Models.ResetPasswordViewModel
@@ -2087,7 +2087,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.9 ResetPasswordConfirmation.cshtml
+##### 1.2.10.1.9 ResetPasswordConfirmation.cshtml
 
 ```html
 @{
@@ -2104,7 +2104,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </div>
 ```
 
-##### 1.2.9.1.10 SendCode.cshtml
+##### 1.2.10.1.10 SendCode.cshtml
 
 ```html
 @model DienstenCheques.Models.SendCodeViewModel
@@ -2133,7 +2133,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.11 VerifyCode.cshtml
+##### 1.2.10.1.11 VerifyCode.cshtml
 
 ```html
 @model DienstenCheques.Models.VerifyCodeViewModel
@@ -2176,7 +2176,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.1.12 _ExternalLoginsListPartial.cshtml
+##### 1.2.10.1.12 _ExternalLoginsListPartial.cshtml
 
 ```html
 @model DienstenCheques.Models.ExternalLoginListViewModel
@@ -2209,9 +2209,9 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-#### 1.2.9.2 Bestellingen
+#### 1.2.10.2 Bestellingen
 
-##### 1.2.9.2.1 Bestelling.cshtml
+##### 1.2.10.2.1 Bestelling.cshtml
 
 ```html
 @model IEnumerable<DienstenCheques.ViewModels.BestellingenViewModels.BestellingViewModel>
@@ -2267,7 +2267,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </table>
 ```
 
-##### 1.2.9.2.2 Index.cshtml
+##### 1.2.10.2.2 Index.cshtml
 
 ```html
 @model DienstenCheques.ViewModels.BestellingenViewModels.BestellingenViewModel
@@ -2320,7 +2320,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.2.3 Nieuw.cshtml
+##### 1.2.10.2.3 Nieuw.cshtml
 
 ```html
 @model DienstenCheques.ViewModels.BestellingenViewModels.NieuweBestellingViewModel
@@ -2382,9 +2382,9 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-#### 1.2.9.3 Home
+#### 1.2.10.3 Home
 
-##### 1.2.9.3.1 About.cshtml
+##### 1.2.10.3.1 About.cshtml
 
 ```html
 @{
@@ -2396,7 +2396,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 <p>Use this area to provide additional information.</p>
 ```
 
-##### 1.2.9.3.2 Contact.cshtml
+##### 1.2.10.3.2 Contact.cshtml
 
 ```html
 @{
@@ -2418,7 +2418,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </address>
 ```
 
-##### 1.2.9.3.3 Index.cshtml
+##### 1.2.10.3.3 Index.cshtml
 
 ```html
 @{
@@ -2442,9 +2442,9 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </div>
 ```
 
-#### 1.2.9.4 Manage
+#### 1.2.10.4 Manage
 
-##### 1.2.9.4.1 AddPhoneNumber.cshtml
+##### 1.2.10.4.1 AddPhoneNumber.cshtml
 
 ```html
 @model DienstenCheques.Models.AddPhoneNumberViewModel
@@ -2478,7 +2478,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.4.2 ChangePassword.cshtml
+##### 1.2.10.4.2 ChangePassword.cshtml
 
 ```html
 @model DienstenCheques.Models.ChangePasswordViewModel
@@ -2523,7 +2523,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.4.3 Index.cshtml
+##### 1.2.10.4.3 Index.cshtml
 
 ```html
 @model DienstenCheques.Models.IndexViewModel
@@ -2612,7 +2612,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </div>
 ```
 
-##### 1.2.9.4.4 ManageLogins.cshtml
+##### 1.2.10.4.4 ManageLogins.cshtml
 
 ```html
 @model DienstenCheques.Models.ManageLoginsViewModel
@@ -2687,7 +2687,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.4.5 SetPassword.cshtml
+##### 1.2.10.4.5 SetPassword.cshtml
 
 ```html
 @model DienstenCheques.Models.SetPasswordViewModel
@@ -2731,7 +2731,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-##### 1.2.9.4.6 VerifyPhoneNumber.cshtml
+##### 1.2.10.4.6 VerifyPhoneNumber.cshtml
 
 ```html
 @model DienstenCheques.Models.VerifyPhoneNumberViewModel
@@ -2767,9 +2767,9 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 }
 ```
 
-#### 1.2.9.5 Shared
+#### 1.2.10.5 Shared
 
-##### 1.2.9.5.1 Error.cshtml
+##### 1.2.10.5.1 Error.cshtml
 
 ```html
 @model System.Web.Mvc.HandleErrorInfo
@@ -2782,7 +2782,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 ```
 
-##### 1.2.9.5.2 Lockout.cshtml
+##### 1.2.10.5.2 Lockout.cshtml
 
 ```html
 @model System.Web.Mvc.HandleErrorInfo
@@ -2797,7 +2797,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </hgroup>
 ```
 
-##### 1.2.9.5.3 _Layout.cshtml
+##### 1.2.10.5.3 _Layout.cshtml
 
 ```html
 <!DOCTYPE html>
@@ -2855,7 +2855,7 @@ namespace DienstenCheques.ViewModels.BestellingenViewModels {
 </html>
 ```
 
-##### 1.2.9.5.4 _LoginPartial.cshtml
+##### 1.2.10.5.4 _LoginPartial.cshtml
 
 ```html
 @using Microsoft.AspNet.Identity
@@ -2882,7 +2882,7 @@ else
 }
 ```
 
-#### 1.2.9.6 Web.config
+#### 1.2.10.6 Web.config
 
 ```xml
 <?xml version="1.0"?>
@@ -2922,7 +2922,7 @@ else
 </configuration>
 ```
 
-#### 1.2.9.7 _ViewStart.cshtml
+#### 1.2.10.7 _ViewStart.cshtml
 
 ```html
 @{
@@ -2930,7 +2930,7 @@ else
 }
 ```
 
-### 1.2.10 Web.config
+### 1.2.11 Web.config
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
