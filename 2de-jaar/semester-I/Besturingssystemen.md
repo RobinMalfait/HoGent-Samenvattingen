@@ -615,7 +615,7 @@ Er zijn twee strategieën die aan korte processen een hoge prioriteit geven:
 - Shortest Remaining Job Next (SRJN) = preëmptieve versie van SJF
 - Shortest Job First (SJF) -> hier zal de scheduler van het proces met de kleinste lengte uitvoeren
 
-![](https://robinmalfait.com/afbeeldingen/droplr/1ecG.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/14iTK.png)
 
 ### 5.5 Starvation
 
