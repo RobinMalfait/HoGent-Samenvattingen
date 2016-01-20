@@ -838,7 +838,7 @@ void P0()
     while(true)
     {
         flag[0] = true;
-        turn = 0;
+        turn = 1;
         while (flag[1] && turn == 1) {
             // Do nothing...
         }
