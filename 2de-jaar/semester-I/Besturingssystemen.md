@@ -584,15 +584,15 @@ bevatten:
 
 Hier wordt gebruik gemaakt van **een vaste tijdswaarde of tijdkwantum**, wanneer dit overschreden wordt, zal de scheduler het proces onderbreken en een volgend proces inladen.
 
-![](https://robinmalfait.com/afbeeldingen/droplr/15Nfe.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/16wo3.png)
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1bsKh.png)
 
-### 5.2. First-in-First-out*$ scheduling (FIFO) of First-come-first-served-scheduling (FCFS)
+### 5.2. First-in-First-out** scheduling (FIFO) of First-come-first-served-scheduling (FCFS)
 
 Wanneer een proces als eerste de CPU vraagt zal hij die ook krijgen, waarbij de andere processen die erna komen zullen moeten wachten.
 
-![](https://robinmalfait.com/afbeeldingen/droplr/1hJUS.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/1fqOy.png)
 
 Een FIFO-scheduler kan deel uitmaken van een ingewikkeldere methode zoals bijvoorbeeld bij system die zowel batch-gebruikers als interactieve gebruikers hebben.
 
