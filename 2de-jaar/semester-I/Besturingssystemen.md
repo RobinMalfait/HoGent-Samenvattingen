@@ -81,7 +81,7 @@ Hierbij is *scheduling* een belangrijk concept
 
 *scheduling*: verwijst naar de manier waarop processen prioriteiten worden gegeven in een prioriteitenwachtrij.
 
-Soorten mult-user-computers afhankelijk van de soorten programma's die ze aankunnen:
+Soorten multi-user-computers afhankelijk van de soorten programma's die ze aankunnen:
 
 - **Interactieve programma's** snelle respons
 - **Batch-programma's** geen directe respons
@@ -424,7 +424,7 @@ Links:
         - Afhankelijk van mix van processen in systeem
     - Efficiënt werken, niet te veel idle staan
 - **Prioriteiten**
-    - Elk proces krijgt ene prioriteit
+    - Elk proces krijgt een prioriteit
         - Hoe hoger hoe belangrijker
     - Besturingssysteem baseert zich hierop bij de scheduling
     - Lever ook problemen:
@@ -689,7 +689,7 @@ ontstaan.
 
 **Voorbeeld:**
 
-Beschouw een computersysteem met veel terminals. Stel dat de gebruikers elke regel, bestemd voor het computersysteem, beëindigen met de <enter>-toets. Stel dat wij het totaal aantal lijnen voor alle gebruikers samen wensen bij te houden in een variabele "linesentered". Veronderstel dat twee processen proberen de variabele "linesentered" simultaan te verhogen met 1.
+Beschouw een computersysteem met veel terminals. Stel dat de gebruikers elke regel, bestemd voor het computersysteem, beëindigen met de <kbd>enter</kbd>-toets. Stel dat wij het totaal aantal lijnen voor alle gebruikers samen wensen bij te houden in een variabele "linesentered". Veronderstel dat twee processen proberen de variabele "linesentered" simultaan te verhogen met 1.
 
 Elk proces heeft dan zijn eigen kopij van volgende code:
 
@@ -1707,7 +1707,7 @@ bash -x naam_van_het_script     # Dit runt het script, met debug mode aan
 source naam_van_het_script      # Werkt ook zeker
 ```
 
-## Debuggen van ene bash script.
+## Debuggen van een bash script.
 
 ```
 bash -x naam_van_het_script
