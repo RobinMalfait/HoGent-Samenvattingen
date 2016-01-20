@@ -37,7 +37,7 @@ title: Besturingssystemen
     - Beurtelingse uitvoering van programma's
     - Gemeenschappelijke bronnen
 - **Midden jaren 60** -> verschillende computers van hetzelfde type gebruikten één OS
-- **Begin jaren 70** -> OS kan computers met meer dan 1 prcoessor aan
+- **Begin jaren 70** -> OS kan computers met meer dan 1 processor aan
 - **Begin jaren 80**-> gemeenschappelijk gebruik van informatie
 - **Jaren 90** -> distributed computing, parallelle verwerking
 
@@ -112,7 +112,7 @@ A.d.h.v. virtuele machines kunnen <font color=red>verschillende besturingssystem
 
 ### 4.2. Processen
 
-Elk programmatje heeft 1 of meerdere processen.
+Elk programmaatje heeft 1 of meerdere processen.
 
 > **Process**: een of meerdere reeksenopdrachten die door een besturingsprogramma worden beschouwd als een werkeenheid
 
@@ -171,7 +171,7 @@ Vaak is het onmogelijk om aan alle criteria te voldoen en worden sommige opgeoff
 | pwd | print working directory (huidige map) |
 | cd | Change directory |
 | tree | boomstructuur |
-| cat | Concatenate, laat de inhoud van een tekstbestand ove rhet scherm lopen |
+| cat | Concatenate, laat de inhoud van een tekstbestand over het scherm lopen |
 | less | laat je toe om de tekst, pagina per pagina op je scherm te bekijken |
 | man | manuals (handleidingen) voor een gegeven commando: `man ls` |
 
@@ -188,7 +188,7 @@ Informatie geassocieerd met een bestand wordt bijgehouden in een inode:
 - aantal links
 - access, modification & change date
 
-Een inode wordt geindentificeerd via een *inodenummer*
+Een inode wordt geïdentificeerd via een *inodenummer*
 
 * elk inodenummer is uniek binnen dezelfde device
 * men kan de inodenummers van files en directories zien via
@@ -201,7 +201,7 @@ Een inode wordt geindentificeerd via een *inodenummer*
 
 > **PATH**: zorgt ervoor dat we niet steeds het volledige pad moeten ingeven om een commando uit te voeren of om een bestand te openen.
 >
-> PATH is een environment variable dat één of meerdere map verwijzigen bevat gescheiden met ";", Deze worden onderzocht om een commando te lokaliseren en uit te voeren.
+> PATH is een environment variable dat één of meerdere map verwijzingen bevat gescheiden met ";", Deze worden onderzocht om een commando te lokaliseren en uit te voeren.
 
 **Absoluut vs relatief pad**:
 
@@ -291,22 +291,22 @@ Huidige shell: `echo $SHELL`
 | <kbd>Ctrl</kbd>+<kbd>L</kbd> | Maakt de terminal leeg, zodat je prompt bovenaan komt te staan. |
 | <kbd>Ctrl</kbd>+<kbd>R</kbd> | Zoek in de commandogeschiedenis |
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Bevriest een programma |
-| Pijtljes toetsen <kbd>◀</kbd> of <kbd>▶</kbd> | Beweeg de cursor over en weer op de commandolijn |
-| Pijtljes toetsen <kbd>▲</kbd> of <kbd>▼</kbd> | Overloopt de commandogeschiedenis. Ga naar de lijn die je opnieuw wilt uitvoeren, editeer eventueel en druk <kbd>enter</kbd> |
+| Pijltjes toetsen <kbd>◀</kbd> of <kbd>▶</kbd> | Beweeg de cursor over en weer op de commandolijn |
+| Pijltjes toetsen <kbd>▲</kbd> of <kbd>▼</kbd> | Overloopt de commandogeschiedenis. Ga naar de lijn die je opnieuw wilt uitvoeren, editeer eventueel en druk <kbd>enter</kbd> |
 | <kbd>Shift</kbd>+<kbd>PageUp</kbd> en <kbd>Shift</kbd>+<kbd>PageDown</kbd> | Overloopt de terminalbuffer om tekst te zien die al van het scherm gerold is. |
 | <kbd>Tab</kbd> | Commando- of bestandsnaam vervolledigen. Als er meerdere mogelijkheden zijn, zal de shell je met een geluidje of een flits waarschuwen |
 | <kbd>Tab</kbd> <kbd>Tab</kbd> | Toont de mogelijke bestandsnamen of commandonamen om te vervolledigen |
 
 ### 5.2.3 Werken met bestanden
 
-`touch bestand1 bestand2` om bestanden aan te maken, wanneer het bestand reeds bestaat dan wordt de datum geupdatet.
+`touch bestand1 bestand2` om bestanden aan te maken, wanneer het bestand reeds bestaat dan wordt de datum geüpdatet.
 
 `cp BRON DEST` kopieert een bestand van bron naar dest.
 
 Opties:
 
 - -r: kopieert mappen, inclusief hun inhoud (recursief)
-- -v: verbose, toont alle copieacties op het scherm
+- -v: verbose, toont alle kopieacties op het scherm
 
 `mv BRON DEST` verplaatst een bestand van bron naar dest.
 
@@ -314,7 +314,7 @@ Opties:
 
 - -i: interactive mode, vraagt bevestiging
 - -v: verbose
-- -f: force, geeft geen waarshuwing
+- -f: force, geeft geen waarschuwing
 - -r: recursief, kan dus ook met mappen
 
 `rm BRON` verwijdert een bestand
@@ -342,7 +342,7 @@ tests:
 acties:
 
 - -exec opdracht
-- -print: stuurt resultaat naar standard output
+- -print: stuurt resultaat naar standaard output
 
 ### 5.2.4 Werken met mappen
 
@@ -366,14 +366,14 @@ Links:
 ### 5.2.5 Inhoud van bestanden
 
 - `cat`: concatenatie
-- `tac`: zelfde als cat, maar omgekeerde volgoerde van regels
+- `tac`: zelfde als cat, maar omgekeerde volgorde van regels
 - `head`: toont de eerste 10 lijnen van een bestand
 - `tail`: toont de laatste 10 lijnen van een bestand, deze wordt veel gebruikt voor inhoud van log bestanden te bekijken, met de optie `tail -f /var/log/message..` houdt het commando het bestand in de gaten en update het automatisch.
 - `more`: voorganger van `less` (`more` is less then `less`)
 - `grep [OPTIES] tekenreeks [bestanden]`, enkele opties zijn:
     - -i, --ignore-case
     - -n, --line-number
-    - -s, --slient (onderdrukt alle foutmeldingen)
+    - -s, --silent (onderdrukt alle foutmeldingen)
 
 # Hoofdstuk 2: Scheduling
 
@@ -383,7 +383,7 @@ Links:
 
 **Doel:**
 
-- Doematigheid en tevredenheid van de gebruiker
+- Doelmatigheid en tevredenheid van de gebruiker
 - Resources moeten effectief/efficiënt gebruikt worden
     - Op een snelle rendabele manier
 
@@ -604,7 +604,7 @@ Een manier om hybride methode van scheduling te implementeren is met *batch-part
 
 Hierbij lijkt de scheduling-methode op Round-Robin als er veel I/O-activiteit is en op FIFO wanneer er weinig of geen I/O-activiteit is.
 
-De beste scheduling-methode is afhankelijk van de soorten processen in de ready-toestan en het MFQ is gevoelig voor wijzigingen in de activiteiten (**adaptieve methode**)
+De beste scheduling-methode is afhankelijk van de soorten processen in de ready-toestand en het MFQ is gevoelig voor wijzigingen in de activiteiten (**adaptieve methode**)
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1bAy8.png)
 
@@ -638,7 +638,7 @@ Oplossingen:
 | Overheat | laag | de laagste van alle methoden | kan hog zijn; ingewikkelde datastructuren en routines zijn nodig om na elke reschedule de juiste queue te vinden | Kan hoog zijn; vereist een routine om voor elke reschedule de kortste job te vinden | kan hoog zijn; vereist een routine om voor elke reschedule de minimale resterende tijd te vinden |
 | CPU-gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | krijgt lage prioriteit als de I/O-gebonden processen aanwezig zijn | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen |
 | I/O-gebonden processen |geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | krijgt hoge prioriteit om I/O processors actief te houden | geen onderscheid tussen CPU-gebonden en I/O gebonden processen | geen onderscheid tussen CPU-gebonden en I/O gebonden processen |
-| Onbepaald uitstel | treedt niet op | treedt niet op | kan optreden bij CPU-gebonden processen | kan optreden bij processe met lange geschatte runtijden | kan optreden bij processe met lange geschatte runtijden |
+| Onbepaald uitstel | treedt niet op | treedt niet op | kan optreden bij CPU-gebonden processen | kan optreden bij processen met lange geschatte runtijden | kan optreden bij processen met lange geschatte runtijden |
 
 # Hoofdstuk 3: Concurrency - Parallelle Processen
 
@@ -650,7 +650,7 @@ Oplossingen:
 
 > Aan de basis van al deze zaken, en daarmee aan de basis van het ontwerp van besturingssystemen, ligt **concurrency** (**gelijktijdig**)
 
-In de systemen met I/O channels(I/O-processors) zijn verscheidene acties tegelijkertijd gaande. De CPU werkt aan één proces, terwijl de I/O channelsaan andere werken. Het is duidelijk dat het gebruik van meerdere processors de verwerkingscapaciteit vergroot.
+In de systemen met I/O channels(I/O-processors) zijn verscheidene acties tegelijkertijd gaande. De CPU werkt aan één proces, terwijl de I/O channels aan andere werken. Het is duidelijk dat het gebruik van meerdere processors de verwerkingscapaciteit vergroot.
 Stel dat er een programmeertaal bestaat waarin je onafhankelijke processen kan specificeren, en dat er meerdere processors beschikbaar zijn om aan een proces te werken.
 
 ```
@@ -662,10 +662,10 @@ PARBEGIN
 PAREND
 ```
 
-Concurrency treedt op in 3 verschilllende situaties:
+Concurrency treedt op in 3 verschillende situaties:
 
 - **Meerdere toepassingen**. Multiprogramming werd uitgevonden om verwerkingstijd dynamisch te kunnen verdelen tussen een aantal actieve toepassingen.
-- **Gestructureerde toepassing**. Als uitbreiding op de beginselen van modulair ontwerpen en gestructureerd programmeren kunnen sommige toepassingn effectief worden geprogrammeerd als een verzameling gelijktrijdige processen.
+- **Gestructureerde toepassing**. Als uitbreiding op de beginselen van modulair ontwerpen en gestructureerd programmeren kunnen sommige toepassingen effectief worden geprogrammeerd als een verzameling gelijktijdige processen.
 - **Structuur van het besturingssysteem**. Dezelfde voordelen van het structureren gelden voor de systeemprogrammeur en we hebben gezien dat besturingssystemen zelf vaak worden geïmplementeerd als een verzameling processen of thread.
 
 ## 3.2 Wederzijdse uitsluiting (mutual exclusion)
@@ -705,7 +705,7 @@ store linesentered
 
 > De kritieke sectie van een proces is de code die naar gemeenschappelijke data verwijst
 >
-> Net voor de kritieke sectie van een proces wodt ENTERMUTUALEXCLUSION uitgevoerd en na de kritieke sectie wordt EXITMUTUALEXCLUSION uitgevoerd
+> Net voor de kritieke sectie van een proces wordt ENTERMUTUALEXCLUSION uitgevoerd en na de kritieke sectie wordt EXITMUTUALEXCLUSION uitgevoerd
 
 - ENTERMUTUALEXCLUSION doet het volgende:
     - Controleren of een ander proces in zijn kritieke sectie is en, als dat het geval is, wachten;
@@ -718,7 +718,7 @@ We gaan er van uit dat er slechts 2 gelijktijdige processen zijn.
 
 ### 3.3.1 Eerste poging
 
-We declareren een <font color="red">booleaanse variabele "bezet"</font>, die voor beide processen globaal is. "Bezet" krijgt de waarde trueals één van de processen zijn kritieke sectie ingaat en is falseals dit niet het geval is.
+We declareren een <font color="red">booleaanse variabele "bezet"</font>, die voor beide processen globaal is. "Bezet" krijgt de waarde true als één van de processen zijn kritieke sectie ingaat en is false als dit niet het geval is.
 Zo kan een proces dat aan zijn kritieke sectie moet beginnen, "bezet" controleren om te zien of het andere proces in zijn kritieke sectie is.
 Het "wachten" en "wekken" kan op verschillende manieren worden geïmplementeerd. Een proces kan wachten en een ander proces kan het wekken.
 
@@ -737,9 +737,9 @@ Helaas is er een ongewenst neveneffect. De twee processen kunnen niet meer onafh
 
 Twee processen kunnen hun kritieke secties op hetzelfde moment ingaan omdat beide een "bezetting" pas claimen nadat gecontroleerd is of er een proces met zijn kritieke sectie bezig is.
 
-**Zwakke plek** -> wanneer een proces "bezet" op truezet, moet het wachten omdat "bezet" trueis. Het proces maakt het zichzelf onmogelijk in zijn kritieke sectie te komen. De poging mislukt omdat het hier geen verschil maakt welk proces in zijn kritieke sectie zit. Een proces moet onderscheid kunnen maken tussen zichzelf en andere processen.
+**Zwakke plek** -> wanneer een proces "bezet" op true zet, moet het wachten omdat "bezet" true is. Het proces maakt het zichzelf onmogelijk in zijn kritieke sectie te komen. De poging mislukt omdat het hier geen verschil maakt welk proces in zijn kritieke sectie zit. Een proces moet onderscheid kunnen maken tussen zichzelf en andere processen.
 
-Mogelijke oplossing -> twee globale booleaanse variabelen gebruiken "bezet1" en "bezet2". "Bezet1" is trueals proces 1 in zijn kritieke sectie is en falseals dit niet het geval is. "Bezet2" is trueals proces 2 in zijn kritieke sectie is en falseals het dat niet is. <font color="red">Een proces declareert dus het betreden van zijn kritieke sectie en controleert dan of het andere proces dat ook heeft gedaan.</font>
+Mogelijke oplossing -> twee globale booleaanse variabelen gebruiken "bezet1" en "bezet2". "Bezet1" is true als proces 1 in zijn kritieke sectie is en false als dit niet het geval is. "Bezet2" is true als proces 2 in zijn kritieke sectie is en false als het dat niet is. <font color="red">Een proces declareert dus het betreden van zijn kritieke sectie en controleert dan of het andere proces dat ook heeft gedaan.</font>
 
 Als proces 1 in zijn kritieke sectie is en deze vervolgens verlaat, zet het "bezet1" op false. Als proces 2 staat te wachten, wordt het hervat. Het omgekeerde vindt plaats als proces 2 zijn kritieke sectie verlaat. Elk proces kan zijn kritieke sectie dus diverse malen uitvoeren indien het ander proces inactief is.
 
@@ -761,8 +761,8 @@ int bezet2 = 0; // false
 
 int main(void)
 { // main
-    void proces1 (void);
-    void proces2 (void);
+    void process1 (void);
+    void process2 (void);
     parbegin
         process1();
         process2();
@@ -824,11 +824,11 @@ void process2(void)
 Er zijn twee grote verschillen tussen deze oplossing en de vorige
 
 - 1<sup>ste</sup> -> de booleaanse variabelen geven niet aan of een proces daadwerkelijk in zijn kritieke sectie is; ze maken slechts kenbaar dat een proces dat wil gaan doen.
-- 2<sup>de</sup> -> de voorrang niet streng wordt voogeschreven, tenzij beide processen op vrijwel hetzelfde moment proberen hun kritieke secties in te gaan.
+- 2<sup>de</sup> -> de voorrang niet streng wordt voorgeschreven, tenzij beide processen op vrijwel hetzelfde moment proberen hun kritieke secties in te gaan.
 
 ## 3.5 Het algoritme van Peterson
 
-> biedt een envoudiger elegante oplossing
+> biedt een eenvoudiger elegante oplossing
 
 ```
 boolean flag [2];
@@ -875,7 +875,7 @@ void main()
 
 > een integer-variabele die door slechts 2 primitieve operaties kan worden veranderd.
 
-Een primitieve kan niet worden onderbroken; eenmaal begonne, kan het proces tot het klaar is niet worden onderbroken of opgeschort. Primitieve operaties zijn afhankelijk van het systeemontwerp, daarom moet er bij het ontwerpen van computersystemen altijd rekening mee worden gehouden.
+Een primitieve kan niet worden onderbroken; eenmaal begonnen, kan het proces tot het klaar is niet worden onderbroken of opgeschort. Primitieve operaties zijn afhankelijk van het systeemontwerp, daarom moet er bij het ontwerpen van computersystemen altijd rekening mee worden gehouden.
 
 ### 3.7.1 Inleiding
 
@@ -904,23 +904,23 @@ int S = 1; // Semafoor
 
 int main(void)
 {
-    void proces1(void);
-    void proces2(void);
+    void process1(void);
+    void process2(void);
     parbegin
-        proces1();
-        proces2();
+        process1();
+        process2();
     perend
     return 0;
 }
 
-void proces1(void)
+void process1(void)
 {
     ...
     // Begin van ENTERMUTUALEXCLUSION
     P(S);
     // Einde van ENTERMUTUALEXCLUSION
     ...
-    // Kritieke sectie van proces1
+    // Kritieke sectie van process1
     ...
     // begin van EXITMUTUALEXCLUSION
     V(S);
@@ -928,14 +928,14 @@ void proces1(void)
     ...
 }
 
-void proces2(void)
+void process2(void)
 {
     ...
     // Begin van ENTERMUTUALEXCLUSION
     P(S);
     // Einde van ENTERMUTUALEXCLUSION
     ...
-    // Kritieke sectie van proces2
+    // Kritieke sectie van process2
     ...
     // begin van EXITMUTUALEXCLUSION
     V(S);
@@ -1069,9 +1069,9 @@ Mogelijke volgorde van 3 processen die voor de wederzijdse uitsluiting de aanpak
 
 Implementatie semaforen:
 
-- 1ste mogelijkheid -> **implementateren in hardware of firmware**
+- 1ste mogelijkheid -> **implementeren in hardware of firmware**
 - 2de mogelijkheid -> **softwarebenadering** zoals algoritme van Dekker of Peterson => leidt tot een aanzienlijke overhead in de verwerking.
-- 3de mogelijkheid -> **het gebruiken van een in hardware ondersteund mechanisme voor wederzijdse uitsluiting** zoals bijvoorbeeld het gebruik van een instructie test and set waarbi de semafoor weer een datastructuur heeft en een nieuwe integere als component, s.flag bevat.
+- 3de mogelijkheid -> **het gebruiken van een in hardware ondersteund mechanisme voor wederzijdse uitsluiting** zoals bijvoorbeeld het gebruik van een instructie test and set waarbij de semafoor weer een datastructuur heeft en een nieuwe integere als component, s.flag bevat.
 - 4de mogelijkheid -> bij een systeem met 1 processor is het mogelijk **interrupts** te **verbieden** tijdens de bewerkingen wait en signal.
 
 
@@ -1088,7 +1088,7 @@ wait(s)
     if (s.count < 0)
     {
         place this process in s.queue;
-        block this proes (must also set s.flag to 0)
+        block this process (must also set s.flag to 0)
     }
 }
 
@@ -1101,7 +1101,7 @@ signal(s)
     s.count++;
     if (s.count <= 0)
     {
-        remove a proess P from s.queue;
+        remove a process P from s.queue;
         place process P on ready list;
     }
     s.flag = 0;
@@ -1155,21 +1155,21 @@ Dit soort problemen zijn in het algemeen niet zo eenvoudig op te lossen.
 
 Stel bijvoorbeeld dat elke denker als filosofie heeft: ik pak een vork zo gauw ik kan, als beide beschikbaar zijn eerst de linkervork; zo gauw ik beide vorken heb eet ik wat; dan leg ik de vorken weer neer.
 
-Op het eerste gezicht een redelijk plan, maar nu kan de situatie ontstaan dat elke filosoof de linkervorkin de linkerhand heeft, eeuwig wachtend tot de rechtervork vrijkomt. Dit is een voorbeeld van <font color="red">**'deadlock'**</font>: er is helemaal geen voortgang in het systeem meer mogelijk. Elke filosoof zal verhongeren.
+Op het eerste gezicht een redelijk plan, maar nu kan de situatie ontstaan dat elke filosoof de linker vork in de linkerhand heeft, eeuwig wachtend tot de rechter vork vrijkomt. Dit is een voorbeeld van <font color="red">**'deadlock'**</font>: er is helemaal geen voortgang in het systeem meer mogelijk. Elke filosoof zal verhongeren.
 
 Er zijn technieken om tot oplossingen te komen die deadlock bewijsbaar voorkomen; Dijkstra heeft het probleem verzonnen om zulke technieken te demonstreren.
 
-We kunnen bijvoorbeeld de denkers nummeren en elke denker alleen een vork laten pakken als er geen hoger genummerde denker al een vork vastheeft. Nu is deadlock onmogelijk.
+We kunnen bijvoorbeeld de denkers nummeren en elke denker alleen een vork laten pakken als er geen hoger genummerde denker al een vork vast heeft. Nu is deadlock onmogelijk.
 
 Deadlock is echter niet het enige soort situatie dat in het ontwerp moet worden uitgesloten.
 
-Stel bijvoorbeeld dat we een denker zelfs geen vork laten pakken als tegelijk een hoger genummerde hetzelfde probeert. Dan zal de hoogstgenummerdealtijd eten, terwijl de rest verhongert. Zo'n situatie wordt <font color="red">**starvation**</font> genoemd.
+Stel bijvoorbeeld dat we een denker zelfs geen vork laten pakken als tegelijk een hoger genummerde hetzelfde probeert. Dan zal de hoogst genummerde altijd eten, terwijl de rest verhongert. Zo'n situatie wordt <font color="red">**starvation**</font> genoemd.
 
 We kunnen dit nog verder aanscherpen, bijvoorbeeld door te eisen dat het systeem eerlijk is, in de zin dat de filosofen niet alleen allemaal altijd nog ooit de kans krijgen te eten, maar ze die kans zelfs even vaak krijgen; of door te eisen dat de totale wachttijd zo klein mogelijk is.
 
 Deze situatie illustreert de problemen die zich kunnen voordoen bij het synchroniseren van toegang tot resources (de vorken), bijvoorbeeld door verschillende threads(de filosofen) in een computerprogramma.
 
-Als verschillende threadsgebruik maken van dezelfde variabelen of bestanden is het niet veilig dat ze die tegelijk proberen aan te passen; daarom kan het onvermijdelijk zijn dat threadsop elkaar moeten wachten. Als deze synchronisatie niet correct wordt ontworpen kan het voorkomen dat een thread helemaal nooit meer aan de beurt komt (<font color="red">**starvation**</font>) of dat dat zelfs voor elke thread geldt (<font color="red">**deadlock**</font>).
+Als verschillende threads gebruik maken van dezelfde variabelen of bestanden is het niet veilig dat ze die tegelijk proberen aan te passen; daarom kan het onvermijdelijk zijn dat threads op elkaar moeten wachten. Als deze synchronisatie niet correct wordt ontworpen kan het voorkomen dat een thread helemaal nooit meer aan de beurt komt (<font color="red">**starvation**</font>) of dat dat zelfs voor elke thread geldt (<font color="red">**deadlock**</font>).
 
 Bij de interactie tussen processen moet aan twee fundamenten eisen worden voldaan: **synchronisatie** en **communicatie**.
 
@@ -1235,13 +1235,13 @@ Een kritieke sectie kunnen we daarom, i.p.v. deze in een proces te coderen, als 
 
 Door een compiler gegeneerde code, die de besturing aan een monitor-procedure overdraagt, wordt wederzijdse uitsluiting gegarandeerd.
 
-Op deze manier is er een aanzienlijk verschil tussen een monitor en een eenvoudige collectie procedures. Een monitor dwingt heel streng wederzijdse uitsluiting af tussen processen die proberen zijn procedures uit te voeren. Om dit verschil te benadrukken wordt een monitor-procedure een <font color="red">**procedure-entrygenoemd**</font>.
+Op deze manier is er een aanzienlijk verschil tussen een monitor en een eenvoudige collectie procedures. Een monitor dwingt heel streng wederzijdse uitsluiting af tussen processen die proberen zijn procedures uit te voeren. Om dit verschil te benadrukken wordt een monitor-procedure een <font color="red">**procedure-entry genoemd**</font>.
 
 Via conditionele variabelen kan de monitor processen uitstellen of hervatten om events te synchroniseren.
 
 Monitoren werken het best wanneer ze centraal geïnstalleerd kunnen worden. Omdat alle processen de monitor aanspreken, is deze het middelpunt van alle discussies en analyses. Maar vele systemen hebben geen centrale component.
 
-De monitorconstructie is geïmplementeerd in enkele programmeertalen waaronder Modula-3, Java, … . Ook is ze geïmplementeerd als een programmabibliotheek. Dit biedt de mogelijkheid grendels op elk object te plaatsen. Vooral bij zoiets als een verbonden lijst kan het zinvol zijn alle verbonden lijsten te vergrendelen met 1 grendel, 1 grendel te gebruiken voor elke lijst of 1 grendel te gebruiken voor elk element van elke lijst.
+De monitorconstructie is geïmplementeerd in enkele programmeertalen waaronder Modula-3, Java, ... . Ook is ze geïmplementeerd als een programmabibliotheek. Dit biedt de mogelijkheid grendels op elk object te plaatsen. Vooral bij zoiets als een verbonden lijst kan het zinvol zijn alle verbonden lijsten te vergrendelen met 1 grendel, 1 grendel te gebruiken voor elke lijst of 1 grendel te gebruiken voor elk element van elke lijst.
 
 > Monitor: Een constructie in een programmeertaal die voorziet in abstracte gegevenstypen en toegang, met wederzijdse uitsluiting, tot een aantal procedures.
 
@@ -1249,7 +1249,7 @@ De monitorconstructie is geïmplementeerd in enkele programmeertalen waaronder M
 
 Een deadlock of een impassetoestand treedt op wanneer 2 of meer processen voor onbepaalde tijd wachten op een gebeurtenis die alleen door 1 van de wachtende processen kan worden veroorzaakt.
 
-**2methoden voor het behandelen van deadlocks:**
+**2 methoden voor het behandelen van deadlocks:**
 
 - gebruik één of ander protocol (afspraak) om te garanderen dat het systeem nooit in een deadlock-situatie zal komen;
 - laat toe dat het systeem in een deadlock-situatie geraakt en los deze dan op
@@ -1270,7 +1270,7 @@ Aspecten van deadlock:
 
     Als er een deadlock optreedt, moet het besturingssysteem dit kunnen signaleren. Het besturingssysteem ziet elk proces in een wachttoestand. Hoe kan het besturingssysteem erachter komen dat dit wachten permanent is?
 
-- **Deadlock-hestel**
+- **Deadlock-herstel**
 
     Wat moet er gebeuren nadat het besturingssysteem een deadlock ontdekt? De processen moeten daar toch een keer uit bevrijd worden. Het besturingssysteem moet dit probleem oplossen.
 
@@ -1306,13 +1306,13 @@ Eén manier om deadlock te signaleren, is een resource allocationgraf. Dit is ee
 
 Een deadlock kunnen we signaleren door de resource allocationgraf te bekijken. Al deze een cyclus bevat, is er een deadlock. Om cycli in een georiënteerde graf te signaleren, heeft het besturingssysteem diverse algoritmen ter beschikking.
 
-### 3.10.4 Hestel in een deadlock-situatie
+### 3.10.4 Herstel in een deadlock-situatie
 
 Nu we weten hoe we een deadlock signaleren, rest ons nog 1 vraag: wat doen we eraan?
 
 Eén mogelijkheid is een proces gewoon maar af te breken en de eraan toegewezen resources verwijderen. Hierdoor wordt de cyclus en dus ook de deadlock geëlimineerd ten koste van het proces.
 
-Een andere mogelijkheid is een <font color="red">**rollback**</font> op het proces uit te voeren. Hierbij worden alle eraan toegewezen resources verwijderd. Het proces verliest alle updates die het met gebruik van deze resources heeft gemaakt, en al het werk dat inmiddels was gedaan, maar wordt niet afgebroken. Het besturingssysteem brengt het terug in de toestand van vóór de aanvraag en toewijzing van de verwijderde resources. Dit kan overeenkomen met de oorspronkelijke start van het proces, of met een checkpoint. Een checkpoint treedt op wanneer een proces vrijwillig alle resources vrijgeeft. Door het gebruik van checkpointskan elk proces eventueel verlies van werk echter zo klein mogelijk houden.
+Een andere mogelijkheid is een <font color="red">**rollback**</font> op het proces uit te voeren. Hierbij worden alle eraan toegewezen resources verwijderd. Het proces verliest alle updates die het met gebruik van deze resources heeft gemaakt, en al het werk dat inmiddels was gedaan, maar wordt niet afgebroken. Het besturingssysteem brengt het terug in de toestand van vóór de aanvraag en toewijzing van de verwijderde resources. Dit kan overeenkomen met de oorspronkelijke start van het proces, of met een checkpoint. Een checkpoint treedt op wanneer een proces vrijwillig alle resources vrijgeeft. Door het gebruik van checkpoints kan elk proces eventueel verlies van werk echter zo klein mogelijk houden.
 
 ## 3.11 Threads
 
@@ -1321,11 +1321,11 @@ Een proces bestaat uit 2 afzonderlijke en mogelijk onafhankelijke concepten: een
 
 Om een onderscheid te maken tussen de 2 concepten, wordt de eenheid voor de verdeling (uitvoering) doorgaans een thread of lichtgewicht proces genoemd en de eenheid voor de eigendom van bronnen een proces of een taak.
 
-Multithreadingverwijst naar de mogelijkheid van een besturingssysteem binnen een proces meerdere threadsof draden te gebruiken voor de uitvoering. De traditionele benadering met één uitvoeringsthread per proces, waarin het concept thread in feite niet bestaat, wordt ook wel een benadering met één thread genoemd.
+Multithreading verwijst naar de mogelijkheid van een besturingssysteem binnen een proces meerdere threads of draden te gebruiken voor de uitvoering. De traditionele benadering met één uitvoeringsthread per proces, waarin het concept thread in feite niet bestaat, wordt ook wel een benadering met één thread genoemd.
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/173QP.png)
 
-In een omgeving met multithreadingwordt een proces gedefinieerd als beveiligings-en brontoewijzingseenheid.
+In een omgeving met multithreading wordt een proces gedefinieerd als beveiligings-en brontoewijzingseenheid.
 
 Het volgende is verbonden met processen:
 
@@ -1334,21 +1334,21 @@ Het volgende is verbonden met processen:
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/160FL.png)
 
-Binnen een proces kunnen er een of meer threadszijn, elk met het volgende:
+Binnen een proces kunnen er een of meer threads zijn, elk met het volgende:
 
 * een **uitvoeringstoestand** van de thread (actief, gereed, ...)
 * een **context** die wordt opgeslagen als de thread niet actief is, een thread kan onder meer worden gezien als een onafhankelijke programmateller die binnen een proces werk
 * **een stack** voor de uitvoering
 * **enige statische opslagcapaciteit per thread** voor lokale variabelen
-* toegang tot het geheugen en de bronnen van het bijhorende proces, die wordt gedeeld door alle threadsbinnen dat proces.
+* toegang tot het geheugen en de bronnen van het bijhorende proces, die wordt gedeeld door alle threads binnen dat proces.
 
-Alle threadsvan een proces delen de toestand en de bronnen van dat proces. Ze bevinden zich in dezelfde adresruimte en hebben toegang tot dezelfde gegevens.
+Alle threads van een proces delen de toestand en de bronnen van dat proces. Ze bevinden zich in dezelfde adresruimte en hebben toegang tot dezelfde gegevens.
 
-De grootste voordelen van threadshangen samen met de gevolgen voor de prestaties: het creëren van een nieuwe thread binnen een bestaand proces kost veel minder tijd dan het creëren van een geheel nieuw proces en ditzelfde geldt voor het overschakelen tussen 2 threadsbinnen hetzelfde proces.
+De grootste voordelen van threads hangen samen met de gevolgen voor de prestaties: het creëren van een nieuwe thread binnen een bestaand proces kost veel minder tijd dan het creëren van een geheel nieuw proces en ditzelfde geldt voor het overschakelen tussen 2 threads binnen hetzelfde proces.
 
-Threadsverbeteren ook de efficiëntie van de communicatie tussen verschillende actieve programma's. Aangezien threadsbinnen hetzelfde proces echter geheugen en bestanden delen, kunnen ze rechtstreeks met elkaar communiceren.
+Threads verbeteren ook de efficiëntie van de communicatie tussen verschillende actieve programma's. Aangezien threads binnen hetzelfde proces echter geheugen en bestanden delen, kunnen ze rechtstreeks met elkaar communiceren.
 
-Net zoals processen hebben threadsuitvoeringsstoestandenen kunnen ze met elkaar worden gesynchroniseerd.
+Net zoals processen hebben threads uitvoeringstoestanden en kunnen ze met elkaar worden gesynchroniseerd.
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1jrg8.png)
 
@@ -1387,9 +1387,9 @@ Opstarten en controleren vanuit een terminal sessie, m.a.w. er moet iemand aange
 
 ### 4.2.2 Automatische (batch) processen
 
-Deze processen wachten eerst op uitvoering in een daartoe bestemde map. Vandaar uit worden ze opgeroepen door een programma dat de wachtrijanalyseert en de programma's systematisch uitvoert.
+Deze processen wachten eerst op uitvoering in een daartoe bestemde map. Vandaar uit worden ze opgeroepen door een programma dat de wachtrij analyseert en de programma's systematisch uitvoert.
 
-Het programma dat het eerste in de wachtrijterecht kwam, wordt ook eerst uitgevoerd. De naam van dit systeem is "FIFO", wat staat voor "firstin, firstout".
+Het programma dat het eerste in de wachtrij terecht kwam, wordt ook eerst uitgevoerd. De naam van dit systeem is "FIFO", wat staat voor "first in, first out".
 
 2 manieren:
 
@@ -1439,7 +1439,7 @@ Elk process heeft een **aantal vaste eigenschappen**:
 
 | PID | TTY | TIME | CMD |
 | --- | --- | ---- | --- |
-| het procesidentificatienummer. | het terminal type en nummer waaraan het proces verbonden is. Wij gebruiken pts, pseudo-terminals, in tegenstelling tot echte terminals waarbij je een toetsenbord en een scherm hebt, waarmee je niets anders kan doen dan 1 enkele shellopenen, in een tekstuele omgeving (te vergelijken met DOS vroeger). Pseudo-terminalszijn terminal vensters in een grafische omgeving, of verbindingen vanopeen netwerk. | een relatieve indicatie van de tijd die het aantal processorcycli dat het processal verbruikt heeft. Gewone processen van gebruikers verbruiken slechts een klein deel van de totale processorkracht. | de naam van het commando. |
+| het procesidentificatienummer. | het terminal type en nummer waaraan het proces verbonden is. Wij gebruiken pts, pseudo-terminals, in tegenstelling tot echte terminals waarbij je een toetsenbord en een scherm hebt, waarmee je niets anders kan doen dan 1 enkele shell openen, in een tekstuele omgeving (te vergelijken met DOS vroeger). Pseudo-terminals zijn terminal vensters in een grafische omgeving, of verbindingen van op een netwerk. | een relatieve indicatie van de tijd die het aantal processorcycli dat het process al verbruikt heeft. Gewone processen van gebruikers verbruiken slechts een klein deel van de totale processorkracht. | de naam van het commando. |
 
 (Deze screenshot is genomen op een mac, dus kan iets anders zijn)
 ![](https://robinmalfait.com/afbeeldingen/droplr/18w9v.png)
@@ -1468,7 +1468,7 @@ We krijgen dus een "top" van de processen te zien.
 
 De output van het <font color="red">**uptime**</font> commando, met daarin informatie over hoe lang het systeem al draait, hoeveel gebruikers er verbonden zijn en wat de belasting is.
 
-Het aantal processen en de status ervan: er draait altijd slechts 1 proces tegelijk op de CPU, terwijl de andere in een wachtrijstaan.
+Het aantal processen en de status ervan: er draait altijd slechts 1 proces tegelijk op de CPU, terwijl de andere in een wachtrij staan.
 
 De belasting van de processor(s): moet de processor veel berekeningen maken, dan is de belasting hoog.
 
@@ -1493,7 +1493,7 @@ Het initiële proces waarmee het systeem gestart wordt.
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Bevries het commando (in het Engels: Suspend) |
 | <kbd>Ctrl</kbd>+<kbd>C</kbd> | Beëindig het commando dat in de voorgrond draait |
 | **%n** | Elk commando in de achtergrond krijgt een jobnummer(in bovenstaand voorbeeld: 1. Gebruik de uitdrukking % met dit nummer om naar een proces te verwijzen |
-| **bg** | Activeer een bevrorern commando terug, na <kbd>Ctrl</kbd>+<kbd>Z</kbd>, maar wordt uitgevoerd in de background |
+| **bg** | Activeer een bevroren commando terug, na <kbd>Ctrl</kbd>+<kbd>Z</kbd>, maar wordt uitgevoerd in de background |
 | **fg**  | Zelfde als bg, maar wordt in de foreground uitgevoerd. |
 | **kill** | Beëindig een programma dat in de achtergrond draait. |
 
@@ -1515,7 +1515,7 @@ Indien één van de processen die je zelf hebt opgestart, te veel middelen gebru
 Het werken met **nice** en **renice** vereist een uitgebreide kennis van het systeem. Er is echter een gemakkelijker manier: **top**.
 Een belastend proces zal vermoedelijk een negatieve nicewaarde hebben in de kolom "NI".
 
-Parktisch:
+Praktisch:
 
 ```bash
 renice -n prioriteit -p PID
@@ -1542,7 +1542,7 @@ Dit instrueert het proces om af te handelen waar het mee bezig is volgens de pro
 
 **Het `xkill` commando**
 
-Grafische programma's die vasthangen kan je proberen stoppen met `xkill`.
+Grafische programma's die vast hangen kan je proberen stoppen met `xkill`.
 
 Na het ingeven van dit commando verandert de muispijl in een doodshoofd. Beweeg het doodshoofd over het venster van het programma dat je wilt stoppen en klik met de linker muistoets.
 
@@ -1556,7 +1556,7 @@ Na het ingeven van dit commando verandert de muispijl in een doodshoofd. Beweeg 
 
 **Het `sleep` commando**
 
-Het enige dat sleep doet is wachten. Standaard wordt de awchttijd uitgedrukt in seconden.
+Het enige dat sleep doet is wachten. Standaard wordt de wachttijd uitgedrukt in seconden.
 
 **Het `at` commando**
 
@@ -1568,7 +1568,7 @@ Sluit af met <kbd>Ctrl</kbd>+<kbd>D</kbd> en de taak wordt gepland.
 
 Je kan een overzicht krijgen van alle at jobs met het commando atq.
 
-Met het **atrm** commando kan je de job verwijderen. Gebruik het jobnummeruit de eerste kolom van de output van atq als argument.
+Met het **atrm** commando kan je de job verwijderen. Gebruik het jobnummer uit de eerste kolom van de output van atq als argument.
 
 **Het `cron` systeem:**
 
@@ -1578,28 +1578,28 @@ Deze dienst gaat elke minuut na of er taken uit te voeren zijn voor de gebruiker
 
 De taken worden opgeslagen in zogenaamde crontabs(tabellen).
 
-Elke gebruiker kan een crontabhebben, waarin elke lijn een taak voorstelt die regelmatig herhaald moet worden.
+Elke gebruiker kan een crontab hebben, waarin elke lijn een taak voorstelt die regelmatig herhaald moet worden.
 
-Verder is er ook nog een crontabwaarin de **systeem-specifieke taken** vernoemd worden, zoals bijvoorbeeld:
+Verder is er ook nog een crontab waarin de **systeem-specifieke taken** vernoemd worden, zoals bijvoorbeeld:
 
 - Dagelijks de index maken waarvan het `locate` commando gebruik maakt
 - Dagelijks nagaan of er **updates** zijn voor de software op het systeem
 - Er dagelijks voor zorgen dat **logbestanden**, waarin informatie wordt opgeslagen over wat er allemaal op het systeem gebeurd is, niet te groot worden.
 - Dagelijks en wekelijks een index maken van alle **man pagina's**, zodat apropos en whatis kunnen werken.
 
-Andere taken kunnen zijn: het maken van backups, rapporten opmaken en doorsturen, systeeminformatie analyzerenen doormailen naar de administrator, herinneringsbrieven mailen, enzovoorts.
+Andere taken kunnen zijn: het maken van backups, rapporten opmaken en doorsturen, systeeminformatie analyzeren en doormailen naar de administrator, herinneringsbrieven mailen, enzovoorts.
 
 > Alle taken die periodiek uitgevoerd moeten worden, komen voor opname in het cronsysteem in aanmerking.
 
-De crontabsvoor het systeem vind je in de **/etc** map, die van de gebruikers in **/var/spool/cron/crontabs**, maar die map is niet toegankelijk voor de niet-gepriviligieerdegebruiker. In **/var/spool/cron** vind je ook nog atjobsen atspool, omdat de at jobs onder de verantwoordelijkheid van de crondaemonvallen.
+De crontabs voor het systeem vind je in de **/etc** map, die van de gebruikers in **/var/spool/cron/crontabs**, maar die map is niet toegankelijk voor de niet-geprivilegieerde gebruiker. In **/var/spool/cron** vind je ook nog atjobs en atspool, omdat de at jobs onder de verantwoordelijkheid van de cron daemon vallen.
 
 ## 4.9 Levenscyclus
 
 **Een proces aanmaken**
 
-Een nieuw proces wordt aangemaakt doordat een bestaand proces een exacte kopie van zichzelf maakt. Dit childprocessis eigenlijk net hetzelfde als het ouderproces, enkel het procesidentificatienummer verschilt. Deze procedure heet men een **fork** (letterlijk: een vork of splitsing).
+Een nieuw proces wordt aangemaakt doordat een bestaand proces een exacte kopie van zichzelf maakt. Dit child process is eigenlijk net hetzelfde als het ouderproces, enkel het procesidentificatienummer verschilt. Deze procedure heet men een **fork** (letterlijk: een vork of splitsing).
 
-Na de forkwordt de geheugenruimte van het kindproces overschreven met de nieuwe procesdata: het commando dat gevraagd werd, wordt in het geheugen geladen. Dit noemt men een **exec**.
+Na de fork wordt de geheugenruimte van het kindproces overschreven met de nieuwe procesdata: het commando dat gevraagd werd, wordt in het geheugen geladen. Dit noemt men een **exec**.
 
 Het geheel wordt **fork-and-exec** genoemd.
 
@@ -1609,13 +1609,13 @@ Het geheel wordt **fork-and-exec** genoemd.
 
 **De rol van `systemd`**
 
-Zoals je kunt zien aan de output van het **pstree** commando, hebben veel processen systemdals ouderproces, terwijl dat helemaal niet mogelijk is.
+Zoals je kunt zien aan de output van het **pstree** commando, hebben veel processen systemd als ouderproces, terwijl dat helemaal niet mogelijk is.
 
-Veel programma's "demoniseren" hun kindprocessen, zodanig dat die kunnen blijven draaien als de ouder stopt. Het systemdproces neemt de rol van peetvader van zulke processen: als de ouder sterft, vallen ze onder de verantwoordelijkheid van systemd.
+Veel programma's "demoniseren" hun kindprocessen, zodanig dat die kunnen blijven draaien als de ouder stopt. Het systemd process neemt de rol van peetvader van zulke processen: als de ouder sterft, vallen ze onder de verantwoordelijkheid van systemd.
 
 Heel af en toe wil het nog wel eens mislopen met de "adoptie" van processen. Een proces dat geen ouderproces heeft, noemt men een *zombie*. Het systeem heeft geen vat meer op zo'n zombie- proces, het blijft in het geheugen hangen tot je de computer herstart.
 
-**Een proces beëndigen**
+**Een proces beëindigen**
 
 Wanneer een proces normaal eindigt, geeft het een code, de exit status, door aan de ouder. Als alles goed verlopen is, is de exit status nul.
 
@@ -1625,7 +1625,7 @@ Processen eindigen omdat ze een signaal krijgen. Je kan verschillende signalen n
 
 # Hoofdstuk 5: Scripts in Linux
 
-Een shell script is een bestand met instructies die door de shell(bash) gelezen en begrepen moeten worden. Met de scripttaaldie in bashisingebouwdishetmogelijk eenvolledigfunctionerendprogramma te schrijven. Shell soorten: sh, bash, csh, tcsh, ksh In hetbestand/etc/shellsvindje eenoverzichtvan alle gekendeshellsop jouwlinux systeem.
+Een shell script is een bestand met instructies die door de shell(bash) gelezen en begrepen moeten worden. Met de scripttaal die in bash is ingebouwd is het mogelijk een volledig functionerend programma te schrijven. Shell soorten: sh, bash, csh, tcsh, ksh In het bestand /etc/shells vind je een overzicht van alle gekende shells op jouw linux systeem.
 
 Elke script heeft een **shebang**
 
@@ -1809,7 +1809,7 @@ set -o nounset
 clear
 echo "De opdrachtnaam is " $0
 echo "De eerste parameter is " $1
-echo "De negende parammeter is " $9
+echo "De negende parameter is " $9
 echo
 ```
 
@@ -1864,8 +1864,8 @@ Output: ![](https://robinmalfait.com/afbeeldingen/droplr/1hSeV.png)
 | Speciale Parameter | Betekenis |
 | ------------------ | --------- |
 | $# | Verwijst naar het aantal gegeven parameters |
-| $* | Geeft als resultaat één tekenreekswaarin alle parameters voorkomen. Elke parameter wordt van de vorige gescheiden door het scheidingsteken dat is gedefinieerd als waarde van de systeemvariabele IFS. |
-| $@ | Geeft als output alle parameters waarbij elkeparameter als individuele tekenreeks kan worden gebruikt. |
+| $* | Geeft als resultaat één tekenreeks waarin alle parameters voorkomen. Elke parameter wordt van de vorige gescheiden door het scheidingsteken dat is gedefinieerd als waarde van de systeemvariabele IFS. |
+| $@ | Geeft als output alle parameters waarbij elke parameter als individuele tekenreeks kan worden gebruikt. |
 
 ## Commando substitution
 
@@ -1934,19 +1934,19 @@ Hiervoor kan gebruik gemaakt worden van `gawk` en `sed`
 
 > Stream EDitor
 
-De streameditor sed is een afgeleide van de oereditor ed.
+De stream editor sed is een afgeleide van de oer editor ed.
 
 Perl wordt vaak gezien als de opvolger van sed.
 
 Op elke **regel** van het bestand wordt de **filteropdracht** uitgevoerd.
 
-**Syntaxt** sed: `sed 'lijst van opdrachten' bestandsnaam`
+**Syntax** sed: `sed 'lijst van opdrachten' bestandsnaam`
 
 De filteropdrachten kunnen ok uit een tekstbestand genomen worden (**-f** optie)
 
 Gebruik de **-n** optie om te voorkomen dat het oorspronkelijk bestand ook uitgevoerd (getoond) wordt.
 
-Regel selectie gebeut met een reguliere expressie tussen **/** gevolgd door een opdracht:
+Regel selectie gebeurt met een reguliere expressie tussen **/** gevolgd door een opdracht:
 
 - **p** voor afdrukken
 - **d** voor delete
@@ -1972,7 +1972,7 @@ Output: ![](https://robinmalfait.com/afbeeldingen/droplr/17oHe.png)
 
 #### Substitutieopdrachten
 
-Syntaxt: `s/patroon/vercanging/[opties]`
+Syntax: `s/patroon/vervanging/[opties]`
 
 Opties:
 
@@ -2028,13 +2028,13 @@ Met het commando `test` wordt een expressie geëvalueerd:
 
 Er kunnen 5 soorten tests worden uitgevoerd:
 
-- File testers: waarmee gekeken wordt naar de eigenschapen van een bestand
+- File testers: waarmee gekeken wordt naar de eigenschappen van een bestand
 - File comparisons: waarmee bestanden vergeleken worden;
 - String tests: waarmee de lengte van een string bekeken kan worden;
 - Expression test: waarmee gekeken wordt naar de uitkomst van expressies
 - integer tests: waarmee 'getallen' vergeleken kunnen worden.
 
-Voor elke test kan ook gekeken worden of niet aan de voorwaarde wordt voldaan; hiervoer dient het uitroepteken(**!**)
+Voor elke test kan ook gekeken worden of niet aan de voorwaarde wordt voldaan; hiervoor dient het uitroepteken(**!**)
 
 **FILE TESTER**
 
@@ -2297,7 +2297,7 @@ clear
 while [ "$#" -gt 0 ]
 do
     # Met een If-elif-else-fi structuur
-    if [ "$1" = "-a" ]; then # Als je de then opdezelfde lijn zet, met er een ; vor
+    if [ "$1" = "-a" ]; then # Als je de then op dezelfde lijn zet, met er een ; voor
         echo "Dit is de eerste optie"
     elif [ "$1" = "-b" ]
     then
@@ -2351,7 +2351,7 @@ echo "parameter 1 is $1" # en verdere afhandeling
 #!/bin/bash
 
 # getoptions.sh [-a] [-b args] [-c] args...
-# Toont de werkign van getopts
+# Toont de werking van getopts
 set -o errexit
 set -o nounset
 
