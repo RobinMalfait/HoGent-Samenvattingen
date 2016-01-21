@@ -201,7 +201,7 @@ Een inode wordt geïdentificeerd via een *inodenummer*
 
 > **PATH**: zorgt ervoor dat we niet steeds het volledige pad moeten ingeven om een commando uit te voeren of om een bestand te openen.
 >
-> PATH is een environment variable dat één of meerdere map verwijzingen bevat gescheiden met ";", Deze worden onderzocht om een commando te lokaliseren en uit te voeren.
+> PATH is een environment variable dat één of meerdere map verwijzingen bevat gescheiden met ":", Deze worden onderzocht om een commando te lokaliseren en uit te voeren.
 
 **Absoluut vs relatief pad**:
 
