@@ -211,3 +211,68 @@ title: Engels
 | Lag time | Delay time | Vertragingstijd |
 | Obfuscation | Hidden, masked, clouding | Verduistering |
 
+# Woorden Uit De Teksten
+
+## Difference Engine
+
+| English Word | Explanation |
+| :----------- | :---------- |
+| To dispose of | To get rid of something |
+| Municipal | From a city or village |
+| Flame | As in the flames of a fire |
+| Brominated | Treated with bromine. In the text it is used in context as brominated flame retardants, which is a substance containing bromine which reduces inflamability |
+| Halogenated | A chemical reaction which involves a adding halogen to a compound, resulting in the halogenbeing added to the compound |
+| Furans | A highly volatile, flammable liquid with a boiling point close to room temperature |
+| Reproductive disorder | A disorder that reduces the chances of being able to reproduce, or have children |
+| Endocrine disruption | A disruption which interferes with the hormone system of humans a mammals universally |
+| Incineration | The burning of an object |
+| Downstream | A later point of the flow of water than where something is introduced |
+| Audit | An inspection by a third party to assess the quality of something |
+| Domestically | Within a country |
+| Reputable | With a certain reputation which makes it trustworthy |
+| Onerous | Something which involves a great deal of effort |
+| To ratify | To officialy accept or approve of a contract or condition |
+| Ethically | To do something while abiding the ethics around it |
+| Dodges | A way to avoid something |
+| Muster | To find and assemble |
+| Obsolete | No longer relevant |
+| Accredited | Seen as accomplished by |
+
+## Clever Computers
+
+| English Word | Explanation |
+| :----------- | :---------- |
+| Peril | danger |
+| Outweigh | To be greater than |
+| To spell | To implicate |
+| Abomination | Something so different that it creates a feeling of disgust |
+| Semblance | The way something seems |
+| To infer | To be the cause of |
+| Complementing | To be a contribution and completion of something else |
+| Illiterate | Being unable to read |
+| Lose out | Being unable with something superior |
+| Drudges | Someone who performs a dull, menial action |
+| Turf out | To remove something from where it was |
+| Dislocations  | To remove something from where it used to be  |
+| Phalanx | An impenitrable, closely massed front of something |
+| Apocalyptic | A scenario that centers around the end of the world or humanity as we know it |
+| Unaligned | Neutral |
+| Cognitive | Using functions of the brain |
+
+## Internet Security
+
+| English Word | Explanation |
+| :----------- | :---------- |
+| Prowess | Extraordinary ability or bravery |
+| Conjunction  | Together |
+| Wiping | To clear of all traces or to clean |
+| Intrusion  | Wrongfully entering or taking something |
+| Replicate | to repeat or copy (something) exactly |
+| Advocate | a person who argues for or supports a cause or policy  |
+| Spur | meaning something that makes you want to do something or that causes something to happen |
+| Repository | a place where a large amount of something is stored |
+| Snag | an unexpected problem or difficulty |
+| Savy | with knowledge of some aspect |
+| To come within a whisker | To come close |
+| To safeguard | Verb meaning to make (someone or something) secure |
+
