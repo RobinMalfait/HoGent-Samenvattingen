@@ -1,5 +1,5 @@
 ---
-title: Probleemoplossend denken II - Oefeningen 1
+title: POD II - Oefeningen 1
 ---
 
 # Oefening 1
