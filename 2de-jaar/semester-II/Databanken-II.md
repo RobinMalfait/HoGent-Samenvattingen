@@ -23,3 +23,21 @@ end
 ## Herhaling
 
 [Oefeningen SQL](/2de-jaar/semester-II/Databanken/Oefeningen_SQL.md)
+
+# XML
+
+> XML: e**X**tensible **M**arkup **L**anguage. <!--**-->
+
+## XML Document
+
+```xml
+<parent>
+    <child>Some Child</child>
+    <child>Some Other Child</child>
+    <child name="special">Some Other Child with an attribute</child>
+</parent>
+```
+
+## XML Schema
+
+Een opmaak waaraan het XML document moet voldoen, alle tags en eventuele waarden.
