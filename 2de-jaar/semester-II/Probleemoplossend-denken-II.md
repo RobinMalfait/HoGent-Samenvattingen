@@ -4,7 +4,7 @@ title: Probleemoplossend denken II
 
 # Deel 1: Kansrekening
 
-[Oefeningen](ProbleemoplOssendDenken/Oefeningen_1.md)
+[Oefeningen](/2de-jaar/semester-II/ProbleemoplOssendDenken/Oefeningen_1.md)
 
 > **Definitie:** Het UNIVERSUM of  de UITKOMSTENRUIMTE van een experiment is de verzameling van alle mogelijke uitkomsten van dit experiment en wordt genoteerd met Ω.
 
