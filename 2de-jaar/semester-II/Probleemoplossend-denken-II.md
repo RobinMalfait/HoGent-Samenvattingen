@@ -4,8 +4,6 @@ title: Probleemoplossend denken II
 
 # Deel 1: Kansrekening
 
-[Oefeningen](/2de-jaar/semester-II/ProbleemOplossendDenken/Oefeningen_1.md)
-
 > **Definitie:** Het UNIVERSUM of  de UITKOMSTENRUIMTE van een experiment is de verzameling van alle mogelijke uitkomsten van dit experiment en wordt genoteerd met Ω.
 
 Opmerkingen:
@@ -20,6 +18,8 @@ Voorbeelden:
 
 ## Gebeurtenis
 
+[Oefeningen](/2de-jaar/semester-II/ProbleemOplossendDenken/Oefeningen_Gebeurtenis.md)
+
 > **Definitie:** Een GEBEURTENIS is een DEELVERZAMELING van de uitkomstenruimte. Een ENKELVOUDIGE of ELEMENTAIRE gebeurtenis is een singleton; een SAMENGESTELDE GEBEURTENIS heeft cardinaliteit groter dan 1.
 
 - Ω is een opsomming van *alle* mogelijke uitkomsten van een experiment
@@ -30,6 +30,8 @@ Voorbeelden:
 - **niet** A: `A`
 
 ## Kansen en kansruimte
+
+[Oefeningen](/2de-jaar/semester-II/ProbleemOplossendDenken/Oefeningen_KansenEnKansruimte.md)
 
 > Het toekennen van kansen aan gebeurtenissen dient aan de volgende drie regels te voldoen
 1. Kansen zijn steeds positief: P(A) ≥ 0 voor elke A
