@@ -114,3 +114,74 @@ We zijn vooral op zoek naar **oorzakelijke verbanden**, bv.
 - Vaccinaties leiden tot autisme
 - Correlatie tussen drinken van Cola-light en zwaarlijvigheid
 - ...
+
+# Analyse op 1 variabele
+
+## Centrummaten
+
+### Gemiddelde
+
+> Het gemiddelde is de som van alle waarden gedeeld door het aantal waarden
+
+Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan de uitkomst.
+
+### Mediaan
+
+> Om de mediaan te vinden, sorteer de waarden en kies het middelste nummer
+
+- Oneven aantal getallen: geen probleem
+- Event aantal getallen: gemiddelde van middelste twee getallen
+
+Is minder gevoelig aan uitschieters, niet alle cijfers werken mee aan de uitkomst.
+
+### Modus
+
+> De modus is het vaakst voorkomende getal in een reeks getallen.
+
+Wanneer geen enkel getal meerdere keren voorkomt, waardoor elk getal slechts 1 keer voorkomt. Dan is er geen modus.
+
+## Spreidingsmaten
+
+### Bereik (range)
+
+> Het bereik van een reeks getallen is de absolute waarde van het verschil tussen het grootste en kleinste getal in de reeks.
+
+```
+bereik = | max(x) - min(x) |
+```
+
+### Kwartielen (quartiles)
+
+> De kwartielen van een gesorteerde reeks getallen zijn de waarden die de lijst in vier gelijke delen verdeelt. Elk deel vormt dus ene kwart van de dataset. Men spreekt van een eerste, tweede en derde kwartiel genoteersd als. `Q1, Q2, Q3`
+
+Percentielen zijn gelijkaardig maar van 0..1
+
+### Variantie (variance) en standaardafwijking (standard deviation)
+
+> De variantie is het gemiddelde gekwadrateerde verschil tussen de elementen van de dataset en zijn gemiddelde.
+
+
+Dit kan nooit negatief zijn, omdat we enkel optellen en een kwadraat nemen
+
+```
+    sum(xi - avg(x))^2
+s = ------------------
+            n
+```
+
+> De standaardafwijking is de vierkantswortel van de variantie
+
+
+Aangeduid door sigma
+
+```
+σ = sqrt(s)
+```
+
+#### Eigenschappen
+
+- Kan de standaardafwijking negatief zijn? Neen
+- Wat is de kleinst mogelijke waarde? Wat duidt dit aan? 0 -> er is geen range
+- Wat is de invloed van uitschieters op de standaardafwijking?
+- In welke eenheden staat de standaardafwijking?
+- Hoe interpreteer je de standaardafwijking in combinatie met het gemiddelde? Wanneer je dataset normaal verdeeld is.
