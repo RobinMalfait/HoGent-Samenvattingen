@@ -72,6 +72,34 @@ P(A) = ----
        #(Ω)
 ```
 
+## Voorwaardelijke kansen
+
+Stel A is de gebeurtenis "er is een inbraak aan de gang"
+
+Stel B is de gebeurtenis "het alarm gaat af"
+
+### Voorbeeld
+
+Er wordt tweemaal gegooid met een eerlijke dobbelsteen. at is de waarschijnlijkheid dat de som avn beide ogen 7 of meer is als gegeven is dat de eerste worp een twee opleverde?
+
+```
+Ω = {(1, 2, 3, 4, 5, 6)}
+
+A = {(a, b) | a + b ≥ 7 met a, b ∈ N en a,b ≤ 6}
+B = {(2, j) | 1 ≤ j ≤ 6 en j ∈ N}
+
+           #({(2, 5), (2, 6)})
+           -------------------
+           36
+P(A | B) = -------------------
+            6
+            --
+            36
+
+         = 2 / 6
+
+```
+
 # Deel 2: Bomen en Grafen
 
 # Deel 3: Operationeel Onderzoek

@@ -185,3 +185,8 @@ Aangeduid door sigma
 - Wat is de invloed van uitschieters op de standaardafwijking?
 - In welke eenheden staat de standaardafwijking?
 - Hoe interpreteer je de standaardafwijking in combinatie met het gemiddelde? Wanneer je dataset normaal verdeeld is.
+
+
+## Diagrammen
+
+> Probeer cirkeldiagrammen te vermijden, bar charts zijn makkelijker interpreteerbaar!

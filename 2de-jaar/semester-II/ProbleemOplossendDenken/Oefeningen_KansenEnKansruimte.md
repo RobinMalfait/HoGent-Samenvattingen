@@ -69,18 +69,18 @@ Wat is de kans om bij de Belgische lotto zes juiste cijfers te hebben? Er zitten
 
 ```
       45!
-# Ω = ------
-      39! 6!
+# Ω = ---
+      39!
 
-#A = 1
+#A = 6!
 
-          1
-P(A) = ------
-         45!
-       ------
-       39! 6!
+       6!
+P(A) = ---
+       45!
+       ---
+       39!
 
-P(A) = 0,0000012269
+P(A) = 0,000001273
 ```
 
 # Oefening 5
