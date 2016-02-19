@@ -1,5 +1,5 @@
 ---
-title: iTalent - Blog
+title: i<sup>2</sup>Talent - Blog
 ---
 
 # Blog \#1
