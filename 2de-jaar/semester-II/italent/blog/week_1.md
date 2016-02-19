@@ -1,5 +1,6 @@
 ---
 title: i<sup>2</sup>Talent - Blog
+description: [Retour](/2de-jaar/semester-II/italent/index.md)
 ---
 
 # Blog \#1
