@@ -1,7 +1,9 @@
 ---
 title: i<sup>2</sup>Talent - Blog
 ---
-<span class="pull-right">[Retour](/2de-jaar/semester-II/italent/index.md)</span>
+
+[Retour](/2de-jaar/semester-II/italent/index.md)
+
 # Blog \#1
 
 ## L'ordre Des Tâches
