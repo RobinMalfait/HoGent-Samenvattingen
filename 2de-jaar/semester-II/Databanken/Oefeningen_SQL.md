@@ -38,7 +38,7 @@ order by product.ProductClassId;
 
 ### Oefening 16
 
-Tel het aantal producten die Xtreme aanbiedt (geef de kolom de naam "aantal producten"), evenals het aantal producten die in voorraad zijn (waarvoor UnitsInStock ingevuld)(geef de kolom de naam "aantal in voorraad")
+Tel het aantal producten die Xtreme aanbiedt (geef de kolom de naam 'aantal producten'), evenals het aantal producten die in voorraad zijn (waarvoor UnitsInStock ingevuld)(geef de kolom de naam 'aantal in voorraad')
 
 ```sql
 select count(*) as 'aantal producten',  count(UnitsInStock) as 'aantal in voorraad' from Product;
@@ -57,7 +57,7 @@ select count(distinct SupervisorID) from Employee;
 Geef respectievelijk van de jongste werknemer en van de oudste werknemer de geboortedatum weer.
 
 ```sql
-select min(BirthDate) as "Oudste", max(BirthDate) as "Jongste" from Employee;
+select min(BirthDate) as 'Oudste', max(BirthDate) as 'Jongste' from Employee;
 ```
 
 ### Oefening 26
@@ -73,11 +73,13 @@ select Country, count(Country) from Supplier group by Country having count(Count
 Welke leveranciers bieden minstens 10 producten aan waarvan de prijs kleiner is dan 100 dollar. Toon ID van de leverancier en het aantal verschillende product. De leverancier die het meeste aantal producten aanbiedt staat bovenaan.
 
 ```sql
-select SupplierID, count(ProductID)
-from Product
-group by SupplierID
+select s.SupplierId, s.SupplierName, count(ProductID)
+from Product p
+join Supplier s on p.SupplierID = s.SupplierID
+where Price < 100
+group by s.SupplierID, s.SupplierName
 having count(ProductID) >= 10
-and count(Price) < 100;
+order by count(ProductID) desc;
 ```
 
 ### Oefening 31
