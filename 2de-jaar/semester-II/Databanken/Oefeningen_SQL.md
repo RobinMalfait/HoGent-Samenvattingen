@@ -87,12 +87,20 @@ order by count(ProductID) desc;
 Geef de leveranciers die fietsen kunnen leveren. De resultaatset bevat het ID en de naam van de leveranciers.
 
 ```sql
-select Supplier.SupplierID, Supplier.SupplierName
-from Product
-join ProductClass on Product.ProductClassID = ProductClass.ProductClassID
-join Supplier on Product.SupplierID = Supplier.SupplierID
-where ProductClass.ProductClassName = 'Bicycle'
-group by SupplierName, Supplier.SupplierID;
+select s.SupplierID, s.SupplierName
+from Product p
+join ProductClass pc on p.ProductClassID = pc.ProductClassID
+join Supplier s on p.SupplierID = s.SupplierID
+where pc.ProductClassName = 'Bicycle'
+group by s.SupplierID, s.SupplierName;
+
+-- of
+
+select distinct s.SupplierID, s.SupplierName
+from Product p
+join ProductClass pc on p.ProductClassID = pc.ProductClassID
+join Supplier s on p.SupplierID = s.SupplierID
+where pc.ProductClassName = 'Bicycle';
 ```
 
 ### Oefening 36
@@ -100,7 +108,11 @@ group by SupplierName, Supplier.SupplierID;
 Welke is de laagste prijs per type van de producten die bestemd zijn voor de jongeren ('Y'outh)? Geef de naam van het producttype en ook de laagste prijs.
 
 ```sql
-
+select pt.ProductTypeName, min(p.price) as 'Laagste Prijs'
+from ProductType pt
+join Product p on p.ProductTypeId = pt.ProductTypeId
+where p.M_F = 'Y'
+group by p.ProductTypeId, pt.ProductTypeName;
 ```
 
 ### Oefening 48
