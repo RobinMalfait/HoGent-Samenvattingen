@@ -31,6 +31,7 @@ end
 ## XML Document
 
 ```xml
+<?xml version="1.0"?>
 <parent>
     <child>Some Child</child>
     <child>Some Other Child</child>
@@ -38,6 +39,110 @@ end
 </parent>
 ```
 
-## XML Schema
+## XML Schema (xsd schema)
 
 Een opmaak waaraan het XML document moet voldoen, alle tags en eventuele waarden.
+
+Voorbeeld:
+
+```xml
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
+```
+
+### XML & XSD
+
+XML:
+
+```xml
+<?xml version="1.0"?>
+<memo>
+    <aan>Jan</aan>
+    <van>Piet</van>
+    <kop>Let op</kop>
+    <tekst>Definitie structuur</tekst>
+</memo>
+```
+
+XSD:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Begin met opsomming van alle tags + hun type -->
+    <xs:element name="memo" type="memoType"/>
+    <xs:element name="aan" type="xs:string"/>
+    <xs:element name="van" type="xs:string"/>
+    <xs:element name="kop" type="xs:string"/>
+    <xs:element name="tekst" type="xs:string"/>
+
+    <!-- Eigen Types Beschrijven -->
+    <xs:complexType name="memoType">
+        <xs:sequence>
+            <xs:element ref="aan" maxOccurs="unbounded"/> <!-- Referentie naar de opsomming hier boven -->
+            <xs:element ref="van"/>
+            <xs:element ref="kop"/>
+            <xs:element ref="tekst"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
+```
+
+#### Voorbeeld:
+
+XML:
+
+```xml
+<boekenlijst>
+    <uitgevers>
+        <uitgever uitgeverid="U0001">
+            <uitgevernaam>Easy Computing</uitgevernaam>
+            <contactpersoon>
+                <voornaam></voornaam>
+                <naam></naam>
+                <email></email>
+            </contactpersoon>
+        </uitgever>
+    </uitgevers>
+    <boek>
+        <title isbn=""></title>
+    </boek>
+</boekenlijst>
+```
+
+XSD:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>￼
+```
+
+## Namespaces:
+
+```xml
+<?xml version="1.0"?>
+<m:stoel xmlns:m="http://www.weba.com/beuels">
+
+</m:stoel>
+```
+
+```xml
+<?xml version="1.0"?>
+<h:table xmlns:="http:...">
+
+</h:table>
+```
