@@ -136,16 +136,16 @@ XSD:
 ```xml
 <?xml version="1.0"?>
 <m:stoel xmlns:m="http://www.weba.com/beuels">
-
+    ...
 </m:stoel>
 ```
 
 ```xml
 <?xml version="1.0"?>
-<h:table xmlns:="http:...">
-
-</h:table>
-```
+<h:table xmlns:m="http:...">
+    ...
+</h:table>
+```
 
 ## Stored Procedures
 
