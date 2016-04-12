@@ -189,26 +189,16 @@ AS
     VALUES (user, getdate(), @MSNR, @MSTYPE, @MSNR_NEW)
 ```
 
+### Insert Trigger
+
 ```sql
 CREATE TRIGGER insert_speler ON SPELERS FOR insert
 AS
-INSERT INTO mutatie (
-    gebruiker,
-    mut_tijdstip,
-    mut_snr,
-    mut_type,
-    mut_snr_new
-)
-SELECT
-    user,
-    getdate(),
-    null,
-    'i',
-    spelersnr
-FROM inserted
+INSERT INTO mutatie (gebruiker, mut_tijdstip, mut_snr, mut_type, mut_snr_new)
+SELECT user, getdate(), null, 'i', spelersnr FROM inserted
 ```
 
-### Delete Triggers
+### Delete Trigger
 
 ```sql
 CREATE TRIGGER delete_speler ON SPELERS FOR delete
@@ -231,4 +221,81 @@ Activatie van de trigger:
 
 ```sql
 delete from spelers where spelersnr > 115;
+```
+
+### Update Trigger
+
+```sql
+CREATE TRIGGER update_speler ON SPELERS FOR update
+AS
+    DECLARE @old_snr smallint
+    DECLARE @new_snr smallint
+
+    DECLARE before_cursor CURSOR FOR SELECT spelersnr FROM deleted ORDER BY spelersnr
+    DECLARE after_cursor CURSOR FOR SELECT spelersnr FROM inserted ORDER BY spelersnr
+
+    OPEN before_cursor
+    OPEN after_cursor
+
+    FETCH NEXT FROM before_cursor INTO @old_snr
+    FETCH NEXT FROM after_cursor INTO @new_snr
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        EXEC usp_mutatie_insert @old_snr, 'U', @new_snr
+
+        FETCH NEXT FROM before_cursor INTO @old_snr
+        FETCH NEXT FROM after_cursor INTO @new_snr
+    END
+
+    CLOSE before_cursor
+    CLOSE after_cursor
+
+    DEALLOCATE before_cursor
+    DEALLOCATE after_cursor
+```
+
+```sql
+CREATE TRIGGER update_speler_optimalisatie ON SPELERS FOR update
+AS
+    DECLARE @old_snr smallint
+    DECLARE @new_snr smallint
+
+    DECLARE before_cursor CURSOR FOR SELECT spelersnr FROM deleted ORDER BY spelersnr
+    OPEN before_cursor
+    IF update(spelersnr)
+    BEGIN
+        DECLARE after_cursor CURSOR FOR SELECT spelersnr FROM inserted ORDER BY spelersnr
+        OPEN after_cursor
+    END
+
+    FETCH NEXT FROM before_cursor INTO @old_snr
+    IF update(spelersnr)
+        FETCH NEXT FROM after_cursor INTO @new_snr
+    ELSE
+        SET @new_snr = @old_snr
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        EXEC usp_mutatie_insert @old_snr, 'U', @new_snr
+
+        FETCH NEXT FROM before_cursor INTO @old_snr
+
+        IF update(spelersnr)
+            FETCH NEXT FROM after_cursor INTO @new_snr
+        ELSE
+            SET @new_snr = @old_snr
+    END
+
+    CLOSE before_cursor
+    CLOSE after_cursor
+
+    DEALLOCATE before_cursor
+    DEALLOCATE after_cursor
+```
+
+Activatie van de trigger:
+
+```sql
+
 ```
