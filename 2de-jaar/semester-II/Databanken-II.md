@@ -146,3 +146,29 @@ XSD:
 
 </h:table>
 ```
+
+## Stored Procedures
+
+```sql
+CREATE procedure usp_Customers_Delete
+    @custno nchar(5) = NULL
+AS
+IF @custno IS NULL BEGIN
+    RAISERROR('customerID is NULL', 10, 1)
+    RETURN
+END
+IF NOT EXISTS (SELECT * FROM customers WHERE customer id = @custno) BEGIN
+    RAISEERROR('klant bestaat niet', 10, 1)
+    RETURN
+END
+IF EXISTS (SELECT * FROM orders WHERE customer id = @custno) BEGIN
+    RAISEERROR('klant heeft orders', 10, 1)
+    RETURN
+END
+DELETE FROM customers WHERE customerid = @custno
+```
+
+```sql
+-- Execute
+exec usp_Customers_Delete 153
+```
