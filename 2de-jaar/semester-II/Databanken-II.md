@@ -170,10 +170,24 @@ DELETE FROM customers WHERE customerid = @custno
 
 ```sql
 -- Execute --
-exec usp_Customers_Delete 153
+EXEC usp_Customers_Delete 153
 ```
 
 ## Triggers
+
+2 Tijdelijke tabellen:
+
+- *deleted* tabel
+- *inserted* tabel
+
+
+```sql
+-- Hulp Procedure --
+CREATE PROCEDURE usp_mutatie_insert (@MSNR SMALLINT, @MSTYPE CHAR(1), @MSNR_NEW SMALLINT)
+AS
+    INSERT INTO mutatie (gebruiker, mut_tijdstip, mut_snr, mut_type, mut_snr_new)
+    VALUES (user, getdate(), @MSNR, @MSTYPE, @MSNR_NEW)
+```
 
 ```sql
 CREATE TRIGGER insert_speler ON SPELERS FOR insert
@@ -192,4 +206,29 @@ SELECT
     'i',
     spelersnr
 FROM inserted
+```
+
+### Delete Triggers
+
+```sql
+CREATE TRIGGER delete_speler ON SPELERS FOR delete
+AS
+    DECLARE @old_snr smallint
+    DECLARE del_cursor CURSOR FOR SELECT spelersnr FROM deleted
+    OPEN del_cursor
+    FETCH NEXT FROM del_cursor INTO @old_snr
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        EXEC usp_mutatie_insert @old_snr, 'D', null
+        FETCH NEXT FROM del_cursor INTO @old_snr
+    END
+    CLOSE del_cursor
+    DEALLOCATE del_cursor
+
+```
+
+Activatie van de trigger:
+
+```sql
+delete from spelers where spelersnr > 115;
 ```
