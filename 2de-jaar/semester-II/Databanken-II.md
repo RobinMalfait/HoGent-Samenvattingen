@@ -297,5 +297,5 @@ AS
 Activatie van de trigger:
 
 ```sql
-
+update top 1 spelers set geslacht = 'V' where geslacht = 'M'
 ```
