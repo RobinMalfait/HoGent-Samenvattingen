@@ -157,11 +157,11 @@ IF @custno IS NULL BEGIN
     RAISERROR('customerID is NULL', 10, 1)
     RETURN
 END
-IF NOT EXISTS (SELECT * FROM customers WHERE customer id = @custno) BEGIN
+IF NOT EXISTS (SELECT * FROM customers WHERE customer_id = @custno) BEGIN
     RAISEERROR('klant bestaat niet', 10, 1)
     RETURN
 END
-IF EXISTS (SELECT * FROM orders WHERE customer id = @custno) BEGIN
+IF EXISTS (SELECT * FROM orders WHERE customer_id = @custno) BEGIN
     RAISEERROR('klant heeft orders', 10, 1)
     RETURN
 END
@@ -169,6 +169,27 @@ DELETE FROM customers WHERE customerid = @custno
 ```
 
 ```sql
--- Execute
+-- Execute --
 exec usp_Customers_Delete 153
+```
+
+## Triggers
+
+```sql
+CREATE TRIGGER insert_speler ON SPELERS FOR insert
+AS
+INSERT INTO mutatie (
+    gebruiker,
+    mut_tijdstip,
+    mut_snr,
+    mut_type,
+    mut_snr_new
+)
+SELECT
+    user,
+    getdate(),
+    null,
+    'i',
+    spelersnr
+FROM inserted
 ```
