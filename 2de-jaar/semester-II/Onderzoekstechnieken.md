@@ -2,6 +2,8 @@
 title: Onderzoekstechnieken
 ---
 
+# Intro
+
 2 taken (doorheen het jaar):
 
 - Voorstel bachelorproef uitwerken
@@ -123,7 +125,12 @@ We zijn vooral op zoek naar **oorzakelijke verbanden**, bv.
 
 > Het gemiddelde is de som van alle waarden gedeeld door het aantal waarden
 
-Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan de uitkomst.
+Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan de uitkomst
+
+```
+–
+x = 1/n * sum(Xi)
+```
 
 ### Mediaan
 
@@ -169,8 +176,15 @@ s = ------------------
             n
 ```
 
-> De standaardafwijking is de vierkantswortel van de variantie
+> Een waarde uitdrukken op basis van u meetpunt heet `Normaliseren` x^2/n (zoals bij variantie)
 
+Variantie wordt aangeduid door `s` of door `σ^2`
+```
+
+σ^2  == s
+```
+
+> De standaardafwijking is de vierkantswortel van de variantie
 
 Aangeduid door sigma
 
@@ -190,3 +204,26 @@ Aangeduid door sigma
 ## Diagrammen
 
 > Probeer cirkeldiagrammen te vermijden, bar charts zijn makkelijker interpreteerbaar!
+
+# Analyse op 2 variabelen
+
+## Bivariate Analyse
+
+### Afhankelijke en onafhankelijke variabele
+
+Verbanden tussen verschillende verschijnselen.
+
+## Kruistabellen en Cramér's V
+
+- Metingen: `a`
+- Verwachte waarde: `e`
+
+
+| &nbsp;       | Vrouw | Man | Totaal | Percentage Vrouwen | Percentage Mannen |
+| ------------ | ----- | --- | --- | ----------- | ----------- |
+| Goed         | 9     | 8   | 17 | `9 / 22 = 41%` | `8 / 27` |
+| Voldoende    | 8     | 10  | 18 | `8 / 22 = 36%` | `10 / 27` |
+| Onvoldoende  | 5     | 5   | 10 | `5 / 22 = 23%` | `5 / 27` |
+| Slecht       | 0     | 4   | 4 | `0 / 22 = 0%` | `4 / 27` |
+| ------------ | ----- | --- | --- |----- | ---- |
+| Totaal       | 22    | 27  | 49 | 100% | 100% |
