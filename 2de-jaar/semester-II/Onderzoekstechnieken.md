@@ -2,6 +2,8 @@
 title: Onderzoekstechnieken
 ---
 
+[Cheat Sheet](/2de-jaar/semester-II/Statistics.md)
+
 # Intro
 
 2 taken (doorheen het jaar):
