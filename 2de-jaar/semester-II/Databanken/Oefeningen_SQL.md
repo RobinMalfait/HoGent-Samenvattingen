@@ -122,3 +122,64 @@ Toon een lijst met orderID’s, het employeeID en de naam van de employee. Zorg 
 ```sql
 
 ```
+
+## Oefeningen op stored Procedures
+
+### Oefening 81
+
+Maak een stored procedure voor de ingave van een bestellijn. Controleer of de
+artCodeLev wel degelijk behoort tot de leverancier opgegeven in de bestelling. Indien
+niet, dan mag de bestellijn niet worden toegevoegd.
+
+```sql
+
+```
+
+### Oefening 82
+
+Maak een stored procedure die alle offertes van een op te geven leverancier ophaalt.
+
+```sql
+
+```
+
+### Oefening 83
+
+Maak een stored procedure die voor een op te geven soort en kleur, alle offertes
+ophaalt.
+
+```sql
+
+```
+
+### Oefening 84
+
+Maak een stored procedure voor het verwijderen van een offerte. Dit kan enkel indien
+er voor de betreffende artikelcode van leverancier en de leverancier zelf nog geen
+bestelling geplaatst werd.
+
+```sql
+
+```
+
+### Oefening 86
+
+Maak een stored procedure die alle planten waarvoor de prijs onder de 5 euro met 1
+procent verhoogt, en de andere prijzen met 2 procent verhoogt. Rond af op 2 cijfers na
+de komma. Maak gebruik van een cursor.
+
+```sql
+
+```
+
+## Oefeningen op Triggers
+
+### Oefening 87
+
+Creëer een trigger die bij creatie van een bestellijn toelaat dat de prijs niet opgegeven
+wordt. In dit geval gaat de prijs automatisch ingesteld worden op de offerteprijs die de
+leverancier heeft voor het artikel.
+
+```sql
+
+```
