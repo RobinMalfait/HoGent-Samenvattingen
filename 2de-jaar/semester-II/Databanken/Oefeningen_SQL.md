@@ -132,7 +132,17 @@ artCodeLev wel degelijk behoort tot de leverancier opgegeven in de bestelling. I
 niet, dan mag de bestellijn niet worden toegevoegd.
 
 ```sql
-
+CREATE procedure oef81
+    @artCodeLev nchar(5) = NULL
+AS
+IF @artCodeLev IS NULL BEGIN
+    RAISERROR('artCodeLev is NULL', 10, 1)
+    RETURN
+END
+IF NOT EXISTS (SELECT * FROM Leveranciers WHERE levCode = @artCodeLev) BEGIN
+    RAISERROR('Leverancier bestaat niet', 10, 1)
+    RETURN
+END
 ```
 
 ### Oefening 82
@@ -140,7 +150,12 @@ niet, dan mag de bestellijn niet worden toegevoegd.
 Maak een stored procedure die alle offertes van een op te geven leverancier ophaalt.
 
 ```sql
-
+CREATE PROCEDURE oef82
+    @levcode varchar(3)
+AS
+    SELECT *
+    FROM offertes
+    WHERE levcode = @levcode
 ```
 
 ### Oefening 83
@@ -149,7 +164,24 @@ Maak een stored procedure die voor een op te geven soort en kleur, alle offertes
 ophaalt.
 
 ```sql
-
+CREATE PROCEDURE oef83
+    @soort nvarchar(50) = NULL,
+    @kleur nvarchar(50) = NULL
+AS
+IF @soort IS NULL BEGIN
+    RAISERROR('Soort is NULL', 10, 1)
+    RETURN
+END
+IF @kleur IS NULL BEGIN
+    RAISERROR('Kleur is NULL', 10, 1)
+    RETURN
+END
+SELECT * FROM Offertes where artCode in (
+    SELECT artCode
+    FROM Planten
+    WHERE soortID = (SELECT soortID FROM Soorten where soort = @soort)
+    AND kleurID = (SELECT kleurID FROM Kleuren where kleur = @kleur)
+)
 ```
 
 ### Oefening 84

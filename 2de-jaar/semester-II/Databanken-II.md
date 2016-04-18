@@ -158,11 +158,11 @@ IF @custno IS NULL BEGIN
     RETURN
 END
 IF NOT EXISTS (SELECT * FROM customers WHERE customer_id = @custno) BEGIN
-    RAISEERROR('klant bestaat niet', 10, 1)
+    RAISERROR('klant bestaat niet', 10, 1)
     RETURN
 END
 IF EXISTS (SELECT * FROM orders WHERE customer_id = @custno) BEGIN
-    RAISEERROR('klant heeft orders', 10, 1)
+    RAISERROR('klant heeft orders', 10, 1)
     RETURN
 END
 DELETE FROM customers WHERE customerid = @custno
