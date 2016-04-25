@@ -132,16 +132,30 @@ artCodeLev wel degelijk behoort tot de leverancier opgegeven in de bestelling. I
 niet, dan mag de bestellijn niet worden toegevoegd.
 
 ```sql
-CREATE procedure oef81
-    @artCodeLev nchar(5) = NULL
-AS
-IF @artCodeLev IS NULL BEGIN
-    RAISERROR('artCodeLev is NULL', 10, 1)
-    RETURN
-END
-IF NOT EXISTS (SELECT * FROM Leveranciers WHERE levCode = @artCodeLev) BEGIN
-    RAISERROR('Leverancier bestaat niet', 10, 1)
-    RETURN
+DROP PROCEDURE oef81
+CREATE PROCEDURE oef81
+    @bestelnr varchar(4),
+    @artCodeLev nvarchar(5),
+    @aantal smallint,
+    @prijs decimal(6, 2)
+AS BEGIN
+    DECLARE @levCode varchar(3)
+    DECLARE @errMessage varchar(200)
+    SELECT @levCode = levCode from Bestellingen where @bestelnr = bestelnr
+
+    IF @levCode IS NULL BEGIN
+        set @errMessage = 'Bestelling met nummer ' + @bestelnr + ' is onbestaande.';
+        RAISERROR(@errMessage, 14, 1)
+        RETURN
+    END
+
+    IF NOT EXISTS (SELECT * FROM offertes WHERE levCode = @levCode AND artcodelev = @artcodelev) BEGIN
+        set @errMessage = 'Er bestaat geen offerte met artikelCodeLev ' + @artcodelev;
+        RAISERROR(@errMessage, 14, 1)
+        RETURN
+    END
+
+    INSERT INTO bestellijnen VALUES(@bestelnr, @artcodelev, @aantal, @prijs)
 END
 ```
 
@@ -184,6 +198,16 @@ SELECT * FROM Offertes where artCode in (
 )
 ```
 
+of andere select:
+
+```sql
+select o.*
+from offertes o
+join planten p on o.artCode = p.ArtCode
+join soorten s on p.soortID = s.soortIDjoin kleuren k on p.kleurId = k.kleurID
+where soort = @soort and kleur = @kleur
+```
+
 ### Oefening 84
 
 Maak een stored procedure voor het verwijderen van een offerte. Dit kan enkel indien
@@ -201,7 +225,16 @@ procent verhoogt, en de andere prijzen met 2 procent verhoogt. Rond af op 2 cijf
 de komma. Maak gebruik van een cursor.
 
 ```sql
+create procedure deleteofferte
+    @levcode varchar(3),
+    @artCodelev varchar(3)
+AS
+    if exists (select * from bestellingen join bestellijnen on bestellingen.bestelnr = bestellijnen.bestelnr where levcode = @levcode and artcodelev = @artcodelev) BEGIN
+        raiserror('er bestaan reeds bestellingen voor dit product', 14, 1)
+        RETURN
+    END
 
+    delete from offertes where levcode = @levcode and artcodelev = @artcodelev
 ```
 
 ## Oefeningen op Triggers
