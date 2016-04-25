@@ -1,4 +1,6 @@
-# Code I used to benchmark
+# Benchmarking api.skedify.com
+
+## PHP 5.6.17
 
 ```Bash
 ab -n 10000 http://api.skedify.com/
@@ -58,30 +60,9 @@ Percentage of the requests served within a certain time (ms)
  100%   1002 (longest request)
 ```
 
-# Benchmarking PHP 5.6.17
-
-> **POST:** https://api.skedify.com/auth/access_tokens
-
-| #   | Time (ms) |
-| :-: | :-------: |
-| 1  | 1053 ms   |
-| 2  | 2000 ms   |
-| 3  | 1192 ms   |
-| 4  | 1096 ms   |
-| 5  | 1170 ms   |
-| 6  | 1060 ms   |
-| 7  | 1133 ms   |
-| 8  | 1093 ms   |
-| 9  | 1051 ms   |
-| 10 | 1140 ms   |
-| === | ========= |
-| Avg | 1198,8 ms |
-
 # Benchmarking PHP 7
 
-> **POST:** https://api.skedify.com/auth/access_tokens
-
-## Install Step
+## Installation Step
 
 ```
 sudo apt-get install software-properties-common
@@ -101,9 +82,10 @@ sudo service php7.0-fpm restart
 sudo service nginx restart
 ```
 
-## Benchmarks
+## Benchmark
 
 ```
+ab -n 10000 http://api.skedify.com/
 This is ApacheBench, Version 2.3 <$Revision: 1663405 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
