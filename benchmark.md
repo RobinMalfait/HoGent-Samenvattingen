@@ -2,63 +2,35 @@
 
 ## PHP 5.6.17
 
-```Bash
-ab -n 10000 http://api.skedify.com/
-This is ApacheBench, Version 2.3 <$Revision: 1663405 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
-Benchmarking api.skedify.com (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-
-
-Server Software:        nginx
-Server Hostname:        api.skedify.com
-Server Port:            80
-
-Document Path:          /
-Document Length:        178 bytes
-
-Concurrency Level:      1
-Time taken for tests:   26.357 seconds
-Complete requests:      10000
-Failed requests:        0
-Non-2xx responses:      10000
-Total transferred:      5230000 bytes
-HTML transferred:       1780000 bytes
-Requests per second:    379.41 [#/sec] (mean)
-Time per request:       2.636 [ms] (mean)
-Time per request:       2.636 [ms] (mean, across all concurrent requests)
-Transfer rate:          193.78 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0  11.5      0    1002
-Processing:     0    2  15.6      0     174
-Waiting:        0    2  15.5      0     174
-Total:          0    3  19.4      1    1002
-
-Percentage of the requests served within a certain time (ms)
-  50%      1
-  66%      1
-  75%      1
-  80%      1
-  90%      1
-  95%      2
-  98%      4
-  99%    151
- 100%   1002 (longest request)
-```
+| # | Time (s) |
+| :-: | :-----: |
+| 1 | 3784 ms |
+| 2 | 647 ms |
+| 3 | 627 ms |
+| 4 | 1501 ms |
+| 5 | 612 ms |
+| 6 | 1114 ms |
+| 7 | 512 ms |
+| 8 | 506 ms |
+| 9 | 1086 ms |
+| 10 | 489 ms |
+| 11 | 526 ms |
+| 12 | 1027 ms |
+| 13 | 500 ms |
+| 14 | 520 ms |
+| 15 | 500 ms |
+| 16 | 1079 ms |
+| 17 | 497 ms |
+| 18 | 492 ms |
+| 19 | 1142 ms |
+| 20 | 465 ms |
+| 21 | 512 ms |
+| 22 | 990 ms |
+| 23 | 517 ms |
+| 24 | 494 ms |
+| 25 | 493 ms |
+| === | ======= |
+| AVG | 820 ms |
 
 # Benchmarking PHP 7
 
@@ -84,60 +56,32 @@ sudo service nginx restart
 
 ## Benchmark
 
-```
-ab -n 10000 http://api.skedify.com/
-This is ApacheBench, Version 2.3 <$Revision: 1663405 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
-Benchmarking api.skedify.com (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-
-
-Server Software:        nginx
-Server Hostname:        api.skedify.com
-Server Port:            80
-
-Document Path:          /
-Document Length:        178 bytes
-
-Concurrency Level:      1
-Time taken for tests:   25.938 seconds
-Complete requests:      10000
-Failed requests:        0
-Non-2xx responses:      10000
-Total transferred:      5230000 bytes
-HTML transferred:       1780000 bytes
-Requests per second:    385.54 [#/sec] (mean)
-Time per request:       2.594 [ms] (mean)
-Time per request:       2.594 [ms] (mean, across all concurrent requests)
-Transfer rate:          196.91 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0   4.1      0     150
-Processing:     0    2  15.5      0     190
-Waiting:        0    2  15.5      0     190
-Total:          0    3  16.1      1     190
-
-Percentage of the requests served within a certain time (ms)
-  50%      1
-  66%      1
-  75%      1
-  80%      1
-  90%      1
-  95%      2
-  98%      5
-  99%    151
- 100%    190 (longest request)
-```
+| # | Time (s) |
+| :-: | :-----: |
+| 1 | 977 ms |
+| 2 | 332 ms |
+| 3 | 329 ms |
+| 4 | 982 ms |
+| 5 | 1955 ms |
+| 6 | 890 ms |
+| 7 | 373 ms |
+| 8 | 385 ms |
+| 9 | 531 ms |
+| 10 | 918 ms |
+| 11 | 334 ms |
+| 12 | 329 ms |
+| 13 | 334 ms |
+| 14 | 845 ms |
+| 15 | 329 ms |
+| 16 | 447 ms |
+| 17 | 387 ms |
+| 18 | 900 ms |
+| 19 | 330 ms |
+| 20 | 347 ms |
+| 21 | 339 ms |
+| 22 | 3389 ms |
+| 23 | 332 ms |
+| 24 | 334 ms |
+| 25 | 333 ms |
+| === | ======= |
+| AVG | 670 ms |

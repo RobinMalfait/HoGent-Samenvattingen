@@ -149,6 +149,17 @@ XSD:
 
 ## Stored Procedures
 
+Te kennen:
+
+1. Parameters en variabelen in SQL
+2. SELECT met 1 lijn als resultaat:
+
+    ```sql
+    SELECT @var = select .. from ..
+    ```
+3. IF (NOT) EXISTS (SELECT ...)
+4. Select met > 1 lijnen: -> CURSOR
+
 ```sql
 CREATE procedure usp_Customers_Delete
     @custno nchar(5) = NULL

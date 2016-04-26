@@ -215,16 +215,6 @@ er voor de betreffende artikelcode van leverancier en de leverancier zelf nog ge
 bestelling geplaatst werd.
 
 ```sql
-
-```
-
-### Oefening 86
-
-Maak een stored procedure die alle planten waarvoor de prijs onder de 5 euro met 1
-procent verhoogt, en de andere prijzen met 2 procent verhoogt. Rond af op 2 cijfers na
-de komma. Maak gebruik van een cursor.
-
-```sql
 create procedure deleteofferte
     @levcode varchar(3),
     @artCodelev varchar(3)
@@ -237,6 +227,32 @@ AS
     delete from offertes where levcode = @levcode and artcodelev = @artcodelev
 ```
 
+### Oefening 86
+
+Maak een stored procedure die alle planten waarvoor de prijs onder de 5 euro met 1
+procent verhoogt, en de andere prijzen met 2 procent verhoogt. Rond af op 2 cijfers na
+de komma. Maak gebruik van een cursor.
+
+```sql
+create procedure upgradePrices
+as
+    declare planten_cursor cursor for select prijs from planten for update
+    open planten_cursor
+    declare @prijs decimal(6, 2)
+    fetch next from planten_cursor
+    into @prijs
+    while @@FETCH_STATUS = 0 begin
+        if @prijs <= 1
+            set @prijs = round(@prijs * 1.01, 1)
+        else
+            set @prijs = round(@prijs * 1.05, 2)
+        update planten set prijs = @prijs where curront of planten_cursor
+        fetch next from planten_cursor into @prijs
+    end
+    close planten_cursor
+    deallocate planten_cursor
+```
+
 ## Oefeningen op Triggers
 
 ### Oefening 87
@@ -246,5 +262,27 @@ wordt. In dit geval gaat de prijs automatisch ingesteld worden op de offerteprij
 leverancier heeft voor het artikel.
 
 ```sql
+create trigger oef87 on bestellijnen for insert as
+declare @prijs decimal(6, 2)
+declare @bestelnr decimal(4)
+declare @artCodeLev varchar(5)
+select @prijs = prijs, @bestelnr = bestelnr, @artCodeLev = artCodeLev from inserted
 
+declare @levcode varchar(3)
+select @levcode = levcode from bestellingen where bestelnr = @bestelnr
+if @prijs is null
+begin
+    declare @offertePrijs decimal(6, 2)
+    select @offertePrijs = offertePrijs from offertes where artCodeLev = @artCodeLev and levcode = @levcode
+
+    update bestellijnen set prijs = @offerteprijs where artCodeLev = @artCodeLev and bestelNr = @bestelnr
+end
+```
+
+Testen:
+
+```sql
+delete from Bestellijnen where bestelnr = '0123' and artCodeLev = 'A230'
+insert into Bestellijnen VALUES('0123', 'A230', 20, null)
+select * from Bestellijnen where artCodeLev = 'A230'
 ```
