@@ -281,6 +281,82 @@ public static void main(String[] args) {
 }
 ```
 
+### 3.4. Voordelen
+
+- Schermt de manier waarop een complex object gebouwd wordt af
+- Geeft de mogelijkheid om objecten in meerdere stappen en wisselende processen te maken (in tegenstelling tot een éénstapsfactory)
+- Verbergt de interne representatie van het product voor de client
+- Productimplementaties kunnen steeds wisselen, omdat een client alleen een abstracte interface ziet
+
+### 3.5. Gebruik en nadelen Builder
+
+- Wordt vaak gebruikt voor samengestelde objecten
+- Het maken van een object vereist meer domeinkennis
+van de client (tenzij je een Director klasse kan
+voorzien) dan wanneer je een Factory gebruikt
+
+### 3.6. Fluent Variant
+
+```java
+public class Rectangle {
+    private final double opacity;
+    private final double height;
+    private final double width;
+    // ...
+    private final Color color;
+
+    private static class Builder {
+        private double opacity;
+        private double height;
+        private double width;
+        private Color color;
+        // ...
+        public Builder opacity(double opacity) {
+            this.opacity = opacity;
+            return this;
+        }
+
+        public Builder height(double height) {
+            this.height = height;
+            return this;
+        }
+
+        public Builder width(double width) {
+            this.width = width;
+            return this;
+        }
+
+        public Builder color(Color color) {
+            this.color = color;
+            return this;
+        }
+        // ... meer methodes eventueel
+
+        public Rectangle build() {
+            return new Rectangle(this);
+        }
+    };
+
+    private Rectangle(Builder builder) {
+        this.opacity = builder.opacity;
+        this.height = builder.height;
+        this.width = builder.width;
+        this.color = builder.color;
+        // ... validatie
+    }
+}
+
+
+public static void main(String[] args) {
+    Rectangle r = new Rectangle.Builder()
+        .height(250)
+        .width(300)
+        .opacity(0.5)
+        .color(Color.PINK)
+        .build();
+}
+```
+
 ## 4. Singleton
 
 # Behavioral Patterns
