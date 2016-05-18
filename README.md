@@ -32,6 +32,10 @@ contributions: true
 * [Probleemoplossend denken II](2de-jaar/semester-II/Probleemoplossend-denken-II.md)
 * [Webapplicaties IV](2de-jaar/semester-II/Webapplicaties-IV.md)
 
+### Semester II (Keuze Netwerken)
+
+* [Computernetwerken II](2de-jaar/semester-II/Computernetwerken-II.md)
+
 ## 1ste jaar (Gearchiveerd)
 
 Het [eerste jaar](1ste-jaar/archive.md) is gearchiveerd, je kan het altijd terug bekijken via de link.
