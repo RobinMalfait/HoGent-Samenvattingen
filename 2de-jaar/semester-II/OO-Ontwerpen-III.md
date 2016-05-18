@@ -584,6 +584,192 @@ public class Template {
 
 ## 6. Command
 
+### 6.1. DEFINITIE
+
+> Het **Command Pattern** schermt een aanroep af door middel van een object, waarbij je verschillende aanroepen in verschillende objecten kun opbergen, in een queue kunt zetten of op schijf kunt bewaren; ook undo-operaties kunnen worden ondersteund.
+
+### 6.2. UML Diagram
+
+![](http://d.pr/i/1iEun+)
+
+### 6.3. CODE
+
+```java
+public interface Command {
+    void execute();
+    void undo();
+}
+
+// Zorgt er voor dat we geen if-statements moeten zetten met de vraag of we wel execute() kunnen aanroepen
+public class NoCommand implements Command {
+    public void execute() {}
+    public void undo() {}
+}
+
+
+// Voorbeelden
+public class LightOnCommand implements Command {
+    private Light light;
+
+    public LightOnCommand(Light light) {
+        this.light = light;
+    }
+
+    public void execute() {
+        light.on();
+    }
+
+    public void undo() {
+        light.off();
+    }
+}
+
+public class LightOffCommand implements Command {
+    private Light light;
+
+    public LightOffCommand(Light light) {
+        this.light = light;
+    }
+
+    public void execute() {
+        light.off();
+    }
+
+    public void undo() {
+        light.on();
+    }
+}
+
+public class StereoOnWithCDCommand implements Command {
+    private Stereo stereo;
+
+    public StereoOnWithCDCommand(Stereo stereo) {
+        this.stereo = stereo;
+    }
+
+    public void execute() {
+        stereo.on();
+        stereo.setCD();
+        stereo.setVolume(11);
+    }
+}
+
+// Hoe runnen:
+public class RemoteControl {
+    private Command[] onCommands;
+    private Command[] offCommands;
+    private Command undoCommand;
+    private final int numberCommands = 7;
+
+    public RemoteControl() {
+        onCommands = new Command[numberCommands];
+        offCommands = new Command[numberCommands];
+        Command noCommand = new NoCommand();
+
+        for (int i = 0; i < numberCommands; i++) {
+            onCommands[i] = noCommand;
+            offCommands[i] = noCommand;
+        }
+
+        undoCommand = noCommand;
+    }
+
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
+        onCommands[slot] = onCommand;
+        offCommands[slot] = offCommand;
+    }
+
+    public void onButtonWasPushed(int slot) {
+        onCommands[slot].execute();
+        undoCommand = onCommands[slot];
+    }
+
+    public void undoButtonWasPushed() {
+        undoCommand.undo();
+        undoCommand = new NoCommand();
+    }
+
+}
+public static void main(String[] args) {
+    RemoteControl remoteControl = new RemoteControl();
+
+    Light livingRoomLight = new Ligh("Living Room Lighting");
+    Light kitchenLight = new Light("Kitchen lighting");
+    Stereo stereo = new Stereo("Stereo");
+    // ...
+
+    LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+    LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+    LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+    LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
+    StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
+}
+```
+
+### 6.4. Het macro-command
+
+> Een command, die een verzameling van commands bevat. Deze commands kan je dan een voor een executen.
+
+#### 6.4.1. UML Diagram
+
+![](http://d.pr/i/6WL4+)
+
+#### 6.4.2. CODE
+
+```java
+public class MacroCommand implements Command {
+    private Command[] commands;
+    public MacroCommand(Command[] commands) {
+        this.commands = commands;
+    }
+
+    public void execute() {
+        Arrays.stream(commands).forEach(Command::execute);
+    }
+
+    public void undo() {
+
+    }
+}
+
+public class RemoteLoader {
+    public static void main(String[] args) {
+        RemoteControl remotecontrol = new RemoteControl();
+
+        Light light = new Ligh("Living Room");
+        Tv tv = new Tv("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+        Hottub hottub = new Hottub();
+
+        LightOnCommand lightOn = new LightOnCommand(light);
+        StereoOnCommand stereoOn = new StereoOnCommand(stereo);
+        TvOnCommand tvOn = new TvOnCommand(tv);
+        HottubOnCommand hottubOn = new HottubOnCommand(hottub);
+
+        LightOffCommand lightOff = new LightOffCommand(light);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+        TvOffCommand tvOff = new TvOffCommand(tv);
+        HottubOffCommand hottubOff = new HottubOffCommand(hottub);
+
+        Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn };
+        Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff };
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        System.out.println(remoteControl);
+
+        System.out.println("--- Pushing Macro On---");
+        remoteControl.onButtonWasPushed(0);
+
+        System.out.println("--- Pushing Macro Off---");
+        remoteControl.offButtonWasPushed(0);
+    }
+}
+```
+
 ## 7. Iterator
 
 # Structural Patterns
