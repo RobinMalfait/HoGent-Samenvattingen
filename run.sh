@@ -1,5 +1,5 @@
 #!/bin/bash
 
-URL="https://robinmalfait.com/"
+URL="https://rbn.nu/"
 
 open ${URL}${1}
