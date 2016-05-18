@@ -404,6 +404,44 @@ public class Singleton {
 - **Lazy Loading** enkel laden vanaf je het nodig hebt
 - **Eager Loading** vooraf laden, tegenovergestelde van Lazy Loading.
 
+### 4.4. Multithreading Oplossingen
+
+#### Zonder lazy loading
+
+```java
+public class Singleton {
+
+    // Maak meteen een instanties
+    private static final Singleton instance = new Singleton();
+
+    private Singleton() {
+    }
+
+    private static Singleton getInstance() {
+        return instance;
+    }
+}
+```
+
+#### Met lazy loading
+
+```java
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {
+    }
+
+    public static synchronized Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+
+        return instance;
+    }
+}
+```
+
 # Behavioral Patterns
 
 ## 5. Template Method
