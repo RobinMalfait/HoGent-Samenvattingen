@@ -359,6 +359,51 @@ public static void main(String[] args) {
 
 ## 4. Singleton
 
+### 4.1 DEFINITIE
+
+> Het **Singleton Pattern** garandeert dat een klasse slechts één instantie heeft, en biedt een globaal toegangspunt ernaartoe.
+
+### 4.2. UML Diagram
+
+![](http://d.pr/i/9wYQ+)
+
+### 4.3. CODE
+
+```java
+// Eager loading
+public class Singleton {
+
+    // Eager het is er van inbegin, het kan zijn dat je het zelf niet nodig hebt...
+    private static final Singleton instance = new Singleton();
+
+    private Singleton() {
+    }
+
+    private static Singleton getInstance() {
+        return instance;
+    }
+}
+
+// Lazy loading
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+
+        return instance;
+    }
+}
+```
+
+- **Lazy Loading** enkel laden vanaf je het nodig hebt
+- **Eager Loading** vooraf laden, tegenovergestelde van Lazy Loading.
+
 # Behavioral Patterns
 
 ## 5. Template Method
