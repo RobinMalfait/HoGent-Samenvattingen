@@ -590,7 +590,7 @@ public class Template {
 
 ### 6.2. UML Diagram
 
-![](http://d.pr/i/1iEun+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1iEun.png)
 
 ### 6.3. CODE
 
@@ -712,7 +712,7 @@ public static void main(String[] args) {
 
 #### 6.4.1. UML Diagram
 
-![](http://d.pr/i/6WL4+)
+![](https://robinmalfait.com/afbeeldingen/droplr/6WL4.png)
 
 #### 6.4.2. CODE
 
