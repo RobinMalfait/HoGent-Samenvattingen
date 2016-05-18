@@ -843,6 +843,127 @@ public static void main(String[] args) {
 
 ## 8. Composite
 
+### 8.1. DEFINITIE
+
+> Het **Composite Pattern** stelt je in staat om objecten in boomstructuren samen te stellen om partwhole hiërarchiën weer te geven. Composite laat clients de afzonderlijke objecten of samengestelde objecten op uniforme wijze behandelen
+
+### 8.2. UML Diagram
+
+### 8.3. CODE
+
+```java
+public abstract class MenuComponent {
+    public void add(MenuComponent menuComponent) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void remove(MenuComponent menuComponent) {
+        throw new UnsupportedOperationException();
+    }
+
+    public MenuComponent getChild(int i) {
+        throw new UnsupportedOperationException();
+    }
+
+    public String getName() {
+        throw new UnsupportedOperationException();
+    }
+
+    public String getDescription() {
+        throw new UnsupportedOperationException();
+    }
+
+    public double getPrice() {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean isVegetarian() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract void print();
+}
+
+public class MenuItem extends MenuComponent {
+    private String name;
+    private String description;
+    private boolean vegetarian;
+    private double price;
+
+    public MenuItem(String name, String description, boolean vegetarian, double price) {
+        this.name = name;
+        this.description = description;
+        this.vegetarian = vegetarian;
+        this.price = price;
+    }
+
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public double getPrice() { return price; }
+    public boolean isVegetarian() { return vegetarian; }
+
+    public void print() {
+        System.out.print("  " + getName());
+        if (isVegetarian()) {
+            System.out.print("(v)");
+        }
+        System.out.println("," + getPrice()):
+        System.out.println("  --" + getDescription()):
+    }
+}
+
+public class Menu extends MenuComponent {
+    private List<MenuComponent> menuComponents;
+    private String name;
+    private String description;
+
+    public Menu(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public void add(MenuComponent menuComponent) (
+        menuComponents.add(menuComponent);
+    )
+
+    public void remove(MenuComponent menuComponent) (
+        menuComponents.remove(menuComponent);
+    )
+
+    public MenuComponent getChild(int i) {
+        return (MenuComponent) menuComponents.get(i);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void print() {
+        System.out.print("\n" + getName());
+        System.out.print("," + getDescription());
+        System.out.print("--------------------");
+
+        menuComponents.forEach(MenuComponent::print);
+    }
+}
+
+public class Waitress {
+    private MenuComponent allMenus;
+
+    public Waitress(MenuComponent allMenus) {
+        this.allMenus = allMenus;
+    }
+
+    public void printMenu() {
+        allMenus.print();
+    }
+}
+```
+
 ## 9. Adaptor
 
 ## 10. Proxy
