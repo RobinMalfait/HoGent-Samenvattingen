@@ -26,9 +26,7 @@ Het dependency inversion principe:
 
 > Wees afhankelijk van abstracties.
 >
-> Wees niet afhankelijk van
->
-> concrete klassen
+> Wees niet afhankelijk van concrete klassen
 
 Het principe suggereert dat onze highlevelcomponenten
 niet afhankelijk mogen zijn van
