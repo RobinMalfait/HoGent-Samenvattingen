@@ -122,6 +122,16 @@ public class BinfPizzaStore extends PizzaStore {
 
 ## 2. Abstract Factory
 
+### 2.1. DEFINITIE
+
+> Het **Abstract Factory Pattern** levert een interface voor de
+vervaardiging van reeksen gerelateerde of afhankelijke objecten
+zonder hun concrete klassen te specificeren
+
+### 2.2. UML Diagram
+
+![](http://d.pr/i/17sSX+)
+
 ## 3. Builder
 
 ## 4. Singleton
