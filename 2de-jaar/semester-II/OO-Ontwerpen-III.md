@@ -16,7 +16,7 @@ aan de subklassen.
 
 ### 1.2. UML Diagram
 
-![](http://d.pr/i/1l0PV+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1l0PV.png)
 
 (*Note:* De dubbele lijn die je in de diagrammen zit moet niet, dat is gewoon de plaats waar de attributen zouden komen...)
 
@@ -130,10 +130,10 @@ zonder hun concrete klassen te specificeren
 
 ### 2.2. UML Diagram
 
-![](http://d.pr/i/17sSX+)
+![](https://robinmalfait.com/afbeeldingen/droplr/17sSX.png)
 
 Pizza voorbeeld:
-![](http://d.pr/i/jAL4+)
+![](https://robinmalfait.com/afbeeldingen/droplr/jAL4.png)
 
 ## 3. Builder
 
@@ -145,7 +145,7 @@ Vervang veel te grote constructors met een interessantere manier.
 
 ### 3.2. UML Diagram
 
-![](http://d.pr/i/g8xl+)
+![](https://robinmalfait.com/afbeeldingen/droplr/g8xl.png)
 
 - De **Builder** klasse specifieert een abstracte interface voor de creatie van de onderdelen van het Product object.
 - De **ConcreteBuilder** bouwt de onderdelen van het complexe object en gooit deze samen door implementatie van de Builder interface. Het houdt een representatie van het object bij en biedt een interface voor het opvragen van het product.
@@ -365,7 +365,7 @@ public static void main(String[] args) {
 
 ### 4.2. UML Diagram
 
-![](http://d.pr/i/9wYQ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/9wYQ.png)
 
 ### 4.3. CODE
 

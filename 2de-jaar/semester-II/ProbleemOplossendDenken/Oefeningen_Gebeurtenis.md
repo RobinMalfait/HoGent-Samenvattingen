@@ -50,7 +50,7 @@ A = {(1, j) | 1 ≤ j ≤ 6 met j ∈ N}
 
 Geef de volgende gebeurtenissen voor het experiment in voorbeeld 1.11
 
-![](http://d.pr/i/159jh+)
+![](https://robinmalfait.com/afbeeldingen/droplr/159jh.png)
 
 ## Oefening 3.1
 
