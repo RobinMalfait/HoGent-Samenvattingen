@@ -1,5 +1,5 @@
 #Samenvatting Netwerken 2 Test
-[Terug naar overzicht](./README.md)
+[Terug naar overzicht](../../README.md)
 ##Commandos
 ###Basis configuratie
 | Omschrijving | Commando |
