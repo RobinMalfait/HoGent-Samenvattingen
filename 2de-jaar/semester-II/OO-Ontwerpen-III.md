@@ -966,4 +966,24 @@ public class Waitress {
 
 ## 9. Adaptor
 
+### 9.1. DEFINITIE
+
+### 9.2. UML Diagram
+
+### 9.3. CODE
+
+```java
+
+```
+
 ## 10. Proxy
+
+### 10.1. DEFINITIE
+
+### 10.2. UML Diagram
+
+### 10.3. CODE
+
+```java
+
+```
