@@ -137,6 +137,21 @@ Pizza voorbeeld:
 
 ## 3. Builder
 
+Vervang veel te grote constructors met een interessantere manier.
+
+### 3.1. DEFINITIE
+
+> Gebruik het **Builder pattern** om de constructie van een product af te schermen en zorg dat je het in stappen kan construeren
+
+### 3.2. UML Diagram
+
+![](http://d.pr/i/g8xl+)
+
+- De **Builder** klasse specifieert een abstracte interface voor de creatie van de onderdelen van het Product object.
+- De **ConcreteBuilder** bouwt de onderdelen van het complexe object en gooit deze samen door implementatie van de Builder interface. Het houdt een representatie van het object bij en biedt een interface voor het opvragen van het product.
+- De **Director** class bouwt het complexe object gebruik makend van de interface van de Builder
+- De **Product** stelt het complexe object voor dat gebouwd wordt.
+
 ## 4. Singleton
 
 # Behavioral Patterns
