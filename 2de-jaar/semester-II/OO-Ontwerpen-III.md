@@ -1044,9 +1044,16 @@ public class Adapter {
 
 ## 10. Proxy
 
+> Een proxy is structureel gelijk aan een [Decorator](/2de-jaar/semester-I/OO-Ontwerpen-II.md#3-decorator-pattern), maar hun doelstellingen verschillen.
+ - Decorator voegt gedrag toe aan een object, terwijl proxy de toegang regelt.
+
 ### 10.1. DEFINITIE
 
+> Het **proxy pattern** zorgt voor een surrogaat of plaatsvervanger voor een ander object om de toegang hiertoe te controleren
+
 ### 10.2. UML Diagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/15rLF.png)
 
 ### 10.3. CODE
 
