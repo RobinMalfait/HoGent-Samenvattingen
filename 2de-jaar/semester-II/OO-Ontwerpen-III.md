@@ -152,6 +152,135 @@ Vervang veel te grote constructors met een interessantere manier.
 - De **Director** class bouwt het complexe object gebruik makend van de interface van de Builder
 - De **Product** stelt het complexe object voor dat gebouwd wordt.
 
+### 3.3. CODE
+
+```java
+// Dit is maar voor 1 specifieke constructor/soort sandwich
+public class MySandwhichBuilder {
+    private Sandwich sandwich;
+    public Sandwich getSandwich() {
+        return sandwich;
+    }
+
+    public void createSandwich() {
+        // Opeenvolgende stappen bij het maken van een sandwich
+        createNewSandwich();
+        prepareBread();
+        applyMeatAndCheese();
+        applyVegetables();
+        addCondiments();
+    }
+
+    private void createNewSandwich() {
+        // Een van de stappen
+        sandwich = new Sandwich();
+    }
+
+    private void prepareBread() {
+        sandwich.setbread(BreadType.Whear);
+    }
+
+    private applyMeatAndCheese() {
+        sandwich.setCheeseType(CheeseType.American);
+        sandwich.setMeatType(MeatType.Turkey);
+    }
+
+    private void applyVegetables() {
+        List<String> vegetables = new ArrayList<>();
+        vegetables.add("Tomato");
+        vegetables.add("Lettuce");
+        sandwich.setVegetables(vegetables);
+    }
+
+    private void addCondiments() {
+        sandwich.setHasMayo(false);
+        sandwich.setIsToasted(true);
+        sandwich.setHasMustard(true);
+    }
+}
+```
+
+```java
+// De builder: de abstracte klasse
+public abstract class SandwichBuilder {
+    private Sandwich sandwich;
+    public Sandwich getSandwich {
+        return sandwich;
+    }    
+
+    public void createNewSandwich() {
+        sandwich = new Sandwich();
+    }
+
+    public abstract void prepareBread();
+    public abstract void applyMeatAndCheese();
+    public abstract void applyVegetables();
+    public abstract void addCondiments();
+}
+
+// De builder klassen: concrete klassen
+public class MySandwhichBuilder extends SandwichBuilder {
+    public void prepareBread() {
+        Sandwich sandwich  getSandwich();
+        sandwich.setbreadType(BreadType.Wheat);
+    }
+    public void applyMeatAndCheese() {
+        // ...
+    }
+    public void applyVegetables() {
+        // ...
+    }
+    public void addCondiments() {
+        // ...
+    }
+}
+
+public class ClubSandwichBuilder extends SandwichBuilder {
+    public void prepareBread() {
+        Sandwich sandwich  getSandwich();
+        sandwich.setbreadType(BreadType.White);
+    }
+    public void applyMeatAndCheese() {
+        // ...
+    }
+    public void applyVegetables() {
+        // ...
+    }
+    public void addCondiments() {
+        // ...
+    }
+}
+
+// De Director
+public class SandwichDirector {
+    private SandwichBuilder builder;
+
+    public SandwichDirector(SandwichBuilder builder) {
+        this.builder = builder;
+    }
+
+    public void buildSandwich() {
+        builder.createNewSandwich();
+        builder.prepareBread();
+        builder.applyMeatAndCheese();
+        builder.applyVegetables();
+        builder.addCondiments();
+    }
+
+    public Sandwich getSandwich() {
+        return builder.getSandwich();
+    }
+}
+
+public static void main(String[] args) {
+    SandwichDirector director = new SandwichDirector(new MySandwhichBuilder());
+
+    director.buildSandwich();
+    Sandwich sandwich = director.getSandwich();
+    sandwich.display();
+}
+```
+
 ## 4. Singleton
 
 # Behavioral Patterns
