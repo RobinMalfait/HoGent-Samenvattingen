@@ -80,10 +80,27 @@ public class CheesePizza extends Pizza {
     }
 
     public void prepare() {
-        setDough(getPizzaIngredientFacotyr().createDough());
-        setSauce(getPizzaIngredientFacotyr().createSauce());
-        setCheese(getPizzaIngredientFacotyr().createCheese());
+        setDough(getPizzaIngredientFactory().createDough());
+        setSauce(getPizzaIngredientFactory().createSauce());
+        setCheese(getPizzaIngredientFactory().createCheese());
     }
+}
+
+public abstract class PizzaStore {
+    public Pizza orderPizza(String type) {
+        Pizza pizza;
+
+        pizza = createPizza(type);
+
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+
+        return pizza;
+    }
+
+    protected abstract Pizza createPizza(String type);
 }
 
 public class BinfPizzaStore extends PizzaStore {
