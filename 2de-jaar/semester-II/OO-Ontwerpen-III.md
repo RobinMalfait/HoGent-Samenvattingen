@@ -447,6 +447,141 @@ public class Singleton {
 
 ## 5. Template Method
 
+### 5.1. DEFINITIE
+
+> Het **Template Method Pattern** definieert het skelet van een algoritme in een methode, waarbij sommige stappen aan subklassen worden overgelaten. De Template method laat subklassen bepaalde stappen in een algoritme herdefiniëren zonder de structuur van het algoritme te veranderen.
+
+### 5.2. UML Diagram
+
+![](http://d.pr/i/1c8ah+)
+
+### 5.3. CODE
+
+```java
+public abstract class AbstractClass {
+    public final void templateMethod() {
+        primitiveOperation1();
+        primitiveOperation2();
+        concreteOperation();
+        hook();
+    }
+
+    // Deze zijn abstract en worden geimplementeerd door concrete subklassen
+    protected abstract void primitiveOperation1();
+    protected abstract void primitiveOperation2();
+
+    // Een concrete implementatie, gedefinieerd als final zodat geen override mogelijk is
+    protected final void concreteOperation() {
+        // implementatie...
+    }
+
+    // een concrete methode maar ze doet niets. Een hook.
+    // Deze kan, maar moet niet override worden in een subklasse
+    protected void hook() {}
+}
+```
+
+Voorbeeld:
+
+```java
+public abstract class CaffeineBeverage {
+
+    // MAG NIET OVERRIDEN WORDEN, vandaar de "final"
+    public final void prepareRecipe() {
+        boilWater();
+        brew();
+        pourInCup();
+
+        if (customerWantsCondiments()) addCondiments();
+    }
+
+    protected void boilWater() {
+        System.out.println("Boiling water");
+    }
+
+    protected void pourInCup() {
+        System.out.println("Boiling water");
+    }
+
+    protected abstract void brew();
+    protected abstract void addCondiments();
+
+    // Dit is een hook
+    protected boolean customerWantsCondiments() {
+        return true;
+    }
+}
+
+public class Coffee extends CaffeineBeverage {
+    @Override
+    protected void brew() {
+        System.out.println("Dripping coffee through filter");    
+    }
+
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding sugar and milk");
+    }
+}
+
+public class Tea extends CaffeineBeverage {
+    @Override
+    protected void brew() {
+        System.out.println("Steeping the tea");    
+    }
+
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding lemon");
+    }
+}
+
+public class CoffeeWithHook extends CaffeineBeverage {
+    private boolean wantsCondiments;
+    public CoffeeWithHook(boolean wantsCondiments) {
+        this.wantsCondiments = wantsCondiments;
+    }
+    @Override
+    protected void brew() {
+        System.out.println("Dripping coffee through filter");    
+    }
+
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding sugar and milk");
+    }
+
+    protected boolean customerWantsCondiments() {
+        return wantsCondiments;
+    }
+}
+
+public class Template {
+    public static void main(String[] args) {
+        System.out.println("Making coffee");
+        CaffeineBeverage beverage = new Coffee();
+        beverage.prepareRecipe();
+
+        System.out.println("Making tea");
+        beverage = new Tea();
+        beverage.prepareRecipe();
+
+        System.out.println("Making coffee with a hook");
+        boolean answer = getUserInputForCoffee();
+        beverage = new CoffeeWithHook(answer);
+        beverage.prepareRecipe();
+    }
+
+    public static boolean getUserInputForCoffee() {
+        String answer = null;
+        System.out.println("Would you like milk and sugar with your coffee (y/n)?");
+        Scanner in = new Scanner(System.in);
+
+        return in.next().equalsIgnoreCase("y");
+    }
+}
+```
+
 ## 6. Command
 
 ## 7. Iterator
