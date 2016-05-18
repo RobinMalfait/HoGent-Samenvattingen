@@ -772,6 +772,73 @@ public class RemoteLoader {
 
 ## 7. Iterator
 
+### 7.1. DEFINITIE
+
+> Het **Iterator Pattern** voorziet ons van een manier voor sequentiële toegang tot de elementen van een aggregaatobject zonder de onderliggende representatie weer te geven.
+
+### 7.2. UML Diagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1ajnX.png)
+
+### 7.3. CODE
+
+```java
+public class PancakeHouseMenu {
+    private ArrayList<Menuitem> menuItems;
+    public PancakeHouseMenu() {
+        menuItems = ArrayList<>();
+
+        addItem("K&B's Pancake Breakfast", "Pancakes with scrambled eggs, and toest", true, 2.99);
+        // meer items toevoegen...
+    }
+
+    public void addItem(String name, String description, boolean vegetarian, double price) {
+        MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
+        menuItem.add(menuItem);
+    }
+
+    // Wrap whatever list/collection in an iterator
+    public Iterator createIterator() {
+        return new PancakeHouseMenuIterator(menuItems);
+    }
+}
+
+public class Waitress {
+    private PancakeHouseMenu pancakeHouseMenu;
+    private DinerMenu dinerMenu;
+
+    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+        this.pancakeHouseMenu = pancakeHouseMenu;
+        this.dinerMenu = dinerMenu;
+    }
+
+    public void printMenu() {
+        Iterator pancakeIterator = PancakeHouseMenuIterator.createIterator();
+
+        printMenu(pancakeIterator);
+    }
+
+    private void printMenu(Iterator iterator) {
+        while (iterator.hasNext()) {
+            MenuItem menuItem = iterator.next();
+
+            System.out.print(menuItem.getName() + ",");
+            System.out.print(menuItem.getPrice() + "--");
+            System.out.println(menuItem.getDescription());
+        }
+    }
+}
+
+public static void main(String[] args) {
+    PancakeHouseMenu pcm = new PancakeHouseMenu();
+    DinerMenu dm = new DinerMenu();
+
+    Waitress waitress = new Waitress(pcm, dm);
+
+    waitress.printMenu();
+}
+```
+
 # Structural Patterns
 
 ## 8. Composite
