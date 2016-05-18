@@ -453,7 +453,7 @@ public class Singleton {
 
 ### 5.2. UML Diagram
 
-![](http://d.pr/i/1c8ah+)
+![](https://robinmalfait.com/afbeeldingen/droplr/1c8ah.png)
 
 ### 5.3. CODE
 
