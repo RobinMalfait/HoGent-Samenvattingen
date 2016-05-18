@@ -132,6 +132,9 @@ zonder hun concrete klassen te specificeren
 
 ![](http://d.pr/i/17sSX+)
 
+Pizza voorbeeld:
+![](http://d.pr/i/jAL4+)
+
 ## 3. Builder
 
 ## 4. Singleton
