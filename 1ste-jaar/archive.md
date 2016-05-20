@@ -7,14 +7,14 @@ description: "[Ga Terug](/samenvattingen)"
 
 ### Semester I
 
-* [Analyse I](semester-I/Analyse-I.md)
+* [ ] [Analyse I](semester-I/Analyse-I.md)
 
 ### Semester II
 
 * [x] [OO Programmeren II](semester-II/OO-Progammeren-II.md)
     * [x].right [Oefeningen](semester-II/Oefeningen-OO-Programmeren-II/index.md)
 
-* [Financieel Management](semester-II/Financieel-Management.md)
+* [ ] [Financieel Management](semester-II/Financieel-Management.md)
 
 * [x] [Strategisch Management](semester-II/Strategisch-Management.md)
     * [x].right [Oefeningen DESTEP](semester-II/Oefeningen-Strategisch-Management/Oefeningen-DESTEP.md)
