@@ -15,20 +15,20 @@ contributions: true
 
 ### Semester I
 
-* [Analyse II](2de-jaar/semester-I/Analyse-II.md) <span class="fa fa-check pull-right text-info"></span>
-* [Bedrijfsmanagement](2de-jaar/semester-I/Bedrijfsmanagement.md) <span class="fa fa-check pull-right text-info"></span>
-* [Besturingssystemen](2de-jaar/semester-I/Besturingssystemen.md) <span class="fa fa-check pull-right text-info"></span>
+* [Analyse II](2de-jaar/semester-I/Analyse-II.md) [x]
+* [Bedrijfsmanagement](2de-jaar/semester-I/Bedrijfsmanagement.md) [x]
+* [Besturingssystemen](2de-jaar/semester-I/Besturingssystemen.md) [x]
 * [Internationale Communicatie II](2de-jaar/semester-I/Internationale-Communicatie-II.md)
-* [OO Ontwerpen II](2de-jaar/semester-I/OO-Ontwerpen-II.md) <span class="fa fa-check pull-right text-info"></span>
-* [OO Programmeren III](2de-jaar/semester-I/OO-Programmeren-III.md) <span class="fa fa-check pull-right text-info"></span>
-* [Webapplicaties III](2de-jaar/semester-I/Webapplicaties-III.md) <span class="fa fa-check pull-right text-info"></span>
+* [OO Ontwerpen II](2de-jaar/semester-I/OO-Ontwerpen-II.md) [x]
+* [OO Programmeren III](2de-jaar/semester-I/OO-Programmeren-III.md) [x]
+* [Webapplicaties III](2de-jaar/semester-I/Webapplicaties-III.md) [x]
 
 ### Semester II (Keuze Programmeren)
 
 * [Databanken II](2de-jaar/semester-II/Databanken-II.md)
 * [IT2Business](2de-jaar/semester-II/IT2Business.md)
 * [Onderzoekstechnieken](2de-jaar/semester-II/Onderzoekstechnieken.md)
-* [OO Ontwerpen III](2de-jaar/semester-II/OO-Ontwerpen-III.md) <span class="fa fa-check pull-right text-info"></span>
+* [OO Ontwerpen III](2de-jaar/semester-II/OO-Ontwerpen-III.md) [x]
 * [Probleemoplossend denken II](2de-jaar/semester-II/Probleemoplossend-denken-II.md)
 * [Webapplicaties IV](2de-jaar/semester-II/Webapplicaties-IV.md)
 
