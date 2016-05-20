@@ -9,6 +9,7 @@ description: |
     >
     > Website: [robinmalfait.com/samenvattingen](http://robinmalfait.com/samenvattingen).
 contributions: true
+link: https://robinmalfait.com/README.md
 ---
 
 ## 2de jaar
