@@ -1,5 +1,6 @@
 ---
 title: Bedrijfsmanagement Formularium
+link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement-Formularium.md
 ---
 
 ### Kosten

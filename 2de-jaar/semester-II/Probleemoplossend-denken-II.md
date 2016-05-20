@@ -1,5 +1,6 @@
 ---
 title: Probleemoplossend denken II
+link: https://robinmalfait.com/2de-jaar/semester-II/Probleemoplossend-denken-II.md
 ---
 
 # Deel 1: Kansrekening

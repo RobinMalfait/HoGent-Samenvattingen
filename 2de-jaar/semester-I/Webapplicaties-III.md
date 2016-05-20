@@ -1,5 +1,6 @@
 ---
 title: Webapplicaties III
+link: https://robinmalfait.com/2de-jaar/semester-I/Webapplicaties-III.md
 ---
 
 # 1 DienstenCheques Project

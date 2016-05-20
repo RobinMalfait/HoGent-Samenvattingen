@@ -1,5 +1,6 @@
 ---
 title: "Computernetwerken II"
+link: https://robinmalfait.com/2de-jaar/semester-II/Computernetwerken-II.md
 ---
 
 # Samenvatting Netwerken 2

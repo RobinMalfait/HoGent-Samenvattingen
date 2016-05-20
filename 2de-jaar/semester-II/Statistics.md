@@ -2,6 +2,7 @@
 title: Statistics functions in R and spreadsheets
 author: Bert Van Vreckem
 documentclass: scrartcl
+link: https://robinmalfait.com/2de-jaar/semester-II/Statistics.md
 ---
 
 This cheat sheet gives an overview of the most common statistics functions for spreadsheets in English and Dutch (LibreOffice Calc, Excel), and for the [R programming language](https://www.r-project.org/).

@@ -1,5 +1,6 @@
 ---
 title: Oefeningen SQL
+link: https://robinmalfait.com/2de-jaar/semester-II/Databanken/Oefeningen_SQL.md
 ---
 
 ```sql

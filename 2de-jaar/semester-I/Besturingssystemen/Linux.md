@@ -1,5 +1,6 @@
 ---
 title: Linux
+link: https://robinmalfait.com/2de-jaar/semester-I/Besturingssystemen/Linux.md
 ---
 
 # Inleiding

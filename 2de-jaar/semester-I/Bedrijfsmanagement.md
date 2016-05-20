@@ -1,5 +1,6 @@
 ---
 title: Bedrijfsmanagement
+link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 ---
 
 | Afkorting | Voluit                                   |

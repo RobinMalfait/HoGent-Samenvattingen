@@ -1,5 +1,6 @@
 ---
 title: OO Ontwerpen III
+link: https://robinmalfait.com/2de-jaar/semester-II/OO-Ontwerpen-III.md
 ---
 
 # Creational Patterns

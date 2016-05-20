@@ -1,5 +1,6 @@
 ---
 title: Internationale Communicatie II
+link: https://robinmalfait.com/2de-jaar/semester-I/Internationale-Communicatie-II.md
 ---
 
 

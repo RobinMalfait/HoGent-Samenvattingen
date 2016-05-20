@@ -1,5 +1,6 @@
 ---
 title: POD II - Oefeningen - kansen en kansruimte
+link: https://robinmalfait.com/2de-jaar/semester-II/ProbleemOplossendDenken/Oefeningen_KansenEnKansruimte.md
 ---
 
 ```

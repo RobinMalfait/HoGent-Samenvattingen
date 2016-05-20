@@ -1,5 +1,6 @@
 ---
 title: Onderzoekstechnieken
+link: https://robinmalfait.com/2de-jaar/semester-II/Onderzoekstechnieken.md
 ---
 
 [Cheat Sheet](/2de-jaar/semester-II/Statistics.md)

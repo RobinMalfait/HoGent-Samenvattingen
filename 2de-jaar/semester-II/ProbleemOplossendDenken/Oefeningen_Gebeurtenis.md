@@ -1,5 +1,6 @@
 ---
 title: POD II - Oefeningen - Gebeurtenis
+link: https://robinmalfait.com/2de-jaar/semester-II/ProbleemOplossendDenken/Oefeningen_Gebeurtenis.md
 ---
 
 # Oefening 1

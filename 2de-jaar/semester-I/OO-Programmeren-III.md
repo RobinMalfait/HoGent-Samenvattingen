@@ -1,5 +1,6 @@
 ---
 title: OO Programmeren III
+link: https://robinmalfait.com/2de-jaar/semester-I/OO-Progammeren-III.md
 ---
 
 Net ontdekt dat de slides beschikbaar zijn op examen, dus wie wilt, mag dit aanvullen, I'm not gonna do it!

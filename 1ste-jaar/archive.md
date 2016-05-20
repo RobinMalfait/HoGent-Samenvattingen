@@ -1,6 +1,7 @@
 ---
 title: "Gearchiveerd op 18 September 2015"
 description: "[Ga Terug](/samenvattingen)"
+link: https://robinmalfait.com/1ste-jaar/archive.md
 ---
 
 ## 1ste jaar

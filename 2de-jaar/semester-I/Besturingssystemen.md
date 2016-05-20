@@ -1,5 +1,6 @@
 ---
 title: Besturingssystemen
+link: https://robinmalfait.com/2de-jaar/semester-I/Besturingssystemen.md
 ---
 
 **Werk Colleges**

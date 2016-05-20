@@ -1,5 +1,6 @@
 ---
 title: Frans
+link: https://robinmalfait.com/2de-jaar/semester-I/Internationale-Communicatie/Frans.md
 ---
 
 ## Presentation

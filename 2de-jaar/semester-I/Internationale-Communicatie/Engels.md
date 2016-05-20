@@ -1,5 +1,6 @@
 ---
 title: Engels
+link: https://robinmalfait.com/2de-jaar/semester-I/Internationale-Communicatie/Engels.md
 ---
 
 # Woorden Presentaties Engels - 2A1
@@ -275,4 +276,3 @@ title: Engels
 | Savy | with knowledge of some aspect |
 | To come within a whisker | To come close |
 | To safeguard | Verb meaning to make (someone or something) secure |
-

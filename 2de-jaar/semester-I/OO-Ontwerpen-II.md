@@ -1,5 +1,6 @@
 ---
 title: OO Ontwerpen II
+link: https://robinmalfait.com/2de-jaar/semester-I/OO-Ontwerpen-II.md
 ---
 
 # Design patterns

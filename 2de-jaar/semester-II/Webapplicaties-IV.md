@@ -1,5 +1,6 @@
 ---
 title: Webapplicaties IV
+link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ---
 
 # Inleiding
@@ -39,6 +40,6 @@ import javax.servlet.http.*;
 
 @WebServlet(name="WelcomeServlet", urlPatterns={"/welcome1"})
 public class WelcomeServlet extends HttpServlet {
-    
+
 }
 ```

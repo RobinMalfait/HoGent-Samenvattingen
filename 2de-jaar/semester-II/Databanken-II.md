@@ -1,5 +1,6 @@
 ---
 title: Databanken II
+link: https://robinmalfait.com/2de-jaar/semester-II/Databanken-II.md
 ---
 
 # Introductie
