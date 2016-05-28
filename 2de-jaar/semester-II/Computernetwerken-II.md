@@ -260,7 +260,7 @@ is a route that matches all packets. A default static route is simply a static r
  2. The floating static route is only used when the primary route is not available.
  3. To accomplish this, the floating static route is configured with a higher administrative distance than the primary route.
 
-**Show IP route output example** *(hoogstwaarschijnlijk eaxamen vraag)*:  
+**Show IP route output example** *(hoogstwaarschijnlijk examen vraag)*:  
 ![](https://robinmalfait.com/afbeeldingen/droplr/pXs3.png)  
 
 In volgorde vinden we:  
