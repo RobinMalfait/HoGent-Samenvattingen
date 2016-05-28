@@ -360,7 +360,7 @@ public static void main(String[] args) {
 
 ## 4. Singleton
 
-<iframe src='https://glot.io/snippets/ef3ll8l7rw/embed' frameborder='0' scrolling='no' sandbox='allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts' width='100%' height='400'></iframe>
+[glot]ef3ll8l7rw[/glot]
 
 ### 4.1 DEFINITIE
 
