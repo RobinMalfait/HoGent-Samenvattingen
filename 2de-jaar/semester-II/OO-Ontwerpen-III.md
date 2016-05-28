@@ -360,9 +360,11 @@ public static void main(String[] args) {
 
 ## 4. Singleton
 
-[glot]ef3ll8l7rw[/glot]
+### 4.0. Oefeningen
 
-### 4.1 DEFINITIE
+[Oefeningen](/2de-jaar/semester-II/OO-Ontwerpen/Singleton.md)
+
+### 4.1. DEFINITIE
 
 > Het **Singleton Pattern** garandeert dat een klasse slechts één instantie heeft, en biedt een globaal toegangspunt ernaartoe.
 
