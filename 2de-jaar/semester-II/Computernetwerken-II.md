@@ -3,7 +3,6 @@ title: "Computernetwerken II"
 link: https://robinmalfait.com/2de-jaar/semester-II/Computernetwerken-II.md
 ---
 
-#Computernetwerken 2
 [**Terug naar samenvattingen**](../../README.md)
 
 **Overzicht van de hoofdstukken:**  
@@ -22,8 +21,8 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Computernetwerken-II.md
 **Zaken zeker naar te kijken:**  
 subnetting, switching technieken, ipv6, bootproces, dhcp en routing technieken & protocollen.
 
-##Theorie
-###Hoofdstuk 1
+# Theorie
+## Hoofdstuk 1
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **Store-and-forward switching** *(hoogstwaarschijnlijk examen vraag)*:  
@@ -83,7 +82,7 @@ The core layer is the network backbone. It connects several layers of the campus
 5. Taking advantage of their fast internal switching process
 6. Having a low, per-port cost
 
-###Hoofdstuk 2
+## Hoofdstuk 2
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **Boot sequence switch** *(hoogstwaarschijnlijk examen vraag)*:  
@@ -138,7 +137,7 @@ ip dhcp limit rate 5
 **NTP network time protocol:**  
 Is used to synchronize the clock of computer systems data networks. It can get the correct time from an internal or external time source.
 
-###Hoofdstuk 3
+## Hoofdstuk 3
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **VLAN's:**  
@@ -162,7 +161,7 @@ Extended range: 1006 - 4096 / stored in NVRAM
 **Removing a VLAN:**  
 Before deleting a VLAN, be sure to first reassign all member ports to a different VLAN.
 
-###Hoofdstuk 4
+## Hoofdstuk 4
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **Routing:**  
@@ -192,7 +191,7 @@ multicast: FF00::/8
 link-local unicast: FE80::/10  
 site local unicast: FEC0::/10  
 
-###Hoofdstuk 5
+## Hoofdstuk 5
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **Inter-VLAN routing:**  
@@ -222,7 +221,7 @@ Multilayer switches can perform Layer 2 and Layer 3 functions, replacing the nee
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1lBM4.png)
 
-###Hoofdstuk 6
+## Hoofdstuk 6
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 **Voordelen van static routing** *(hoogstwaarschijnlijk examen vraag)*:  
@@ -275,12 +274,12 @@ In volgorde vinden we:
 
 [Zie hier voor een iets gedetailleerdere analyse](https://keepingitclassless.net/2011/07/the-anatomy-of-show-ip-route/)
 
-##Afkortingen
+# Afkortingen
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
 Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/Afkortingen%20Netwerken%202.pdf?token=AWxoObw3ioW3CR525437Ols0U50zqyOz7E_ACN3VchI3TV42KWF_Spi8SPISfqzFPOKKn3rB_uJbCmbAKMXyCbHBP6vOGhak1ncdNvxqKaPl_d_N6V1lse69euTTNpmzH5yNQhZdACCFCXQg_1DBcgC8hQjva1r5xowe2RFRhj5GxQ)
 
-####*(misschien examen vraag?)* Belangrijkste afkortingen
+### *(misschien examen vraag?)* Belangrijkste afkortingen
 | Afkorting | Betekenis |
 | :---: | --- |
 | CAM | Content addressable memory |
@@ -304,10 +303,10 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 | IMAP | Internet message access protocol |
 | SMTP | Simple mail transfer protocol |
 
-##Commandos
+# Commandos
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
-###Initiële configuratie van switch / router
+## Initiële configuratie van switch / router
 | Omschrijving | Commando |
 | --- | --- |
 |	Set hostname	|	hostname Router	|
@@ -323,7 +322,7 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 | Set ssh | login local |
 | Enable password encryption | service password-encryption |
 
-##Basis configuratie commando's
+# Basis configuratie commando's
 | Omschrijving | Commando |
 | --- | --- |
 |	Enter interface configuration mode for SVI	|	interface vlan99	|
@@ -339,7 +338,7 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 |	Enable auto-MDIX	|	mdix auto |
 | 	Display the MAC address table 	|	show mac-address-table	|
 
-###SSH
+## SSH
 | Omschrijving | Commando |
 | --- | --- |
 |	Set domain name	|	ip domain-name cisco.com	|
@@ -350,21 +349,21 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 |	Configure the login type	|	login local	|
 |	End the configuration	|	end 	|
 
-###Dynamic Port Security
+## Dynamic Port Security
 | Omschrijving | Commando |
 | --- | --- |
 |	Specify the interface to be configured for port security	|	interface f0/18	|
 |	Set the interface mode to access	|	switchport mode access	|
 |	Enable port security on the interface	|	switchport port-security	|
 
-###Network Time Protocol
+## Network Time Protocol
 | Omschrijving | Commando |
 | --- | --- |
 |	Enable NTP on client	|	ntp master 1	|
 |	Set the ntp master server IP	|	ntp server 10.1.1.1	|
 |	Show all of the NTP associations	|	show ntp associations	|
 
-###VLAN
+## VLAN
 | Omschrijving | Commando |
 | --- | --- |
 |	Enter global configuration mode	|	conf t	|
@@ -376,7 +375,7 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 |	Unassign an interface of the VLAN and set it back to native |	no switchport access vlan |
 |	Show the VLAN overview	|	show vlan brief	|
 
-###Trunk
+## Trunk
 | Omschrijving | Commando |
 | --- | --- |
 |	Enter global configuration mode	|	configure terminal	|
@@ -388,7 +387,7 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 | Specify a subinterface's VLAN | encapsulation dot1q 10 |
 |	Return to the privileged EXEC mode	|	end	|
 
-###Routing
+## Routing
 | Omschrijving | Commando |
 | --- | --- |
 | Show the current routes | show ip route |
@@ -396,10 +395,10 @@ Alle afkortingen: [**Credit to Lisa Dossche**](https://lookaside.fbsbx.com/file/
 
 `ip route 172.16.0.0 255.248.0.0 s0/0/0`
 
-##VLSM Voorbeeld
+# VLSM Voorbeeld
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
 
-###Opgave
+## Opgave
 Een onderneming wenst een hiërarchische IP adressering te implementeren.   
 Gegeven is het aantal hosts per departement (LAN) en enkele seriële verbindingen. Gebruik VLSM om het netwerk efficiënt onder te verdelen in hiërarchische subnetten. Het nulde subnet is hier bruikbaar!  
 
@@ -410,7 +409,7 @@ Departement Directie: 10 hosts
 Departement Personeel: 500 hosts  
 2 seriële verbindingen  
 
-###Tabel
+## Tabel
 | Nr   | Naam Subnet   | Netwerkadres & Subnetmask | CIDR | Adresrange | Broadcast | hosts|
 | ------------ | -------  | ------  |------|--------    |-------    |--------- |
 | 0 	 | Pers  | 172.16.0.0 & 255.255.254.0  | 32-9=/23 | 172.16.0.1 - 172.16.1.254    | 172.16.1.255    | 510 |
@@ -419,8 +418,8 @@ Departement Personeel: 500 hosts
 | 3 	 | Seri1  | 172.16.2.48 & 255.255.255.252  | 32-2=/30 | 172.16.2.49 - 172.16.2.50    | 172.16.2.51    | 2 |
 | 4 	 | Seri2  | 172.16.2.52 & 255.255.255.252  | 32-2=/30 | 172.16.2.53 - 172.16.2.54    | 172.16.2.55   | 2 |
 
-###Werkwijze
-####Personeel voorbeeld
+## Werkwijze
+### Personeel voorbeeld
 1. hosts: Minimaal 500 hosts -> 2^8? = 256 Niet genoeg -> 2^9 = **512 hosts (waarvan 2 voor netwerk- en broadcastadres: 510)**
 2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen.
 In het geval van personeel is dit 9. ->  **32-9 = 23 -> /23**
@@ -434,7 +433,7 @@ In het geval van personeel is dit 9. ->  **32-9 = 23 -> /23**
  1. Eerste adres is het subnet adres +1: **172.16.0.1**
  2. Laatste adres is het broadcast adres -1: **172.16.1.254**
 
-####Administratie voorbeeld
+### Administratie voorbeeld
 1. hosts: Minimaal 20 hosts -> 2^5 = **32 hosts (waarvan 2 voor netwerk- en broadcastadres: 30)**
 2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen.
 In het geval van personeel is dit 9. ->  **32-5 = 27 -> /27**
@@ -448,7 +447,7 @@ In het geval van personeel is dit 9. ->  **32-5 = 27 -> /27**
  1. Eerste adres is het subnet adres +1: **172.16.2.1**
  2. Laatste adres is het broadcast adres -1: **172.16.2.30**
 
-####Directie voorbeeld
+### Directie voorbeeld
 1. hosts: 10 hosts nodig, dus 2^4 = **16 hosts (waarvan 2 voor netwerk- en broadcastadres: 14)**
 2. CIDR:  **32 - 4 -> /28**
 3. Subnetmask: **255.255.255.240**
