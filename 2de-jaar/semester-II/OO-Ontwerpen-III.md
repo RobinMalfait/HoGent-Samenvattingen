@@ -7,6 +7,10 @@ link: https://robinmalfait.com/2de-jaar/semester-II/OO-Ontwerpen-III.md
 
 ## 1. Factory Method
 
+### 1.0. Oefeningen
+
+[Oefeningen](/2de-jaar/semester-II/OO-Ontwerpen/FactoryMethod.md)
+
 ### 1.1. DEFINITIE
 
 > Het **Factory Method Pattern** definieert een interface
