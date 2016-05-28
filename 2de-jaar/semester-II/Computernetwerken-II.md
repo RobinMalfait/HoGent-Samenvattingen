@@ -34,23 +34,23 @@ Verstuurt de volledige frame voordat deze volledig ontvangen is. Enkel het desti
 
 **Gelaagd model (APSTNDP)** *(hoogstwaarschijnlijk examen vraag)*:  
 
-![model](img/model.png)  
+![](https://robinmalfait.com/afbeeldingen/droplr/Iebl.png)  
 
 **TCP/IP Protocol Suite en communicatie** *(hoogstwaarschijnlijk examen vraag)*:   
 
-![tcp/ip](img/protocol.png)  
+![](https://robinmalfait.com/afbeeldingen/droplr/1kgVd.png)  
 
 **Encapsulation** *(hoogstwaarschijnlijk examen vraag)*:  
 
-![encaps](img/encaps.png)  
-![encaps](img/enc.png)  
+![](https://robinmalfait.com/afbeeldingen/droplr/1dMP2.png)  
+![](https://robinmalfait.com/afbeeldingen/droplr/19zR6.png)  
 
 **Converged Network:**  
 VoIP, video support, video conferencing, call control, voice messaging, etc. Multiple types of traffic only one network to manage.
 
 **Borderless switched network:**  
  A network architecture that allows organizations to connect anyone, anywhere, anytime, and on any device securely, reliably, and seamlessly.
- 
+
 **Access, Distribution and Core layers:**  
 *Access Layer:*  
 The access layer represents the network edge, where traffic enters or exits the campus network. Traditionally, the primary function of an access layer switch is to provide network access to the user.
@@ -59,18 +59,18 @@ The access layer represents the network edge, where traffic enters or exits the 
 
 1. Providing intelligent switching, routing, and network access policy functions to access the rest of the network
 2. Providing high availability through redundant distribution layer switches to the end-user and equal cost paths to the core
-3. Providing differentiated services to various classes of service applications at the edge of the network 
+3. Providing differentiated services to various classes of service applications at the edge of the network
 
 *Core Layer:*  
-The core layer is the network backbone. It connects several layers of the campus network. The core layer serves as the aggregator for all of the other campus blocks and ties the campus together with the rest of the network. The primary purpose of the core layer is to provide fault isolation and highspeed backbone connectivity. 
- 
+The core layer is the network backbone. It connects several layers of the campus network. The core layer serves as the aggregator for all of the other campus blocks and ties the campus together with the rest of the network. The primary purpose of the core layer is to provide fault isolation and highspeed backbone connectivity.
+
 **Steps of building the MAC address table to forward frames:**
- 
-1. The switch receives a frame from PC 1 on Port 1. 
-2. The switch examines the source MAC address and compares it to MAC address table. If the address is not in the MAC address table, it associates the source MAC address of PC 1 with the ingress port (Port 1) in the MAC address table. If the MAC address table already has an entry for that source address, it resets the aging timer. An entry for a MAC address is typically kept for five minutes. 
-3. After the switch has recorded the source address information, the switch examines the destination MAC address. If the destination address is not in the MAC table or if it’s a broadcast MAC address, as indicated by all Fs, the switch floods the frame to all ports, except the ingress port. 
-4. The destination device replies to the frame with a unicast frame addressed to PC 1. 
-5. The switch enters the source MAC address of PC 3 and the port number of the ingress port into the address table. The destination address of the frame and its associated egress port is found in the MAC address table . 
+
+1. The switch receives a frame from PC 1 on Port 1.
+2. The switch examines the source MAC address and compares it to MAC address table. If the address is not in the MAC address table, it associates the source MAC address of PC 1 with the ingress port (Port 1) in the MAC address table. If the MAC address table already has an entry for that source address, it resets the aging timer. An entry for a MAC address is typically kept for five minutes.
+3. After the switch has recorded the source address information, the switch examines the destination MAC address. If the destination address is not in the MAC table or if it’s a broadcast MAC address, as indicated by all Fs, the switch floods the frame to all ports, except the ingress port.
+4. The destination device replies to the frame with a unicast frame addressed to PC 1.
+5. The switch enters the source MAC address of PC 3 and the port number of the ingress port into the address table. The destination address of the frame and its associated egress port is found in the MAC address table .
 6. The switch can now forward frames between these source and destination devices without flooding, because it has entries in the address table that identify the associated ports .
 
 **Alleviating network congestion** *(hoogstwaarschijnlijk examen vraag)*:  
@@ -88,35 +88,35 @@ The core layer is the network backbone. It connects several layers of the campus
 
 **Boot sequence switch** *(hoogstwaarschijnlijk examen vraag)*:  
 
-1. Power-on self test (POST) -> CPU, DRAM, flash 
-2. Run boot loader software. 
-3. Boot loader performs low-level CPU initialization. 
-4. Boot loader initializes the flash file system 
+1. Power-on self test (POST) -> CPU, DRAM, flash
+2. Run boot loader software.
+3. Boot loader performs low-level CPU initialization.
+4. Boot loader initializes the flash file system
 5. Boot loader locates and loads a default IOS operating system software image into memory and passes control of the switch over to the IOS.
-6. Attempts to automatically boot by using information in the BOOT environment variable. 
-7. If this variable is not set, the switch performs a top-to-bottom search through the flash file system. It loads and executes the first executable file, if it can. 
-8. The IOS software then initializes the interfaces using the Cisco IOS commands found in the configuration file and startup configuration, which is stored in NVRAM. 
+6. Attempts to automatically boot by using information in the BOOT environment variable.
+7. If this variable is not set, the switch performs a top-to-bottom search through the flash file system. It loads and executes the first executable file, if it can.
+8. The IOS software then initializes the interfaces using the Cisco IOS commands found in the configuration file and startup configuration, which is stored in NVRAM.
 
 **Recovering from a system crash:**  
 
-1. Connect a PC by console cable to the switch console port. Configure terminal emulation software to connect to the switch. 
-2. Unplug the switch power cord. 
-3. Reconnect the power cord to the switch and, within 15 seconds, press and hold down the Mode button while the System LED is still flashing green. 
-4. Continue pressing the Mode button until the System LED turns briefly amber and then solid green; then release the Mode button. 
-5. The boot loader switch: prompt appears in the terminal emulation software on the PC. 
-The boot loader command line supports commands to format the flash file system, reinstall the operating system software, and recover from a lost or forgotten password. For example, the dir command can be used to view a list of files within a specified directory as shown in the figure. 
+1. Connect a PC by console cable to the switch console port. Configure terminal emulation software to connect to the switch.
+2. Unplug the switch power cord.
+3. Reconnect the power cord to the switch and, within 15 seconds, press and hold down the Mode button while the System LED is still flashing green.
+4. Continue pressing the Mode button until the System LED turns briefly amber and then solid green; then release the Mode button.
+5. The boot loader switch: prompt appears in the terminal emulation software on the PC.
+The boot loader command line supports commands to format the flash file system, reinstall the operating system software, and recover from a lost or forgotten password. For example, the dir command can be used to view a list of files within a specified directory as shown in the figure.
 
 **SSH Operation:**  
 
-1. Secure Shell (SSH) is a protocol that provides a secure (encrypted), command-line based connection to a remote device. 
-2. SSH is commonly used in UNIX-based systems. 
-3. The Cisco IOS software also supports SSH. 
-4. A version of the IOS software, including cryptographic (encrypted) features and capabilities, is required to enable SSH on Catalyst 2960 switches. 
-5. Because its strong encryption features, SSH should replace Telnet for management connections. 
+1. Secure Shell (SSH) is a protocol that provides a secure (encrypted), command-line based connection to a remote device.
+2. SSH is commonly used in UNIX-based systems.
+3. The Cisco IOS software also supports SSH.
+4. A version of the IOS software, including cryptographic (encrypted) features and capabilities, is required to enable SSH on Catalyst 2960 switches.
+5. Because its strong encryption features, SSH should replace Telnet for management connections.
 6. SSH uses TCP port 22, by default. Telnet uses TCP port 23.
 
 **MAC address flooding** *(hoogstwaarschijnlijk examen vraag)*:  
-An attacker could exploit this behavior to gain access to traffic normally controlled by the switch by using a PC to run a MAC flooding tool. Such tool is a program created to generate and send out frames with bogus source MAC addresses to the switch port. 
+An attacker could exploit this behavior to gain access to traffic normally controlled by the switch by using a PC to run a MAC flooding tool. Such tool is a program created to generate and send out frames with bogus source MAC addresses to the switch port.
 
 **DHCP spoofing** *(hoogstwaarschijnlijk examen vraag)*:  
 A fake DHCP server is placed in the network to issue dhcp addresses to clients.
@@ -181,7 +181,7 @@ Before deleting a VLAN, be sure to first reassign all member ports to a differen
 When a packet arrives on an interface, it is forwarded to the control plane where the CPU matches the destination address with an entry in its routing table, and then determines the exit interface and forwards the packet. It is important to understand that the router does this for every packet, even if the destination is the same for a stream of packets.
 
 **Fast switching:**  
-When a packet arrives on an interface, it is forwarded to the control plane where the CPU searches for a match in the fastswitching cache. If it is not there, it is process-switched and forwarded to the exit interface. The flow information for the packet is also stored in the fastswitching cache. If another packet going to the same destination arrives on an interface, the next-hop information in the cache is reused without CPU intervention. 
+When a packet arrives on an interface, it is forwarded to the control plane where the CPU searches for a match in the fastswitching cache. If it is not there, it is process-switched and forwarded to the exit interface. The flow information for the packet is also stored in the fastswitching cache. If another packet going to the same destination arrives on an interface, the next-hop information in the cache is reused without CPU intervention.
 
 **Cisco express forwarding:**  
 Builds a Forwarding Information Base (FIB), and an adjacency table. When a network has converged, the FIB and adjacency tables contain all the information a router would have to consider when forwarding a packet. The FIB contains precomputed reverse lookups, next hop information for routes including the interface and Layer 2 information. Cisco Express Forwarding is the fastest forwarding mechanism and the preferred choice on Cisco routers.
@@ -201,7 +201,7 @@ Layer 2 switches cannot forward traffic between VLANs without the assistance of 
 **Router on a stick** *(hoogstwaarschijnlijk examen vraag)*:  
 A type of router configuration in which a single physical interface routes traffic between multiple VLANs on a network.
 
-![stick](img/stick.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/4LiN.png)
 
 Router:  
 ```
@@ -220,7 +220,7 @@ switchport trunk allowed vlan 10
 **Multilayer switches** *(hoogstwaarschijnlijk examen vraag)*:   
 Multilayer switches can perform Layer 2 and Layer 3 functions, replacing the need for dedicated routers. They support dynamic routing and inter-VLAN routing.
 
-![multi](img/multi.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/1lBM4.png)
 
 ###Hoofdstuk 6
 [Terug naar hoofdstukken overzicht](#computernetwerken-2)
@@ -233,10 +233,10 @@ Multilayer switches can perform Layer 2 and Layer 3 functions, replacing the nee
 
 **Nadelen van static routing** *(hoogstwaarschijnlijk examen vraag)*:  
 
-1. Initial configuration and maintenance is time-consuming. 
-2. Configuration is error-prone, especially in large networks. 
-3. Administrator intervention is required to maintain changing route information. 
-4. Does not scale well with growing networks; maintenance becomes cumbersome. 
+1. Initial configuration and maintenance is time-consuming.
+2. Configuration is error-prone, especially in large networks.
+3. Administrator intervention is required to maintain changing route information.
+4. Does not scale well with growing networks; maintenance becomes cumbersome.
 5. Requires complete knowledge of the whole network for proper implementation
 
 **Wanneer static routes gebruiken**  *(hoogstwaarschijnlijk examen vraag)*:  
@@ -247,9 +247,9 @@ Multilayer switches can perform Layer 2 and Layer 3 functions, replacing the nee
 
 **Often uses of static routing:**  
 
-1. Connect to a specific network. 
-2. Provide a Gateway of Last Resort for a stub network. 
-3. Reduce the number of routes advertised by summarizing several contiguous networks as one static route. 
+1. Connect to a specific network.
+2. Provide a Gateway of Last Resort for a stub network.
+3. Reduce the number of routes advertised by summarizing several contiguous networks as one static route.
 4. Create a backup route in case a primary route link fails
 
 **Default static route** *(hoogstwaarschijnlijk examen vraag)*:  
@@ -257,12 +257,12 @@ is a route that matches all packets. A default static route is simply a static r
 
 **Floating static route:**  
 
- 1. Floating static routes are static routes that are used to provide a backup path to a primary static or dynamic route, in the event of a link failure. 
- 2. The floating static route is only used when the primary route is not available. 
- 3. To accomplish this, the floating static route is configured with a higher administrative distance than the primary route. 
+ 1. Floating static routes are static routes that are used to provide a backup path to a primary static or dynamic route, in the event of a link failure.
+ 2. The floating static route is only used when the primary route is not available.
+ 3. To accomplish this, the floating static route is configured with a higher administrative distance than the primary route.
 
 **Show IP route output example** *(hoogstwaarschijnlijk eaxamen vraag)*:  
-![route](img/route.png)  
+![](https://robinmalfait.com/afbeeldingen/droplr/pXs3.png)  
 
 In volgorde vinden we:  
 
@@ -404,7 +404,7 @@ Een onderneming wenst een hiërarchische IP adressering te implementeren.
 Gegeven is het aantal hosts per departement (LAN) en enkele seriële verbindingen. Gebruik VLSM om het netwerk efficiënt onder te verdelen in hiërarchische subnetten. Het nulde subnet is hier bruikbaar!  
 
 Starting IP: 172.16.0.0
- 
+
 Departement Administratie: 20 hosts  
 Departement Directie: 10 hosts  
 Departement Personeel: 500 hosts  
@@ -421,30 +421,30 @@ Departement Personeel: 500 hosts
 
 ###Werkwijze
 ####Personeel voorbeeld
-1. hosts: Minimaal 500 hosts -> 2^8? = 256 Niet genoeg -> 2^9 = **512 hosts (waarvan 2 voor netwerk- en broadcastadres: 510)** 
-2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen. 
+1. hosts: Minimaal 500 hosts -> 2^8? = 256 Niet genoeg -> 2^9 = **512 hosts (waarvan 2 voor netwerk- en broadcastadres: 510)**
+2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen.
 In het geval van personeel is dit 9. ->  **32-9 = 23 -> /23**
-3. Subnetmask: Opsplitsen volgens CIDR -> 23b & 9b -> 11111111.11111111.11111110.00000000 -> 
+3. Subnetmask: Opsplitsen volgens CIDR -> 23b & 9b -> 11111111.11111111.11111110.00000000 ->
 **255.255.254.0**
 4. Netwerkadres: Broadcast van vorige subnet + 1. In dit geval starten we vanaf het begin.  
 **172.16.0.0**
 5. Broadcast bepalen:
 **172.16.0.0 -> 172.16.0.255 (0 naar 255 = 256) -> 172.16.1.255**
-6. Range: 
+6. Range:
  1. Eerste adres is het subnet adres +1: **172.16.0.1**
  2. Laatste adres is het broadcast adres -1: **172.16.1.254**
 
 ####Administratie voorbeeld
 1. hosts: Minimaal 20 hosts -> 2^5 = **32 hosts (waarvan 2 voor netwerk- en broadcastadres: 30)**
-2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen. 
+2. CIDR: 32b – het aantal bits  genomen voor de hosts te bepalen.
 In het geval van personeel is dit 9. ->  **32-5 = 27 -> /27**
-3. Subnetmask: Opsplitsen volgens CIDR -> 27b & 5b -> 11111111.11111111.11111111.11100000 -> 
+3. Subnetmask: Opsplitsen volgens CIDR -> 27b & 5b -> 11111111.11111111.11111111.11100000 ->
 **255.255.255.224**
 4. Netwerkadres: Broadcast van vorige subnet + 1.
 **172.16.2.0**
 5. Broadcast bepalen: (netwerkadres + hosts uit puntje 1)
 **172.16.2.0 -> 172.16.2.31**
-6. Range: 
+6. Range:
  1. Eerste adres is het subnet adres +1: **172.16.2.1**
  2. Laatste adres is het broadcast adres -1: **172.16.2.30**
 
@@ -454,6 +454,6 @@ In het geval van personeel is dit 9. ->  **32-5 = 27 -> /27**
 3. Subnetmask: **255.255.255.240**
 4. Netwerkadres:  **172.16.2.32**
 5. Broadcast bepalen:  **172.16.2.47**
-6. Range: 
+6. Range:
  1. Eerste adres: **172.16.2.33**
  2. Laatste adres: **172.16.2.46**

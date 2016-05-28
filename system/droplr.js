@@ -2,7 +2,7 @@ var fs = require('fs');
 var p = require('path');
 var http = require('follow-redirects').http;
 
-var DROPLR_REGEX = /\!\[\]\((https?:\/\/d\.pr\/i\/(([a-zA-Z0-9]*)\+))\)/gm;
+var DROPLR_REGEX = /\!\[(?:.*)?\]\((https?:\/\/d\.pr\/i\/(([a-zA-Z0-9]*)\+))\)/gm;
 var DROPLR_LINK = "http://d.pr/i/{0}+";
 var NEW_IMAGE_LINK = "https://robinmalfait.com/afbeeldingen/droplr/{0}.png";
 
@@ -118,6 +118,6 @@ module.exports = function() {
         "-------------------------------------",
         ""
     ].join('\n'));
-    
+
     foldersToScan.forEach(app.readdir);
 };
