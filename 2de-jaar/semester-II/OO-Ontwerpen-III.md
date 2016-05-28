@@ -973,7 +973,7 @@ public class Waitress {
 }
 ```
 
-## 9. Adaptor
+## 9. Adapter
 
 ### 9.1. DEFINITIE
 
