@@ -44,6 +44,8 @@ var app = {
                     "---"
                 ].join(''));
 
+                console.log("Adding links to", path);
+
                 fs.writeFileSync(path, contents, 'utf8');
             }
         }
