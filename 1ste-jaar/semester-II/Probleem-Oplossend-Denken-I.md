@@ -1,5 +1,6 @@
 ---
 title: Probleem Oplossend Denken I
+link: http://robinmalfait.com/1ste-jaar/semester-II/Probleem-Oplossend-Denken-I.md
 ---
 
 # 1 Inleiding

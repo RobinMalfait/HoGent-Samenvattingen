@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "follow-redirects": "0.0.7"
+    "follow-redirects": "0.0.7",
+    "front-matter": "^2.0.8"
   }
 }

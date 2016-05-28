@@ -1,5 +1,6 @@
 ---
 title: Computernetwerken I
+link: http://robinmalfait.com/1ste-jaar/semester-II/Computernetwerken-I.md
 ---
 
 # Hoofdstuk 1

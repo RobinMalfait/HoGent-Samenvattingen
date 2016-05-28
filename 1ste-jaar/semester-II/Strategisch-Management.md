@@ -1,5 +1,6 @@
 ---
 title: Strategisch Management
+link: http://robinmalfait.com/1ste-jaar/semester-II/Strategisch-Management.md
 ---
 
 # Hoofdstuk 1

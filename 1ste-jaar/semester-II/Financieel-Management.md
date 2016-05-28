@@ -1,5 +1,6 @@
 ---
 title: Financieel Management
+link: http://robinmalfait.com/1ste-jaar/semester-II/Financieel-Management.md
 ---
 
 # Deel 1 Basisbegrippen

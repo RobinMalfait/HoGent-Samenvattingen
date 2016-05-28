@@ -1,5 +1,6 @@
 ---
 title: i<sup>2</sup>Talent - Blog
+link: http://robinmalfait.com/2de-jaar/semester-II/italent/blog/week_1.md
 ---
 
 [Retour](/2de-jaar/semester-II/italent/index.md)
