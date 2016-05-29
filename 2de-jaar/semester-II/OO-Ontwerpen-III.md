@@ -608,20 +608,20 @@ public class Template {
 ### 6.3. CODE
 
 ```java
-public interface Command {
+public interface Command { // Command
     void execute();
     void undo();
 }
 
 // Zorgt er voor dat we geen if-statements moeten zetten met de vraag of we wel execute() kunnen aanroepen
-public class NoCommand implements Command {
+public class NoCommand implements Command { // ConcreteCommand
     public void execute() {}
     public void undo() {}
 }
 
 
 // Voorbeelden
-public class LightOnCommand implements Command {
+public class LightOnCommand implements Command { // ConcreteCommand
     private Light light;
 
     public LightOnCommand(Light light) {
@@ -637,7 +637,7 @@ public class LightOnCommand implements Command {
     }
 }
 
-public class LightOffCommand implements Command {
+public class LightOffCommand implements Command { // ConcreteCommand
     private Light light;
 
     public LightOffCommand(Light light) {
@@ -653,7 +653,7 @@ public class LightOffCommand implements Command {
     }
 }
 
-public class StereoOnWithCDCommand implements Command {
+public class StereoOnWithCDCommand implements Command { // ConcreteCommand
     private Stereo stereo;
 
     public StereoOnWithCDCommand(Stereo stereo) {
@@ -668,7 +668,7 @@ public class StereoOnWithCDCommand implements Command {
 }
 
 // Hoe runnen:
-public class RemoteControl {
+public class RemoteControl { // Invoker, invoked commands
     private Command[] onCommands;
     private Command[] offCommands;
     private Command undoCommand;
@@ -703,19 +703,31 @@ public class RemoteControl {
     }
 
 }
-public static void main(String[] args) {
-    RemoteControl remoteControl = new RemoteControl();
 
-    Light livingRoomLight = new Ligh("Living Room Lighting");
-    Light kitchenLight = new Light("Kitchen lighting");
-    Stereo stereo = new Stereo("Stereo");
-    // ...
+public class RemoteControlApp { // Client
+    public static void main(String[] args) {
+        RemoteControl remoteControl = new RemoteControl();
 
-    LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
-    LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
-    LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
-    LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
-    StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
+        Light livingRoomLight = new Ligh("Living Room Lighting");
+        Light kitchenLight = new Light("Kitchen lighting");
+        Stereo stereo = new Stereo("Stereo");
+        // ...
+
+        LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+        LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+        LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+        LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
+        StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
+
+        // Execution
+        remoteControl.setCommand(1, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.setCommand(2, kitchenLightOn, kitchenLightOff);
+
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.onButtonWasPushed(2);
+        remoteControl.undoButtonWasPushed();
+        remoteControl.undoButtonWasPushed();
+    }
 }
 ```
 
@@ -730,7 +742,7 @@ public static void main(String[] args) {
 #### 6.4.2. CODE
 
 ```java
-public class MacroCommand implements Command {
+public class MacroCommand implements Command { // ConcreteCommand
     private Command[] commands;
     public MacroCommand(Command[] commands) {
         this.commands = commands;
@@ -745,7 +757,7 @@ public class MacroCommand implements Command {
     }
 }
 
-public class RemoteLoader {
+public class RemoteLoader { // Client
     public static void main(String[] args) {
         RemoteControl remotecontrol = new RemoteControl();
 
