@@ -230,7 +230,7 @@ public abstract class SandwichBuilder {
 // De builder klassen: concrete klassen
 public class MySandwhichBuilder extends SandwichBuilder {
     public void prepareBread() {
-        Sandwich sandwich  getSandwich();
+        Sandwich sandwich = getSandwich();
         sandwich.setbreadType(BreadType.Wheat);
     }
     public void applyMeatAndCheese() {
@@ -246,7 +246,7 @@ public class MySandwhichBuilder extends SandwichBuilder {
 
 public class ClubSandwichBuilder extends SandwichBuilder {
     public void prepareBread() {
-        Sandwich sandwich  getSandwich();
+        Sandwich sandwich = getSandwich();
         sandwich.setbreadType(BreadType.White);
     }
     public void applyMeatAndCheese() {
@@ -708,7 +708,7 @@ public class RemoteControlApp { // Client
     public static void main(String[] args) {
         RemoteControl remoteControl = new RemoteControl();
 
-        Light livingRoomLight = new Ligh("Living Room Lighting");
+        Light livingRoomLight = new Light("Living Room Lighting");
         Light kitchenLight = new Light("Kitchen lighting");
         Stereo stereo = new Stereo("Stereo");
         // ...
@@ -761,7 +761,7 @@ public class RemoteLoader { // Client
     public static void main(String[] args) {
         RemoteControl remotecontrol = new RemoteControl();
 
-        Light light = new Ligh("Living Room");
+        Light light = new Light("Living Room");
         Tv tv = new Tv("Living Room");
         Stereo stereo = new Stereo("Living Room");
         Hottub hottub = new Hottub();
@@ -804,6 +804,10 @@ public class RemoteLoader { // Client
 ### 7.2. UML Diagram
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1ajnX.png)
+
+Voorbeeld:
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1icGx.png)
 
 ### 7.3. CODE
 
@@ -873,6 +877,8 @@ public static void main(String[] args) {
 > Het **Composite Pattern** stelt je in staat om objecten in boomstructuren samen te stellen om partwhole hiërarchiën weer te geven. Composite laat clients de afzonderlijke objecten of samengestelde objecten op uniforme wijze behandelen
 
 ### 8.2. UML Diagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/rgKJ.png)
 
 ### 8.3. CODE
 
@@ -985,6 +991,62 @@ public class Waitress {
 
     public void printMenu() {
         allMenus.print();
+    }
+}
+```
+
+### 8.4. Null Iterator
+
+```java
+public class NullIterator implements Iterator<MenuComponent> {
+    public MenuComponent next() {
+        return null;
+    }
+
+    public boolean hasNext() {
+        return false;
+    }
+}
+```
+
+### 8.5. Composite Iterator
+
+```java
+public class CompositeIterator implements Iterator<MenuComponent> {
+    private Stack<Iterator<MenuComponent>> stack = new Stack<>();
+
+    public CompositeIterator(Iterator<MenuComponent> iterator)
+    {
+        stack.push(iterator);
+    }
+
+    public MenuComponent next()
+    {
+        if (hasNext()) {
+            Iterator<MenuComponent> iterator = stack.peek();
+            MenuComponent component = iterator.next();
+
+            // It is not a leaf, it has children
+            if (component instanceof Menu) {
+                stack.push(component.createIterator());
+            }
+        }
+
+        return null;
+    }
+
+    public boolean hasNext()
+    {
+        if (stack.empty()) return false;
+
+        Iterator<MenuComponent> iterator = stack.peek();
+
+        if ( ! iterator.hasNext()) {
+            stack.pop();
+            return hasNext();
+        }
+
+        return true;
     }
 }
 ```
