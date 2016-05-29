@@ -142,6 +142,10 @@ Pizza voorbeeld:
 
 ## 3. Builder
 
+### 3.0. Oefeningen
+
+[Oefeningen](/2de-jaar/semester-II/OO-Ontwerpen/Builder.md)
+
 Vervang veel te grote constructors met een interessantere manier.
 
 ### 3.1. DEFINITIE
