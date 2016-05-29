@@ -1200,3 +1200,269 @@ public class ProxyPatternDemo {
    }
 }
 ```
+
+### 10.4. Remote Proxy (RMI)
+
+```java
+public interface GumballMachineRemote extends Remote {
+    // Wat de client zal kunnen opvragen
+    int getCount() throws RemoteException;
+    String getLocation() throws RemoteException;
+    String getState() throws RemoteException;
+}
+
+// Alle argumenten & returnwaarden moeten serialiseerbaar zijn
+public abstract class GumballMachineState implements Serializable {
+
+    // Dit object willen we niet serialiseren en dus negeren
+    transient protected GumballMachine gumballMachine;
+
+    // States...
+}
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+// Extend van URO & implement interface van hierboven
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+    // Vergeet de throws niet
+    public GumballMachine(String location, int numberGumballs) throws RemoteException {
+        this.location = location;
+        this.count = numberGumballs;
+    }
+}
+
+public class GumballMonitor {
+    private GumballMachineRemote machine;
+
+    public GumballMonitor(GumballMachineRemote machine) {
+        this.machine = machine;
+    }    
+
+    public void report() {
+        // doe dingen..
+    }
+}
+
+public class ClientApp {
+    public void blabla() {
+        try {
+            // Get remote registry object on port 1099 (rmi nameservice)
+            Registry myRegistry = LocateRegistry.getRegistry("127.0.0.1", 1099);
+            // dit is de default ==> LocateRegistry.getRegistry();
+
+            // Search for remote object GumballMachineRemote (via rmi nameservice)
+            GumballMachineRemote machine = (GumballMachineRemote) myRegistry.lookup("gumballmachine");
+
+            // Geef remote object door aan GumballMonitor
+            GumballMonitor monitor = new GumballMonitor(machine);
+
+            monitor.report();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public class RemoteServiceApp { // Not sure though
+    // Meld de service aan bij de RMI registry
+    private void registerRemoteGumballMachine() {
+        try {
+            Registry registry = LocateRegistry.createRegistry(1099);
+            machine = new GumballMachine(location, count);
+            registry.rebind("gumballmachine", machine);
+        } catch(RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 10.5. Virtual Proxy CODE
+
+```java
+// Een tijdelijke afbeelding laden tot de echte afbeelding geladen is
+public class ImageProxy implements Icon {
+    private ImageIcon imageIcon;
+    private URL imageUrl;
+    private Thread retrievalThread;
+    public ImageProxy(URL url) {
+        this.imageUrl = url;
+    }
+
+    @Override
+    public int getIconWidth() {
+        if (imageIcon != null) {
+            return imageIcon.getIconWidth(); // Doordelegeren
+        }
+        return 800; // Default
+    }
+
+    @Override
+    public int getIconHeight() {
+        if (imageIcon != null) {
+            return imageicon.getIconHeight();
+        }
+
+        return 600;
+    }
+
+    public void paintIcon(final Component c, Graphics g, int x, int y) {
+        if (imageIcon != null) {
+            imageIcon.paintIcon(c, g, x, y); // Toon de echte afbeelding
+        } else {
+            g.drawString("cd cover wordt geladen, wachten aub...", x + 300, y + 190); // tijdelijke string tonen
+
+            if (retrievalThread == null) {
+                retrievalThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            imageicon = new ImageIcon(imageUrl, "cd-cover"); // Nu pas ophalen
+                            c.repaint(); // Zal opnieuw uitvoeren zodat het eerste blokje wordt uitgevoerd
+                        } catch(Exception e) { e.printStackTrace(); }
+                    }
+                });
+                retrievalThread.start();
+            }
+        }
+    }
+}
+
+public class SomethingApp {
+    public static void main(String[] args) {
+        Icon icon = new ImageProxy("http://d.pr/i/1kx77+");
+
+        // Echte gui zeker?
+        imageComponent = new ImageComponent(icon);   
+        frame.getContentPane().add(imageComponent);
+    }
+}
+```
+
+### 10.6. Dynamic Proxy CODE
+
+```java
+public interface PersonBean {
+    public String getName();
+    public int getHotOrNotRating();
+
+    public void setName(String string);
+    public void setHotOrNotRating(int i);
+}
+
+public class PersonBeanImpl implements PersonBean {
+    private String name;
+    private int rating;
+    private int ratingCount;
+
+    public String getName() { return name; }
+    public int getHotOrNotRating() {
+        if (ratingCount == 0) return 0;
+
+        return rating / ratingCount;
+    }
+
+    public void setName(String string) { this.name = string; }
+    public void setHotOrNotRating(int i) { this.rating += rating; ratinCount++; }
+}
+
+// Nu zou de persoon zichzelf een hotOrNot rating kunnen geven: Das ziek ze manne!
+
+import java.lang.reflect.*;
+
+public class OwnerInvocationHandler implements InvocationHandler {
+    private PersonBean person;
+    public OwnerInvocationHandler(PersonBean person) { this.person = person; }
+
+    public Object invoke(Object proxy, Method method, Object[] args) throws IllegalAccessException
+    {
+        try {
+            // Getter is altijd toegelaten
+            if (method.getName().startsWith("get")) {
+                return method.invoke(person, args);
+            } else if (method.getName().equals("setHotOrNotRating")) {
+                // Da mag niet omdat het een "owner" InvocationHandler is
+                throw new IllegalAccessException();
+            } else if (method.getName().startsWith("set")) {
+                // andere setters zijn wel toegelaten, kijk eens aan!
+                return method.invoke(person, args);
+            } catch(InvocationHandler e) { e.printStackTrace(); throw e; }
+
+            return null;
+        }
+    }
+}
+
+public class NonOwnerInvocationHandler implements InvocationHandler {
+    private PersonBean person;
+    public NonOwnerInvocationHandler(PersonBean person) { this.person = person; }
+
+    public Object invoke(Object proxy, Method method, Object[] args) throws IllegalAccessException
+    {
+        try {
+            // Getter is altijd toegelaten
+            if (method.getName().startsWith("get")) {
+                return method.invoke(person, args);
+            } else if (method.getName().equals("setHotOrNotRating")) {
+                // Dit is de enige setter die wel mag gebeuren
+                return method.invoke(person, args);
+            } else if (method.getName().startsWith("set")) {
+                // We willen niet dat andere personen, ons object kunnen wijzigen
+                throw new IllegalAccessException();
+            } catch(InvocationHandler e) { e.printStackTrace(); throw e; }
+
+            return null;
+        }
+    }
+}
+
+public class SomethingApp {
+    public Personbean getOwnerProxy(PersonBean person) {
+        return (PersonBean) Proxy.newProxyInstance(
+            person.getClass().getClassLoader(),
+            person.getClass().getInterfaces(),
+            new OwnerInvocationHandler(person)
+        );
+    }
+    public Personbean getNonOwnerProxy(PersonBean person) {
+        return (PersonBean) Proxy.newProxyInstance(
+            person.getClass().getClassLoader(),
+            person.getClass().getInterfaces(),
+            new NonOwnerInvocationHandler(person)
+        );
+    }
+
+    public static void main(String[] args) {
+        test1();
+        test2();
+    }
+
+    private void test1()
+    {
+        PersonBean joe = getPersonFromDatabase("Joe Javabean");
+        PersonBean ownerProxy = getOwnerProxy(joe);
+        System.out.println("Name is " + ownerProxy.getName());
+
+        try {
+            ownerProxy.setHotOrNotRating(10);
+        } catch(Exception e) {
+            System.out.println("Jezelf een hot or not rating geven is zoals u eigen facebook afbeelding liken. Da doe ge niet!");
+        }
+
+        System.out.println("Rating is " + ownerProxy.getHotOrNotRating());
+    }
+
+    private void test2()
+    {
+        PersonBean joe = getPersonFromDatabase("Joe Javabean");
+        PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
+        System.out.println("Name is " + nonOwnerProxy.getName());
+
+        nonOwnerProxy.setHotOrNotRating(10); // Nu gaat da welke
+        // Andere setters gaan niet..
+
+        System.out.println("Rating is " + nonOwnerProxy.getHotOrNotRating());
+    }
+}
+```
