@@ -186,7 +186,7 @@ When a packet arrives on an interface, it is forwarded to the control plane wher
 Builds a Forwarding Information Base (FIB), and an adjacency table. When a network has converged, the FIB and adjacency tables contain all the information a router would have to consider when forwarding a packet. The FIB contains precomputed reverse lookups, next hop information for routes including the interface and Layer 2 information. Cisco Express Forwarding is the fastest forwarding mechanism and the preferred choice on Cisco routers.
 
 **IPV6** *(hoogstwaarschijnlijk examen vraag)*:  
-link-local: 2001:0DB8:ACAD:0001:/64  
+global unicast: 2001:0DB8::/64  
 multicast: FF00::/8  
 link-local unicast: FE80::/10  
 site local unicast: FEC0::/10  
