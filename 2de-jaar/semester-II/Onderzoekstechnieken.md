@@ -230,3 +230,43 @@ Verbanden tussen verschillende verschijnselen.
 | Slecht       | 0     | 4   | 4 | `0 / 22 = 0%` | `4 / 27` |
 | ------------ | ----- | --- | --- |----- | ---- |
 | Totaal       | 22    | 27  | 49 | 100% | 100% |
+
+# R
+
+## Laden van datasets
+
+### .sav files
+
+```R
+library(foreign)
+data <- read.spss("path/to/sav/file.sav", to.data.frame=TRUE)
+```
+
+### .csv files
+
+```R
+library(foreign)
+data <- read.csv("path/to/csv/file.csv")
+```
+
+### .xlsx files
+
+```R
+data <- readXL("path/to/xlsx/file.xlsx", rownames=FALSE, header=TRUE, sheet="Sheet1", stringsAsFactor=TRUE)
+
+## Of
+
+library(readxl)
+data <- read_excel("path/to/xlsx/file.xlsx", sheet="Sheet1")
+```
+
+### .txt files
+
+```R
+data <- read.delim("path/to/txt/file.txt")
+
+## of
+
+data <- read.table("path/to/txt/file.txt", 
+  header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+```
