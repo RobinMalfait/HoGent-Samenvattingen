@@ -124,22 +124,22 @@ We zijn vooral op zoek naar **oorzakelijke verbanden**, bv.
 
 > **Beschrijvende statistiek** Met beschrijvende statistiek bedoelen we een verzameling van technieken om data synthetisch voor te stellen en samen te vatten.
 
-## 2.2. Centrummaten
+## Centrummaten
 
-### 2.2.1 Gemiddelde
+### 2.2. Gemiddelde
 
 > Het gemiddelde is de som van alle waarden gedeeld door het aantal waarden
 
-Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan de uitkomst
+Het gemiddelde is gevoelig aan uitschieters (outliers). Elk cijfer levert een bijdrage aan de uitkomst
 
 ```
 μ = 1/n * sum(Xi)
 ```
 
-- **μ**: populatie
-- **x̄**: steekproef
+- μ: populatie
+- x̄: steekproef
 
-### Mediaan
+### 2.3. Mediaan
 
 > Om de mediaan te vinden, sorteer de waarden en kies het middelste nummer
 
@@ -148,7 +148,7 @@ Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan 
 
 Is minder gevoelig aan uitschieters, niet alle cijfers werken mee aan de uitkomst.
 
-### Modus
+### 2.4. Modus
 
 > De modus is het vaakst voorkomende getal in een reeks getallen.
 
@@ -156,7 +156,7 @@ Wanneer geen enkel getal meerdere keren voorkomt, waardoor elk getal slechts 1 k
 
 ## Spreidingsmaten
 
-### Bereik (range)
+### 2.5. Bereik (range)
 
 > Het bereik van een reeks getallen is de absolute waarde van het verschil tussen het grootste en kleinste getal in de reeks.
 
@@ -164,18 +164,33 @@ Wanneer geen enkel getal meerdere keren voorkomt, waardoor elk getal slechts 1 k
 bereik = | max(x) - min(x) |
 ```
 
-### Kwartielen (quartiles)
+### 2.6. Kwartielen (quartiles)
 
 > De kwartielen van een gesorteerde reeks getallen zijn de waarden die de lijst in vier gelijke delen verdeelt. Elk deel vormt dus ene kwart van de dataset. Men spreekt van een eerste, tweede en derde kwartiel genoteersd als. `Q1, Q2, Q3`
 
+- Q1: 0% - 25%
+- Q2: 25% - 50%
+- Q3: 50% - 75%
+- Q4: 75% - 100%
+
+> **kwartielafstand** is het verschil tussen Q3 en Q1 `Q3 - Q1`
+>
+> - Indien oneven:
+>   - Q1: `(n + 1)/4`
+>   - Q3: `(3n + 3)/4`
+> - Indien even:
+>   - Q1: `(n + 2)/4`
+>   - Q3: `(3n + 2)/4`
+
 Percentielen zijn gelijkaardig maar van 0..1
 
-### Variantie (variance) en standaardafwijking (standard deviation)
+### 2.7. Variantie (variance) en standaardafwijking (standard deviation)
 
-> De variantie is het gemiddelde gekwadrateerde verschil tussen de elementen van de dataset en zijn gemiddelde.
-
+> De variantie (σ^2 (sigma kwadraat)) is het gemiddelde gekwadrateerde verschil tussen de elementen van de dataset en zijn gemiddelde.
 
 Dit kan nooit negatief zijn, omdat we enkel optellen en een kwadraat nemen
+
+Binnen een steekproef:
 
 ```
     sum(xi - avg(x))^2
@@ -183,20 +198,24 @@ s = ------------------
             n
 ```
 
+Binnen de populatie:
+
+```
+      sum(μ - avg(x))^2
+σ^2 = ------------------
+            n
+```
+
 > Een waarde uitdrukken op basis van u meetpunt heet `Normaliseren` x^2/n (zoals bij variantie)
 
-Variantie wordt aangeduid door `s` of door `σ^2`
-```
-
-σ^2  == s
-```
+Variantie wordt aangeduid door `s` (als het over de steekproef gaat) of door `σ^2` (als het over de populatie gaat)
 
 > De standaardafwijking is de vierkantswortel van de variantie
 
 Aangeduid door sigma
 
 ```
-σ = sqrt(s)
+σ = sqrt(σ^2)
 ```
 
 #### Eigenschappen
@@ -206,7 +225,6 @@ Aangeduid door sigma
 - Wat is de invloed van uitschieters op de standaardafwijking?
 - In welke eenheden staat de standaardafwijking?
 - Hoe interpreteer je de standaardafwijking in combinatie met het gemiddelde? Wanneer je dataset normaal verdeeld is.
-
 
 ## Diagrammen
 
