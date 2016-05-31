@@ -5,7 +5,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Onderzoekstechnieken.md
 
 [Cheat Sheet](/2de-jaar/semester-II/Statistics.md)
 
-# Intro
+# 1. Het onderzoeksproces
 
 2 taken (doorheen het jaar):
 
@@ -72,16 +72,16 @@ Aan de hand van **empirisch onderzoek** zijn we geïnteresseerd in volgende zake
 
 ### Kwalitatieve schalen:
 
-- **Nominaal** Categorieën. Bv.: Geslacht, ras, land, vorm, ...
-- **Ordinaal** Volgorde. Bv.: militaire rang, opleidingsniveau, ...
+- **Nominaal** Er is slechts keuze uit een beperkt aantal categorieën, waarbij geen volgorde aanwezig is tussen de antwoorden. `Categorieën`. Bv.: Geslacht, ras, land, vorm, ...
+- **Ordinaal** Een variabele die is ingedeeld in categorieën, waar er echter wel een logische volgorde is tussen de categorieën. `Volgorde`. Bv.: militaire rang, opleidingsniveau, ...
 
 ### Kwantitatieve schalen:
 
-- **Interval** Meting: getal + meeteenheid, nulpunt niet belangrijk.
+- **Interval** Variabelen die niet in categorieën voorkomen, en waarbij berekeningen kunnen mee uitgevoerd worden, maar zonder nulpunt. Meting: getal + meeteenheid, nulpunt niet belangrijk.
 
     bv.: 20°C - 15°C = 5°C, maar 20°C is *NIET* 1/3 warmer dan 15°C
 
-- **Ratio** Meting t.o.v. absoluut nulpung.
+- **Ratio** Intervalniveau met nulpunt. Je kunt hierdoor verhoudingen berekenen tussen verschillende waarden op de schaal. Meting t.o.v. absoluut nulpung.
 
     bv.: Afstand (m), enregie (J), massa (kg), ... BV.: 20m is *wel* 1/3 langer dan 15m
 
@@ -106,7 +106,7 @@ Er is een verband tussen variabelen als hun waarden **systematisch** veranderen.
 We zijn vooral op zoek naar **oorzakelijke verbanden**, bv.
 
 * Frustratie leidt tot agressie
-* Alcohol leidt tot mindero plettendheid
+* Alcohol leidt tot minder oplettendheid
 * ...
 
 - **Oorzaak**: Onafhankelijke variabele
@@ -120,20 +120,24 @@ We zijn vooral op zoek naar **oorzakelijke verbanden**, bv.
 - Correlatie tussen drinken van Cola-light en zwaarlijvigheid
 - ...
 
-# Analyse op 1 variabele
+# 2. Analyse op 1 variabele
 
-## Centrummaten
+> **Beschrijvende statistiek** Met beschrijvende statistiek bedoelen we een verzameling van technieken om data synthetisch voor te stellen en samen te vatten.
 
-### Gemiddelde
+## 2.2. Centrummaten
+
+### 2.2.1 Gemiddelde
 
 > Het gemiddelde is de som van alle waarden gedeeld door het aantal waarden
 
 Het gemiddelde is gevoelig aan uitschieters. Elk cijfer levert een bijdrage aan de uitkomst
 
 ```
-–
-x = 1/n * sum(Xi)
+μ = 1/n * sum(Xi)
 ```
+
+- **μ**: populatie
+- **x̄**: steekproef
 
 ### Mediaan
 
@@ -252,10 +256,6 @@ data <- read.csv("path/to/csv/file.csv")
 ### .xlsx files
 
 ```R
-data <- readXL("path/to/xlsx/file.xlsx", rownames=FALSE, header=TRUE, sheet="Sheet1", stringsAsFactor=TRUE)
-
-## Of
-
 library(readxl)
 data <- read_excel("path/to/xlsx/file.xlsx", sheet="Sheet1")
 ```
@@ -267,6 +267,6 @@ data <- read.delim("path/to/txt/file.txt")
 
 ## of
 
-data <- read.table("path/to/txt/file.txt", 
+data <- read.table("path/to/txt/file.txt",
   header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
 ```
