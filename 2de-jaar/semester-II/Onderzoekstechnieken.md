@@ -218,6 +218,13 @@ Aangeduid door sigma
 σ = sqrt(σ^2)
 ```
 
+### 2.8. Toepassing spreidingsmaten en maten centraliteit op verschillende soorten variabelen
+
+| Analyse | Nominaal | Ordinaal | Interval of Ratio |
+| ------- | -------- | -------- | ----------------- |
+| **Centrum** | <ul><li>Modus</li><li>Modale klasse</li></ul> | <ul><li>Mediaan</li><li>Modus</li><li>Modale klasse</li></ul> | <ul><li>Gemiddelde</li><li>Mediaan</li><li>Modale klasse</li> </ul> |
+| **Spreiding** | &nbsp; | <ul><li>Range</li><li>Interkwartielafstand</li></ul> | <ul><li>Range</li><li>Interkwartielafstand</li><li>standaardafwijking</li></ul> |
+
 #### Eigenschappen
 
 - Kan de standaardafwijking negatief zijn? Neen
