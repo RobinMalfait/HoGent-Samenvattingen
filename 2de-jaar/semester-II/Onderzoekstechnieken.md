@@ -306,6 +306,26 @@ Eigenschappen:
 - In gebied σ onder μ en σ boven μ (het zogenoemde sigma gebied) ligt ongeveer 68% van de waarnemingen
 - In het gebied 2σ boven en onder μ ligt ongeveer 95% van alle waarnemingen
 
+### 4.5.2. Schatten van een parameter
+
+> **puntschatter** een puntschatter voor een populatieparameter is een regel of een formule die ons zegt hoe we uit de steekproef een getal moeten berekenen om de populatieparameter te schatten. Een puntschatter is dus een steekproefgrootheid.
+
+### 4.5.3. Betrouwbaarheidsinterval populatiegemiddelde bij grote steekproef
+
+> **Betrouwbaarheidsinterval**. Een betrouwbaarheidsinterval is een regel of een formule die ons zegt hoe we uit de steekproef een interval moeten berekenen dat de waarde van de parameter met een bepaalde hoge waarschijnlijkheid bevat.
+
+
+# 5. Toetsingsprocedures
+
+## 5.2.1 Elementen van een hypothesetoets
+
+1. **Nullhypothese** H<sub>0</sub>: Deze hypothese proberen wete ontkrachten door een redenering in het ongerijmde. We gaan deze hypothese accepteren, tenzij de gegevens overtuigend wijzen op het tegendeel.
+2. **Alternatieve hypothese** H<sub>1</sub>: De hypothese die meestal gesteund wordt door de onderzoeker. Deze hypothese zal alleen worden geaccepteerd als de gegevens overtuigend wijzen op zijn juistheid.
+3. **Teststatistiek** De veranderlijke die berekend wordt uit de steekproef
+4.
+    - **Aanvaardingsgebierd** Het gebeid van waarden die de nullhypothese H0 ondersteunt
+    - **Verwerpingsgebied**: gebied dat waarden bevat die de nullhypothese verwerpen (ook kritiek gebied genoemd)
+
 # R
 
 ## Laden van datasets
