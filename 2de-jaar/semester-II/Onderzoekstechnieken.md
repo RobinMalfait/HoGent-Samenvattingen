@@ -233,9 +233,16 @@ Aangeduid door sigma
 - In welke eenheden staat de standaardafwijking?
 - Hoe interpreteer je de standaardafwijking in combinatie met het gemiddelde? Wanneer je dataset normaal verdeeld is.
 
-## Diagrammen
+### 2.9. Grafieken
 
 > Probeer cirkeldiagrammen te vermijden, bar charts zijn makkelijker interpreteerbaar!
+
+#### 2.9.1. Boxplot
+
+De boxplot wordt gevormd door een rechthoek begrensd door de kwartielwaarden (25% en 75%). In deze rechthoek wordt ook de mediaan getekend. De stelen, die aan de rechthoek zitten, bevatten de rest van de waarnemingen op de uitschieters en extremen na.
+
+- Een uitschieters is een waarde die meer dan 1,5 keer de interkwartielafstand boven/onder het derde/eerste kwartiel ligt. Wordt aangeduid met een cirkeltje.
+- Een extremum is een waarde die meer dan 3 keer de interkwartielafstand boven/onder het derde/eerste kwartiel ligt. Wordt aangeduid met een sterretje.
 
 # Analyse op 2 variabelen
 
@@ -250,19 +257,38 @@ Verbanden tussen verschillende verschijnselen.
 - Metingen: `a`
 - Verwachte waarde: `e`
 
+![](https://robinmalfait.com/afbeeldingen/droplr/1eMcm.png)
 
-| &nbsp;       | Vrouw | Man | Totaal | Percentage Vrouwen | Percentage Mannen |
-| ------------ | ----- | --- | --- | ----------- | ----------- |
-| Goed         | 9     | 8   | 17 | `9 / 22 = 41%` | `8 / 27` |
-| Voldoende    | 8     | 10  | 18 | `8 / 22 = 36%` | `10 / 27` |
-| Onvoldoende  | 5     | 5   | 10 | `5 / 22 = 23%` | `5 / 27` |
-| Slecht       | 0     | 4   | 4 | `0 / 22 = 0%` | `4 / 27` |
-| ------------ | ----- | --- | --- |----- | ---- |
-| Totaal       | 22    | 27  | 49 | 100% | 100% |
+Percentages: ![](https://robinmalfait.com/afbeeldingen/droplr/1iVAp.png)
+Verwachte waarde `e`: ![](https://robinmalfait.com/afbeeldingen/droplr/19ksK.png)
+
+Resultaten: ![](https://robinmalfait.com/afbeeldingen/droplr/17VEc.png)
 
 # R
 
 ## Laden van datasets
+
+### 1 function to rule them all!
+
+```R
+load_file <- function(path) {
+  library(tools)
+  type <- file_ext(path)
+
+  if (type == "xlsx") {
+    library(readxl)
+    return(read_excel(path))
+  } else if (type == "sav") {
+    library(foreign)
+    return(read.spss(path, to.data.frame=TRUE))
+  } else if (type == "csv") {
+    library(foreign)
+    return(read.csv(path))
+  } else if (type == "txt") {
+    return(read.delim(path))
+  }
+}
+```
 
 ### .sav files
 
