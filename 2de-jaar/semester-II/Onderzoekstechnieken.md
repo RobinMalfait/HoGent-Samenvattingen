@@ -264,6 +264,48 @@ Verwachte waarde `e`: ![](https://robinmalfait.com/afbeeldingen/droplr/19ksK.png
 
 Resultaten: ![](https://robinmalfait.com/afbeeldingen/droplr/17VEc.png)
 
+# 4. Steekproefonderzoek
+
+> **populatie** De verzameling van **alle** objecten of personen waar men in geïnteresseerd is en onderzoek naar wil doen noemt men de populatie. Een ander woord is ook wel onderzoeksgroep of doelgroep.
+
+<br>
+
+> **Steekproef** Wanneer met een subgroep uit een populatie gaat onderzoeken, dan noemen we die groep een steekproef.
+
+<br>
+
+> **Steekproefkader** Een steekproefkader is een lisjt van alle leden van een te onderzoeken populatie
+
+
+## 4.2. Kiezen van steekproefmethode
+
+> **Gestratificeerde steekproef**. Een **gestratificeerde** steekproef is proportioneel als het aandel van de subpopulatie in de steekproef gelijk is aan het aandel van de subpopulatie in de populatie als geheel.
+
+## 4.3. Kansverdeling van een steekproef
+
+### 4.3.1. Stochastisch experiment
+
+> **Universum of Uitkomstenruimte** het universum of uitkomstenruimte van een experiment is de verzameling van alle mogelijke uitkomsten van dit experiment en wordt genoteerd met Ω
+
+<br>
+
+> **Gebeurtenis** Een gebeurtenis is een deelverzameling van de uitkomstenruimte. Een enkelvoudige of elementaire gebeurtenis is een singleton; een samengestelde gebeurtenis heeft cardinaliteit groter dan 1
+
+## 4.4. De normale verdeling
+
+```
+X ~ Nor(μ = 5; σ = 1,5)
+```
+
+Eigenschappen:
+
+- Normale verdeling is klokvormig
+- De normale verdeling is symmetrisch
+- Vanwege de symmetrie is gemiddelde, mediaan en modus aan elkaar gelijk
+- De totale oppervlakte onder de klokvormige figuur is 1
+- In gebied σ onder μ en σ boven μ (het zogenoemde sigma gebied) ligt ongeveer 68% van de waarnemingen
+- In het gebied 2σ boven en onder μ ligt ongeveer 95% van alle waarnemingen
+
 # R
 
 ## Laden van datasets
