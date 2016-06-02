@@ -268,11 +268,9 @@ Resultaten: ![](https://robinmalfait.com/afbeeldingen/droplr/17VEc.png)
 
 > **populatie** De verzameling van **alle** objecten of personen waar men in geïnteresseerd is en onderzoek naar wil doen noemt men de populatie. Een ander woord is ook wel onderzoeksgroep of doelgroep.
 
-<br>
 
 > **Steekproef** Wanneer met een subgroep uit een populatie gaat onderzoeken, dan noemen we die groep een steekproef.
 
-<br>
 
 > **Steekproefkader** Een steekproefkader is een lisjt van alle leden van een te onderzoeken populatie
 
