@@ -68,7 +68,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 ## Bedrijfsdoelen
 
-- Strategische doelen - Lange termijn - (5 - 10 jaar)
+- **Strategische doelen** - Lange termijn - (5 - 10 jaar)
     **Onderwerpen in business / directiecomite**
     - Resultaten, groei, klantentevredenheid, productontwikkeling, business development, verkoopcijfers, winstmarge, productiekost
     - innovatie
@@ -78,7 +78,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
         - **Risico**: grote klanten die wegvallen, te weinig personeel, brand
         - **Continuïteit**: Werkend blijven
 
-- Tactische doelen - Middellange termijn - (1 - 3 jaar)
+- **Tactische doelen** - Middellange termijn - (1 - 3 jaar)
     **Typische onderwerpen in IT**
     - Nieuwe applicaties / wijzigingen
     - Vervangen oude applicaties
@@ -90,9 +90,16 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
     - Kosten
     - Disaster recovery
 
-- Opertaionele doelen - Nu
+- **Opertaionele doelen** - Nu
 
-# 3. Kloof Business en IT
+## Typische IT Organisatie
+
+![](https://robinmalfait.com/afbeeldingen/droplr/6gab.png)
+
+# 3. Kloof Business en IT (alignment probleem)
+
+
+
 # 4. Processen per Functiedomeinen
 # 5. Business process re-engineering (BPR)
 # 6. Business processen en ERP
