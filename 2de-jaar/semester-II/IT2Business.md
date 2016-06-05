@@ -29,7 +29,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 - **Worden uitgedrukt in een mission statement**
 
-    ```text
+    <pre>
     Onze missie:
 
     Vandemoortele ontwikkelt, produceert en verkoopt diepvriesbakkerijproducten en margarines & vetten. Aan professionele gebruikers leveren we ze als ingrediënten en halfafgewerkte producten; aan consumenten leveren we ze als volledig afgewerkte producten. Deze consumentenproducten brengen we voornamelijk onder de merknamen van onze klanten op de markt, maar we commercialiseren ze ook odner onze eigen merknamen.
@@ -37,7 +37,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
     Wij willen bij onze klanten de voorkeurleverancier zijn. Dit streven vereist dat wij hen op efficiënte manier van producten voorzien die op het vlak van kwaliteit, service en innovatie voor alle betrokkenen waarde creëren. Onze activiteiten steunen dan ook op nauwe samenwerking met de klant, en op een diepgaand begrip van en het continu onderzoek naar de belangrijkste voedings- en consumptietrends.
 
     Respect voor milieu en maatschappij maakt integraal dele uit van onze dagelijkse werking. Wij zijn er ook van overtuigd dat de ontwikkeling van Vandemoortele als ondernemeing hand in hand gaat met de persoonlijke ontwikkeling van elk van onze medewerkers.
-    ```
+    </pre>
 
 ## Bedrijfsorganisatie
 
