@@ -29,7 +29,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 - **Worden uitgedrukt in een mission statement**
 
-    ```md
+    ```markdown
     Onze missie:
 
     Vandemoortele ontwikkelt, produceert en verkoopt diepvriesbakkerijproducten en margarines & vetten. Aan professionele gebruikers leveren we ze als ingrediënten en halfafgewerkte producten; aan consumenten leveren we ze als volledig afgewerkte producten. Deze consumentenproducten brengen we voornamelijk onder de merknamen van onze klanten op de markt, maar we commercialiseren ze ook odner onze eigen merknamen.
@@ -43,13 +43,13 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 | Title | Description | Taken |
 | ----- | ----------- | ----- |
-| CEO | Chief Executive Officer (algemeen directeur) | <ul><li>Volledige verantwoordelijkheid</li><li>Rapporteert aan Raad Van Bestuur die de aandeelhouders vertegenwoordigt</li></ul> |
-| CFO | Chief Financial Officer (Financieel directeur) | <ul><li>Boekhouding</li><li>Controlling: kost controle, productkost berekening, analyse cijfers</li><li>Aankoop en administratie</li></ul> |
-| Verkoopdirecteur | &nbsp; | Verantwoordelijk om bepaald volume en omzet / marge te realiseren |
-| COO | Chief Operations Officer (operations directeur -> dagdagelijkse operaties) | <ul><li>Logistiek (productie, magazijnen, transport, leveringen, ...)</li><li>Aankoop (Situeert zich soms ook in Finance & Administratie (F&A))</li><li>Planning</li><li>Onderhoud gebouwen/machines ...</li></ul> |
-| HR | Human Resources | <ul><li>Personeelsbeleid</li><li>Ondersteuning organisatievorming</li><li>Payroll</li></ul> |
-| CIO | Chief Ict Officer (ICT Directeur of manager) | <ul><li>Beheer applicaties, infrastructuur, service desk</li><li>ICT projecten</li><li>Rapporteert soms ook aan CFO of COO</li></ul> |
-| Kwaliteitsdirecteur | &nbsp; | <ul><li>Kwaliteitsorganisatie</li><li>Certificaten (ISO, QS, ...)</li><li>Klantenklachten</li></ul> |
+| **CEO** | Chief Executive Officer (algemeen directeur) | <ul><li>Volledige verantwoordelijkheid</li><li>Rapporteert aan Raad Van Bestuur die de aandeelhouders vertegenwoordigt</li></ul> |
+| **CFO** | Chief Financial Officer (Financieel directeur) | <ul><li>Boekhouding</li><li>Controlling: kost controle, productkost berekening, analyse cijfers</li><li>Aankoop en administratie</li></ul> |
+| **Verkoopdirecteur** | &nbsp; | Verantwoordelijk om bepaald volume en omzet / marge te realiseren |
+| **COO** | Chief Operations Officer (operations directeur -> dagdagelijkse operaties) | <ul><li>Logistiek (productie, magazijnen, transport, leveringen, ...)</li><li>Aankoop (Situeert zich soms ook in Finance & Administratie (F&A))</li><li>Planning</li><li>Onderhoud gebouwen/machines ...</li></ul> |
+| **HR** | Human Resources | <ul><li>Personeelsbeleid</li><li>Ondersteuning organisatievorming</li><li>Payroll</li></ul> |
+| **CIO** | Chief Ict Officer (ICT Directeur of manager) | <ul><li>Beheer applicaties, infrastructuur, service desk</li><li>ICT projecten</li><li>Rapporteert soms ook aan CFO of COO</li></ul> |
+| **Kwaliteitsdirecteur** | &nbsp; | <ul><li>Kwaliteitsorganisatie</li><li>Certificaten (ISO, QS, ...)</li><li>Klantenklachten</li></ul> |
 
 > **! belangrijk**
 >
