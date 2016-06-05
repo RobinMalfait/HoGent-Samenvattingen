@@ -3,8 +3,6 @@ title: IT2Business
 link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 ---
 
-# Bedrijf - organisatie Processen
-
 # 1. Rol van ICT in een bedrijf
 
 - Onersteunende rol voor:
