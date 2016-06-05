@@ -66,6 +66,32 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 > - Wanneer IT afdeling onder de **CFO** valt -> "kost" wordt aanzien als een "kwaad" dat moet
 > - Wanneer IT afdeling onder de **COO** valet -> "ontwikkeling" en positief -> innovatief
 
+## Bedrijfsdoelen
+
+- Strategische doelen - Lange termijn - (5 - 10 jaar)
+    **Onderwerpen in business / directiecomite**
+    - Resultaten, groei, klantentevredenheid, productontwikkeling, business development, verkoopcijfers, winstmarge, productiekost
+    - innovatie
+    - Personeel (retentie, opleiding, kost, ...)
+    - Imago (groen, sociaal, ...)
+    - Risico en continuïteit
+        - **Risico**: grote klanten die wegvallen, te weinig personeel, brand
+        - **Continuïteit**: Werkend blijven
+
+- Tactische doelen - Middellange termijn - (1 - 3 jaar)
+    **Typische onderwerpen in IT**
+    - Nieuwe applicaties / wijzigingen
+    - Vervangen oude applicaties
+    - Vernieuwing / uitbreiding infrastructuur
+    - Datacenters
+    - Backup & restore
+    - Security policy
+    - User Support (helpdesk, pc's installeren, ...)
+    - Kosten
+    - Disaster recovery
+
+- Opertaionele doelen - Nu
+
 # 3. Kloof Business en IT
 # 4. Processen per Functiedomeinen
 # 5. Business process re-engineering (BPR)
