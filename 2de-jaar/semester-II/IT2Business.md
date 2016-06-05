@@ -19,16 +19,17 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 # 2. Functiedomeinen en verantwoordelijkheden
 
-- Elk bedrijf heeft een doel.
+- **Elk bedrijf heeft een doel:**
     - Leveren van producten en/of diensten
     - De beste zijn in ...
     - Kwaliteit
     - Verhogen aandeelhouderswaarde
-    - Afhankelijk van sector profit / non-profit (`non-profit`: ziekenhuis, Rode Kruis)
+    - Afhankelijk van sector profit / non-profit (*non-profit*: ziekenhuis, Rode Kruis)
     - Sociale verantwoordelijkheid (Corporate social responsibility) t.o.v. mens en milieu
-- Worden uitgedrukt in een mission statement
 
-    ```
+- **Worden uitgedrukt in een mission statement**
+
+    ```nohighlight
     Onze missie:
 
     Vandemoortele ontwikkelt, produceert en verkoopt diepvriesbakkerijproducten en margarines & vetten. Aan professionele gebruikers leveren we ze als ingrediënten en halfafgewerkte producten; aan consumenten leveren we ze als volledig afgewerkte producten. Deze consumentenproducten brengen we voornamelijk onder de merknamen van onze klanten op de markt, maar we commercialiseren ze ook odner onze eigen merknamen.
@@ -37,6 +38,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
     Respect voor milieu en maatschappij maakt integraal dele uit van onze dagelijkse werking. Wij zijn er ook van overtuigd dat de ontwikkeling van Vandemoortele als ondernemeing hand in hand gaat met de persoonlijke ontwikkeling van elk van onze medewerkers.
     ```
+
 ## Bedrijfsorganisatie
 
 | Title | Description | Taken |
@@ -51,7 +53,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 > **! belangrijk**
 >
-> - Wanneer IT afdeling onder de **CFO** valt -> "kost" wordt aanzien als ene "kwaad" dat moet
+> - Wanneer IT afdeling onder de **CFO** valt -> "kost" wordt aanzien als een "kwaad" dat moet
 > - Wanneer IT afdeling onder de **COO** valet -> "ontwikkeling" en positief -> innovatief
 
 # 3. Kloof Business en IT
