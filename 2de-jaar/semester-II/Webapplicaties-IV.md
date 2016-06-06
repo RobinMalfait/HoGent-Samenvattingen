@@ -365,7 +365,9 @@ public class StartUp {
 
 # Deel 3 - Spring Web MVC
 
-## A Model
+## Structuur
+
+### A Model
 
 ```java
 package domain;
@@ -382,7 +384,7 @@ public class HelloServiceImpl implements HelloService {
 }
 ```
 
-## Controller
+### Controller
 
 ```java
 package controller;
@@ -414,9 +416,9 @@ public class HelloController {
 }
 ```
 
-## Views
+### Views
 
-### WEB-INF/jsp/nameForm.jsp
+#### WEB-INF/jsp/nameForm.jsp
 
 ```html
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -442,7 +444,7 @@ public class HelloController {
 </html>
 ```
 
-### WEB-INF/jsp/helloView.jsp
+#### WEB-INF/jsp/helloView.jsp
 
 ```html
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -458,9 +460,9 @@ public class HelloController {
 </html>
 ```
 
-## Config classes
+### Config classes
 
-### WebConfig
+#### WebConfig
 
 ```java
 package config;
@@ -505,7 +507,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
 
 ```
 
-### SpringMvcInitializer
+#### SpringMvcInitializer
 
 ```java
 package config.core;
@@ -532,7 +534,7 @@ public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServ
 }
 ```
 
-## Request Mapping (Uitgebreid)
+### Request Mapping (Uitgebreid)
 
 ```java
 @Controller
@@ -544,4 +546,35 @@ public class MemberController {
     @RequestMapping(value={"remove", "delete"}, method=RequestMethod.GET) // Url: /member/remove or /member/delete
     public String addMember(Model model) { /* ... */}
 }
+```
+
+## Formatting & Validatie
+
+### NumberFormat
+
+#### Via Annotation
+
+```java
+@NumberFormat // has optional attributes: Style & Pattern
+
+public class Account {
+    @NumberFormat(pattern = "#,##0.00")
+    private BigDecimal balance = new BigDecimal("20003000.2599") // 20.003.00,26
+
+    @NumberFormat(style = Style.PERCENT)
+    private double percent = 0.25; // 25%
+}
+```
+
+#### JSTL
+
+```html
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <fmt:formatNumber value="${account.balance2}" pattern="#,##0.00"/>
+        <fmt:formatNumber value="${account.percent2}" type="percent"/>
+    </body>
+</html>
 ```
