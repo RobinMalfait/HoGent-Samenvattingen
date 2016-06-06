@@ -362,3 +362,186 @@ public class StartUp {
 
     @Resource(name = "screen")
 ```
+
+# Deel 3 - Spring Web MVC
+
+## A Model
+
+```java
+package domain;
+
+public interface HelloService {
+    public String sayHello(String name);
+}
+
+public class HelloServiceImpl implements HelloService {
+    @Override
+    public String sayHello(String name) {
+        return String.format("Hello %s!", name != null ? name : "")
+    }
+}
+```
+
+## Controller
+
+```java
+package controller;
+
+public class Name {
+    private String value;
+
+    public String getValue() { return value; }
+    public String setValue(String v) { value = v; }
+}
+
+@Controller
+public class HelloController {
+
+    @Autowired
+    private HelloService helloService; // Dependency Injection
+
+    @RequestMapping(value = {"/hello"}, method = RequestMapping.GET)
+    public String showHomePage(Model model) {
+        model.addAttribute("name", new Name());
+        return "nameForm";
+    }
+
+    @RequestMapping(value = {"/hello"}, method = RequestMapping.POST)
+    public String onSubmit(@ModelAttribute Name name, Model model) {
+        model.addAttribute("helloMessage", helloService.sayHello(name.getValue()));
+        return "helloView";
+    }
+}
+```
+
+## Views
+
+### WEB-INF/jsp/nameForm.jsp
+
+```html
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Enter your name</title>
+    </head>
+    <body>
+        <h1>Enter your name</h1>
+        <!--
+        method corresponds with RequestMethod.POST in controller method
+        action corresponds with value in controller method
+        -->
+        <form:form method="POST" action="hello.htm">
+            Name:
+            <form:input path="value" size="15" />
+            <input type="submit" value="OK"/>
+        </form:form>
+    </body>
+</html>
+```
+
+### WEB-INF/jsp/helloView.jsp
+
+```html
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello</title>
+    </head>
+    <body>
+        <h2>${helloMessage}</h2>
+    </body>
+</html>
+```
+
+## Config classes
+
+### WebConfig
+
+```java
+package config;
+
+import domain.Product;
+import domain.ProductManager;
+import domain.SimpleProductManager;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import validator.PercentValidation;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan("controller")
+public class WebConfig extends WebMvcConfigurerAdapter
+{
+    @Bean
+    public HelloService helloService()
+    {
+        return new HelloServiceImpl();
+    }
+
+    @Bean
+    public ViewResolver viewResolver()
+    {
+        InternalResourceViewResolver resolver
+                = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/jsp/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+}
+
+```
+
+### SpringMvcInitializer
+
+```java
+package config.core;
+
+import config.WebConfig;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[]{ WebConfig.class };
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return null;
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+}
+```
+
+## Request Mapping (Uitgebreid)
+
+```java
+@Controller
+@RequestMapping("/member/*")
+public class MemberController {
+    @RequestMapping("add") // Url: /member/add
+    public String addMember(Model model) { /* ... */}
+
+    @RequestMapping(value={"remove", "delete"}, method=RequestMethod.GET) // Url: /member/remove or /member/delete
+    public String addMember(Model model) { /* ... */}
+}
+```
