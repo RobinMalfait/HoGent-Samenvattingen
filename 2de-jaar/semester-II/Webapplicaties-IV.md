@@ -145,37 +145,37 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 > JSP Standard Tag Library
 
 - **Core** Library `<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>`
-    - \<c:out\>
-    - \<c:set\>
-    - \<c:remove\>
-    - \<c:catch\>
-    - \<c:if\>
-    - \<c:choose\>
-    - \<c:when\>
-    - \<c:otherwise\>
-    - \<c:import\>
-    - \<c:url\>
-    - \<c:redirect\>
-    - \<c:param\>
-    - \<c:forEach\>
-    - \<c:forEachToken\>
+    - &lt;c:out&gt;
+    - &lt;c:set&gt;
+    - &lt;c:remove&gt;
+    - &lt;c:catch&gt;
+    - &lt;c:if&gt;
+    - &lt;c:choose&gt;
+    - &lt;c:when&gt;
+    - &lt;c:otherwise&gt;
+    - &lt;c:import&gt;
+    - &lt;c:url&gt;
+    - &lt;c:redirect&gt;
+    - &lt;c:param&gt;
+    - &lt;c:forEach&gt;
+    - &lt;c:forEachToken&gt;
 
 - **Formatting** Library `<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>`
     - **Internationalization**
-        - \<fmt:message\>
-        - \<fmt:setLocale\>
-        - \<fmt:bundle\>
-        - \<fmt:setBundle\>
-        - \<fmt:param\>
-        - \<fmt:requestEncoding\>
+        - &lt;fmt:message&gt;
+        - &lt;fmt:setLocale&gt;
+        - &lt;fmt:bundle&gt;
+        - &lt;fmt:setBundle&gt;
+        - &lt;fmt:param&gt;
+        - &lt;fmt:requestEncoding&gt;
     - **Formatting**
-        - \<fmt:timeZone\>
-        - \<fmt:setTimeZone\>
-        - \<fmt:formatNumber\>
-        - \<fmt:parseNumber\>
-        - \<fmt:parseDate\>
+        - &lt;fmt:timeZone&gt;
+        - &lt;fmt:setTimeZone&gt;
+        - &lt;fmt:formatNumber&gt;
+        - &lt;fmt:parseNumber&gt;
+        - &lt;fmt:parseDate&gt;
 
-### \<c:forEach\>
+### &lt;c:forEach&gt;
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -193,7 +193,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### \<c:if\>
+### &lt;c:if&gt;
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -210,7 +210,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### \<c:choose\>, \<c:when\> and \<c:otherwise\>
+### &lt;c:choose&gt;, &lt;c:when&gt; and &lt;c:otherwise&gt;
 
 - `<c:choose>` -> `switch`
 - `<c:when>` -> `case`
@@ -234,7 +234,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### \<c:import\>
+### &lt;c:import&gt;
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
