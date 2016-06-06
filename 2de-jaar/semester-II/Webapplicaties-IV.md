@@ -175,7 +175,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
         - &lt;fmt:parseNumber&gt;
         - &lt;fmt:parseDate&gt;
 
-### &lt;c:forEach&gt;
+### c:forEach
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -193,7 +193,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### &lt;c:if&gt;
+### c:if
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -210,7 +210,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### &lt;c:choose&gt;, &lt;c:when&gt; and &lt;c:otherwise&gt;
+### c:choose, c:when and c:otherwise
 
 - `<c:choose>` -> `switch`
 - `<c:when>` -> `case`
@@ -234,7 +234,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 </html>
 ```
 
-### &lt;c:import&gt;
+### c:import
 
 ```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
