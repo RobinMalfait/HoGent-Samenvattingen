@@ -3,43 +3,139 @@ title: Webapplicaties IV
 link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ---
 
-# Inleiding
+# Basics
 
-2 HTTP requests: `GET` & `POST`
-
-`doGet()` en `doPost()`
-
-Methodes die aangeroepen worden:
-
-- `init()`
-- `service()`
-- `destroy()`
-
-
-# 2. Een request
+## JSP
 
 ```html
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Handling an HTTP Get Request</title>
-</head>
-<body>
-    <form action="welcome1" method="get">
-        <p>Druk op de knop</p>
-        <input type="submit" value="Request...">
-    </form>
-</body>
+
+<!-- Imports -->
+<%@page import="java.util.Date" %>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="1"/> <!-- Refesh each second -->
+        <title></title>
+    </head>
+    <body>
+        <!-- JSP Expression to insert date/time -->
+        <% out.print(new java.util.Date()) %>
+
+        <!-- Without out.print -->
+        <%= new java.util.Date() %>
+
+        <!-- Because of the import -->
+        <%= new Date() %>
+    </body>
 </html>
 ```
 
-```java
-import javax.servlet.*;
-import javax.servlet.http.*;
+## Expression Language (EL)
 
-@WebServlet(name="WelcomeServlet", urlPatterns={"/welcome1"})
-public class WelcomeServlet extends HttpServlet {
 
-}
+### Using scripting
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <% domain.Circle circle = (domain.Circle) request.getAttribute('circle') %>
+        Radius of the circle is: <%= circle.getRadius() %>
+    </body>
+</html>
+```
+
+### Using EL
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        Radius of the circle is: ${circle.radius}
+    </body>
+</html>
+```
+
+### Arrays
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        Colors are: ${colorList}
+        First color is: ${colorList[0]}
+    </body>
+</html>
+```
+
+### Includes
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <jsp:iclude page="header.jsp"/>
+        JSP Page...
+        <jsp:iclude page="footer.jsp"/>
+    </body>
+</html>
+```
+
+### Includes with params
+
+#### header.jsp
+
+```html
+<h2>${param.title}</h2>
+```
+
+#### yourPage.jsp
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <jsp:include pae="../WEB-INF/header.jsp">
+            <jsp:param name="title" value="this is the header" />
+        </jsp:include>
+        JSP Page...
+    </body>
+</html>
+```
+
+### Redirects/Forwards
+
+### Using scripting
+
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        Welcome to our page!
+        <% if(request.getParameter("userName") == null) { %>
+            <jsp:forward page="HandleIt.jsp"/>
+        <% } %>
+
+        Hello ${param.userName}
+    </body>
+</html>
+```
+
+#### Using more JSTL
+
+```html
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        Welcome to our page!
+        <c:if test="${empty param.userName}">
+            <jsp:forward page="HandleIt.jsp"/>
+        </c:if>
+
+        Hello ${param.userName}
+    </body>
+</html>
 ```
