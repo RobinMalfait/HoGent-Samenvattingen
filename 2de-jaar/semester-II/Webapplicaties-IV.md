@@ -139,3 +139,109 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
     </body>
 </html>
 ```
+
+## JSTL
+
+> JSP Standard Tag Library
+
+- **Core** Library `<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>`
+    - <c:out>
+    - <c:set>
+    - <c:remove>
+    - <c:catch>
+    - <c:if>
+    - <c:choose>
+    - <c:when>
+    - <c:otherwise>
+    - <c:import>
+    - <c:url>
+    - <c:redirect>
+    - <c:param>
+    - <c:forEach>
+    - <c:forEachToken>
+
+- **Formatting** Library `<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>`
+    - **Internationalization**
+        - <fmt:message>
+        - <fmt:setLocale>
+        - <fmt:bundle>
+        - <fmt:setBundle>
+        - <fmt:param>
+        - <fmt:requestEncoding>
+    - **Formatting**
+        - <fmt:timeZone>
+        - <fmt:setTimeZone>
+        - <fmt:formatNumber>
+        - <fmt:parseNumber>
+        - <fmt:parseDate>
+
+### <c:forEach>
+
+```html
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <c:forEach var="color" items="${colorArray}">
+            ${color}
+        </c:forEach>
+
+        <c:forEach var="color" items="${colorArray}" varStatus="index">
+            ${index} ${color}
+        </c:forEach>
+    </body>
+</html>
+```
+
+### <c:if>
+
+```html
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Comments:</p>
+        <p>${commentList}</p>
+
+        <c:if test="${userType == 'student'}">
+            <jsp:include page="inputComments.jspf"/>
+        </c:if>
+    </body>
+</html>
+```
+
+### <c:choose>, <c:when> and <c:otherwise>
+
+- `c:choose` -> `switch`
+- `c:when` -> `case`
+- `c:otherwise` -> `default`
+
+```html
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <c:choose>
+            <c:when test="${userType == 'student'}">
+                <jsp:include page="inputComments.jspf"/>
+            </c:when>
+            <c:when test="${userType == 'professor'}">
+                Professor
+            </c:when>
+            <c:otherwise>Person</c:otherwise>
+        </c:choose>
+    </body>
+</html>
+```
+
+### <c:import>
+
+```html
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <body>
+        <c:import url="http://rbn.nu/"/>
+    </body>
+</html>
+```
