@@ -3,7 +3,7 @@ title: Webapplicaties IV
 link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ---
 
-# Basics
+# Deel 1
 
 ## JSP
 
@@ -244,4 +244,121 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
         <c:import url="http://rbn.nu/"/>
     </body>
 </html>
+```
+
+# Deel 2 - Spring Basis
+
+- POJO: Plain Old Java Object
+
+## Inversion of Control (IoC) - Dependency Injection
+
+### Without IoC
+
+Wanneer je een nieuwe operatie wil toevoegen, moet je deze code aanpassen en dus terug helemaal compilen.
+
+```java
+public class Calculate {
+    public static void main(String[] args) {
+        long op1 = Long.parseLong(args[0]);
+        long op2 = Long.parseLong(args[1]);
+
+        showResult("The result of " + op1 + getOpsName() + op2 + " is " + operate(op1, op2) + "!");
+    }
+
+    private void showResult(String result) {
+        Syste.out.println(result);
+    }
+
+    private long operate(long op1, long op2) {
+        return op1 + op2;
+    }
+
+    private String getOpsName() {
+        return " plus ";
+    }
+}
+```
+
+### IoC way
+
+Als je nu een nieuwe operatie wilt toevoegen, moet je maar een klasse bij maken, en niet de calculator klasse opnieuw compilen.
+
+```java
+// Operations
+public interface Operation {
+    public long operate(long op1, long op2);
+    public String getName();
+}
+
+public class OperationAdd implements Operation {
+    public long operate(long op1, long op2) {
+        return op1 + op2;
+    }
+
+    public String getName() {
+        return " plus ";
+    }
+}
+
+// Output
+public interface ResultWriter {
+    public void showResult(String result);
+}
+
+public class ScreenWriter implements ResultWriter {
+    public void showResult(String result) {
+        System.out.println(result);
+    }
+}
+
+// Domain
+public class CalculateSpring {
+    private Operation ops;
+    private ResultWriter writer;
+
+    public void setOps(Operation ops) {
+        this.ops = ops;
+    }
+
+    public void setWriter(ResultWriter writer) {
+        this.writer = writer;
+    }
+
+    public void execute(String[] args) {
+        long op1 = Long.parseLong(args[0]);
+        long op2 = Long.parseLong(args[1]);
+
+        writer.showResult("The result of " + op1 + ops.getOpsName() + op2 + " is " + ops.operate(op1, op2) + "!")
+    }
+}
+
+// Spring StartUp
+public class StartUp {
+    public static void main (String... args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        CalculateSpring opsbean = context.getBean("opsbean", CalculateSpring.class);
+
+        opsbean.execute(args);
+    }
+}
+```
+
+## Wiring beans
+
+### Annotations
+
+```java
+@Service("...") // This is a dependency
+
+@Autowired // Spring will inject the dependency here
+
+@Resource(name = "...") // This is @Autowired with name parameter
+
+@Qualifier
+    @Autowired
+    @Qualifier("screen")
+
+    // =
+
+    @Resource(name = "screen")
 ```
