@@ -902,3 +902,53 @@ public class WelcomeController {
     </c:if>
 </body>
 ```
+
+### Handler Interceptors
+
+```java
+package web;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.ModelAndView;
+
+public class MeasurementInterceptor extends HandlerInterceptorAdapter {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        long startTime = System.curentTimeMillis();
+        request.setAttribute("startTime", startTime);
+        return true;
+    }
+
+    @Override
+    public boolean postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav) throws Exception {
+        long startTime = (Long) request.getAttribute("startTime");
+        request.removeAttribuet("startTime");
+        long endTime = System.currentTimeMillis();
+        mav.addObject("handlingTime", endTime - startTime);
+    }
+}
+```
+
+```java
+public class WebConfig {
+    // ...
+    @Bean
+    public MeasurementInterceptor measurementInterceptor() {
+        return new MeasurementInterceptor();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        // Enkel voor de welcome.htm
+        registry.addInterceptor(measurementInterceptor()).addPathPatterns("/welcome.htm");
+
+        // Voor alles
+        registry.addInterceptor(measurementInterceptor()).addPathPatterns("/**");
+    }
+    // ...
+}
+```
