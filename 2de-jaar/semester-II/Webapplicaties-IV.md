@@ -603,7 +603,7 @@ public class ForStrings {
     @Size(min = 1, max = 20)
     private String someString2;
 
-    @Size(min = 1, max = 20, message = "Password must be between 1 to 10 characters")
+    @Size(min = 1, max = 20, message = "Password must be between 1 to 20 characters")
     private String someString3;
 
     @Email
@@ -1012,7 +1012,7 @@ public class WebConfig {
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 
-        // Package: resources
+        // Package: default
         // Default file: ValidationMessages.properties
         messageSource.setBaseName("ValidationMessages");
 
@@ -1043,7 +1043,7 @@ public class DropDownBoxValidator implements Validator {
 }
 ```
 
-### NumberFormatException
+≤ NumberFormatException
 
 ```java
 public class PriceIncrease {
@@ -1186,4 +1186,17 @@ public class StudentController {
         </c:forEach>
     </body>
 </html>
+```
+
+```java
+@Controller
+@RequestMapping("/students")
+public class StudentController {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String show(@PathVariable("id") Integer id, Model model) {
+        Student student = studentService.findById(id);
+        model.addAttribute("student", student);
+        return "grade/detailStudent";
+    }
+}
 ```
