@@ -1200,3 +1200,120 @@ public class StudentController {
     }
 }
 ```
+
+## Security
+
+```java
+//...
+@Import({ SecurityConfig.class })
+//...
+public class WebConfig extends WebMvcConfigurerAdapter {
+
+}
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigureAdapter {
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exceptoin {
+        auth.inMemoryAuthentication()
+            .withUser("user").password("user").roles("USER").and()
+            .withuser("admin").password("admin").roles("USER", "ADMIN");
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // Option 1: Basic Security (popup)
+        http.httpBasic();
+
+        // Option 2: Basic form security
+        http.formLogin().defaultSuccessUrl("/hello").loginPage("/login");
+
+        http.authorizeRequests()
+            .antMatchers("/*").hasRole("USER");
+
+        // CSRF
+        http.authorizeRequests()
+            .antMatchers("/welcome*").hasRole("USER")
+            .and().csrf()
+    }
+}
+```
+
+```java
+@Controller
+public class HelloController {
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String printWelcome(Model model, Principal principal) {
+        model.addAttribute("username", principal.getName());
+        return "hello";
+    }
+}
+```
+
+# Deel 5 Webservices
+
+## SOAP
+
+> Service Oriented Architecture (SOA) Protocol
+
+### WSDL
+
+> Web Service Definition Language
+
+- [http://127.0.0.1:9876/ts?wsdl](http://127.0.0.1:9876/ts?wsdl)
+- Beschrijving van Web services in XML formaat:
+    - Abstracte beschrijving van operaties en parameters (berichten)
+    - Binden met een concreet netwerk protocol (bvb SOAP)
+    - Specificaties van endpoints voor toegang tot de service
+- Structuur WSDL document
+
+```java
+@EnableWs
+public class WebServiceConfig {
+    // ...
+    @Bean
+    public JaxWsPortProxyFactoryBean hugeIntegerBean() throws MalformedURLException {
+        JaxWsPortProxyFactoryBean proxy = new JaxWsPortProxyFactoryBean();
+
+        proxy.setWsdlDocumentUrl(new URL("http://localhost:8080/webservices__HugeInteger/HugeInteger?WSDL"));
+        proxy.setServiceName("HugeInteger");
+        proxy.setPortName("HugeIntegerPort");
+        proxy.setNamespaceUri("http://service/");
+        proxy.setServiceInterface(IHugeInterface.class);
+
+        return proxy;
+    }
+    // ...
+}
+```
+
+```java
+package service;
+@WebService
+public interface IHugeInteger {
+    public String add(@WebParam(name = "first") String first, @WebParam(name = "Second") String Second);
+    public String substract(@WebParam(name = "first") String first, @WebParam(name = "Second") String Second);
+}
+```
+
+```java
+public class HugeIntegerService extends SpringBeanAutowiringSupport {
+    @Autowired
+    private IHugeInteger hugeIntegerBean;
+
+    public String calculateHugeIntegers(String first, String second, String operation) {
+        switch(operation) {
+            case "+":
+                return hugeIntegerBean.ad(first, second);
+            case "-":
+                return HugeIntegerBean.substract(first, second);
+        }
+        return "";
+    }
+}
+```
+
+## REST
+
+> Representional State Transfer
