@@ -952,3 +952,197 @@ public class WebConfig {
     // ...
 }
 ```
+
+## Error messages & i18n
+
+```java
+public class WebConfig {
+    // ...
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+
+        // Package: resources
+        // Default file: messages.properties
+        // NL file: messages_nl.properties
+        messageSource.setBaseName("resources/messages");
+
+        // welcome.message=Welcome to ...
+
+        return messageSource;
+    }
+    // ...
+}
+```
+
+```html
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<spring:message code="welcome.message" var="tweedeOptie"/>
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2><spring:message code="welcome.message"/></h2>
+        <!-- of -->
+        <h2>${labelWelcome}</h2>
+
+        <hr/>
+        Locale: ${pageContext.response.locale}
+
+        <!-- FORMAT DATE -->
+        <spring:message code="date.format.pattern" var="dateFormatPattern"/>
+        Today is <fmt:formatDate value="${today}" pattern="${dateFormatPattern}"/>
+
+        <!-- Bean Validation -->
+        <form:input path="firstName"/>
+        <form:errors path="firstName" cssClass="error"/>
+    </body>
+</html>
+```
+
+### Default validation annotation messages overschrijden
+
+
+```java
+public class WebConfig {
+    // ...
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+
+        // Package: resources
+        // Default file: ValidationMessages.properties
+        messageSource.setBaseName("ValidationMessages");
+
+        return messageSource;
+    }
+    // ...
+}
+```
+
+```java
+@NotEmpty(message = "{validation.fistname.NotEmpty.message}")
+@Size(min = 3, max = 60, message = "{validation.Size.message}")
+private String firstName;
+```
+
+### Validator class
+
+```java
+public class DropDownBoxValidator implements Validator {
+    public void validate(Object target, Errors errors) {
+        Customer cust = (Customer) target;
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "javaSkills", "required.javaSkills", "required a java skill");
+
+        if ("NONE".equalsIgnoreCase(cust.getCountry())) {
+            errors.rejectValue("country", "required.country", "required country");
+        }
+    }
+}
+```
+
+### NumberFormatException
+
+```java
+public class PriceIncrease {
+    private Integer percentage; // or int
+}
+```
+
+```java
+@Controller
+//...
+model.addAttribute("PriceIncrease", new PriceIncrease());
+```
+
+```html
+<form:form method="post" action="increase.htm" modelAttribute="priceIncrease">
+    <form:input path="percentage"/>
+</form:form>
+```
+
+messages.properties: `typeMismatch.<OBJECT_NAME>.<PROPERTY>=<MESSAGE>`
+
+```yaml
+typeMismatch.priceIncrease.precentage=my message!!!
+```
+
+### i18n
+
+converter.properties: contact_save_fail=failed saving contact
+
+```java
+public class Message {
+    private String type;
+    private String message;
+
+    public Message() {}
+        public Message(String type, String message) {
+            this.type = type;
+            this.message = message;
+        }
+        // Getters & Setters
+}
+```
+
+```java
+@Controller
+@RequestMapping("/contacts")
+public class ContactController {
+    @Autowired
+    private MessageSource messageSource;
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String processRegistration(@Valid Registration registration, BindingResult result, Model model, Locale locale) {
+        if (result.hasErrors()) {
+            model.addAttribute("message", new Message("error", messageSource.getMessage("contact_save_fail", new Object[]{}, locale)));
+            return "registrationForm";
+        }
+    }
+}
+```
+
+```html
+<c:if test="${not empty message}">
+    <div id="message" class="${message.type}">
+        ${message.message}
+    </div>
+</c:if>
+```
+
+### @Value
+
+```java
+@Controller
+public class AboutController {
+
+    // Spring Expression Language (SpEL)
+    @Value("#{ messageSource.getMessage('admin.email', null, 'en')}")
+    private String email;
+
+    @RequestMapping("/about")
+    public String courtReservation(Model model) {
+        model.addAttribute("email", email);
+        return "about";
+    }
+}
+```
+
+### LocaleResolver
+
+```java
+public class WebConfig {
+    // ...
+    @Bean
+    public LocaleResolver localeResolver() {
+        CookieLocaleResolver localResolver = new CookieLocaleResolver();
+
+        // ValidationMessages_nl.properties
+        // messages_nl.properties
+        localResolver.setDefaultLocale(new Locale("nl"));
+
+        return localResolver;
+    }
+    // ...
+}
+```
