@@ -698,3 +698,125 @@ public class RegistrationController {
     </body>
 </html>
 ```
+
+### Eigen validators
+
+```java
+package validator;
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+public class RegistrationValidation implements Validator {
+    @Override
+    public boolean supports(Class<?> c) {
+        return Registration.class.isAssignableFrom(c);
+    }
+
+    @Override
+    public void validation(Object target, Errors errors) {
+        Registration registration = (Registration) target;
+
+        String userName = registration.getUserName();
+
+        if (username.length() < 4 || userName.length() > 15) {
+            errors.rejectValue("userName", "lengOfUser.registration.userName", "username must be between 4 and 15 characters long.");
+        }
+
+        if (!(registration.getPassword()).equals(registration.getConfirmPassword())) {
+            errors.rejectValue("password", "machingPassword.registration.password", "Password does not match the confirm password");
+        }
+    }
+}
+```
+
+```java
+public class WebConfig extends WebMvcConfigurerAdapter {
+    // ...
+    @Bean
+    public RegistrationValidation registrationValidation() {
+        return new RegistrationValidation();
+    }
+    // ...
+}
+```
+
+```java
+@Controller
+@RequestMapping("/registration")
+public class RegistrationController {
+    @Autowired
+    private RegistrationValidation registrationValidation;
+
+    @RequestMapping(method = RequestMethod.POST)
+    // @Valid or @ModelAttribute
+    public String processRegistration(@Valid Registration registration, BindingResult result, Model model) {
+        registrationvalidation.validate(registration, result);
+        registration.setConfirmPassword(null);
+        registration.setPassword(null);
+
+        if (result.hasErrors()) {
+            return "registrationForm";
+        }
+    }
+}
+```
+
+### Custom validator annotations
+
+```java
+package controller;
+
+import validator.ValidEmail;
+
+public class Registration {
+    @ValidEmail
+    private String email;
+}
+```
+
+```java
+package validator;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+import javax.validation.Constraint;
+import javax.validation.Payload;
+
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.*;
+
+@Documented
+@Constraint(validatedBy = EmailConstraintValidator.class)
+@Target({ METHOD, FIELD })
+@Retention(RUNTIME)
+public @interface ValidEmail {
+    String message() default "You must include a valid email";
+    Class<?>[] groups() default{};
+    Class<? extends Payload>[] payload() default{};
+}
+```
+
+```java
+package validator;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
+public class EmailConstraintValidator implements ConstraintValidator<ValidEmail, String> {
+    @Override
+    public void initialize(ValidEmail cosntraintAnnotation) {}
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        // Disable default error messages
+        context.disableDefaultConstraintViolation();
+        
+        // Custom Errors
+        context.buildConstraintViolationWithTemplate("{myEmail.message}").addConstraintViolation();
+        return value.contains("@");
+    }
+}
+```
