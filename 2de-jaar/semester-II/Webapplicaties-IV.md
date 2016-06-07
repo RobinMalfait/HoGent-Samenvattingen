@@ -1316,4 +1316,82 @@ public class HugeIntegerService extends SpringBeanAutowiringSupport {
 
 ## REST
 
-> Representional State Transfer
+> REpresentional State Transfer
+
+Meestal JSON (JavaScript Object Notation)
+
+### CRUD
+
+- Create: `POST`
+- Read: `GET`
+- Update: `PUT`
+- Delete: `DELETE`
+
+### POJO
+
+> Plain Old Java Object
+
+### Code
+
+```java
+package domain;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
+public class Employee implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int id;
+    private String name;
+    private Date createdDate;
+
+    // getters
+
+    @JsonSerialize(using = DateSerializer.class)
+    public Date getCreatedDate() {
+
+    }
+}
+```
+
+```java
+package controller;
+
+public class EmpRestURIConstants {
+    public static final String DUMMY_EMP = "/rest/emp/dummy";
+    public static final String GET_EMP = "/rest/emp/{id}";
+    public static final String GET_ALL = "/rest/emp";
+    public static final String CREATE_EMP = "/rest/emp/create";
+    public static final String DELETE_EMP = "/rest/emp/delete/{id}";
+}
+
+@RestController
+public class EmployeeController {
+
+    @RequestMapping(value = EmpRestURIConstants.DUMMY_EMP, method = RequestMethod.GET)
+    public Employee getDummyEmployee() {
+        Employee emp = new Employee();
+        // ...
+        return emp;
+    }
+
+}
+```
+
+```java
+public class WebConfig extends WebMvcConfigurerAdapter {
+    @Bean
+    public ViewResolver viewResolver() {
+        return new ContentNegotiatingViewResolver();
+    }
+
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.defaultContentType(MediaType.APPLICATION_JSON);
+    }
+}
+```
