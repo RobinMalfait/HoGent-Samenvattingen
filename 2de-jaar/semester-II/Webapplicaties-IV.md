@@ -3,6 +3,13 @@ title: Webapplicaties IV
 link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ---
 
+| Taglib | link |
+| ------ | ---- |
+| jstl core | `<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>` |
+| jstl fmt | `<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>` |
+| form | `<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>` |
+| spring | `<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>` |
+
 # Deel 1
 
 ## JSP
@@ -126,7 +133,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 #### Using more JSTL
 
 ```html
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -144,7 +151,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 
 > JSP Standard Tag Library
 
-- **Core** Library `<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>`
+- **Core** Library `<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>`
     - &lt;c:out&gt;
     - &lt;c:set&gt;
     - &lt;c:remove&gt;
@@ -160,7 +167,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
     - &lt;c:forEach&gt;
     - &lt;c:forEachToken&gt;
 
-- **Formatting** Library `<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>`
+- **Formatting** Library `<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>`
     - **Internationalization**
         - &lt;fmt:message&gt;
         - &lt;fmt:setLocale&gt;
@@ -178,7 +185,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ### c:forEach
 
 ```html
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -196,7 +203,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ### c:if
 
 ```html
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -217,7 +224,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 - `<c:otherwise>` -> `default`
 
 ```html
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -237,7 +244,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV.md
 ### c:import
 
 ```html
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -550,9 +557,7 @@ public class MemberController {
 
 ## Formatting & Validatie
 
-### NumberFormat
-
-#### Via Annotation
+### Via Annotation
 
 ```java
 @NumberFormat // has optional attributes: Style & Pattern
@@ -563,18 +568,133 @@ public class Account {
 
     @NumberFormat(style = Style.PERCENT)
     private double percent = 0.25; // 25%
+
+    @DateTimeFormat(style = "MM")
+    private Date activationDate = new Date();
+
+    @DateTimeFormat(style = "dd/MM/yyy")
+    private Date currentDate = new Date();
+}
+
+public class Registration {
+    @Pattern(regexp = "^[a-zA-Z]+", message = "username must be alphanumeric with no spaces")
+    private String userName;
+
+    @Size(min = 4, max = 20)
+    private String password;
+
+    @NotEmpty
+    private String confirmPassword;
+
+    @NotEmpty
+    @Email
+    private String email;
+}
+
+public class ForStrings {
+    @NotEmpty
+    private String someString;
+
+    @NotEmpty(message = "Password must not be blank")
+    private String someString1;
+
+    @Size(min = 1, max = 20)
+    private String someString2;
+
+    @Size(min = 1, max = 20, message = "Password must be between 1 to 10 characters")
+    private String someString3;
+
+    @Email
+    private String someString4;
+
+    @Pattern(regexp = "^[a-zA-Z]+")
+    private String someString4;
+}
+
+public class ForNumbers {
+    @NotNull
+    private int someNumber;
+
+    @Min(1)
+    private double someNumber1;
+
+    @Max(110)
+    private double someNumber2;
+
+    @DecimalMin("20.50")
+    @DecimalMin(value = "20.50", message = "Must be greater than or equal to 20.50")
+    private double someNumber3;
+
+    @DecimalMax("5000.50")
+    private double someNumber4;
+
+    @DecimalMax("5000.50")
+    private double someNumber5;
+
+    @Range(min = 10, max = 90)
+    private double someNumber6;
 }
 ```
 
-#### JSTL
+#### Controller
+
+```java
+@Controller
+@RequestMapping("/registration")
+public class RegistrationController {
+    @RequestMapping(method = RequestMethod.GET)
+    public String showRegistration(Model model) {
+        model.addAttribute("registration", new Registration());
+        return "registrationForm";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String processRegistration(@Valid Registration registration, BindingResult result) {
+        if (result.hasErrors()) {
+            return "registrationForm";
+        }
+
+        return "registrationSuccess";
+    }
+}
+```
+
+### JSTL (Zonder annotations formatten)
 
 ```html
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
+    <head>
+        <spring:url value="/css/style.css" var="urlCss"/>
+        <link rel="stylesheet" href="${urlCss}" type="text/css"/>
+    </head>
     <body>
+        <!-- Output -->
+        ${account.balance}
+        ${account.percent}
+        <spring:bind path="account.activationDate">${status.value}</spring:bind>
+        <spring:bind path="account.currentDate">${status.value}</spring:bind>
+
+        <!-- Format directly in the view -->
         <fmt:formatNumber value="${account.balance2}" pattern="#,##0.00"/>
         <fmt:formatNumber value="${account.percent2}" type="percent"/>
+
+        <!-- Form validation -->
+        <form:form method="POST" action="account.htm" commandName="account">
+            <form:input path="activationDate"/>
+            <form:input path="currentDate"/>
+        </form:form>
+
+        <!-- All Errors -->
+        <form:errors path="*" cssClass="error"/>
+
+        <!-- Form Errors -->
+        <form:form method="POST" action="registration.htm" modelAttribute="registration">
+            <form:input path="userName" size="20"/>
+            <form:errors path="userName" cssClass="error"/>
+        </form:form>
     </body>
 </html>
 ```
