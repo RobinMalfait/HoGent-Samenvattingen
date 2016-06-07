@@ -813,10 +813,92 @@ public class EmailConstraintValidator implements ConstraintValidator<ValidEmail,
     public boolean isValid(String value, ConstraintValidatorContext context) {
         // Disable default error messages
         context.disableDefaultConstraintViolation();
-        
+
         // Custom Errors
         context.buildConstraintViolationWithTemplate("{myEmail.message}").addConstraintViolation();
         return value.contains("@");
     }
 }
 ```
+
+## Spring Exceptions
+
+```html
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+    <body>
+        Your reservation for ${exception.courtName} is not available on <fmt:formatDate value="${exception.date}" pattern="dd-MM-yyy"/> at ${exception.hour}:00.
+    </body>
+</html>
+```
+
+```java
+public class WebConfig {
+    // ...
+    @Bean
+    public SimpleMappingExceptionResolver simpleMappingExceptoinResolver() {
+        SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
+
+        Properties mappings = new Properties();
+        mappings.put("exception.ReservationNotAvailableException", "error/reservationNotAvailable");
+
+        r.setDefaultErrorView("error/error");
+        r.setExceptionMappings(mappings);
+
+        return r;
+    }
+    // ...
+}
+```
+
+```java
+package exception;
+
+public class ReservationNotAvailableException extends RuntimeException {
+    private final String courtName;
+    private final Date date;
+    private final int hour;
+
+    public ReservationNotAvailableException(String courtName, Date date, int hour) {
+        this.courtName = courtName;
+        this.date = date;
+        this.hour = hour;
+    }
+
+    // getters
+}
+```
+
+```java
+@Controller
+@RequestMapping("/welcome")
+public class WelcomeController {
+    @ExceptionHandler(CustomGenericException.class)
+    public ModelAndView handleCustomException(CustomGenericException ex) {
+        ModelAndView model = new ModelAndView("error/gener_error");
+        model.addObject("errCode", ex.getErrCode());
+        model.addObject("errMsg", ex.getErrMsg());
+        return model;
+    }
+}
+```
+
+```html
+<!-- ... -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- ... -->
+<body>
+    <c:if test="${not empty errCode}">
+        <h1>${errCode}; System Errors</h1>
+    </c:if>
+
+    <c:if test="${empty errCode}">
+        <h1>System Errors</h1>
+    </c:if>
+
+    <c:if test="${not empty errMsg}">
+        <h3>${errMsg}</h3>
+    </c:if>
+</body>
+``
