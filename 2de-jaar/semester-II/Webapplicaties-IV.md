@@ -557,6 +557,8 @@ public class MemberController {
 
 ## Formatting & Validatie
 
+![](https://robinmalfait.com/afbeeldingen/droplr/1feql.png)
+
 ### Via Annotation
 
 ```java
@@ -1145,4 +1147,43 @@ public class WebConfig {
     }
     // ...
 }
+```
+
+## Multiple Row
+
+```java
+@Controller
+@RequestMapping("/students")
+public class StudentController {
+    @Autowired
+    private StudentService studentService;
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listStudents(Model model) {
+        model.addAttribute("studentList", studentService.findAll());
+        return "grade/listStudents";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listStudents(Model model) {
+        return "grade/listStudents";
+    }
+}
+```
+
+```html
+<!DOCTYPE html>
+<html>
+    <spring:url value ="/students/" var="showGradeUrl"/>
+    <body>
+        <c:forEach items="${studentList}" var="student">
+            <tr>
+                <td>
+                    <a href="${showGradeUrl}${student.id}.htm">${student.lastname}</a>
+                </td>
+                <td>${student.firstName}</td>
+            </tr>
+        </c:forEach>
+    </body>
+</html>
 ```
