@@ -160,12 +160,68 @@ Burger is in dit geval een ander deel. Het zwembad is gescheiden van het zwembad
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/14aCK.png)
 
+| Beperkingen | Voordelen |
+| ----------- | --------- |
+| Vele poorten (ruiten) verminderen de leesbaarheid | Rollen zijn duidelijk weergegeven |
+| Geen andere objecten dan rollen, activiteiten, outputs zijn weergegeven (vb. geen plaats, geen tijd, ...) | Activiteiten en hun volgorde zijn duidelijk weergegeven |
+| &nbsp; | Inputs en outputs (of interacties) tussen rollen zijn zichtbaar |
+
+### Regels bij voorkeur in procedures
+
+![](https://robinmalfait.com/afbeeldingen/droplr/16vgY.png)
+
+vs
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1bx7L.png)
+
+
 ## 8. Ruit: modelleren van regels
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/LZhR.png)
 
-## 9. Basisobjecten
+## 9. BPMN
 
-## 10. Modelleren
+> Business Process Modelling Notation
 
-## 11. BPMN
+### Oorsprong van BPMN
+
+- Business Process Management Institute (BPMI)
+    - Nu: onderdeel van OMG (Object Management Group)
+    - Ontwikkelt BPML (XML process execution taal)
+    - Realiseert de behoefte voor een grafische weergave
+- BPML later vervangen door BPEL
+    - Business Process Execution Language
+    - BPEL als doel uitvoeringstaal
+- Aug. 2001: Notation Working Group opgericht
+    - 35 landen, organisaties of individuen
+- BPMN 1.0
+    - Mei 2004: BPMN 1.0 specificatie werd vrijgegeven voor het publiek
+    - Feb. 2006: BPMN 1.0 werd aanvaard als een OMG standaard
+    - Apr. 2007: 43 aanbieders van BPM tools die BPMN 1.0 ondersteunen
+    - Jan. 2008: BPMN 1.1 is beschikbaar
+    - Jan. 2009: BPMN 1.2 is beschikbaar
+    - Mar. 2011: BPMN 2.0
+
+### 4 basiscategorieën van elementen in BPMN
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1fSzL.png)
+
+- Stroomobjecten (evenementen, activiteiten en poorten)
+    - De grafische elementen die het gedrag van een bedrijfsproces definiëren.
+    - Soorten:
+        | Naam | Symbool    |
+        | ---- | ---------- |
+        | evenementen, gebeurtenissen (events) | ![](https://robinmalfait.com/afbeeldingen/droplr/vpOa.png) |
+        | Activiteiten (activities) | ![](https://robinmalfait.com/afbeeldingen/droplr/y81U.png) |
+        | Poorten (gateways) | ![](https://robinmalfait.com/afbeeldingen/droplr/10QYt.png) |
+
+- Verbindingselementen (pijlen)
+    - Verbinden stroomobjecten met elkaar of met andere informatie.
+    - Soorten:
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Sequentiële stroom (Sequence Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/1cYsJ.png) |
+        | Boodschappenstroom (Message Flow) | ![](+) |
+        | Associatie (Association) | ![](+) |
+- Zwembaden / zwembanen
+- Artefacten
