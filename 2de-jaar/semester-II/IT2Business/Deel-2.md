@@ -122,5 +122,50 @@
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1cPTN.png)
 
-## 7. Mogelijke voorstelling van een proces
-## 8. Kenmerken van een proces
+## 7. Voorstellen van een proces
+
+### Schildpaddiagram
+
+> Je mist een stappen plan.
+
+![](https://robinmalfait.com/afbeeldingen/droplr/189p8.png)
+
+| Beperkingen | Voordelen |
+| ----------- | --------- |
+| Geen verbanden zichtbaar tussen de diverse objecten | Overzichtelijk, een globaal beeld |
+| Geen procedures (vb. voor de uitvoerders) | Bevat alle contextuele elementen van een proces |
+| Geen terugkoppellussen | Informatie op 1 pagina |
+| Geen inzicht in de huidige prestatie van het proces | &nbsp; |
+| Geen inzicht in volumes, wachttijden, ... | &nbsp; |
+
+### Afhandelen van een vraag type ABC van de burger
+
+> Veel details, maar heel moeilijk & niet overzichtelijk
+
+- Het afhandelen van een vraag type ABC gebeurt door het departement ABCD.
+- De medewerker secretariaat ontvangt en registreert elke vraag in de applicatie APPL.
+- Hij/zij bezorgt het dossier aan het hoofd Departement ABCD, die het dossier leest en toewijst aan een bevoegde dossierbehandelaar.
+- De dossierbehandelaar onderzoekt de vraag en formuleert een antwoord dat in lijn is met het Min. Besluit van 6 dec. JJ en de Europese Richtlijn 87/999.
+- Het hoofd Departement ABCD keurt het antwoord goed en de medewerker secretariaat stuurt het antwoord op naar de klant en werkt het register bij in de applicatie APPL.
+- De burger wil een snelle en correcte afhandeling van de vraag samen met een klantgerichte dienstverlening. De Directie moet erover waken dat dienstverlening efficiënt verloopt.
+- Het hoofd departement ABCD heeft zijn/haar kantoor in gebouw B1; de medewerkers secretariaat en de dossierbehandelaars zijn gehuisvest in Brussel.
+
+### Zwembanendiagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1382v.png)
+
+---
+
+Burger is in dit geval een ander deel. Het zwembad is gescheiden van het zwembad er onder.
+
+![](https://robinmalfait.com/afbeeldingen/droplr/14aCK.png)
+
+## 8. Ruit: modelleren van regels
+
+![](https://robinmalfait.com/afbeeldingen/droplr/LZhR.png)
+
+## 9. Basisobjecten
+
+## 10. Modelleren
+
+## 11. BPMN
