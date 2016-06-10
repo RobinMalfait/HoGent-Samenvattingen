@@ -276,8 +276,8 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
     - Evalueren van medewerkers
     - Berekenen payroll en betalen salaris en lonen + RSZ
 
-    > **payroll** <small>|ˈpeɪrəʊl|</small>
-    > noun
+    > **payroll** |ˈpeɪrəʊl|
+    > <small>noun</small>
     > - a list of a company's employees and the amount of money they are to be paid: *there are just three employees **on the payroll**.*
     > - the total amount of wages paid by a company: *small employers with a payroll of less than £45,000.*
 
