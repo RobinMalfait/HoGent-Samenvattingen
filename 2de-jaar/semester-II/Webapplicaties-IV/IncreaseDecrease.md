@@ -1,5 +1,6 @@
 ---
 title: Increase Decrease
+link: http://robinmalfait.com/2de-jaar/semester-II/Webapplicaties-IV/IncreaseDecrease.md
 ---
 
 ```

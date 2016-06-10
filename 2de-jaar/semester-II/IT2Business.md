@@ -189,7 +189,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 - Onderling akkoord tussen business en IT over de kwaliteit van de diesntverlening
 - Voorbeeld incident management proces
-    ![](http://d.pr/i/1am8y+)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1am8y.png)
 
     - Melding bij service desk als filter: zodat niet alle problemen bij IT komen als het niet nodig is. Is het wel nodig, zorgen dat zoveel mogelijk/alle informatie beschikbaar is.
 
