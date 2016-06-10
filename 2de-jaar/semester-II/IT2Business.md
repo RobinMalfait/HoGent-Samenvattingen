@@ -191,6 +191,7 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 ## Voorbeeld Service Level Agreement (SLA) voor incident management
 
 | Prioriteit | Classificatie (t2 - t1) | Start oplossing (t3 - t1) | Opgelost (t4 - t1) |
+| -- | -- | -- | -- |
 | 1 | 15' | 30' | 2u |
 | 2 | 15' | 1u | 4u |
 | 3 | 15' | 8u | 3d |
