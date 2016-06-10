@@ -282,4 +282,58 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
     > - the total amount of wages paid by a company: *small employers with a payroll of less than £45,000.*
 
 # 5. Business process re-engineering (BPR)
+
+## Processen worden minder efficiënt door allerhande aanpassingen:
+
+- suboptimaal
+- over-administratie
+- Automatiseren van slechte gewoonten...
+
+## Nood om af en toe processen GRONDIG te re-engineeren:
+
+- Optimaliseren
+- Bureaucratie en overtallige stappen elimineren
+- Best practices introduceren
+- BPR werd geïntroduceerd door Hammer & Champy in 1993
+    - Nood aan **uniforme methodologie** om processen te beschrijven
+
 # 6. Business processen en ERP
+
+> **ERP** Enterprise Resource Planning
+
+- ERP is ontstaan uit noodzaak om typische bedrijfsprocessen te integreren en als standaard aan te bieden in een pakket
+- VB.: SAP, MS Axapta, Oracle JDE, Drupal, ...
+- ERP bevat best practices
+    - Per proces
+    - Per sector
+
+- ERP volgt nieuwe evoluties
+
+## SAP
+
+- Finance:
+    - FI (Finance = Boekhouding)
+    - CO (Controlling)
+    - AM (Asset management)
+- Sales:
+    - SD (Sales & Distribution)
+    - CRM (Customer Relationship Management): *Alles zit in het systeem, niet in het notitie boekje van een vertegenwoordiger*
+        - Opportuniteiten
+        - Klanten en prospecten (opvolging van klanten)
+        - Marketing campagnes
+        - Customer contact center
+- Operations:
+    - MM: Materials management (stock, aankoop, MRP run)
+        - MRP = Material Resource Planning (Materials Requirements Planning volgens SAP zelf `¯\_(ツ)_/¯`
+        - Productie Planning (APO of PP) (APO: Advanced Planning & Optimization)
+        - Supply chain management / Planning (APO)
+        - Shipping & deliveries & transport (SD)
+
+- SAP:
+    - IT: solution manager
+    - Quality: QM
+    - HR: HRM, Succesfactors (cloud)
+- Rapportering:
+    - SAP Business warehouse
+    - Business Objects / Crystal reports
+    - Analyse tools
