@@ -1,6 +1,3 @@
----
----
-
 ## 1. Rol van ICT in een bedrijf
 
 - Onersteunende rol voor:
