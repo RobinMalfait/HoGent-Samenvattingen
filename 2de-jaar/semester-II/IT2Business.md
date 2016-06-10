@@ -162,8 +162,13 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 - IT strategie:
     - Applicatiearchitectuur: ERP of eigen ontwikkeling?
     - Cloud of eigen datacenter/infrastructuur?
+    - PHP? Java?
+    - Oracle? Microsoft?
+    - -> Keuzes vastleggen, standardiseren!
     - ...
 - Bedrijfsprocessen:
+    - Automatiseren
+    - "Ik heb gelezen dat dit en dat binnenkort beschikbaar is en dit kan helpen bij ..." -> Team Player
     - Business analyst, key user langs business zijde moeten samenwerken met technische analyst en ontwikkelaars
         - Nood aan gemeenschappelijke taal -> Business Process Modeling (**BPM**)
 
@@ -197,6 +202,13 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 | 3 | 15' | 8u | 3d |
 | 4 | 15' | 16u | 5d |
 
+1. Prioriteit 1: bedrijfswijd & belangrijk (vb.: netwerk ligt plat)
+2. Prioriteit 2: Niet iedereen maar een groot deel van het bedrijf
+3. Prioriteit 3: Een afdeling (vb.: boekhouding, ...)
+4. Prioriteit 4: Individueel Probleem (vb.: pc gecrasht, "ik")
+
+> Rapport: Per prioriteit min, max, gemiddelde, ...
+
 ## verantwoordelijkheden ICT afdeling
 
 - Voorzien in basis infrastructuur
@@ -221,6 +233,53 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
     - Projecten (succesvol) implementeren   
 
 # 4. Processen per Functiedomeinen
+
+- Finance en administratie
+    - Voeren van boekhouding
+    - Afsluiten van Maand en jaar
+    - **Order to cash** (bestel- en leverproces)
+    - **Purchase to pay** (aankoopproces)
+- Verkoop
+    - Prospecteren naar nieuwe klanten
+    - Onderhouden van klantrelaties
+    - Opvolgen van verkoopsopportuniteiten
+    - Verkopsproces (contract, ...)
+- Klantenondersteuning
+
+## Processen per domein
+
+- ICT:
+
+    | Process | Uitleg |
+    | ------- | ------ |
+    | Incident Management | Incidenten registreren en oplossen. Vb.: Een probleem wordt gemeld door een gebruiker |
+    | Change Management | Ontvangen, goedkeuren en uitvoeren van veranderingen in de IT architectuur. Iemand die een verandering wilt moet een verandering "melden" met alle wijzigingen. Wekelijks is er een vergadering waar deze meldingen overlopen worden. Is er een probleem voor een andere partij wordt dit niet doorgevoerd. |
+    | Problem Management | Vaststellen en oplossen van IT problemen. Een incident dat meermaals voorkomt is een probleem. |
+
+    -> **ITIL**: IT Infrastructure Library     
+
+- Kwaliteit:
+    - Klantenklachten behandelen
+    - Beheer ISO en QS Certificaten
+    - ...
+
+- Operations:
+    - Productieprocessen
+    - Stockbeheer (inkomend uitgaand)
+    - Uitleveren van goederen
+    - Organiseren van transport voor leveringen
+    - Plannen van productie
+    - Onderhouden gebouwen en machines
+
+- HR:
+    - In/Uit/mutaties van personeel
+    - Evalueren van medewerkers
+    - Berekenen payroll en betalen salaris en lonen + RSZ
+
+    > **payroll** <small>|ˈpeɪrəʊl|</small>
+    > noun
+    > - a list of a company's employees and the amount of money they are to be paid: *there are just three employees **on the payroll**.*
+    > - the total amount of wages paid by a company: *small employers with a payroll of less than £45,000.*
 
 # 5. Business process re-engineering (BPR)
 # 6. Business processen en ERP
