@@ -98,8 +98,128 @@ link: https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md
 
 # 3. Kloof Business en IT (alignment probleem)
 
+## Business functies <-> IT
 
+- Agenda van IT en Business zijn verschillend
+- Business heeft geen inzicht, kennis van IT
+    - Kunnen moeilijke requirements definiëren / voorschrijdend inzicht
+- IT medewerkers hebben technische focus
+    - Infra, netwerk, applicaties, DB, ...
+    - Begrijpen business, processen en gevoeligheden onvoldoende
+- Communicatie verloopt moeizaam:
+    - Iedereen heeft zijn jargo
+    - IT communiceert onvoldoende (Ze hebben elk hun eigen kamp / silo)
+    - Men denkt dat de andere het begrepen heeft
+- Vele IT projecten lopen niet goed af:
+    - Verwachtingn onduidelijk en verschillend
+    - Vertraging en extra kost
+    - Slechte afspraken
+    - Business neemt zijn verantwoordelijkheid niet op (voorbeeld masterdata beheer, testen en acceptatie, ...)
+    - Silo-thinking in IT
+- Een project is veel meer dan een IT project:
+    - Aanpassing processen
+    - Opleiding
+    - Change management
+    - End to end testen, validatie en acceptatie
+
+    => dikwijls onderschat
+
+## Dooddoeners
+
+- We gaan deze applicatie herschrijven want:
+    - Technologie B is beter dan technologie A
+    - Dat is eenvoudiger dan de logica uit te zoeken van de vorige programmeur...
+    - <font color="red">Not invented here</font> syndroom (Ze denken dat software gemaakt door hunzelf beter is, veiliger is, en beter controleerbaar is. I.p.v. bestaande software of tools te gebruiken die hun een pak tijd en geld uitspaart.)
+- Onvoldoende getest
+- Server rebooten tijdens werkuren
+- Geen communicatie over openstaande problemen
+- Een pc correct installeren duurt weken
+- Mail werkt niet
+- Backup onvolledig => gegevensverlies
+- Applicatie performantie is trag maar IT heft geen eenduidig antwoord (netwerk, memory, cpu's, ...)
+- Kloof tussen infrastructuur team en applicatieontwikkelaars
+
+## Kloof verkleinen
+
+- Business IT alignering: gestructureerd overleg
+- Communicatie
+- Kwaliteit dienstverlening verbeteren
+- Proactief handelen
+- ...
+
+## Nood aan gestructureerd overleg tussen business en IT
+
+- Kwaliteit van de dienstverlening (user support):
+    - Service kataloog en service level agreement (SLA)
+        - Service Kataloog: lijst van diensten + tijd (VB.: Gebruiker wil nieuwe pc => 10 dagen wachten)
+        - SLA: De overeenkomst van deze afspraken
+    - IT moet procesmatig werken:
+        - Incident, change en probleem management (ITIL)
+- Projectwerking
+    - Keuze maken over (business) prioriteit van projecten
+    - Methodologie
+    - Project initiatie en opvolging
+- IT strategie:
+    - Applicatiearchitectuur: ERP of eigen ontwikkeling?
+    - Cloud of eigen datacenter/infrastructuur?
+    - ...
+- Bedrijfsprocessen:
+    - Business analyst, key user langs business zijde moeten samenwerken met technische analyst en ontwikkelaars
+        - Nood aan gemeenschappelijke taal -> Business Process Modeling (**BPM**)
+
+## Service Kataloog
+
+- IT als interne leverancier van diensten
+     - Andere afdeling klant
+         - Klant-leverancier relatie
+
+- Service kataloog:
+    - Lijst van afroepbare diensten:
+         - User creëren, Paswoord reset
+         - Pc of telefoon beschikbaar stellen
+         - Restore van gegevens van Backup
+         - ...
+
+## Service Level Agreement
+
+- Onderling akkoord tussen business en IT over de kwaliteit van de diesntverlening
+- Voorbeeld incident management proces
+    ![](http://d.pr/i/1am8y+)
+
+    - Melding bij service desk als filter: zodat niet alle problemen bij IT komen als het niet nodig is. Is het wel nodig, zorgen dat zoveel mogelijk/alle informatie beschikbaar is.
+
+## Voorbeeld Service Level Agreement (SLA) voor incident management
+
+| Prioriteit | Classificatie (t2 - t1) | Start oplossing (t3 - t1) | Opgelost (t4 - t1) |
+| 1 | 15' | 30' | 2u |
+| 2 | 15' | 1u | 4u |
+| 3 | 15' | 8u | 3d |
+| 4 | 15' | 16u | 5d |
+
+## verantwoordelijkheden ICT afdeling
+
+- Voorzien in basis infrastructuur
+    - Netwerk
+    - File serving en backup
+    - Security
+    - E-mail
+    - User devices
+- Applicatieontwikkeling en ondersteuning:
+    - Nieuwe ontwikkeling
+    - Wijzigingen aan bestaande toepassingen
+    - Support
+- User services
+    - Informatie verstrekken
+    - Incidenten behandelen / problemen oplossen
+    - Verzoeken
+- Maar ook:
+    - Bedrijfsprocessen ondersteunen
+    - Meedenken met de business:
+        - Nieuwe mogelijkheden door nieuwe technologie
+        - Innovatie
+    - Projecten (succesvol) implementeren   
 
 # 4. Processen per Functiedomeinen
+
 # 5. Business process re-engineering (BPR)
 # 6. Business processen en ERP
