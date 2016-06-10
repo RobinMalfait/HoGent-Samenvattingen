@@ -1,6 +1,6 @@
 ## 1. Definitie van een proces
 
-> Een taantal stappen die sequentieel worden uitgevoerd die een meerwaarde bieden. Die een input omzet in een output, deze output heeft waarde voor de klant.
+> Een aantal stappen die sequentieel worden uitgevoerd die een meerwaarde bieden. Die een input omzet in een output, deze output heeft waarde voor de klant.
 
 **Diverse definities in de literatuur**
 
