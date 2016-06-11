@@ -298,7 +298,6 @@ where b.bedrag <> mm.max_bedrag
 and b.bedrag <> mm.min_bedrag
 ```
 
-
 ### CTE's om herhaling van subquery's te vermijden (2)
 
 Genereer de getallen 0 tot en met 999. `¯\_(ツ)_/¯`
@@ -322,4 +321,62 @@ from cijfers as cijfer1
 cross join cijfers as cijfer2
 cross join cijfers as cijfer3
 order by getal
+```
+
+### CTE's met > 1 WITH-component
+
+```sql
+with aantal_boetes(aantal) as (select count(*) from boetes),
+     aantal_wedstrijden(aantal) as (select count(*) from wedstrijden)
+
+select (
+    (select aantal from aantal_boetes) +
+    (select aantal from aantal_wedstrijden)
+)
+```
+
+### Recursieve SELECT-instructies
+
+- Met recursiviteit wordt bedoeld:
+    > We blijven een tabelexpressie uitvoeren totdat een bepaalde situatie bereikt is
+
+- Hiermee kun je problemen oplossen als:
+    - Wie zijn de vrienden van vrienden (in bijv. een sociaal netwerk)
+    - Wat is de hierarchie van een organisatie?
+    - Uit welke onderdelen en subonderdelen is een werkstuk opgebouwd?
+
+*Geef de getallen van 1 t.e.m. 5*
+
+```sql
+with getallen(getal) as (
+    select 1 union all
+    select getal + 1 from getallen
+    where getal < 5
+)
+
+select * from getallen
+```
+
+Kenmerken van recursief gebruik van WITH:
+
+- WITH-component bestaat uit (minstens) 2 expressies, gecombineerd met union all
+- De tijdelijke tabel wordt geraadpleegd in de 2e expressie = recursie
+- Minstens één van de expressies mag geen refrentie naar de tijdelijke tabel bevatten
+
+### Recursieve SELECT-instructies: maximaal aantal recursies = 100
+
+*Geef de getallen 1 t.e.m. 999 (cf. CTE zonder recursie)*
+
+```sql
+with getallen(getal) as (
+    select 1 union all
+    select getal + 1 from getallen
+    where getal < 1000
+)
+
+select * from getallen
+
+-- With option:
+
+select * from getallen option (maxrecursion 1000)
 ```
