@@ -10,7 +10,7 @@ vb: geef de meeste geschikte oplossing voor de volgende 3 vragen door gebruik te
 
 ## Vraag 2 A:
 
-zorg ervoor dat wanneer de famileinaam van de patient gewijzigd wordt er automatisch een notitie aangemaakt wordt met de datum waarop de familienaam werd gewijzgid en de boodschap '[oude familienaam] word gewijzigd naar [nieuwe famielienaam]
+Zorg ervoor dat wanneer de familienaam van de patient gewijzigd wordt er automatisch een notitie aangemaakt wordt met de datum waarop de familienaam werd gewijzgid en de boodschap '[oude familienaam] word gewijzigd naar [nieuwe famielienaam]
 
 - -> opl: dit word auto door systeem gedaan dus een trigger op table patient
 
@@ -39,8 +39,8 @@ END
 
 ## vraag 2 B:
 
-manager van de dienst radiologie is enkel geinteresseerd in de familienaam en voornaam van de radiologen het salaris en het aantal dagen dat de specialtist al in dienst is verekend. uiteraard wil hij enkel radiologen zien.
-zorg voor een gepersonaliseerde weergave op maat van de manager
+De manager van de dienst radiologie is enkel geinteresseerd in de familienaam en voornaam van de radiologen, het salaris en het aantal dagen dat de specialist al in dienst is verrekend. Uiteraard wil hij enkel radiologen zien.
+Zorg voor een gepersonaliseerde weergave op maat van de manager
 
 ```sql
 create view vraag_1
@@ -52,7 +52,7 @@ where sm.pm_medspec_cd LIKE 'RA%'
 
 ## vraag 2 C
 
-De dienst interge geneeskudne is op zoek naar een oplossing om wanneer zij een pation_nr ingeven, ze snel een afdruk zien met alle behandelingen en verrichten die er reeds gebeurt zijn voor deze patient. geef ook aan hoe je deze code kan activeren.
+De dienst interne geneeskunde is op zoek naar een oplossing om wanneer zij een patient_nr ingeven, ze snel een afdruk zien met alle behandelingen en verrichtingen die er reeds gebeurd zijn voor deze patient. Geef ook aan hoe je deze code kan activeren.
 
 > **Let op:** geen join gebruiken en de verrichting service is ..(eigen aan situatie?)
 
@@ -65,7 +65,7 @@ declare @sid char(5)
 dcare c_treatements cursor for
 	select behandeling_opmerking, behandleikgn_verrichtg_nr
 	from behandeling
-	where behandling_patione_nr = @pat_id
+	where behandling_patiente_nr = @pat_id
 
 open c_treatements
 
@@ -91,61 +91,61 @@ exec esp_exhapen 100nummer
 
 ## vraag 3
 
-en welke plaasten wonen meer dan 10 patienten die ouder zijn dan 40 jaar geef patione_plaats, geboortedatum van de oudste patioen en het aanal patiënten
+In welke plaatsen wonen meer dan 10 patienten die ouder zijn dan 40 jaar geef patient_plaats, geboortedatum van de oudste patient en het aantal patiënten
 
 - classic for group by and having (7 punten)
 - functies zoals datediff zullen staan in een lijst waar we op examen gebruik van kunnnen maken
 
 ```sql
-select patione_plaats, min(patient_geboortedatum), count(*)
-from patione
+select patiente_plaats, min(patient_geboortedatum), count(*)
+from patiente
 where datediff(year, patioen_geboortedatum, getdate()) > 40
 group by patient_plaats
 having count(*) > 10;
 ```
 
-## vraag 4 (7p): Bepaal per afdeling wie het meeste verdient.
+## vraag 4 (7 punten): Bepaal per afdeling wie het meeste verdient.
 
-geef naam van de afdeling, achter en voornaam van het personeelslid en het salaris. bij de afdeling zonder personeel schrijf je 'geen personeel' in de kolom "salaris" en
-laat je achter- en voornaam leeg. sorteer op afdelingsnaam
+Geef naam van de afdeling, achter- en voornaam van het personeelslid en het salaris. Bij de afdeling zonder personeel schrijf je 'geen personeel' in de kolom "salaris" en
+laat je achter- en voornaam leeg. Sorteer op afdelingsnaam
 
-- subquerie
+- subquery
 - dit is opgelost met een union maar het kan ook met een case
 
 ```sql
-select a.afdleing_naam, p.pers_achternaam, p.pers_voornaam, str(p.pers_salaris) as salaris
-from afdeling a joint personeel p on a.afdlings_nr = p.pers_afd_toegewezen
+select a.afdeling_naam, p.pers_achternaam, p.pers_voornaam, str(p.pers_salaris) as salaris
+from afdeling a join personeel p on a.afdlings_nr = p.pers_afd_toegewezen
 where p.pers_salaris = (select max(pers_salaris) from personeel wehere pers_afd_toegewerzen = a.adfelings_nr)
 union
 select a.adfelingsnaam,' ', ' ','GEEN PERSONEEL'
-from afdleing a left join personeel p on a.afdleings_nr = p.pers_afd_toegewezen
+from afdeling a left join personeel p on a.afdelings_nr = p.pers_afd_toegewezen
 where p.pers_nr is null
-order by afeling_naam
+order by afdeling_naam
 ```
 
-## vraag 5 (5punten)
+## vraag 5 (5 punten)
 
-bestudeer odnerstaande query's:
+Bestudeer onderstaande query's:
 
 ```sql
-select behandeling_nr, behandleing_datum, behandeling_opmerking
+select behandeling_nr, behandeling_datum, behandeling_opmerking
 from behandleing
-order by behaing_nr;
+order by behandeilng_nr;
 ```
 
 ```sql
-select behandling_nr, behaning_datum, behandeling_opmerking
+select behandling_nr, behandeling_datum, behandeling_opmerking
 from behandeling
 order by behandeling_huidig_rek_totaal.
 ```
 
-### a) hoeveelkeer is de eerste query sneller dan de tweede (verkaar)
+### a) hoeveel keer is de eerste query sneller dan de tweede (verkaar)
 
 - -> dankzij sql performance
-- -> de eerset is sneller omdat daar primary key is en dus clusterd index op staat.
+- -> de eerste is sneller omdat daar een primary key is en dus clustered index op staat.
 
-### b ) stel dat de tweede query heel vaak gebruit wordt hoe kun je dit versllenenn
+### b ) stel dat de tweede query heel vaak gebruikt wordt hoe kun je dit versnellen
 
-- -> index toevoengen op bhenalidign_iets maak je coverd index en behandlikg_opmerking includen
+- -> index toevoegen op behandeling_iets maak je covered index en behandeling_opmerking includen
 
-### c) welke tool gebruik je hievoor
+### c) welke tool gebruik je hiervoor
