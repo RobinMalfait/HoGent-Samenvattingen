@@ -95,26 +95,27 @@ WHERE spelersnr NOT IN (
 
 - Voorbeeld: Geeft het hoogste bondsnummer en het bijhorende spelersnummer
 
-    ```sql
-    SELECT bondsnr, spelersnr
+```sql
+SELECT bondsnr, spelersnr
+FROM spelers
+WHERE bondsnr >= ALL (
+    SELECT bondsnr
     FROM spelers
-    WHERE bondsnr >= ALL (
-        SELECT bondsnr
-        FROM spelers
-        WHERE bondsnr IS NOT NULL
-    )
-    ```
+    WHERE bondsnr IS NOT NULL
+)
+```
 - Voorbeeld: Geef de spelersnummers van de spelers met minstens één boete die groter is dan een boete betaald voro speler 27; deze speler mag zelf niet in het resultaat voorkomen.
-    ```sql
-    SELECT DISTINCT spelersnr
+
+```sql
+SELECT DISTINCT spelersnr
+FROM boetes
+WHERE spelersnr <> 27
+AND bedrag > ANY (
+    SELECT bedrag
     FROM boetes
-    WHERE spelersnr <> 27
-    AND bedrag > ANY (
-        SELECT bedrag
-        FROM boetes
-        WHERE spelersnr = 27
-    )
-    ```
+    WHERE spelersnr = 27
+)
+```
 
 ### Gecorreleerde subqueries
 
@@ -125,15 +126,15 @@ WHERE spelersnr NOT IN (
 - Gebruik joins indien mogelijk
 - Principe
 
-    ```sql
+```sql
+SELECT ...
+FROM tabel a
+WHERE uitdrukking operator (
     SELECT ...
-    FROM tabel a
-    WHERE uitdrukking operator (
-        SELECT ...
-        FROM tabel
-        WHERE uitdrukking operator a.kolomnaam
-    )
-    ```
+    FROM tabel
+    WHERE uitdrukking operator a.kolomnaam
+)
+```
 
 > “In de hoofdvraag mag je geen velden gebruiken uit de subvraag, maar wel omgekeerd” <small>slide 31</small>
 
@@ -141,57 +142,61 @@ WHERE spelersnr NOT IN (
 
 - Via de operator EXISTS test je op het al dan niet leeg zijn van een resultaatset.
 - Er bestaat ook NOT EXISTS
-    - Voorbeeld:
-        - Geef de spelers die nog geen wedstrijden gespeeld hebben
-        ```sql
-        SELECT *
-        FROM spelers p
-        WHERE NOT EXISTS (
-            SELECT *
-            FROM wedstrijden
-            WHERE spelersnr = p.spelersnrs
-        )
-        ```
-        - Selecteer de spelers die wel gespeeld hebben
-        ```sql
-        SELECT *
-        FROM spelers p
-        WHERE EXISTS (
-            SELECT *
-            FROM wedstrijden
-            WHERE spelersnr = p.spelersnr
-        )
-        ```
+
+Geef de spelers die nog geen wedstrijden gespeeld hebben
+
+```sql
+SELECT *
+FROM spelers p
+WHERE NOT EXISTS (
+    SELECT *
+    FROM wedstrijden
+    WHERE spelersnr = p.spelersnrs
+)
+```
+
+Selecteer de spelers die wel gespeeld hebben
+
+```sql
+SELECT *
+FROM spelers p
+WHERE EXISTS (
+    SELECT *
+    FROM wedstrijden
+    WHERE spelersnr = p.spelersnr
+)
+```
 
 ### Subqueries in de FROM-clause
 
 - Als het resultaat van een subquery een tabel is dan mag die in de FROM clause gebruikt worden
 - De tabel die de subquery oplevert **moet** een naam krijgen
     - Voorbeeld: geef de nummers van de spelers van het mannelijk geslacht met een nummer kleiner dan 10
-    ```sql
-    SELECT spelersnr
-    FROM (
-        SELECT spelers, geslacht
-        FROM spelers
-        WhERE spelersnr < 10
-    ) as TIJDELIJK
-    WHERE geslacht = 'M'
-    ```
+
+```sql
+SELECT spelersnr
+FROM (
+    SELECT spelers, geslacht
+    FROM spelers
+    WhERE spelersnr < 10
+) as TIJDELIJK
+WHERE geslacht = 'M'
+```
 
 ### Subqueries in de SELECT-clause
 
 - In SELECT clause van de SELECT instructie mogen scalaire subqueries gebruikt worden
     - Voorbeeld: geef van elke speler waarvan het nummer kleiner is dan 60 het anatal jaren dat ligt tussen het jaar van toetreding van de speler en dat van speler 100
 
-    ```sql
-    SELECT spelersnr, jaartoe - (
-        SELECT jaartoe
-        FROM spelers
-        WHERE spelersnr = 100
-    )
+```sql
+SELECT spelersnr, jaartoe - (
+    SELECT jaartoe
     FROM spelers
-    WHERE spelersnr < 60
-    ```
+    WHERE spelersnr = 100
+)
+FROM spelers
+WHERE spelersnr < 60
+```
 
 ### Subqueries in de SELECT- en FROM-clause
 
