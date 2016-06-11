@@ -7,11 +7,11 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Databanken-II.md
 
 ## LEFT OUTER JOIN
 
-> Retourneert alle rijen van de eerst genoemde tabel in de FROM clause
+> Retourneert alle rijen van de eerst genoemde tabel in de from clause
 
 ## RIGHT OUTER JOIN
 
-> Retourneert alle rijen van de tweede tabel in de FROM clause
+> Retourneert alle rijen van de tweede tabel in de from clause
 
 ## FULL OUTER JOIN
 
@@ -22,16 +22,16 @@ link: https://robinmalfait.com/2de-jaar/semester-II/Databanken-II.md
 **SQL-92**
 
 ```sql
-SELECT au_lname, au_fname, title_id
-FROM authors
-CROSS JOIN titleauthor
+select au_lname, au_fname, title_id
+from authors
+cross join titleauthor
 ```
 
 **old style join**
 
 ```sql
-SELECT au_lname, au_fname, title_id
-FROM authors, titleauthor
+select au_lname, au_fname, title_id
+from authors, titleauthor
 ```
 
 ## UNION
@@ -39,52 +39,52 @@ FROM authors, titleauthor
 **Basisvorm**
 
 ```sql
-SELECT ... FROM ... WHERE ...
-UNION
-SELECT ... FROM ... WHERE ...
-ORDER BY ...
+select ... from ... where ...
+union
+select ... from ... where ...
+order by ...
 ```
 
 **Regels**
 
-- De resultaten van de 2 SELECT opdrachten moeten evenveel kolommen bevatten.
-- Overenekomstige kolommen uit SELECT's moeten van hetzelfde data type zijn en beide NOT NULL toelaten of niet
+- De resultaten van de 2 select opdrachten moeten evenveel kolommen bevatten.
+- Overenekomstige kolommen uit select's moeten van hetzelfde data type zijn en beide NOT NULL toelaten of niet
 - Kolommen komen voor in dezelfde volgorden
-- De kolomnamen/titles van de UNION zijn deze van de eerste SELECT
+- De kolomnamen/titles van de UNION zijn deze van de eerste select
 - Het resultaat bevat echter steeds alleen unieke rijen
-- Aan het einde van de UNION kan je een ORDER BY toevoegen. In deze clausule mag geen kolomnaam of uitdrukking voorkomen indien kolomnamen van beide SELECT's verschillen. Gebruik in dat geval kolomnumbers.
+- Aan het einde van de UNION kan je een ORDER BY toevoegen. In deze clausule mag geen kolomnaam of uitdrukking voorkomen indien kolomnamen van beide select's verschillen. Gebruik in dat geval kolomnumbers.
 
 **Voorbeeld**
 
 Geef een overzicht van alle bedienden (naam en voornaam, stad en postcode) en alle klanten (naam, stad en postcode)
 
 ```sql
-SELECT firstname + ' ' + lastanem as name, city, postcode
-FROM Employees
-UNION
-SELECT companyname, city, postcalcode
-FROM Customers
+select firstname + ' ' + lastanem as name, city, postcode
+from Employees
+union
+select companyname, city, postcalcode
+from Customers
 ```
 
 ## Subqueries
 
 ```sql
-SELECT lastname, firstname, salary
-FROM employee
-WHERE salary = (
-    SELECT max(salary)
-    FROM employee
+select lastname, firstname, salary
+from employee
+where salary = (
+    select max(salary)
+    from employee
 )
 ```
 
 ### Subquery die 1 kolom teruggeeft
 
 ```sql
-SELECT spelersnr
-FROM spelers
-WHERE spelersnr NOT IN (
-    SELECT spelersnr
-    FROM wedstrijden
+select spelersnr
+from spelers
+where spelersnr not in (
+    select spelersnr
+    from wedstrijden
 )
 ```
 
@@ -96,24 +96,24 @@ WHERE spelersnr NOT IN (
 - Voorbeeld: Geeft het hoogste bondsnummer en het bijhorende spelersnummer
 
 ```sql
-SELECT bondsnr, spelersnr
-FROM spelers
-WHERE bondsnr >= ALL (
-    SELECT bondsnr
-    FROM spelers
-    WHERE bondsnr IS NOT NULL
+select bondsnr, spelersnr
+from spelers
+where bondsnr >= ALL (
+    select bondsnr
+    from spelers
+    where bondsnr is not null
 )
 ```
 - Voorbeeld: Geef de spelersnummers van de spelers met minstens één boete die groter is dan een boete betaald voro speler 27; deze speler mag zelf niet in het resultaat voorkomen.
 
 ```sql
-SELECT DISTINCT spelersnr
-FROM boetes
-WHERE spelersnr <> 27
-AND bedrag > ANY (
-    SELECT bedrag
-    FROM boetes
-    WHERE spelersnr = 27
+select distinct spelersnr
+from boetes
+where spelersnr <> 27
+and bedrag > ANY (
+    select bedrag
+    from boetes
+    where spelersnr = 27
 )
 ```
 
@@ -127,12 +127,12 @@ AND bedrag > ANY (
 - Principe
 
 ```sql
-SELECT ...
-FROM tabel a
-WHERE uitdrukking operator (
-    SELECT ...
-    FROM tabel
-    WHERE uitdrukking operator a.kolomnaam
+select ...
+from tabel a
+where uitdrukking operator (
+    select ...
+    from tabel
+    where uitdrukking operator a.kolomnaam
 )
 ```
 
@@ -146,72 +146,72 @@ WHERE uitdrukking operator (
 Geef de spelers die nog geen wedstrijden gespeeld hebben
 
 ```sql
-SELECT *
-FROM spelers p
-WHERE NOT EXISTS (
-    SELECT *
-    FROM wedstrijden
-    WHERE spelersnr = p.spelersnrs
+select *
+from spelers p
+where NOT EXISTS (
+    select *
+    from wedstrijden
+    where spelersnr = p.spelersnrs
 )
 ```
 
 Selecteer de spelers die wel gespeeld hebben
 
 ```sql
-SELECT *
-FROM spelers p
-WHERE EXISTS (
-    SELECT *
-    FROM wedstrijden
-    WHERE spelersnr = p.spelersnr
+select *
+from spelers p
+where EXISTS (
+    select *
+    from wedstrijden
+    where spelersnr = p.spelersnr
 )
 ```
 
-### Subqueries in de FROM-clause
+### Subqueries in de from-clause
 
-- Als het resultaat van een subquery een tabel is dan mag die in de FROM clause gebruikt worden
+- Als het resultaat van een subquery een tabel is dan mag die in de from clause gebruikt worden
 - De tabel die de subquery oplevert **moet** een naam krijgen
     - Voorbeeld: geef de nummers van de spelers van het mannelijk geslacht met een nummer kleiner dan 10
 
 ```sql
-SELECT spelersnr
-FROM (
-    SELECT spelers, geslacht
-    FROM spelers
-    WhERE spelersnr < 10
+select spelersnr
+from (
+    select spelers, geslacht
+    from spelers
+    where spelersnr < 10
 ) as TIJDELIJK
-WHERE geslacht = 'M'
+where geslacht = 'M'
 ```
 
-### Subqueries in de SELECT-clause
+### Subqueries in de select-clause
 
-- In SELECT clause van de SELECT instructie mogen scalaire subqueries gebruikt worden
+- In select clause van de select instructie mogen scalaire subqueries gebruikt worden
     - Voorbeeld: geef van elke speler waarvan het nummer kleiner is dan 60 het anatal jaren dat ligt tussen het jaar van toetreding van de speler en dat van speler 100
 
 ```sql
-SELECT spelersnr, jaartoe - (
-    SELECT jaartoe
-    FROM spelers
-    WHERE spelersnr = 100
+select spelersnr, jaartoe - (
+    select jaartoe
+    from spelers
+    where spelersnr = 100
 )
-FROM spelers
-WHERE spelersnr < 60
+from spelers
+where spelersnr < 60
 ```
 
-### Subqueries in de SELECT- en FROM-clause
+### Subqueries in de select- en from-clause
 
 - (db xtreme): geef per productklasse het goedkoopste product en een product dat die prijs heeft.
 
 ```sql
-SELECT klasse, prijs, (
-    SELECT TOP 1 productid
-    FROM product
-    WHERE productclassid = klasse
-        AND price = prijs
+select klasse, prijs, (
+    select TOP 1 productid
+    from product
+    where productclassid = klasse
+        and price = prijs
 )
-FROM (
-    SELECT productclassid, min(price)
-    FROM product p
-    GROUP BY productclassid
+from (
+    select productclassid, min(price)
+    from product p
+    group by productclassid
 ) as pcmin(klasse, prijs)
 ```
