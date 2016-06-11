@@ -217,3 +217,109 @@ from (
     group by productclassid
 ) as pcmin(klasse, prijs)
 ```
+
+### Common Table Expressions (CTE): de WITH component
+
+De WITH-component heeft twee toepassingsgebieden:
+
+1. Het vereenvoudigen van SQL-instructies, bijv. om herhaling te vermijden
+2. Het recursief doorlopen van hiërarchische en netwerkstructuren
+
+Vb.: wat is het gemiddeld aantal boetes van de spelers? Door gebruik te maken van een subquery, kun je dit oplossen als:
+
+#### Zonder WITH component:
+
+```sql
+select avg(aantal * 1.0) -- * 1.0 om floating point te forceren
+from (
+    select count(*)
+    from boetes
+    group by spelersnr
+) as aantallen(aantal)
+```
+
+#### Met WITH component:
+
+Met behulp van de WITH-component kun je de subquery een eigen naam geven (met parameters) en deze naam dan verder in de query (eventueel meermaals) hergebruiken:
+
+```sql
+with aantallen (aantal) as (
+    select count(*)
+    from boetes
+    group by spelersnr
+)
+
+select avg(aantal * 1.0)
+from anatallen
+```
+
+### CTE's om herhaling van subquery's te vermijden
+
+Geef de betalingsnummers en boetebedragen die niet gelijk zijn aan de hoogste of laagste boete ooit betaald voor speler 44; Toon tevens dit hoogste en laagste boetebedrag in elke rij.
+
+#### Zonder CTE
+
+```sql
+select betalingsnr, bedrag, (
+    select min(bedrag)
+    from boetes
+    where spelersnr = 44
+), (
+    select max(bedrag)
+    from boetes
+    where spelersnr = 44
+)
+from boetes
+where bedrag > (
+    select min(bedrag)
+    from boetes
+    where spelersnr = 44
+)
+and bedrag < (
+    select max(bedrag)
+    from boetes
+    where spelersnr = 44
+)
+```
+
+#### Met CTE
+
+```sql
+with min_max(min_bedrag, max_bedrag) as (
+    select min(bedrag) , max(bedrag)
+    from boetes
+    where spelersnr = 44
+)
+
+select b.betalingsnr, b.bedrag, mm.min_bedrag, mm.max_bedrag
+from boetes b
+cross join min_max mm
+where b.bedrag <> mm.max_bedrag
+and b.bedrag <> mm.min_bedrag
+```
+
+
+### CTE's om herhaling van subquery's te vermijden (2)
+
+Genereer de getallen 0 tot en met 999. `¯\_(ツ)_/¯`
+
+```sql
+with cijfers(cijfer) as (
+    select 0 as cijfer
+    union select 1
+    union select 2
+    union select 3
+    union select 4
+    union select 5
+    union select 6
+    union select 7
+    union select 8
+    union select 9
+)
+
+select (cijfer1.cijfer * 100) + (cijfer2.cijfer * 10) + (cijfer3.cijfer) as getal
+from cijfers as cijfer1
+cross join cijfers as cijfer2
+cross join cijfers as cijfer3
+order by getal
+```
