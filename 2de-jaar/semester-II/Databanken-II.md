@@ -93,7 +93,7 @@ where spelersnr not in (
 - `ALL` retourneert true als alle waarden geretourneerd in de subquery voldoen aan de vooraarde
 - `ANY` retourneert true als minstens 1 waarde geretourneerd in de subquery voldoet aan de voorwaarde
 
-- Voorbeeld: Geeft het hoogste bondsnummer en het bijhorende spelersnummer
+Voorbeeld: Geeft het hoogste bondsnummer en het bijhorende spelersnummer
 
 ```sql
 select bondsnr, spelersnr
@@ -104,7 +104,7 @@ where bondsnr >= ALL (
     where bondsnr is not null
 )
 ```
-- Voorbeeld: Geef de spelersnummers van de spelers met minstens één boete die groter is dan een boete betaald voro speler 27; deze speler mag zelf niet in het resultaat voorkomen.
+Voorbeeld: Geef de spelersnummers van de spelers met minstens één boete die groter is dan een boete betaald voro speler 27; deze speler mag zelf niet in het resultaat voorkomen.
 
 ```sql
 select distinct spelersnr
@@ -171,7 +171,8 @@ where EXISTS (
 
 - Als het resultaat van een subquery een tabel is dan mag die in de from clause gebruikt worden
 - De tabel die de subquery oplevert **moet** een naam krijgen
-    - Voorbeeld: geef de nummers van de spelers van het mannelijk geslacht met een nummer kleiner dan 10
+
+Voorbeeld: geef de nummers van de spelers van het mannelijk geslacht met een nummer kleiner dan 10
 
 ```sql
 select spelersnr
@@ -186,7 +187,8 @@ where geslacht = 'M'
 ### Subqueries in de select-clause
 
 - In select clause van de select instructie mogen scalaire subqueries gebruikt worden
-    - Voorbeeld: geef van elke speler waarvan het nummer kleiner is dan 60 het anatal jaren dat ligt tussen het jaar van toetreding van de speler en dat van speler 100
+
+Voorbeeld: geef van elke speler waarvan het nummer kleiner is dan 60 het anatal jaren dat ligt tussen het jaar van toetreding van de speler en dat van speler 100
 
 ```sql
 select spelersnr, jaartoe - (
