@@ -380,3 +380,22 @@ select * from getallen
 
 select * from getallen option (maxrecursion 1000)
 ```
+
+### Recursief doorlopen van een hiërarchische structuur
+
+*Databank xtreme: geef al wie rechtstreeks of onrechtstreeks rapporteert aan Andrew Fuller (EmployeeID = 2)*
+
+```sql
+with bazen (baas, medewerker) as (
+    select supervisorid, employeeid
+    from employee
+    where supervisorid = 2
+    union all
+    select e.supervisorid, e.employeeid
+    from employee e
+    join bazen b
+    on e.supervisorid = b.medewerker
+)
+
+select * from bazen
+```
