@@ -1,3 +1,5 @@
+Credits @ [Thomas Detemmerman](https://www.facebook.com/groups/630952883612310/1275441322496793/).
+
 ## VRAAG 1: installatie van een back-up file.
 
 ## vraag 2: drie opgaven waarvan 1 trigger, 1 view en 1 stored procedure
