@@ -154,6 +154,7 @@
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1382v.png)
 
+link: http://robinmalfait.com/2de-jaar/semester-II/IT2Business/Deel-2.md
 ---
 
 Burger is in dit geval een ander deel. Het zwembad is gescheiden van het zwembad er onder.

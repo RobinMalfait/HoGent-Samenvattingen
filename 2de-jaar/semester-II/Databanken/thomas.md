@@ -1,4 +1,8 @@
-> Credits @ [Thomas Detemmerman](https://www.facebook.com/groups/630952883612310/1275441322496793/).
+---
+title: Mogelijke examen vragen.
+description: Credits @ [Thomas Detemmerman](https://www.facebook.com/groups/630952883612310/1275441322496793/).
+link: http://robinmalfait.com/2de-jaar/semester-II/Databanken/thomas.md
+---
 
 ## VRAAG 1: installatie van een back-up file.
 
