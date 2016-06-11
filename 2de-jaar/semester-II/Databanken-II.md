@@ -3,311 +3,210 @@ title: Databanken II
 link: https://robinmalfait.com/2de-jaar/semester-II/Databanken-II.md
 ---
 
-# Introductie
+# Hoofdstuk 3: OUTER JOIN, subqueries, EXISTS
 
-## Trigger Example
+## LEFT OUTER JOIN
+
+> Retourneert alle rijen van de eerst genoemde tabel in de FROM clause
+
+## RIGHT OUTER JOIN
+
+> Retourneert alle rijen van de tweede tabel in de FROM clause
+
+## FULL OUTER JOIN
+
+> Retourneert ook rijen uit de eerste en tweede tabel die geen corresponderende entry hebben in andere tabel
+
+## CROSS JOIN
+
+**SQL-92**
 
 ```sql
-create trigger CheckPunten
-on punten
-after insert, update
-as
-declare @cijfer float
-select @cijfer = [afgerond/20] from inserted
-if @cijfer > 20
-begin
-    rollback transaction
-    raiserror("Student kan niet meer dan 20/20 halen", 14, 1) -- 14: Fout Level
-end
+SELECT au_lname, au_fname, title_id
+FROM authors
+CROSS JOIN titleauthor
 ```
 
-## Herhaling
+**old style join**
 
-[Oefeningen SQL](/2de-jaar/semester-II/Databanken/Oefeningen_SQL.md)
-
-# XML
-
-> XML: e**X**tensible **M**arkup **L**anguage. <!--**-->
-
-## XML Document
-
-```xml
-<?xml version="1.0"?>
-<parent>
-    <child>Some Child</child>
-    <child>Some Other Child</child>
-    <child name="special">Some Other Child with an attribute</child>
-</parent>
+```sql
+SELECT au_lname, au_fname, title_id
+FROM authors, titleauthor
 ```
 
-## XML Schema (xsd schema)
+## UNION
 
-Een opmaak waaraan het XML document moet voldoen, alle tags en eventuele waarden.
+**Basisvorm**
 
-Voorbeeld:
-
-```xml
-<?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-<xs:element name="note">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element name="to" type="xs:string"/>
-      <xs:element name="from" type="xs:string"/>
-      <xs:element name="heading" type="xs:string"/>
-      <xs:element name="body" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:element>
-
-</xs:schema>
+```sql
+SELECT ... FROM ... WHERE ...
+UNION
+SELECT ... FROM ... WHERE ...
+ORDER BY ...
 ```
 
-### XML & XSD
+**Regels**
 
-XML:
+- De resultaten van de 2 SELECT opdrachten moeten evenveel kolommen bevatten.
+- Overenekomstige kolommen uit SELECT's moeten van hetzelfde data type zijn en beide NOT NULL toelaten of niet
+- Kolommen komen voor in dezelfde volgorden
+- De kolomnamen/titles van de UNION zijn deze van de eerste SELECT
+- Het resultaat bevat echter steeds alleen unieke rijen
+- Aan het einde van de UNION kan je een ORDER BY toevoegen. In deze clausule mag geen kolomnaam of uitdrukking voorkomen indien kolomnamen van beide SELECT's verschillen. Gebruik in dat geval kolomnumbers.
 
-```xml
-<?xml version="1.0"?>
-<memo>
-    <aan>Jan</aan>
-    <van>Piet</van>
-    <kop>Let op</kop>
-    <tekst>Definitie structuur</tekst>
-</memo>
-```
+**Voorbeeld**
 
-XSD:
+Geef een overzicht van alle bedienden (naam en voornaam, stad en postcode) en alle klanten (naam, stad en postcode)
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-    <!-- Begin met opsomming van alle tags + hun type -->
-    <xs:element name="memo" type="memoType"/>
-    <xs:element name="aan" type="xs:string"/>
-    <xs:element name="van" type="xs:string"/>
-    <xs:element name="kop" type="xs:string"/>
-    <xs:element name="tekst" type="xs:string"/>
-
-    <!-- Eigen Types Beschrijven -->
-    <xs:complexType name="memoType">
-        <xs:sequence>
-            <xs:element ref="aan" maxOccurs="unbounded"/> <!-- Referentie naar de opsomming hier boven -->
-            <xs:element ref="van"/>
-            <xs:element ref="kop"/>
-            <xs:element ref="tekst"/>
-        </xs:sequence>
-    </xs:complexType>
-
-</xs:schema>
+```sql
+SELECT firstname + ' ' + lastanem as name, city, postcode
+FROM Employees
+UNION
+SELECT companyname, city, postcalcode
+FROM Customers
 ```
 
-#### Voorbeeld:
+## Subqueries
 
-XML:
-
-```xml
-<boekenlijst>
-    <uitgevers>
-        <uitgever uitgeverid="U0001">
-            <uitgevernaam>Easy Computing</uitgevernaam>
-            <contactpersoon>
-                <voornaam></voornaam>
-                <naam></naam>
-                <email></email>
-            </contactpersoon>
-        </uitgever>
-    </uitgevers>
-    <boek>
-        <title isbn=""></title>
-    </boek>
-</boekenlijst>
+```sql
+SELECT lastname, firstname, salary
+FROM employee
+WHERE salary = (
+    SELECT max(salary)
+    FROM employee
+)
 ```
 
-XSD:
+### Subquery die 1 kolom teruggeeft
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>￼
+```sql
+SELECT spelersnr
+FROM spelers
+WHERE spelersnr NOT IN (
+    SELECT spelersnr
+    FROM wedstrijden
+)
 ```
 
-## Namespaces:
+### ANY en ALL keywords
 
-```xml
-<?xml version="1.0"?>
-<m:stoel xmlns:m="http://www.weba.com/beuels">
-    ...
-</m:stoel>
-```
+- `ALL` retourneert true als alle waarden geretourneerd in de subquery voldoen aan de vooraarde
+- `ANY` retourneert true als minstens 1 waarde geretourneerd in de subquery voldoet aan de voorwaarde
 
-```xml
-<?xml version="1.0"?>
-<h:table xmlns:m="http:...">
-    ...
-</h:table>
-```
-
-## Stored Procedures
-
-Te kennen:
-
-1. Parameters en variabelen in SQL
-2. SELECT met 1 lijn als resultaat:
+- Voorbeeld: Geeft het hoogste bondsnummer en het bijhorende spelersnummer
 
     ```sql
-    SELECT @var = select .. from ..
+    SELECT bondsnr, spelersnr
+    FROM spelers
+    WHERE bondsnr >= ALL (
+        SELECT bondsnr
+        FROM spelers
+        WHERE bondsnr IS NOT NULL
+    )
     ```
-3. IF (NOT) EXISTS (SELECT ...)
-4. Select met > 1 lijnen: -> CURSOR
+- Voorbeeld: Geef de spelersnummers van de spelers met minstens één boete die groter is dan een boete betaald voro speler 27; deze speler mag zelf niet in het resultaat voorkomen.
+    ```sql
+    SELECT DISTINCT spelersnr
+    FROM boetes
+    WHERE spelersnr <> 27
+    AND bedrag > ANY (
+        SELECT bedrag
+        FROM boetes
+        WHERE spelersnr = 27
+    )
+    ```
+
+### Gecorreleerde subqueries
+
+- Bij een gecorreleerde subquery **hangt de inner query af van de informatie van de outer query.**
+    - De subvraag bevat een zoekconditie die relateert naar de hoofvraag, waardoor de subvraag van de hoofdvraag afhankelijk wordt.
+- Voor elke rij uit hoofdvraag wordt de subvraag opnieuw uitgevoerd.
+    - De volgorde is hier dus niet van onder naar boven, maar van boven naar onder (per rij)
+- Gebruik joins indien mogelijk
+- Principe
+
+    ```sql
+    SELECT ...
+    FROM tabel a
+    WHERE uitdrukking operator (
+        SELECT ...
+        FROM tabel
+        WHERE uitdrukking operator a.kolomnaam
+    )
+    ```
+
+> “In de hoofdvraag mag je geen velden gebruiken uit de subvraag, maar wel omgekeerd” <small>slide 31</small>
+
+### Subqueries en de EXISTS operator
+
+- Via de operator EXISTS test je op het al dan niet leeg zijn van een resultaatset.
+- Er bestaat ook NOT EXISTS
+    - Voorbeeld:
+        - Geef de spelers die nog geen wedstrijden gespeeld hebben
+        ```sql
+        SELECT *
+        FROM spelers p
+        WHERE NOT EXISTS (
+            SELECT *
+            FROM wedstrijden
+            WHERE spelersnr = p.spelersnrs
+        )
+        ```
+        - Selecteer de spelers die wel gespeeld hebben
+        ```sql
+        SELECT *
+        FROM spelers p
+        WHERE EXISTS (
+            SELECT *
+            FROM wedstrijden
+            WHERE spelersnr = p.spelersnr
+        )
+        ```
+
+### Subqueries in de FROM-clause
+
+- Als het resultaat van een subquery een tabel is dan mag die in de FROM clause gebruikt worden
+- De tabel die de subquery oplevert **moet** een naam krijgen
+    - Voorbeeld: geef de nummers van de spelers van het mannelijk geslacht met een nummer kleiner dan 10
+    ```sql
+    SELECT spelersnr
+    FROM (
+        SELECT spelers, geslacht
+        FROM spelers
+        WhERE spelersnr < 10
+    ) as TIJDELIJK
+    WHERE geslacht = 'M'
+    ```
+
+### Subqueries in de SELECT-clause
+
+- In SELECT clause van de SELECT instructie mogen scalaire subqueries gebruikt worden
+    - Voorbeeld: geef van elke speler waarvan het nummer kleiner is dan 60 het anatal jaren dat ligt tussen het jaar van toetreding van de speler en dat van speler 100
+
+    ```sql
+    SELECT spelersnr, jaartoe - (
+        SELECT jaartoe
+        FROM spelers
+        WHERE spelersnr = 100
+    )
+    FROM spelers
+    WHERE spelersnr < 60
+    ```
+
+### Subqueries in de SELECT- en FROM-clause
+
+- (db xtreme): geef per productklasse het goedkoopste product en een product dat die prijs heeft.
 
 ```sql
-CREATE procedure usp_Customers_Delete
-    @custno nchar(5) = NULL
-AS
-IF @custno IS NULL BEGIN
-    RAISERROR('customerID is NULL', 10, 1)
-    RETURN
-END
-IF NOT EXISTS (SELECT * FROM customers WHERE customer_id = @custno) BEGIN
-    RAISERROR('klant bestaat niet', 10, 1)
-    RETURN
-END
-IF EXISTS (SELECT * FROM orders WHERE customer_id = @custno) BEGIN
-    RAISERROR('klant heeft orders', 10, 1)
-    RETURN
-END
-DELETE FROM customers WHERE customerid = @custno
-```
-
-```sql
--- Execute --
-EXEC usp_Customers_Delete 153
-```
-
-## Triggers
-
-2 Tijdelijke tabellen:
-
-- *deleted* tabel
-- *inserted* tabel
-
-
-```sql
--- Hulp Procedure --
-CREATE PROCEDURE usp_mutatie_insert (@MSNR SMALLINT, @MSTYPE CHAR(1), @MSNR_NEW SMALLINT)
-AS
-    INSERT INTO mutatie (gebruiker, mut_tijdstip, mut_snr, mut_type, mut_snr_new)
-    VALUES (user, getdate(), @MSNR, @MSTYPE, @MSNR_NEW)
-```
-
-### Insert Trigger
-
-```sql
-CREATE TRIGGER insert_speler ON SPELERS FOR insert
-AS
-INSERT INTO mutatie (gebruiker, mut_tijdstip, mut_snr, mut_type, mut_snr_new)
-SELECT user, getdate(), null, 'i', spelersnr FROM inserted
-```
-
-### Delete Trigger
-
-```sql
-CREATE TRIGGER delete_speler ON SPELERS FOR delete
-AS
-    DECLARE @old_snr smallint
-    DECLARE del_cursor CURSOR FOR SELECT spelersnr FROM deleted
-    OPEN del_cursor
-    FETCH NEXT FROM del_cursor INTO @old_snr
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        EXEC usp_mutatie_insert @old_snr, 'D', null
-        FETCH NEXT FROM del_cursor INTO @old_snr
-    END
-    CLOSE del_cursor
-    DEALLOCATE del_cursor
-
-```
-
-Activatie van de trigger:
-
-```sql
-delete from spelers where spelersnr > 115;
-```
-
-### Update Trigger
-
-```sql
-CREATE TRIGGER update_speler ON SPELERS FOR update
-AS
-    DECLARE @old_snr smallint
-    DECLARE @new_snr smallint
-
-    DECLARE before_cursor CURSOR FOR SELECT spelersnr FROM deleted ORDER BY spelersnr
-    DECLARE after_cursor CURSOR FOR SELECT spelersnr FROM inserted ORDER BY spelersnr
-
-    OPEN before_cursor
-    OPEN after_cursor
-
-    FETCH NEXT FROM before_cursor INTO @old_snr
-    FETCH NEXT FROM after_cursor INTO @new_snr
-
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        EXEC usp_mutatie_insert @old_snr, 'U', @new_snr
-
-        FETCH NEXT FROM before_cursor INTO @old_snr
-        FETCH NEXT FROM after_cursor INTO @new_snr
-    END
-
-    CLOSE before_cursor
-    CLOSE after_cursor
-
-    DEALLOCATE before_cursor
-    DEALLOCATE after_cursor
-```
-
-```sql
-CREATE TRIGGER update_speler_optimalisatie ON SPELERS FOR update
-AS
-    DECLARE @old_snr smallint
-    DECLARE @new_snr smallint
-
-    DECLARE before_cursor CURSOR FOR SELECT spelersnr FROM deleted ORDER BY spelersnr
-    OPEN before_cursor
-    IF update(spelersnr)
-    BEGIN
-        DECLARE after_cursor CURSOR FOR SELECT spelersnr FROM inserted ORDER BY spelersnr
-        OPEN after_cursor
-    END
-
-    FETCH NEXT FROM before_cursor INTO @old_snr
-    IF update(spelersnr)
-        FETCH NEXT FROM after_cursor INTO @new_snr
-    ELSE
-        SET @new_snr = @old_snr
-
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        EXEC usp_mutatie_insert @old_snr, 'U', @new_snr
-
-        FETCH NEXT FROM before_cursor INTO @old_snr
-
-        IF update(spelersnr)
-            FETCH NEXT FROM after_cursor INTO @new_snr
-        ELSE
-            SET @new_snr = @old_snr
-    END
-
-    CLOSE before_cursor
-    CLOSE after_cursor
-
-    DEALLOCATE before_cursor
-    DEALLOCATE after_cursor
-```
-
-Activatie van de trigger:
-
-```sql
-update top 1 spelers set geslacht = 'V' where geslacht = 'M'
+SELECT klasse, prijs, (
+    SELECT TOP 1 productid
+    FROM product
+    WHERE productclassid = klasse
+        AND price = prijs
+)
+FROM (
+    SELECT productclassid, min(price)
+    FROM product p
+    GROUP BY productclassid
+) as pcmin(klasse, prijs)
 ```
