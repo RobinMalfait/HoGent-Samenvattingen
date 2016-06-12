@@ -1667,7 +1667,7 @@ Een transactie wordt uitgevoerd door een gebruiker of door een programma.
 
 Het is een logische hoeveelheid van werk: volledig programma, deel van een programma, enkel opdracht. (Programma = 1 of meerdere transacties, met daartussen niet-db verwerking.
 
-#### Voorbeelden:
+### Voorbeelden:
 
 **Transactie:** updaten van het salaris van een werknemer.
 ![alt text](http://puu.sh/poRut/2310b75d44.png "Voorbeeld read/write")
