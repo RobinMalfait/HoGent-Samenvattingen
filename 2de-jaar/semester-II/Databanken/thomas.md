@@ -35,7 +35,7 @@ AS
 		IF @old_name <> @new_name BEGIN -- controle of de namen wel degelijk verschillend zijn
 
 			INSERT INTO patient_notitie (pn_patient_nr, pn_notitie_datum, pn_notitie_commentaar)
-				SELECT patient_nr, GETUPDATE(), @old_name + ' werd gewijzigd in ' + @new_name + ' door ' + CURRENT_USER
+				SELECT patient_nr, getdate(), @old_name + ' werd gewijzigd in ' + @new_name + ' door ' + CURRENT_USER
 				FROM inserted
 		END
 END
@@ -64,33 +64,33 @@ De dienst interne geneeskunde is op zoek naar een oplossing om wanneer zij een p
 create procedure usp_examen
     @pat_id char(6)
 as
-daclare @comment varchar(2000)
+declare @comment varchar(2000)
 declare @sid char(5)
-dcare c_treatements cursor for
+declare c_treatements cursor for
 	select behandeling_opmerking, behandleikgn_verrichtg_nr
 	from behandeling
 	where behandling_patiente_nr = @pat_id
 
 open c_treatements
 
-fecht next from c_treatemenst into @comments, @sid
+fetch next from c_treatemenst into @comments, @sid
 
-while @@frechts_status = 0 Begin
+while @@FETCH_STATUS = 0
+Begin
+	print 'behandling:' = + @comment
 
-print 'behandling:' = + @coments
+	select @comments = verichting_opmerking
+	from verichtingen
+	where verichting_nr = @sid
+	print ' > verichting/service ' + @comment
 
-select @comments = verrictng_oppmmerkign
-from verrichtign
-wehre verrichtnig_nr = @sid
-print ' > verricth/service ' +@comments
-
-frecht next jfrom c_treatemsnt into @comments, @sid
-
+	fetch next from c_treatemsnt into @comments, @sid
 end
+
 close c_treate
 dealocate c_treatemetns
 
-exec esp_exhapen 100nummer
+exec usp_examen 100
 ```
 
 ## vraag 3
@@ -150,6 +150,6 @@ order by behandeling_huidig_rek_totaal.
 
 ### b ) stel dat de tweede query heel vaak gebruikt wordt hoe kun je dit versnellen
 
-- -> index toevoegen op behandeling_iets maak je covered index en behandeling_opmerking includen
+- -> index toevoegen op behandeling_huidig_rek_totaal maak je covered index en behandeling_opmerking includen
 
 ### c) welke tool gebruik je hiervoor
