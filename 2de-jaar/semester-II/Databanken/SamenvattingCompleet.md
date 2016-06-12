@@ -428,15 +428,17 @@ DELETE FROM customers WHERE customerid = @custno
 **-exec *procedure* _value_**
 
 ## Functies
----
 
 1. Standaard SQL Functies
 2. Niet standaard built-in functions:
 ..* SQL Server: datediff, substring, len, round,... ( [library](http://technet.microsoft.com/en-us/library/ms174318.aspx) )
 3. User defined functies
+
 ### User defined functies
+
 Manier om naast views en CTE's SELECTS te **hergebruiken**, nu zelfs met **parameters**
 Voorbeeld:
+
 ```SQL
 CREATE FUNCTION GetAge
 (
@@ -454,7 +456,9 @@ THEN 1 ELSE 0
 END;
 END;
 ```
+
 Gebruik:
+
 ```SQL
 select lastname,firstname,birthdate,hiredate,
 dbo.GetAge(birthdate,getdate()) as leeftijd,
