@@ -1243,8 +1243,9 @@ extensies
     * Java: Hibernate
 
 ## User Defined Types
----
+
 ### UDT
+
 * ~abstract data types
 * kunnen gebruikt worden als built-in types
 * 2 soorten
@@ -1256,6 +1257,7 @@ veel verschillen tussen DMBS'en
 grote DBMS'en.
 
 ### Distinct type
+
 Is gebasseerd op een **basis type** en laat toe **onderscheid** aan te brengen tussen anders gelijke basistypes.
 
 Voorbeeld (MS-SQL Server):
@@ -1273,11 +1275,14 @@ Gebruik:
 ![alt text](http://puu.sh/pojiE/d50fbb60b1.png "Gebruik Distinct Types")
 
 ### Structured Types
+
 1. Table types
 2. Abstract data types (cf. OO)
 
 ### Table Types
+
 **MS SQL Server**
+
 ```SQL
 CREATE TYPE TotaalOrdersPerJaar AS TABLE
 (
@@ -1303,9 +1308,10 @@ TABLE
     jaar INT NOT NULL PRIMARY KEY,
     hoeveelheid INT NOT NULL
 );
-
 ```
-###### Tables Types en Variables
+
+#### Tables Types en Variables
+
 * table types worden opgeslagen in de DB
 * table variables bestaan slechts voor de duur van de batch (sequentie van statements)
 
@@ -1315,6 +1321,7 @@ Voordelen gebruik table variables:
 * table type variabelen kunnen ook als parameter doorgegeven worden aan stored procedure en functions
 
 ### Abstract Data Types
+
 * in het algemeen bevat een Abstract Data Type
     * definitie van **attributen**
     * definitie van **routines (methodes)**
@@ -1339,7 +1346,9 @@ CREATE TYPE customer_typ_demo AS OBJECT
     , cust_orders ORDER_LIST_TYP
 ) ;
 ```
+
 ### Subtypes, supertypes en methodes
+
 Via **UNDER** kunnen **subtypes/supertype** verbanden gedefinieerd worden.
 * geen multiple inheritance
 * subtype erft
@@ -1374,6 +1383,7 @@ CREATE TYPE corporate_customer_typ_demo
 ```
 
 ### Structured Types
+
 * NOT FINAL: Er kunnen nog subtypes gecreëerd worden
 * FINAL (default): Er kunnen geen subtypes gecreëerd worden
 ```SQL
@@ -1402,7 +1412,9 @@ INSERT INTO contacts VALUES (
     to_date('24 Jun 2003', 'dd Mon YYYY'));
 SELECT c.contact.get_name() FROM contacts c;
 ```
+
 ## Large Objects
+
 ---
 > Een large object is een **datatype die een grote
 hoeveelheid aan data kan vasthouden**
@@ -1442,7 +1454,7 @@ ADD foto varbinary(max);
 
 # Hoofdstuk 6: Indexen en performantie
 
-### Space Allocation Door SQL Server
+## Space Allocation Door SQL Server
 
 * SQL Server gebruikt Random Access File
 * Space allocation in *extents* en *pages*
@@ -1453,7 +1465,7 @@ ADD foto varbinary(max);
 * Nieuwe tabel of index: allocatie in mixed extent
 * Uitbreiding > 8 pages: in uniform extent
 
-### Table scan
+## Table scan
 > **Heap:** ongeordene verzameling van data-pages zonder clustered index (zie verder) (= Standaard opslag van een tabel)
 
 Toegang via Index Allocation Map (IAM)
@@ -1465,7 +1477,7 @@ Table Scan: als een query pages ophaalt --> Dit is altijd te vermijden!
 
 **--> Oplossing: Indexen**
 
-### Indexen
+## Indexen
 
 **Wat?:**
 een *geordende structuur* die op de records uit een tabel wordt gelegd en *snelle toegang biedt via boomstructuur* (B-tree)
@@ -1474,7 +1486,7 @@ een *geordende structuur* die op de records uit een tabel wordt gelegd en *snell
 
 **Waarom niet?:** Indexen nemen opslagruimte in beslag *(overhead)* en ze kunnen de performantie ook doen dalen (bv vertragen van select en updates)
 
-##### SQL Optimizer
+### SQL Optimizer
 > Is een **module in elk DBMS** die elk SQL commando dat naar de DB gestuurd wordt, analyseert en herformuleert en beslist op basis van statistische gegevens welke indexen zullen gebruikt worden.
 
 ### Clustered Index:
@@ -1582,7 +1594,7 @@ drop index student.rijksregNr_Index
 
 # Hoofdstuk 7: Transactiebeheer
 
-### Inleiding
+## Inleiding
 
 Een **DBMS** ondersteunt:
 * Transaction Support
@@ -1591,8 +1603,8 @@ Een **DBMS** ondersteunt:
 
 En is bedoeld om de DB in een **betrouwbare** en **consistente** toestande te houden bij zowel software als hardwarde failures, en bij gelijktijdig gebruik door meerdere gebruikers.
 
-### Transacties
----
+## Transacties
+
 > Een **transactie** is een actie, of opeenvolging van acties op een db die **1 logsich geheel** vormen.
 
 **Actie:** lezen of wijzigen van de inhoud van de DB.
@@ -1601,7 +1613,8 @@ Een transactie wordt uitgevoerd door een gebruiker of door een programma.
 
 Het is een logische hoeveelheid van werk: volledig programma, deel van een programma, enkel opdracht. (Programma = 1 of meerdere transacties, met daartussen niet-db verwerking.
 
-##### Voorbeelden:
+#### Voorbeelden:
+
 **Transactie:** updaten van het salaris van een werknemer.
 ![alt text](http://puu.sh/poRut/2310b75d44.png "Voorbeeld read/write")
 
@@ -1619,7 +1632,9 @@ Opeenvolging van 'high level' acties:
 Deze transactie brengt de DB van de ene consistente toestand naar de andere consistente toestand. **! Tijdens** de transactie is de DB mogelijks in een inconsistente toestand.  (bv. een aantal properties staan reeds bij newStaffNo, de andere nof bij staffNo)
 
 ### Resultaat van een Transactie
-##### Commited / Aborted
+
+#### Commited / Aborted
+
 **Commited:**  
 * de transactie kent een **succesvolle afloop**.  
 * de transactie *commits* en de DB heeft een consistente toestand bereikt.
@@ -1629,8 +1644,9 @@ Deze transactie brengt de DB van de ene consistente toestand naar de andere cons
 * de transactie is **niet succesvol**
 * de transactie *aborts* en DB moet teruggebracht worden naar de consistente toestand waarin ze zich bevond voor de transactie werd gestart --> **rollback of undo**
 * aborted transactie **kan herstart** worden: **na de rollback** kan een **restart** van de transactie gebeuren. Bij succesvolle uitvoering zal dit nu leiden tot een committed transactie.
-*
+
 ### Aanduidingen
+
 We moeten duidelijk maken aan het DMBS welke acties deel uitmaken van een transactie.
 
 Keywords:
@@ -1644,6 +1660,7 @@ Keywords:
 Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als 1 transactie.
 
 ### ACID Eigenschappen
+
 **Atomicity:**
 * de opdrahten van een transactie worden als één ondeelbaar geheel beschouwd. --> Alles of niets
 *  DBMS verantwoordelijkheid: recovery subsysteem
@@ -1667,7 +1684,7 @@ Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als
 
 ![alt text](http://puu.sh/poTCC/55ec584625.jpg "Architectuur schema")
 
-##### Transaction Subsysteem
+#### Transaction Subsysteem
 1. **Transaction manager**
     * Coördineert transacties van programma's
 2. **Scheduler**
@@ -1722,7 +1739,7 @@ een transactie **verschillende waarden uit de db leest**, terwijl een
 andere transactie bezig is sommige van **deze waarden te
 veranderen**
 
-##### Gerelateerde problemen
+#### Gerelateerde problemen
 
 * **Non-repeatable (of fuzzy) read**
 	* twee keer lezen van eenzelfde item levert twee
@@ -1784,13 +1801,13 @@ Wanneer een transactie toegang heeft tot de data kan er via een lock voor gezorg
 
 **Locking = Meest gebruikte manier** om de consistentie te garanderen
 
-##### Basisregels locking
+#### Basisregels locking
 
 * Een transactie kan een **data item lezen of schrijven** enkel en alleen als het een **lock heeft verworven** voor dat data element, en het bovendien deze lock nog niet heeft vrijgegeven.
 
 * Als een transactie een lock op een data item verwerft, dan moet het later ook **lock terug vrijgeven**
 
-##### Soorten Locks
+#### Soorten Locks
 
 * Shared lock (S-lock)
     * Transactie met shared lock op data item kan dat data item *lezen* maar niet wijzigen
@@ -1802,7 +1819,7 @@ Wanneer een transactie toegang heeft tot de data kan er via een lock voor gezorg
 **_Opmerking_:** een data item kan verwijzen naar een veld van een record, maar ook naar een tabel,
 of de volledige db - zie verder: granulariteit
 
-##### Praktisch
+#### Praktisch
 
 * De transactie die toegang wil tot een data item vraagt een lock aan op dat
 item
@@ -1828,14 +1845,14 @@ nagaan of de aangevraagde lock compatibel (zie matrix hieronder) is
 
 > Een deadlock is een ** impasse** die kan ontstaan wanneer twee of meerdere transacties elk **wachten** op het vrijgeven van locks die de andere transactie heeft
 
-##### Oplossen Deadlock
+#### Oplossen Deadlock
 
 * **Abort en restart** van 1 of meerdere transacties
 * Voorbeeld:
 
 ![alt text](http://puu.sh/pp2F3/9bba9bfce6.png "Voorbeeld Deadlock")
 
-##### Technieken om met deadlocks om te gaan:
+#### Technieken om met deadlocks om te gaan:
 
 * **Timeouts:** een transactie die een lock aanvraagt **wacht voor een bepaalde vooraf gedefinieerde tijd op die lock**, indien lock niet toegekend is tijdens dit interval:
     * Assumptie dat er een deadlock is (hoewel dit niet noodzakelijk zo is...)
@@ -1921,7 +1938,7 @@ Bepalen het gedrag van concurrent users die data lezen of schrijven.
 
     **Isolation level** = setting op de sessie-niveau of query-niveau.
 
-##### 4 Isolation Levels in SQL Server
+#### 4 Isolation Levels in SQL Server
 
 ![alt text](http://puu.sh/pp5sf/051d29f1fa.png "Isolation Levels Slide")
 
@@ -1985,7 +2002,7 @@ een productie-systeem updates in andere
 transacties laten wachten bij READ
 COMMITTED en hoger
 
-##### Voorbeeld xTreme: oplossing m.b.v transacties
+#### Voorbeeld xTreme: oplossing m.b.v transacties
 
 ```SQL
     alter procedure vb @productclassname nvarchar(50)
@@ -2204,7 +2221,7 @@ geschreven
 3. **Commit** van de transactie: schrijf een transaction commit log record naar disk
 4. **Abort** van de transactie: gebruik **before images voor undo**
 
-###### **Voorbeeld**
+#### **Voorbeeld**
 
 ![alt text](http://puu.sh/ppioj/b2ccf0f897.png "Voorbeeld Recovery Technieken")
 
@@ -2220,7 +2237,7 @@ geschreven
 
 # Hoofdstuk 8: Datawarehousing & Business Intelligence
 
-### Inleiding
+## Inleiding
 
 Data warehousing zit in de lift
 * Groeiende nood aan flexibele business
@@ -2233,14 +2250,14 @@ complexer
     * geavanceerde analyses
 * Traditionele DBMS bieden allemaal DWH faciliteiten aan
 
-### Data Warehouse
+## Data Warehouse
 
 > Een **data warehouse** is een geïntegreerde, subject georiënteerde,
 tijd variante en niet vluchtige verzameling van data ter
 ondersteuning van beslissingen die genomen moeten worden op
 management niveau
 
-### Eigenschappen:
+## Eigenschappen:
 
 **Geïntegreerd**
 * Data is afkomstig uit verschillende bronnen (data uit verschillende bronnen is dikwijls inconsistent, in het DW is alles consistent geïntegreerd).
@@ -2263,7 +2280,7 @@ bijgewerkt met data uit operationele systemen
 **Geaggregeerde data**
 * Afkomstig van bijv. GROUP BY
 
-### Doelstellingen DWH
+## Doelstellingen DWH
 
 * Rapportering
 * Analyse van events in verleden of heden
@@ -2273,7 +2290,7 @@ bijgewerkt met data uit operationele systemen
 (empowerment)
 * Data mining
 
-### Voordelen
+## Voordelen
 
 **Hoge Return on Investment (ROI)**: het opzetten van een Datawarehouse is een zware investering maar levert een hoge ROI na een relatief korte periode.
 
@@ -2281,9 +2298,9 @@ bijgewerkt met data uit operationele systemen
 
 **Verhoogde productiviteit:** de beleidsmaker krijgt één grote consisente view op de onderneming doordat het DW data uit verschillende bronnen integreert tot een consistent geheel, dat subject georiënteerd is en waar historiek zit ingebakken. Ze kunnen ook meer substantiële, nauwkeurigere en consistentere analyses maken (via tools kan de data automatisch tot bruikbare informatie omgevorm worden).
 
-### Vergelijk On-Line Transaction Processing en DW
+## Vergelijk On-Line Transaction Processing en DW
 
-#### aka OLTP en OLAP (On-Line Analytical Processing)
+### aka OLTP en OLAP (On-Line Analytical Processing)
 
 | Eigenschap | OLTP | DW |
 | --- |--- | --- |
@@ -2458,7 +2475,9 @@ aangeboden worden aan andere gebruikers
 	* Als er iets fout gaat in een ander systeem
 	* ETL stoppen of laten doorlopen?
         * Onvolledig DWH versus performantie killer
+
 ### DWH Technologieën
+
 * Microsoft:
 	* Microsoft reporting server
 	* DTS (Data Transformation Services)
@@ -2474,8 +2493,8 @@ aangeboden worden aan andere gebruikers
 * Cliqview rapportering
 
 ## Ontwerp
----
-##### Thanks Sofie
+
+### Thanks Sofie
 
 Er zijn 2 ontwikkel methodologieën
 * **Inmon**:
@@ -2488,6 +2507,7 @@ Er zijn 2 ontwikkel methodologieën
     * Gebruik van sterschema en varianten
 
 ### Kimball's Business Dimensional Lifecycle
+
 **Focus** op het voldoen aan de informatiebehoeften van de organisatie via het bouwen van enkele, geïntegreerde, makkelijk bruikbare en selle informatie structuur. Deze structuur wordt op een incrementele, iteratieve manier gebouwd.
 
 **Doel**: opleveren van een volledige oplossing waarbij
@@ -2505,11 +2525,13 @@ zijn inbegrepen.
 * business intelligence applications
 
 ### Dimensionality modelling
+
 > **Dimensionality modeling** is een techniek om een logisch ontwerp te maken.
 
 Men streeft er naar om de data te presenteren in een standaard, intuïtieve vorm, die toegankelijk is met een hoge performantie.
 
 #### Dreamhome DWH: voorbeeld
+
 Management wil analyse van verkoop van huizen
 
 **Voorbeeld queries**
@@ -2523,6 +2545,7 @@ Management wil analyse van verkoop van huizen
 ![alt text](http://puu.sh/ppz4F/a1cba72b39.PNG "Voorbeeld Dimensionaal model")
 
 #### Sterschema
+
 > Een **ster schema** is een dimensioneel model die een feitentabel heeft, die omgeven is door gedenormaliseerde dimensietabellen.
 
 ![alt text](http://puu.sh/ppz5x/94409d7e78.PNG "Voorbeeld sterschema")
@@ -2538,7 +2561,8 @@ Elke PK van een dimension table komt overeen met een deel van de PK van de fact 
 * ze zorgen voor onafhankelijkheid van data tussen OLTP en DWH
 
 
-##### Feitentabel
+#### Feitentabel
+
 bevat data over feiten
 bv. feitelijke data over de verkoop van een eigendom.  
 Feiten worden gegenereerd oor gebeurtenissen die zich hebben voorgedaan. Ze zullen hoogstwaarschijnlijk nooit veranderen, ongeacht de manier waarop men ze analyseert.
@@ -2552,7 +2576,8 @@ Meestal zijn feiten additief, ze worden zelden maar voor 1 record geraadpleegd
 ![alt text](http://puu.sh/ppz5T/d49dacfa72.PNG "Voorbeeld feitentabel")
 
 
-##### Dimensietabellen
+#### Dimensietabellen
+
 bevat de referentie-informatie; beschrijvende, op tekst gebaseerde, informatie  
 bv. het eigendom, de koper, de verkoper, ...
 * attributen worden gebruikt als constraints bij DWH queries  
@@ -2566,6 +2591,7 @@ zie bv. city, region, country
 ![alt text](http://puu.sh/ppz69/ced07c54bc.PNG "Voorbeeld dimensietabellen")
 
 #### Sneeuwvlok schema
+
 > Een  **sneeuwvlokschema** is een variant op het sterschema waarbij dimensies worden bijgehouden in genormaliseerde dimensietabellen
 
 ![alt text](http://puu.sh/ppz58/b6605c5742.PNG "Voorbeeld sneuuwvlokschema")
@@ -2576,6 +2602,7 @@ ook andere dimensietabellen zullen nu refereren naar City en Region tabellen
 Indien een combinatie van genormaliseerde en niet genormaliseerde dimensietabellen wordt gebruikt spreekt men van een **ster-vlok schema**
 
 ### Voordelen
+
 de voorspelbare en standaardvormvan het dimensioneelmodel levert enkele voordelen op:
 * efficiëntie
     * de consistenteDB-structuur laat toe dat tools op efficiëntere maniertoegang tot de data kunnen krijgen
@@ -2592,6 +2619,7 @@ de voorspelbare en standaardvormvan het dimensioneelmodel levert enkele voordele
     * de manier waarop de tabellen gebruikt worden in queries is voorspelbaar(de queries niet!)
 
 ### DM en ER modellen
+
 * Entity Relationship Diagrammen
     * gebruikt om de DB voor OLTLP systemen te ontwerpen
     *  basis: de relaties tussen entiteiten modelleren, met als doel redundantie weg te werken
@@ -2606,6 +2634,7 @@ de voorspelbare en standaardvormvan het dimensioneelmodel levert enkele voordele
 Eén ERD wordt uitgesplitst over meerdere DM-en, deze DM-en hangen samen via gedeelde dimensies
 
 ### Dimensional Modeling Stage
+
 **DOEL**  
 * creatie van een DM voor een data mart
 * dimensionaliseren van het relationeel model van een bestaande OLTP DB
@@ -2615,16 +2644,19 @@ Dit gebeurt in 2 fasen:
 2. toevoegen van detail aan het model via identificatie van attributen voor de dimensies
 
 ### FASE 1: creatie van een high-level DM
+
 ![alt text](http://puu.sh/ppAzL/798001cdc4.PNG)
 
-##### STAP 1: selecteer een business process
+#### STAP 1: selecteer een business process
 Het business process refereert naar het thema voor een welbepaalde datamart  
 Voor de erste datamart kiezen we liefst één die
 * hoogstwaarschijnlijk op tijd zal kunnen opgeleverd worden,
 * binnen het budget valt,
 * een antwoord geeft op commercieel belangrijke business vragen  
 Dikwijls is deze gerelateerd aan verkoop financiën.
-##### STAP 2: bepaal de granulariteit
+
+#### STAP 2: bepaal de granulariteit
+
 Dit bepaalt wat een feit in de feitentabel exact gaat voorstellen:
 * elk individueel record overnemen uit operationele gegevens of
 * groeperen
@@ -2634,12 +2666,15 @@ Leidraad:
 * wat is mogelijk met de beschikbare data source?
 
 Granulariteit bepaalt de dimensies (volgende stap) en de granulariteit van de dimensies.
-##### STAP 3: kies de dimensies
+
+#### STAP 3: kies de dimensies
+
 Dit bepaalt de context binnen dewelke we de feiten in de feitentabel zullen kunnen bevragen.  
 Elke dimensie die meer dan 1 DM, dus meer dan 1 datamart, voorkomt, noemen we een **conformed dimension**.  
 Conformed dimensions zijn exact gelijk aan elkaar of de een is een subset van de andere.
 
-##### STAP 4: identificeer feiten
+#### STAP 4: identificeer feiten
+
 De granulariteit van de feitentabel bepaalt welke feiten er in de datamart kunnen gebruikt worden.  
 Feiten zijn nummeriek en additief.  
 Onbruikbare feiten zijn:
@@ -2648,11 +2683,13 @@ Onbruikbare feiten zijn:
 * feiten met een granulariteit die verschilt van de granulariteit van de andere feiten in de feitentabel
 
 ### FASE 2: identificieer alle attributen voor de gekozen dimensies
+
 Tekstuele omschrijving: intuïtief, zelfverklarend
 
 Bruikbaarheid van de datamart hangt grotendeels af van de scope en aard van de attributen die in de dimensietabellen zitten.
 
 ### Aandachtspunten
+
 * de duur van de DB bepaalt hoe ver terug in de tijd de fettentabel gaat
 * langzaam veranderende dimensies  
   wanneer een dimensie verandert moet je er mogelijks voor zorgen dat je de nieuwe waarden niet gebruikt bij analyses an oudere transacties.
@@ -2668,7 +2705,7 @@ Een DM waarbij meer dan 1 feitentabel 1 of meer dimensies deelt noemen we een **
 
 **DreamHome**
 
-##### STAP 1: selecteer een business process
+#### STAP 1: selecteer een business process
 
 Wat zijn de business processen?
 * verkoop van eigendommen
@@ -2685,14 +2722,14 @@ We kiezen een business process:
 
 ![alt text](http://puu.sh/ppYiF/031bea87e3.PNG "business processen")
 
-##### STAP 2: bepaal de granulariteit
+#### STAP 2: bepaal de granulariteit
 
 keuze: PropertySale - verkoop van elke eigendom  
 Nu kunnen we dimensies kiezen:
 * Branch, Staff, ClientBuyer, PropertyForSale, Promotion
 * extra kern dimensie steeds aanwezig in een DM is tijd
 
-##### STAP 3: kies de dimensies
+#### STAP 3: kies de dimensies
 
 ![alt text](http://puu.sh/ppYoJ/57b1466499.PNG)
 
