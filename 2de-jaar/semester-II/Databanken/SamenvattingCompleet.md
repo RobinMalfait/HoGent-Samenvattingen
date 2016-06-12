@@ -1,4 +1,6 @@
-# Samenvatting Databanken
+---
+title: Samenvatting Databanken
+---
 
 # Hoofdstuk 3: OUTER JOIN, subqueries, EXISTS
 
@@ -400,8 +402,6 @@ select * from bazen
 # Hoofdstuk 5
 
 ## Stored Procedures
----
-
 
 ```SQL
 CREATE procedure usp_Customers_Delete
@@ -515,7 +515,7 @@ from minimum(0);
 3. Maak keuze portabiliteit / Vendor Lock-in in overleg met business en corporate IT policies
 
 ## Stored Procedure
----
+
 > **Een stored procedure** is een benoemde verzameling SQL en control-of-flow opdrachten (programma) die opgeslagen wordt als een database object.
 
 Analoog aan procedures uit andere talen:
@@ -526,7 +526,6 @@ Analoog aan procedures uit andere talen:
 * Bevat taken die vaak worden uitgevoerd.
 
 ## Variabelen
----
 
 ### Lokale variabelen
 **Declareren:**
@@ -565,10 +564,10 @@ str(@rijtelling)
 ```
 
 ## Transact SQL
----
+
 ### Operatoren in Transact SQL
 * Rekenkundige operatoren
-    * -- , +, *, /, % (Modulo)
+    * -- , +, \*, /, % (Modulo)
 * Vergelijkings operatoren
     * --, <, >, =, ..., IS NULL, LIKE, BETWEEN, IN
 * Alfanumerieke operatoren
@@ -595,7 +594,9 @@ Programma verloop kan je bepalen via:
 ```SQL
     CASE ... END
 ```
+
 ### Commentaar
+
 **Inline commentaar:**
 
         -- commentaar
@@ -614,7 +615,7 @@ Programma verloop kan je bepalen via:
 * **RAISERROR** : Retourneren van een user defined fout of systeemfout
 
 ## CURSORS
----
+
 > SQL statements werken standaard met een complete resultaatset en niet
 met individuele rijen. Cursors laten toe om met individuele rijen te werken.
 
@@ -818,7 +819,7 @@ Aanroepen van de SP:
 ```
 
 ## Error Handling
----
+
 **@@error** is en systeemfunctie die het foutnummer bevat van de laatst uitgevoerde opdracht. De waarde 0 wijst op succesvolle uitvoering.
 ```SQL
 CREATE PROCEDURE usp_ProductsInsert
@@ -885,7 +886,7 @@ PRINT N'Error code = ' + CAST(@e AS nvarchar(10));
 | ERROR_SEVERITY() | Severity level v/d fout |
 
 ## Triggers
----
+
 > **Een trigger**: een hoeveelheid code, bestaande uit
 procedurele en declaratieve instructies, die opgeslagen
 is in de catalogus en die geactiveerd wordt door het
@@ -903,7 +904,7 @@ trigger aan is gekoppeld (wij beperken ons verder in deze cursus tot dit soort t
 trigger aan gekoppeld is
 
 ## Procedurele database objecten:
----
+
 ### Procedurele programma's
 | soort |  opgeslaan als | uitvoering | ondersteunt parameters |
 | --- | --- | --- | --- |
@@ -982,7 +983,7 @@ Wordt uitgevoerd na:
 ```
 
 ## Voorbeelden Triggers
----
+
 ### Insert after-trigger
 Triggering instructie is een **insert** instructie
 * **Inserted:**  logische tabel waarvan kolomnamen gelijk zijn an die van triggering tabel en die een copy bevat van de rij(en) die werden toegevoegd.
@@ -1157,7 +1158,7 @@ leiden tot het activeren van een andere trigger?
     * **je kan geen trigger instellen op een catalogustabel**  
 
 ## OOBDMS en ORDBMS
----
+
 ### Inleiding tot ORDBMS
 
 * relationele DBMS is dominant
@@ -1415,7 +1416,6 @@ SELECT c.contact.get_name() FROM contacts c;
 
 ## Large Objects
 
----
 > Een large object is een **datatype die een grote
 hoeveelheid aan data kan vasthouden**
 – tekstbestand, afbeelding, muziek, video, web-pagina
@@ -1623,7 +1623,6 @@ Opeenvolging van 'high level' acties:
     * read: lees een data item uit de DB in een lokale variabele
     * write: schrijf de waarde van een lokale variabele weg naar de DB.
 * Er zijn 2 DB operaties en niet 1.
----
 
 **Transactie:** verwijderen van een werknemer en zijn properties aan een andere werknemer toekennen.
 
@@ -2225,8 +2224,7 @@ geschreven
 
 ![alt text](http://puu.sh/ppioj/b2ccf0f897.png "Voorbeeld Recovery Technieken")
 
-
-|| Deferred | Immediate |
+| &nbsp; | Deferred | Immediate |
 | :---: | :---: | :---: |
 | T1 | niets | UNDO via Before-Images |
 | T2 | niets | niets |
