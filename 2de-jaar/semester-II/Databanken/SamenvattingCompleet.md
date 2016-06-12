@@ -530,11 +530,13 @@ Analoog aan procedures uit andere talen:
 ### Lokale variabelen
 **Declareren:**
 de naam wordt steeds voorafgegaan door **@**
+
 ```SQL
 DECLARE @variable_name1 data_type [, @variable_name2data_type ...]
 ```
 
 **Toekennen van waarde aan variabele:**
+
 ```SQL
 SET @variable_name = expression
 SELECT @variable_name = column_specification
@@ -542,6 +544,7 @@ SELECT @variable_name = column_specification
 Set en select zijn gelijkaardig, maar **SET** is **ANSI** standaard.
 
 Met **SELECT** kan je wel **meerdere variabelen in 1 keer** een waarde geven. (2e SELECT hieronder)
+
 ```SQL
 SET @max = (select max(invoiceTotal) from invoices)
 SELECT @max = max(invoiceTotal) from invoices
@@ -567,9 +570,9 @@ str(@rijtelling)
 
 ### Operatoren in Transact SQL
 * Rekenkundige operatoren
-    * -- , +, \*, /, % (Modulo)
+    * \- , +, \*, /, % (Modulo)
 * Vergelijkings operatoren
-    * --, <, >, =, ..., IS NULL, LIKE, BETWEEN, IN
+    * \-, <, >, =, ..., IS NULL, LIKE, BETWEEN, IN
 * Alfanumerieke operatoren
     * +(String Concatenatie)    
 * Logische operatoren
@@ -584,13 +587,16 @@ str(@rijtelling)
 Programma verloop kan je bepalen via:
 
 **Instructie niveau:**
+
 ```SQL
     BEGIN ... END
     IF ... ELSE
     WHILE... (BREAK / CONTINUE)
     RETURN
 ```
+
 **Rij-niveau:**
+
 ```SQL
     CASE ... END
 ```
@@ -647,6 +653,7 @@ cursor geef je aan met welke rij uit de resultaatset je wenst te werken
 ```
 
 ### Overzicht voorbeeld CURSORS:
+
 ```SQL
     DECLARE @au_lname varchar(40), @au_fname varchar(20)
     DECLARE authors_cursor CURSOR FOR
@@ -668,6 +675,7 @@ cursor geef je aan met welke rij uit de resultaatset je wenst te werken
     DEALLOCATE authors_cursor
 ```
 ### Geavanceerd voorbeeld CURSORS:
+
 ```SQL
     DECLARE @au_lname varchar(40)
     DECLARE @au_fname varchar(20), @au_id id
@@ -745,6 +753,7 @@ CLOSE authors_cursor
 DEALLOCATE authors_cursor
 ```
 ### Update en delete via CURSORS
+
 ```SQL
 DELETE FROM <table name>
 WHERE CURRENT OF <cursor name>
@@ -753,7 +762,9 @@ UPDATE <table name>
 SET ...
 WHERE CURRENT OF <cursor name>
 ```
+
 ### Creatie van SP (Stored Procedure)
+
 ```SQL
 CREATE PROCEDURE <proc_name> [parameter declaratie]
 AS
@@ -761,6 +772,7 @@ AS
 ```
 
 ### Wijzigen, verwijderen en uitvoeren van SP
+
 ```SQL
 -- WIJZIGEN
 ALTER PROCEDURE <proc_name> [parameter declaratie]
@@ -787,6 +799,7 @@ Bij uitvoering keer een SP een **return waarde** terug, deze waarde is een int m
 **Return Statement:** uitvoering van SP wordt gestopt, laat toe om de return waarde te bepalen.
 
 ### Voorbeeld gebruik van return waarde:
+
 ```SQL
 CREATE PROCEDURE usp_OrdersSelectAll AS
 select * from orders
@@ -821,6 +834,7 @@ Aanroepen van de SP:
 ## Error Handling
 
 **@@error** is en systeemfunctie die het foutnummer bevat van de laatst uitgevoerde opdracht. De waarde 0 wijst op succesvolle uitvoering.
+
 ```SQL
 CREATE PROCEDURE usp_ProductsInsert
     @productName nvarchar(40),
@@ -839,11 +853,13 @@ RETURN @@error
 ```
 
 Alle foutboodschappen zitten in de systeemtabel **sysmessages**:
+
 ```SQL
     SELECT * FROM master.dbo.sysmessages
     WHERE error = @@ERROR
 ```
 Eigen foutboodschappen genereren kan via **raiserror**.
+
 ```SQL
     raiserror(msg, severity, state)
     -- Message = Foutboodschap
@@ -855,6 +871,7 @@ Voorbeeld andere systeemfunctie **@@rowcount**
 *   Aantal aangepaste/geselecteerde rijen door de laatst uitgevoerde instructie.
 
 ### Exception handling:
+
 ```SQL
 CREATE PROCEDURE dbo.TestError3 (@e int OUTPUT)
 AS
@@ -985,9 +1002,11 @@ Wordt uitgevoerd na:
 ## Voorbeelden Triggers
 
 ### Insert after-trigger
+
 Triggering instructie is een **insert** instructie
 * **Inserted:**  logische tabel waarvan kolomnamen gelijk zijn an die van triggering tabel en die een copy bevat van de rij(en) die werden toegevoegd.
 * **Merk op:** bij triggering door een INSERT-SELECT statement kunnen bij één INSERT meerdere records toegevoegd worden. De trigger zal dan slechts 1x uitgevoerd worden, maar voor elke record een mutatie record aanmaken.
+
 ```SQL
     CREATE TRIGGER insert_speler ON SPELERS FOR insert
     AS
@@ -995,10 +1014,13 @@ Triggering instructie is een **insert** instructie
         SELECT user, getdate(), nul, 'i', spelersnr FROM inserted
     -- Automatisch bijwerken van de mutatie tabel bij toevoegen van speler
 ```
+
 ### Delete after-trigger
+
 Triggering instructie is een **delete** instructie:
 * **Deleted** : logische tabel waarvan kolomnamen gelijk zijn aan die van de triggering tabel en die een copy bevat van de rij(en) die werden verwijderd.
 * We maken gebruik van onderstaande stored procedure, die we zullen hergebruiken bij de update-trigger.
+
 ```SQL
     CREATE PROCEDURE usp_mutatie_insert
         (@MSNR SMALLINT,
@@ -1026,8 +1048,11 @@ Triggering instructie is een **delete** instructie:
     -- Activatie van de trigger:
         delete from spelers where spelersnr > 115;
 ```
+
 ### Update after-trigger
+
 Triggering instructie is een **update** instructie
+
 ```SQL
 CREATE TRIGGER update_speler ON spelers FOR update
 AS
@@ -1060,8 +1085,11 @@ update spelers set jaartoe=jaartoe + 20;
 -- OF:
 update spelers set spelersnr = spelersnr + 100;
 ```
+
 ### De IF UPDATE clausule
+
 Voorwaardelijke uitvoering van triggers: uitvoering enkel als een specifieke kolom vernoemd wordt in een update of insert
+
 ```SQL
 CREATE TRIGGER update_speler ON spelers FOR update
 AS
@@ -1097,7 +1125,9 @@ DEALLOCATE after_cursor
 ```
 
 ### Andere trigger condities
+
 Ook normale condities kunnen in triggers
+
 ```SQL
 IF datepart(hour, getdate()) >= 9
 AND datepart(hour, getdate()) < 19
@@ -1110,8 +1140,10 @@ IF USER IN ('JAN', 'PETER', 'MARK')
 ```
 
 ### Voorbeeld: gecontroleerd bijhouden van redundante data
+
 * Veronderstel dat de SPELERS-tabel een kolom SOM_BOETES bevat **(redundantie)**. Deze kolom bevat voor elke speler de som van zijn of haar boetes. Nu willen we triggers creëren die automatisch de waarden in deze kolom bijhouden **(integriteit)** . Hiervoor moeten we volgende triggers creëren
 * Creëer zelf de update en delete triggers
+
 ```SQL
 CREATE TRIGGER boete_insert ON boetes
 FOR INSERT
@@ -1121,13 +1153,16 @@ AS
     update speler set som_boetes = som_boetes + @boete
     WHERE spelersnr = @snr
 ```
+
 Opmerking: deze trigger werkt enkel indien de inserts gegarandeerd één per
 één gebeuren  wegens:
+
 ```SQL
     SELECT @boete = bedrag, @snr = spelersnr FROM inserted)
 ```
 
 Mogelijke aanpak voor de update en delete triggers:
+
 ```SQL
 CREATE TRIGGER boete_del_upd ON boetes
 FOR UPDATE, DELETE
@@ -1138,13 +1173,17 @@ AS
     UPDATE spelers SET som_boetes = @boete
     WHERE spelersnr = @snr
 ```
+
 **Opmerking:** deze trigger werkt enkel indien de update of deletes gegarandeerd één per één gebeuren wegens:
+
 ```SQL
 SELECT @snr = spelersnr from deleted
 ```
+
 Kan deze trigger ook gebruikt worden voor insert?
 
 ### Opmerkingen
+
 Naast verschillen in syntax; verschillen de SQL-producten tevens voor wat de **functionaliteit van triggers.** Enkele interessante vragen hierbij:
 * Mogen voor één tabel en een bepaalde mutatie meerdere triggers
 gedefinieerd worden?
@@ -1178,7 +1217,7 @@ leiden tot het activeren van een andere trigger?
  **Enkele OO uitbreidingen**
 
 1. gebruiker gedefinieerde types    
-2.  encapsulatie
+2. encapsulatie
 3. overerving
 4. polymorfisme
 5. dynamische method binding
@@ -1186,6 +1225,7 @@ leiden tot het activeren van een andere trigger?
 7. object identiteit
 
 ### Realiteit
+
 * er is geen standaard 'extended' relationeel model
 * alle modellen
     * hebben als basis relationele tabellen en query language
@@ -1197,7 +1237,9 @@ leiden tot het activeren van een andere trigger?
 groter zal zijn dan die van RDBMS
 
 ### Stonebraker's View
+
 ![alt text](http://puu.sh/poi0k/a7890f8b7b.jpg "Stonebrakers View")
+
 ### Voordelen van ORDBMS
 * Oplossing voor de **grote zwaktes van het relationele model**
     * zwakke representatie van 'real-world' entiteiten
@@ -1224,6 +1266,7 @@ ORDBMS
 	    * bij OODBMS is deze geleidelijke overschakeling onmogelijk
 
 ### Nadelen van ORDBMS
+
 * **complexiteit** van het OR model
 	* **eenvoud en puurheid** van het relationeel model gaat verloren
 * verhoogde **kosten**
@@ -1235,6 +1278,7 @@ extensies
 * **SQL is te complex** geworden
 
 ### Impedance mismatch
+
 ![alt text](http://puu.sh/poiC8/d53aca713e.jpg "Impendance mismatch")
 
 **Alternatief voor OO BDMS of OR DBMS:**
@@ -1262,6 +1306,7 @@ grote DBMS'en.
 Is gebasseerd op een **basis type** en laat toe **onderscheid** aan te brengen tussen anders gelijke basistypes.
 
 Voorbeeld (MS-SQL Server):
+
 ```SQL
 CREATE TYPE IDType FROM INT NOT NULL;
 CREATE TYPE NameType FROM NVARCHAR(50) NOT NULL;
@@ -1333,6 +1378,7 @@ Voordelen gebruik table variables:
 * = object-relationele aspecten
 
 Voorbeeld: (Oracle, niet beschikbaar in MS SQL Server)
+
 ```SQL
 CREATE TYPE customer_typ_demo AS OBJECT
     ( customer_id NUMBER(6)
@@ -1361,6 +1407,7 @@ Via **UNDER** kunnen **subtypes/supertype** verbanden gedefinieerd worden.
 * een supertype kan altijd door zijn subtype
 gesubstitueerd worden
 * Men kan aan een ADT methodes toevoegen en deze implementeren in het CREATE TYPE BODY statement
+
 ```SQL
 CREATE TYPE data_typ1 AS OBJECT
 (
@@ -1378,6 +1425,7 @@ CREATE TYPE BODY data_typ1 IS
 * Subtypes (cf. inheritance): onderstaand voorbeeld creëert het sybtype
 corporate_customer_typ, afgeleid van het supertype customer_typ (zie vorige
 slide) en voegt het account_mgr_id attribuut toe:
+
 ```SQL
 CREATE TYPE corporate_customer_typ_demo
     UNDER customer_typ ( account_mgr_id NUMBER(6) );
@@ -1387,6 +1435,7 @@ CREATE TYPE corporate_customer_typ_demo
 
 * NOT FINAL: Er kunnen nog subtypes gecreëerd worden
 * FINAL (default): Er kunnen geen subtypes gecreëerd worden
+
 ```SQL
 CREATE TYPE person_t AS OBJECT (name VARCHAR2(100), ssn NUMBER,
 MEMBER FUNCTION get_name RETURN VARCHAR2(100)) NOT FINAL;
@@ -1404,6 +1453,7 @@ FINAL;
 ```
 
 Gebruik:
+
 ```SQL
 CREATE TABLE contacts (
     contact person_t,
@@ -1445,6 +1495,7 @@ Voorbeeld (MS SQL Server)
     * varchar(max)
 * NCLOB data types (unicode data):
     * nvarchar(max)
+
 ```SQL
 ALTER TABLE Employees
 ADD cv varchar(max);
@@ -1514,6 +1565,7 @@ Als een non-clustered idnex een query niet volledig afdekt/covert dan moet SQL S
 Met SQL Server kan je extra komommen laten opnemen in de index (waarop niet geïndexeerd wordt)
 
 **Covering index via include:** 
+
 ```SQL
 CREATE NONCLUSTERED INDEX
 [IX_Covering_Person_LastName_FirstName_MiddleName]
@@ -1525,13 +1577,14 @@ ON [Person].[Person]
 ) INCLUDE (Title);
 ```
 
- ### 1 index met meerdere kolommen vs. meerdere indexen met 1 kolom?
+### 1 index met meerdere kolommen vs. meerdere indexen met 1 kolom?
 
 ```SQL
 CREATE NONCLUSTERED INDEX IX_Person_LastName_FirstName ON
 Person.Person (LastName, FirstName)
 ```
 **Versus**
+
 ```SQL
 CREATE NONCLUSTERED INDEX IX_Person_LastName ON
 Person.Person (LastName)
@@ -1544,6 +1597,7 @@ Bij query (bijv. where-clause) op enkel 2de en/of 3de
 ,
 …veld van de index, wordt de index niet gebruikt.
 Dus bij:
+
 ```SQL
 SELECT LASTNAME,FIRSTNAME
 FROM PERSON.PERSON
@@ -1649,6 +1703,7 @@ Deze transactie brengt de DB van de ene consistente toestand naar de andere cons
 We moeten duidelijk maken aan het DMBS welke acties deel uitmaken van een transactie.
 
 Keywords:
+
 ```SQL
 - BEGIN TRANSACTION
 -- soms impliciet de eerste DB actie
@@ -1656,6 +1711,7 @@ Keywords:
 – COMMIT
 – ROLLBACK
 ```
+
 Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als 1 transactie.
 
 ### ACID Eigenschappen
@@ -1893,6 +1949,7 @@ nagaan of de aangevraagde lock compatibel (zie matrix hieronder) is
 * **Impliciete** transacties: INSERT, UPDATE, DELETE en elke transact SQL-opdracht
 * **Expliciete** transacties: zelf aangeven waar transactie begint, wanneer de transactie kan
 afgesloten worden, of hoe je op je stappen terugkeert om fouten op te vangen
+
     ```SQL    
         BEGIN TRANSACTION
         COMMIT TRANSACTION
@@ -1991,11 +2048,13 @@ WHERE-clause, ook toekomstige
 ### Isolation levels: Query Niveau
 
 * override isolation level met "table hint":
+
     ```SQL
     SELECT * FROM ORDERS WITH (READUNCOMMITTED);
     -- of
     SELECT * FROM ORDERS WITH (NOLOCK);
     ```
+
 *  dit vermijdt dat langlopende ad-hoc query's op
 een productie-systeem updates in andere
 transacties laten wachten bij READ
