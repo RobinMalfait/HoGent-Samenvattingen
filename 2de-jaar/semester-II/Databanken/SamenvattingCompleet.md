@@ -1894,7 +1894,7 @@ nagaan of de aangevraagde lock compatibel (zie matrix hieronder) is
 |  | Aangevraagde S-Lock | Aangevraagde X-Lock |
 | :---: | :---: | :---: |
 | **Bestaande S-Lock** | Grant | Wait |
-| **Bestaande X-Lock** | Wait | Grant |
+| **Bestaande X-Lock** | Wait | Wait |
 
 ### Deadlock
 
