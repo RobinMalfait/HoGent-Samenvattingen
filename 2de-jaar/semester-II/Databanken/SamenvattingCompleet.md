@@ -425,14 +425,14 @@ DELETE FROM customers WHERE customerid = @custno
 
 ### Gebruik in MS SQL Server
 
-**-exec *procedure* _value_** 
+**-exec *procedure* _value_**
 
 ## Functies
 ---
 
 1. Standaard SQL Functies
-2. Niet standaard built-in functions: 
-..* SQL Server: datediff, substring, len, round,... ( [library](http://technet.microsoft.com/en-us/library/ms174318.aspx) ) 
+2. Niet standaard built-in functions:
+..* SQL Server: datediff, substring, len, round,... ( [library](http://technet.microsoft.com/en-us/library/ms174318.aspx) )
 3. User defined functies
 ### User defined functies
 Manier om naast views en CTE's SELECTS te **hergebruiken**, nu zelfs met **parameters**
@@ -454,7 +454,7 @@ THEN 1 ELSE 0
 END;
 END;
 ```
-Gebruik: 
+Gebruik:
 ```SQL
 select lastname,firstname,birthdate,hiredate,
 dbo.GetAge(birthdate,getdate()) as leeftijd,
@@ -464,7 +464,7 @@ LeeftijdIndienttreding
 from Employees
 ```
 
-### Inline Table Valued Function 
+### Inline Table Valued Function
 Geef per product klasse het goedkoopste product dat meer kost dan X€ en een product die die prijs heeft.
 
 ```SQL
@@ -482,13 +482,13 @@ from minimum(0);
 ```
 
 ### Voordelen PSM
-1. Code modularisatie. 
+1. Code modularisatie.
     * Reduceren redundante code
     * Minder onderhoud bij schema wijzigingen
     * Vaak voor CRUD operaties
 2. Customisatie van "gesloten" systemen zoals ERP: via stored procedures en triggers kan men "ingrijpen".
-3. Security: 
-    * rechtstreekse query's op tabellen uitsluiten 
+3. Security:
+    * rechtstreekse query's op tabellen uitsluiten
     * via SP's vastleggen wat kan en wat niet
     * vermijd SQL-injection door gebruik input-parameters.
 4. Centrale administratie van (delen van) DB-code.
@@ -504,7 +504,7 @@ from minimum(0);
 4. Twee Debuggingomgevingen
 5. SD/UDF: Beperkte OO-ondersteuning.
 
-### Vuistregels: 
+### Vuistregels:
 1. Vermijd PSM voor grotere business logica
 2. Gebruik PSM vooral voor technische zaken:
     * Validatie / Logging / Auditing
@@ -514,7 +514,7 @@ from minimum(0);
 ---
 > **Een stored procedure** is een benoemde verzameling SQL en control-of-flow opdrachten (programma) die opgeslagen wordt als een database object.
 
-Analoog aan procedures uit andere talen: 
+Analoog aan procedures uit andere talen:
 * Kan worden aangeroepen vanuit: programme, trigger of stored procedure
 * Wordt opgeslagen in de catalagus.
 * Accepteer in- en uitvoer parameters
@@ -529,7 +529,7 @@ Analoog aan procedures uit andere talen:
 de naam wordt steeds voorafgegaan door **@**
 ```SQL
 DECLARE @variable_name1 data_type [, @variable_name2data_type ...]
-``` 
+```
 
 **Toekennen van waarde aan variabele:**
 ```SQL
@@ -547,7 +547,7 @@ SELECT @max = max(invoiceTotal), @nrOfInvoices = count(*) from invoices
 
 PRINT string_expression
 ```
-Als alternatief voor print kan je ook **select** gebruiken: 
+Als alternatief voor print kan je ook **select** gebruiken:
 *SELECT string + variabele*
 
 ```SQL
@@ -578,7 +578,7 @@ str(@rijtelling)
     *  Systeemfuncties: CAST, CONVERT, ISNUMERIC, ISDATE, PRINT, ...
 
 ## Control flow in Transact SQL
-Programma verloop kan je bepalen via: 
+Programma verloop kan je bepalen via:
 
 **Instructie niveau:**
 ```SQL
@@ -587,7 +587,7 @@ Programma verloop kan je bepalen via:
     WHILE... (BREAK / CONTINUE)
     RETURN
 ```
-**Rij-niveau:** 
+**Rij-niveau:**
 ```SQL
     CASE ... END
 ```
@@ -595,15 +595,15 @@ Programma verloop kan je bepalen via:
 **Inline commentaar:**
 
         -- commentaar
-    
+
 **Block commentaar:**
 
         /* commentaar */
-        
+
         /*
         ** commentaar
-        */ 
-        
+        */
+
 ### Foutafhandeling met Transact SQL
 * **RETURN** : Onmiddelijke beëindiging van de batch of procedure.
 * **@@error** : Bevat de fout van de laatste utigevoerde instructie, indien ok value = 0.
@@ -634,8 +634,8 @@ cursor geef je aan met welke rij uit de resultaatset je wenst te werken
 3.  FETCH [NEXT | PRIOR | FIRST | LAST | {ABSOLUTE | RELATIVE
     <row number>}]
     FROM <cursor name>  
-    [INTO <variable name>[,...<last variable name>]] 
-    
+    [INTO <variable name>[,...<last variable name>]]
+
 4.  CLOSE <cursor name>
 
 5.  DEALLOCATE <cursor name>
@@ -648,9 +648,9 @@ cursor geef je aan met welke rij uit de resultaatset je wenst te werken
     SELECT au_lname, au_fname FROM authors
     WHERE au_lname LIKE ‘B%’
     ORDER BY au_lname, au_fname
-    
+
     OPEN authors_cursor
-    
+
     FETCH NEXT FROM authors_cursor
     INTO @au_lname, @au_fname
     WHILE @@FETCH_STATUS = 0
@@ -668,15 +668,15 @@ cursor geef je aan met welke rij uit de resultaatset je wenst te werken
     DECLARE @au_fname varchar(20), @au_id id
     DECLARE @message varchar(50)
     DECLARE @title varchar(80)
-    
+
     DECLARE authors_cursor CURSOR FOR
     SELECT au_id, au_fname, au_lname
     FROM authors
     WHERE state = 'UT'
     ORDER BY au_id
-    
+
     OPEN authors_cursor
-    
+
     FETCH NEXT FROM authors_cursor INTO @au_id, @au_fname, @au_lname
         WHILE @@FETCH_STATUS = 0
             BEGIN
@@ -705,7 +705,7 @@ FETCH NEXT FROM authors_cursor
 INTO @au_id, @au_fname, @au_lname
     WHILE @@FETCH_STATUS = 0 BEGIN
         PRINT ' '
-        SELECT @message = '----- Books by Author:' 
+        SELECT @message = '----- Books by Author:'
                 + @au_fname + ' ' + @au_lname
         PRINT @message
     -- Declare an inner cursor based
@@ -716,9 +716,9 @@ INTO @au_id, @au_fname, @au_lname
     ON ta.title_id = t.title_id AND
     ta.au_id = @au_id -- variable value
     from the outer cursor
-    
+
     OPEN titles_cursor
-    
+
     FETCH NEXT FROM titles_cursor INTO @title
     IF @@FETCH_STATUS <> 0
     PRINT ' <<No Books>>'
@@ -728,11 +728,11 @@ INTO @au_id, @au_fname, @au_lname
         FETCH NEXT FROM titles_cursor INTO
         @title
     END
-    
+
     CLOSE titles_cursor
     DEALLOCATE titles_cursor
     -- Get the next author.
-    
+
     FETCH NEXT FROM authors_cursor
     INTO @au_id, @au_fname, @au_lname
 END -- outer while loop
@@ -746,13 +746,13 @@ WHERE CURRENT OF <cursor name>
 
 UPDATE <table name>
 SET ...
-WHERE CURRENT OF <cursor name> 
+WHERE CURRENT OF <cursor name>
 ```
 ### Creatie van SP (Stored Procedure)
 ```SQL
 CREATE PROCEDURE <proc_name> [parameter declaratie]
 AS
-<sql_statements> 
+<sql_statements>
 ```
 
 ### Wijzigen, verwijderen en uitvoeren van SP
@@ -760,13 +760,13 @@ AS
 -- WIJZIGEN
 ALTER PROCEDURE <proc_name> [parameter declaratie]
 AS
-<sql_statements> 
+<sql_statements>
 
 -- VERWIJDEREN
 DROP PROCEDURE <proc_name>
 
 -- UITVOEREN
-EXECUTE <proc_name> [parameters] 
+EXECUTE <proc_name> [parameters]
 
 /*
 ** bij eerste uitvoering: compilatie en optimalisatie
@@ -836,7 +836,7 @@ RETURN @@error
 Alle foutboodschappen zitten in de systeemtabel **sysmessages**:
 ```SQL
     SELECT * FROM master.dbo.sysmessages
-    WHERE error = @@ERROR 
+    WHERE error = @@ERROR
 ```
 Eigen foutboodschappen genereren kan via **raiserror**.
 ```SQL
@@ -893,12 +893,12 @@ Gelijkaardig aan SP maar **kan niet expliciet worden opgeroepen**
 DML en DDL opdrachten
 
     *   **DML trigger**: bij een **insert, update of delete** voor een tabel of view waar de
-trigger aan is gekoppeld (wij beperken ons verder in deze cursus tot dit soort triggers). 
+trigger aan is gekoppeld (wij beperken ons verder in deze cursus tot dit soort triggers).
     Kunnen geactiverd worden: **before\*, instead of, after **( = na IUD verwerkt en voor COMMIT) de IUD opdracht. *Niet ondersteund in SQL Server
     *    **DDL trigger**: bijvoorbeeld bij een **create, alter of drop** van een tabel waar een
 trigger aan gekoppeld is
 
-## Procedurele database objecten: 
+## Procedurele database objecten:
 ---
 ### Procedurele programma's
 | soort |  opgeslaan als | uitvoering | ondersteunt parameters |
@@ -929,22 +929,22 @@ en zijn jobcategorie
 ### Voordelen en nadelen
 **Grote voordeel:** mogelijkheid om **functionaliteit in de DB** op te slaan en **consistent uit te voeren** bij elke wijziging aan de DB.
 
-**Dus:** 
+**Dus:**
 *   Geen redundante code, *functionaliteit zit op 1 plaats in de DB*
 *   Wijzigingen aanbrengen wordt eenvoudig, *written & tested once door ervaren DBA*
 *   Veiligheid, *triggers zitten in de DB dus kunnen alle beveilingsregels volgen*
 *   Meer processing power, *voor DBMS en DB*
 *   Past in client-server model, *1 aanroep naar db-server waar veel kan gebeuren zonder dat verdere communicatie vereist is*
 
-**Nadelen** 
+**Nadelen**
 * Complexiteit, *DB ontwerp, implementatie en onderhoud is complexer door verschuiven van functionaliteit van applicatie naar DB +  Moeilijk te debuggen.*
 * Verborgen functionaliteit, *gebruiker kan confronted worden met onverwachte neveneffecten trigger. Triggers kunnen ook cascaderen; bij het ontwerp van de trigger is dit niet altijd duidelijk te voorspellen.*
 * Performantie, *bij elke wijziging aan DB moet trigger conditie geëvalueerd worden*
 * Portabiliteit, *je pint je vast op het dialect van DBMS*
 
 ### Vergelijking trigger functionaliteit
-|   | Oracle  | MS SQL Server  | MySQL | 
-| --- | :---:| :---: | :---: | 
+|   | Oracle  | MS SQL Server  | MySQL |
+| --- | :---:| :---: | :---: |
 | BEFORE *bij validatie* | X | simuleren via AFTER-Trigger+ROLLBACK | X |
 | AFTER | X | X | X |
 | INSTEAD OF *bij views*  | X | X | X |
@@ -959,7 +959,7 @@ en zijn jobcategorie
 * **Inserted Tabel** : bevat kopies van gewijzigde (update) of ingevoegde (insert) rijen
     * tijdens een update of insert wordt een kopie van elke rij die gewijzigd of toegevoegd wordt in de **trigger tabel** geplaatst in de **inserted tabel**
     * deze twee tabellen hebben dus enkel gemeenschappelijke rijen
-    
+
 ### Creatie van een after trigger
 Enkel mogelijk door SysAdmin of dbo en is **gebonden aan 1 tabel**; niet aan een view.
 
@@ -991,7 +991,7 @@ Triggering instructie is een **insert** instructie
     -- Automatisch bijwerken van de mutatie tabel bij toevoegen van speler
 ```
 ### Delete after-trigger
-Triggering instructie is een **delete** instructie: 
+Triggering instructie is een **delete** instructie:
 * **Deleted** : logische tabel waarvan kolomnamen gelijk zijn aan die van de triggering tabel en die een copy bevat van de rij(en) die werden verwijderd.
 * We maken gebruik van onderstaande stored procedure, die we zullen hergebruiken bij de update-trigger.
 ```SQL
@@ -1002,7 +1002,7 @@ Triggering instructie is een **delete** instructie:
     AS
         INSERT INTO mutatie (gebruiker, mut_tijdstip, mut_snr,mut_type, mut_snr_new)
         VALUES (user, getdate() ,@MSNR, @MTYPE, @MSNR_NEW);
-        
+
 -- automatisch bijwerken van de mutatie tabel bij verwijderen van één of meerdere spelers
     CREATE TRIGGER delete_speler
         ON spelers FOR delete
@@ -1075,7 +1075,7 @@ IF update(spelersnr)
     FETCH NEXT FROM after_cursor INTO @new_snr
 ELSE
     SET @new_snr = @old_snr
-    
+
 WHILE @@FETCH_STATUS = 0
 BEGIN
     EXEC usp_mutatie_insert @old_snr,'U',@new_snr
@@ -1097,11 +1097,11 @@ Ook normale condities kunnen in triggers
 IF datepart(hour, getdate()) >= 9
 AND datepart(hour, getdate()) < 19
     BEGIN ... END
--- enkel tussen 9:00 en 19:00 uur is de trigger actief… 
+-- enkel tussen 9:00 en 19:00 uur is de trigger actief…
 
 IF USER IN ('JAN', 'PETER', 'MARK')
     BEGIN...END
--- enkel voor specifieke gebruikers de triggercode uitvoeren … 
+-- enkel voor specifieke gebruikers de triggercode uitvoeren …
 ```
 
 ### Voorbeeld: gecontroleerd bijhouden van redundante data
@@ -1133,7 +1133,7 @@ AS
     UPDATE spelers SET som_boetes = @boete
     WHERE spelersnr = @snr
 ```
-**Opmerking:** deze trigger werkt enkel indien de update of deletes gegarandeerd één per één gebeuren wegens: 
+**Opmerking:** deze trigger werkt enkel indien de update of deletes gegarandeerd één per één gebeuren wegens:
 ```SQL
 SELECT @snr = spelersnr from deleted
 ```
@@ -1171,7 +1171,7 @@ leiden tot het activeren van een andere trigger?
     * voegen OO kenmerken toe aan het relationeel model
 
  **Enkele OO uitbreidingen**
- 
+
 1. gebruiker gedefinieerde types    
 2.  encapsulatie
 3. overerving
@@ -1238,7 +1238,7 @@ extensies
     * JPA: Java Persistence API
     * Java: Hibernate
 
-## User Defined Types 
+## User Defined Types
 ---
 ### UDT
 * ~abstract data types
@@ -1262,14 +1262,14 @@ CREATE TYPE NameType FROM NVARCHAR(50) NOT NULL;
 -- NVARCHAR(50) = Het basistype waarvan het DT is afgeleid
 ```
 > Het nieuwe type wordt opgeslagen in de datbank
- 
+
 >Het distinct type kan nu gebruikt worden net zoals een built-in datatype
 
-Gebruik: 
+Gebruik:
 ![alt text](http://puu.sh/pojiE/d50fbb60b1.png "Gebruik Distinct Types")
 
 ### Structured Types
-1. Table types 
+1. Table types
 2. Abstract data types (cf. OO)
 
 ### Table Types
@@ -1359,13 +1359,13 @@ CREATE TYPE BODY data_typ1 IS
         BEGIN
             RETURN (year + invent);
         END;
-    END; 
+    END;
 ```
 * Subtypes (cf. inheritance): onderstaand voorbeeld creëert het sybtype
 corporate_customer_typ, afgeleid van het supertype customer_typ (zie vorige
 slide) en voegt het account_mgr_id attribuut toe:
 ```SQL
-CREATE TYPE corporate_customer_typ_demo 
+CREATE TYPE corporate_customer_typ_demo
     UNDER customer_typ ( account_mgr_id NUMBER(6) );
 ```
 
@@ -1388,7 +1388,7 @@ CREATE TYPE part_time_emp_t UNDER employee_t (num_hrs NUMBER)
 FINAL;
 ```
 
-Gebruik: 
+Gebruik:
 ```SQL
 CREATE TABLE contacts (
     contact person_t,
@@ -1435,9 +1435,9 @@ ADD cv varchar(max);
 ALTER TABLE Employees
 ADD foto varbinary(max);
 ```
----
-# Hoofdstuk 6: Indexen en performantie 
----
+
+# Hoofdstuk 6: Indexen en performantie
+
 ### Space Allocation Door SQL Server
 
 * SQL Server gebruikt Random Access File
@@ -1449,46 +1449,45 @@ ADD foto varbinary(max);
 * Nieuwe tabel of index: allocatie in mixed extent
 * Uitbreiding > 8 pages: in uniform extent
 
-### Table scan 
+### Table scan
 > **Heap:** ongeordene verzameling van data-pages zonder clustered index (zie verder) (= Standaard opslag van een tabel)
 
 Toegang via Index Allocation Map (IAM)
 Table Scan: als een query pages ophaalt --> Dit is altijd te vermijden!
 
-**Performantie issues met Heap** 
+**Performantie issues met Heap**
 * **Fragmentatie**: tabel staat verspreid over verschillende, niet-opeenvolgende pages
 * **Forward pointers**: als een rij met variabele lengte (vb. varchar-velden) wordt geupdatet waardoor ze langer wordt, wordt een forward pointer ingevoegd naar een andere pagina enz... -> Table Scan wordt nog trager.
 
 **--> Oplossing: Indexen**
 
-### Indexen 
+### Indexen
 
-**Wat?:** 
+**Wat?:**
 een *geordende structuur* die op de records uit een tabel wordt gelegd en *snelle toegang biedt via boomstructuur* (B-tree)
 
-**Waarom?:** kan *toegang tot data versnellen* en kan de *uniciteit van rijen* afdwingen 
+**Waarom?:** kan *toegang tot data versnellen* en kan de *uniciteit van rijen* afdwingen
 
 **Waarom niet?:** Indexen nemen opslagruimte in beslag *(overhead)* en ze kunnen de performantie ook doen dalen (bv vertragen van select en updates)
 
 ##### SQL Optimizer
 > Is een **module in elk DBMS** die elk SQL commando dat naar de DB gestuurd wordt, analyseert en herformuleert en beslist op basis van statistische gegevens welke indexen zullen gebruikt worden.
 
-### Clustered Index: 
-De fysische volgorde van de rijen in een tabel is deze van een clustered index. Elke tabel kan slechts 1 clustered index hebben, deze legt unieke waarden op en heeft primary key constraint. 
+### Clustered Index:
+De fysische volgorde van de rijen in een tabel is deze van een clustered index. Elke tabel kan slechts 1 clustered index hebben, deze legt unieke waarden op en heeft primary key constraint.
 
 **Voordelen t.o.v. Table Scan:**
-* Dubbel gelinkte lijst zorgt voor volgorde bij het lezen van sequentiële records. 
+* Dubbel gelinkte lijst zorgt voor volgorde bij het lezen van sequentiële records.
 * Geen forward pointers
 
 ### Non-Clustered Index
-Deze is de **default index** en werkt trager dan de clustered index. Meerdere per tabel mogelijk. Elke *leaf* bevat sleutel waarde en row locator. --> Naar positie in clustered index als die bestaat, anders naar heap. 
+Deze is de **default index** en werkt trager dan de clustered index. Meerdere per tabel mogelijk. Elke *leaf* bevat sleutel waarde en row locator. --> Naar positie in clustered index als die bestaat, anders naar heap.
 
-Als een query meer velden nodig heeft dan aanweziginde index, dan moeten deze opgehaald worden uit de datapages. 
+Als een query meer velden nodig heeft dan aanweziginde index, dan moeten deze opgehaald worden uit de datapages.
 
 Bij het lezen via non-clustered index:
 * *Ofwel:* RID (Row ID) lookup = bookmark lookups naar de heap adhv RID.
-* *Ofwel:* Key lookup = bookmark lookups naar een clustered index. 
-
+* *Ofwel:* Key lookup = bookmark lookups naar een clustered index.
 
 ### Covering index
 
@@ -1501,7 +1500,7 @@ Met SQL Server kan je extra komommen laten opnemen in de index (waarop niet geï
 **Covering index via include:** 
 ```SQL
 CREATE NONCLUSTERED INDEX
-[IX_Covering_Person_LastName_FirstName_MiddleName] 
+[IX_Covering_Person_LastName_FirstName_MiddleName]
 ON [Person].[Person]
 (
     [LastName] ASC,
@@ -1511,7 +1510,7 @@ ON [Person].[Person]
 ```
 
  ### 1 index met meerdere kolommen vs. meerdere indexen met 1 kolom?
- 
+
 ```SQL
 CREATE NONCLUSTERED INDEX IX_Person_LastName_FirstName ON
 Person.Person (LastName, FirstName)
@@ -1539,10 +1538,11 @@ wordt de dubbele index niet gebruikt!
 stem daar je indexen op af.**
 
 ### Creatie van indexen: algemene syntax
+
 ```SQL
-CREATE [UNIQUE] [CLUSTERED | NONCLUSTERED] INDEX index_naam 
+CREATE [UNIQUE] [CLUSTERED | NONCLUSTERED] INDEX index_naam
 ON tabel (kolom [,...n])
--- UNIQUE: geeft aan dat alle waarden in geïndexeerde kolom uniek moeten zijn. 
+-- UNIQUE: geeft aan dat alle waarden in geïndexeerde kolom uniek moeten zijn.
 
 -- voorbeeld
 create index rijksregNr_Index on student(rijksregNr)
@@ -1550,10 +1550,11 @@ create index rijksregNr_Index on student(rijksregNr)
 
 
 **Let op:**
-1. Bij het definiëren van een index mag de tabel leeg of al gevuld zijn. 
+1. Bij het definiëren van een index mag de tabel leeg of al gevuld zijn.
 2. Kolommen met een **UNIQUE** index moeten de not null constraint bevatten.
 
 ### Verwijderen van indexen
+
 ```SQL
 DROP INDEX table_name.index [,...n]
 
@@ -1562,6 +1563,7 @@ drop index student.rijksregNr_Index
 ```
 
 ### Wanneer gebruiken?
+
 * Welke kolommen indexeren we **wel**?
 	* primaire en unique kolommen worden automatisch geïndexeerd
 	* vreemde sleutels vaak gebruikt in joins
@@ -1573,10 +1575,11 @@ drop index student.rijksregNr_Index
 	* kolommen in kleine tabellen
 	* kolommen van het type bit, text of image
 
----	
+
 # Hoofdstuk 7: Transactiebeheer
+
 ### Inleiding
----
+
 Een **DBMS** ondersteunt:
 * Transaction Support
 * Concurrency control services
@@ -1594,15 +1597,15 @@ Een transactie wordt uitgevoerd door een gebruiker of door een programma.
 
 Het is een logische hoeveelheid van werk: volledig programma, deel van een programma, enkel opdracht. (Programma = 1 of meerdere transacties, met daartussen niet-db verwerking.
 
-##### Voorbeelden: 
+##### Voorbeelden:
 **Transactie:** updaten van het salaris van een werknemer.
 ![alt text](http://puu.sh/poRut/2310b75d44.png "Voorbeeld read/write")
 
-Opeenvolging van 'high level' acties: 
+Opeenvolging van 'high level' acties:
 * Notatie: read(...) en write(...)
     * read: lees een data item uit de DB in een lokale variabele
     * write: schrijf de waarde van een lokale variabele weg naar de DB.
-* Er zijn 2 DB operaties en niet 1. 
+* Er zijn 2 DB operaties en niet 1.
 ---
 
 **Transactie:** verwijderen van een werknemer en zijn properties aan een andere werknemer toekennen.
@@ -1622,11 +1625,11 @@ Deze transactie brengt de DB van de ene consistente toestand naar de andere cons
 * de transactie is **niet succesvol**
 * de transactie *aborts* en DB moet teruggebracht worden naar de consistente toestand waarin ze zich bevond voor de transactie werd gestart --> **rollback of undo**
 * aborted transactie **kan herstart** worden: **na de rollback** kan een **restart** van de transactie gebeuren. Bij succesvolle uitvoering zal dit nu leiden tot een committed transactie.
-* 
+*
 ### Aanduidingen
 We moeten duidelijk maken aan het DMBS welke acties deel uitmaken van een transactie.
 
-Keywords: 
+Keywords:
 ```SQL
 - BEGIN TRANSACTION
 -- soms impliciet de eerste DB actie
@@ -1634,15 +1637,15 @@ Keywords:
 – COMMIT
 – ROLLBACK
 ```
-Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als 1 transactie. 
+Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als 1 transactie.
 
 ### ACID Eigenschappen
-**Atomicity:** 
+**Atomicity:**
 * de opdrahten van een transactie worden als één ondeelbaar geheel beschouwd. --> Alles of niets
 *  DBMS verantwoordelijkheid: recovery subsysteem
 
-**Consistency:** 
-* een transactie brengt de DB van de ene consistente toestand naar een andere consistente toestand. 
+**Consistency:**
+* een transactie brengt de DB van de ene consistente toestand naar een andere consistente toestand.
 * DBMS verantwoordelijheid én programma verantwoordelijkheid
 
 **Isolation:**
@@ -1651,13 +1654,15 @@ Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als
 * transacties mogen geen uitkomsten aan andere transacties presenteren voor de commit.
 * DBMS verantwoordelijkheid: concurrency-control subsysteem.
 
-**Durability:** 
+**Durability:**
 * Na een COMMIT zijn de aangebrachte wijzigingen gegarandeerd permanent.
 * Na een storing kunnen deze wijzigingen steeds worden gerecupureerd.
 * DBMS verantwoordelijkheid: recovery subsystem.
 
 ### Databank Architectuur
+
 ![alt text](http://puu.sh/poTCC/55ec584625.jpg "Architectuur schema")
+
 ##### Transaction Subsysteem
 1. **Transaction manager**
     * Coördineert transacties van programma's
@@ -1670,9 +1675,11 @@ Zonder genige expliciete aanduiding kan het ganse programma beschouwd worden als
 4. **Buffer manager**
     *  verantwoordelijk voor efficiënte transfer van data tussen main memory en
 disk storage
+
 ## Concurrency
----
+
 ### Concurrency control
+
 > **Concurrency control**
 is het **beheer van gelijktijdige** acties op de db zonder
 dat ze interfereren met elkaar
@@ -1684,30 +1691,35 @@ Een DBMS laat toe dat **merdere transacties gelijktijdig toegang** hebben tot **
 **Concurrency** wordt gerealiseerd door de acties van verschillende transacties te verweven.
 
 ### Waarom concurrency control?
+
 --> **Voorkom interferentie** wanneer twee of meerere transacties de databanke gelijktijdig aanspreken, en minstens 1 transactie data **wijzigt**
 
 Hoewel twee transacties op zichzelf beschouwd correct kunnen zijn, kan het verweven van hun acties leiden tot een incorrect resultaat.
 
 ## Problemen bij concurrency
---- 
+
 ### Lost update
+
 > Het **lost update probleem** treedt op wanneer
 een schijnbaar compleet succesvolle update van een transactie
 wordt **overschreven** door een andere transactie
 
 ### Uncommitted dependency
+
 > Het **uncommitted dependency (of dirty read) probleem**
 treedt op wanneer
 een transactie de **intermediaire resultaten van een andere**,
 uncommitted transactie, kan zien.
 
 ### Inconsistent Analysis
+
 > Het **inconsistent analysis probleem** treedt op wanneer
 een transactie **verschillende waarden uit de db leest**, terwijl een
 andere transactie bezig is sommige van **deze waarden te
 veranderen**
 
 ##### Gerelateerde problemen
+
 * **Non-repeatable (of fuzzy) read**
 	* twee keer lezen van eenzelfde item levert twee
 verschillende waarden op
@@ -1721,6 +1733,7 @@ ondertussen andere records zijn bijgekomen via een
 andere transactie
 
 ### Serializibility & Recoverability
+
 * **concurrency control protocol**
     * doel: transacties zo schedulen zodat ze niet interfereren
     * resultaat: voorgaande problemen treden niet op
@@ -1734,6 +1747,7 @@ andere transactie
     	* uitvoeringen die equivalent zijn aan een seriële uitvoering
 
 ### Schedule
+
 > Een schedule is
 **een sequentie van acties van een aantal concurrente
 transacties** die de volgorde van de acties van de individuele
@@ -1744,6 +1758,7 @@ de schedule, dezelfde als de volgorde van de operaties in de
 transactie zelf
 
 ### Recoverability
+
 * de databank zelf **schedules** laten opstellen die zonder
 interferentieproblemen concurrent kunnen worden uitgevoerd
 	* ze garanderen de **consistency en isolation** eigenschap van transacties
@@ -1756,31 +1771,35 @@ schedule faalt
         * **durability** eigenschap van transacties
 
 
-### Locking 
+### Locking
+
 > Locking is een methode gebruikt om **concurrente
 toegang** tot data te beheren.
 
-Wanneer een transactie toegang heeft tot de data kan er via een lock voor gezorgd worden dat **andere transacties toegang tot de data geweigerd** worden. 
+Wanneer een transactie toegang heeft tot de data kan er via een lock voor gezorgd worden dat **andere transacties toegang tot de data geweigerd** worden.
 
 **Locking = Meest gebruikte manier** om de consistentie te garanderen
 
 ##### Basisregels locking
+
 * Een transactie kan een **data item lezen of schrijven** enkel en alleen als het een **lock heeft verworven** voor dat data element, en het bovendien deze lock nog niet heeft vrijgegeven.
 
 * Als een transactie een lock op een data item verwerft, dan moet het later ook **lock terug vrijgeven**
 
 ##### Soorten Locks
+
 * Shared lock (S-lock)
     * Transactie met shared lock op data item kan dat data item *lezen* maar niet wijzigen
     * Meerdere transacties kunnen gelijktijdig een shared lock op eenzelfde data item bezitten.
-* Exclusive lock (X-lock) 
+* Exclusive lock (X-lock)
     * Transactie met exclusive lock op data item kan dat data item **lezen en wijzigen**
     * Op elk ogenblik kan hoogstens 1 transactie een exclusive lock op een data item hebben.
 
 **_Opmerking_:** een data item kan verwijzen naar een veld van een record, maar ook naar een tabel,
 of de volledige db - zie verder: granulariteit
-    
+
 ##### Praktisch
+
 * De transactie die toegang wil tot een data item vraagt een lock aan op dat
 item
 	* shared lock voor lezen, exclusive lock voor lezen/schrijven
@@ -1802,26 +1821,29 @@ nagaan of de aangevraagde lock compatibel (zie matrix hieronder) is
 | **Bestaande X-Lock** | Wait | Grant |
 
 ### Deadlock
+
 > Een deadlock is een ** impasse** die kan ontstaan wanneer twee of meerdere transacties elk **wachten** op het vrijgeven van locks die de andere transactie heeft
 
 ##### Oplossen Deadlock
+
 * **Abort en restart** van 1 of meerdere transacties
 * Voorbeeld:
 
 ![alt text](http://puu.sh/pp2F3/9bba9bfce6.png "Voorbeeld Deadlock")
 
 ##### Technieken om met deadlocks om te gaan:
-* **Timeouts:** een transactie die een lock aanvraagt **wacht voor een bepaalde vooraf gedefinieerde tijd op die lock**, indien lock niet toegekend is tijdens dit interval: 
-    * Assumptie dat er een deadlock is (hoewel dit niet noodzakelijk zo is...) 
+
+* **Timeouts:** een transactie die een lock aanvraagt **wacht voor een bepaalde vooraf gedefinieerde tijd op die lock**, indien lock niet toegekend is tijdens dit interval:
+    * Assumptie dat er een deadlock is (hoewel dit niet noodzakelijk zo is...)
     * **Abort en restart** van de transactie
 * **Deadlock prevention:** gebruikmakend van **transaction time-stamps** ( speciale time-stamp voor deadlock detection). T wacht op locks die U vastheeft:
-    * **Wait-die algoritme**: 
+    * **Wait-die algoritme**:
         * Als T ouder is dan U dan zal T wachten
         * Zoniet dan sterft T en is er een abort/restart met dezelfde timestamp.
     * **Wound-wait algoritme**
-        * Als T ouder is dan U dan zal het U 'verwonden' (--> meestal betekent dit een abort/restart van U) 
-        * Zoniet zal T wachten 
-* **Deadlock detection and recovery:** 
+        * Als T ouder is dan U dan zal het U 'verwonden' (--> meestal betekent dit een abort/restart van U)
+        * Zoniet zal T wachten
+* **Deadlock detection and recovery:**
     * **Deadlock detection**
         * gebruik makend van een **wait-for graph** met transactie afhankelijkheden
         * wanneer de wait-for graph een lus bevat is er een
@@ -1845,7 +1867,7 @@ nagaan of de aangevraagde lock compatibel (zie matrix hieronder) is
         – bijhouden van een teller
 
 ## Transacties in SQL SERVER
----
+
 ### DB Transacties
 
 * **Impliciete** transacties: INSERT, UPDATE, DELETE en elke transact SQL-opdracht
@@ -1857,8 +1879,9 @@ afgesloten worden, of hoe je op je stappen terugkeert om fouten op te vangen
         ROLLBACK TRANSACTION
     ```
 * Alle info ivm transacties worden weggeschreven in de **transactielog**
- 
+
 ### Stored Procedures en Transacties
+
 ```SQL
 CREATE PROCEDURE usp_Customer_Insert
     @customerid varchar(5),
@@ -1883,16 +1906,17 @@ AS
 ```
 
 ### Isolation Levels
-Bepalen het gedrag van concurrent users die data lezen of schrijven. 
-* **Reader**: 
+
+Bepalen het gedrag van concurrent users die data lezen of schrijven.
+* **Reader**:
     * Statement dat data leest, m.b.v. een shared lock
     * Kun je **niet beinvloeden** voor wat betreft de locks die ze nemen en de duur van de locks
 * **Writer**:  
     * Statement dat data schrijft, m.b.v. een exclusive lock.
     * Kun je **wel excpliciet beinvloeden** m.b.v. **isolation levels**, hierdoor hebben ze ook impliciete invloed op het gedrag van writers.
 
-    **Isolation level** = setting op de sessie-niveau of query-niveau. 
-    
+    **Isolation level** = setting op de sessie-niveau of query-niveau.
+
 ##### 4 Isolation Levels in SQL Server
 
 ![alt text](http://puu.sh/pp5sf/051d29f1fa.png "Isolation Levels Slide")
@@ -1937,12 +1961,15 @@ transactie) = phantoms
     * **Serializable** vermijdt phantoms
     * Lockt alle keys die beantwoorden aan
 WHERE-clause, ook toekomstige
- 
+
 ### Isolation levels: Sessie Niveau
+
 ```SQL
     SET TRANSACTION ISOLATION LEVEL READ COMMITED
 ```
+
 ### Isolation levels: Query Niveau
+
 * override isolation level met "table hint":
     ```SQL
     SELECT * FROM ORDERS WITH (READUNCOMMITTED);
@@ -1955,9 +1982,6 @@ transacties laten wachten bij READ
 COMMITTED en hoger
 
 ##### Voorbeeld xTreme: oplossing m.b.v transacties
-
-
-.
 
 ```SQL
     alter procedure vb @productclassname nvarchar(50)
@@ -1979,10 +2003,12 @@ COMMITTED en hoger
 ```
 
 ### Triggers en Transacties
+
 * een trigger maakt deel uit van de transactie die de
 triggerende opdracht bevat
 * binnen de trigger kan de transactie geROLLBACKed
 worden
+
 ```SQL
 CREATE TRIGGER delSpeler ON Speler
 FOR delete
@@ -1992,11 +2018,11 @@ IF (SELECT COUNT(*)
     ON SpelerPloeg.snr = deleted.snr) > 0
 BEGIN
     ROLLBACK TRANSACTION
-    PRINT ‘Je mag geen speler verwijderen als hij behoort tot een ploeg.' 
+    PRINT 'Je mag geen speler verwijderen als hij behoort tot een ploeg.'
 ```
 
 ## Recovery
----
+
 > **Recovery** is het proces waarbij
 een **DB wordt teruggebracht naar een correcte toestand**
 wanneer er zich een failure voordoet
@@ -2009,6 +2035,7 @@ wanneer er zich een failure voordoet
 - **Stabiele opslag:** replicatie op verschillende plaatsen met onafhankelijke failure modes.
 
 ### Soorten Failures
+
 * **system crash**
 	* hardware of software errors
 	* verlies van gegevens in main memory
@@ -2025,6 +2052,7 @@ wanneer er zich een failure voordoet
 	* vb. opzettelijk wissen of corrupteren van gegevens of infrastructuur (sw/hw)
 
 ### Transactions en recovery
+
 * eenheid voor recovery is een transactie
 * **recovery manager** staat in voor
     * atomiciteit (**A**CID)
@@ -2035,11 +2063,13 @@ wanneer er zich een failure voordoet
 (permanent) in de db geregistreerd zijn
 
 ### High level vs low level operaties
+
 - **Voorbeeld**
 
 ![alt text](http://puu.sh/ppdHr/93640a3f0f.png "High level vs low level schema")
 
 ### Undo en redo
+
 * Enkel bij een 'flush' van de buffer is data
 permanent
 	* flushing: data van primary storage overhevelen
@@ -2063,6 +2093,7 @@ en flushing?
 ![alt text](http://puu.sh/ppesT/df8ddd38c4.png "Voorbeeld undo en redo")
 
 ### Buffer management
+
 * Buffer management omvat het **beheer van
 transfer van buffers** tussen main memory en
 disk
@@ -2074,6 +2105,7 @@ disk
 * **_Merk op:_** een pagina aanwezig in een buffer wordt nooit gelezen van disk
 
 ### Recovery faciliteiten
+
 Het DBMS biedt volgende diensten aan
 * **Back-up** mechanisme
     * periodische back-ups van de db
@@ -2086,6 +2118,7 @@ transacties en db wijzigingen
     * om de db in een consistente toestand te brengen na een failure
 
 ### Back-up mechanisme
+
 * Op regelmatige basis worden er
 automatisch **reservekopieën** van de db en
 de logfile aangemaakt
@@ -2094,7 +2127,9 @@ de logfile aangemaakt
 * Mogelijke benaderingen
     * **complete** back-up
     * **incrementele** back-up
+
 ### Logging
+
 * **Log** bevat mogelijks
 	* **Transaction records**
         * transaction id
@@ -2120,20 +2155,21 @@ de logfile aangemaakt
 * Voorbeeld log: ![alt text](http://puu.sh/ppgmP/e3a0d207bc.png "Voorbeeld Logging")
 
 ### Checkpointing
+
 > Een **checkpoint** is een **synchronisatiepunt** tussen de databank en de log, op dit punt worden alle buffers ge-flushed
 
-Checkpoints worden voorzien op vooraf ingestelde intervallen (bv. Om de 15 minuten). 
+Checkpoints worden voorzien op vooraf ingestelde intervallen (bv. Om de 15 minuten).
 
 Een checkpoint omvat:
-1. Alle log records in main memory wegschrijven naar disk 
-2. De gewijzigde delen van de buffers wegschrijven naar disk 
+1. Alle log records in main memory wegschrijven naar disk
+2. De gewijzigde delen van de buffers wegschrijven naar disk
 3. Een checkpoint in de log registreren. ( Dit record bevat id van alle transacties die actief zijn op het moment van checkpointing).
 
-**Voorbeeld:** recovery met checkpointing 
+**Voorbeeld:** recovery met checkpointing
 ![alt text](http://puu.sh/ppgWo/b4ffb00a5d.png "Voorbeeld checkpointing")
 
 ## Recovery Technieken
----
+
 Soort recovery procedure die gevolgd wordt hangt af van de ernst van het probleem:
 * Serieuze (fysische) problemen
     * back-up restoren
@@ -2144,6 +2180,7 @@ gingen, herstellen adhv de log
     * undo/redo adhv de log's before en after images
 
 ### Deferred update
+
 > Bij een **deferred recovery protocol** worden
 wijzigingen van een transactie niet weggeschreven naar de DB zolang de transactie niet het commit-punt bereikt
 
@@ -2153,6 +2190,7 @@ wijzigingen van een transactie niet weggeschreven naar de DB zolang de transacti
 4. **Abort** van de transactie: **negeer de log records, schrijf niets naar disk**
 
 ### Immediate update
+
 > Bij een **immediate update recovery protocol** worden
 wijzigingen van een transactie direct weggeschreven naar de db
 
@@ -2163,6 +2201,7 @@ geschreven
 4. **Abort** van de transactie: gebruik **before images voor undo**
 
 ###### **Voorbeeld**
+
 ![alt text](http://puu.sh/ppioj/b2ccf0f897.png "Voorbeeld Recovery Technieken")
 
 
@@ -2175,11 +2214,10 @@ geschreven
 | T5 | REDO adhv After-Images | REDO adhv After-Images |
 | T6 | niets | UNDO via Before-Images |
 
-
----
 # Hoofdstuk 8: Datawarehousing & Business Intelligence
+
 ### Inleiding
----
+
 Data warehousing zit in de lift
 * Groeiende nood aan flexibele business
 rapportering toegankelijk voor de business
@@ -2192,12 +2230,14 @@ complexer
 * Traditionele DBMS bieden allemaal DWH faciliteiten aan
 
 ### Data Warehouse
+
 > Een **data warehouse** is een geïntegreerde, subject georiënteerde,
 tijd variante en niet vluchtige verzameling van data ter
 ondersteuning van beslissingen die genomen moeten worden op
 management niveau
 
-### Eigenschappen: 
+### Eigenschappen:
+
 **Geïntegreerd**
 * Data is afkomstig uit verschillende bronnen (data uit verschillende bronnen is dikwijls inconsistent, in het DW is alles consistent geïntegreerd).
 
@@ -2210,7 +2250,7 @@ over een bepaald tijdsinterval
     kan een momentopname zijn
     * DW zal, door geregelde kopieën te nemen, de historiek opbouwen
 * Mogelijkheid om terug te gaan naar een momentopname
-	
+
 **Niet vluchtig (non volatiel)**
 * Data wordt niet real-time ge-update maar op regelmatige basis
 bijgewerkt met data uit operationele systemen
@@ -2220,6 +2260,7 @@ bijgewerkt met data uit operationele systemen
 * Afkomstig van bijv. GROUP BY
 
 ### Doelstellingen DWH
+
 * Rapportering
 * Analyse van events in verleden of heden
 * Voorspellingen op basis van trendanalyse, historisch
@@ -2237,8 +2278,8 @@ bijgewerkt met data uit operationele systemen
 **Verhoogde productiviteit:** de beleidsmaker krijgt één grote consisente view op de onderneming doordat het DW data uit verschillende bronnen integreert tot een consistent geheel, dat subject georiënteerd is en waar historiek zit ingebakken. Ze kunnen ook meer substantiële, nauwkeurigere en consistentere analyses maken (via tools kan de data automatisch tot bruikbare informatie omgevorm worden).
 
 ### Vergelijk On-Line Transaction Processing en DW
-#### aka OLTP en OLAP (On-Line Analytical Processing) 
 
+#### aka OLTP en OLAP (On-Line Analytical Processing)
 
 | Eigenschap | OLTP | DW |
 | --- |--- | --- |
@@ -2251,8 +2292,9 @@ bijgewerkt met data uit operationele systemen
 | Gebruikers | groot aantal gebruikers op operationele niveau| klein aantal gebruikers opmanagement niveau (maar trend naar ondersteuning voor analytische behoeften van operationele gebruikers |
 
 ## Architectuur
----
+
 ### Architectuur van een DWH
+
 ![alt text](http://puu.sh/pppKy/67445e577f.jpg "Architectuur schema")
 * Operationele data
 * Bronnen van data
@@ -2440,7 +2482,7 @@ Er zijn 2 ontwikkel methodologieën
     * Selectie en ontwikkeling van een eerste data mart voor de behoeften van een groep gebruikers.
     * Via integratie van data marts komen we tot het EDW
     * Gebruik van sterschema en varianten
-    
+
 ### Kimball's Business Dimensional Lifecycle
 **Focus** op het voldoen aan de informatiebehoeften van de organisatie via het bouwen van enkele, geïntegreerde, makkelijk bruikbare en selle informatie structuur. Deze structuur wordt op een incrementele, iteratieve manier gebouwd.
 
@@ -2449,7 +2491,7 @@ Er zijn 2 ontwikkel methodologieën
 * ad-hoc query tools
 * reporting applicaties
 * geavanceerde analytische tools
-* training en support voor de gebruikers 
+* training en support voor de gebruikers
 
 zijn inbegrepen.
 
@@ -2459,12 +2501,12 @@ zijn inbegrepen.
 * business intelligence applications
 
 ### Dimensionality modelling
-> **Dimensionality modeling** is een techniek om een logisch ontwerp te maken. 
+> **Dimensionality modeling** is een techniek om een logisch ontwerp te maken.
 
 Men streeft er naar om de data te presenteren in een standaard, intuïtieve vorm, die toegankelijk is met een hoge performantie.
 
 #### Dreamhome DWH: voorbeeld
-Management wil analyse van verkoop van huizen 
+Management wil analyse van verkoop van huizen
 
 **Voorbeeld queries**
 * wat was het totaal aan inkomsten van verkoop van eigendommen in het derde kwartaal van 2008?
@@ -2511,7 +2553,7 @@ bevat de referentie-informatie; beschrijvende, op tekst gebaseerde, informatie
 bv. het eigendom, de koper, de verkoper, ...
 * attributen worden gebruikt als constraints bij DWH queries  
   bv. queries die gaan over verkopen van eigendommen in 'Glasgow'
-  
+
 Sterschema's kunnen query performantie aanzienlijk verhogen door referentie-informatie te denormaliseren en bij te houden in één enkele dimensietabel  
 zie bv. city, region, country
 
@@ -2552,11 +2594,11 @@ de voorspelbare en standaardvormvan het dimensioneelmodel levert enkele voordele
         * redendantie is nadelig voor OLTP systemen
     *  ad-hoc queries kunnen moeilijker behndeld worden
         * leiden tot enoerm veel joins van enorm veel tabellen
-        
+
 * Dimensionaal Modeleren
     * gebruikt om de DB van een DWH (of datamart) te ontwerpen
     * intuïtieve opslag met een hoge graad aan performantie bij raadpleging van de gegevens
-    
+
 Eén ERD wordt uitgesplitst over meerdere DM-en, deze DM-en hangen samen via gedeelde dimensies
 
 ### Dimensional Modeling Stage
@@ -2613,13 +2655,17 @@ Bruikbaarheid van de datamart hangt grotendeels af van de scope en aard van de a
     * type 1: het attribuut dat verandert wordt gewoon overschreven
     * type 2: wanneer een attribuut verandert wordt een nieuw record in de dimensietabel toegevoegd
     * type 3: zorg dat de oude en de nieuwe waarde voor het attribuut beschikbaar zijn in het record
-    
-Op het einde van deze life-cycle zullen we een datamert hebben die voldoet aan 1 van de business requirements. Deze datamart zal geïntegreerd worden met andere datamarts om te komen tot een enterprise wide DWH. 
+
+Op het einde van deze life-cycle zullen we een datamert hebben die voldoet aan 1 van de business requirements. Deze datamart zal geïntegreerd worden met andere datamarts om te komen tot een enterprise wide DWH.
 
 Een DM waarbij meer dan 1 feitentabel 1 of meer dimensies deelt noemen we een **feitenconstellatie**.
+
 ### Voorbeeld Dimensional Modeling Stage
+
 **DreamHome**
+
 ##### STAP 1: selecteer een business process
+
 Wat zijn de business processen?
 * verkoop van eigendommen
 * verhuur van eigendommen
@@ -2636,16 +2682,19 @@ We kiezen een business process:
 ![alt text](http://puu.sh/ppYiF/031bea87e3.PNG "business processen")
 
 ##### STAP 2: bepaal de granulariteit
+
 keuze: PropertySale - verkoop van elke eigendom  
 Nu kunnen we dimensies kiezen:
 * Branch, Staff, ClientBuyer, PropertyForSale, Promotion
 * extra kern dimensie steeds aanwezig in een DM is tijd
 
 ##### STAP 3: kies de dimensies
+
 ![alt text](http://puu.sh/ppYoJ/57b1466499.PNG)
 
 #### STAP 4: identificeer feiten
-PropertySale: 
+
+PropertySale:
 * offerPrice
 * sellingprice
 * saleCommission
