@@ -293,3 +293,166 @@ Collections of logically related transactions within identifiable business funct
 - Post Goods Issue: boekhoudkundige transactie, je zegt SAP dat die goederen niet meer van jou als bedrijf zijn, maar dat ze buiten zijn gegaan. Uit stock halen. Voor deze stap kan je de goederen nog naar een andere klant sturen. Hier na niet meer want de goederen zijn weg.
 - Invoice customer: laten betalen
 - Receipt of customer payment: betaald (betalingsbewijs)
+
+## Pre-Sales activities (CRM Light)
+
+Sales Support is a component of SD.
+
+- Creating and tracking customer contacts and communications (sales activity)
+    - Phone call records
+    - On-site meeting
+    - Letters
+    - Campaign communication
+
+> Pre-sales documentes need to be managed within the presales activities: inquiries and quotations. These documents help identify possible sales related activity and determine sales prohability.
+
+Goal: Equip the sales technican with all the information necessary to negotiate and complete the potential sale.
+
+- Information needed:
+    - Past sales activity
+    - Past communication
+    - Contact Information
+    - General Company Info
+    - Credit limits and usage
+    - Current backorders
+
+- 360° View of your customer
+
+## Inquiry
+
+> An inquiry is a customer's request to a company for information or quotation in respect to their products or services without obligation to purchase. **Informatieaanvraag (offerteaanvraag?)**
+
+- How much will it cost
+- Material/Service availability
+- ay contain specific quantities and dates
+
+The inquiry is maintained in the system and a quotation is created to address questions for the potential customer.
+
+## Quotation
+
+> The quotation presents the customer with a legally binding offer to deliver specific products or a selection of a certain amount of products in a specified timeframe at a pre-defined price. **Offerte contractueel verbonden**
+
+## Sales Order
+
+> Een document dat informatie bevat over koper, materialen/services en hoeveelheid, prijs, data, shipping information en billing information.
+
+- Sales order processing can originate from:
+    - Customer contacts us fro orders: phone, internet, email
+    - Existing Contact
+    - Quotations
+- Electronic document that is created should contain the following basic information:
+    - Customer information
+    - Material/Service and quantity
+    - Pricing (conditions)
+    - Specific delivery dates and quantities
+    - Shipping information
+    - Billing information
+
+- The sales document is made up of three primary areas:
+    - Header
+        - Data relevant for the entire sales order: Customer data, total cost of the order
+    - Line item
+        - Information about the specific product: material and quantity, cost of an individual line
+    - Schedule lines
+        - Uniquely belongs to a Line Item, contains delivery quantities and dates for partial deliveries
+
+- The sales order contains all of the information needed to process your customers request, the following information is determined for each sales order:
+    - Delivering Schedule
+    - Shipping point and route determination
+    - Availability Check
+    - Transfer of requirements to MRP
+    - Pricing
+    - Credit limit check
+
+## Delivery Scheduling
+
+> Data selecteren/kiezen voor levering. Systeem zal checken of het mogelijk is.
+
+- When an order is created the you must enter a requested delivery date for the order or each line item
+- The system will then determine a delivery timeline, this will be used when determining our material availability, or ATP (availability to promise) date.
+- The system will determine this date using forward and backward scheduling rules you have defined.
+
+## Shipping & Route Determination
+
+> Tijdens het maken van een sales order, moet er ook beslist worden vanwaar bepaalde goederen gaan geshipped worden. Dit kan ook individueel per line item gebeuren.
+
+## Availability Check
+
+> Bekijkt of de materialen beshcikbaar zijn voor de datum van vertrek. Houdt ook rekening met andere inkomende/uitgaande bestellingen.
+
+## Transport to Planning
+
+> Het order is overgegaan naar material requirements planning as an CIR (Customer Independent Requirement). Dit zal dan het purchase requirement process starten OF een order plaatsen als er te weinig materiaal in voorraad is.
+
+## Pricing
+
+> Het systeem toont prijs informatie voor alle sales documenten. Informatie voor heel document en per individueel line item. Berekend en verwerkt ook de taxes, toevoegingen, kortingen, ...
+
+## Credit Check
+
+> Als er een fout is bij het betalen kan het systeem een error geven. Het informeert de sales afdeling. Kan ook ingesteld worden zodat er orders en leveringen geblokkeerd worden.
+
+## Shipping en Transportation
+
+- Picking (materiaal verzamelen)
+- Packign (materiaal inpakken)
+- Post Goods Issue (boekhoudkundige transactie, je zegt SAP dat die goederen niet meer van jou als bedrijf zijn, maar dat ze buiten zijn gegaan. Uit stock halen. Voor deze stap kan je de goederen nog naar een andere klant sturen. Hier na niet meer want de goederen zijn weg.)
+
+> Nu is het officieel eigendom van de klant. Material Management (MM) en Finance (FI) is gekoppeld
+
+## Shipping
+
+> Orders kunnen gecombineerd worden. Orders kunnen partieel geleverd worden. Orders kunnen complete geleverd zijn/worden.
+
+## Delivery Creation
+
+> Kijkt of het mogelijk is om te leveren. Bevestigd availability. Bevestigd export/foreign trade requirements. Berekend totale gewicht/volume.
+
+- Genereert packing proposal
+- Berekend gewicht en volume
+- Controleert de planning
+- Overweegt of partial deliveries nodig zijn
+- Wijzigt routes indien nodig
+- Wijst picking location aan
+- ...
+
+## Delivery document
+
+- picking
+- packing
+- loading
+- posting goods issue
+
+> wijzigingen zijn nog mogelijk van de klant zelf.
+
+## Picking
+
+> aantal gebasseerd op delivery note (volledig, partieel). Datum toegevoegd wanneer picking moet gedaan worden. Locatie aangeduid. Warehouse Management (WM)
+
+## Loading en Packing
+
+> welke packaging (dozen, paletten, ...).  alles checken
+
+## Goods issue
+
+> Vanaf nu is de eigendom van het product niet meer het bedrijf maar de klant. Doet het inventory aantal naar benede. Einde van shipping process binnen het verzendende bedrijf.
+
+## Billing
+
+> Billing document is het kopieren van gegevens van de sales order en/of delivery document. Invoice genereren. Udpate customer's credit status.
+
+## Billing Documents
+
+> Nu zit het process bij Financial Accounting
+
+## Billing methods
+
+![](https://robinmalfait.com/afbeeldingen/droplr/6CrM.png)
+
+## Payment
+
+> Het effectief increases van bank account van bedrijf.
+
+## Document Flow
+
+> Status van een order op elk moment van het Order-to-Cash process.
