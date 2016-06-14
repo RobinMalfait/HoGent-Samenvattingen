@@ -345,7 +345,7 @@ vs
 
 ##### Veel gebruikte werkwoorden
 
-| &nbsp; | &nbps; | &nbsp; |
+| &nbsp; | &nbsp; | &nbsp; |
 | ------ | ------ | ------ |
 | Afwerken | Archiveren | Beoordelen |
 | Bepalen | Berekenen | Beslissen |
@@ -394,7 +394,7 @@ vs
 
 | &nbps; | &nbsp; |
 | ------ | ------ |
-| ![](https://robinmalfait.com/afbeeldingen/droplr/1gtT5.png) |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/1bdel.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/1gtT5.png) |
 
 ### Stappenplan BPMN diagram
 
