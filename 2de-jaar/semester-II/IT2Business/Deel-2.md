@@ -226,5 +226,62 @@ vs
         | Sequentiële stroom (Sequence Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/1cYsJ.png) |
         | Boodschappenstroom (Message Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
         | Associatie (Association) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
+
 - Zwembaden / zwembanen
+    - Groeperen de stroom- en Verbindingselementen
+    - Soorten:
+
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Zwembaden (Pools)<br>Zwembanen (Lanes) | ![](https://robinmalfait.com/afbeeldingen/droplr/16Enb.png) |
+
 - Artefacten
+    - Worden gebruikt om extra informatie over het proces te voorzien
+    - Soorten:
+
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Data Object | ![](https://robinmalfait.com/afbeeldingen/droplr/RMmV.png) |
+        | Groep (Group) | ![](https://robinmalfait.com/afbeeldingen/droplr/1ct0a.png) |
+        | Annotatie (Annotation) | ![](https://robinmalfait.com/afbeeldingen/droplr/1jkuW.png) |
+
+![](https://robinmalfait.com/afbeeldingen/droplr/10TeF.png)
+
+#### Verbindingselementen
+
+- Sequentiële stroom:
+    - Enkel binnen 1 zwembad (met 1 of meerdere zwembanen)
+    - Niet tussen zwembaden
+- Boodschappenstroom:
+    - Enkel tusesn verschillende zwembaden
+- Associatie:
+    - Verbindt informatie en artefacten met stroomelementen
+
+![](https://robinmalfait.com/afbeeldingen/droplr/9kVK.png)
+
+#### Pools en swimlanes
+
+- Zwembad (Pool)
+    - Grafische container voor activiteiten binnen een orkestratie (orchestration)
+    - Heeft zicht op haar eigen activiteiten, meestal geen zicht op activiteiten van andere zwembaden (Black Box)
+- Zwembaan (Swimlane)
+    - Onderverdeling binnen zwembad
+    - Over de volledige lengte van het zwembad
+    - Horizontaal of verticaal
+    - Stellen vaak een rol voor binnen een orkestratie
+
+##### Privaat proces: 1 zwembad
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1jBbJ.png)
+
+##### Abstract of publiek proces: lege zwembaden
+
+![](https://robinmalfait.com/afbeeldingen/droplr/14Fp7.png)
+
+##### Globaal proces (collaboration process)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/2rcU.png)
+
+##### Niet correct gemodelleerd BPMN diagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/11P9g.png)
