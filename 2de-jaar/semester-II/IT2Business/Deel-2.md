@@ -392,7 +392,7 @@ vs
 
 ### BPMN en data
 
-| &nbps; | &nbsp; |
+| &nbsp; | &nbsp; |
 | ------ | ------ |
 | ![](https://robinmalfait.com/afbeeldingen/droplr/1bdel.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/1gtT5.png) |
 
