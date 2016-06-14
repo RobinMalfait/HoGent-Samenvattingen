@@ -1,5 +1,6 @@
 ---
 title: Samenvatting Databanken
+link: http://robinmalfait.com/2de-jaar/semester-II/Databanken/SamenvattingCompleet.md
 ---
 
 # Hoofdstuk 3: OUTER JOIN, subqueries, EXISTS

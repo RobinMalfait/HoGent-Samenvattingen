@@ -210,6 +210,7 @@ vs
 - Stroomobjecten (evenementen, activiteiten en poorten)
     - De grafische elementen die het gedrag van een bedrijfsproces definiëren.
     - Soorten:
+
         | Naam | Symbool    |
         | ---- | ---------- |
         | evenementen, gebeurtenissen (events) | ![](https://robinmalfait.com/afbeeldingen/droplr/vpOa.png) |
@@ -219,10 +220,11 @@ vs
 - Verbindingselementen (pijlen)
     - Verbinden stroomobjecten met elkaar of met andere informatie.
     - Soorten:
+
         | Naam | Symbool |
         | ----- | ------ |
         | Sequentiële stroom (Sequence Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/1cYsJ.png) |
-        | Boodschappenstroom (Message Flow) | ![](+) |
-        | Associatie (Association) | ![](+) |
+        | Boodschappenstroom (Message Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
+        | Associatie (Association) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
 - Zwembaden / zwembanen
 - Artefacten
