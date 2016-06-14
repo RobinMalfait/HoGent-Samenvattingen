@@ -319,7 +319,7 @@
         - Customer contact center
 - Operations:
     - MM: Materials management (stock, aankoop, MRP run)
-        - MRP = Material Resource Planning (Materials Requirements Planning volgens SAP zelf `¯\_(ツ)_/¯`
+        - MRP = Material Resource Planning
         - Productie Planning (APO of PP) (APO: Advanced Planning & Optimization)
         - Supply chain management / Planning (APO)
         - Shipping & deliveries & transport (SD)
