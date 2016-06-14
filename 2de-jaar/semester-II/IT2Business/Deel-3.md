@@ -293,7 +293,3 @@ Collections of logically related transactions within identifiable business funct
 - Post Goods Issue: boekhoudkundige transactie, je zegt SAP dat die goederen niet meer van jou als bedrijf zijn, maar dat ze buiten zijn gegaan. Uit stock halen. Voor deze stap kan je de goederen nog naar een andere klant sturen. Hier na niet meer want de goederen zijn weg.
 - Invoice customer: laten betalen
 - Receipt of customer payment: betaald (betalingsbewijs)
-
-## Pre-sales Activites (CRM Light)
-
-Sales Support is a component of SD that assists in the sales, distribution, and marketing of a companies products and services to its customers. It contains the following functionality:
