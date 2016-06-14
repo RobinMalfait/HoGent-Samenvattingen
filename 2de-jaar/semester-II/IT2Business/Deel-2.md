@@ -285,3 +285,175 @@ vs
 ##### Niet correct gemodelleerd BPMN diagram
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/11P9g.png)
+
+#### Evenementen (Events)
+
+- Gebeurt tijdens verloop van bedrijfsproces
+- Beïnvloeden de stroom van het proces
+- Hebben een oorzaak (= trigger) of een impact (= resultaat zoals vb. een boodschap)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/13ctH.png)
+
+##### Startevents
+
+![](https://robinmalfait.com/afbeeldingen/droplr/118uz.png)
+
+##### Eindevenementen
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1lpAe.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/17wDu.png)
+
+#### Belangrijkste intermediaire evenementen in BPMN
+
+![](https://robinmalfait.com/afbeeldingen/droplr/17rLp.png)
+
+#### Activiteiten
+
+> - Generische term voor werk dat organisatie uitvoert
+> - Kan atomisch of samengesteld zijn
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1bb9o.png)
+
+##### Kenmerken
+
+- Een zekere duur (tijd is groter dan 0)
+- Verbruikt middelen (oa. Tijd van de procesuitvoerders)
+- Uitgevoerd door een rol (fysieke personen of applicaties)
+- Altijd geactiveerd (getriggerd) door:
+    - Een vorige activiteitenblok
+    - Een evenement of gebeurtenis
+        - Boodschap
+        - Tijd
+        - Regel
+- Genereert altijd minstens 1 (intermediaire) output
+- Leidt tot een status
+- Uitgevoerd op 1 of meerdere fysieke plaatsen
+- Correcte formulering (los van BPMN)
+    - 'Verzenden van vergunning'
+- Geen correcte formulering
+    - 'Beheren van vergunning' (te algemeen)
+    - 'Verbeteren van de ruimtelijke ordening' (doelstelling)
+    - 'Vergunning verzenden' (begint niet met werkwoord)
+    - 'het verzenden van de vergunning' (geen lidwoordne om te starten en vermijden van lidwoorden in naamgeving)
+    - 'Tijdig verzenden van correcte vergunning' (geen kenmerken of doelstellingen toevoegen)
+- Te vermijden:
+    - 'Invullen formulier F45' (naam formulizer kan veranderen of afgeschaft worden)
+    - 'Goedkeuren', 'Controleren' (niet specifiek genoeg; het item dat gecontroleerd moet worden ontbreekt)
+    - 'Beheersen van wagenpark', 'Beheren van documenten', 'Managen van ploeg mensen' (niet specifiek genoeg als activiteit; geen meervoud)
+    - 'Bezorgen van brief naar dienst B' (vermijden van intern transport; doorgaans af te leiden uit de context van het diagram)
+    - 'Wachten op een antwoord' (verdoken evenement; tijdens het wachten worden immers ook andere taken uitgevoerd)
+
+##### Veel gebruikte werkwoorden
+
+| &nbsp; | &nbps; | &nbsp; |
+| ------ | ------ | ------ |
+| Afwerken | Archiveren | Beoordelen |
+| Bepalen | Berekenen | Beslissen |
+| Bijwerken | Controleren | Creëren |
+| Evalueren | Goedkeuren | Informeren |
+| Invullen | Lanceren | Plannen |
+| Produceren | Registreren | Toetsen |
+| Uitvoeren | Valideren | Veranderen |
+| Vergelijken | Verwijderen | Voorbereiden |
+| Wijzigen | &nbsp; | &nbsp; |
+
+### Modelleren van Regels
+
+- Mengen van regels en activiteiten (niet goed)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1j9iC.png)
+- Scheiden van regels en activiteiten (wel goed)
+    ![](https://robinmalfait.com/afbeeldingen/droplr/QI0j.png)
+
+### Artefacten
+
+#### Data objects:
+
+- Geen stroomobjecten (niet verbonden doorheen de sequentiële stroom)
+- Voorzien in informatie over de manier waarop documenten, data en andere objecten gebruikt en aangepast worden binnen een proces.
+
+    ![](https://robinmalfait.com/afbeeldingen/droplr/x9rh.png)
+
+#### Text Annotations
+
+- Gebruikt om extra informatie te voorzien voor de lezer van een BPMN diagram
+
+    ![](https://robinmalfait.com/afbeeldingen/droplr/1bM5j.png)
+
+##### Groups
+
+- Organiseren op een visuele wijze activiteiten in een cluster die niet anders kan voorgesteld worden in het diagram
+- Niet gebonden aan beperkingen van zwembaden of zwembanen
+
+    ![](https://robinmalfait.com/afbeeldingen/droplr/T3JO.png)
+
+### Voorbeeld: online verkoop
+
+![](https://robinmalfait.com/afbeeldingen/droplr/15N9K.png)
+
+### BPMN en data
+
+| &nbps; | &nbsp; |
+| ------ | ------ |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/1gtT5.png) |
+
+### Stappenplan BPMN diagram
+
+1. Bepalen van het doel of de finaliteit van het BPMN diagram
+2. Bepalen van de context van het proces
+3. Bepalen van het aantal zwembaden en zwembanen
+4. Bepalen van het begin- en eindevenement van elk zwembad
+5. Bepalen van de verschillende activiteiten, poorten, tussentijdse evenementen en sequentiële stromen binnen elk zwembad.
+6. Bepalen van de verschillende boodschappenstromen tussen de zwembaden
+7. Vervolledigen van het diagram met artefacten waar nodig
+
+### Tips modelleren in BPMN
+
+1. Benoem alle objecten in het diagram (behalve de sequentiële stromen)
+2. Valideer het diagram ten opzichte van de BPMN regels.
+3. Maak de modellen hiërarchisch
+4. Start de benoeming van elke activiteiten met een actief werkwoord in de infinitiefvorm
+5. Vermijd activiteiten als 'Versturen naar ... ' of 'Ontvangen van ...' wanneer het een informatieoverdracht betreft binnen 1 zwembad. Deze activiteiten worden vervangen door een sequentiële stroom
+6. Als men iets aan een manager wil communiceren of informeren zonder dat het bijbehorende werk (vb. dossier) eegaat, dan gebruikt men het beste de activiteit 'Informeren van ...' in de zwembaan van de zender zonder sequentiële stroom naar de manager.
+7. Wanneer er meerdere eindevenementen zijn (vb. bij succesvolle uitvoering en bij niet-succesvolle uitvoering), dan is het niet nodig om deze te laten samenkomen naar 1 eindevenement.
+
+### Voorbeelden BPMN
+
+![](https://robinmalfait.com/afbeeldingen/droplr/LfkZ.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/18fUO.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1d3Xw.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/16uJx.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/HG16.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/11sd0.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1kUcY.png)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1lypb.png)
+
+
+### Voordelen en beperkingen van BPMN
+
+| Voordelen | Beperkingen |
+| --------- | ----------- |
+| Internationaal aanvaarde standaard | Beperkt aantal objecten (geen objecten verbonden met strategie, HR, middelen, wet- en regelgeving) |
+| Link met BPEL (Business Process Execution Language) | Slechts 1 voorstellingswijze (met name via zwembanen) |
+| Toegankelijk voor de "business" | Geen datamodellen mogelijk |
+| &nbsp; | Geen materiaalstromen (alleen informatie- en sequentiële stromen) |
+
+### BPMN vs. UML
+
+| BPMN | UML (Unified Modelling Language) |
+| ---- | -------------------------------- |
+| Proces-geörienteerde benadering bij het modelleren van systemen | Object-geörienteerde benadering bij het modelleren van applicaties |
+| Focus op bedrijfsprocessen | Focus op softwareontwikkeling |
+
+> BPMN en UML (ontwikkel/beheerd door OMG) zijn compatibel met elkaar. Een bedrijfsproces moet niet noodzakelijk geïmplementeerd worden als geautomatiseerd proces.
+
+### Tools
+
+- Bizaggi
+- MS Visio
