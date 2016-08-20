@@ -7,6 +7,29 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Analyse-II.md
 
 ## Kwaliteitsvolle ICT Projecten Opleveren
 
+### Kwaliteitsvolle
+Als het aan de functionele en niet-functionele vereisten voldoet.
+
+- **Functionele Requiremenets**
+    - Use Case
+- **Niet-functionele Requirements**
+    - Meetvoorschriften (moeten SMART zijn)
+    - Normen, via de norm kan je weten of het meetvoorschrift voldoet.
+    - Kritische Succes Factoren (KSF)
+
+
+### (ICT) Projecten:
+Een project wordt gerealiseerd binnen een bepaald budget, tijd, team.
+De opdrachtgever waakt over budget, tijd. De gebruiker zal ermee moeten werken.
+
+### Opleveren
+Om te kunnen opleveren willen we dat kunnen doen met een goed geval, dan moeten we zeker testen.
+
+Testen op basis van FR (Use cases) en NFR (meetvoorschrift, norm)
+We moeten testen binnen een bepaald budget, tijd
+
+----
+
 > Voldoet aan alle eisen.
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1hwnp.png)
@@ -19,16 +42,8 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Analyse-II.md
 
 > **!** TESTEN
 
-- **Functionele Requiremenets**
-    - Use Case
-- **Niet-functionele Requirements**
-    - Meetvoorschriften (moeten SMART zijn)
-    - Normen
-    - Kritische Succes Factoren (KSF)
 
-### Projecten:
-Een project wordt gerealiseerd binnen een bepaald budget, tijd, team.
-De opdrachtgever waakt over budget, tijd. De gebruiker zal ermee moeten werken.
+
 
 - **Agile**
     - Scrum
