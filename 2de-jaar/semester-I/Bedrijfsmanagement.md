@@ -44,7 +44,8 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 > **KOSTEN** zijn de in geld uitgedrukte waarde van de opgeofferede productiemiddelen.
 >
 > (aanwending van PM) **KOSTEN** ≠ **UITGAVE** (uitgaande geldstroom)
-<br>
+
+
 > **TW = TO - TK**
 
 ## 1.3 De standaarkostprijsberekening
@@ -101,8 +102,9 @@ Een producent van houten meubels hanteert de volgende gegevens:
 * Er worden <font color="red">**100 tafels**</font> geproduceerd.
 
 Gevraagd:
-a. Wat is het bruto verbruik grondstoffen?
-b. Wat zijn de totale grondstofkosten?
+
+- a. Wat is het bruto verbruik grondstoffen?
+- b. Wat zijn de totale grondstofkosten?
 
 ### A) Bruto Verbruik
 
