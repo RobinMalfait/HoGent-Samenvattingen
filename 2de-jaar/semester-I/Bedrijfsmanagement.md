@@ -447,7 +447,7 @@ Voorbeeld:
 
 ## 3.4 De gemiddelde en marginale kosten
 
-- Gemiddelde constante kosten = GCK
+- Gemiddelde constante kosten = `GCK`
 
     ```
       TCK
@@ -455,7 +455,7 @@ Voorbeeld:
        Q
     ```
 
-- Gemiddelde variabele kosten = GVK
+- Gemiddelde variabele kosten = `GVK`
 
     ```
       TVK
@@ -463,7 +463,7 @@ Voorbeeld:
        Q
     ```
 
-- Gemiddelde totale kosten = GTK
+- Gemiddelde totale kosten = `GTK`
 
     ```
       (GCK + GVK) of (TK)
@@ -471,7 +471,7 @@ Voorbeeld:
             Q
     ```
 
-- Marginale kosten = MK
+- Marginale kosten = `MK`
 
     = De extrakosten die ontstaan door de productie met 1 EH uit te breiden
 
@@ -480,6 +480,7 @@ Voorbeeld:
     = ---- of ----
        ΔQ       ΔQ
     ```
+
 ![](https://robinmalfait.com/afbeeldingen/droplr/11Rz6.png)
 
 ### 3.4.1 Oefening
