@@ -7,6 +7,7 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 | --------- | ---------------------------------------- |
 | AKP       | Aankoopprijs                             |
 | AW        | Aanschafwaarde                           |
+| BW        | Boekwaarde                               |
 | CK        | Constante Kosten                         |
 | DPM       | Duurzaam Productie Middel                |
 | EH        | Eenheid                                  |
