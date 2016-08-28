@@ -491,7 +491,7 @@ Grafische uitwerking van de tabel:
 
 | Afbeelding | Conclusies |
 | :--------: | :--------- |
-| ![](https://robinmalfait.com/afbeeldingen/droplr/11NVT.png) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/HSNz.png) | <ul><li>De GCK dalen voortdurend.</li><li>GVK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK.</li><li>-> Als de extra kost van een extra eenheid kleiner is dan het gemiddelde zal het gemiddelde afnemen.</li><li>-> Als de extra kost van een extra eenheid groter is dan het gemiddelde zal het gemiddelde toenemen. **OPTIMALE BEZETTING**: productieomvang waarbij GVK het laagste is.</li><li>GTK dalen eerst om voorbij een zeker punt te gaan stijgen. Dit houdt verband met het degressieve en progressieve verloop van de TVK. De afstand tussen GVK en GTK neemt af -> dit komt omdat de GCK steeds dalen en GTK = GCK + GVK In het minimum van GTK spreekt men van het **TECHNISCH OPTIMALE PUNT** of het punt waarbij de productieomvang vanuit kostenoogpunt het gunstigste is.</li><li>MK/EH: dalen eerst om voorbij een bepaald punt toe te nemen. MK/EH stijgt sneller dan GVK en GTK. Het minimum van MK/EH ligt dus voor het minimum van GVK en GTK.</li><li>MK/EH snijden GVK en GTK in het minimum. Dit is logisch aangezien de GVK en GTK blijven dalen zolang de extra kost per EH lager is dan GVK en GTK.</li></ul> |
 
 ### 3.4.2 Oefening
 
@@ -508,20 +508,20 @@ Volgende grafiek stelt de situatie voor van een onderneming die werkt onder  vol
 
 ![](https://robinmalfait.com/afbeeldingen/droplr/1cZFP.png)
 
-- Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
+#### Hoeveel bedraagt de **afzet** bij een prijs van 20 EUR?
 
-    <font color="red">**Q = 90**</font>
-    > Snijpunt met **MK**
+<font color="red">**Q = 90**</font>
+> Snijpunt met **MK**
 
-- Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
+#### Hoeveel bedraagt de **break-even afzet** bij een prijs van 20 EUR?
 
-    <font color="red">**Q = 53**</font>
-    > Snijpunt met **GTK**
+<font color="red">**Q = 53**</font>
+> Snijpunt met **GTK**
 
-- Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
+#### Welke productieomvang is vanuit **kostenoogpunt gezien het gunstigst**?
 
-    <font color="red">**Q = 80**</font>
-    > Snijpunt van **MK** en **GTK**
+<font color="red">**Q = 80**</font>
+> Snijpunt van **MK** en **GTK**
 
 ## 3.5 De semivariabele kosten (= gemengde kosten)
 
