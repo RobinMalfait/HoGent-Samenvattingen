@@ -245,8 +245,8 @@ De afschrijvingskosten kunnen als volgt worden berekend:
 
     ```
       Jaarlijkse Afschrijvingskosten
-    = ------------------------------- * 100%
-        Aanschafwaarde (AW)
+    = ------------------------------------- * 100%
+      Aanschafwaarde (AW) - Restwaarde (RW)
     ```
 
 > Er wordt een **constante prestatie** door het DPM geleverd.
