@@ -1088,7 +1088,7 @@ Huidige bedragen kunnen we immers tegen een geldende rentevoet beleggen, zodat d
 
 - Wat is een kapitaal tegen rente uitgezet ná afloop waard?
 
-    Van één bedrag: `E = K x (1 + i)^n`
+    Van één bedrag: `E = K * (1 + i)^n`
 
 
 **Contante waarde**
