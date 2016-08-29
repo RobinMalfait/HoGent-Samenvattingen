@@ -682,14 +682,14 @@ Grondstofverbruik per jaar
     Totaal                             €19.500,00   = directe kosten
 
 Indirecte kosten:
-    
+
     Huur van frituur € 6.000,00
     Overige kosten   € 5.700,00 +
     -----------------------------
                      €11.700,00
 
 Opslagpercentage voor indirecte kosten op de directe grondstofkosten:
-    
+
     Indirecte Kosten   €11.700,00
     ---------------- = ---------- * 100% = 60%
     Directe Kosten     €19.500,00
