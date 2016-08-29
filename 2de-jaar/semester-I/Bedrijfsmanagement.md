@@ -675,16 +675,24 @@ Wat wordt het opslagpercentage indirecte kosten?
 ```
 Grondstofverbruik per jaar
 
-    Friet             €12.500,00
-    Kroketten         € 4.000,00
-    Frikadellen       € 3.000,00
-    ----------------------------
-    Totaal            €19.500,00 = directe kosten
+    Friet             50.000 * €0.25 = €12.500,00
+    Kroketten         20.000 * €0.20 = € 4.000,00 +
+    Frikadellen       10.000 * €0.30 = € 3.000,00 +
+    -----------------------------------------------
+    Totaal                             €19.500,00   = directe kosten
 
-Indirecte kosten  €11.700,00  (Huur van frituur + frituurkosten + overige kosten: €6.000,00 + €5.700,00)
+Indirecte kosten:
+    
+    Huur van frituur € 6.000,00
+    Overige kosten   € 5.700,00 +
+    -----------------------------
+                     €11.700,00
 
 Opslagpercentage voor indirecte kosten op de directe grondstofkosten:
-    €11.700,00 / €19.500 x 100% = 60%
+    
+    Indirecte Kosten   €11.700,00
+    ---------------- = ---------- * 100% = 60%
+    Directe Kosten     €19.500,00
 
 Wat wordt nu de kostprijs van een portie patat, een kroket en een frikadel?
 
