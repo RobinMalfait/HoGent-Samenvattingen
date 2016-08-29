@@ -992,9 +992,10 @@ capaciteitsverandering
 -> NIET-EVENREDIGE verandering van de totale kosten
 
 #### Grootte-degressie?
- Tot een bepaald punt zal de extra kost minder dan evenredig stijgen waarna de kost meer dan evenredig zal toenemen.
 
- -> Uiteraard moet er een afzetmarkt zijn voor deze productiehoeveelheid!!
+Tot een bepaald punt zal de extra kost minder dan evenredig stijgen waarna de kost meer dan evenredig zal toenemen.
+
+-> Uiteraard moet er een afzetmarkt zijn voor deze productiehoeveelheid!!
 
 ## 7.4 De optimale gebruiksduur = ELD
 
