@@ -1017,7 +1017,7 @@ Verschillende methoden voor investeringsselectie:
 
 Een investeringsproject is het geheel van investeringen in bij elkaar behorende duurzame en vlottende activa, gekenmerkt door:
 
-Cashflow = netto ontvangsten    (ontvangsten - uitgaven)
+Cashflow = netto ontvangsten    (ontvangsten - uitgaven = netto ontvangsten)
 
 ### Waarin investeren?
 
