@@ -902,9 +902,9 @@ Enkele assumpties:
 BEREKENING
 
 Totale Opbrengsten          = Totale Kosten
-    (p * Q)                 = (v * Q) + TCK
+                   (p * Q)  = (v * Q) + TCK
          (p * Q) - (v * Q)  = TCK
-                Q(p - v)    = TCK
+                  Q(p - v)  = TCK
                         Q   = TCK / (p - v)
 
                            Constante kosten
