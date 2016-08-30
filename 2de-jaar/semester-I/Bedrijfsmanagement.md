@@ -1295,3 +1295,17 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 - **Acceptabel**: hoe groot zijn de risico's voor de onderneming als de investering niet het gewenste rendement gaat opbrengen?
 
 > RISICO'S -> Vermijden - overdragen / Verzekeren - beheersen
+
+# Deel 2
+
+Gouden financieringsregel (balans)
+
+> De <font color="red">duurzame activa</font> en <font color="red">de constante kern van de vlottende activa</font> (‘ijzeren’ voorraad en kerndebiteuren) worden bij voorkeur gefinancierd met p<font color="red">ermanent vermogen of lang vreemd vermogen</font>.
+
+- **Financiering afgestemd op levensduur van duurzame activa.**
+- **Kosten** van lang vreemd vermogen zijn lager dan van kort vreemd vermogen.
+
+> De <font color="red">vlottende activa</font> worden bij voorkeur gefinancierd met <font color="red">kort vreemd vermogen</font>.
+
+- Flexibele financiering afgestemd op wisselende omvang van de vlottende activa
+- Kosten kort vreemd vermogen is weliswaar hoger dan lang vreemd vermogen, maar er wordt alleen gebruik gemaakt wanneer het nodig is.
