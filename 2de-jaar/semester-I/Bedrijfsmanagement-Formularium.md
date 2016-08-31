@@ -420,7 +420,7 @@ Jaar 5      € 50.000,00
 De discontovoet is 10% op jaarbasis.
 ```
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/>
 
 ### Uitwerking GBR (Gemiddelde Boekhoudkundige Rendabiliteit)
 
