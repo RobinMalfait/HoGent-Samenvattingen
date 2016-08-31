@@ -420,12 +420,14 @@ Jaar 5      € 50.000,00
 De discontovoet is 10% op jaarbasis.
 ```
 
-<br />
+<br /><br />  
 
-#### Uitwerking GBR
+#### Uitwerking GBR (Gemiddelde Boekhoudkundige Rendabiliteit)
 
 ```
-           Gemiddelde winst
+      Gemiddelde winst
+GBR = ---------------------- * 100%
+      Gemiddelde investering
 
 Cumulatieve cashflow jaar 5     €380.000,00
 - totale afschrijving           €200.000,00  (AW - RW)
