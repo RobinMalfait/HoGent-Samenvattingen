@@ -5,7 +5,8 @@ var fm = require('front-matter');
 var extension = ".md";
 var foldersToScan = [
     './1ste-jaar',
-    './2de-jaar'
+    './2de-jaar',
+    './3de-jaar'
 ];
 
 var regex = new RegExp("\n(---)", 'm');

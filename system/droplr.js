@@ -9,7 +9,8 @@ var NEW_IMAGE_LINK = "https://robinmalfait.com/afbeeldingen/droplr/{0}.png";
 var extension = ".md";
 var foldersToScan = [
     './1ste-jaar',
-    './2de-jaar'
+    './2de-jaar',
+    './3de-jaar'
 ];
 var imageDestination = "./afbeeldingen/droplr";
 
