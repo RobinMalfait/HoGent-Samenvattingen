@@ -42,3 +42,50 @@ DECLARE
 ```
 
 > **%TYPE** neemt het type van de tabel over
+
+# NoSQL
+
+> Not Only SQL
+
+**ACID** wordt niet ondersteund.
+
+- Atomicity: transactie wordt in zijn geheel of niet uitgevoerd
+- Consistency: na elke transactie is het consistente data
+- Isolation: transacties worden gescheiden, en storen elkaar niet
+- Durability: permanent in het systeem
+
+[Verschillen](https://chamilo.hogent.be/Chamilo/Libraries/Resources/Javascript/Plugin/PDFJS/web/viewer.html?file=https%3A%2F%2Fchamilo.hogent.be%2Findex.php%3Fapplication%3DChamilo%255CCore%255CRepository%26go%3DDocumentDownloader%26object%3D2324763%26security_code%3Db1440de5314a3c89018318f07643470d441fa279%26display%3D1)
+
+## Impedence Mismatch
+
+> **Impedence mismatch**: object opdelen in brokken om te persisteren
+
+## 4 Soorten NoSQL databases
+
+- Key Value stores
+- Document database (mongodb)
+- Column family
+- Graph Db's
+
+### Type 1 
+
+- Redis
+
+### Type 2
+
+- MongoDB
+- CoudhDB
+
+#### Aggregate oriented
+
+> Bestaat uit meerdere stukken
+
+### Type 3
+
+- cassandra
+
+## CAP
+
+- Consistency
+- Availability
+- Partitioning 
