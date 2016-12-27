@@ -1985,3 +1985,33 @@ Socket connection = new Socket(serverAddress, port)
 ###Stap 3: Tijdens de verwerkingsfase communiceren client en server via input/output
 
 ###Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
+
+##Eenvoudige server opzetten me datagram packets (UDP) -> voorbeeld pings verzenden
+
+###Stap 1: Creëer datagram socket object
+
+```java
+int poortNr = 5555;
+DatagramSocket socket = new DatagramSocker(poortNr);
+```
+
+###Stap 2: Creëer een datagram packet om inkomende UDP packets in op te slaan
+```java
+DatagramPacket request = new DatagramPacket(new byte[1024],1024);
+```
+
+###Stap 3: In while loop, blokkeer tot de host een UDP packet ontvangt
+```java
+while(true){
+       socket.receive(request);
+}
+```
+
+###Stap 4: Stuur antwoord
+```java
+InetAddress clientHost = request.getAddress();
+int clientPort = request.getPort();
+byte[] buf = request.getData();
+DatagramPacket reply = new DatagramPacket(buf, buf.length, clientHost, clientPort);
+socket.send(reply);
+```
