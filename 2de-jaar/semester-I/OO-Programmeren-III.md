@@ -2070,3 +2070,33 @@ socket.send(packet);
 ```java
 socket.close();
 ```
+
+##Eenvoudige multicast client (UDP)
+
+####Stap 1: Maak multicast socket object
+```java
+int poortNr = 4445;
+MulticastSocket socket = new MulticastSocket(poortNr);
+```
+
+####Stap 2: Sluit aan bij multicastgroep
+```java
+InetAddress addr = InetAddress.getByName("230.0.0.1");
+socket.joinGroup(addr);
+```
+
+####Stap 3: Ontvang datagrambericht
+```java
+DatagramPacket packet = new DatagramPacket(buf, buf.length);
+socket.receive(packet);
+```
+
+####Stap 4: Verlaat multicastgroep
+```java
+socker.leaveGroup(addr);
+```
+
+####Stap 5: Sluit socket
+```java
+socket.close();
+```
