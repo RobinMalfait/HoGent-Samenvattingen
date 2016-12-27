@@ -1941,9 +1941,9 @@ HTTP vormt basis van WWW.
 
 AppletContext heeft een methode showDocument die browser toegang geeft tot de resource en die resource toont op het scherm.
 
-### Eenvoudige server met Stream Sockets opzetten (TCP)
+## Eenvoudige server met Stream Sockets opzetten (TCP)
 
-##Stap 1: creëer een ServerSocket object
+###Stap 1: creëer een ServerSocket object
 
 ```java
 ServerSocket server = new ServerSocker(portNumber, queueLength);
@@ -1953,35 +1953,35 @@ Geldig poortnummer => tussen 0 en 65565
 Meeste besturingssystemen reserveren poortnummers kleiner dan 1024 voor system services
 DUS altijd poortnummer hoger dan 1024 nemen anders BindException !
 
-##Stap 2: Server luisters onafgebroken naar poging van client om connectie te maken
+###Stap 2: Server luisters onafgebroken naar poging van client om connectie te maken
 
 ```java
 Socket connection = server.accept();
 ```
 
-##Stap 3: De OutputStream en InputStream-objecten worden opgehaald zodat de server kan communiceren me de client door verzenden en ontvangen van Bytes
+###Stap 3: De OutputStream en InputStream-objecten worden opgehaald zodat de server kan communiceren me de client door verzenden en ontvangen van Bytes
 
 ```java
 ObjectOutputStream objOutput = server.getOutputStream();
 ```
 
-##Stap 4: Tijdens de verwerkingsfase communiceren client en server via input/output
+###Stap 4: Tijdens de verwerkingsfase communiceren client en server via input/output
 
-##Stap 5: Wanneer transmissie is afgehandeld sluit server connectie door methode close aan te roepen op de streams en socket.
+###Stap 5: Wanneer transmissie is afgehandeld sluit server connectie door methode close aan te roepen op de streams en socket.
 
 ```java
 server.close();
 ```
 
-### Eenvoudige Client opzetten in 4 stappen
+## Eenvoudige Client opzetten in 4 stappen
 
-##Stap 1: Socket constructor legt connectie met server
+###Stap 1: Socket constructor legt connectie met server
 ```java
 Socket connection = new Socket(serverAddress, port)
 ```
 
-##Stap 2: Gebruik methoden getInputStream en getOutputStream om referenties te krijgen naar input/output streams
+###Stap 2: Gebruik methoden getInputStream en getOutputStream om referenties te krijgen naar input/output streams
 
-##Stap 3: Tijdens de verwerkingsfase communiceren client en server via input/output
+###Stap 3: Tijdens de verwerkingsfase communiceren client en server via input/output
 
-##Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
+###Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
