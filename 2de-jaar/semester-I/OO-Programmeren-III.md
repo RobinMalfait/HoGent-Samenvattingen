@@ -1943,7 +1943,7 @@ AppletContext heeft een methode showDocument die browser toegang geeft tot de re
 
 ## Eenvoudige server met Stream Sockets opzetten (TCP)
 
-###Stap 1: creëer een ServerSocket object
+####Stap 1: creëer een ServerSocket object
 
 ```java
 ServerSocket server = new ServerSocker(portNumber, queueLength);
@@ -1953,21 +1953,21 @@ Geldig poortnummer => tussen 0 en 65565
 Meeste besturingssystemen reserveren poortnummers kleiner dan 1024 voor system services
 DUS altijd poortnummer hoger dan 1024 nemen anders BindException !
 
-###Stap 2: Server luisters onafgebroken naar poging van client om connectie te maken
+####Stap 2: Server luisters onafgebroken naar poging van client om connectie te maken
 
 ```java
 Socket connection = server.accept();
 ```
 
-###Stap 3: De OutputStream en InputStream-objecten worden opgehaald zodat de server kan communiceren me de client door verzenden en ontvangen van Bytes
+####Stap 3: De OutputStream en InputStream-objecten worden opgehaald zodat de server kan communiceren me de client door verzenden en ontvangen van Bytes
 
 ```java
 ObjectOutputStream objOutput = server.getOutputStream();
 ```
 
-###Stap 4: Tijdens de verwerkingsfase communiceren client en server via input/output
+####Stap 4: Tijdens de verwerkingsfase communiceren client en server via input/output
 
-###Stap 5: Wanneer transmissie is afgehandeld sluit server connectie door methode close aan te roepen op de streams en socket.
+####Stap 5: Wanneer transmissie is afgehandeld sluit server connectie door methode close aan te roepen op de streams en socket.
 
 ```java
 server.close();
@@ -1975,13 +1975,128 @@ server.close();
 
 ## Eenvoudige Client opzetten in 4 stappen
 
-###Stap 1: Socket constructor legt connectie met server
+####Stap 1: Socket constructor legt connectie met server
 ```java
 Socket connection = new Socket(serverAddress, port)
 ```
 
-###Stap 2: Gebruik methoden getInputStream en getOutputStream om referenties te krijgen naar input/output streams
+####Stap 2: Gebruik methoden getInputStream en getOutputStream om referenties te krijgen naar input/output streams
 
-###Stap 3: Tijdens de verwerkingsfase communiceren client en server via input/output
+####Stap 3: Tijdens de verwerkingsfase communiceren client en server via input/output
 
-###Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
+####Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
+
+##Eenvoudige server opzetten met datagram packets (UDP) -> voorbeeld pings verzenden
+
+####Stap 1: Creëer datagram socket object
+
+```java
+int poortNr = 5555;
+DatagramSocket socket = new DatagramSocker(poortNr);
+```
+
+####Stap 2: Creëer een datagram packet om inkomende UDP packets in op te slaan
+```java
+DatagramPacket request = new DatagramPacket(new byte[1024],1024);
+```
+
+####Stap 3: In while loop, blokkeer tot de host een UDP packet ontvangt
+```java
+while(true){
+       socket.receive(request);
+}
+```
+
+####Stap 4: Stuur antwoord
+```java
+InetAddress clientHost = request.getAddress();
+int clientPort = request.getPort();
+byte[] buf = request.getData();
+DatagramPacket reply = new DatagramPacket(buf, buf.length, clientHost, clientPort);
+socket.send(reply);
+```
+
+##Eenvoudige client opzetten met datagram packets
+
+####Stap 1: Maak connectie met server en verstuur packetje
+```java
+//attributen
+private InetAddress host;
+private String hostName = "localhost"
+private int poortNr = 5555
+
+host = inetAddress.getByName("localhost")
+DatagramSocket socket = new DatagramSocket();
+//verzenden informatie
+DatagramPacket packet = new DatagramPacket(......);
+socket.send(packet) //objecten, text, pings...
+//ontvange informatie
+DatagramPacket antwoord = new DatagramPacket(....);
+socket.receive(antwoord);
+```
+
+##Multicast
+
+Zend pakketten naar multicast-adres.
+Clients kunnen aansluiten bij multicastgroep.
+Clients zijn anoniem, server weet niet wie er luistert.
+Iedereen kan bericht verzenden naar multicast groep.
+
+##Eenvoudige multicast Server (UDP)
+
+####Stap 1: Creëer datagramSocket
+```java
+int poortNr = 4445;
+DatagramSocket socket = new DatagramSocket(poortNr);
+```
+
+####Stap 2: Kies een multicast adres
+230.0.0.1 is een standaard multicast adres bij netwerkprogrammeren
+```java
+InetAddress group = InetAddress.getByName("230.0.0.1");
+```
+
+####Stap 3: Maak datagramPacket
+```java
+DatagramPacket packet = new DatagramPacket(buf.getBytes(), buf.length, group, poortNr);
+```
+
+####Stap 4: Verzend packet
+```java
+socket.send(packet);
+```
+
+####Stap 5: Sluit socket
+```java
+socket.close();
+```
+
+##Eenvoudige multicast client (UDP)
+
+####Stap 1: Maak multicast socket object
+```java
+int poortNr = 4445;
+MulticastSocket socket = new MulticastSocket(poortNr);
+```
+
+####Stap 2: Sluit aan bij multicastgroep
+```java
+InetAddress addr = InetAddress.getByName("230.0.0.1");
+socket.joinGroup(addr);
+```
+
+####Stap 3: Ontvang datagrambericht
+```java
+DatagramPacket packet = new DatagramPacket(buf, buf.length);
+socket.receive(packet);
+```
+
+####Stap 4: Verlaat multicastgroep
+```java
+socker.leaveGroup(addr);
+```
+
+####Stap 5: Sluit socket
+```java
+socket.close();
+```
