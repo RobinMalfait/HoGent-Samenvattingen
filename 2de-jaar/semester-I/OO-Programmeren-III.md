@@ -1986,7 +1986,7 @@ Socket connection = new Socket(serverAddress, port)
 
 ####Stap 4: Wanneer transmissie is afgehandeld sluit client connectie door methode close aan te roepen op de streams en socket.
 
-##Eenvoudige server opzetten me datagram packets (UDP) -> voorbeeld pings verzenden
+##Eenvoudige server opzetten met datagram packets (UDP) -> voorbeeld pings verzenden
 
 ###Stap 1: Creëer datagram socket object
 
@@ -2016,3 +2016,21 @@ DatagramPacket reply = new DatagramPacket(buf, buf.length, clientHost, clientPor
 socket.send(reply);
 ```
 
+##Eenvoudige client opzetten met datagram packets
+
+####Stap 1: Maak connectie met server en verstuur packetje
+```java
+//attributen
+private InetAddress host;
+private String hostName = "localhost"
+private int poortNr = 5555
+
+host = inetAddress.getByName("localhost")
+DatagramSocket socket = new DatagramSocket();
+//verzenden informatie
+DatagramPacket packet = new DatagramPacket(......);
+socket.send(packet) //objecten, text, pings...
+//ontvange informatie
+DatagramPacket antwoord = new DatagramPacket(....);
+socket.receive(antwoord);
+```
