@@ -1988,26 +1988,26 @@ Socket connection = new Socket(serverAddress, port)
 
 ##Eenvoudige server opzetten met datagram packets (UDP) -> voorbeeld pings verzenden
 
-###Stap 1: Creëer datagram socket object
+####Stap 1: Creëer datagram socket object
 
 ```java
 int poortNr = 5555;
 DatagramSocket socket = new DatagramSocker(poortNr);
 ```
 
-###Stap 2: Creëer een datagram packet om inkomende UDP packets in op te slaan
+####Stap 2: Creëer een datagram packet om inkomende UDP packets in op te slaan
 ```java
 DatagramPacket request = new DatagramPacket(new byte[1024],1024);
 ```
 
-###Stap 3: In while loop, blokkeer tot de host een UDP packet ontvangt
+####Stap 3: In while loop, blokkeer tot de host een UDP packet ontvangt
 ```java
 while(true){
        socket.receive(request);
 }
 ```
 
-###Stap 4: Stuur antwoord
+####Stap 4: Stuur antwoord
 ```java
 InetAddress clientHost = request.getAddress();
 int clientPort = request.getPort();
@@ -2033,4 +2033,40 @@ socket.send(packet) //objecten, text, pings...
 //ontvange informatie
 DatagramPacket antwoord = new DatagramPacket(....);
 socket.receive(antwoord);
+```
+
+##Multicast
+
+Zend pakketten naar multicast-adres.
+Clients kunnen aansluiten bij multicastgroep.
+Clients zijn anoniem, server weet niet wie er luistert.
+Iedereen kan bericht verzenden naar multicast groep.
+
+##Eenvoudige multicast Server (UDP)
+
+####Stap 1: Creëer datagramSocket
+```java
+int poortNr = 4445;
+DatagramSocket socket = new DatagramSocket(poortNr);
+```
+
+####Stap 2: Kies een multicast adres
+230.0.0.1 is een standaard multicast adres bij netwerkprogrammeren
+```java
+InetAddress group = InetAddress.getByName("230.0.0.1");
+```
+
+####Stap 3: Maak datagramPacket
+```java
+DatagramPacket packet = new DatagramPacket(buf.getBytes(), buf.length, group, poortNr);
+```
+
+####Stap 4: Verzend packet
+```java
+socket.send(packet);
+```
+
+####Stap 5: Sluit socket
+```java
+socket.close();
 ```
