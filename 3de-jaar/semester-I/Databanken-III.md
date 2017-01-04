@@ -8,6 +8,23 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 # PL/SQL
 
+## Slides
+
+| pdf           | keywords                |
+| ------------- | ----------------------- |
+| PLSQL_s01.pdf | `introduction`, `benefits`, `creating PL/SQL blocks` |
+| PLSQL_s02.pdf | `variables`, `types`, `%TYPE`, `functions`, `implicit/explicit data conversion`, `nested blocks`, `variable scope`, `<<outer>>`, `Good Programming Practices (¯\_(ツ)_/¯)`, `naming_conventions v_ (variable), c_ (constant), p_ (parameter)` |
+| PLSQL_s03.pdf | `retrieving data`, `naming conventions`, `manipulating data`, `implicit cursors`, `transactional control statements` |
+| PLSQL_s04.pdf | `Conditionals`, `IF`, `THEN`, `ELSE`, `ELSIF`, `CASE`, `basic loops`, `WHILE`, `FOR`, `nested loops`, `loop labels`, `<<outer_loop>>`, `<<inner_loop>>` |
+| PLSQL_s05.pdf | `Explicit cursors`, `DECLARE`, `OPEN`, `FETCH`, `CLOSE`, `attributes`, `records`, `%ROWTYPE`, `%ISOPEN`, `%NOTFOUND`, `%FOUND`, `%ROWCOUNT`, `cursor FOR loops`, `cursor with parameters`, `cursors FOR UPDATE`, `NOWAIT`, `FOR UPDATE OF column-name`, `WHERE CURRENT OF cursor-name`, `multiple cursors` |
+| PLSQL_s06.pdf | `User-Defined Records (custom types)`, `Indexing Tables of Records` |
+| PLSQL_s07.pdf | `Handling exceptions`, `EXCEPTION`, `WHEN`, `NO_DATA_FOUND`, `TOO_MANY_ROWS`, `OTHERS`, `1. Predefined Oracle server error`, `2. Non-predefiend Oracale server error`, `3. User-defined error`, `INVALID_CURSOR`, `ZERO_DIVIDE`, `DUP_VAL_ON_INDEX`, `slide 32`, `SQLCODE`, `SQLERRM`, `slide 42`, `RAISE`, `RAISE_APPLICATION_ERROR`, `scope of exceptions` |
+| PLSQL_s08.pdf | `creating PROCEDURE`, `PROCEDURE`, `CREATE OR REPLACE PROCEDURE xxx IS`, `parameters`, `DESCRIBE (slide 29)`, `IN`, `OUT`, `IN OUT` |
+| PLSQL_s09.pdf | `Creating FUNCTION`, `FUNCTION`, `CREATE OR REPLACE FUNCTION xxx IS`, `RETURN`, `USER`, `SYSDATE`, `IS`, `AS`, `Object Privilege (slide 38)`, `AUTHID`, `CURRENT_USER` |
+| PLSQL_s10.pdf | `creating PACKAGE`, `PACKAGE`, `CREATE OR REPLACE PACKAGE xxx IS`, `Package Body`, `CREATE OR REPLACE PACKAGE BODY xxx IS`, `DESCRIBE` |
+| PLSQL_s11.pdf | `improving performance`, `NOCOPY`, `DETERMINISTIC`, `FORALL`, `BULK COLLECT`, `FETCH`, `RETURNING`, `SQL%BULK_ROWCOUNT(i)`, `SAVE EXCEPTIONS`, `SQL%BULK_EXCEPTIONS.COUNT`, `SQL%BULK_EXCEPTIONS(i).ERROR_INDEX`, `SQL%BULK_EXCEPTIONS(i).ERROR_CODE` |
+| PLSQL_s12.pdf | `dynamic sql`, `EXEXECUTE IMMEDIATE xxx`, `INTO`, `USING`, `dynamic_string`, `define_variable`, `record`, `bind_argument`, `ALTER` |
+
 ## Exceptions
 
 ```plsql
