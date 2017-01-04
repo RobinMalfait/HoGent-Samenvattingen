@@ -10,7 +10,7 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 ## Exceptions
 
-```sql
+```plsql
 /*
 (1) Write a program that writes out the firstname, lastname and salary of the CEO.
 Catch any eexceptions (e.g. no CEO / multiple CEO's / ...)
@@ -78,7 +78,7 @@ END;
 
 ## Procedures
 
-```sql
+```plsql
 /*
 (1) Write a procedure that shows the data (firstname + lastname + service) from all the employees on a given location.
 Use a cursor to loop through the data. Throw a user defined exception if the location doesn't exist
@@ -137,7 +137,7 @@ END;
 
 ## Functions
 
-```sql
+```plsql
 /*
 (1) The function checkService has a parameter p_service and returns true if the service exists,
 otherwise false + write a test program
@@ -199,7 +199,7 @@ END;
 
 ## Package
 
-```sql
+```plsql
 CREATE OR REPLACE PACKAGE dbvideos_package1 IS
 
 TYPE film_rec_type IS RECORD (
@@ -224,7 +224,7 @@ PRAGMA EXCEPTION_INIT(e_video_exception, -20001);
 END dbvideos_package1;
 ```
 
-```sql
+```plsql
 CREATE OR REPLACE PACKAGE BODY dbvideos_package1 IS
 
 PROCEDURE films_per_genre IS
@@ -289,7 +289,7 @@ END dbvideos_package1;
 
 ## Afsluitende herhalings oefeningen
 
-```sql
+```plsql
 /********
 Oefening 1
 ********/
