@@ -1222,7 +1222,7 @@ RW5 = restwaarde €50.000,00 + €75.000,00 = €125.000,00
 > De gemiddelde boekhoudkundige rentabiliteit is goed; deze ligt duidelijk boven de discontovoet van 10%. Het project is financieel gezien aantrekkelijk.
 
 
-### 7.5.3 De methode voro de netto contante waarde (= net present value)
+### 7.5.3 De methode voor de netto contante waarde (= net present value)
 
 - Berekent de contante waarde van:
 
