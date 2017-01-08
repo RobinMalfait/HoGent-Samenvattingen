@@ -535,3 +535,115 @@ v_resultaat := videopackage.geef_genres_per_klant(6);
 
 end;
 ```
+
+## Hadoop
+
+### Spark
+
+#### Setup
+
+```java
+SparkConf conf = new SparkConf().setAppName("Simple Application");
+JavaSparkContext sc = new JavaSparkContext(conf);
+```
+
+#### Les 1
+
+```java
+JavaRDD<String> inputRDD = sc.textFile("/user/hduser/input/test");
+JavaRDD<String> johnRDD = inputRDD.filter(line -> line.contains("john"));
+JavaRDD<String> janeRDD = inputRDD.filter(line -> line.contains("jane"));
+JavaRDD<String> resultRDD = sc.emptyRDD();
+
+resultRDD = johnRDD.union(janeRDD);
+System.out.println("Aantal keren John en Jane" + resultRDD.count());
+
+System.out.println(resultRDD.collect());
+sc.close();
+```
+
+#### Les 2
+
+```java
+JavaPairRDD<String, StockPriceDate> resultRDD = sc.textFile("/user/hduser/input/NYSE-2000-2001.tsv")
+     .filter(line -> line.contains("ASP")
+		.map(line -> line.split("\t"))
+		.mapToPair(fields -> new Tuple2<String, StockPriceDate>(fields[1], new StockPriceDate(Double.parseDouble(fields[6]), fields[2])))
+		.reduceByKey((x, y) -> x.getStockprice() > y.getStockprice() ? x : y)
+		.sortByKey();
+
+System.out.println(resultRDD.collect());
+sc.close();
+```
+
+
+#### Les 3
+
+```java
+// 3.1
+// ---
+
+JavaPairRDD<String, Integer> resultRDD = sc.textFile("/user/hduser/input/graph_data_part1.txt")
+		.map(line -> line.split("\t"))
+		.mapToPair(fields -> new Tuple2<String, Integer>(fields[1] + "_" + fields[2], 1))
+		.reduceByKey((x, y) -> x + y)
+		.filter(line -> line._2 == 3);
+
+// 3.2
+// ---
+// OPTIE 1:
+JavaPairRDD<String, Integer> resultRDD = sc.textFile("/user/hduser/input/graph_data_part2.txt")
+		.filter(line -> line.length() > 0)
+		.distinct() // dure operatie want: bestand is verdeeld in blokken op de server. Per lijn gaat hij alle servers contacteren om te zien of hij unique is.
+		.map(line -> line.split("\t"))
+		.mapToPair(fields -> new Tuple2<String, Integer>(fields[1] + "_" + fields[2], 1))
+		.reduceByKey((x, y) -> x + y)
+		.filter(line -> line._2 == 3);
+
+// OPTIE 2:
+JavaPairRDD<String, Integer> resultRDD = sc.textFile("/user/hduser/input/graph_data_part2.txt")
+		.filter(line -> line.length() > 0)
+		.map(line -> line.split("\t"))
+		.mapToPair(fields -> new Tuple2<String, String>(fields[1] + "_" + fields[2], fields[0]))
+		.combineByKey(
+			x -> new HashSet<String>(Arrays.asList(x)),
+			(x, y) -> { x.add(y); return x; },
+			(x, y) -> { x.addAll(y); return x; }
+		)
+		.mapValues(arr -> arr.size())
+		.filter(line -> line._2 == 3);
+
+
+// 3.6
+// ---
+
+List<String> files = sc.wholeTextFiles("/user/hduser/input/symptomen")
+		.keys()
+		.collect();
+
+JavaRDD<String> emptyRDD = sc.emptyRDD();
+JavaPairRDD<String, String> resultRDD = emptyRDD
+		.mapToPair(fields -> new Tuple2<String, String>("", ""));
+
+for (int i = 0; i < files.size(); i++) {
+	String path = files.get(i);
+
+	int positionLastSlash = path.lastIndexOf("/");
+	String disease = path.substring(positionLastSlash + 1);
+
+	JavaPairRDD<String, String> extraRDD = sc.textFile(path)
+			.filter(line -> line.length() > 0)
+			.map(line -> line.split("\t"))
+			.mapToPair(fields -> new Tuple2<String, String>(disease, fields[0]));
+	resultRDD = resultRDD.union(extraRDD);
+}
+
+JavaPairRDD<String, HashSet<String>> extraRDD = resultRDD
+		.mapToPair(t -> new Tuple2<String, String>(t._2, t._1))
+		.combineByKey(
+			x -> new HashSet<String>(Arrays.asList(x)),
+			(x, y) -> { x.add(y); return x; },
+			(x, y) -> { x.addAll(y); return x; }
+		)
+		.filter(t -> t._2.size() == 1);
+```
