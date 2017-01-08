@@ -95,4 +95,4 @@ VB. Proces "boeken van een reis"
 
 ### Creatieve technieken: invalshoek veranderen
 
-![](http://d.pr/i/wlrp+)
+![](https://robinmalfait.com/afbeeldingen/droplr/wlrp.png)
