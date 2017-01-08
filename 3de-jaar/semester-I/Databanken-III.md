@@ -538,6 +538,15 @@ end;
 
 ## Hadoop
 
+1. `start-dfs.sh`
+2. `hadoop fs -ls`
+3. `hadoop fs -mkdir input`
+4. `hadoop fs -ls input`
+5. `hadoop fs -put someFile input` om someFile in input te stoppen
+6. `hadoop -put * input` om alles in input te stoppen
+7. `cd workspace/quickstart/`
+8. `spark-submit --class bdstudents.quickstart.App --master local[2] target/quickstart-1.0.jar`
+
 ### Spark
 
 #### Setup
@@ -546,6 +555,10 @@ end;
 SparkConf conf = new SparkConf().setAppName("Simple Application");
 JavaSparkContext sc = new JavaSparkContext(conf);
 ```
+
+#### Compilen
+
+Met 4 Maven Build
 
 #### Les 1
 
