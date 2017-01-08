@@ -7,6 +7,8 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 # Oracle
 
+> **!** Oracle maakt geen gebruik Read Locks
+
 - Oracle Instance [Logical]
 - Oracle Database [Physical]
 
