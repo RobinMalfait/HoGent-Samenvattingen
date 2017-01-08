@@ -5,6 +5,15 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 [Chamilo](https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=24073)
 
+# Oracle
+
+## Hierarchy
+
+1. Database
+2. Tablespace
+3. Segment
+4. Extent
+5. Block
 
 # PL/SQL
 
@@ -26,6 +35,37 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 | PLSQL_s12.pdf | `dynamic sql`, `EXEXECUTE IMMEDIATE xxx`, `INTO`, `USING`, `dynamic_string`, `define_variable`, `record`, `bind_argument`, `ALTER` |
 
 ## Exceptions
+
+1. **Oracle Predefined Exceptions:** oracle server errors, deze worden automatisch gegooid wanneer ze het willen.
+
+    1. Naam
+    2. Nummer
+    3. Foutboodschap
+    4. Worden door oracle zelf opgegooid
+    5. VB: NO_DATA_FOUND, TOO_MANY_ROWS (select into x, je mag dan maar 1 rij hebben)
+
+2. **Oracle Non-predefined Exceptions:**
+
+    1. __*geen*__ Naam
+    2. wel nummer
+    3. wel foutboodschap
+    4. worden door oracle zelf opgegooid
+    5. VB.: (nummer koppelen aan eigen exception): e_insert_excep EXCEPTION; PRAGMA EXCEPTION_INIT (e_insert_excep, -01400);
+    6. WHEN e_insert_excep THEN
+
+3. **User Defined Exceptions:** zelf definieren en opgooien (Slide 42)
+
+    1. Manier 1 (geen code of foutboodschap):
+        1. Declareren: e_invalid_department EXCEPTION;
+        2. Throwen: RAISE e_invalid_department;
+        3. Catchen: WHEN e_invalid_department THEN
+
+    2. Manier 2 (wel code & foutboodschap) code moet tussen -20000 en -30000:
+        1. Declare: e_name EXCEPTION; PRAGMA EXCEPTION_INIT (e_name, -20999);
+        2. Throwen: RAISE_APPLICATION_ERROR(-20999, ‘Invalid last name’);
+        3. Catchen: WHEN e_name THEN
+
+> **!** SQLCODE + SQLERRM opvragen is mogelijk
 
 ```plsql
 /*
