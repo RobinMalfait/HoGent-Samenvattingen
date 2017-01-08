@@ -7,6 +7,71 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 # Oracle
 
+- Oracle Instance [Logical]
+- Oracle Database [Physical]
+
+## Files of a database
+
+> Physical files
+
+- Control files
+- Datafiles
+- Redo log files
+
+![](https://robinmalfait.com/afbeeldingen/droplr/ZE5M.png)
+
+### Control files
+
+- Database kan niet gestart worden zonder control files
+- Binary file
+- Bevat volgende informatie:
+    - Naam van de database
+    - Wanneer database gemaakt is
+    - Naam en locatie van `datafiles` en `redo log files`
+    - Character set dat gebruikt wordt om data op te slaan in de db
+    - Checkpoint informatie
+    - ...
+- Minimum 2 control files op verschillende fysieke schijven
+- Zonder kopie van control files -> risico op data verlies
+- Locatie: gedefinieerd door `CONTROL_FILES` init parameter
+- control_files = (/u00/oradata/control.001.dbf, /u01/oradata/control.002.dbf, /u02/oradata/control.003.dbf)
+
+### Datafiles
+
+- Bevatten effectieve data
+- bestaat uit database blocks
+- behoren tot 1 database en 1 tablespace binnen de database
+- wordt gelezen en beschreven in eenheden van oracle blocks van de datafiles naar memory
+- datafile header
+    - eerste block van elke datafile
+
+### Data blocks, extents and segments
+
+- fysiek standpunt: datafile = operating system blocks
+- logisch standpunt: datafile = data blocks, extents and segments
+- extent: groep van data blocks binnen een datafile
+- segment: object gestored in de database, bestaat uit 1 of meer extents
+
+![](https://robinmalfait.com/afbeeldingen/droplr/D8ac.png)
+
+### Tablespaces
+
+- bestaat uit 1 of meer datafiles
+- elke datafile behoort tot 1 tablespace
+- het is een logische structuur
+- bij het maken van een tabel, kan je de tablespace specifiëren
+- fundamentele eenheid van een oracle db object voor opslag, backup & recovery
+- als er 1 datafile verloren gaat, is heel de tablespace onbeschikbaar
+
+![](https://robinmalfait.com/afbeeldingen/droplr/cnqW.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/Ca4Q.png)
+
+#### Fysieke structuur
+
+![](https://robinmalfait.com/afbeeldingen/droplr/M1tJ.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/SDaL.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/NeEV.png)
+
 ## Hierarchy
 
 1. Database
@@ -36,26 +101,26 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 
 ## Exceptions
 
-1. **Oracle Predefined Exceptions:** oracle server errors, deze worden automatisch gegooid wanneer ze het willen.
+- **Oracle Predefined Exceptions:** oracle server errors, deze worden automatisch gegooid wanneer ze het willen.
 
-    1. Naam
-    2. Nummer
-    3. Foutboodschap
-    4. Worden door oracle zelf opgegooid
-    5. VB: NO_DATA_FOUND, TOO_MANY_ROWS (select into x, je mag dan maar 1 rij hebben)
+    - Naam
+    - Nummer
+    - Foutboodschap
+    - Worden door oracle zelf opgegooid
+    - VB: NO_DATA_FOUND, TOO_MANY_ROWS (select into x, je mag dan maar 1 rij hebben)
 
-2. **Oracle Non-predefined Exceptions:**
+- **Oracle Non-predefined Exceptions:**
 
-    1. __*geen*__ Naam
-    2. wel nummer
-    3. wel foutboodschap
-    4. worden door oracle zelf opgegooid
-    5. VB.: (nummer koppelen aan eigen exception): e_insert_excep EXCEPTION; PRAGMA EXCEPTION_INIT (e_insert_excep, -01400);
-    6. WHEN e_insert_excep THEN
+    - __*geen*__ Naam
+    - wel nummer
+    - wel foutboodschap
+    - worden door oracle zelf opgegooid
+    - VB: (nummer koppelen aan eigen exception): e_insert_excep EXCEPTION; PRAGMA EXCEPTION_INIT (e_insert_excep, -01400);
+    - WHEN e_insert_excep THEN
 
-3. **User Defined Exceptions:** zelf definieren en opgooien (Slide 42)
+- **User Defined Exceptions:** zelf definieren en opgooien (Slide 42)
 
-    1. Manier 1 (geen code of foutboodschap):
+    - Manier 1 (geen code of foutboodschap):
         1. Declareren: e_invalid_department EXCEPTION;
         2. Throwen: RAISE e_invalid_department;
         3. Catchen: WHEN e_invalid_department THEN
@@ -65,7 +130,7 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
         2. Throwen: RAISE_APPLICATION_ERROR(-20999, ‘Invalid last name’);
         3. Catchen: WHEN e_name THEN
 
-> **!** SQLCODE + SQLERRM opvragen is mogelijk
+> **!** `SQLCODE` + `SQLERRM` opvragen is mogelijk
 
 ```plsql
 /*
