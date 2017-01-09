@@ -700,11 +700,11 @@ sc.close();
 
 ```java
 JavaPairRDD<String, StockPriceDate> resultRDD = sc.textFile("/user/hduser/input/NYSE-2000-2001.tsv")
-     .filter(line -> line.contains("ASP")
-		.map(line -> line.split("\t"))
-		.mapToPair(fields -> new Tuple2<String, StockPriceDate>(fields[1], new StockPriceDate(Double.parseDouble(fields[6]), fields[2])))
-		.reduceByKey((x, y) -> x.getStockprice() > y.getStockprice() ? x : y)
-		.sortByKey();
+    .filter(line -> line.contains("ASP"))
+	.map(line -> line.split("\t"))
+	.mapToPair(fields -> new Tuple2<String, StockPriceDate>(fields[1], new StockPriceDate(Double.parseDouble(fields[6]), fields[2])))
+	.reduceByKey((x, y) -> x.getStockprice() > y.getStockprice() ? x : y)
+	.sortByKey();
 
 System.out.println(resultRDD.collect());
 sc.close();
