@@ -871,6 +871,23 @@ DOEL kostenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
 
 - Standaard-KP -> <font color="red">**MAXIMUM VKP**</font> (monopolie)
 
+## 6.2 Direct costing
+
+Alleen de variabele kosten worden toegerekend aan de productie. De constante kosten worden rechtstreeks ten laste gelegd van de resultatenrekening.
+
+```
+CALCULATIESCHEMA
+
+  omzet product A                  omzet product B
+- variabele kosten product A     - variabele kosten product B
+  --------------------------       --------------------------
+= brutoresultaat product A    +  = brutoresultaat product B
+
+                  - totale constante kosten
+                    -----------------------
+                  = nettoresultaat
+```
+
 ## 6.3 De breakevenanalyse
 
 Bedrijven willen vaak weten welke afzet gehaald moet worden om uit de kosten te komen.
