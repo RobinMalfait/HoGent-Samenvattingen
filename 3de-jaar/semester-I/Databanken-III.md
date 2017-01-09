@@ -1137,7 +1137,7 @@ public class App {
 
 > The result is [(an,20_V), (jan,25_M), (stijn,30_M), (tine,24_V)]
 
-![](http://d.pr/i/vuJJ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/vuJJ.png)
 
 
 #### keys
@@ -1172,7 +1172,7 @@ public class App {
 
 > The result is [an, jan, stijn, tine]
 
-![](http://d.pr/i/IweC+)
+![](https://robinmalfait.com/afbeeldingen/droplr/IweC.png)
 
 
 #### values
@@ -1202,7 +1202,7 @@ public class App {
 
 > The result is [20_V, 25_M, 30_M, 24_V]
 
-![](http://d.pr/i/2LLO+)
+![](https://robinmalfait.com/afbeeldingen/droplr/2LLO.png)
 
 #### mapValues
 
@@ -1230,7 +1230,7 @@ public class App {
 
 > The result is [(an,20_v), (jan,25_m), (stijn,30_m), (tine,24_v)]
 
-![](http://d.pr/i/tzg8+)
+![](https://robinmalfait.com/afbeeldingen/droplr/tzg8.png)
 
 #### groupByKey
 
@@ -1259,7 +1259,7 @@ public class App {
 
 > The result is [(V,[an, tine]), (M,[jan, stijn])]
 
-![](http://d.pr/i/uEoJ+)
+![](https://robinmalfait.com/afbeeldingen/droplr/uEoJ.png)
 
 #### reduceByKey
 
@@ -1287,7 +1287,7 @@ public class App {
 }
 ```
 
-![](http://d.pr/i/82mV+)
+![](https://robinmalfait.com/afbeeldingen/droplr/82mV.png)
 
 #### combineByKey
 
@@ -1321,7 +1321,7 @@ public class App {
 
 > The result is [(stijn,4.5), (jan,7.25)]
 
-![](http://d.pr/i/19t5w+)
+![](https://robinmalfait.com/afbeeldingen/droplr/19t5w.png)
 
 #### count
 
@@ -1550,7 +1550,7 @@ public class App {
 
 > The result is {stijn=2, jan=4}
 
-![](http://d.pr/i/hOeg+)
+![](https://robinmalfait.com/afbeeldingen/droplr/hOeg.png)
 
 #### lookup
 
