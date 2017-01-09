@@ -667,6 +667,20 @@ JavaSparkContext sc = new JavaSparkContext(conf);
 
 Met 4 Maven Build
 
+#### Alle logs afzetten
+
+```java
+// ...
+public class App {
+    public static void main(String[] args) {
+        Logger.getLogger("org").setLevel(Level.OFF);
+        Logger.getLogger("akka").setLevel(Level.OFF);
+
+        // ...
+    }
+}
+```
+
 #### Les 1
 
 ```java
@@ -767,3 +781,799 @@ JavaPairRDD<String, HashSet<String>> extraRDD = resultRDD
 		)
 		.filter(t -> t._2.size() == 1);
 ```
+
+#### Used Data sets
+
+- /user/hduser/input/names
+
+```
+jan
+an
+stijn
+els
+an
+els
+steven
+```
+
+- /user/hduser/input/scores
+
+```
+jan     5
+jan     9
+stijn   3
+jan     7
+jan     8
+stijn   6
+```
+
+- /user/hduser/input/data
+
+```
+an      20  V   9000
+jan     25  M   9100
+stijn   30  M   9000
+tine    24  V   8500
+```
+
+#### Parallelize
+
+```java
+JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(1, 2, 3));
+```
+
+#### textFile
+
+```java
+JavaRDD<String> inputRDD = sc.textFile("/user/hduser/input/log");
+```
+
+#### wholeTextFiles
+
+```java
+JavaRDD<String> inputRDD = sc.wholeTextFiles("/user/hduser/input/");
+```
+
+#### map
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/scores")
+                                      .map(line -> line.toUpperCase());
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [JAN 5, JAN 9, STIJN 3, JAN 7, JAN 8, STIJN 6]
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String []> resultRDD = sc.textFile("/user/hduser/input/scores")
+                                         .map(line -> line.split("\t"));
+        resultRDD.foreach(t -> System.out.println(Arrays.toString(t)));
+
+        sc.close();
+    }
+}
+```
+
+> The result is
+>
+> [jan, 5]<br>
+> [jan, 8]<br>
+> [stijn, 6]<br>
+> [jan, 9]<br>
+> [stijn, 3]<br>
+> [jan, 7]
+
+#### filter
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/scores")
+                                      .filter(line -> line.length() > 0)
+                                      .map(line -> line.toUpperCase());
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [JAN 5, JAN 9, STIJN 3, JAN 7, JAN 8, STIJN 6]
+
+#### flatMap
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/scores")
+            .flatMap(line -> Arrays.asList(line.split("\t")).iterator());
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [jan, 5, jan, 9, stijn, 3, jan, 7, jan, 8, stijn, 6]
+
+
+#### union
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> inputRDD = sc.textFile("/user/hduser/input/names");
+        JavaRDD<String> anRDD = inputRDD.filter(line -> line.contains("an"));
+        JavaRDD<String> elsRDD = inputRDD.filter(line -> line.contains("els"));
+        JavaRDD<String> resultRDD = anRDD.union(elsRDD);
+
+        // Equivalent:
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/names")
+        .filter(line -> line.contains("an") || line.contains("els"));
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [jan, an, an, els, els]
+
+#### intersection
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> inputRDD = sc.textFile("/user/hduser/input/names");
+        JavaRDD<String> janRDD = inputRDD.filter(line -> line.contains("jan"));
+        JavaRDD<String> anRDD = inputRDD.filter(line -> line.contains("an"));
+        JavaRDD<String> resultRDD = anRDD.intersection(janRDD);
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [jan]
+
+#### subtract
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> inputRDD = sc.textFile("/user/hduser/input/names");
+        JavaRDD<String> janRDD = inputRDD.filter(line -> line.contains("jan"));
+        JavaRDD<String> anRDD = inputRDD.filter(line -> line.contains("an"));
+        JavaRDD<String> resultRDD = anRDD.subtract(janRDD);
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [an, an]
+
+#### distinct
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/names")
+        .filter(line -> line.contains("an"))
+        .distinct();
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [jan, an]
+
+#### groupBy
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, Iterable<String>> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .groupBy(line -> Arrays.asList(line.split("\t")).get(3));
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(9100,[jan 25 M 9100]), (8500,[tine 24 V 8500]), (9000,[an 20 V 9000, stijn 30 M 9000])]
+
+
+#### keyBy
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .keyBy(line -> Arrays.asList(line.split("\t")).get(3));
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(9000,an 20 V 9000), (9100,jan 25 M 9100),
+(9000,stijn 30 M 9000), (8500,tine 24 V 8500)]
+
+#### sample
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/data")
+        .sample(true, 0.5);
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [an 20 V 9000]
+
+#### mapToPair
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[0], fields[1] + "_" + fields[2]));
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(an,20_V), (jan,25_M), (stijn,30_M), (tine,24_V)]
+
+![](http://d.pr/i/vuJJ+)
+
+
+#### keys
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[0], fields[1] + "_" + fields[2]))
+        .keys();
+
+        // Equivalent
+
+        JavaRDD<String> resultRDD = sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t")[0]);
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [an, jan, stijn, tine]
+
+![](http://d.pr/i/IweC+)
+
+
+#### values
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[0], fields[1] + "_" + fields[2]))
+        .values();
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [20_V, 25_M, 30_M, 24_V]
+
+![](http://d.pr/i/2LLO+)
+
+#### mapValues
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[0], fields[1] + "_" + fields[2]))
+        .mapValues(line -> line.toLowerCase());
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(an,20_v), (jan,25_m), (stijn,30_m), (tine,24_v)]
+
+![](http://d.pr/i/tzg8+)
+
+#### groupByKey
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, String> resultRDD =
+        sc.textFile("/user/hduser/input/data")
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[2], fields[0]))
+        .groupByKey();
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(V,[an, tine]), (M,[jan, stijn])]
+
+![](http://d.pr/i/uEoJ+)
+
+#### reduceByKey
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, Integer> resultRDD = sc.textFile("/user/hduser/input/names")
+        .filter(line -> !line.startsWith("jan"))
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, Integer>(fields[0], 1))
+        .reduceByKey((x,y) -> x + y)
+        .sortByKey();
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+![](http://d.pr/i/82mV+)
+
+#### combineByKey
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        JavaPairRDD<String, Double> resultRDD = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, Integer>(fields[0], Integer.parseInt(fields[1])))
+        .combineByKey(
+            x -> new Tuple2<Integer, Integer>(x, 1),
+            (x, y) -> new Tuple2<Integer, Integer>(x._1 + y, x._2 + 1),
+            (x, y) -> new Tuple2<Integer, Integer>(x._1 + y._1, x._2 + y._2)
+        )
+        .mapToPair(t -> new Tuple2<String, Double>(t._1, (t._2._1 * 1.0) / t._2._2));
+
+        System.out.println(resultRDD.collect());
+        sc.close();
+    }
+}
+```
+
+> The result is [(stijn,4.5), (jan,7.25)]
+
+![](http://d.pr/i/19t5w+)
+
+#### count
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        long numberOfNonEmptyLines = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .count();
+
+        System.out.println("Number of non empty lines: " + numberOfNonEmptyLines);
+        sc.close();
+    }
+}
+```
+
+> The result is Number of non empty lines: 6
+
+#### countByValue
+
+```java
+package bdstudents.quickstart;
+import java.util.Map;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        Map<String, Long> result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, String>(fields[0], fields[1]))
+        .keys()
+        .countByValue();
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is {stijn=2, jan=4}
+
+#### first
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        String result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .first();
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is jan 5
+
+#### max
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        Integer result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> Integer.parseInt((line.split("\t")[1])))
+        .max((x,y) -> x.compareTo(y));
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is 9
+
+#### take
+
+```java
+package bdstudents.quickstart;
+import java.util.List;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        List<String> result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0).take(3);
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is [jan 5, jan 9, stijn 3]
+
+#### top
+
+```java
+package bdstudents.quickstart;
+import java.util.List;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        List<String> result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0).top(3);
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is [stijn 6, stijn 3, jan 9]
+
+#### reduce
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        Integer result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> Integer.parseInt((line.split("\t")[1])))
+        .reduce((x,y) -> x + y);
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is 38
+
+#### fold
+
+```java
+package bdstudents.quickstart;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        Integer result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> Integer.parseInt((line.split("\t")[1])))
+        .fold(0, (x,y) -> x + y);
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is 38
+
+#### countByKey
+
+```java
+package bdstudents.quickstart;
+import java.util.Map;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+
+        Map<String, Long> result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, Integer>(fields[0], Integer.parseInt(fields[1])))
+        .countByKey();
+
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is {stijn=2, jan=4}
+
+![](http://d.pr/i/hOeg+)
+
+#### lookup
+
+```java
+package bdstudents.quickstart;
+import java.util.List;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.*;
+import scala.Tuple2;
+
+public class App {
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("Simple Application");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+        List <Integer> result = sc.textFile("/user/hduser/input/scores")
+        .filter(line -> line.length() > 0)
+        .map(line -> line.split("\t"))
+        .mapToPair(fields -> new Tuple2<String, Integer>(fields[0], Integer.parseInt(fields[1])))
+        .lookup("stijn");
+        System.out.println(result);
+        sc.close();
+    }
+}
+```
+
+> The result is [3, 6]
