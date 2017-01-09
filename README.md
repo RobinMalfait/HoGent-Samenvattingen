@@ -79,6 +79,6 @@ link: https://robinmalfait.com/README.md
 * [Native apps II (Windows Phone)](3de-jaar/semester-I/Native-Apps-II-Windows-Phone.md)
 * [Internationale Communicatie III](3de-jaar/semester-I/Internationale-Communicatie-III.md)
 * [Databanken III](3de-jaar/semester-I/Databanken-III.md)
-* [Analayse III](3de-jaar/semester-I/Analayse-III.md)
+* [Analayse III](3de-jaar/semester-I/Analyse-III.md)
 * [Future IT - A.I.](3de-jaar/semester-I/Future-IT-AI.md)
 * [Web apps](3de-jaar/semester-I/Web-Apps.md)
