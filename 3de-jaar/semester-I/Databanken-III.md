@@ -65,14 +65,15 @@ link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III.md
 - fundamentele eenheid van een oracle db object voor opslag, backup & recovery
 - als er 1 datafile verloren gaat, is heel de tablespace onbeschikbaar
 
-![](https://robinmalfait.com/afbeeldingen/droplr/cnqW.png)
-![](https://robinmalfait.com/afbeeldingen/droplr/Ca4Q.png)
+| &nbsp; | &nbsp; |
+| ------ | ------ |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/cnqW.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/Ca4Q.png) |
 
 #### Fysieke structuur
 
-![](https://robinmalfait.com/afbeeldingen/droplr/M1tJ.png)
-![](https://robinmalfait.com/afbeeldingen/droplr/SDaL.png)
-![](https://robinmalfait.com/afbeeldingen/droplr/NeEV.png)
+| &nbsp; | &nbsp; | &nbsp; |
+| ------ | ------ | ------ |
+| ![](https://robinmalfait.com/afbeeldingen/droplr/M1tJ.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/SDaL.png) | ![](https://robinmalfait.com/afbeeldingen/droplr/NeEV.png) |
 
 ## Hierarchy
 
