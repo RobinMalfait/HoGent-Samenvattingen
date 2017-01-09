@@ -1565,11 +1565,13 @@ public class App {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("Simple Application");
         JavaSparkContext sc = new JavaSparkContext(conf);
+
         List <Integer> result = sc.textFile("/user/hduser/input/scores")
         .filter(line -> line.length() > 0)
         .map(line -> line.split("\t"))
         .mapToPair(fields -> new Tuple2<String, Integer>(fields[0], Integer.parseInt(fields[1])))
         .lookup("stijn");
+
         System.out.println(result);
         sc.close();
     }
