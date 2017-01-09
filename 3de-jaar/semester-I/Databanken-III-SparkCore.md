@@ -1,5 +1,6 @@
 ---
 title: Databanken III - Spark Core oefeningen
+link: http://robinmalfait.com/3de-jaar/semester-I/Databanken-III-SparkCore.md
 ---
 
 # Exercise 1
