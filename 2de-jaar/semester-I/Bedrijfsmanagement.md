@@ -144,10 +144,10 @@ Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 Brutowedden
 + Werkgeversbijdrage R.S.Z.
 - R.S.Z.-bijdrage werknemers
-= Belastbaarinkomen
+= Belastbaar inkomen
 - Bedrijfsvoorheffing
 - Bijzondere bijdrage Sociale Zekerheid
-= Netowedden
+= Nettowedden
 ```
 
 **Voorzieningen ten behoeve van de werknemers:**
@@ -861,7 +861,7 @@ Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd 
 
 ## 6.1 Standaardkostprijs en verkoopplan
 
-DOEL kotenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
+DOEL kostenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
 
 - Standaard-KP -> <font color="red">**MINIMUM VKP**</font>
 
