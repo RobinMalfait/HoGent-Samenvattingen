@@ -3,40 +3,51 @@ title: Bedrijfsmanagement
 link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 ---
 
-| Afkorting | Voluit                                   |
-| --------- | ---------------------------------------- |
-| AKP       | Aankoopprijs                             |
-| AW        | Aanschafwaarde                           |
-| BW        | Boekwaarde                               |
-| CK        | Constante Kosten                         |
-| DPM       | Duurzaam Productie Middel                |
-| EH        | Eenheid                                  |
-| ELD       | Economische Levensduur                   |
-| FK        | Vaste kosten / Fixed Costs               |
-| GBR       | Gemiddelde Boekhoudkundige Rentabiliteit |
-| GCK       | Gemiddelde constante kosten              |
-| GO        | Gemiddelde Opbrengsten                   |
-| GS        | Grondstof                                |
-| GTK       | Gemiddelde totale kosten                 |
-| GVK       | Gemiddelde variabele kosten              |
-| HB        | Handboek `¯\_(ツ)_/¯`                    |
-| KP        | Kostprijs                                |
-| MK        | Marginale kosten                         |
-| MO        | Marginale Opbrengsten                    |
-| NCW       | Netto Contante Waarde (NPV)              |
-| NPV       | Net Present Value                        |
-| P         | Prijs                                    |
-| PM        | Productiemiddelen                        |
-| RW        | Rest Waarde                              |
-| TCK       | Totale Constante Kosten                  |
-| TK        | Totale Kosten                            |
-| TLD       | Technische Levensduur                    |
-| TO        | Totale Opbrengsten                       |
-| TVK       | Totale Variabele Kosten                  |
-| TVT       | Terugverdientijd                         |
-| TW        | Totale Winst                             |
-| VK        | Variabele Kosten                         |
-| VKP       | Verkoopprijs                             |
+| Afkorting | Voluit                                       |
+| --------- | -------------------------------------------- |
+| AKP       | Aankoopprijs                                 |
+| AW        | Aanschafwaarde                               |
+| BW        | Boekwaarde                                   |
+| CK        | Constante Kosten                             |
+| CR        | Current Ratio                                |
+| DKK       | Dagen KlantenKrediet                         |
+| DLK       | Dagen LeveranciersKrediet                    |
+| DV        | Dagen Voorraad                               |
+| DPM       | Duurzaam Productie Middel                    |
+| EH        | Eenheid                                      |
+| ELD       | Economische Levensduur                       |
+| FK        | Vaste kosten / Fixed Costs                   |
+| GBR       | Gemiddelde Boekhoudkundige Rentabiliteit     |
+| GCK       | Gemiddelde constante kosten                  |
+| GO        | Gemiddelde Opbrengsten                       |
+| GS        | Grondstof                                    |
+| GTK       | Gemiddelde totale kosten                     |
+| GVK       | Gemiddelde variabele kosten                  |
+| HB        | Handboek `¯\_(ツ)_/¯`                        |
+| KP        | Kostprijs                                    |
+| MK        | Marginale kosten                             |
+| MO        | Marginale Opbrengsten                        |
+| NCW       | Netto Contante Waarde (NPV)                  |
+| NPV       | Net Present Value                            |
+| NWK       | Netto WerkKapitaal / netto bedrijfsresultaat |
+| P         | Prijs                                        |
+| PM        | Productiemiddelen                            |
+| QR        | Quick Ratio                                  |
+| RK        | Rotatie klanten                              |
+| RL        | Rotatie leveranciers                         |
+| RV        | Rotatie voorraad                             |
+| RW        | Rest Waarde                                  |
+| TCK       | Totale Constante Kosten                      |
+| TK        | Totale Kosten                                |
+| TLD       | Technische Levensduur                        |
+| TO        | Totale Opbrengsten                           |
+| TVK       | Totale Variabele Kosten                      |
+| TVT       | Terugverdientijd                             |
+| TW        | Totale Winst                                 |
+| VK        | Variabele Kosten                             |
+| VKP       | Verkoopprijs                                 |
+
+# Deel 1: Kosten- en opbrengstenberekening
 
 # Hoofdstuk 1: Kostenbegrippen
 ## 1.1 Het begrip kosten
@@ -144,10 +155,10 @@ Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 Brutowedden
 + Werkgeversbijdrage R.S.Z.
 - R.S.Z.-bijdrage werknemers
-= Belastbaarinkomen
+= Belastbaar inkomen
 - Bedrijfsvoorheffing
 - Bijzondere bijdrage Sociale Zekerheid
-= Netowedden
+= Nettowedden
 ```
 
 **Voorzieningen ten behoeve van de werknemers:**
@@ -861,7 +872,7 @@ Het proces van het opstellen en bewaken van budgetten wordt budgetteren genoemd 
 
 ## 6.1 Standaardkostprijs en verkoopplan
 
-DOEL kotenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
+DOEL kostenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
 
 - Standaard-KP -> <font color="red">**MINIMUM VKP**</font>
 
@@ -870,6 +881,23 @@ DOEL kotenberekening: VERKOOPPLAN -> PRODUCTIEPLAN
     - opslag taakstellingsrisico -> algemeen BUDGETRISICO
 
 - Standaard-KP -> <font color="red">**MAXIMUM VKP**</font> (monopolie)
+
+## 6.2 Direct costing
+
+Alleen de variabele kosten worden toegerekend aan de productie. De constante kosten worden rechtstreeks ten laste gelegd van de resultatenrekening.
+
+```
+CALCULATIESCHEMA
+
+  omzet product A                  omzet product B
+- variabele kosten product A     - variabele kosten product B
+  --------------------------       --------------------------
+= brutoresultaat product A    +  = brutoresultaat product B
+
+                  - totale constante kosten
+                    -----------------------
+                  = nettoresultaat
+```
 
 ## 6.3 De breakevenanalyse
 
@@ -1296,7 +1324,45 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 
 > RISICO'S -> Vermijden - overdragen / Verzekeren - beheersen
 
-# Deel 2
+# Deel 2: Financiering
+
+## Hoofdstuk 8: Analyse van de financiele structuur van de onderneming
+
+## 8.1 Algemeen
+
+## 8.1.1 Wie moet de jaarrekening publiceren?
+
+1. Natuurlijke personen (die koopman zijn) <font color="red">*</font>
+2. Venootschappen
+  - Naamloze vennootschap (NV)
+  - Besloten vennootschap met beperkte aansprakelijkheid (BVBA)
+  - Vennootschap onder firma (VOF) <font color="red">*</font>
+  - Gewone commanditaire vennootschap (Com. V) <font color="red">*</font>
+  - Commanditaire vennootschop op aandelen (Com. VA)
+  - Coöperatieve vennootschap met beperkte aansprakelijkheid (CVBA)
+  - Coöperatieve vennootschap met onbeperkte aansprakelijkheid (CVOA)
+  - Economisch samenwerkingsverband
+
+<font color="red">* enkel als ze meer dan 500.000 EUR omzet hebben op jaarbasis</font>
+
+## 8.1.2 Wie zijn de potentiele bestemmelingen?
+
+![](https://robinmalfait.com/afbeeldingen/2de-jaar/semester-I/Bedrijfsmanagement/stakeholders.png)
+
+## 8.1.3 Aan de informatie te stellen eisen
+
+1. **Relevantie**: te veel of te weinig informatie
+2. **Vergelijkbaarheid**
+3. **Periodiciteit**
+4. **Objectiviteit/waarheidsgetrouw beeld**
+5. **Duidelijkheid**
+6. **Volledigheid**
+
+## 8.2 Beoordelingstechnieken
+
+## 8.2.1 Begrippen van het dubbel boekhouden
+
+### De Balans
 
 Gouden financieringsregel (balans)
 
@@ -1309,3 +1375,340 @@ Gouden financieringsregel (balans)
 
 - Flexibele financiering afgestemd op wisselende omvang van de vlottende activa
 - Kosten kort vreemd vermogen is weliswaar hoger dan lang vreemd vermogen, maar er wordt alleen gebruik gemaakt wanneer het nodig is.
+
+### De Resultatenrekening
+
+```
+RESULTAAT = TO - TK
+```
+
+## 8.2.2 Cashflowtabel
+
+## 8.2.3 Ratio-analyse
+
+### Liquiditeit
+
+Het vermogen om op korte termijn aan verplichtingen (schulden) te kunnen voldoen.
+
+#### Current ratio / algemene liquiditeitsratio
+
+```
+     vlottende activa (VlA)
+CR = --------------------------
+     kort vreemd vermogen (KVV)
+```
+
+#### Quick ratio / 'Acid test'
+
+```
+     vlottende activa (VlA) - voorraden
+QR = ------------------------------------
+     kort vreemd vermogen (KVV)
+```
+
+#### Netto werkkapitaal / nettobedrijfskapitaal
+
+```
+NWK = vlottende activa (VlA) - kort vreemd vermogen (KVV)
+    = eigen vermogen (EV) + vreemd vermogen op lange termijn (VVLT) - vaste activa (VA)
+```
+
+### Efficientieratio's
+
+De doelgerichtheid waarmee vermogen aangewend kan worden.
+
+#### Voorraad
+
+```
+                       omzet
+voorraadrotatie (RV) = -------------
+                       gemiddelde VR
+     
+                             365
+aantal dagen voorraad (DV) = ---
+                             RV
+```
+
+#### Klantenkrediet
+
+```
+                              omzet (incl. BTW)
+rotatie klantenkrediet (RK) = -----------------------------
+                              gemiddelde handelsvorderingen
+                              
+                                    365
+aantal dagen klantenkrediet (DKK) = ---
+                                    RK
+```
+
+#### Leveranciers
+
+```
+                           aankopen (incl. BTW)
+leveranciersrotatie (RL) = ------------------------
+                           gemiddelde handelsschuld
+                           
+                                         365
+aantal dagen leverancierskrediet (DLK) = ---
+                                         RL
+```
+
+### Rendabiliteit
+
+Winstgevendheid van het vermogen.
+
+#### Rendabiliteit van de omzet
+
+##### Netto
+
+```
+     netto bedrijfsresultaat
+OM = ----------------------- * 100
+     omzet
+     
+netto bedrijfsresultaat = bedrijfswinst
+```
+
+##### Bruto
+
+```
+     bruto bedrijfsresultaat
+OM = ----------------------- * 100
+     omzet
+
+netto bedrijfsresultaat = netto bedrijfswinst
+                        + afschrijvingen
+                        + waardevermindering
+                        + voorzieningen
+```
+
+#### Rendabiliteit van het eigen vermogen
+
+##### Netto
+
+```
+      nettowinst (-verlies)
+REV = --------------------- * 100
+      eigen vermogen (EV)
+
+nettowinst = winst van het boekjaar
+```
+
+##### Bruto
+
+```
+      brutowinst (-verlies)
+REV = --------------------- * 100
+      eigen vermogen (EV)
+      
+brutowinst = nettowinst + niet kaskosten
+          (= +- netto operationele cashflow)
+```
+
+#### Rendabiliteit van het totale vermogen
+
+##### Netto
+
+```
+      winst (voor belastingen) + kosten van schulden
+RTV = ---------------------------------------------- * 100
+      totale vermogen (TV)
+
+```
+
+##### Bruto
+
+```
+      winst (voor belastingen) + kosten van schulden + niet kaskosten
+RTV = --------------------------------------------------------------- * 100
+      totale vermogen (TV)
+```
+
+### Solvabiliteit
+
+Het vermogen om op lange termijn aan verplichtingen (schulden) te kunnen voldoen.
+
+#### Solvabiliteit
+
+```
+                eigen vermogen (EV)
+solvabiliteit = --------------------
+                totale vermogen (TV)
+```
+
+<font color="red">Norm solvabiliteit >= 0,5</font>
+
+#### Schuldgraad / debt ratio
+
+```
+             vreemd vermogen (VV)
+debt ratio = --------------------
+             totale vermogen (TV)
+```
+
+<font color="red">Norm debt ratio < 0,5</font>
+
+#### Dekkingsratio vreemd vermogen door cashflow
+
+```
+                netto cashflow
+dekkingsratio = -------------------- * 100
+                vreemd vermogen (VV)
+```
+
+### Toegevoegde waarde
+
+Welke waarde wordt door de onderneming gecreëerd?
+
+#### Bruto
+
+```
+bruto toegevoegde waarde = marktwaarde productie
+                         - kosten van goederen/diensten
+
+marktwaarde productie = omzet (incl. invloed indirecte belastingen & prijsverlagende subsidies)
+                      + productie in voorraad
+                      + geproduceerde vaste activa
+                      + andere opbrengsten zonder subsidie
+```
+
+#### Netto
+
+```
+netto toegevoegde waarde = bruto toegevoegde waarde + niet kaskosten
+```
+
+#### Ratio TW vs personeel
+
+Toegevoegde waarde per werknemer / personeelskost per euro toegevoegde waarde
+
+#### Ratio TW vs omzet
+
+Toegevoegde waarde per euro omzet (indicator van integratie)
+
+## Hoofdstuk 9: De financiering van de activa
+
+### Vaste activa
+
+- Eigen vermogen
+  - Winst inhouding
+  - Afschrijvingsgelden
+  - Externe financiering eigen vermogen
+- Vreemd vermogen LT
+  - Investeringskrediet
+  - Obligatielening
+  - Hypothecaire lening
+  - Financiële leasing
+
+### Vlottende activa
+
+- Eigen vermogen
+  - Concept van permanente behoefte
+- Vreemd vermogen KT
+  - Leverancierskrediet
+  - Kaskrediet
+  - Straight loan
+  - Disconto Krediet
+  - Factoring
+
+## Hoofdstuk 10: De vermogensmarkt
+
+### Bronnen van vermogen
+
+- Traditionele bronnen
+  - Bank: korte en lange termijn
+  - Externe Financier/belegger
+- Alternatieve bronnen
+  - Crowd funding
+  - Overheidsfondsen
+  - Subsidiëring
+
+### Crowdfunding: 4 soorten
+
+- Op aandeel gebaseerd (crowdfunding)
+- Op lening gebaseerd (Crowdfinancing)
+- Op beloning gebaseerd
+- Op donatie gebaseerd
+
+# Deel 3: Algemene economie
+
+# Hoofdstuk 11: Marktvormen
+
+## 11.1 Marktvormen
+
+![](https://robinmalfait.com/afbeeldingen/2de-jaar/semester-I/Bedrijfsmanagement/marktvormen.png)
+
+## 11.2 Volkomen concurrentie
+
+- veel vragers een veel aanbieders 
+  - prijsnemer + hoeveelheidsaanpasser
+- markt is volkomen doorzichtig/transparant
+- markt is voor iedereen volledig toegankelijk
+- homogeen product = geen kwaliteitsverschillen 
+
+## 11.3 Onvolkomen concurrentie
+
+- Monopolie
+  - één aanbieder en veel vragers
+  - nooit een onbeperkte economische machtspositie
+    - p stijgt = q daalt
+    - substitutiegoederen
+    - potentiële concurrenten
+    - overheid
+  - ondoorzichtige markt
+  - beperkte toetreding
+  - homogene producten
+- Oligopolie
+  - enkele aanbieders en veel vragers
+  - homogeen en heterogeen oligopolie
+  - ondoorzichtige markt
+  - beperkte toetreding
+- Monopolistische concurrentie
+  - veel aanbieders en vragers
+  - ondoorzichtige markt
+  - open markt
+  - heterogene producten
+
+# Hoofdstuk 12: Elasticiteit
+
+## 12.1 Prijselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid
+EV = ---------------------------------
+     verandering prijs
+```
+
+- |E<sub>V</sub>| = 1: unitair prijselastische vraag
+- |E<sub>V</sub>| > 1: prijselastische vraag
+- |E<sub>V</sub>| < 1: prijsinelastische vraag
+- E<sub>V</sub> = -∞: volkomen elastische vraag
+- E<sub>V</sub> = 0: volkomen inelastisch
+
+|              | prijselastische vraag | unitair prijselastische vraag | prijsinelastische vraag |
+|--------------|-----------------------|-------------------------------|-------------------------|
+| prijs stijgt | omzet daalt           | omzet constant                | omzet stijgt            |
+| prijs daalt  | omzet stijgt          | omzet constant                | omzet daalt             |
+
+## 12.2 Kruisprijselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid product X
+EK = -------------------------------------------
+     verandering prijs product Y
+```
+
+- E<sub>K</sub>: kruiselings prijselastisch
+- E<sub>K</sub> dicht bij 0: geen direct verband
+
+
+## 12.3 Inkomenselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid
+EY = ---------------------------------
+     verandering inkomen
+```
+
+- E<sub>Y</sub> > 1: inkomenselastische vraag
+- E<sub>Y</sub> < 1: inkomensinelastische vraag
