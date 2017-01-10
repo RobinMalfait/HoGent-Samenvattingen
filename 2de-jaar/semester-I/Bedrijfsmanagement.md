@@ -1669,6 +1669,15 @@ Toegevoegde waarde per euro omzet (indicator van integratie)
   - open markt
   - heterogene producten
 
+## 11.4 Prijsreglementering door de overheid
+
+|              | Wanneer         | Waarom               |
+| ------------ | --------------- | -------------------- |
+| Minimumprijs | aanbodoverschot | beschermen producent |
+| Maximumprijs | vraagoverschot  | beschermen consument |
+
+![](https://robinmalfait.com/afbeeldingen/2de-jaar/semester-I/Bedrijfsmanagement/prijsreglementering.png)
+
 # Hoofdstuk 12: Elasticiteit
 
 ## 12.1 Prijselasticiteit van de vraag
