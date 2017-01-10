@@ -1676,7 +1676,16 @@ Toegevoegde waarde per euro omzet (indicator van integratie)
 ```
      verandering gevraagde hoeveelheid
 EV = ---------------------------------
-     verandering prijs
+     verandering gevraagde prijs
+     
+     (Q - Qi) / Q
+   = ------------
+     (P - Pi) / P
+     
+Q  = huidige hoeveelheid
+Qi = initiele hoeveelheid
+P  = huidige prijs
+Pi = initiele prijs
 ```
 
 - |E<sub>V</sub>| = 1: unitair prijselastische vraag
