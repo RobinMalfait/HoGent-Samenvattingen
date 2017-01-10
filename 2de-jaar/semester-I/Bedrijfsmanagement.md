@@ -38,6 +38,8 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 | VK        | Variabele Kosten                         |
 | VKP       | Verkoopprijs                             |
 
+# Deel 1: Kosten- en opbrengstenberekening
+
 # Hoofdstuk 1: Kostenbegrippen
 ## 1.1 Het begrip kosten
 ## 1.2 De doeleinden van de kostenberekening
@@ -1313,7 +1315,7 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 
 > RISICO'S -> Vermijden - overdragen / Verzekeren - beheersen
 
-# Deel 2
+# Deel 2: Financiering
 
 ## Hoofdstuk 8: Analyse van de financiele structuur van de onderneming
 
@@ -1488,8 +1490,7 @@ nettowinst = winst van het boekjaar
 REV = --------------------- * 100
       eigen vermogen (EV)
       
-brutowinst = nettowinst
-           + niet kaskosten
+brutowinst = nettowinst + niet kaskosten
           (= +- netto operationele cashflow)
 ```
 
@@ -1563,8 +1564,7 @@ marktwaarde productie = omzet (incl. invloed indirecte belastingen & prijsverlag
 #### Netto
 
 ```
-netto toegevoegde waarde = bruto toegevoegde waarde
-                         + niet kaskosten
+netto toegevoegde waarde = bruto toegevoegde waarde + niet kaskosten
 ```
 
 #### Ratio TW vs personeel
@@ -1618,3 +1618,42 @@ Toegevoegde waarde per euro omzet (indicator van integratie)
 - Op lening gebaseerd (Crowdfinancing)
 - Op beloning gebaseerd
 - Op donatie gebaseerd
+
+# Deel 3: Algemene economie
+
+# Hoofdstuk 11: Marktvormen
+
+## 11.1 Marktvormen
+
+## 11.2 Volkomen concurrentie
+
+1. veel vragers een veel aanbieders 
+  - prijsnemer + hoeveelheidsaanpasser
+2. markt is volkomen doorzichtig/transparant
+3. markt is voor iedereen volledig toegankelijk
+4. homogeen product = geen kwaliteitsverschillen 
+
+## 11.3 Onvolkomen concurrentie
+
+- Monopolie
+  1. één aanbieder en veel vragers
+  2. nooit een onbeperkte economische machtspositie
+    - p stijgt = q daalt
+    - substitutiegoederen
+    - potentiële concurrenten
+    - overheid
+  3. ondoorzichtige markt
+  4. beperkte toetreding
+  5. homogene producten
+- Oligopolie
+  1. enkele aanbieders en veel vragers
+  2. homogeen en heterogeen oligopolie
+  3. ondoorzichtige markt
+  4. beperkte toetreding
+- Monopolistische concurrentie
+  1. veel aanbieders en vragers
+  2. ondoorzichtige markt
+  3. open markt
+  4. heterogene producten
+
+# Hoofdstuk 12: Elasticiteit
