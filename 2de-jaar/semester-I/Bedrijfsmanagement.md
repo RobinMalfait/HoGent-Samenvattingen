@@ -3,40 +3,49 @@ title: Bedrijfsmanagement
 link: https://robinmalfait.com/2de-jaar/semester-I/Bedrijfsmanagement.md
 ---
 
-| Afkorting | Voluit                                   |
-| --------- | ---------------------------------------- |
-| AKP       | Aankoopprijs                             |
-| AW        | Aanschafwaarde                           |
-| BW        | Boekwaarde                               |
-| CK        | Constante Kosten                         |
-| DPM       | Duurzaam Productie Middel                |
-| EH        | Eenheid                                  |
-| ELD       | Economische Levensduur                   |
-| FK        | Vaste kosten / Fixed Costs               |
-| GBR       | Gemiddelde Boekhoudkundige Rentabiliteit |
-| GCK       | Gemiddelde constante kosten              |
-| GO        | Gemiddelde Opbrengsten                   |
-| GS        | Grondstof                                |
-| GTK       | Gemiddelde totale kosten                 |
-| GVK       | Gemiddelde variabele kosten              |
-| HB        | Handboek `¯\_(ツ)_/¯`                    |
-| KP        | Kostprijs                                |
-| MK        | Marginale kosten                         |
-| MO        | Marginale Opbrengsten                    |
-| NCW       | Netto Contante Waarde (NPV)              |
-| NPV       | Net Present Value                        |
-| P         | Prijs                                    |
-| PM        | Productiemiddelen                        |
-| RW        | Rest Waarde                              |
-| TCK       | Totale Constante Kosten                  |
-| TK        | Totale Kosten                            |
-| TLD       | Technische Levensduur                    |
-| TO        | Totale Opbrengsten                       |
-| TVK       | Totale Variabele Kosten                  |
-| TVT       | Terugverdientijd                         |
-| TW        | Totale Winst                             |
-| VK        | Variabele Kosten                         |
-| VKP       | Verkoopprijs                             |
+| Afkorting | Voluit                                       |
+| --------- | -------------------------------------------- |
+| AKP       | Aankoopprijs                                 |
+| AW        | Aanschafwaarde                               |
+| BW        | Boekwaarde                                   |
+| CK        | Constante Kosten                             |
+| CR        | Current Ratio                                |
+| DKK       | Dagen KlantenKrediet                         |
+| DLK       | Dagen LeveranciersKrediet                    |
+| DV        | Dagen Voorraad                               |
+| DPM       | Duurzaam Productie Middel                    |
+| EH        | Eenheid                                      |
+| ELD       | Economische Levensduur                       |
+| FK        | Vaste kosten / Fixed Costs                   |
+| GBR       | Gemiddelde Boekhoudkundige Rentabiliteit     |
+| GCK       | Gemiddelde constante kosten                  |
+| GO        | Gemiddelde Opbrengsten                       |
+| GS        | Grondstof                                    |
+| GTK       | Gemiddelde totale kosten                     |
+| GVK       | Gemiddelde variabele kosten                  |
+| HB        | Handboek `¯\_(ツ)_/¯`                        |
+| KP        | Kostprijs                                    |
+| MK        | Marginale kosten                             |
+| MO        | Marginale Opbrengsten                        |
+| NCW       | Netto Contante Waarde (NPV)                  |
+| NPV       | Net Present Value                            |
+| NWK       | Netto WerkKapitaal / netto bedrijfsresultaat |
+| P         | Prijs                                        |
+| PM        | Productiemiddelen                            |
+| QR        | Quick Ratio                                  |
+| RK        | Rotatie klanten                              |
+| RL        | Rotatie leveranciers                         |
+| RV        | Rotatie voorraad                             |
+| RW        | Rest Waarde                                  |
+| TCK       | Totale Constante Kosten                      |
+| TK        | Totale Kosten                                |
+| TLD       | Technische Levensduur                        |
+| TO        | Totale Opbrengsten                           |
+| TVK       | Totale Variabele Kosten                      |
+| TVT       | Terugverdientijd                             |
+| TW        | Totale Winst                                 |
+| VK        | Variabele Kosten                             |
+| VKP       | Verkoopprijs                                 |
 
 # Deel 1: Kosten- en opbrengstenberekening
 
