@@ -1627,33 +1627,75 @@ Toegevoegde waarde per euro omzet (indicator van integratie)
 
 ## 11.2 Volkomen concurrentie
 
-1. veel vragers een veel aanbieders 
+- veel vragers een veel aanbieders 
   - prijsnemer + hoeveelheidsaanpasser
-2. markt is volkomen doorzichtig/transparant
-3. markt is voor iedereen volledig toegankelijk
-4. homogeen product = geen kwaliteitsverschillen 
+- markt is volkomen doorzichtig/transparant
+- markt is voor iedereen volledig toegankelijk
+- homogeen product = geen kwaliteitsverschillen 
 
 ## 11.3 Onvolkomen concurrentie
 
 - Monopolie
-  1. één aanbieder en veel vragers
-  2. nooit een onbeperkte economische machtspositie
+  - één aanbieder en veel vragers
+  - nooit een onbeperkte economische machtspositie
     - p stijgt = q daalt
     - substitutiegoederen
     - potentiële concurrenten
     - overheid
-  3. ondoorzichtige markt
-  4. beperkte toetreding
-  5. homogene producten
+  - ondoorzichtige markt
+  - beperkte toetreding
+  - homogene producten
 - Oligopolie
-  1. enkele aanbieders en veel vragers
-  2. homogeen en heterogeen oligopolie
-  3. ondoorzichtige markt
-  4. beperkte toetreding
+  - enkele aanbieders en veel vragers
+  - homogeen en heterogeen oligopolie
+  - ondoorzichtige markt
+  - beperkte toetreding
 - Monopolistische concurrentie
-  1. veel aanbieders en vragers
-  2. ondoorzichtige markt
-  3. open markt
-  4. heterogene producten
+  - veel aanbieders en vragers
+  - ondoorzichtige markt
+  - open markt
+  - heterogene producten
 
 # Hoofdstuk 12: Elasticiteit
+
+## 12.1 Prijselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid
+EV = ---------------------------------
+     verandering prijs
+```
+
+- |E<sub>V</sub>| = 1: unitair prijselastische vraag
+- |E<sub>V</sub>| > 1: prijselastische vraag
+- |E<sub>V</sub>| < 1: prijsinelastische vraag
+- E<sub>V</sub> = -∞: volkomen elastische vraag
+- E<sub>V</sub> = 0: volkomen inelastisch
+
+|              | prijselastische vraag | unitair prijselastische vraag | prijsinelastische vraag |
+|--------------|-----------------------|-------------------------------|-------------------------|
+| prijs stijgt | omzet daalt           | omzet constant                | omzet stijgt            |
+| prijs daalt  | omzet stijgt          | omzet constant                | omzet daalt             |
+
+## 12.2 Kruisprijselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid product X
+EK = -------------------------------------------
+     verandering prijs product Y
+```
+
+- E<sub>K</sub>: kruiselings prijselastisch
+- E<sub>K</sub> dicht bij 0: geen direct verband
+
+
+## 12.3 Inkomenselasticiteit van de vraag
+
+```
+     verandering gevraagde hoeveelheid
+EY = ---------------------------------
+     verandering inkomen
+```
+
+- E<sub>Y</sub> > 1: inkomenselastische vraag
+- E<sub>Y</sub> < 1: inkomensinelastische vraag
