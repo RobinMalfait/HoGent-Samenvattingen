@@ -1321,9 +1321,29 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 
 ## 8.1.1 Wie moet de jaarrekening publiceren?
 
+1. Natuurlijke personen (die koopman zijn) <font color="red">*</font>
+2. Venootschappen
+  - Naamloze vennootschap (NV)
+  - Besloten vennootschap met beperkte aansprakelijkheid (BVBA)
+  - Vennootschap onder firma (VOF) <font color="red">*</font>
+  - Gewone commanditaire vennootschap (Com. V) <font color="red">*</font>
+  - Commanditaire vennootschop op aandelen (Com. VA)
+  - Coöperatieve vennootschap met beperkte aansprakelijkheid (CVBA)
+  - Coöperatieve vennootschap met onbeperkte aansprakelijkheid (CVOA)
+  - Economisch samenwerkingsverband
+
+<font color="red">* enkel als ze meer dan 500.000 EUR omzet hebben op jaarbasis</font>
+
 ## 8.1.2 Wie zijn de potentiele bestemmelingen?
 
 ## 8.1.3 Aan de informatie te stellen eisen
+
+1. **Relevantie**: te veel of te weinig informatie
+2. **Vergelijkbaarheid**
+3. **Periodiciteit**
+4. **Objectiviteit/waarheidsgetrouw beeld**
+5. **Duidelijkheid**
+6. **Volledigheid**
 
 ## 8.2 Beoordelingstechnieken
 
@@ -1345,19 +1365,215 @@ Gouden financieringsregel (balans)
 
 ### De Resultatenrekening
 
+```
+RESULTAAT = TO - TK
+```
+
 ## 8.2.2 Cashflowtabel
 
 ## 8.2.3 Ratio-analyse
 
 ### Liquiditeit
 
+Het vermogen om op korte termijn aan verplichtingen (schulden) te kunnen voldoen.
+
+#### Current ratio / algemene liquiditeitsratio
+
+```
+     vlottende activa (VlA)
+CR = --------------------------
+     kort vreemd vermogen (KVV)
+```
+
+#### Quick ratio / 'Acid test'
+
+```
+     vlottende activa (VlA) - voorraden
+QR = ------------------------------------
+     kort vreemd vermogen (KVV)
+```
+
+#### Netto werkkapitaal / nettobedrijfskapitaal
+
+```
+NWK = vlottende activa (VlA) - kort vreemd vermogen (KVV)
+    = eigen vermogen (EV) + vreemd vermogen op lange termijn (VVLT) - vaste activa (VA)
+```
+
 ### Efficientieratio's
+
+De doelgerichtheid waarmee vermogen aangewend kan worden.
+
+#### Voorraad
+
+```
+                       omzet
+voorraadrotatie (RV) = -------------
+                       gemiddelde VR
+     
+                             365
+aantal dagen voorraad (DV) = ---
+                             RV
+```
+
+#### Klantenkrediet
+
+```
+                              omzet (incl. BTW)
+rotatie klantenkrediet (RK) = -----------------------------
+                              gemiddelde handelsvorderingen
+                              
+                                    365
+aantal dagen klantenkrediet (DKK) = ---
+                                    RK
+```
+
+#### Leveranciers
+
+```
+                           aankopen (incl. BTW)
+leveranciersrotatie (RL) = ------------------------
+                           gemiddelde handelsschuld
+                           
+                                         365
+aantal dagen leverancierskrediet (DLK) = ---
+                                         RL
+```
 
 ### Rendabiliteit
 
+Winstgevendheid van het vermogen.
+
+#### Rendabiliteit van de omzet
+
+##### Netto
+
+```
+     netto bedrijfsresultaat
+OM = ----------------------- * 100
+     omzet
+     
+netto bedrijfsresultaat = bedrijfswinst
+```
+
+##### Bruto
+
+```
+     bruto bedrijfsresultaat
+OM = ----------------------- * 100
+     omzet
+
+netto bedrijfsresultaat = netto bedrijfswinst
+                        + afschrijvingen
+                        + waardevermindering
+                        + voorzieningen
+```
+
+#### Rendabiliteit van het eigen vermogen
+
+##### Netto
+
+```
+      nettowinst (-verlies)
+REV = --------------------- * 100
+      eigen vermogen (EV)
+
+nettowinst = winst van het boekjaar
+```
+
+##### Bruto
+
+```
+      brutowinst (-verlies)
+REV = --------------------- * 100
+      eigen vermogen (EV)
+      
+brutowinst = nettowinst
+           + niet kaskosten
+          (= +- netto operationele cashflow)
+```
+
+#### Rendabiliteit van het totale vermogen
+
+##### Netto
+
+```
+      winst (voor belastingen) + kosten van schulden
+RTV = ---------------------------------------------- * 100
+      totale vermogen (TV)
+
+```
+
+##### Bruto
+
+```
+      winst (voor belastingen) + kosten van schulden + niet kaskosten
+RTV = --------------------------------------------------------------- * 100
+      totale vermogen (TV)
+```
+
 ### Solvabiliteit
 
+Het vermogen om op lange termijn aan verplichtingen (schulden) te kunnen voldoen.
+
+#### Solvabiliteit
+
+```
+                eigen vermogen (EV)
+solvabiliteit = --------------------
+                totale vermogen (TV)
+```
+
+<font color="red">Norm solvabiliteit >= 0,5</font>
+
+#### Schuldgraad / debt ratio
+
+```
+             vreemd vermogen (VV)
+debt ratio = --------------------
+             totale vermogen (TV)
+```
+
+<font color="red">Norm debt ratio < 0,5</font>
+
+#### Dekkingsratio vreemd vermogen door cashflow
+
+```
+                netto cashflow
+dekkingsratio = -------------------- * 100
+                vreemd vermogen (VV)
+```
+
 ### Toegevoegde waarde
+
+Welke waarde wordt door de onderneming gecreëerd?
+
+#### Bruto
+
+```
+bruto toegevoegde waarde = marktwaarde productie
+                         - kosten van goederen/diensten
+
+marktwaarde productie = omzet (incl. invloed indirecte belastingen & prijsverlagende subsidies)
+                      + productie in voorraad
+                      + geproduceerde vaste activa
+                      + andere opbrengsten zonder subsidie
+```
+
+#### Netto
+
+```
+netto toegevoegde waarde = bruto toegevoegde waarde
+                         + niet kaskosten
+```
+
+#### Ratio TW vs personeel
+
+Toegevoegde waarde per werknemer / personeelskost per euro toegevoegde waarde
+
+#### Ratio TW vs omzet
+
+Toegevoegde waarde per euro omzet (indicator van integratie)
 
 ## Hoofdstuk 9: De financiering van de activa
 
