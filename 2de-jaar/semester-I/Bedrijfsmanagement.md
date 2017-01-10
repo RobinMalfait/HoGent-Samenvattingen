@@ -1707,7 +1707,8 @@ EK = -------------------------------------------
      verandering prijs product Y
 ```
 
-- E<sub>K</sub>: kruiselings prijselastisch
+- E<sub>K</sub> > 0: substitueerbare goederen
+- E<sub>K</sub> < 0: complementaire goederen
 - E<sub>K</sub> dicht bij 0: geen direct verband
 
 
