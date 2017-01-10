@@ -1347,6 +1347,8 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 
 ## 8.1.2 Wie zijn de potentiele bestemmelingen?
 
+![](https://robinmalfait.com/afbeeldingen/2de-jaar/semester-II/Bedrijfsmanagement/stakeholders.png)
+
 ## 8.1.3 Aan de informatie te stellen eisen
 
 1. **Relevantie**: te veel of te weinig informatie
@@ -1633,6 +1635,8 @@ Toegevoegde waarde per euro omzet (indicator van integratie)
 # Hoofdstuk 11: Marktvormen
 
 ## 11.1 Marktvormen
+
+![](https://robinmalfait.com/afbeeldingen/2de-jaar/semester-II/Bedrijfsmanagement/marktvormen.png)
 
 ## 11.2 Volkomen concurrentie
 
