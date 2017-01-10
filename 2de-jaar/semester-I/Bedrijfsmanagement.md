@@ -1315,6 +1315,22 @@ Conclusie: De NCW > 0; Het project is financieel aanvaardbaar
 
 # Deel 2
 
+## Hoofdstuk 8: Analyse van de financiele structuur van de onderneming
+
+## 8.1 Algemeen
+
+## 8.1.1 Wie moet de jaarrekening publiceren?
+
+## 8.1.2 Wie zijn de potentiele bestemmelingen?
+
+## 8.1.3 Aan de informatie te stellen eisen
+
+## 8.2 Beoordelingstechnieken
+
+## 8.2.1 Begrippen van het dubbel boekhouden
+
+### De Balans
+
 Gouden financieringsregel (balans)
 
 > De <font color="red">duurzame activa</font> en <font color="red">de constante kern van de vlottende activa</font> (‘ijzeren’ voorraad en kerndebiteuren) worden bij voorkeur gefinancierd met p<font color="red">ermanent vermogen of lang vreemd vermogen</font>.
@@ -1326,3 +1342,63 @@ Gouden financieringsregel (balans)
 
 - Flexibele financiering afgestemd op wisselende omvang van de vlottende activa
 - Kosten kort vreemd vermogen is weliswaar hoger dan lang vreemd vermogen, maar er wordt alleen gebruik gemaakt wanneer het nodig is.
+
+### De Resultatenrekening
+
+## 8.2.2 Cashflowtabel
+
+## 8.2.3 Ratio-analyse
+
+### Liquiditeit
+
+### Efficientieratio's
+
+### Rendabiliteit
+
+### Solvabiliteit
+
+### Toegevoegde waarde
+
+## Hoofdstuk 9: De financiering van de activa
+
+### Vaste activa
+
+- Eigen vermogen
+  - Winst inhouding
+  - Afschrijvingsgelden
+  - Externe financiering eigen vermogen
+- Vreemd vermogen LT
+  - Investeringskrediet
+  - Obligatielening
+  - Hypothecaire lening
+  - Financiële leasing
+
+### Vlottende activa
+
+- Eigen vermogen
+  - Concept van permanente behoefte
+- Vreemd vermogen KT
+  - Leverancierskrediet
+  - Kaskrediet
+  - Straight loan
+  - Disconto Krediet
+  - Factoring
+
+## Hoofdstuk 10: De vermogensmarkt
+
+### Bronnen van vermogen
+
+- Traditionele bronnen
+  - Bank: korte en lange termijn
+  - Externe Financier/belegger
+- Alternatieve bronnen
+  - Crowd funding
+  - Overheidsfondsen
+  - Subsidiëring
+
+### Crowdfunding: 4 soorten
+
+- Op aandeel gebaseerd (crowdfunding)
+- Op lening gebaseerd (Crowdfinancing)
+- Op beloning gebaseerd
+- Op donatie gebaseerd
