@@ -684,7 +684,7 @@ XP Belooft gebruikers en managers dat zij:
 - Luisteren
 - Coderen
 
----
+===
 
 - Planning (Feedback)
 - Short releases (Continu proces)
