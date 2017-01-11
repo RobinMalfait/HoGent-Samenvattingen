@@ -483,7 +483,116 @@ Een goede user story is
 
 # 4. Modellering van processen
 
-Zie IT2Business... [https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn](https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn)
+## 4 basiscategorieën van elementen in BPMN
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1fSzL.png)
+
+- Stroomobjecten (evenementen, activiteiten en poorten)
+    - De grafische elementen die het gedrag van een bedrijfsproces definiëren.
+    - Soorten:
+
+        | Naam | Symbool    |
+        | ---- | ---------- |
+        | evenementen, gebeurtenissen (events) | ![](https://robinmalfait.com/afbeeldingen/droplr/vpOa.png) |
+        | Activiteiten (activities) | ![](https://robinmalfait.com/afbeeldingen/droplr/y81U.png) |
+        | Poorten (gateways) | ![](https://robinmalfait.com/afbeeldingen/droplr/10QYt.png) |
+
+- Verbindingselementen (pijlen)
+    - Verbinden stroomobjecten met elkaar of met andere informatie.
+    - Soorten:
+
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Sequentiële stroom (Sequence Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/1cYsJ.png) |
+        | Boodschappenstroom (Message Flow) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
+        | Associatie (Association) | ![](https://robinmalfait.com/afbeeldingen/droplr/13YOr.png) |
+
+- Zwembaden / zwembanen
+    - Groeperen de stroom- en Verbindingselementen
+    - Soorten:
+
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Zwembaden (Pools)<br>Zwembanen (Lanes) | ![](https://robinmalfait.com/afbeeldingen/droplr/16Enb.png) |
+
+- Artefacten
+    - Worden gebruikt om extra informatie over het proces te voorzien
+    - Soorten:
+
+        | Naam | Symbool |
+        | ----- | ------ |
+        | Data Object | ![](https://robinmalfait.com/afbeeldingen/droplr/RMmV.png) |
+        | Groep (Group) | ![](https://robinmalfait.com/afbeeldingen/droplr/1ct0a.png) |
+        | Annotatie (Annotation) | ![](https://robinmalfait.com/afbeeldingen/droplr/1jkuW.png) |
+
+![](https://robinmalfait.com/afbeeldingen/droplr/10TeF.png)
+
+### Verbindingselementen
+
+- Sequentiële stroom:
+    - Enkel binnen 1 zwembad (met 1 of meerdere zwembanen)
+    - Niet tussen zwembaden
+- Boodschappenstroom:
+    - Enkel tusesn verschillende zwembaden
+- Associatie:
+    - Verbindt informatie en artefacten met stroomelementen
+
+![](https://robinmalfait.com/afbeeldingen/droplr/9kVK.png)
+
+### Pools en swimlanes
+
+- Zwembad (Pool)
+    - Grafische container voor activiteiten binnen een orkestratie (orchestration)
+    - Heeft zicht op haar eigen activiteiten, meestal geen zicht op activiteiten van andere zwembaden (Black Box)
+- Zwembaan (Swimlane)
+    - Onderverdeling binnen zwembad
+    - Over de volledige lengte van het zwembad
+    - Horizontaal of verticaal
+    - Stellen vaak een rol voor binnen een orkestratie
+
+#### Privaat proces: 1 zwembad
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1jBbJ.png)
+
+#### Abstract of publiek proces: lege zwembaden
+
+![](https://robinmalfait.com/afbeeldingen/droplr/14Fp7.png)
+
+#### Globaal proces (collaboration process)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/2rcU.png)
+
+#### Niet correct gemodelleerd BPMN diagram
+
+![](https://robinmalfait.com/afbeeldingen/droplr/11P9g.png)
+
+### Evenementen (Events)
+
+- Gebeurt tijdens verloop van bedrijfsproces
+- Beïnvloeden de stroom van het proces
+- Hebben een oorzaak (= trigger) of een impact (= resultaat zoals vb. een boodschap)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/13ctH.png)
+
+#### Startevents
+
+![](https://robinmalfait.com/afbeeldingen/droplr/118uz.png)
+
+#### Eindevenementen
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1lpAe.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/17wDu.png)
+
+### Belangrijkste intermediaire evenementen in BPMN
+
+![](https://robinmalfait.com/afbeeldingen/droplr/17rLp.png)
+
+### Activiteiten
+
+> - Generische term voor werk dat organisatie uitvoert
+> - Kan atomisch of samengesteld zijn
+
+![](https://robinmalfait.com/afbeeldingen/droplr/1bb9o.png)
 
 # 5. Modellering van processen (Deel 2)
 
