@@ -856,10 +856,145 @@ Noodzakelijk!
 
 - XP laat je deel uitmaken van een winnend team!
 
-## Enkele regels
+### Enkele regels
 
 - Doel (Maximum economische waarde uit software product)
 - Strategie (Zo weinig mogelijk investeren met maximumaal rendement)
 - Stukken (Story cards, task cards)
 - Spelers (Ontwikkelteam, Business team)
 - Moves (Exploration / Commitment / Steering)
+
+### Exploration
+
+- Schrijf verhaal
+- Schat de implementatie van het verhaal in
+- Deel verhaal op in meerdere user stories
+
+### Commitment
+
+> Business team bepaalt scope en datum voor volgende release. Implementatie team belooft tijdige oplevering
+
+- Sorteer stories op belangrijkheid
+- Sorteer stories naar risico
+- Geef realistische schatting voor implementatie
+- Kies de stories die gerealiseerd moeten worden tegen de volgende release
+
+### Steering
+
+- Iteratie (3 weken)
+
+```
+TASK CARDS
+----------
+
+- Verdeel story in taken
+- Split op of combineer taken
+- Accepteer verantwoordelijkheid voor een taak
+- Schat taak in
+    - Implementeer de taak
+    - Zoek partner
+    - Schrijf testcases
+    - Implementeer
+    - Integreer
+- Vastleggen vooruitgang
+```
+
+- "Recovery"
+
+```
+Programmeurs soms te optimistisch
+
+- Scope beperken tot enkele taken
+- Overleg met gebruiker: scope te beperken van enkele stories
+- Niet essentiële taken opschorten
+- Betere hulp inroepen
+- Sommige stories verdagen in overleg met gebruiker naar latere iteratie
+```
+
+- "New story"
+
+```
+Verifieer story op basis van de functionele testen
+```
+
+- Herplanning
+
+```
+Bij eventuele vertraging na 3 weken:
+Alle hens aan dek voor collaboratieve refactoring -> Technical Depth
+```
+
+### "Development strategy"
+
+
+- Permanente integratie
+- Leer / test / codeer / release
+- "collective ownership"
+    - Weinig complexe code
+    - Persoonlijke betrokkenheid
+    - Kennis verspreiden
+
+### Pair programming
+
+- Is niet 1 persoon die werkt terwijl de andere toekijkt
+- Is geen tutorsessie
+- Is wel een dialoog tussen 2 mensen die proberen simultaan te programmeren (analyse, ontwerp en test)
+- Is hulp vragen
+
+### Design strategy van XP
+
+> Altijd zorgen voor het eenvoudigste ontwerp
+
+- Communicatie
+- eenvoud
+- feedback
+- moed
+
+## Randvoorwaarden
+
+- Ondersteuning van het management
+    - Gemeenschappelijke werkplaats (colocatie)
+    - "Pairing stations"
+- XP Team
+    - Product manager, on-site customers, testers, programmeurs met sterke design-skills
+    - GEEN SOLOSPELERS
+    - Team grootte: 4-12 / even aantal
+
+## Recap
+
+XP is niet geschikt voor
+
+- Zeer grote projecten
+- Mainframe applicaties
+- Trage feedback
+- Als testen in reële situaties zeer veel kost
+- Geen beschikbare ruimte
+
+> "XP is a lightweight, low-risk, flexible, predictable, scientific way to develop software"
+
+
+## Terugblik
+
+### XP versus Scrum
+
+#### Waarin verschillen ze?
+
+#### Waarin verschillen ze niet?
+
+### XP versus Kanban
+
+#### Waarin verschillen ze?
+
+#### Waarin verschillen ze niet?
+
+### Agile = incrementele strategie?
+
+### Agile = iteratieve strategie?
+
+Je zit in een cyclus.
+
+### Iteratieve en incrementele strategieën?
+
+#### Waarin verschillen ze?
+
+#### Waarin verschillen ze niet?
