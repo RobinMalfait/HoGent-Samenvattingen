@@ -480,3 +480,7 @@ Een goede user story is
 | Opleiden van personeel | &nbsp; | x | &nbsp; | &nbsp; | &nbsp; |
 | Promotie | &nbsp; | &nbsp; | x | &nbsp; | &nbsp; |
 | Leveren van producten / diensten | x | &nbsp; | &nbsp; | x | &nbsp; |
+
+# 4. Modellering van processen
+
+Zie IT2Business... [https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn](https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn)
