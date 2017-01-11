@@ -257,7 +257,7 @@ Een goede user story is
 
 > Een story map is een voorstelling van de user stories volgens prioriteit (hoog , laag, verticale as) en functionaliteit (van links naar rechts, horizontale as)
 
-![](http://d.pr/i/sPMe+)
+![](https://robinmalfait.com/afbeeldingen/droplr/sPMe.png)
 
 ## Use Cases 2.0 (Use case slices)
 
@@ -268,8 +268,8 @@ Een goede user story is
 - Lever het systeem **incrementeel** op
 - **Flexibiliteit**, ieder project kent eigen karakteristieken en vergt daarom een eigen aanpak
 
-![](http://d.pr/i/VbkT+)
-![](http://d.pr/i/gf2t+)
+![](https://robinmalfait.com/afbeeldingen/droplr/VbkT.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/gf2t.png)
 
 ### Stappenplan
 
@@ -313,7 +313,7 @@ Een goede user story is
 - Creëren van waarde voor afnemer of klant (= belanghebbenden) **BUSINESS VALUE**
 - Realiseren van doelen
     - Bepaald door verwachtingen van de afnemers of belanghebbenden
-- ![](http://d.pr/i/uHLV+)
+- ![](https://robinmalfait.com/afbeeldingen/droplr/uHLV.png)
 
 *opmerkingen*:
 
@@ -365,11 +365,11 @@ Een goede user story is
 - Functie
     - Verzameling activiteiten
     - Gegroepeerd volgens competentie
-- ![](http://d.pr/i/nZQS+)
+- ![](https://robinmalfait.com/afbeeldingen/droplr/nZQS.png)
 
 #### Proces vs. afdeling
 
-- ![](http://d.pr/i/i4Fs+)
+- ![](https://robinmalfait.com/afbeeldingen/droplr/i4Fs.png)
 
 #### Belang van processen
 
@@ -427,7 +427,7 @@ Een goede user story is
 - Gewoontevorming
     - Men stelt niet meer in vraag wat men doet en hoe men het doet
 
-![](http://d.pr/i/dexX+)
+![](https://robinmalfait.com/afbeeldingen/droplr/dexX.png)
 
 ##### Vericale functionele "kachelpijpen"
 
