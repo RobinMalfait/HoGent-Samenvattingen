@@ -596,7 +596,23 @@ Een goede user story is
 
 # 5. Modellering van processen (Deel 2)
 
-TODO: Take over the world
+## Expliciet vs impliciet
+
+![](https://robinmalfait.com/afbeeldingen/droplr/95PX.png)
+
+## Loops
+
+### "repeat" loop ("repeat until" of post-test loop)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/gcI6.png)
+
+### "while" loop ("while do" of pre-test loop)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/Rmed.png)
+
+## Evenement gedreven poort
+
+![](https://robinmalfait.com/afbeeldingen/droplr/dO45.png)
 
 # 6. eXtreme Programming
 
