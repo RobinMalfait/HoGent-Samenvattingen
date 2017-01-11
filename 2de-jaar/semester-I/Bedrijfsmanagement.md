@@ -1396,7 +1396,16 @@ Het vermogen om op korte termijn aan verplichtingen (schulden) te kunnen voldoen
      vlottende activa (VlA)
 CR = --------------------------
      kort vreemd vermogen (KVV)
+     
+VlA = voorraden
+    + vorderingen op < 1 jaar
+    + liquide middelen
+    
+KVV = financiele schulden
+    + handelsschulden
 ```
+
+<font color="red">Norm current ratio >= 1</font>
 
 #### Quick ratio / 'Acid test'
 
@@ -1405,6 +1414,10 @@ CR = --------------------------
 QR = ------------------------------------
      kort vreemd vermogen (KVV)
 ```
+
+<font color="red">Norm quick ratio >= 1 (strict)</font>
+
+> Het verschil met de current ratio is dat de quick ratio alleen kijkt naar assets die 'snel' te liquideren zijn.
 
 #### Netto werkkapitaal / nettobedrijfskapitaal
 
@@ -1423,7 +1436,11 @@ De doelgerichtheid waarmee vermogen aangewend kan worden.
                        omzet
 voorraadrotatie (RV) = -------------
                        gemiddelde VR
-     
+                       
+                       handelsgoederen, grond- en hulpstoffen
+                     = ---------------------------------------------------
+                       (voorraden + (voorraden - voorraadwijzigingen)) / 2
+
                              365
 aantal dagen voorraad (DV) = ---
                              RV
@@ -1459,21 +1476,21 @@ Winstgevendheid van het vermogen.
 
 #### Rendabiliteit van de omzet
 
-##### Netto
+Netto
 
 ```
      netto bedrijfsresultaat
-OM = ----------------------- * 100
+RO = ----------------------- * 100
      omzet
      
 netto bedrijfsresultaat = bedrijfswinst
 ```
 
-##### Bruto
+Bruto
 
 ```
      bruto bedrijfsresultaat
-OM = ----------------------- * 100
+RO = ----------------------- * 100
      omzet
 
 netto bedrijfsresultaat = netto bedrijfswinst
@@ -1484,7 +1501,7 @@ netto bedrijfsresultaat = netto bedrijfswinst
 
 #### Rendabiliteit van het eigen vermogen
 
-##### Netto
+Netto
 
 ```
       nettowinst (-verlies)
@@ -1494,7 +1511,7 @@ REV = --------------------- * 100
 nettowinst = winst van het boekjaar
 ```
 
-##### Bruto
+Bruto
 
 ```
       brutowinst (-verlies)
@@ -1507,7 +1524,7 @@ brutowinst = nettowinst + niet kaskosten
 
 #### Rendabiliteit van het totale vermogen
 
-##### Netto
+Netto
 
 ```
       winst (voor belastingen) + kosten van schulden
@@ -1516,7 +1533,7 @@ RTV = ---------------------------------------------- * 100
 
 ```
 
-##### Bruto
+Bruto
 
 ```
       winst (voor belastingen) + kosten van schulden + niet kaskosten
@@ -1534,6 +1551,10 @@ Het vermogen om op lange termijn aan verplichtingen (schulden) te kunnen voldoen
                 eigen vermogen (EV)
 solvabiliteit = --------------------
                 totale vermogen (TV)
+                
+                kapitaal + reserves
+              = -------------------
+                totaal der passiva
 ```
 
 <font color="red">Norm solvabiliteit >= 0,5</font>
