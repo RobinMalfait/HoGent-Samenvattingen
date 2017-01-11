@@ -1074,3 +1074,35 @@ XP is niet geschikt voor
 1. Define critical transactions
 2. Define actions for each transaction
 3. Combine transaction to Scenario's
+
+## Selenium
+
+- Testing Automation Tool
+- Web-based applications
+    - Selenium IDE
+        - Prototyping tool
+        - Firefox plugin
+        - No programming experience
+        - Simple tests
+        - Quickly
+        - Record and Play
+        - No iteration/conditional statements
+        - Export functionality
+    - Selenium RC
+        - Uses javasript
+        - Maintenance mode
+        - Several programming languages
+    - Selenium WebDriver
+        - Direct calls to browser
+        - Selenium RC underlying technology
+        - Unit testing
+    - Selenium Grid
+        - Multiple environments
+        - Parallel
+        - Multiple browsers
+- Flexible and Rapid feedback
+- Open source
+- Multi-language backend support
+    - Java
+    - Ruby
+    - Python
