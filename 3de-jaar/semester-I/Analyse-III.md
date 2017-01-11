@@ -1005,7 +1005,7 @@ XP is niet geschikt voor
 - Reputatie
 - Vertrouwen
 - Schade beperken
-- Cost of defects ![](http://d.pr/i/dILO+)
+- Cost of defects ![](https://robinmalfait.com/afbeeldingen/droplr/dILO.png)
 
 ## Why aren't we testing?
 
@@ -1018,8 +1018,8 @@ XP is niet geschikt voor
 
 > Application Lifecycle Management
 
-![](http://d.pr/i/FxQm+)
-![](http://d.pr/i/SK4q+)
+![](https://robinmalfait.com/afbeeldingen/droplr/FxQm.png)
+![](https://robinmalfait.com/afbeeldingen/droplr/SK4q.png)
 
 ## Automation
 
@@ -1028,7 +1028,7 @@ XP is niet geschikt voor
 - Deadline
 - Testing Quadrants
 
-![](http://d.pr/i/r11u+)
+![](https://robinmalfait.com/afbeeldingen/droplr/r11u.png)
 
 
 ### Types
