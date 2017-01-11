@@ -484,3 +484,257 @@ Een goede user story is
 # 4. Modellering van processen
 
 Zie IT2Business... [https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn](https://robinmalfait.com/2de-jaar/semester-II/IT2Business.md#9-bpmn)
+
+# 5. Modellering van processen (Deel 2)
+
+TODO: Take over the world
+
+# 6. eXtreme Programming
+
+> XP is a lightweight, efficient, low-risk, flexible, predictable, scientific way to develop software
+
+## Mogelijke risico's
+
+### "schedule slips"
+
+XP voorizet:
+
+- Korte "realease"-cyclus
+- "1 tot 4 weken" -iteraties met de klant
+- taken: 1 tot 3 man-dagen
+
+### "project canceled"
+
+XP Vraagt de klant om de kleinste release met het grootste zakenaandeel.
+
+> Belangrijke zaken eerst
+
+### "system goes sour"
+
+XP Voorziet een batterij testen die bij elke wijziging wordt uitgevoerd (somes verschillende keren per dag)
+
+> Testen
+
+### "defect rate"
+
+XP stelt dat software ontwikkeld wordt door een team
+
+> Pair programming
+
+### "business misunderstood"
+
+XP Stelt dat de klant/gebruiker een volwaardig lid is van het team
+
+> Feedback
+
+### "business changes"
+
+XP stelt dat door korte releases je snel kan inspelen op veranderingen
+
+> Flexibiliteit
+
+### "false feature rich"
+
+XP Stelt dat enkel opdrachten met hoge prioriteiten uitgevoerd worden
+
+> Belangrijke taken eerst
+
+### "staff turnover"
+
+XP Vraagt de programmeurs om hun verantwoordelijkheid op te nemen
+
+> Motivatie en duidelijkheid
+
+## XP Belooft
+
+XP Belooft programmeurs dat zij:
+
+- Kunnen werken aan **belangrijke zaken**
+- **Niet alleen** moeten werken
+- **Verantwoordelijkheid** krijgen om beslissingen te nemen
+
+XP Belooft gebruikers en managers dat zij:
+
+- **Snel resultaat** zullen zien
+- De mogelijkheid krijgen om te **wijzigen** zonder extra finantiële middelen
+
+
+## Hoe?
+
+4 waarden:
+
+- Communicatie
+- Eenvoud
+- Feedback
+- Moed
+
+4 Basisactiviteiten:
+
+- Ontwerpen
+- Testen
+- Luisteren
+- Coderen
+
+---
+
+- Planning (Feedback)
+- Short releases (Continu proces)
+- Metafoor (Gezamenlijk inzicht)
+- Eenvoudig ontwerp (Gezamenlijk inzicht)
+- Testen (Feedback)
+- Refactoring (Continu proces)
+- Pair programming (Feedback)
+- Collective ownership (Gezamenlijk inzicht)
+- Permanente integratie (Continu proces)
+- 40 uren week (Welzijn)
+- On-site gebruiker (Feedback)
+- Standaarden (Gezamenlijk inzicht)
+
+![](https://robinmalfait.com/afbeeldingen/droplr/XB2i.png)
+
+### Planning
+
+Software ontwikkeling is een dialoog: wat is gewenst - wat is mogelijk
+
+| Zakenlui | Technische mensen |
+| -------- | ----------------- |
+| Scope | Schattingen |
+| Prioriteit | Gevolgen |
+| Inhoud van de releases | Proces |
+| Datum releases | Gedetailleerde planning |
+
+> **!** Starten zonder plan is onmogelijk
+> **!** Permanent planning wijzigen kan niet
+
+- Ruw plan
+- Korte releases
+- Gebruiker deel van het team
+
+### Short releases
+
+Elke release zo klein mogelijk maar met maximaal rendement
+
+>- **!** Het is onmogelijk om na enkele maanden reeds in productie te gaan
+> - **!** Zeker geen nieuwe releases door voortdurende wijzigingen
+
+
+- Belangrijkste stories
+- Permanente integratie
+- Testen (minimale foutenlast)
+- Eenvoudig ontwerp
+
+### Metafoor
+
+Elk XP-project wordt vergezeld van een metafoor
+
+> **!** Ontwikkeling starten op basis van een metafoor, met te weinig gedetailleerde informatie: Onmogelijk
+
+- Snel concrete feedback
+- Communicatie
+- Permanente refacoring
+
+### Eenvoudig ontwerp
+
+- Voert alle testen uit
+- Heeft geen dubbele logica
+- Legt elke intentie vast die belangrijk is
+- Heeft zo weinig mogelijk klassen en objecten
+
+> **!** Onmogelijk om voldoende ontwerp te hebben voor de code van vandaag: Vastlopen!
+
+- Refactorring is normaal
+- erken aan ontwerp in overleg met de collega (vertrouwen)
+
+
+### Testen
+
+Een programma zonder een geautomatiseerde test bestaat niet!
+
+> **!** Al deze testen op voorhand schrijven, is onmogelijk: Tijdsverslies!
+
+- Eenvoudig ontwerp
+- Pair programming
+- Vertrouwen
+- Goed gevoel bij de gebruiker
+
+### Refactoring
+
+Refactoring: een **MUST**
+
+> **!** Permanent ontwerp en code wijzigen = tijdsverlies, te weiig controle, crash!
+
+- "collective ownership"
+- Eenvoudig ontwerp
+- Standaard
+- Pair programming / team
+- Testen
+- Permanente integratie
+
+### Pair programming
+
+Met 2 weet je meer dan alleen
+
+> **!** Met 2 achter 1 scherm: rendement zakt, Ruzie...
+
+- Gebruik standaarden
+- Minder stress
+- Samen testen schrijven
+- Smane eenvoudig ontwerp uitwerken
+- Samen implementeren
+
+### "Collective ownership"
+
+Elk teamlid dat een kans ziet een meerwaarde te geven, is verplicht om dit te doen
+
+> **!** Iedereen overal zaken laten wijzigen, je maakt meer stuk dan goed: Onmogelijk!
+
+- Integratie na korte perioden
+- Testen
+- Pair programming
+- Standaard
+
+### Permanente integratie
+
+Code wordt geïntegreerd en getest na enkele uren
+
+> **!** Integreren na enkele uren werk: onmogelijk: Tijdsverlies!
+
+- Zeer snel testen
+- Voortdurende refactoring
+- Je werkt met 2
+
+### 40 uren week
+
+1 week overuren is toegestaan, de volgende week niet meer
+
+> **!** In een 40 uren week kan je onmogelijk meerwaarde geven
+
+- Planning stelt prioriteiten
+- Geen verassingen: testen
+- Oefening baart kunst
+
+### On-site gebruiker
+
+Een "echte gebruiker" moet in het team zetelen
+
+> **!** Een gebruiker laten zetelen in het team = niet produceren op een andere plaats: Verlies rendement!
+
+- Functionele testen schrijven
+- Feedback
+
+### Standaard
+
+Noodzakelijk!
+
+> - **!** Binnen een **team standaarden** gebruiken: **onmogelijk**
+> - **!** Programmeurs zijn **individualisten**!
+
+- XP laat je deel uitmaken van een winnend team!
+
+## Enkele regels
+
+- Doel (Maximum economische waarde uit software product)
+- Strategie (Zo weinig mogelijk investeren met maximumaal rendement)
+- Stukken (Story cards, task cards)
+- Spelers (Ontwikkelteam, Business team)
+- Moves (Exploration / Commitment / Steering)
