@@ -147,6 +147,23 @@ Deze opbrengsten kunnen in mindering worden gebracht op de grondstofkosten, waar
 
 Voorbeeld afval: ![](https://robinmalfait.com/afbeeldingen/droplr/1588H.png)
 
+Berekenen bruto grondstoffen
+
+```
+           netto GS
+bruto GS = ----------------
+           100% - afval (%)
+```
+
+Berekenen prijs goedgekeurde producten
+
+```
+                uitval (%) * P uitval
+P goedgekeurd = ---------------------
+                100% - uitval (%)
+```
+
+
 ## 2.2 De arbeidskosten
 
 > lonen (arbeiders) / wedden (bedienden) vermeerder met de sociale lasten.
