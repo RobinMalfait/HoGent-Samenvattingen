@@ -991,10 +991,86 @@ XP is niet geschikt voor
 
 ### Agile = iteratieve strategie?
 
-Je zit in een cyclus.
-
 ### Iteratieve en incrementele strategieën?
 
 #### Waarin verschillen ze?
 
 #### Waarin verschillen ze niet?
+
+# Agile Testing
+
+## Why testing?
+
+- Kwaliteit
+- Reputatie
+- Vertrouwen
+- Schade beperken
+- Cost of defects ![](http://d.pr/i/dILO+)
+
+## Why aren't we testing?
+
+- Changing development habits is hard
+- It takes time
+- We love to write new functionality
+- The investment value is not visible at the moment
+
+## ALM
+
+> Application Lifecycle Management
+
+![](http://d.pr/i/FxQm+)
+![](http://d.pr/i/SK4q+)
+
+## Automation
+
+- Stable user interface
+- Time
+- Deadline
+- Testing Quadrants
+
+![](http://d.pr/i/r11u+)
+
+
+### Types
+
+- Unit Testing
+- Integration Testing
+- System Testing
+- End 2 End testing
+
+### Approach
+
+- User expectations
+- Time
+- Priorities
+- Types of tests
+- Can be based on manual test cases
+- Regression
+
+### Testing Static content
+
+- Existence UI element
+- Examples:
+    - Page title
+    - Footer
+    - Heading with specific tag
+
+### Testing Links
+
+- Frequent source of error
+- Broken links
+- Missing pages
+
+### Function Tests
+
+- Form based
+- Input expects specific result
+- Most complex
+- Most useful
+- Examples: Login, Registration, ...
+
+## Load Testing
+
+1. Define critical transactions
+2. Define actions for each transaction
+3. Combine transaction to Scenario's
