@@ -494,8 +494,8 @@ Een goede user story is
         | Naam | Symbool    |
         | ---- | ---------- |
         | evenementen, gebeurtenissen (events) | ![](https://robinmalfait.com/afbeeldingen/droplr/vpOa.png) |
-        | Activiteiten (activities) | ![](https://robinmalfait.com/afbeeldingen/droplr/y81U.png) |
-        | Poorten (gateways) | ![](https://robinmalfait.com/afbeeldingen/droplr/10QYt.png) |
+        | Activiteiten (activities) | ![](https://robinmalfait.com/afbeeldingen/droplr/10QYt.png) |
+        | Poorten (gateways) | ![](https://robinmalfait.com/afbeeldingen/droplr/y81U.png) |
 
 - Verbindingselementen (pijlen)
     - Verbinden stroomobjecten met elkaar of met andere informatie.
