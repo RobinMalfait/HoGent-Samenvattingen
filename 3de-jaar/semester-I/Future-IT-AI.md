@@ -110,4 +110,4 @@ Wat rationaal is op een bepaald moment hangt in het algemeen af van de volgende 
 | Deterministisch <br><small>Je kan de nieuwe state berekenen = `state = fn(currentState, action)`</small> | vs | Stochastisch <br> <small>Je weet de huidige toestand en actie, maar niet altijd de nieuwe omgeving. Gooien met een dobbelsteen, je weet wat je doet, maar je weet de uitkomst niet.</small>|
 | Episodisch <br><small>Wat er gebeurd in 1 episode is **onafhankelijk** van de andere.</small> | vs | Sequentieel <br><small>Wat er gebeurd in 1 episode is **afhankelijk** van de andere.</small>|
 | Statisch <br> <small>Een omgeving die niet verandert **terwijl de agent nadenkt** over de volgende actie</small>| vs | Dynamisch <br> <small>Omgeving die verandert terwijl de agent nadenkt.</small>|
-| Discreet<br><small>Een eindig aantal stappen</small>| <-> | Continue<br><small>Een oneindig aantal stappen</small>|
+| Discreet<br><small>Een eindig aantal stappen</small>| vs | Continue<br><small>Een oneindig aantal stappen</small>|
