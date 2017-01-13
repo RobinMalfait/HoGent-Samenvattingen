@@ -99,3 +99,15 @@ Wat rationaal is op een bepaald moment hangt in het algemeen af van de volgende 
 4. De huidige waarnemingssequentie.
 
 > **Definitie** Een RATIONALE AGENT selecteert, voor elke mogelijke waarnemingssequentie, die actie *waarvan verwacht* wordt dat deze zijn performantiemaat *maximaliseert*, rekening houdend met het bewijs aangebracht door de uidige waarnemingssequentie en de eventuele ingebouwde kennis van de agent.
+
+
+## 1.3 Eigenschappen van Omgevingen
+
+| makkelijker            | vs  | moeilijker                                 |
+| ---------------------- | :-: | ------------------------------------------ |
+| Compleet observeerbaar | <-> | Partieel observeerbaar                     |
+| Eenpersoons            | <-> | Multipersoons (Cooperatief of Competitief) |
+| Deterministisch        | <-> | Stochastisch                               |
+| Episodisch             | <-> | Sequentieel                                |
+| Statisch               | <-> | Dynamisch                                  |
+| Discreet               | <-> | Continue                                   |
