@@ -17,7 +17,7 @@ link: https://robinmalfait.com/README.md
 
 ### Semester I
 
-* [ ] [Analyse I](semester-I/Analyse-I.md)
+* [ ] [Analyse I](1ste-jaar/semester-I/Analyse-I.md)
 
 ### Semester II
 
