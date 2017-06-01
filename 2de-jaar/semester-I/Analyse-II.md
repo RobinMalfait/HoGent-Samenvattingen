@@ -10,7 +10,7 @@ link: https://robinmalfait.com/2de-jaar/semester-I/Analyse-II.md
 ### Kwaliteitsvolle
 Als het aan de functionele en niet-functionele vereisten voldoet.
 
-- **Functionele Requiremenets**
+- **Functionele Requirements**
     - Use Case
 - **Niet-functionele Requirements**
     - Meetvoorschriften (moeten SMART zijn)

@@ -414,36 +414,32 @@ END dbvideos_package1;
 ## Afsluitende herhalings oefeningen
 
 ```plsql
-/********
-Oefening 1
-********/
+-- Oefening 1
 
-/* Declaratie van de package specification */
+-- Declaratie van de package specification
 CREATE OR REPLACE PACKAGE dbvideos_package1 IS
-	TYPE film_rec_type IS RECORD (
-		bandcode films.bandcode%TYPE,
-		titel	films.titel%TYPE,
-		genre	genres.genre%TYPE,
-		prijs	films.prijs%TYPE,
-		aantalkeerverhuurd films.verhuurd%TYPE
-	);
-	TYPE film_tab_type IS TABLE OF film_rec_type
-	INDEX BY BINARY_INTEGER;
+    TYPE film_rec_type IS RECORD (
+      bandcodee films.bandcode%TYPE,
+      titel films.titel%TYPE,
+      genre genres.genre%TYPE,
+      prijs films.prijs%TYPE,
+      aantalkeerverhuurd films.totverhuurd%TYPE
+    );
 
-	e_video_exception	EXCEPTION;
-	PRAGMA EXCEPTION_INIT(e_video_exception, -20001);
+    TYPE film_tab_type IS TABLE OF film_rec_type INDEX BY BINARY_INTEGER;
 
-	procedure films_per_genre;
-	function geef_pop_films_per_leeftcat (p_min_leeftijd NUMBER,
-		p_max_leeftijd NUMBER, p_aantal NUMBER) RETURN film_tab_type;
-	function wijzig_prijs (p_percentage NUMBER, p_maatschappij
-	maatschappijen.maatschappijnaam%TYPE) RETURN NUMBER;
+    PROCEDURE films_per_genre;
 
+    FUNCTION geef_pop_films_per_leeftcat (p_min_leeftijd NUMBER, p_max_leeftijd NUMBER, p_aantal NUMBER) RETURN film_tab_type;
+
+    FUNCTION wijzig_prijs (p_percentage NUMBER, p_maatschappij maatschappijen.maatschappijnaam%TYPE) RETURN NUMBER;
+
+    e_video_exception EXCEPTION;
+    PRAGMA EXCEPTION_INIT(e_video_exception, -20001);
 END dbvideos_package1;
 
 
-/* Declaratie van de package body */
-
+-- Declaratie van de package body
 CREATE OR REPLACE PACKAGE BODY dbvideos_package1 IS
 
 	procedure films_per_genre IS
@@ -671,6 +667,9 @@ Met 4 Maven Build
 
 ```java
 // ...
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 public class App {
     public static void main(String[] args) {
         Logger.getLogger("org").setLevel(Level.OFF);
