@@ -521,10 +521,10 @@ public class WeatherData implements Subject
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement
 {
-    private Subject weatherData;
+    private WeatherData weatherData;
     private double temperature, humidity;
 
-    public CurrentConditionsDisplay(Subject weatherData)
+    public CurrentConditionsDisplay(WeatherData weatherData)
     {
         this.weatherData = weatherData;
 
